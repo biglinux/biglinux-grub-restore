@@ -21,10 +21,21 @@ done
 #save os-prober
 os-prober | grep :linux | grep -v timeshift > /tmp/os-prober
 
+#add other partitions
+for i in $(blkid | grep -e 'TYPE="btrfs"' | cut -f1 -d:)
+do
+    if [ "$(grep "$i" /tmp/os-prober)" = "" ];
+    then
+        echo "$i:Not detected name:::btrfs::" >> /tmp/os-prober
+    fi
+done
+
 #save EFI partitions
 rm -f /tmp/efi-partitions
 mkdir -p /boot/efi
-for i in $(LANG=C fdisk -l | grep -e "EFI System" -e "FAT" | cut -f1 -d" ")
+
+DEVICE_LIVE_BOOT="$(ls /sys/block/$(readlink -f "$(df -h /run/miso/bootmnt/ | awk '{ print $1 }' | grep '/dev/')" | sed 's|/dev/||'g)/slaves | sed 's|[0-9]||g')"
+for i in $(LANG=C fdisk -l | grep -e "EFI System" -e "FAT" | cut -f1 -d" " | grep -v "$DEVICE_LIVE_BOOT")
 do
     umount -l /boot/efi
     mount "$i" /boot/efi
