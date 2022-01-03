@@ -37,6 +37,7 @@ fi
 
 if [ "$(cat /tmp/grub-restore-apply-mode)" = "2" ];
 then
+    manjaro-chroot /mnt rm /var/lib/pacman/db.lck
     manjaro-chroot /mnt pacman --noconfirm -Sy grub
     manjaro-chroot /mnt grub-install --force --target=i386-pc --recheck --boot-directory=/boot /dev/${DISK_SELECTED}
     manjaro-chroot /mnt mkinitcpio -P
@@ -46,6 +47,7 @@ fi
 
 if [ "$(cat /tmp/grub-restore-apply-mode)" = "3" ];
 then
+    manjaro-chroot /mnt rm /var/lib/pacman/db.lck
     manjaro-chroot /mnt pamac update --force-refresh --no-confirm
     manjaro-chroot /mnt pamac install linux grub --no-confirm
     manjaro-chroot /mnt pacman --noconfirm -Syyuu grub
@@ -62,6 +64,7 @@ fi
 
 if [ "$(cat /tmp/grub-restore-apply-mode)" = "5" ];
 then
+    manjaro-chroot /mnt rm /var/lib/pacman/db.lck
     manjaro-chroot /mnt pamac-manager
 fi
 
