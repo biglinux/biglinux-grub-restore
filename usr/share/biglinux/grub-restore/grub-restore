@@ -1,0 +1,48 @@
+#!/bin/bash
+#
+# BigLinux Store
+# www.biglinux.com.br
+# By Bruno Gonçalves
+# 03/01/2020
+# License: GPL v2 or greater
+
+#Translation
+export TEXTDOMAINDIR="/usr/share/locale"
+export TEXTDOMAIN=biglinux-grub-restore
+
+
+#unmount partitions
+for i in $(blkid | grep -e 'TYPE="btrfs"' -e 'TYPE="ext."' -e 'TYPE="xfs"' -e 'TYPE="vfat"' | cut -f1 -d:)
+do
+    echo "umounting $i"
+    umount -l "$i" 2> /dev/null
+done
+
+#save os-prober
+os-prober | grep :linux | grep -v timeshift > /tmp/os-prober
+
+#save EFI partitions
+rm -f /tmp/efi-partitions
+mkdir -p /boot/efi
+for i in $(LANG=C fdisk -l | grep -e "EFI System" -e "FAT" | cut -f1 -d" ")
+do
+    umount -l /boot/efi
+    mount "$i" /boot/efi
+    if [ -d /boot/efi/EFI ];
+    then
+        echo "$i" >> /tmp/efi-partitions
+    fi
+    umount -l /boot/efi
+
+done
+
+rm -f /tmp/grub-disks
+
+for i in $(LANG=C lsblk | grep disk | grep -v zram | awk '{ print $1 ":" $4}')
+do
+    DISKNAME="$(LANG=C fdisk -l /dev/${i%:*} | grep -e "Disk model:" | sed 's|Disk model: ||g' | sed -e 's/  */_/g;s|_$||g')"
+    DISKLABELTYPE="$(LANG=C fdisk -l /dev/${i%:*} | grep -e "Disklabel type:" | sed 's|Disklabel type: ||g' | sed -e 's/  *//g;s| ||g')"
+
+    echo "${i%:*} ${i#*:} ${DISKNAME} ${DISKLABELTYPE}" >> /tmp/grub-disks
+    
+done

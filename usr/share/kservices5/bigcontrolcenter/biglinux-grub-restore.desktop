@@ -1,0 +1,14 @@
+[Desktop Entry]
+Exec=biglinux-grub-restore
+Icon=applications-system
+Name[pt_BR]=Restaurar configurações do sistema instalado
+Name[pt]=Restaurar configurações do sistema instalado
+Name[es]=Restaurar la configuración del sistema instalada
+Name=Restore installed system settings
+Categories=System;
+StartupNotify=true
+Terminal=false
+Type=Application
+X-KDE-ServiceTypes=KCModule
+Type=Service
+
