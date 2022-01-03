@@ -11,6 +11,12 @@ export TEXTDOMAINDIR="/usr/share/locale"
 export TEXTDOMAIN=biglinux-grub-restore
 
 
+# boot LEGACY without partition LEGACY
+if [ -e /livefs-pkgs.txt ] ;
+then
+    zenity --info --text $"Este utilitário deve ser utilizado somente no modo live!"
+fi
+
 # Enable run pamac from chroot
 xhost +
 
