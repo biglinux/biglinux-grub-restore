@@ -34,7 +34,15 @@ done
 rm -f /tmp/efi-partitions
 mkdir -p /boot/efi
 
-DEVICE_LIVE_BOOT="$(ls /sys/block/$(readlink -f "$(df -h /run/miso/bootmnt/ | awk '{ print $1 }' | grep '/dev/')" | sed 's|/dev/||'g)/slaves | sed 's|[0-9]||g')"
+DEVICE_LIVE_BOOT_TMP="$(readlink -f "$(df -h /run/miso/bootmnt/ | awk '{ print $1 }' | grep '/dev/')" | sed 's|/dev/||'g)"
+if [ "$(echo "$DEVICE_LIVE_BOOT_TMP" | grep dm)" != "" ];
+then
+    DEVICE_LIVE_BOOT="$(ls /sys/block/${DEVICE_LIVE_BOOT_TMP}/slaves | sed 's|[0-9]||g')"
+else
+    DEVICE_LIVE_BOOT="$DEVICE_LIVE_BOOT_TMP"
+fi
+
+
 for i in $(LANG=C fdisk -l | grep -e "EFI System" -e "FAT" | cut -f1 -d" " | grep -v "$DEVICE_LIVE_BOOT")
 do
     umount -l /boot/efi
