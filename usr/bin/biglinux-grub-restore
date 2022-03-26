@@ -172,7 +172,8 @@ Se o problema persistir tente as outras opções.
 2 $"Intermediária, reinstala o pacote do grub na partição, gera novamente a configuração e atualiza o initrd." \
 3 $"Completa, executa as etapas da restauração intermediária, atualiza o sistema e verifica se o kernel LTS está instalado." \
 4 $"Interativa, abre um terminal dentro do sistema selecionado." \
-5 $"Interativa, abre o gerenciador de pacotes pamac-manager dentro do sistema selecionado." > /tmp/grub-restore-apply-mode
+5 $"Interativa, abre a central de controle dentro do sistema selecionado." \
+6 $"Interativa, abre o gerenciador de pacotes pamac-manager dentro do sistema selecionado." > /tmp/grub-restore-apply-mode
         if [ "$?" = "1" ];
         then
             exit
@@ -224,7 +225,8 @@ Se o problema persistir tente as outras opções.
 2 $"Intermediária, reinstala o pacote do grub na partição, gera novamente a configuração e atualiza o initrd." \
 3 $"Completa, executa as etapas da restauração intermediária, atualiza o sistema e verifica se o kernel LTS está instalado." \
 4 $"Interativa, abre um terminal dentro do sistema selecionado." \
-5 $"Interativa, abre o gerenciador de pacotes pamac-manager dentro do sistema selecionado." > /tmp/grub-restore-apply-mode
+5 $"Interativa, abre a central de controle dentro do sistema selecionado." \
+6 $"Interativa, abre o gerenciador de pacotes pamac-manager dentro do sistema selecionado." > /tmp/grub-restore-apply-mode
         if [ "$?" = "1" ];
         then
             exit
