@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="200"
+   height="200"
+   viewBox="0 0 52.916665 52.916666"
+   version="1.1"
+   id="svg1899"
+   xml:space="preserve"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   sodipodi:docname="grub-icon.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+     id="namedview1901"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.758321"
+     inkscape:cx="563.08608"
+     inkscape:cy="-48.792002"
+     inkscape:window-width="2560"
+     inkscape:window-height="1008"
+     inkscape:window-x="1680"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" /><defs
+     id="defs1896"><style
+       id="style125">.cls-1{fill:#2b91c9;}.cls-2{fill:#02679a;}.cls-3{fill:#fff;stroke:#231f20;}.cls-3,.cls-5{stroke-miterlimit:10;}.cls-4{font-size:37.88px;font-family:Lato-Bold, Lato;font-weight:700;}.cls-4,.cls-6{fill:#002b44;}.cls-5{fill:none;stroke:#002b44;stroke-width:6px;}</style><style
+       id="style2805">.cls-1{fill:#069;}.cls-2{fill:#2991c9;}.cls-3{fill:#fff;}.cls-4{fill:#002a44;}.cls-5{fill:#3380cc;}.cls-6{fill:#cc5e55;}</style></defs><g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"><g
+       id="Layer_3_1_"
+       transform="matrix(0.15188801,0,0,0.15188801,137.87467,77.290052)">
+</g><g
+       id="Layer_2_1_"
+       class="st0"
+       transform="matrix(0.15188801,0,0,0.15188801,137.87467,77.290052)">
+	
+		<image
+   style="display:inline;overflow:visible;enable-background:new"
+   width="352"
+   height="331"
+   xlink:href="file:///mnt/sda3/Users/Ruscher/Documents/BigLinux/icons/88479F1F.jpg"
+   transform="matrix(0.9984,0,0,0.9984,80.2871,51.27)"
+   id="image225">
+	</image>
+</g><g
+       id="Layer_3_1_-3"
+       transform="matrix(0.15188801,0,0,0.15188801,141.78216,-19.267891)">
+</g><g
+       id="Layer_2_1_-6"
+       class="st0"
+       transform="matrix(0.15188801,0,0,0.15188801,141.78216,-19.267891)">
+	
+		<image
+   style="display:inline;overflow:visible;enable-background:new"
+   width="352"
+   height="331"
+   xlink:href="file:///mnt/sda3/Users/Ruscher/Documents/BigLinux/icons/88479F1F.jpg"
+   transform="matrix(0.9984,0,0,0.9984,80.2871,51.27)"
+   id="image886">
+	</image>
+</g><g
+       id="g2895"
+       transform="translate(53.931295,-5.5374063)"><g
+         id="Layer_1"
+         data-name="Layer 1"
+         transform="matrix(0.26458333,0,0,0.26458333,-53.845237,13.479093)"><rect
+           class="cls-1"
+           width="200"
+           height="154"
+           rx="12"
+           id="rect2809"
+           x="0"
+           y="0" /><circle
+           class="cls-2"
+           cx="33.560001"
+           cy="15.79"
+           r="5.5300002"
+           id="circle2811" /><circle
+           class="cls-2"
+           cx="51.130001"
+           cy="15.79"
+           r="5.5300002"
+           id="circle2813" /><circle
+           class="cls-2"
+           cx="15.99"
+           cy="15.79"
+           r="5.5300002"
+           id="circle2815" /></g><rect
+         class="cls-3"
+         x="-51.191467"
+         y="20.808052"
+         width="47.860477"
+         height="30.691666"
+         id="rect2818"
+         style="fill:#1a1a1a;stroke:none;stroke-width:0.264583" /></g><path
+       class="cls-6"
+       d="m 42.138164,40.140219 c -0.773988,-0.445308 -1.219296,0.03444 -1.296169,0.111334 -0.07686,0.07686 -1.646063,2.043654 -1.394243,-1.696436 0,0 -0.55399,0.604352 -0.588446,2.038361 -0.03444,1.434014 0.887964,1.521478 0.887964,1.521478 0,0 0.408206,0.103378 1.216656,-0.771342 0.808438,-0.874714 0.864117,-0.837601 0.864117,-0.837601 0,0 0.230596,-0.161697 0.265063,0.243857 0.03444,0.405554 0.113975,1.632802 -1.121229,2.298114 -1.23521,0.665324 -1.834258,-0.962184 -1.834258,-0.962184 0,0 0.15374,2.443903 2.086071,2.120527 1.932326,-0.323383 1.855459,-2.565841 1.855459,-2.565841 a 1.8024461,1.8024461 0 0 0 -0.940985,-1.500267 z"
+       id="path380"
+       style="fill:#ffffff;stroke-width:0.265065" /><ellipse
+       class="cls-6"
+       cx="34.317181"
+       cy="47.186008"
+       rx="0.87471646"
+       ry="0.6573627"
+       transform="rotate(-12.08)"
+       id="ellipse382"
+       style="fill:#ffffff;stroke-width:0.265065" /><path
+       class="cls-6"
+       d="m 44.430985,40.381424 a 0.67061598,0.67061598 0 0 0 -1.325326,0.103372 0.60700023,0.60700023 0 0 0 0.02916,0.153752 c 0,0 0.392299,1.550624 2.488968,1.590389 -0.01062,0.01062 -1.221955,-0.856155 -1.192792,-1.847513 z"
+       id="path384"
+       style="fill:#ffffff;stroke-width:0.265065" /><path
+       class="cls-6"
+       d="m 48.133945,39.485498 c 0,0 -0.4082,-0.103372 -1.216644,0.771348 -0.80845,0.874714 -0.864112,0.837601 -0.864112,0.837601 0,0 -0.230613,0.161697 -0.265068,-0.243846 -0.03444,-0.405559 -0.113981,-1.632812 1.121229,-2.298125 1.23521,-0.665324 1.834258,0.962196 1.834258,0.962196 0,0 -0.15374,-2.443909 -2.086066,-2.120533 -1.932343,0.323377 -1.85547,2.57114 -1.85547,2.57114 a 1.8050969,1.8050969 0 0 0 0.927729,1.500267 c 0.773995,0.445307 1.219314,-0.03709 1.296176,-0.113975 0.07686,-0.07686 1.646062,-2.043654 1.394237,1.693772 0,0 0.553984,-0.6017 0.588451,-2.035708 0.03444,-1.434009 -0.87472,-1.524137 -0.87472,-1.524137 z"
+       id="path386"
+       style="fill:#ffffff;stroke-width:0.265065" /><text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:12.7px;line-height:1.25;font-family:sans-serif;fill:#00ff00;fill-opacity:1;stroke:none;stroke-width:0.21882"
+       x="4.798027"
+       y="27.017021"
+       id="text2761"><tspan
+         sodipodi:role="line"
+         id="tspan2759"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.7px;font-family:'Ubuntu Mono';-inkscape-font-specification:'Ubuntu Mono';fill:#00ff00;stroke-width:0.21882"
+         x="4.798027"
+         y="27.017021">grub&gt;_</tspan></text></g><style
+     type="text/css"
+     id="style222">
+	.st0{display:none;}
+	.st1{fill:#D8D8D8;}
+	.st2{fill:#999999;}
+	.st3{fill:#CC5E55;}
+	.st4{fill:#FFC328;}
+	.st5{fill:#006699;}
+	.st6{fill:#33CC33;}
+	.st7{fill:#002A44;}
+	.st8{fill:#FFFFFF;}
+	.st9{fill:#2991C9;}
+</style><style
+     type="text/css"
+     id="style883">
+	.st0{display:none;}
+	.st1{fill:#2991C9;}
+	.st2{fill:#006699;}
+	.st3{fill:#002A44;}
+	.st4{fill:#FFFFFF;}
+	.st5{fill:#214478;}
+</style></svg>

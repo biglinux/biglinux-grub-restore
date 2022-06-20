@@ -1,6 +1,6 @@
 [Desktop Entry]
 Exec=biglinux-grub-restore
-Icon=applications-system
+Icon=/usr/share/biglinux/grub-restore/grub-icon.svg
 Name[pt_BR]=Restaurar configurações do sistema instalado
 Name[pt]=Restaurar configurações do sistema instalado
 Name[es]=Restaurar la configuración del sistema instalada
