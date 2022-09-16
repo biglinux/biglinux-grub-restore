@@ -7,7 +7,7 @@ arch=('any')
 license=('GPL')
 url="https://github.com/biglinux/biglinux-grub-restore"
 pkgdesc="Restore your installed system"
-depends=('bigbashview' 'zenity' 'konsole' 'mkinitcpio' 'grub' 'os-prober' 'pamac-cli' 'pacman' 'util-linux' 'manjaro-tools-base')
+depends=('zenity' 'konsole' 'mkinitcpio' 'grub' 'os-prober' 'pamac-cli' 'pacman' 'util-linux' 'manjaro-tools-base')
 source=("git+https://github.com/biglinux/biglinux-grub-restore.git")
 md5sums=(SKIP)
 
