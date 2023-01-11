@@ -1,31 +1,35 @@
 #!/bin/bash
-#
+
 # BigLinux Store
 # www.biglinux.com.br
 # By Bruno Gonçalves
 # 03/01/2020
 # License: GPL v2 or greater
 
-#Translation
+# Translation
 export TEXTDOMAINDIR="/usr/share/locale"
 export TEXTDOMAIN=biglinux-grub-restore
 
-
-
-for i in $(blkid | grep -e 'TYPE="btrfs"' -e 'TYPE="ext."' -e 'TYPE="xfs"' -e 'TYPE="vfat"' | cut -f1 -d:) # Search partitions btrfs ext xfs and vfat
+# Search partitions btrfs ext xfs and vfat
+for i in $(blkid | grep -e 'TYPE="btrfs"' -e 'TYPE="ext."' -e 'TYPE="xfs"' -e 'TYPE="vfat"' | cut -f1 -d:)
 do
-    echo "umounting $i" # Print the partition that is being unmounted
-    umount -l "$i" 2> /dev/null # Unmount the partition and redirect any errors to /dev/null
+    # Print the partition that is being unmounted
+    echo "umounting $i"
+    # Unmount the partition and redirect any errors to /dev/null
+    umount -l "$i" 2> /dev/null
 done
 
-os-prober | grep :linux | grep -v timeshift | grep -v subvol=@/ > /tmp/os-prober  # Save the list of Linux partitions to /tmp/os-prober,excluding partitions labeled "timeshift" and "subvol=@/"
+# Save the list of Linux partitions to /tmp/os-prober,excluding partitions labeled "timeshift" and "subvol=@/"
+os-prober | grep :linux | grep -v timeshift | grep -v subvol=@/ > /tmp/os-prober  
 
-#add other partitions
+# add other partitions
 for i in $(blkid | grep -e 'TYPE="btrfs"' | cut -f1 -d:)
 do
+    # Check if the partition is already in the /tmp/os-prober
     if [ "$(grep "$i" /tmp/os-prober)" = "" ];
     then
-        echo "$i:Not detected name:::btrfs::" >> /tmp/os-prober # Add any "btrfs" partitions that were not detected by os-prober to /tmp/os-prober
+        # Add any "btrfs" partitions that were not detected by os-prober to /tmp/os-prober
+        echo "$i:Not detected name:::btrfs::" >> /tmp/os-prober 
     fi
 done
 
@@ -43,26 +47,28 @@ else
     DEVICE_LIVE_BOOT="$DEVICE_LIVE_BOOT_TMP"
 fi
 
-
+# Mount and check if there is a directory /boot/efi/EFI
 for i in $(LANG=en fdisk -l | grep -e "EFI System" -e "FAT" | cut -f1 -d" " | grep -v "$DEVICE_LIVE_BOOT")
 do
     umount -l /boot/efi
     mount "$i" /boot/efi
     if [ -d /boot/efi/EFI ];
     then
+        # Save the partition to /tmp/efi-partitions
         echo "$i" >> /tmp/efi-partitions
     fi
     umount -l /boot/efi
-
 done
 
 rm -f /tmp/grub-disks
 
+# Get disk information like model and label type
 for i in $(LANG=C lsblk | grep disk | grep -v zram | awk '{ print $1 ":" $4}' | grep -v "$DEVICE_LIVE_BOOT")
 do
     DISKNAME="$(LANG=en fdisk -l /dev/${i%:*} | grep -e "Disk model:" | sed 's|Disk model: ||g' | sed -e 's/  */_/g;s|_$||g')"
     DISKLABELTYPE="$(LANG=en fdisk -l /dev/${i%:*} | grep -e "Disklabel type:" | sed 's|Disklabel type: ||g' | sed -e 's/  *//g;s| ||g')"
 
+    # Save the disk information to /tmp/grub-disks
     echo "${i%:*} ${i#*:} ${DISKNAME} ${DISKLABELTYPE}" >> /tmp/grub-disks
     
 done
