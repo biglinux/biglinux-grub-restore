@@ -11,29 +11,30 @@ export TEXTDOMAINDIR="/usr/share/locale"
 export TEXTDOMAIN=biglinux-grub-restore
 
 
-#unmount partitions
-for i in $(blkid | grep -e 'TYPE="btrfs"' -e 'TYPE="ext."' -e 'TYPE="xfs"' -e 'TYPE="vfat"' | cut -f1 -d:)
+
+for i in $(blkid | grep -e 'TYPE="btrfs"' -e 'TYPE="ext."' -e 'TYPE="xfs"' -e 'TYPE="vfat"' | cut -f1 -d:) # Search partitions btrfs ext xfs and vfat
 do
-    echo "umounting $i"
-    umount -l "$i" 2> /dev/null
+    echo "umounting $i" # Print the partition that is being unmounted
+    umount -l "$i" 2> /dev/null # Unmount the partition and redirect any errors to /dev/null
 done
 
-#save os-prober
-os-prober | grep :linux | grep -v timeshift | grep -v subvol=@/ > /tmp/os-prober
+os-prober | grep :linux | grep -v timeshift | grep -v subvol=@/ > /tmp/os-prober  # Save the list of Linux partitions to /tmp/os-prober,excluding partitions labeled "timeshift" and "subvol=@/"
 
 #add other partitions
 for i in $(blkid | grep -e 'TYPE="btrfs"' | cut -f1 -d:)
 do
     if [ "$(grep "$i" /tmp/os-prober)" = "" ];
     then
-        echo "$i:Not detected name:::btrfs::" >> /tmp/os-prober
+        echo "$i:Not detected name:::btrfs::" >> /tmp/os-prober # Add any "btrfs" partitions that were not detected by os-prober to /tmp/os-prober
     fi
 done
 
-#save EFI partitions
+# EFI
+# Remove file if exists and create the directory if it doesn't already exist
 rm -f /tmp/efi-partitions
 mkdir -p /boot/efi
 
+# Save the device name of the live boot
 DEVICE_LIVE_BOOT_TMP="$(readlink -f "$(df -h /run/miso/bootmnt/ | awk '{ print $1 }' | grep '/dev/')" | sed 's|/dev/||'g)"
 if [ "$(echo "$DEVICE_LIVE_BOOT_TMP" | grep dm)" != "" ];
 then
