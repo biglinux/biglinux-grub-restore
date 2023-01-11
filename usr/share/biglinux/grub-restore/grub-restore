@@ -19,7 +19,7 @@ do
 done
 
 #save os-prober
-os-prober | grep :linux | grep -v timeshift > /tmp/os-prober
+os-prober | grep :linux | grep -v timeshift | grep -v subvol=@/ > /tmp/os-prober
 
 #add other partitions
 for i in $(blkid | grep -e 'TYPE="btrfs"' | cut -f1 -d:)
@@ -43,7 +43,7 @@ else
 fi
 
 
-for i in $(LANG=C fdisk -l | grep -e "EFI System" -e "FAT" | cut -f1 -d" " | grep -v "$DEVICE_LIVE_BOOT")
+for i in $(LANG=en fdisk -l | grep -e "EFI System" -e "FAT" | cut -f1 -d" " | grep -v "$DEVICE_LIVE_BOOT")
 do
     umount -l /boot/efi
     mount "$i" /boot/efi
@@ -57,10 +57,10 @@ done
 
 rm -f /tmp/grub-disks
 
-for i in $(LANG=C lsblk | grep disk | grep -v zram | awk '{ print $1 ":" $4}')
+for i in $(LANG=C lsblk | grep disk | grep -v zram | awk '{ print $1 ":" $4}' | grep -v "$DEVICE_LIVE_BOOT")
 do
-    DISKNAME="$(LANG=C fdisk -l /dev/${i%:*} | grep -e "Disk model:" | sed 's|Disk model: ||g' | sed -e 's/  */_/g;s|_$||g')"
-    DISKLABELTYPE="$(LANG=C fdisk -l /dev/${i%:*} | grep -e "Disklabel type:" | sed 's|Disklabel type: ||g' | sed -e 's/  *//g;s| ||g')"
+    DISKNAME="$(LANG=en fdisk -l /dev/${i%:*} | grep -e "Disk model:" | sed 's|Disk model: ||g' | sed -e 's/  */_/g;s|_$||g')"
+    DISKLABELTYPE="$(LANG=en fdisk -l /dev/${i%:*} | grep -e "Disklabel type:" | sed 's|Disklabel type: ||g' | sed -e 's/  *//g;s| ||g')"
 
     echo "${i%:*} ${i#*:} ${DISKNAME} ${DISKLABELTYPE}" >> /tmp/grub-disks
     
