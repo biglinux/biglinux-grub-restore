@@ -48,7 +48,7 @@ else
 fi
 
 # Mount and check if there is a directory /boot/efi/EFI
-for i in $(LANG=en fdisk -l | grep -e "EFI System" -e "FAT" | cut -f1 -d" " | grep -v "$DEVICE_LIVE_BOOT")
+for i in $(LANG=C LANGUAGE=C fdisk -l | grep -e "EFI System" -e "FAT" | cut -f1 -d" " | grep -v "$DEVICE_LIVE_BOOT")
 do
     umount -l /boot/efi
     mount "$i" /boot/efi
@@ -65,8 +65,8 @@ rm -f /tmp/grub-disks
 # Get disk information like model and label type
 for i in $(LANG=C lsblk | grep disk | grep -v zram | awk '{ print $1 ":" $4}' | grep -v "$DEVICE_LIVE_BOOT")
 do
-    DISKNAME="$(LANG=en fdisk -l /dev/${i%:*} | grep -e "Disk model:" | sed 's|Disk model: ||g' | sed -e 's/  */_/g;s|_$||g')"
-    DISKLABELTYPE="$(LANG=en fdisk -l /dev/${i%:*} | grep -e "Disklabel type:" | sed 's|Disklabel type: ||g' | sed -e 's/  *//g;s| ||g')"
+    DISKNAME="$(LANG=C LANGUAGE=C fdisk -l /dev/${i%:*} | grep -e "Disk model:" | sed 's|Disk model: ||g' | sed -e 's/  */_/g;s|_$||g')"
+    DISKLABELTYPE="$(LANG=C LANGUAGE=C fdisk -l /dev/${i%:*} | grep -e "Disklabel type:" | sed 's|Disklabel type: ||g' | sed -e 's/  *//g;s| ||g')"
 
     # Save the disk information to /tmp/grub-disks
     echo "${i%:*} ${i#*:} ${DISKNAME} ${DISKLABELTYPE}" >> /tmp/grub-disks
