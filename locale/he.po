@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the biglinux-grub-restore package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: biglinux-grub-restore\n"
@@ -15,191 +14,696 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-msgid "This utility should only be used in live mode!"
-msgstr "כלי זה צריך לשמש רק במצב חי!"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 17
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 102
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 146
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 170
+msgid "Unknown"
+msgstr "לא ידוע"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 85
+msgid "Unknown CPU"
+msgstr "מעבד לא ידוע"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 98
+msgid "Unknown Memory"
+msgstr "זיכרון לא ידוע"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 120
+msgid "Live Media"
+msgstr "מדיה חיה"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 172
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 123
+msgid "Unknown System"
+msgstr "מערכת לא ידועה"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 207
+msgid "Simple restore - Just writes the Grub again at the beginning of the disk."
+msgstr "שחזור פשוט - פשוט כותב את ה-Grub שוב בתחילת הדיסק."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 208
+msgid "Intermediate restore - Reinstalls the grub package, regenerates configuration, and updates initrd."
+msgstr "שחזור ביניים - מתקין מחדש את חבילת grub, מייצר מחדש את הקונפיגורציה ומעדכן את initrd."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 209
+msgid "Complete restore - Performs intermediate steps, updates system, and checks LTS kernel."
+msgstr "שחזור מלא - מבצע צעדים ביניים, מעדכן את המערכת, ובודק את ליבת LTS."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 210
+msgid "Interactive terminal - Opens a terminal inside the selected system."
+msgstr "טרמינל אינטראקטיבי - פותח טרמינל בתוך המערכת הנבחרת."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 211
+msgid "Interactive control center - Opens the control center inside the selected system."
+msgstr "מרכז שליטה אינטראקטיבי - פותח את מרכז השליטה בתוך המערכת הנבחרת."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 212
+msgid "Interactive package manager - Opens pamac-manager inside the selected system."
+msgstr "מנהל חבילות אינטראקטיבי - פותח את pamac-manager בתוך המערכת הנבחרת."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 214
+msgid "Unknown restore mode"
+msgstr "מצב שחזור לא ידוע"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 239
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 402
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 292
+msgid "Internet connection available"
+msgstr "חיבור אינטרנט זמין"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 245
+msgid "No internet connection detected. Options 2 and 3 require internet to work."
+msgstr "לא זוהתה חיבור אינטרנט. אפשרויות 2 ו-3 דורשות חיבור אינטרנט כדי לפעול."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 266
+msgid "Permission denied. Please check if you have administrator privileges."
+msgstr "גישה נדחתה. אנא בדוק אם יש לך הרשאות מנהל."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 267
+msgid "Required file not found. The system may be corrupted."
+msgstr "הקובץ הנדרש לא נמצא. ייתכן שהמערכת פגומה."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 268
+msgid "Device is busy. Please unmount any mounted partitions and try again."
+msgstr "המכשיר עסוק. אנא נתק כל מחיצה מחוברת ונסה שוב."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 269
+msgid "No space left on device. Please free up some space and try again."
+msgstr "אין מקום פנוי במכשיר. אנא פנה מקום והנסה שוב."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 270
+msgid "Network connection failed. Please check your internet connection."
+msgstr "חיבור הרשת נכשל. אנא בדוק את חיבור האינטרנט שלך."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 271
+msgid "Operation timed out. Please try again."
+msgstr "הפעולה פגה. אנא נסה שוב."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/backend/system_interface.py, line: 129
+msgid "EFI Boot without EFI Partition"
+msgstr "הפעלה של EFI ללא מחיצת EFI"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/backend/system_interface.py, line: 131
 msgid ""
-"<span font='12'>This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed "
-"on the HD or SSD.</span>\n"
+"The boot in live mode is using EFI mode, but no EFI partition was found on this computer. Most "
+"likely the Grub restore will not work.\n"
 "\n"
-"<span font='12' foreground='red'>If the installed system is booting correctly, there are no boot "
-"problems, so it's better not to proceed with this tool.</span>\n"
-"<span font='10' foreground='gray'>It may also work with other Linux distributions.</span>\n"
-"\n"
-"Do you want to proceed?"
+"Try restarting and booting in Legacy or BIOS mode through the computer's BIOS."
 msgstr ""
-"<span font='12'>כלי זה צריך לשמש במצב חי כדי לשחזר את אתחול של BigLinux המותקן על ה-HD או "
-"ה-SSD.</span>\n"
+"ההפעלה במצב חי משתמשת במצב EFI, אך לא נמצאה מחיצת EFI במחשב הזה. סביר להניח ששחזור ה-Grub לא יעבוד.\n"
 "\n"
-"<span font='12' foreground='red'>אם המערכת המותקנת אתחול שלה תקין, אין בעיות אתחול, לכן עדיף לא "
-"להמשיך עם כלי זה.</span>\n"
-"<span font='10' foreground='gray'>זה עשוי גם לעבוד עם הפצות לינוקס אחרות.</span>\n"
-"\n"
-"<span font='12'>האם אתה רוצה להמשיך?</span>"
-msgid "Restore Boot, Grub, and initrd"
-msgstr "שחזר את ה-Boot, Grub, ואת ה-initrd"
-msgid "Please wait..."
-msgstr "אנא המתן..."
-msgid "No Linux installation found on this computer, process canceled."
-msgstr "לא נמצאה התקנת לינוקס במחשב הזה, התהליך בוטל."
+"נסה לאתחל ולהפעיל במצב Legacy או BIOS דרך ה-BIOS של המחשב."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/backend/system_interface.py, line: 139
+msgid "Legacy Boot with EFI Partition"
+msgstr "אתחול ישן עם מחיצת EFI"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/backend/system_interface.py, line: 141
 msgid ""
-"The boot in live mode is using EFI mode, but <span foreground='red'>no EFI partition</span> was "
-"found on this computer, \n"
-"most likely the Grub restore will not work. \n"
+"The boot in live mode is using Legacy mode, also called BIOS, but at least one EFI partition was "
+"found on this computer. Most likely the Grub restore will not work.\n"
 "\n"
-"Try restarting and booting in Legacy or BIOS mode through the computer's BIOS.\n"
-"\n"
-"Do you want to try even with a low probability of success?"
+"Try restarting and booting in EFI mode through the computer's BIOS."
 msgstr ""
-"ההפעלה במצב חי משתמשת במצב EFI, אך <span foreground='red'>לא נמצאה מחיצת EFI</span> במחשב הזה, \n"
-"סביר להניח ששחזור גרוב לא יעבוד.\n"
+"ההפעלה במצב חי משתמשת במצב Legacy, הנקרא גם BIOS, אך לפחות מחיצת EFI אחת נמצאה במחשב הזה. סביר "
+"להניח ששחזור ה-Grub לא יעבוד.\n"
 "\n"
-"נסה לאתחל ולהפעיל במצב Legacy או BIOS דרך ה-BIOS של המחשב.\n"
-"\n"
-"האם אתה רוצה לנסות גם עם סיכוי נמוך להצלחה?"
+"נסה לאתחל ולהפעיל במצב EFI דרך ה-BIOS של המחשב."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 59
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 18
+msgid "BigLinux GRUB Restore"
+msgstr "שחזור GRUB של BigLinux"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 67
+msgid "Restore GRUB bootloader and repair boot issues"
+msgstr "שחזר את מנהל האתחול GRUB ותיקן בעיות אתחול"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 53
+msgid "About"
+msgstr "אודות"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 54
+msgid "Quit"
+msgstr "צא"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 74
+msgid "GRUB Restore Tool"
+msgstr "כלי שחזור GRUB"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 76
 msgid ""
-"The boot in live mode is using Legacy mode, also called BIOS, \n"
-"<span foreground='red'>but at least one EFI partition was found</span> on this computer, \n"
-"most likely the Grub restore will not work. \n"
+"This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed on the HD or "
+"SSD.\n"
 "\n"
-"Try restarting and booting in EFI mode through the computer's BIOS.\n"
-"\n"
-"Do you want to try even with a low probability of success?"
+"If the installed system is booting correctly, there are no boot problems, so it's better not to "
+"proceed with this tool."
 msgstr ""
-"ההפעלה במצב חי משתמשת במצב Legacy, הנקרא גם BIOS, \n"
-"<span foreground='red'>אך לפחות מחיצת EFI אחת נמצאה</span> במחשב הזה, \n"
-"סביר להניח ששחזור Grub לא יעבוד. \n"
+"כלי זה צריך לשמש במצב חי כדי לשחזר את האתחול של BigLinux המותקן על ה-HD או ה-SSD.\n"
 "\n"
-"נסה לאתחל ולהפעיל במצב EFI דרך ה-BIOS של המחשב.\n"
-"\n"
-"האם אתה רוצה לנסות אפילו עם סיכוי נמוך להצלחה?"
+"אם המערכת המותקנת אתחול כראוי, אין בעיות אתחול, ולכן עדיף לא להמשיך עם כלי זה."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 84
+msgid "Start Detection"
+msgstr "התחל זיהוי"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 109
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 139
+msgid "Detecting Systems"
+msgstr "זיהוי מערכות"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 110
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 140
+msgid "Please wait while we scan your system..."
+msgstr "אנא המתן enquanto אנו סורקים את המערכת שלך..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 208
+msgid "Detection Failed"
+msgstr "זיהוי נכשל"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 212
+msgid "Try Again"
+msgstr "נסה שוב"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 226
+msgid "No Systems Found"
+msgstr "לא נמצאו מערכות"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 227
+msgid "No Linux installations found on this computer."
+msgstr "לא נמצאו התקנות לינוקס במחשב הזה."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 230
+msgid "Back"
+msgstr "חזור"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 256
+msgid "Detected Linux Systems"
+msgstr "מערכות לינוקס זוהו"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 269
+msgid "Boot Configuration"
+msgstr "תצורת אתחול"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 273
+msgid "Current Boot Mode"
+msgstr "מצב אתחול נוכחי"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 280
+msgid "EFI Partitions Found"
+msgstr "נמצאו מחיצות EFI"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 289
+msgid "Continue to Restore Options"
+msgstr "המשך לשחזר אפשרויות"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 380
 msgid ""
-"<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
-"\n"
-"More than one EFI partition was found, select which one to use:"
+"The restore can be done in 3 ways (Simple, Intermediate, or Complete). If in doubt, try the first "
+"option, restart the computer and see if it is resolved."
 msgstr ""
-"<span font='16' foreground='LightSkyBlue'>בחר אפשרות:</span>\n"
-"\n"
-"נמצאה יותר ממחיצת EFI אחת, בחר איזו להשתמש:"
-msgid "No EFI partition selected, process canceled."
-msgstr "לא נבחרה מחיצת EFI, התהליך בוטל."
+"השחזור יכול להתבצע ב-3 דרכים (פשוט, בינוני או מלא). אם יש ספק, נסה את האפשרות הראשונה, הפעל מחדש את "
+"המחשב וראה אם הבעיה נפתרה."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 406
+msgid "No internet - Options 2 and 3 require internet"
+msgstr "אין אינטרנט - אפשרויות 2 ו-3 דורשות אינטרנט"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 415
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 77
+msgid "Restore Methods"
+msgstr "שיטות שחזור"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 419
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 118
+msgid "Simple Restore"
+msgstr "שחזור פשוט"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 420
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 119
+msgid "Just writes the Grub again at the beginning of the disk."
+msgstr "פשוט כותב את ה-Grub שוב בתחילת הדיסק."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 424
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 438
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 453
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 123
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 140
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 159
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 353
+msgid "Execute"
+msgstr "בצע"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 433
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 132
+msgid "Intermediate Restore"
+msgstr "שחזור ביניים"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 434
+msgid "Reinstalls the grub package, regenerates configuration, and updates initrd."
+msgstr "מחדש את חבילת grub, מייצר מחדש את הקונפיגורציה ומעדכן את initrd."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 448
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 151
+msgid "Complete Restore"
+msgstr "שחזור מלא"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 449
+msgid "Performs intermediate steps, updates system, and checks LTS kernel."
+msgstr "מבצע צעדים ביניים, מעדכן את המערכת, ובודק את ליבת ה-LTS."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 465
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 83
+msgid "Interactive Options"
+msgstr "אפשרויות אינטראקטיביות"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 469
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 173
+msgid "Interactive Terminal"
+msgstr "טרמינל אינטראקטיבי"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 470
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 174
+msgid "Opens a terminal inside the selected system."
+msgstr "פותח מסוף בתוך המערכת הנבחרת."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 474
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 488
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 502
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 178
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 192
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 206
+msgid "Open"
+msgstr "פתח"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 483
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 187
+msgid "Control Center"
+msgstr "מרכז בקרה"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 484
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 188
+msgid "Opens the control center inside the selected system."
+msgstr "פותח את מרכז הבקרה בתוך המערכת הנבחרת."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 497
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 201
+msgid "Package Manager"
+msgstr "מנהל חבילות"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 498
+msgid "Opens pamac-manager inside the selected system."
+msgstr "פותח את pamac-manager בתוך המערכת הנבחרת."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 595
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 338
+msgid "Simple restore will write GRUB to the beginning of the disk."
+msgstr "שחזור פשוט יכתוב את GRUB להתחלת הדיסק."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 596
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 339
+msgid "Intermediate restore will reinstall GRUB package and update configuration."
+msgstr "שחזור ביניים יתקין מחדש את חבילת GRUB ויעדכן את התצורה."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 597
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 340
+msgid "Complete restore will perform full system update and kernel check."
+msgstr "שחזור מלא יבצע עדכון מערכת מלא ובדיקת קרנל."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 598
+msgid "Interactive terminal will open inside the selected system."
+msgstr "הטרמינל האינטראקטיבי ייפתח בתוך המערכת הנבחרת."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 599
+msgid "Control center will open inside the selected system."
+msgstr "מרכז הבקרה ייפתח בתוך המערכת שנבחרה."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 600
+msgid "Package manager will open inside the selected system."
+msgstr "מנהל החבילות ייפתח בתוך המערכת שנבחרה."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 611
+msgid "Restore in Progress"
+msgstr "שחזור בתהליך"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 612
+msgid "Please wait while the restore operation completes..."
+msgstr "אנא המתן בזמן שהפעולה לשחזור מסתיימת..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 655
+msgid "Restore Completed"
+msgstr "שחזור הושלם"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 656
+msgid "The restore operation completed successfully!"
+msgstr "פעולת השחזור הושלמה בהצלחה!"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 659
+msgid "Restore Failed"
+msgstr "שחזור נכשל"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 660
+msgid "The restore operation failed. Please try again."
+msgstr "פעולת השחזור נכשלה. אנא נסה שוב."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 664
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 459
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 462
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 474
+msgid "Close"
+msgstr "סגור"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 688
+msgid "Restore Error"
+msgstr "שגיאת שחזור"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 692
+msgid "Back to Options"
+msgstr "חזרה לאופציות"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 59
+msgid "Linux System"
+msgstr "מערכת לינוקס"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 64
+msgid "No system detected"
+msgstr "לא זוהה מערכת"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 94
+msgid "Partition"
+msgstr "מחיצה"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 95
+msgid "Not selected"
+msgstr "לא נבחר"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 101
+msgid "Filesystem"
+msgstr "מערכת קבצים"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 108
+msgid "UUID"
+msgstr "UUID"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 109
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 155
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 171
+msgid "Not available"
+msgstr "לא זמין"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 131
+msgid "Linux Installation"
+msgstr "התקנת לינוקס"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 139
+msgid "Not specified"
+msgstr "לא צוין"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 163
+msgid "No Linux installation detected"
+msgstr "לא זוהתה התקנת לינוקס"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 169
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 291
+msgid "Not detected"
+msgstr "לא זוהה"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 235
+msgid "Current system boot information"
+msgstr "מידע על אתחול המערכת הנוכחי"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 258
+msgid "Boot Mode"
+msgstr "מצב אתחול"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 259
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 273
+msgid "Detecting..."
+msgstr "מגלה..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 265
+msgid "Live Session"
+msgstr "שיחת חי"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 266
+msgid "Checking..."
+msgstr "בודק..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 272
+msgid "Available Memory"
+msgstr "זיכרון זמין"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 283
+msgid "EFI/UEFI"
+msgstr "EFI/UEFI"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 285
+msgid "Legacy/BIOS"
+msgstr "לגסי/ביוס"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 289
+msgid "Active (Live Mode)"
+msgstr "פעיל (מצב חי)"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 330
+msgid "Checking network connection..."
+msgstr "בודק חיבור לרשת..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 51
 msgid ""
-"<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
-"\n"
-"More than one Linux installation was found on this computer, select which one to restore the boot:"
+"Select the disk where GRUB will be installed. The bootloader will be written to the beginning of "
+"the selected disk."
+msgstr "בחר את הדיסק שבו יותקן GRUB. מנהל האתחול ייכתב לתחילת הדיסק שנבחר."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 61
+msgid "Available Disks"
+msgstr "דיסקים זמינים"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 67
+msgid "No Disks Found"
+msgstr "לא נמצאו דיסקים"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 69
+msgid ""
+"No suitable disks were found for GRUB installation. Please check if your disks are properly "
+"connected."
+msgstr "לא נמצאו דיסקים מתאימים להתקנת GRUB. אנא בדוק אם הדיסקים שלך מחוברים כראוי."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 121
+msgid "Unknown model"
+msgstr "מודל לא ידוע"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 144
+msgid "GPT partition table detected. Make sure this is correct for Legacy boot mode."
+msgstr "גילוי טבלת מחיצות GPT. ודא שזה נכון עבור מצב אתחול Legacy."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 227
+msgid ""
+"Select the EFI System Partition where GRUB will be installed. This partition contains the boot "
+"files for UEFI systems."
+msgstr "בחר את מחיצת מערכת EFI שבה יותקן GRUB. מחיצה זו מכילה את קבצי האתחול עבור מערכות UEFI."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 237
+msgid "Available EFI Partitions"
+msgstr "מחיצות EFI זמינות"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 243
+msgid "No EFI Partitions Found"
+msgstr "לא נמצאו מחיצות EFI"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 245
+msgid "No EFI System Partitions were found. Your system may not be configured for UEFI boot."
+msgstr "לא נמצאו מחיצות מערכת EFI. ייתכן שהמערכת שלך לא מוגדרת לאתחול UEFI."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
+msgid "EFI System Partition"
+msgstr "מחיצת מערכת EFI"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 62
+msgid ""
+"The restore can be done in 3 ways (Simple, Intermediate, or Complete). If in doubt, try the first "
+"option, restart the computer and see if it is resolved. If the problem persists, try the other "
+"options."
 msgstr ""
-"<span font='16' foreground='LightSkyBlue'>בחר אפשרות:</span>\n"
-"\n"
-"נמצאה יותר מתקנה אחת של לינוקס במחשב הזה, בחר איזו אחת לשחזר את האתחול:"
-msgid "No partition selected, process canceled."
-msgstr "לא נבחרה מחיצה, התהליך בוטל."
+"השחזור יכול להתבצע ב-3 דרכים (פשוט, בינוני או מלא). אם יש ספק, נסה את האפשרות הראשונה, הפעל מחדש את "
+"המחשב וראה אם הבעיה נפתרה. אם הבעיה נמשכת, נסה את האפשרויות האחרות."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 134
+msgid "Reinstalls the grub package on the partition, regenerates the configuration, and updates the initrd."
+msgstr "מחדש את חבילת grub על המחיצה, מייצר מחדש את הקונפיגורציה, ומעדכן את ה-initrd."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 153
 msgid ""
-"<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
-"    \n"
-"More than one storage device was found, select which one to write the boot to:"
+"Performs the intermediate restore steps, updates the system, and checks if the LTS kernel is "
+"installed."
+msgstr "מבצע את שלבי השחזור הביניים, מעדכן את המערכת, ובודק אם הליבה LTS מותקנת."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 202
+msgid "Opens the pamac-manager package manager inside the selected system."
+msgstr "פותח את מנהל החבילות pamac-manager בתוך המערכת הנבחרת."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 240
+msgid "Preparing..."
+msgstr "מכין..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 263
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 352
+msgid "Cancel"
+msgstr "ביטול"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 297
+msgid "No internet connection - Options 2 and 3 require internet"
+msgstr "אין חיבור לאינטרנט - אפשרויות 2 ו-3 דורשות חיבור לאינטרנט"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 311
+msgid "System interface not available"
+msgstr "ממשק המערכת אינו זמין"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 341
+msgid "Interactive terminal will open a command line inside the selected system."
+msgstr "הטרמינל האינטראקטיבי יפתח שורת פקודה בתוך המערכת הנבחרת."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 342
+msgid "Control center will open system settings inside the selected system."
+msgstr "מרכז הבקרה יפתח את הגדרות המערכת בתוך המערכת שנבחרה."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 343
+msgid "Package manager will open pamac-manager inside the selected system."
+msgstr "מנהל החבילות יפתח את pamac-manager בתוך המערכת שנבחרה."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 348
+msgid "Confirm Restore Operation"
+msgstr "אשר פעולת שחזור"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 349
+msgid "Execute the selected restore operation?"
+msgstr "האם לבצע את פעולת השחזור שנבחרה?"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 374
+msgid "Internet Connection Required"
+msgstr "דרוש חיבור לאינטרנט"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 375
+msgid ""
+"This restore option requires an internet connection to download packages and updates. Please check "
+"your network connection and try again."
 msgstr ""
-"<span font='16' foreground='LightSkyBlue'>בחר אפשרות:</span>\n"
-"\n"
-"נמצא יותר ממכשיר אחסון אחד, בחר לאיזה מהם לכתוב את האתחול:"
-msgid "Disk"
-msgstr "דיסק"
-msgid "Size"
-msgstr "גודל"
-msgid "Name"
-msgstr "שם"
-msgid "Partition Table"
-msgstr "טבלת מחיצות"
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>    \n"
-"\n"
-"<span font='11' foreground='gray'>Boot mode:</span>  LEGACY/BIOS\n"
-"<span font='11' foreground='gray'>Selected disk:</span> $DISK_SELECTED\n"
-"    \n"
-"<span font='11' foreground='gray'>Disk partition table:</span> $DISK_TABLE\n"
-"    \n"
-"<span font='11' foreground='gray'>Disk size:</span> $DISK_SIZE\n"
-"   \n"
-"<span font='11' foreground='gray'>Selected partition:</span> $SELECTED_PARTITION\n"
-"<span font='11' foreground='gray'>Selected system:</span> $SELECTED_OS\n"
-"<span font='11' foreground='gray'>Partition format:</span> $PARTITION_FORMAT\n"
-"<span font='11' foreground='gray'>Partition UUID:</span> $UUID_PARTITION\n"
-"\n"
-"Do you want to proceed?"
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>אשר את הנתונים:</span>    \n"
-"\n"
-"<span font='11' foreground='gray'>מצב אתחול:</span>  LEGACY/BIOS\n"
-"<span font='11' foreground='gray'>דיסק נבחר:</span> $DISK_SELECTED\n"
-"    \n"
-"<span font='11' foreground='gray'>טבלת מחיצות דיסק:</span> $DISK_TABLE\n"
-"    \n"
-"<span font='11' foreground='gray'>גודל דיסק:</span> $DISK_SIZE\n"
-"   \n"
-"<span font='11' foreground='gray'>מחיצה נבחרת:</span> $SELECTED_PARTITION\n"
-"<span font='11' foreground='gray'>מערכת נבחרת:</span> $SELECTED_OS\n"
-"<span font='11' foreground='gray'>פורמט מחיצה:</span> $PARTITION_FORMAT\n"
-"<span font='11' foreground='gray'>UUID של מחיצה:</span> $UUID_PARTITION\n"
-"\n"
-"האם אתה רוצה להמשיך?"
-msgid "Your computer is not connected to the internet, options 2 and 3 require internet to work."
-msgstr "המחשב שלך אינו מחובר לאינטרנט, אפשרויות 2 ו-3 דורשות חיבור לאינטרנט כדי לפעול."
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Select the desired option:</span>\n"
-"        \n"
-"The restore can be done in 3 ways (<span foreground='gray'>Simple, Intermediate, or "
-"Complete</span>), if in doubt, try the first option, restart the computer and see if it is "
-"resolved.\n"
-"\n"
-"If the problem persists, try the other options."
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>בחר את האפשרות הרצויה:</span>\n"
-"        \n"
-"השחזור יכול להתבצע ב-3 דרכים (<span foreground='gray'>פשוט, בינוני או מלא</span>), אם יש ספק, נסה "
-"את האפשרות הראשונה, הפעל מחדש את המחשב וראה אם הבעיה נפתרה.\n"
-"\n"
-"אם הבעיה נמשכת, נסה את האפשרויות האחרות."
-msgid "Option"
-msgstr "אפשרות"
-msgid "Description"
-msgstr "תיאור"
-msgid "Simple, just writes the Grub again at the beginning of the disk."
-msgstr "פשוט, פשוט כותב את ה-Grub שוב בתחילת הדיסק."
-msgid ""
-"Intermediate, reinstalls the grub package on the partition, regenerates the configuration, and "
-"updates the initrd."
-msgstr "בינוני, מתקין מחדש את חבילת grub על המחיצה, מייצר מחדש את הקונפיגורציה, ומעדכן את initrd."
-msgid ""
-"Complete, performs the intermediate restore steps, updates the system, and checks if the LTS kernel "
-"is installed."
-msgstr "מושלם, מבצע את שלבי השחזור הביניים, מעדכן את המערכת, ובודק אם הליבה LTS מותקנת."
-msgid "Interactive, opens a terminal inside the selected system."
-msgstr "אינטראקטיבי, פותח מסוף בתוך המערכת הנבחרת."
-msgid "Interactive, opens the control center inside the selected system."
-msgstr "אינטראקטיבי, פותח את מרכז הבקרה בתוך המערכת הנבחרת."
-msgid "Interactive, opens the pamac-manager package manager inside the selected system."
-msgstr "אינטראקטיבי, פותח את מנהל החבילות pamac-manager בתוך המערכת הנבחרת."
-msgid "Completed!"
-msgstr "הושלם!"
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>\n"
-"    \n"
-"<span font='11' foreground='gray'>Boot mode:</span> EFI\n"
-"<span font='11' foreground='gray'>EFI partition:</span> $EFI_PARTITION\n"
-"    \n"
-"<span font='11' foreground='gray'>Selected partition:</span> $SELECTED_PARTITION\n"
-"<span font='11' foreground='gray'>Selected system:</span> $SELECTED_OS\n"
-"<span font='11' foreground='gray'>Partition format:</span> $PARTITION_FORMAT\n"
-"<span font='11' foreground='gray'>Partition UUID:</span> $UUID_PARTITION\n"
-"\n"
-"Do you want to proceed?"
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>אשר את הנתונים:</span>\n"
-"    \n"
-"<span font='11' foreground='gray'>מצב אתחול:</span> EFI\n"
-"<span font='11' foreground='gray'>מחיצת EFI:</span> $EFI_PARTITION\n"
-"    \n"
-"<span font='11' foreground='gray'>מחיצה שנבחרה:</span> $SELECTED_PARTITION\n"
-"<span font='11' foreground='gray'>מערכת שנבחרה:</span> $SELECTED_OS\n"
-"<span font='11' foreground='gray'>פורמט מחיצה:</span> $PARTITION_FORMAT\n"
-"<span font='11' foreground='gray'>UUID של מחיצה:</span> $UUID_PARTITION\n"
-"\n"
-"האם אתה רוצה להמשיך?"
+"אפשרות השחזור הזו דורשת חיבור לאינטרנט כדי להוריד חבילות ועדכונים. אנא בדוק את חיבור הרשת שלך ונסה "
+"שוב."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 379
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 533
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 379
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 533
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 386
+msgid "Simple Restore in Progress"
+msgstr "שחזור פשוט בתהליך"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 387
+msgid "Intermediate Restore in Progress"
+msgstr "שחזור ביניים בתהליך"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 388
+msgid "Complete Restore in Progress"
+msgstr "שחזור מלא בתהליך"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 389
+msgid "Opening Interactive Terminal"
+msgstr "פתיחת מסוף אינטראקטיבי"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 390
+msgid "Opening Control Center"
+msgstr "פתיחת מרכז הבקרה"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 391
+msgid "Opening Package Manager"
+msgstr "פתיחת מנהל החבילות"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 395
+msgid "Initializing..."
+msgstr "מאתחל..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 416
+msgid "Starting restore operation..."
+msgstr "מתחיל פעולת שחזור..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 423
+msgid "Opening interactive session..."
+msgstr "פותח מפגש אינטראקטיבי..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 458
+msgid "Restore completed successfully!"
+msgstr "שחזור הושלם בהצלחה!"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 461
+msgid "Restore failed. Please check the output above."
+msgstr "שחזור נכשל. אנא בדוק את הפלט למעלה."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 485
+msgid "Cancel Restore?"
+msgstr "בטל שחזור?"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 486
+msgid "Are you sure you want to cancel the restore operation?"
+msgstr "האם אתה בטוח שברצונך לבטל את פעולת השחזור?"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 489
+msgid "No"
+msgstr "לא"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 490
+msgid "Yes, Cancel"
+msgstr "כן, בטל"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
+msgid "Error"
+msgstr "שגיאה"

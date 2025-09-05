@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the biglinux-grub-restore package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: biglinux-grub-restore\n"
@@ -15,201 +14,718 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-msgid "This utility should only be used in live mode!"
-msgstr "Αυτή η εφαρμογή θα πρέπει να χρησιμοποιείται μόνο σε ζωντανή λειτουργία!"
-msgid ""
-"<span font='12'>This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed "
-"on the HD or SSD.</span>\n"
-"\n"
-"<span font='12' foreground='red'>If the installed system is booting correctly, there are no boot "
-"problems, so it's better not to proceed with this tool.</span>\n"
-"<span font='10' foreground='gray'>It may also work with other Linux distributions.</span>\n"
-"\n"
-"Do you want to proceed?"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 17
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 102
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 146
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 170
+msgid "Unknown"
+msgstr "Άγνωστο"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 85
+msgid "Unknown CPU"
+msgstr "Άγνωστος επεξεργαστής CPU"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 98
+msgid "Unknown Memory"
+msgstr "Άγνωστη Μνήμη"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 120
+msgid "Live Media"
+msgstr "Ζωντανά Μέσα"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 172
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 123
+msgid "Unknown System"
+msgstr "Άγνωστο Σύστημα"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 207
+msgid "Simple restore - Just writes the Grub again at the beginning of the disk."
+msgstr "Απλή αποκατάσταση - Απλώς γράφει ξανά το Grub στην αρχή του δίσκου."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 208
+msgid "Intermediate restore - Reinstalls the grub package, regenerates configuration, and updates initrd."
 msgstr ""
-"<span font='12'>Αυτό το εργαλείο θα πρέπει να χρησιμοποιείται σε ΖΩΝΤΑΝΗ ΛΕΙΤΟΥΡΓΙΑ για να "
-"αποκαταστήσει την ΕΚΚΙΝΗΣΗ του BigLinux που είναι εγκατεστημένο στον HD ή SSD.</span>\n"
-"\n"
-"<span font='12' foreground='red'>Εάν το εγκατεστημένο σύστημα εκκινεί σωστά, δεν υπάρχουν "
-"προβλήματα εκκίνησης, οπότε είναι καλύτερα να μην προχωρήσετε με αυτό το εργαλείο.</span>\n"
-"<span font='10' foreground='gray'>Μπορεί επίσης να λειτουργήσει με άλλες διανομές Linux.</span>\n"
-"\n"
-"Θέλετε να προχωρήσετε;"
-msgid "Restore Boot, Grub, and initrd"
-msgstr "Αποκατάσταση Boot, Grub και initrd"
-msgid "Please wait..."
-msgstr "Παρακαλώ περιμένετε..."
-msgid "No Linux installation found on this computer, process canceled."
-msgstr "Δεν βρέθηκε εγκατάσταση Linux σε αυτόν τον υπολογιστή, η διαδικασία ακυρώθηκε."
-msgid ""
-"The boot in live mode is using EFI mode, but <span foreground='red'>no EFI partition</span> was "
-"found on this computer, \n"
-"most likely the Grub restore will not work. \n"
-"\n"
-"Try restarting and booting in Legacy or BIOS mode through the computer's BIOS.\n"
-"\n"
-"Do you want to try even with a low probability of success?"
+"Ενδιάμεση αποκατάσταση - Επανασταθμίζει το πακέτο grub, αναγεννά τη διαμόρφωση και ενημερώνει το "
+"initrd."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 209
+msgid "Complete restore - Performs intermediate steps, updates system, and checks LTS kernel."
+msgstr "Πλήρης αποκατάσταση - Εκτελεί ενδιάμεσα βήματα, ενημερώνει το σύστημα και ελέγχει τον πυρήνα LTS."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 210
+msgid "Interactive terminal - Opens a terminal inside the selected system."
+msgstr "Διαδραστικός τερματικός - Ανοίγει έναν τερματικό μέσα στο επιλεγμένο σύστημα."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 211
+msgid "Interactive control center - Opens the control center inside the selected system."
+msgstr "Διαδραστικό κέντρο ελέγχου - Ανοίγει το κέντρο ελέγχου μέσα στο επιλεγμένο σύστημα."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 212
+msgid "Interactive package manager - Opens pamac-manager inside the selected system."
+msgstr "Διαδραστικός διαχειριστής πακέτων - Ανοίγει τον pamac-manager μέσα στο επιλεγμένο σύστημα."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 214
+msgid "Unknown restore mode"
+msgstr "Άγνωστη λειτουργία επαναφοράς"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 239
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 402
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 292
+msgid "Internet connection available"
+msgstr "Διαθέσιμη σύνδεση στο διαδίκτυο"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 245
+msgid "No internet connection detected. Options 2 and 3 require internet to work."
 msgstr ""
-"Η εκκίνηση σε ζωντανή λειτουργία χρησιμοποιεί λειτουργία EFI, αλλά <span foreground='red'>δεν "
-"βρέθηκε καμία διαμέριση EFI</span> σε αυτόν τον υπολογιστή, \n"
-"πιθανότατα η αποκατάσταση Grub δεν θα λειτουργήσει. \n"
+"Δεν ανιχνεύθηκε σύνδεση στο διαδίκτυο. Οι επιλογές 2 και 3 απαιτούν σύνδεση στο διαδίκτυο για να "
+"λειτουργήσουν."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 266
+msgid "Permission denied. Please check if you have administrator privileges."
+msgstr "Άδεια απορρίφθηκε. Παρακαλώ ελέγξτε αν έχετε δικαιώματα διαχειριστή."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 267
+msgid "Required file not found. The system may be corrupted."
+msgstr "Το απαιτούμενο αρχείο δεν βρέθηκε. Το σύστημα μπορεί να είναι κατεστραμμένο."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 268
+msgid "Device is busy. Please unmount any mounted partitions and try again."
+msgstr ""
+"Η συσκευή είναι απασχολημένη. Παρακαλώ αποσυνδέστε τυχόν προσαρτημένα διαμερίσματα και δοκιμάστε "
+"ξανά."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 269
+msgid "No space left on device. Please free up some space and try again."
+msgstr "Δεν υπάρχει διαθέσιμος χώρος στη συσκευή. Παρακαλώ ελευθερώστε λίγο χώρο και δοκιμάστε ξανά."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 270
+msgid "Network connection failed. Please check your internet connection."
+msgstr "Η σύνδεση δικτύου απέτυχε. Παρακαλώ ελέγξτε τη σύνδεση στο διαδίκτυο."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 271
+msgid "Operation timed out. Please try again."
+msgstr "Η λειτουργία υπερέβη το χρονικό όριο. Παρακαλώ δοκιμάστε ξανά."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/backend/system_interface.py, line: 129
+msgid "EFI Boot without EFI Partition"
+msgstr "EFI εκκίνηση χωρίς διαμέρισμα EFI"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/backend/system_interface.py, line: 131
+msgid ""
+"The boot in live mode is using EFI mode, but no EFI partition was found on this computer. Most "
+"likely the Grub restore will not work.\n"
+"\n"
+"Try restarting and booting in Legacy or BIOS mode through the computer's BIOS."
+msgstr ""
+"Η εκκίνηση σε ζωντανή λειτουργία χρησιμοποιεί τη λειτουργία EFI, αλλά δεν βρέθηκε καμία διαμέριση "
+"EFI σε αυτόν τον υπολογιστή. Πολύ πιθανό η αποκατάσταση Grub να μην λειτουργήσει.\n"
 "\n"
 "Δοκιμάστε να επανεκκινήσετε και να εκκινήσετε σε Legacy ή BIOS λειτουργία μέσω του BIOS του "
-"υπολογιστή.\n"
-"\n"
-"Θέλετε να δοκιμάσετε ακόμα και με χαμηλή πιθανότητα επιτυχίας;"
+"υπολογιστή."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/backend/system_interface.py, line: 139
+msgid "Legacy Boot with EFI Partition"
+msgstr "Κληρονομική εκκίνηση με διαμέρισμα EFI"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/backend/system_interface.py, line: 141
 msgid ""
-"The boot in live mode is using Legacy mode, also called BIOS, \n"
-"<span foreground='red'>but at least one EFI partition was found</span> on this computer, \n"
-"most likely the Grub restore will not work. \n"
+"The boot in live mode is using Legacy mode, also called BIOS, but at least one EFI partition was "
+"found on this computer. Most likely the Grub restore will not work.\n"
 "\n"
-"Try restarting and booting in EFI mode through the computer's BIOS.\n"
-"\n"
-"Do you want to try even with a low probability of success?"
+"Try restarting and booting in EFI mode through the computer's BIOS."
 msgstr ""
-"Η εκκίνηση σε ζωντανή λειτουργία χρησιμοποιεί τη λειτουργία Legacy, που ονομάζεται επίσης BIOS, \n"
-"<span foreground='red'>αλλά τουλάχιστον ένα διαμέρισμα EFI βρέθηκε</span> σε αυτόν τον υπολογιστή, \n"
-"πιθανότατα η αποκατάσταση Grub δεν θα λειτουργήσει. \n"
+"Η εκκίνηση σε ζωντανή λειτουργία χρησιμοποιεί τη λειτουργία Legacy, που ονομάζεται επίσης BIOS, "
+"αλλά τουλάχιστον ένα διαμέρισμα EFI βρέθηκε σε αυτόν τον υπολογιστή. Πολύ πιθανό η αποκατάσταση "
+"Grub να μην λειτουργήσει.\n"
 "\n"
-"Δοκιμάστε να επανεκκινήσετε και να εκκινήσετε σε λειτουργία EFI μέσω του BIOS του υπολογιστή.\n"
-"\n"
-"Θέλετε να δοκιμάσετε ακόμα και με χαμηλή πιθανότητα επιτυχίας;"
+"Δοκιμάστε να επανεκκινήσετε και να εκκινήσετε σε λειτουργία EFI μέσω του BIOS του υπολογιστή."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 59
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 18
+msgid "BigLinux GRUB Restore"
+msgstr "BigLinux GRUB Επαναφορά"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 67
+msgid "Restore GRUB bootloader and repair boot issues"
+msgstr "Αποκατάσταση του φορτωτή εκκίνησης GRUB και επισκευή προβλημάτων εκκίνησης"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 53
+msgid "About"
+msgstr "Σχετικά"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 54
+msgid "Quit"
+msgstr "Έξοδος"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 74
+msgid "GRUB Restore Tool"
+msgstr "Εργαλείο Επαναφοράς GRUB"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 76
 msgid ""
-"<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
+"This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed on the HD or "
+"SSD.\n"
 "\n"
-"More than one EFI partition was found, select which one to use:"
+"If the installed system is booting correctly, there are no boot problems, so it's better not to "
+"proceed with this tool."
 msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Επιλέξτε μια επιλογή:</span>\n"
+"Αυτό το εργαλείο θα πρέπει να χρησιμοποιείται σε ΖΩΝΤΑΝΗ ΛΕΙΤΟΥΡΓΙΑ για να αποκαταστήσει την "
+"ΕΚΚΙΝΗΣΗ του BigLinux που είναι εγκατεστημένο στον σκληρό δίσκο ή το SSD.\n"
 "\n"
-"Βρέθηκαν περισσότερες από μία διαμερίσματα EFI, επιλέξτε ποιο να χρησιμοποιήσετε:"
-msgid "No EFI partition selected, process canceled."
-msgstr "Δεν έχει επιλεγεί διαμέρισμα EFI, η διαδικασία ακυρώθηκε."
+"Εάν το εγκατεστημένο σύστημα εκκινεί σωστά, δεν υπάρχουν προβλήματα εκκίνησης, οπότε είναι καλύτερα "
+"να μην προχωρήσετε με αυτό το εργαλείο."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 84
+msgid "Start Detection"
+msgstr "Έναρξη Ανίχνευσης"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 109
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 139
+msgid "Detecting Systems"
+msgstr "Ανίχνευση Συστημάτων"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 110
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 140
+msgid "Please wait while we scan your system..."
+msgstr "Παρακαλώ περιμένετε ενώ σαρώσουμε το σύστημά σας..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 208
+msgid "Detection Failed"
+msgstr "Αποτυχία ανίχνευσης"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 212
+msgid "Try Again"
+msgstr "Δοκιμάστε ξανά"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 226
+msgid "No Systems Found"
+msgstr "Δεν βρέθηκαν συστήματα"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 227
+msgid "No Linux installations found on this computer."
+msgstr "Δεν βρέθηκαν εγκαταστάσεις Linux σε αυτόν τον υπολογιστή."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 230
+msgid "Back"
+msgstr "Πίσω"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 256
+msgid "Detected Linux Systems"
+msgstr "Ανιχνευμένα Συστήματα Linux"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 269
+msgid "Boot Configuration"
+msgstr "Διαμόρφωση Εκκίνησης"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 273
+msgid "Current Boot Mode"
+msgstr "Τρέχουσα Λειτουργία Εκκίνησης"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 280
+msgid "EFI Partitions Found"
+msgstr "Βρέθηκαν διαμερίσματα EFI"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 289
+msgid "Continue to Restore Options"
+msgstr "Συνεχίστε στην Επαναφορά Επιλογών"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 380
 msgid ""
-"<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
-"\n"
-"More than one Linux installation was found on this computer, select which one to restore the boot:"
+"The restore can be done in 3 ways (Simple, Intermediate, or Complete). If in doubt, try the first "
+"option, restart the computer and see if it is resolved."
 msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Επιλέξτε μια επιλογή:</span>\n"
-"\n"
-"Βρέθηκαν περισσότερες από μία εγκαταστάσεις Linux σε αυτόν τον υπολογιστή, επιλέξτε ποια να "
-"επαναφέρετε την εκκίνηση:"
-msgid "No partition selected, process canceled."
-msgstr "Δεν έχει επιλεγεί καμία διαμέριση, η διαδικασία ακυρώθηκε."
+"Η αποκατάσταση μπορεί να γίνει με 3 τρόπους (Απλός, Μεσαίος ή Πλήρης). Αν έχετε αμφιβολίες, "
+"δοκιμάστε την πρώτη επιλογή, επανεκκινήστε τον υπολογιστή και δείτε αν έχει επιλυθεί."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 406
+msgid "No internet - Options 2 and 3 require internet"
+msgstr "Χωρίς σύνδεση στο διαδίκτυο - Οι επιλογές 2 και 3 απαιτούν σύνδεση στο διαδίκτυο."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 415
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 77
+msgid "Restore Methods"
+msgstr "Μέθοδοι Επαναφοράς"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 419
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 118
+msgid "Simple Restore"
+msgstr "Απλή Επαναφορά"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 420
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 119
+msgid "Just writes the Grub again at the beginning of the disk."
+msgstr "Απλώς γράφει ξανά το Grub στην αρχή του δίσκου."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 424
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 438
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 453
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 123
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 140
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 159
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 353
+msgid "Execute"
+msgstr "Εκτέλεση"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 433
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 132
+msgid "Intermediate Restore"
+msgstr "Μεσαία Επαναφορά"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 434
+msgid "Reinstalls the grub package, regenerates configuration, and updates initrd."
+msgstr "Επαναεγκαθιστά το πακέτο grub, αναγεννά τη διαμόρφωση και ενημερώνει το initrd."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 448
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 151
+msgid "Complete Restore"
+msgstr "Πλήρης Επαναφορά"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 449
+msgid "Performs intermediate steps, updates system, and checks LTS kernel."
+msgstr "Εκτελεί ενδιάμεσα βήματα, ενημερώνει το σύστημα και ελέγχει τον πυρήνα LTS."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 465
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 83
+msgid "Interactive Options"
+msgstr "Διαδραστικές Επιλογές"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 469
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 173
+msgid "Interactive Terminal"
+msgstr "Διαδραστικός Τερματικός"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 470
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 174
+msgid "Opens a terminal inside the selected system."
+msgstr "Ανοίγει ένα τερματικό μέσα στο επιλεγμένο σύστημα."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 474
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 488
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 502
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 178
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 192
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 206
+msgid "Open"
+msgstr "Άνοιγμα"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 483
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 187
+msgid "Control Center"
+msgstr "Κέντρο Ελέγχου"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 484
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 188
+msgid "Opens the control center inside the selected system."
+msgstr "Ανοίγει το κέντρο ελέγχου μέσα στο επιλεγμένο σύστημα."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 497
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 201
+msgid "Package Manager"
+msgstr "Διαχειριστής Πακέτων"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 498
+msgid "Opens pamac-manager inside the selected system."
+msgstr "Ανοίγει τον διαχειριστή pamac μέσα στο επιλεγμένο σύστημα."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 595
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 338
+msgid "Simple restore will write GRUB to the beginning of the disk."
+msgstr "Η απλή αποκατάσταση θα γράψει το GRUB στην αρχή του δίσκου."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 596
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 339
+msgid "Intermediate restore will reinstall GRUB package and update configuration."
+msgstr "Η ενδιάμεση αποκατάσταση θα επανεγκαταστήσει το πακέτο GRUB και θα ενημερώσει τη διαμόρφωση."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 597
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 340
+msgid "Complete restore will perform full system update and kernel check."
+msgstr "Η πλήρης αποκατάσταση θα εκτελέσει πλήρη ενημέρωση συστήματος και έλεγχο πυρήνα."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 598
+msgid "Interactive terminal will open inside the selected system."
+msgstr "Ο διαδραστικός τερματικός θα ανοίξει μέσα στο επιλεγμένο σύστημα."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 599
+msgid "Control center will open inside the selected system."
+msgstr "Το κέντρο ελέγχου θα ανοίξει μέσα στο επιλεγμένο σύστημα."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 600
+msgid "Package manager will open inside the selected system."
+msgstr "Ο διαχειριστής πακέτων θα ανοίξει μέσα στο επιλεγμένο σύστημα."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 611
+msgid "Restore in Progress"
+msgstr "Αποκατάσταση σε εξέλιξη"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 612
+msgid "Please wait while the restore operation completes..."
+msgstr "Παρακαλώ περιμένετε ενώ ολοκληρώνεται η διαδικασία αποκατάστασης..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 655
+msgid "Restore Completed"
+msgstr "Η αποκατάσταση ολοκληρώθηκε"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 656
+msgid "The restore operation completed successfully!"
+msgstr "Η διαδικασία επαναφοράς ολοκληρώθηκε με επιτυχία!"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 659
+msgid "Restore Failed"
+msgstr "Αποκατάσταση Απέτυχε"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 660
+msgid "The restore operation failed. Please try again."
+msgstr "Η λειτουργία επαναφοράς απέτυχε. Παρακαλώ δοκιμάστε ξανά."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 664
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 459
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 462
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 474
+msgid "Close"
+msgstr "Κλείσιμο"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 688
+msgid "Restore Error"
+msgstr "Σφάλμα Επαναφοράς"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 692
+msgid "Back to Options"
+msgstr "Επιστροφή στις Επιλογές"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 59
+msgid "Linux System"
+msgstr "Σύστημα Linux"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 64
+msgid "No system detected"
+msgstr "Δεν ανιχνεύθηκε κανένα σύστημα"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 94
+msgid "Partition"
+msgstr "Κατανομή"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 95
+msgid "Not selected"
+msgstr "Μη επιλεγμένο"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 101
+msgid "Filesystem"
+msgstr "Σύστημα αρχείων"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 108
+msgid "UUID"
+msgstr "UUID"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 109
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 155
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 171
+msgid "Not available"
+msgstr "Μη διαθέσιμο"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 131
+msgid "Linux Installation"
+msgstr "Εγκατάσταση Linux"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 139
+msgid "Not specified"
+msgstr "Μη καθορισμένο"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 163
+msgid "No Linux installation detected"
+msgstr "Δεν ανιχνεύθηκε εγκατάσταση Linux"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 169
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 291
+msgid "Not detected"
+msgstr "Δεν ανιχνεύθηκε"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 235
+msgid "Current system boot information"
+msgstr "Τρέχουσες πληροφορίες εκκίνησης συστήματος"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 258
+msgid "Boot Mode"
+msgstr "Λειτουργία εκκίνησης"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 259
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 273
+msgid "Detecting..."
+msgstr "Ανίχνευση..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 265
+msgid "Live Session"
+msgstr "Ζωντανή Συνεδρία"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 266
+msgid "Checking..."
+msgstr "Ελέγχω..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 272
+msgid "Available Memory"
+msgstr "Διαθέσιμη Μνήμη"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 283
+msgid "EFI/UEFI"
+msgstr "EFI/UEFI"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 285
+msgid "Legacy/BIOS"
+msgstr "Κληρονομιά/BIOS"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 289
+msgid "Active (Live Mode)"
+msgstr "Ενεργό (Ζωντανή Λειτουργία)"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 330
+msgid "Checking network connection..."
+msgstr "Έλεγχος σύνδεσης δικτύου..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 51
 msgid ""
-"<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
-"    \n"
-"More than one storage device was found, select which one to write the boot to:"
+"Select the disk where GRUB will be installed. The bootloader will be written to the beginning of "
+"the selected disk."
 msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Επιλέξτε μια επιλογή:</span>\n"
-"\n"
-"Βρέθηκαν περισσότερες από μία συσκευές αποθήκευσης, επιλέξτε ποια να γράψετε το boot:"
-msgid "Disk"
-msgstr "Δίσκος"
-msgid "Size"
-msgstr "Μέγεθος"
-msgid "Name"
-msgstr "Όνομα"
-msgid "Partition Table"
-msgstr "Πίνακας Κατανομής"
+"Επιλέξτε τον δίσκο όπου θα εγκατασταθεί το GRUB. Ο φορτωτής εκκίνησης θα γραφτεί στην αρχή του "
+"επιλεγμένου δίσκου."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 61
+msgid "Available Disks"
+msgstr "Διαθέσιμες Δίσκοι"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 67
+msgid "No Disks Found"
+msgstr "Δεν βρέθηκαν δίσκοι"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 69
 msgid ""
-"<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>    \n"
-"\n"
-"<span font='11' foreground='gray'>Boot mode:</span>  LEGACY/BIOS\n"
-"<span font='11' foreground='gray'>Selected disk:</span> $DISK_SELECTED\n"
-"    \n"
-"<span font='11' foreground='gray'>Disk partition table:</span> $DISK_TABLE\n"
-"    \n"
-"<span font='11' foreground='gray'>Disk size:</span> $DISK_SIZE\n"
-"   \n"
-"<span font='11' foreground='gray'>Selected partition:</span> $SELECTED_PARTITION\n"
-"<span font='11' foreground='gray'>Selected system:</span> $SELECTED_OS\n"
-"<span font='11' foreground='gray'>Partition format:</span> $PARTITION_FORMAT\n"
-"<span font='11' foreground='gray'>Partition UUID:</span> $UUID_PARTITION\n"
-"\n"
-"Do you want to proceed?"
+"No suitable disks were found for GRUB installation. Please check if your disks are properly "
+"connected."
 msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Επιβεβαιώστε τα δεδομένα:</span>    \n"
-"\n"
-"<span font='11' foreground='gray'>Λειτουργία εκκίνησης:</span>  LEGACY/BIOS\n"
-"<span font='11' foreground='gray'>Επιλεγμένος δίσκος:</span> $DISK_SELECTED\n"
-"    \n"
-"<span font='11' foreground='gray'>Πίνακας κατατμήσεων δίσκου:</span> $DISK_TABLE\n"
-"    \n"
-"<span font='11' foreground='gray'>Μέγεθος δίσκου:</span> $DISK_SIZE\n"
-"   \n"
-"<span font='11' foreground='gray'>Επιλεγμένη κατάτμηση:</span> $SELECTED_PARTITION\n"
-"<span font='11' foreground='gray'>Επιλεγμένο σύστημα:</span> $SELECTED_OS\n"
-"<span font='11' foreground='gray'>Μορφή κατάτμησης:</span> $PARTITION_FORMAT\n"
-"<span font='11' foreground='gray'>UUID κατάτμησης:</span> $UUID_PARTITION\n"
-"\n"
-"Θέλετε να προχωρήσετε;"
-msgid "Your computer is not connected to the internet, options 2 and 3 require internet to work."
+"Δεν βρέθηκαν κατάλληλοι δίσκοι για την εγκατάσταση του GRUB. Παρακαλώ ελέγξτε αν οι δίσκοι σας "
+"είναι σωστά συνδεδεμένοι."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 121
+msgid "Unknown model"
+msgstr "Άγνωστο μοντέλο"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 144
+msgid "GPT partition table detected. Make sure this is correct for Legacy boot mode."
 msgstr ""
-"Ο υπολογιστής σας δεν είναι συνδεδεμένος στο διαδίκτυο, οι επιλογές 2 και 3 απαιτούν σύνδεση στο "
-"διαδίκτυο για να λειτουργήσουν."
+"Ανιχνεύτηκε πίνακας κατανομής GPT. Βεβαιωθείτε ότι αυτό είναι σωστό για τη λειτουργία εκκίνησης "
+"Legacy."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 227
 msgid ""
-"<span font='16' foreground='LightSkyBlue'>Select the desired option:</span>\n"
-"        \n"
-"The restore can be done in 3 ways (<span foreground='gray'>Simple, Intermediate, or "
-"Complete</span>), if in doubt, try the first option, restart the computer and see if it is "
-"resolved.\n"
-"\n"
-"If the problem persists, try the other options."
+"Select the EFI System Partition where GRUB will be installed. This partition contains the boot "
+"files for UEFI systems."
 msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Επιλέξτε την επιθυμητή επιλογή:</span>\n"
-"        \n"
-"Η αποκατάσταση μπορεί να γίνει με 3 τρόπους (<span foreground='gray'>Απλή, Μεσαία ή Πλήρης</span>), "
-"αν έχετε αμφιβολίες, δοκιμάστε την πρώτη επιλογή, επανεκκινήστε τον υπολογιστή και δείτε αν έχει "
-"λυθεί.\n"
-"\n"
-"Αν το πρόβλημα επιμένει, δοκιμάστε τις άλλες επιλογές."
-msgid "Option"
-msgstr "Επιλογή"
-msgid "Description"
-msgstr "Περιγραφή"
-msgid "Simple, just writes the Grub again at the beginning of the disk."
-msgstr "Απλό, απλώς γράφει ξανά το Grub στην αρχή του δίσκου."
+"Επιλέξτε την Κατανομή Συστήματος EFI όπου θα εγκατασταθεί το GRUB. Αυτή η κατανομή περιέχει τα "
+"αρχεία εκκίνησης για συστήματα UEFI."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 237
+msgid "Available EFI Partitions"
+msgstr "Διαθέσιμες κατατμήσεις EFI"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 243
+msgid "No EFI Partitions Found"
+msgstr "Δεν βρέθηκαν διαμερίσματα EFI"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 245
+msgid "No EFI System Partitions were found. Your system may not be configured for UEFI boot."
+msgstr "Δεν βρέθηκαν διαμερίσματα EFI. Το σύστημά σας ενδέχεται να μην είναι ρυθμισμένο για εκκίνηση UEFI."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
+msgid "EFI System Partition"
+msgstr "Διαμέρισμα Συστήματος EFI"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 62
 msgid ""
-"Intermediate, reinstalls the grub package on the partition, regenerates the configuration, and "
-"updates the initrd."
+"The restore can be done in 3 ways (Simple, Intermediate, or Complete). If in doubt, try the first "
+"option, restart the computer and see if it is resolved. If the problem persists, try the other "
+"options."
 msgstr ""
-"Μεσαίο, επανεγκαθιστά το πακέτο grub στην κατάτμηση, αναγεννά τη διαμόρφωση και ενημερώνει το "
-"initrd."
+"Η αποκατάσταση μπορεί να γίνει με 3 τρόπους (Απλός, Μεσαίος ή Πλήρης). Αν έχετε αμφιβολίες, "
+"δοκιμάστε την πρώτη επιλογή, επανεκκινήστε τον υπολογιστή και δείτε αν έχει λυθεί. Αν το πρόβλημα "
+"επιμένει, δοκιμάστε τις άλλες επιλογές."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 134
+msgid "Reinstalls the grub package on the partition, regenerates the configuration, and updates the initrd."
+msgstr "Επαναεγκαθιστά το πακέτο grub στον διαμέρισμα, αναγεννά τη διαμόρφωση και ενημερώνει το initrd."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 153
 msgid ""
-"Complete, performs the intermediate restore steps, updates the system, and checks if the LTS kernel "
-"is installed."
+"Performs the intermediate restore steps, updates the system, and checks if the LTS kernel is "
+"installed."
 msgstr ""
-"Ολοκληρώνει, εκτελεί τα ενδιάμεσα βήματα αποκατάστασης, ενημερώνει το σύστημα και ελέγχει αν είναι "
+"Εκτελεί τα ενδιάμεσα βήματα αποκατάστασης, ενημερώνει το σύστημα και ελέγχει αν είναι "
 "εγκατεστημένος ο πυρήνας LTS."
-msgid "Interactive, opens a terminal inside the selected system."
-msgstr "Διαδραστικό, ανοίγει ένα τερματικό μέσα στο επιλεγμένο σύστημα."
-msgid "Interactive, opens the control center inside the selected system."
-msgstr "Διαδραστικό, ανοίγει το κέντρο ελέγχου μέσα στο επιλεγμένο σύστημα."
-msgid "Interactive, opens the pamac-manager package manager inside the selected system."
-msgstr "Διαδραστικό, ανοίγει τον διαχειριστή πακέτων pamac-manager μέσα στο επιλεγμένο σύστημα."
-msgid "Completed!"
-msgstr "Ολοκληρώθηκε!"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 202
+msgid "Opens the pamac-manager package manager inside the selected system."
+msgstr "Ανοίγει τον διαχειριστή πακέτων pamac-manager μέσα στο επιλεγμένο σύστημα."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 240
+msgid "Preparing..."
+msgstr "Προετοιμασία..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 263
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 352
+msgid "Cancel"
+msgstr "Ακύρωση"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 297
+msgid "No internet connection - Options 2 and 3 require internet"
+msgstr "Καμία σύνδεση στο διαδίκτυο - Οι επιλογές 2 και 3 απαιτούν σύνδεση στο διαδίκτυο."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 311
+msgid "System interface not available"
+msgstr "Η διεπαφή συστήματος δεν είναι διαθέσιμη."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 341
+msgid "Interactive terminal will open a command line inside the selected system."
+msgstr "Ο διαδραστικός τερματικός θα ανοίξει μια γραμμή εντολών μέσα στο επιλεγμένο σύστημα."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 342
+msgid "Control center will open system settings inside the selected system."
+msgstr "Το κέντρο ελέγχου θα ανοίξει τις ρυθμίσεις συστήματος μέσα στο επιλεγμένο σύστημα."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 343
+msgid "Package manager will open pamac-manager inside the selected system."
+msgstr "Ο διαχειριστής πακέτων θα ανοίξει τον pamac-manager μέσα στο επιλεγμένο σύστημα."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 348
+msgid "Confirm Restore Operation"
+msgstr "Επιβεβαίωση Επαναφοράς Επιχείρησης"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 349
+msgid "Execute the selected restore operation?"
+msgstr "Εκτελείτε τη επιλεγμένη λειτουργία επαναφοράς;"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 374
+msgid "Internet Connection Required"
+msgstr "Απαιτείται σύνδεση στο Διαδίκτυο"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 375
 msgid ""
-"<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>\n"
-"    \n"
-"<span font='11' foreground='gray'>Boot mode:</span> EFI\n"
-"<span font='11' foreground='gray'>EFI partition:</span> $EFI_PARTITION\n"
-"    \n"
-"<span font='11' foreground='gray'>Selected partition:</span> $SELECTED_PARTITION\n"
-"<span font='11' foreground='gray'>Selected system:</span> $SELECTED_OS\n"
-"<span font='11' foreground='gray'>Partition format:</span> $PARTITION_FORMAT\n"
-"<span font='11' foreground='gray'>Partition UUID:</span> $UUID_PARTITION\n"
-"\n"
-"Do you want to proceed?"
+"This restore option requires an internet connection to download packages and updates. Please check "
+"your network connection and try again."
 msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Επιβεβαιώστε τα δεδομένα:</span>\n"
-"    \n"
-"<span font='11' foreground='gray'>Λειτουργία εκκίνησης:</span> EFI\n"
-"<span font='11' foreground='gray'>Διαμέρισμα EFI:</span> $EFI_PARTITION\n"
-"    \n"
-"<span font='11' foreground='gray'>Επιλεγμένο διαμέρισμα:</span> $SELECTED_PARTITION\n"
-"<span font='11' foreground='gray'>Επιλεγμένο σύστημα:</span> $SELECTED_OS\n"
-"<span font='11' foreground='gray'>Μορφή διαμερίσματος:</span> $PARTITION_FORMAT\n"
-"<span font='11' foreground='gray'>UUID διαμερίσματος:</span> $UUID_PARTITION\n"
-"\n"
-"Θέλετε να προχωρήσετε;"
+"Αυτή η επιλογή επαναφοράς απαιτεί σύνδεση στο διαδίκτυο για να κατεβάσει πακέτα και ενημερώσεις. "
+"Παρακαλώ ελέγξτε τη σύνδεση δικτύου σας και δοκιμάστε ξανά."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 379
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 533
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 379
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 533
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 386
+msgid "Simple Restore in Progress"
+msgstr "Απλή αποκατάσταση σε εξέλιξη"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 387
+msgid "Intermediate Restore in Progress"
+msgstr "Ενδιάμεση αποκατάσταση σε εξέλιξη"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 388
+msgid "Complete Restore in Progress"
+msgstr "Η πλήρης αποκατάσταση είναι σε εξέλιξη"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 389
+msgid "Opening Interactive Terminal"
+msgstr "Άνοιγμα Διαδραστικού Τερματικού"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 390
+msgid "Opening Control Center"
+msgstr "Άνοιγμα Κέντρου Ελέγχου"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 391
+msgid "Opening Package Manager"
+msgstr "Άνοιγμα Διαχειριστή Πακέτων"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 395
+msgid "Initializing..."
+msgstr "Αρχικοποίηση..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 416
+msgid "Starting restore operation..."
+msgstr "Ξεκινάει η διαδικασία αποκατάστασης..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 423
+msgid "Opening interactive session..."
+msgstr "Άνοιγμα διαδραστικής συνεδρίας..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 458
+msgid "Restore completed successfully!"
+msgstr "Η αποκατάσταση ολοκληρώθηκε με επιτυχία!"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 461
+msgid "Restore failed. Please check the output above."
+msgstr "Η αποκατάσταση απέτυχε. Παρακαλώ ελέγξτε την έξοδο παραπάνω."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 485
+msgid "Cancel Restore?"
+msgstr "Ακύρωση Επαναφοράς;"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 486
+msgid "Are you sure you want to cancel the restore operation?"
+msgstr "Είστε σίγουροι ότι θέλετε να ακυρώσετε τη διαδικασία επαναφοράς;"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 489
+msgid "No"
+msgstr "Όχι"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 490
+msgid "Yes, Cancel"
+msgstr "Ναι, Ακύρωση"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
+msgid "Error"
+msgstr "Σφάλμα"
