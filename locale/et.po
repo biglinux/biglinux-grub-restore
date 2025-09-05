@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the biglinux-grub-restore package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: biglinux-grub-restore\n"
@@ -15,10 +14,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-
 msgid "This utility should only be used in live mode!"
 msgstr "Seda utiliiti tuleks kasutada ainult režiimis!"
-
 msgid ""
 "<span font='12'>This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed "
 "on the HD or SSD.</span>\n"
@@ -37,16 +34,12 @@ msgstr ""
 "<span font='10' foreground='gray'>See võib töötada ka teiste Linuxi distributsioonidega.</span>\n"
 "\n"
 "Kas soovite jätkata?"
-
 msgid "Restore Boot, Grub, and initrd"
 msgstr "Taasta Boot, Grub ja initrd"
-
 msgid "Please wait..."
 msgstr "Palun oodake..."
-
 msgid "No Linux installation found on this computer, process canceled."
 msgstr "Sellel arvutil ei leitud Linuxi installatsiooni, protsess tühistatud."
-
 msgid ""
 "The boot in live mode is using EFI mode, but <span foreground='red'>no EFI partition</span> was "
 "found on this computer, \n"
@@ -63,7 +56,6 @@ msgstr ""
 "Proovige taaskäivitada ja käivitada Legacy või BIOS-režiimis arvuti BIOS-i kaudu.\n"
 "\n"
 "Kas soovite proovida isegi madala eduvõimalusega?"
-
 msgid ""
 "The boot in live mode is using Legacy mode, also called BIOS, \n"
 "<span foreground='red'>but at least one EFI partition was found</span> on this computer, \n"
@@ -80,7 +72,6 @@ msgstr ""
 "Proovige taaskäivitada ja käivitada EFI-režiimis arvuti BIOS-i kaudu.\n"
 "\n"
 "Kas soovite proovida isegi madala eduvõimalusega?"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -89,10 +80,8 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Vali valik:</span>\n"
 "\n"
 "Leiti rohkem kui üks EFI partitsioon, vali, millist kasutada:"
-
 msgid "No EFI partition selected, process canceled."
 msgstr "EFI partitsiooni ei ole valitud, protsess tühistatud."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -101,10 +90,8 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Vali valik:</span>\n"
 "\n"
 "Sellel arvutil leiti rohkem kui üks Linuxi installatsioon, vali, millist taastada käivitust:"
-
 msgid "No partition selected, process canceled."
 msgstr "Partitsiooni ei ole valitud, protsess tühistatud."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "    \n"
@@ -113,19 +100,14 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Vali valik:</span>\n"
 "    \n"
 "Leiti rohkem kui üks salvestusseade, vali, millisele kirjutada alglaadimise:"
-
 msgid "Disk"
 msgstr "Ketas"
-
 msgid "Size"
 msgstr "Suurus"
-
 msgid "Name"
 msgstr "Nimi"
-
 msgid "Partition Table"
 msgstr "Partitsioonitabel"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>    \n"
 "\n"
@@ -158,10 +140,8 @@ msgstr ""
 "<span font='11' foreground='gray'>Partitsiooni UUID:</span> $UUID_PARTITION\n"
 "\n"
 "Kas soovite jätkata?"
-
 msgid "Your computer is not connected to the internet, options 2 and 3 require internet to work."
 msgstr "Teie arvuti ei ole internetiga ühendatud, valikud 2 ja 3 nõuavad töötamiseks internetiühendust."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select the desired option:</span>\n"
 "        \n"
@@ -178,42 +158,32 @@ msgstr ""
 "lahendatud.\n"
 "\n"
 "Kui probleem püsib, proovige teisi valikuid."
-
 msgid "Option"
 msgstr "Valik"
-
 msgid "Description"
 msgstr "Kirjeldus"
-
 msgid "Simple, just writes the Grub again at the beginning of the disk."
 msgstr "Lihtne, kirjutab Grubi uuesti ketta algusesse."
-
 msgid ""
 "Intermediate, reinstalls the grub package on the partition, regenerates the configuration, and "
 "updates the initrd."
 msgstr ""
 "Vahepealne, installib grub paketi uuesti partitsioonile, genereerib konfiguratsiooni ja uuendab "
 "initrd-d."
-
 msgid ""
 "Complete, performs the intermediate restore steps, updates the system, and checks if the LTS kernel "
 "is installed."
 msgstr ""
 "Täielik, täidab vahepealsed taastamisetapid, uuendab süsteemi ja kontrollib, kas LTS kernel on "
 "installitud."
-
 msgid "Interactive, opens a terminal inside the selected system."
 msgstr "Interaktiivne, avab valitud süsteemis terminali."
-
 msgid "Interactive, opens the control center inside the selected system."
 msgstr "Interaktiivne, avab valitud süsteemi juhtimiskeskuse."
-
 msgid "Interactive, opens the pamac-manager package manager inside the selected system."
 msgstr "Interaktiivne, avab valitud süsteemis pamac-manageri pakihalduri."
-
 msgid "Completed!"
 msgstr "Valmis!"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>\n"
 "    \n"

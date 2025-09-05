@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the biglinux-grub-restore package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: biglinux-grub-restore\n"
@@ -15,10 +14,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-
 msgid "This utility should only be used in live mode!"
 msgstr "Dette værktøj bør kun bruges i live-tilstand!"
-
 msgid ""
 "<span font='12'>This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed "
 "on the HD or SSD.</span>\n"
@@ -37,16 +34,12 @@ msgstr ""
 "<span font='10' foreground='gray'>Det kan også fungere med andre Linux-distributioner.</span>\n"
 "\n"
 "Vil du fortsætte?"
-
 msgid "Restore Boot, Grub, and initrd"
 msgstr "Gendan Boot, Grub og initrd"
-
 msgid "Please wait..."
 msgstr "Vent venligst..."
-
 msgid "No Linux installation found on this computer, process canceled."
 msgstr "Ingen Linux-installation fundet på denne computer, proces annulleret."
-
 msgid ""
 "The boot in live mode is using EFI mode, but <span foreground='red'>no EFI partition</span> was "
 "found on this computer, \n"
@@ -63,7 +56,6 @@ msgstr ""
 "Prøv at genstarte og boote i Legacy- eller BIOS-tilstand gennem computerens BIOS.\n"
 "\n"
 "Vil du prøve, selv med en lav sandsynlighed for succes?"
-
 msgid ""
 "The boot in live mode is using Legacy mode, also called BIOS, \n"
 "<span foreground='red'>but at least one EFI partition was found</span> on this computer, \n"
@@ -80,7 +72,6 @@ msgstr ""
 "Prøv at genstarte og boote i EFI-tilstand gennem computerens BIOS.\n"
 "\n"
 "Vil du prøve, selv med en lav sandsynlighed for succes?"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -89,10 +80,8 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Vælg en mulighed:</span>\n"
 "\n"
 "Der blev fundet mere end én EFI-partition, vælg hvilken der skal bruges:"
-
 msgid "No EFI partition selected, process canceled."
 msgstr "Ingen EFI-partition valgt, proces annulleret."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -102,10 +91,8 @@ msgstr ""
 "\n"
 "Der blev fundet mere end én Linux-installation på denne computer, vælg hvilken en der skal "
 "gendannes til opstart:"
-
 msgid "No partition selected, process canceled."
 msgstr "Ingen partition valgt, proces annulleret."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "    \n"
@@ -114,19 +101,14 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Vælg en mulighed:</span>\n"
 "    \n"
 "Mere end én lagringsenhed blev fundet, vælg hvilken en der skal skrives til boot:"
-
 msgid "Disk"
 msgstr "Disk"
-
 msgid "Size"
 msgstr "Størrelse"
-
 msgid "Name"
 msgstr "Navn"
-
 msgid "Partition Table"
 msgstr "Partitionstabel"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>    \n"
 "\n"
@@ -159,10 +141,8 @@ msgstr ""
 "<span font='11' foreground='gray'>Partition UUID:</span> $UUID_PARTITION\n"
 "\n"
 "Vil du fortsætte?"
-
 msgid "Your computer is not connected to the internet, options 2 and 3 require internet to work."
 msgstr "Din computer er ikke tilsluttet internettet, mulighederne 2 og 3 kræver internet for at fungere."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select the desired option:</span>\n"
 "        \n"
@@ -179,42 +159,32 @@ msgstr ""
 "løst.\n"
 "\n"
 "Hvis problemet fortsætter, så prøv de andre muligheder."
-
 msgid "Option"
 msgstr "Mulighed"
-
 msgid "Description"
 msgstr "Beskrivelse"
-
 msgid "Simple, just writes the Grub again at the beginning of the disk."
 msgstr "Simpel, skriver bare Grub igen i begyndelsen af disken."
-
 msgid ""
 "Intermediate, reinstalls the grub package on the partition, regenerates the configuration, and "
 "updates the initrd."
 msgstr ""
 "Mellemniveau, geninstallerer grub-pakken på partitionen, regenererer konfigurationen og opdaterer "
 "initrd."
-
 msgid ""
 "Complete, performs the intermediate restore steps, updates the system, and checks if the LTS kernel "
 "is installed."
 msgstr ""
 "Fuldfører, udfører de mellemliggende gendannelsestrin, opdaterer systemet og kontrollerer, om "
 "LTS-kernen er installeret."
-
 msgid "Interactive, opens a terminal inside the selected system."
 msgstr "Interaktiv, åbner et terminalvindue inde i det valgte system."
-
 msgid "Interactive, opens the control center inside the selected system."
 msgstr "Interaktiv, åbner kontrolcentret inde i det valgte system."
-
 msgid "Interactive, opens the pamac-manager package manager inside the selected system."
 msgstr "Interaktiv, åbner pamac-manager pakkehåndteringen inde i det valgte system."
-
 msgid "Completed!"
 msgstr "Færdig!"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>\n"
 "    \n"

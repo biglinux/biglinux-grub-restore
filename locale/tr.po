@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the biglinux-grub-restore package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: biglinux-grub-restore\n"
@@ -15,10 +14,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-
 msgid "This utility should only be used in live mode!"
 msgstr "Bu yardımcı program yalnızca canlı modda kullanılmalıdır!"
-
 msgid ""
 "<span font='12'>This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed "
 "on the HD or SSD.</span>\n"
@@ -37,16 +34,12 @@ msgstr ""
 "<span font='10' foreground='gray'>Diğer Linux dağıtımlarıyla da çalışabilir.</span>\n"
 "\n"
 "Devam etmek istiyor musunuz?"
-
 msgid "Restore Boot, Grub, and initrd"
 msgstr "Önyükleme, Grub ve initrd'yi Geri Yükle"
-
 msgid "Please wait..."
 msgstr "Lütfen bekleyin..."
-
 msgid "No Linux installation found on this computer, process canceled."
 msgstr "Bu bilgisayarda Linux kurulumu bulunamadı, işlem iptal edildi."
-
 msgid ""
 "The boot in live mode is using EFI mode, but <span foreground='red'>no EFI partition</span> was "
 "found on this computer, \n"
@@ -64,7 +57,6 @@ msgstr ""
 "deneyin.\n"
 "\n"
 "Başarı olasılığı düşük olsa bile denemek ister misiniz?"
-
 msgid ""
 "The boot in live mode is using Legacy mode, also called BIOS, \n"
 "<span foreground='red'>but at least one EFI partition was found</span> on this computer, \n"
@@ -81,7 +73,6 @@ msgstr ""
 "Bilgisayarın BIOS'u aracılığıyla EFI modunda yeniden başlatmayı ve önyüklemeyi deneyin.\n"
 "\n"
 "Başarı olasılığı düşük olsa bile denemek ister misiniz?"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -90,10 +81,8 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Bir seçenek seçin:</span>\n"
 "\n"
 "Birden fazla EFI bölümü bulundu, hangisini kullanmak istediğinizi seçin:"
-
 msgid "No EFI partition selected, process canceled."
 msgstr "Hiçbir EFI bölümü seçilmedi, işlem iptal edildi."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -103,10 +92,8 @@ msgstr ""
 "\n"
 "Bu bilgisayarda birden fazla Linux kurulumu bulundu, hangi kurulumun önyüklemesini geri yüklemek "
 "istediğinizi seçin:"
-
 msgid "No partition selected, process canceled."
 msgstr "Hiçbir bölüm seçilmedi, işlem iptal edildi."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "    \n"
@@ -115,19 +102,14 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Bir seçenek seçin:</span>\n"
 "    \n"
 "Birden fazla depolama aygıtı bulundu, önyükleme yazmak için hangisini seçeceğinizi belirtin:"
-
 msgid "Disk"
 msgstr "Disk"
-
 msgid "Size"
 msgstr "Boyut"
-
 msgid "Name"
 msgstr "İsim"
-
 msgid "Partition Table"
 msgstr "Bölüm Tablosu"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>    \n"
 "\n"
@@ -160,10 +142,8 @@ msgstr ""
 "<span font='11' foreground='gray'>Bölüm UUID'si:</span> $UUID_PARTITION\n"
 "\n"
 "Devam etmek istiyor musunuz?"
-
 msgid "Your computer is not connected to the internet, options 2 and 3 require internet to work."
 msgstr "Bilgisayarınız internete bağlı değil, 2 ve 3. seçeneklerin çalışması için internete ihtiyaç var."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select the desired option:</span>\n"
 "        \n"
@@ -180,42 +160,32 @@ msgstr ""
 "bakın.\n"
 "\n"
 "Eğer sorun devam ederse, diğer seçenekleri deneyin."
-
 msgid "Option"
 msgstr "Seçenek"
-
 msgid "Description"
 msgstr "Açıklama"
-
 msgid "Simple, just writes the Grub again at the beginning of the disk."
 msgstr "Basit, sadece diskin başında Grub'u tekrar yazar."
-
 msgid ""
 "Intermediate, reinstalls the grub package on the partition, regenerates the configuration, and "
 "updates the initrd."
 msgstr ""
 "Ara yüz, bölümde grub paketini yeniden kurar, yapılandırmayı yeniden oluşturur ve initrd'yi "
 "günceller."
-
 msgid ""
 "Complete, performs the intermediate restore steps, updates the system, and checks if the LTS kernel "
 "is installed."
 msgstr ""
 "Tamamlandı, ara geri yükleme adımlarını gerçekleştirir, sistemi günceller ve LTS çekirdeğinin "
 "kurulu olup olmadığını kontrol eder."
-
 msgid "Interactive, opens a terminal inside the selected system."
 msgstr "Etkileşimli, seçilen sistem içinde bir terminal açar."
-
 msgid "Interactive, opens the control center inside the selected system."
 msgstr "Etkileşimli, seçilen sistemin kontrol merkezini açar."
-
 msgid "Interactive, opens the pamac-manager package manager inside the selected system."
 msgstr "Etkileşimli, seçilen sistem içinde pamac-manager paket yöneticisini açar."
-
 msgid "Completed!"
 msgstr "Tamamlandı!"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>\n"
 "    \n"

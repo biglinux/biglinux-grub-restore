@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the biglinux-grub-restore package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: biglinux-grub-restore\n"
@@ -15,10 +14,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-
 msgid "This utility should only be used in live mode!"
 msgstr "Тази утилита трябва да се използва само в режим на работа!"
-
 msgid ""
 "<span font='12'>This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed "
 "on the HD or SSD.</span>\n"
@@ -37,16 +34,12 @@ msgstr ""
 "<span font='10' foreground='gray'>Може да работи и с други дистрибуции на Linux.</span>\n"
 "\n"
 "Искате ли да продължите?"
-
 msgid "Restore Boot, Grub, and initrd"
 msgstr "Възстановяване на Boot, Grub и initrd"
-
 msgid "Please wait..."
 msgstr "Моля, изчакайте..."
-
 msgid "No Linux installation found on this computer, process canceled."
 msgstr "Не е намерена инсталация на Linux на този компютър, процесът е отменен."
-
 msgid ""
 "The boot in live mode is using EFI mode, but <span foreground='red'>no EFI partition</span> was "
 "found on this computer, \n"
@@ -63,7 +56,6 @@ msgstr ""
 "Опитайте да рестартирате и да заредите в Legacy или BIOS режим през BIOS на компютъра.\n"
 "\n"
 "Искате ли да опитате дори с ниска вероятност за успех?"
-
 msgid ""
 "The boot in live mode is using Legacy mode, also called BIOS, \n"
 "<span foreground='red'>but at least one EFI partition was found</span> on this computer, \n"
@@ -80,7 +72,6 @@ msgstr ""
 "Опитайте да рестартирате и да заредите в EFI режим през BIOS на компютъра.\n"
 "\n"
 "Искате ли да опитате дори с ниска вероятност за успех?"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -89,10 +80,8 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Изберете опция:</span>\n"
 "\n"
 "Намерени са повече от един EFI дял, изберете кой да използвате:"
-
 msgid "No EFI partition selected, process canceled."
 msgstr "Не е избрана EFI партиция, процесът е отменен."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -102,10 +91,8 @@ msgstr ""
 "\n"
 "Намерени са повече от една инсталация на Linux на този компютър, изберете коя да възстановите при "
 "зареждане:"
-
 msgid "No partition selected, process canceled."
 msgstr "Не е избрана партиция, процесът е отменен."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "    \n"
@@ -114,19 +101,14 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Изберете опция:</span>\n"
 "    \n"
 "Намерени са повече от едно устройство за съхранение, изберете на кое да запишете зареждането:"
-
 msgid "Disk"
 msgstr "Диск"
-
 msgid "Size"
 msgstr "Размер"
-
 msgid "Name"
 msgstr "Име"
-
 msgid "Partition Table"
 msgstr "Таблица за разпределение"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>    \n"
 "\n"
@@ -159,10 +141,8 @@ msgstr ""
 "<span font='11' foreground='gray'>UUID на дяла:</span> $UUID_PARTITION\n"
 "\n"
 "Искате ли да продължите?"
-
 msgid "Your computer is not connected to the internet, options 2 and 3 require internet to work."
 msgstr "Вашият компютър не е свързан с интернет, опции 2 и 3 изискват интернет, за да работят."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select the desired option:</span>\n"
 "        \n"
@@ -179,40 +159,30 @@ msgstr ""
 "проблемът е решен.\n"
 "\n"
 "Ако проблемът продължава, опитайте другите опции."
-
 msgid "Option"
 msgstr "Опция"
-
 msgid "Description"
 msgstr "Описание"
-
 msgid "Simple, just writes the Grub again at the beginning of the disk."
 msgstr "Просто записва отново Grub в началото на диска."
-
 msgid ""
 "Intermediate, reinstalls the grub package on the partition, regenerates the configuration, and "
 "updates the initrd."
 msgstr "Средно, преинсталира пакета grub на дяла, регенерира конфигурацията и актуализира initrd."
-
 msgid ""
 "Complete, performs the intermediate restore steps, updates the system, and checks if the LTS kernel "
 "is installed."
 msgstr ""
 "Завършва, извършва междинните стъпки за възстановяване, актуализира системата и проверява дали LTS "
 "ядрото е инсталирано."
-
 msgid "Interactive, opens a terminal inside the selected system."
 msgstr "Интерактивен, отваря терминал в избраната система."
-
 msgid "Interactive, opens the control center inside the selected system."
 msgstr "Интерактивен, отваря контролния център в избраната система."
-
 msgid "Interactive, opens the pamac-manager package manager inside the selected system."
 msgstr "Интерактивен, отваря пакетния мениджър pamac-manager вътре в избраната система."
-
 msgid "Completed!"
 msgstr "Завършено!"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>\n"
 "    \n"
