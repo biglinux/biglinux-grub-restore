@@ -1,0 +1,49 @@
+/*
+ * BigLinux GRUB Restore - Custom Styles
+ * Simplified CSS without problematic @ rules
+ */
+
+/* Basic card styling */
+.card {
+    background: white;
+    border: 1px solid #d4d4d8;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin: 6px;
+    padding: 12px;
+}
+
+/* Selected state */
+.selected {
+    border: 2px solid #3584e4;
+    background: rgba(53, 132, 228, 0.1);
+}
+
+/* Status colors */
+.success {
+    color: #26a269;
+}
+
+.warning {
+    color: #e5a50a;
+}
+
+.error {
+    color: #e01b24;
+}
+
+/* Button styles */
+button.pill {
+    border-radius: 20px;
+    padding: 8px 24px;
+    font-weight: 500;
+}
+
+/* Spacing utilities */
+.content-margin {
+    margin: 24px;
+}
+
+.section-spacing {
+    margin: 16px 0;
+}
