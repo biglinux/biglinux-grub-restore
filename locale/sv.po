@@ -15,10 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-
 msgid "This utility should only be used in live mode!"
 msgstr "Detta verktyg bör endast användas i live-läge!"
-
 msgid ""
 "<span font='12'>This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed "
 "on the HD or SSD.</span>\n"
@@ -37,16 +35,12 @@ msgstr ""
 "<span font='10' foreground='gray'>Det kan också fungera med andra Linux-distributioner.</span>\n"
 "\n"
 "Vill du fortsätta?"
-
 msgid "Restore Boot, Grub, and initrd"
 msgstr "Återställ Boot, Grub och initrd"
-
 msgid "Please wait..."
 msgstr "Vänligen vänta..."
-
 msgid "No Linux installation found on this computer, process canceled."
 msgstr "Ingen Linux-installation hittades på den här datorn, processen avbruten."
-
 msgid ""
 "The boot in live mode is using EFI mode, but <span foreground='red'>no EFI partition</span> was "
 "found on this computer, \n"
@@ -63,7 +57,6 @@ msgstr ""
 "Försök att starta om och boota i Legacy- eller BIOS-läge genom datorns BIOS.\n"
 "\n"
 "Vill du försöka även med låg sannolikhet för framgång?"
-
 msgid ""
 "The boot in live mode is using Legacy mode, also called BIOS, \n"
 "<span foreground='red'>but at least one EFI partition was found</span> on this computer, \n"
@@ -80,7 +73,6 @@ msgstr ""
 "Försök starta om och boota i EFI-läge genom datorns BIOS.\n"
 "\n"
 "Vill du försöka även med låg sannolikhet för framgång?"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -89,10 +81,8 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Välj ett alternativ:</span>\n"
 "\n"
 "Mer än en EFI-partition hittades, välj vilken som ska användas:"
-
 msgid "No EFI partition selected, process canceled."
 msgstr "Ingen EFI-partition vald, processen avbruten."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -101,10 +91,8 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Välj ett alternativ:</span>\n"
 "\n"
 "Mer än en Linux-installation hittades på den här datorn, välj vilken som ska återställas till boot:"
-
 msgid "No partition selected, process canceled."
 msgstr "Ingen partition vald, processen avbruten."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "    \n"
@@ -113,19 +101,14 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Välj ett alternativ:</span>\n"
 "    \n"
 "Mer än en lagringsenhet hittades, välj vilken som ska skrivas till boot:"
-
 msgid "Disk"
 msgstr "Diskett"
-
 msgid "Size"
 msgstr "Storlek"
-
 msgid "Name"
 msgstr "Namn"
-
 msgid "Partition Table"
 msgstr "Partitionsschema"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>    \n"
 "\n"
@@ -158,10 +141,8 @@ msgstr ""
 "<span font='11' foreground='gray'>Partition UUID:</span> $UUID_PARTITION\n"
 "\n"
 "Vill du fortsätta?"
-
 msgid "Your computer is not connected to the internet, options 2 and 3 require internet to work."
 msgstr "Din dator är inte ansluten till internet, alternativ 2 och 3 kräver internet för att fungera."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select the desired option:</span>\n"
 "        \n"
@@ -178,42 +159,32 @@ msgstr ""
 "löst.\n"
 "\n"
 "Om problemet kvarstår, prova de andra alternativen."
-
 msgid "Option"
 msgstr "Alternativ"
-
 msgid "Description"
 msgstr "Beskrivning"
-
 msgid "Simple, just writes the Grub again at the beginning of the disk."
 msgstr "Enkel, skriver bara om Grub i början av disken."
-
 msgid ""
 "Intermediate, reinstalls the grub package on the partition, regenerates the configuration, and "
 "updates the initrd."
 msgstr ""
 "Mellanliggande, installerar om grub-paketet på partitionen, regenererar konfigurationen och "
 "uppdaterar initrd."
-
 msgid ""
 "Complete, performs the intermediate restore steps, updates the system, and checks if the LTS kernel "
 "is installed."
 msgstr ""
 "Slutför, utför de mellanliggande återställningsstegen, uppdaterar systemet och kontrollerar om "
 "LTS-kärnan är installerad."
-
 msgid "Interactive, opens a terminal inside the selected system."
 msgstr "Interaktiv, öppnar en terminal inuti det valda systemet."
-
 msgid "Interactive, opens the control center inside the selected system."
 msgstr "Interaktiv, öppnar kontrollcentret inuti det valda systemet."
-
 msgid "Interactive, opens the pamac-manager package manager inside the selected system."
 msgstr "Interaktiv, öppnar pamac-manager paketförvaltaren inuti det valda systemet."
-
 msgid "Completed!"
 msgstr "Slutfört!"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>\n"
 "    \n"

@@ -15,10 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-
 msgid "This utility should only be used in live mode!"
 msgstr "このユーティリティはライブモードでのみ使用する必要があります！"
-
 msgid ""
 "<span font='12'>This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed "
 "on the HD or SSD.</span>\n"
@@ -35,16 +33,12 @@ msgstr ""
 "<span font='10' foreground='gray'>他のLinuxディストリビューションでも動作する可能性があります。</span>\n"
 "\n"
 "続行しますか？"
-
 msgid "Restore Boot, Grub, and initrd"
 msgstr "ブート、Grub、およびinitrdを復元する"
-
 msgid "Please wait..."
 msgstr "お待ちください..."
-
 msgid "No Linux installation found on this computer, process canceled."
 msgstr "このコンピュータにLinuxのインストールが見つかりませんでした。プロセスはキャンセルされました。"
-
 msgid ""
 "The boot in live mode is using EFI mode, but <span foreground='red'>no EFI partition</span> was "
 "found on this computer, \n"
@@ -60,7 +54,6 @@ msgstr ""
 "コンピュータのBIOSを通じてレガシーまたはBIOSモードで再起動してブートしてみてください。\n"
 "\n"
 "成功の可能性が低くても試してみますか？"
-
 msgid ""
 "The boot in live mode is using Legacy mode, also called BIOS, \n"
 "<span foreground='red'>but at least one EFI partition was found</span> on this computer, \n"
@@ -76,7 +69,6 @@ msgstr ""
 "コンピュータのBIOSを通じてEFIモードで再起動してブートしてみてください。\n"
 "\n"
 "成功の可能性が低くても試してみますか？"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -85,10 +77,8 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>オプションを選択してください：</span>\n"
 "\n"
 "複数のEFIパーティションが見つかりました。使用するものを選択してください："
-
 msgid "No EFI partition selected, process canceled."
 msgstr "EFIパーティションが選択されていないため、プロセスはキャンセルされました。"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -97,10 +87,8 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>オプションを選択してください：</span>\n"
 "\n"
 "このコンピュータには複数のLinuxインストールが見つかりました。ブートを復元するものを選択してください："
-
 msgid "No partition selected, process canceled."
 msgstr "パーティションが選択されていないため、プロセスはキャンセルされました。"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "    \n"
@@ -109,19 +97,14 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>オプションを選択してください：</span>\n"
 "\n"
 "複数のストレージデバイスが見つかりました。ブートを書き込むデバイスを選択してください："
-
 msgid "Disk"
 msgstr "ディスク"
-
 msgid "Size"
 msgstr "サイズ"
-
 msgid "Name"
 msgstr "名前"
-
 msgid "Partition Table"
 msgstr "パーティションテーブル"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>    \n"
 "\n"
@@ -154,10 +137,8 @@ msgstr ""
 "<span font='11' foreground='gray'>パーティションUUID：</span> $UUID_PARTITION\n"
 "\n"
 "続行しますか？"
-
 msgid "Your computer is not connected to the internet, options 2 and 3 require internet to work."
 msgstr "あなたのコンピュータはインターネットに接続されていません。オプション2と3は動作するためにインターネットが必要です。"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select the desired option:</span>\n"
 "        \n"
@@ -173,38 +154,28 @@ msgstr ""
 "foreground='gray'>簡単、中間、または完全</span>）。迷った場合は、最初のオプションを試し、コンピュータを再起動して問題が解決されたか確認してください。\n"
 "\n"
 "問題が解決しない場合は、他のオプションを試してください。"
-
 msgid "Option"
 msgstr "オプション"
-
 msgid "Description"
 msgstr "説明"
-
 msgid "Simple, just writes the Grub again at the beginning of the disk."
 msgstr "シンプルに、ディスクの先頭にGrubを再度書き込みます。"
-
 msgid ""
 "Intermediate, reinstalls the grub package on the partition, regenerates the configuration, and "
 "updates the initrd."
 msgstr "中級、パーティションにgrubパッケージを再インストールし、設定を再生成し、initrdを更新します。"
-
 msgid ""
 "Complete, performs the intermediate restore steps, updates the system, and checks if the LTS kernel "
 "is installed."
 msgstr "完了し、中間復元手順を実行し、システムを更新し、LTSカーネルがインストールされているかを確認します。"
-
 msgid "Interactive, opens a terminal inside the selected system."
 msgstr "インタラクティブ、選択したシステム内にターミナルを開きます。"
-
 msgid "Interactive, opens the control center inside the selected system."
 msgstr "インタラクティブ、選択したシステム内のコントロールセンターを開きます。"
-
 msgid "Interactive, opens the pamac-manager package manager inside the selected system."
 msgstr "インタラクティブ、選択したシステム内でpamac-managerパッケージマネージャーを開きます。"
-
 msgid "Completed!"
 msgstr "完了しました！"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>\n"
 "    \n"

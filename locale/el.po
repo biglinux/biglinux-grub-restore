@@ -15,10 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-
 msgid "This utility should only be used in live mode!"
 msgstr "Αυτή η εφαρμογή θα πρέπει να χρησιμοποιείται μόνο σε ζωντανή λειτουργία!"
-
 msgid ""
 "<span font='12'>This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed "
 "on the HD or SSD.</span>\n"
@@ -37,16 +35,12 @@ msgstr ""
 "<span font='10' foreground='gray'>Μπορεί επίσης να λειτουργήσει με άλλες διανομές Linux.</span>\n"
 "\n"
 "Θέλετε να προχωρήσετε;"
-
 msgid "Restore Boot, Grub, and initrd"
 msgstr "Αποκατάσταση Boot, Grub και initrd"
-
 msgid "Please wait..."
 msgstr "Παρακαλώ περιμένετε..."
-
 msgid "No Linux installation found on this computer, process canceled."
 msgstr "Δεν βρέθηκε εγκατάσταση Linux σε αυτόν τον υπολογιστή, η διαδικασία ακυρώθηκε."
-
 msgid ""
 "The boot in live mode is using EFI mode, but <span foreground='red'>no EFI partition</span> was "
 "found on this computer, \n"
@@ -64,7 +58,6 @@ msgstr ""
 "υπολογιστή.\n"
 "\n"
 "Θέλετε να δοκιμάσετε ακόμα και με χαμηλή πιθανότητα επιτυχίας;"
-
 msgid ""
 "The boot in live mode is using Legacy mode, also called BIOS, \n"
 "<span foreground='red'>but at least one EFI partition was found</span> on this computer, \n"
@@ -81,7 +74,6 @@ msgstr ""
 "Δοκιμάστε να επανεκκινήσετε και να εκκινήσετε σε λειτουργία EFI μέσω του BIOS του υπολογιστή.\n"
 "\n"
 "Θέλετε να δοκιμάσετε ακόμα και με χαμηλή πιθανότητα επιτυχίας;"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -90,10 +82,8 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Επιλέξτε μια επιλογή:</span>\n"
 "\n"
 "Βρέθηκαν περισσότερες από μία διαμερίσματα EFI, επιλέξτε ποιο να χρησιμοποιήσετε:"
-
 msgid "No EFI partition selected, process canceled."
 msgstr "Δεν έχει επιλεγεί διαμέρισμα EFI, η διαδικασία ακυρώθηκε."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -103,10 +93,8 @@ msgstr ""
 "\n"
 "Βρέθηκαν περισσότερες από μία εγκαταστάσεις Linux σε αυτόν τον υπολογιστή, επιλέξτε ποια να "
 "επαναφέρετε την εκκίνηση:"
-
 msgid "No partition selected, process canceled."
 msgstr "Δεν έχει επιλεγεί καμία διαμέριση, η διαδικασία ακυρώθηκε."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "    \n"
@@ -115,19 +103,14 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Επιλέξτε μια επιλογή:</span>\n"
 "\n"
 "Βρέθηκαν περισσότερες από μία συσκευές αποθήκευσης, επιλέξτε ποια να γράψετε το boot:"
-
 msgid "Disk"
 msgstr "Δίσκος"
-
 msgid "Size"
 msgstr "Μέγεθος"
-
 msgid "Name"
 msgstr "Όνομα"
-
 msgid "Partition Table"
 msgstr "Πίνακας Κατανομής"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>    \n"
 "\n"
@@ -160,12 +143,10 @@ msgstr ""
 "<span font='11' foreground='gray'>UUID κατάτμησης:</span> $UUID_PARTITION\n"
 "\n"
 "Θέλετε να προχωρήσετε;"
-
 msgid "Your computer is not connected to the internet, options 2 and 3 require internet to work."
 msgstr ""
 "Ο υπολογιστής σας δεν είναι συνδεδεμένος στο διαδίκτυο, οι επιλογές 2 και 3 απαιτούν σύνδεση στο "
 "διαδίκτυο για να λειτουργήσουν."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select the desired option:</span>\n"
 "        \n"
@@ -182,42 +163,32 @@ msgstr ""
 "λυθεί.\n"
 "\n"
 "Αν το πρόβλημα επιμένει, δοκιμάστε τις άλλες επιλογές."
-
 msgid "Option"
 msgstr "Επιλογή"
-
 msgid "Description"
 msgstr "Περιγραφή"
-
 msgid "Simple, just writes the Grub again at the beginning of the disk."
 msgstr "Απλό, απλώς γράφει ξανά το Grub στην αρχή του δίσκου."
-
 msgid ""
 "Intermediate, reinstalls the grub package on the partition, regenerates the configuration, and "
 "updates the initrd."
 msgstr ""
 "Μεσαίο, επανεγκαθιστά το πακέτο grub στην κατάτμηση, αναγεννά τη διαμόρφωση και ενημερώνει το "
 "initrd."
-
 msgid ""
 "Complete, performs the intermediate restore steps, updates the system, and checks if the LTS kernel "
 "is installed."
 msgstr ""
 "Ολοκληρώνει, εκτελεί τα ενδιάμεσα βήματα αποκατάστασης, ενημερώνει το σύστημα και ελέγχει αν είναι "
 "εγκατεστημένος ο πυρήνας LTS."
-
 msgid "Interactive, opens a terminal inside the selected system."
 msgstr "Διαδραστικό, ανοίγει ένα τερματικό μέσα στο επιλεγμένο σύστημα."
-
 msgid "Interactive, opens the control center inside the selected system."
 msgstr "Διαδραστικό, ανοίγει το κέντρο ελέγχου μέσα στο επιλεγμένο σύστημα."
-
 msgid "Interactive, opens the pamac-manager package manager inside the selected system."
 msgstr "Διαδραστικό, ανοίγει τον διαχειριστή πακέτων pamac-manager μέσα στο επιλεγμένο σύστημα."
-
 msgid "Completed!"
 msgstr "Ολοκληρώθηκε!"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>\n"
 "    \n"

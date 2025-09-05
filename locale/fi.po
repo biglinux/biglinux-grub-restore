@@ -15,10 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-
 msgid "This utility should only be used in live mode!"
 msgstr "Tätä työkalua tulisi käyttää vain live-tilassa!"
-
 msgid ""
 "<span font='12'>This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed "
 "on the HD or SSD.</span>\n"
@@ -37,16 +35,12 @@ msgstr ""
 "<span font='10' foreground='gray'>Se voi myös toimia muiden Linux-jakeluiden kanssa.</span>\n"
 "\n"
 "Haluatko jatkaa?"
-
 msgid "Restore Boot, Grub, and initrd"
 msgstr "Palauta Boot, Grub ja initrd"
-
 msgid "Please wait..."
 msgstr "Ole hyvä ja odota..."
-
 msgid "No Linux installation found on this computer, process canceled."
 msgstr "Tätä tietokonetta ei löytynyt Linux-asennusta, prosessi peruutettu."
-
 msgid ""
 "The boot in live mode is using EFI mode, but <span foreground='red'>no EFI partition</span> was "
 "found on this computer, \n"
@@ -63,7 +57,6 @@ msgstr ""
 "Yritä käynnistää uudelleen ja käynnistää Legacy- tai BIOS-tilassa tietokoneen BIOSin kautta.\n"
 "\n"
 "Haluatko yrittää, vaikka menestymisen todennäköisyys on alhainen?"
-
 msgid ""
 "The boot in live mode is using Legacy mode, also called BIOS, \n"
 "<span foreground='red'>but at least one EFI partition was found</span> on this computer, \n"
@@ -80,7 +73,6 @@ msgstr ""
 "Yritä käynnistää uudelleen ja käynnistää EFI-tilassa tietokoneen BIOSin kautta.\n"
 "\n"
 "Haluatko yrittää, vaikka onnistumisen todennäköisyys on alhainen?"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -89,10 +81,8 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Valitse vaihtoehto:</span>\n"
 "\n"
 "Löydettiin useampi kuin yksi EFI-osio, valitse käytettävä:"
-
 msgid "No EFI partition selected, process canceled."
 msgstr "Ei EFI-osioita valittu, prosessi peruutettu."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -101,10 +91,8 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Valitse vaihtoehto:</span>\n"
 "\n"
 "Tältä tietokoneelta löytyi useampi Linux-asennus, valitse mikä palautetaan käynnistykseen:"
-
 msgid "No partition selected, process canceled."
 msgstr "Ei osiota valittu, prosessi peruutettu."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "    \n"
@@ -113,19 +101,14 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Valitse vaihtoehto:</span>\n"
 "    \n"
 "Löydettiin useampi tallennuslaite, valitse mihin kirjoitetaan käynnistys:"
-
 msgid "Disk"
 msgstr "Levy"
-
 msgid "Size"
 msgstr "Koko"
-
 msgid "Name"
 msgstr "Nimi"
-
 msgid "Partition Table"
 msgstr "Osio-taulukko"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>    \n"
 "\n"
@@ -158,10 +141,8 @@ msgstr ""
 "<span font='11' foreground='gray'>Osion UUID:</span> $UUID_PARTITION\n"
 "\n"
 "Haluatko jatkaa?"
-
 msgid "Your computer is not connected to the internet, options 2 and 3 require internet to work."
 msgstr "Tietokoneesi ei ole yhteydessä internetiin, vaihtoehdot 2 ja 3 vaativat internetin toimiakseen."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select the desired option:</span>\n"
 "        \n"
@@ -178,42 +159,32 @@ msgstr ""
 "uudelleen ja katso, onko ongelma ratkaistu.\n"
 "\n"
 "Jos ongelma jatkuu, kokeile muita vaihtoehtoja."
-
 msgid "Option"
 msgstr "Vaihtoehto"
-
 msgid "Description"
 msgstr "Kuvaus"
-
 msgid "Simple, just writes the Grub again at the beginning of the disk."
 msgstr "Yksinkertainen, kirjoittaa Grubin uudelleen levyn alkuun."
-
 msgid ""
 "Intermediate, reinstalls the grub package on the partition, regenerates the configuration, and "
 "updates the initrd."
 msgstr ""
 "Välikurssi, asentaa grub-paketin uudelleen osiolle, luo konfiguraation uudelleen ja päivittää "
 "initrd:n."
-
 msgid ""
 "Complete, performs the intermediate restore steps, updates the system, and checks if the LTS kernel "
 "is installed."
 msgstr ""
 "Valmis, suorittaa väli palautusvaiheet, päivittää järjestelmän ja tarkistaa, onko LTS-ydin "
 "asennettu."
-
 msgid "Interactive, opens a terminal inside the selected system."
 msgstr "Interaktiivinen, avaa terminaalin valitussa järjestelmässä."
-
 msgid "Interactive, opens the control center inside the selected system."
 msgstr "Interaktiivinen, avaa ohjauskeskuksen valitussa järjestelmässä."
-
 msgid "Interactive, opens the pamac-manager package manager inside the selected system."
 msgstr "Interaktiivinen, avaa pamac-manager-pakettienhallinnan valitussa järjestelmässä."
-
 msgid "Completed!"
 msgstr "Valmis!"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>\n"
 "    \n"

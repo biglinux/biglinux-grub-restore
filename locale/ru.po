@@ -15,10 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-
 msgid "This utility should only be used in live mode!"
 msgstr "Эта утилита должна использоваться только в режиме реального времени!"
-
 msgid ""
 "<span font='12'>This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed "
 "on the HD or SSD.</span>\n"
@@ -37,16 +35,12 @@ msgstr ""
 "<span font='10' foreground='gray'>Он также может работать с другими дистрибутивами Linux.</span>\n"
 "\n"
 "Вы хотите продолжить?"
-
 msgid "Restore Boot, Grub, and initrd"
 msgstr "Восстановить загрузчик, Grub и initrd"
-
 msgid "Please wait..."
 msgstr "Пожалуйста, подождите..."
-
 msgid "No Linux installation found on this computer, process canceled."
 msgstr "На этом компьютере не найдена установка Linux, процесс отменен."
-
 msgid ""
 "The boot in live mode is using EFI mode, but <span foreground='red'>no EFI partition</span> was "
 "found on this computer, \n"
@@ -63,7 +57,6 @@ msgstr ""
 "Попробуйте перезагрузить и загрузиться в режиме Legacy или BIOS через BIOS компьютера.\n"
 "\n"
 "Хотите попробовать, даже с низкой вероятностью успеха?"
-
 msgid ""
 "The boot in live mode is using Legacy mode, also called BIOS, \n"
 "<span foreground='red'>but at least one EFI partition was found</span> on this computer, \n"
@@ -80,7 +73,6 @@ msgstr ""
 "Попробуйте перезагрузить и загрузиться в режиме EFI через BIOS компьютера.\n"
 "\n"
 "Хотите попробовать, даже с низкой вероятностью успеха?"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -89,10 +81,8 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Выберите вариант:</span>\n"
 "\n"
 "Найдено более одного раздела EFI, выберите, какой использовать:"
-
 msgid "No EFI partition selected, process canceled."
 msgstr "Не выбрана EFI-раздел, процесс отменен."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -102,10 +92,8 @@ msgstr ""
 "\n"
 "На этом компьютере обнаружено более одной установки Linux, выберите, какую из них восстановить для "
 "загрузки:"
-
 msgid "No partition selected, process canceled."
 msgstr "Не выбрана раздел, процесс отменен."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "    \n"
@@ -114,19 +102,14 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Выберите вариант:</span>\n"
 "    \n"
 "Найдено более одного устройства хранения, выберите, на какое из них записать загрузку:"
-
 msgid "Disk"
 msgstr "Диск"
-
 msgid "Size"
 msgstr "Размер"
-
 msgid "Name"
 msgstr "Имя"
-
 msgid "Partition Table"
 msgstr "Таблица разделов"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>    \n"
 "\n"
@@ -159,10 +142,8 @@ msgstr ""
 "<span font='11' foreground='gray'>UUID раздела:</span> $UUID_PARTITION\n"
 "\n"
 "Вы хотите продолжить?"
-
 msgid "Your computer is not connected to the internet, options 2 and 3 require internet to work."
 msgstr "Ваш компьютер не подключен к интернету, варианты 2 и 3 требуют подключения к интернету для работы."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select the desired option:</span>\n"
 "        \n"
@@ -179,42 +160,32 @@ msgstr ""
 "посмотрите, решена ли проблема.\n"
 "\n"
 "Если проблема сохраняется, попробуйте другие варианты."
-
 msgid "Option"
 msgstr "Опция"
-
 msgid "Description"
 msgstr "Описание"
-
 msgid "Simple, just writes the Grub again at the beginning of the disk."
 msgstr "Просто снова записывает Grub в начале диска."
-
 msgid ""
 "Intermediate, reinstalls the grub package on the partition, regenerates the configuration, and "
 "updates the initrd."
 msgstr ""
 "Промежуточный, переустанавливает пакет grub на разделе, регенерирует конфигурацию и обновляет "
 "initrd."
-
 msgid ""
 "Complete, performs the intermediate restore steps, updates the system, and checks if the LTS kernel "
 "is installed."
 msgstr ""
 "Завершает, выполняет промежуточные шаги восстановления, обновляет систему и проверяет, установлен "
 "ли ядро LTS."
-
 msgid "Interactive, opens a terminal inside the selected system."
 msgstr "Интерактивный, открывает терминал внутри выбранной системы."
-
 msgid "Interactive, opens the control center inside the selected system."
 msgstr "Интерактивный, открывает центр управления внутри выбранной системы."
-
 msgid "Interactive, opens the pamac-manager package manager inside the selected system."
 msgstr "Интерактивный, открывает менеджер пакетов pamac-manager внутри выбранной системы."
-
 msgid "Completed!"
 msgstr "Завершено!"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>\n"
 "    \n"

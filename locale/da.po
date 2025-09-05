@@ -15,227 +15,887 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-
-msgid "This utility should only be used in live mode!"
-msgstr "Dette værktøj bør kun bruges i live-tilstand!"
-
-msgid ""
-"<span font='12'>This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed "
-"on the HD or SSD.</span>\n"
-"\n"
-"<span font='12' foreground='red'>If the installed system is booting correctly, there are no boot "
-"problems, so it's better not to proceed with this tool.</span>\n"
-"<span font='10' foreground='gray'>It may also work with other Linux distributions.</span>\n"
-"\n"
-"Do you want to proceed?"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 17
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 102
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 146
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 170
+#: NEEDS WORK
+msgid "Unknown"
+msgstr "Ukendt"
+# 
+# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 85
+#: NEEDS WORK
+msgid "Unknown CPU"
+msgstr "Ukendt CPU"
+# 
+# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 98
+#: NEEDS WORK
+msgid "Unknown Memory"
+msgstr "Ukendt Hukommelse"
+# 
+# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 120
+#: NEEDS WORK
+msgid "Live Media"
+msgstr "Live Media"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 172
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 123
+#: NEEDS WORK
+msgid "Unknown System"
+msgstr "Ukendt System"
+# 
+# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 207
+#: NEEDS WORK
+msgid "Simple restore - Just writes the Grub again at the beginning of the disk."
+msgstr "Simpel gendannelse - Skriver blot Grub igen i begyndelsen af disken."
+# 
+# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 208
+#: NEEDS WORK
+msgid "Intermediate restore - Reinstalls the grub package, regenerates configuration, and updates initrd."
 msgstr ""
-"<span font='12'>Dette værktøj skal bruges i LIVE TILSTAND for at gendanne BOOT'en af BigLinux "
-"installeret på HD eller SSD.</span>\n"
-"\n"
-"<span font='12' foreground='red'>Hvis det installerede system booter korrekt, er der ingen "
-"bootproblemer, så det er bedre ikke at fortsætte med dette værktøj.</span>\n"
-"<span font='10' foreground='gray'>Det kan også fungere med andre Linux-distributioner.</span>\n"
-"\n"
-"Vil du fortsætte?"
-
-msgid "Restore Boot, Grub, and initrd"
-msgstr "Gendan Boot, Grub og initrd"
-
-msgid "Please wait..."
-msgstr "Vent venligst..."
-
-msgid "No Linux installation found on this computer, process canceled."
-msgstr "Ingen Linux-installation fundet på denne computer, proces annulleret."
-
-msgid ""
-"The boot in live mode is using EFI mode, but <span foreground='red'>no EFI partition</span> was "
-"found on this computer, \n"
-"most likely the Grub restore will not work. \n"
-"\n"
-"Try restarting and booting in Legacy or BIOS mode through the computer's BIOS.\n"
-"\n"
-"Do you want to try even with a low probability of success?"
-msgstr ""
-"Boot i live-tilstand bruger EFI-tilstand, men <span foreground='red'>ingen EFI-partition</span> "
-"blev fundet på denne computer, \n"
-"mest sandsynligt vil Grub-gendannelse ikke fungere. \n"
-"\n"
-"Prøv at genstarte og boote i Legacy- eller BIOS-tilstand gennem computerens BIOS.\n"
-"\n"
-"Vil du prøve, selv med en lav sandsynlighed for succes?"
-
-msgid ""
-"The boot in live mode is using Legacy mode, also called BIOS, \n"
-"<span foreground='red'>but at least one EFI partition was found</span> on this computer, \n"
-"most likely the Grub restore will not work. \n"
-"\n"
-"Try restarting and booting in EFI mode through the computer's BIOS.\n"
-"\n"
-"Do you want to try even with a low probability of success?"
-msgstr ""
-"Boot i live-tilstand bruger Legacy-tilstand, også kaldet BIOS, \n"
-"<span foreground='red'>men der blev fundet mindst én EFI-partition</span> på denne computer, \n"
-"mest sandsynligt vil Grub-gendannelsen ikke fungere. \n"
-"\n"
-"Prøv at genstarte og boote i EFI-tilstand gennem computerens BIOS.\n"
-"\n"
-"Vil du prøve, selv med en lav sandsynlighed for succes?"
-
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
-"\n"
-"More than one EFI partition was found, select which one to use:"
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Vælg en mulighed:</span>\n"
-"\n"
-"Der blev fundet mere end én EFI-partition, vælg hvilken der skal bruges:"
-
-msgid "No EFI partition selected, process canceled."
-msgstr "Ingen EFI-partition valgt, proces annulleret."
-
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
-"\n"
-"More than one Linux installation was found on this computer, select which one to restore the boot:"
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Vælg en mulighed:</span>\n"
-"\n"
-"Der blev fundet mere end én Linux-installation på denne computer, vælg hvilken en der skal "
-"gendannes til opstart:"
-
-msgid "No partition selected, process canceled."
-msgstr "Ingen partition valgt, proces annulleret."
-
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
-"    \n"
-"More than one storage device was found, select which one to write the boot to:"
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Vælg en mulighed:</span>\n"
-"    \n"
-"Mere end én lagringsenhed blev fundet, vælg hvilken en der skal skrives til boot:"
-
-msgid "Disk"
-msgstr "Disk"
-
-msgid "Size"
-msgstr "Størrelse"
-
-msgid "Name"
-msgstr "Navn"
-
-msgid "Partition Table"
-msgstr "Partitionstabel"
-
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>    \n"
-"\n"
-"<span font='11' foreground='gray'>Boot mode:</span>  LEGACY/BIOS\n"
-"<span font='11' foreground='gray'>Selected disk:</span> $DISK_SELECTED\n"
-"    \n"
-"<span font='11' foreground='gray'>Disk partition table:</span> $DISK_TABLE\n"
-"    \n"
-"<span font='11' foreground='gray'>Disk size:</span> $DISK_SIZE\n"
-"   \n"
-"<span font='11' foreground='gray'>Selected partition:</span> $SELECTED_PARTITION\n"
-"<span font='11' foreground='gray'>Selected system:</span> $SELECTED_OS\n"
-"<span font='11' foreground='gray'>Partition format:</span> $PARTITION_FORMAT\n"
-"<span font='11' foreground='gray'>Partition UUID:</span> $UUID_PARTITION\n"
-"\n"
-"Do you want to proceed?"
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Bekræft dataene:</span>    \n"
-"\n"
-"<span font='11' foreground='gray'>Boot-tilstand:</span>  LEGACY/BIOS\n"
-"<span font='11' foreground='gray'>Valgt disk:</span> $DISK_SELECTED\n"
-"    \n"
-"<span font='11' foreground='gray'>Diskpartitionstabel:</span> $DISK_TABLE\n"
-"    \n"
-"<span font='11' foreground='gray'>Diskstørrelse:</span> $DISK_SIZE\n"
-"   \n"
-"<span font='11' foreground='gray'>Valgt partition:</span> $SELECTED_PARTITION\n"
-"<span font='11' foreground='gray'>Valgt system:</span> $SELECTED_OS\n"
-"<span font='11' foreground='gray'>Partitionformat:</span> $PARTITION_FORMAT\n"
-"<span font='11' foreground='gray'>Partition UUID:</span> $UUID_PARTITION\n"
-"\n"
-"Vil du fortsætte?"
-
-msgid "Your computer is not connected to the internet, options 2 and 3 require internet to work."
-msgstr "Din computer er ikke tilsluttet internettet, mulighederne 2 og 3 kræver internet for at fungere."
-
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Select the desired option:</span>\n"
-"        \n"
-"The restore can be done in 3 ways (<span foreground='gray'>Simple, Intermediate, or "
-"Complete</span>), if in doubt, try the first option, restart the computer and see if it is "
-"resolved.\n"
-"\n"
-"If the problem persists, try the other options."
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Vælg den ønskede mulighed:</span>\n"
-"        \n"
-"Gendannelsen kan udføres på 3 måder (<span foreground='gray'>Simpel, Mellemliggende eller "
-"Fuld</span>), hvis du er i tvivl, så prøv den første mulighed, genstart computeren og se om det er "
-"løst.\n"
-"\n"
-"Hvis problemet fortsætter, så prøv de andre muligheder."
-
-msgid "Option"
-msgstr "Mulighed"
-
-msgid "Description"
-msgstr "Beskrivelse"
-
-msgid "Simple, just writes the Grub again at the beginning of the disk."
-msgstr "Simpel, skriver bare Grub igen i begyndelsen af disken."
-
-msgid ""
-"Intermediate, reinstalls the grub package on the partition, regenerates the configuration, and "
-"updates the initrd."
-msgstr ""
-"Mellemniveau, geninstallerer grub-pakken på partitionen, regenererer konfigurationen og opdaterer "
+"Mellemliggende gendannelse - Geninstallerer grub-pakken, regenererer konfigurationen og opdaterer "
 "initrd."
-
+# 
+# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 209
+#: NEEDS WORK
+msgid "Complete restore - Performs intermediate steps, updates system, and checks LTS kernel."
+msgstr "Fuldstændig gendannelse - Udfører mellemtrin, opdaterer systemet og kontrollerer LTS-kernen."
+# 
+# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 210
+#: NEEDS WORK
+msgid "Interactive terminal - Opens a terminal inside the selected system."
+msgstr "Interaktiv terminal - Åbner et terminalvindue inde i det valgte system."
+# 
+# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 211
+#: NEEDS WORK
+msgid "Interactive control center - Opens the control center inside the selected system."
+msgstr "Interaktiv kontrolcenter - Åbner kontrolcentret inde i det valgte system."
+# 
+# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 212
+#: NEEDS WORK
+msgid "Interactive package manager - Opens pamac-manager inside the selected system."
+msgstr "Interaktiv pakkeadministrator - Åbner pamac-manager inde i det valgte system."
+# 
+# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 214
+#: NEEDS WORK
+msgid "Unknown restore mode"
+msgstr "Ukendt gendannelsestilstand"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 239
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 402
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 292
+#: NEEDS WORK
+msgid "Internet connection available"
+msgstr "Internetforbindelse tilgængelig"
+# 
+# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 245
+#: NEEDS WORK
+msgid "No internet connection detected. Options 2 and 3 require internet to work."
+msgstr "Ingen internetforbindelse opdaget. Mulighederne 2 og 3 kræver internet for at fungere."
+# 
+# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 266
+#: NEEDS WORK
+msgid "Permission denied. Please check if you have administrator privileges."
+msgstr "Adgang nægtet. Tjek venligst, om du har administratorrettigheder."
+# 
+# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 267
+#: NEEDS WORK
+msgid "Required file not found. The system may be corrupted."
+msgstr "Påkrævet fil blev ikke fundet. Systemet kan være beskadiget."
+# 
+# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 268
+#: NEEDS WORK
+msgid "Device is busy. Please unmount any mounted partitions and try again."
+msgstr "Enheden er optaget. Afmonter venligst eventuelle monterede partitioner og prøv igen."
+# 
+# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 269
+#: NEEDS WORK
+msgid "No space left on device. Please free up some space and try again."
+msgstr "Ingen plads tilbage på enheden. Frigør venligst noget plads, og prøv igen."
+# 
+# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 270
+#: NEEDS WORK
+msgid "Network connection failed. Please check your internet connection."
+msgstr "Netværksforbindelse mislykkedes. Tjek venligst din internetforbindelse."
+# 
+# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 271
+#: NEEDS WORK
+msgid "Operation timed out. Please try again."
+msgstr "Operationen timed out. Prøv venligst igen."
+# 
+# File: usr/share/biglinux/grub-restore/backend/system_interface.py, line: 129
+#: NEEDS WORK
+msgid "EFI Boot without EFI Partition"
+msgstr "EFI-opstart uden EFI-partition"
+# 
+# File: usr/share/biglinux/grub-restore/backend/system_interface.py, line: 131
+#: NEEDS WORK
 msgid ""
-"Complete, performs the intermediate restore steps, updates the system, and checks if the LTS kernel "
-"is installed."
+"The boot in live mode is using EFI mode, but no EFI partition was found on this computer. Most "
+"likely the Grub restore will not work.\n"
+"\n"
+"Try restarting and booting in Legacy or BIOS mode through the computer's BIOS."
 msgstr ""
-"Fuldfører, udfører de mellemliggende gendannelsestrin, opdaterer systemet og kontrollerer, om "
-"LTS-kernen er installeret."
-
-msgid "Interactive, opens a terminal inside the selected system."
-msgstr "Interaktiv, åbner et terminalvindue inde i det valgte system."
-
-msgid "Interactive, opens the control center inside the selected system."
-msgstr "Interaktiv, åbner kontrolcentret inde i det valgte system."
-
-msgid "Interactive, opens the pamac-manager package manager inside the selected system."
-msgstr "Interaktiv, åbner pamac-manager pakkehåndteringen inde i det valgte system."
-
-msgid "Completed!"
-msgstr "Færdig!"
-
+"Booten i live-tilstand bruger EFI-tilstand, men der blev ikke fundet nogen EFI-partition på denne "
+"computer. Det er meget sandsynligt, at Grub-gendannelsen ikke vil fungere.\n"
+"\n"
+"Prøv at genstarte og boote i Legacy- eller BIOS-tilstand gennem computerens BIOS."
+# 
+# File: usr/share/biglinux/grub-restore/backend/system_interface.py, line: 139
+#: NEEDS WORK
+msgid "Legacy Boot with EFI Partition"
+msgstr "Legacy Boot med EFI-partition"
+# 
+# File: usr/share/biglinux/grub-restore/backend/system_interface.py, line: 141
+#: NEEDS WORK
 msgid ""
-"<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>\n"
-"    \n"
-"<span font='11' foreground='gray'>Boot mode:</span> EFI\n"
-"<span font='11' foreground='gray'>EFI partition:</span> $EFI_PARTITION\n"
-"    \n"
-"<span font='11' foreground='gray'>Selected partition:</span> $SELECTED_PARTITION\n"
-"<span font='11' foreground='gray'>Selected system:</span> $SELECTED_OS\n"
-"<span font='11' foreground='gray'>Partition format:</span> $PARTITION_FORMAT\n"
-"<span font='11' foreground='gray'>Partition UUID:</span> $UUID_PARTITION\n"
+"The boot in live mode is using Legacy mode, also called BIOS, but at least one EFI partition was "
+"found on this computer. Most likely the Grub restore will not work.\n"
 "\n"
-"Do you want to proceed?"
+"Try restarting and booting in EFI mode through the computer's BIOS."
 msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Bekræft dataene:</span>\n"
-"    \n"
-"<span font='11' foreground='gray'>Boot-tilstand:</span> EFI\n"
-"<span font='11' foreground='gray'>EFI-partition:</span> $EFI_PARTITION\n"
-"    \n"
-"<span font='11' foreground='gray'>Valgt partition:</span> $SELECTED_PARTITION\n"
-"<span font='11' foreground='gray'>Valgt system:</span> $SELECTED_OS\n"
-"<span font='11' foreground='gray'>Partitionformat:</span> $PARTITION_FORMAT\n"
-"<span font='11' foreground='gray'>Partition UUID:</span> $UUID_PARTITION\n"
+"Booten i live-tilstand bruger Legacy-tilstand, også kaldet BIOS, men der blev fundet mindst én "
+"EFI-partition på denne computer. Det er meget sandsynligt, at Grub-gendannelsen ikke vil fungere.\n"
 "\n"
-"Ønsker du at fortsætte?"
+"Prøv at genstarte og boote i EFI-tilstand gennem computerens BIOS."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/application.py, line: 59
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 18
+#: NEEDS WORK
+msgid "BigLinux GRUB Restore"
+msgstr "BigLinux GRUB Gendannelse"
+# 
+# File: usr/share/biglinux/grub-restore/gui/application.py, line: 67
+#: NEEDS WORK
+msgid "Restore GRUB bootloader and repair boot issues"
+msgstr "Gendan GRUB bootloader og reparer opstartsproblemer"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 53
+#: NEEDS WORK
+msgid "About"
+msgstr "Om"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 54
+#: NEEDS WORK
+msgid "Quit"
+msgstr "Afslut"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 74
+#: NEEDS WORK
+msgid "GRUB Restore Tool"
+msgstr "GRUB Gendannelsesværktøj"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 76
+#: NEEDS WORK
+msgid ""
+"This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed on the HD or "
+"SSD.\n"
+"\n"
+"If the installed system is booting correctly, there are no boot problems, so it's better not to "
+"proceed with this tool."
+msgstr ""
+"Dette værktøj skal bruges i LIVE TILSTAND for at gendanne BOOT'en af BigLinux installeret på HD "
+"eller SSD.\n"
+"\n"
+"Hvis det installerede system starter korrekt, er der ingen bootproblemer, så er det bedre ikke at "
+"fortsætte med dette værktøj."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 84
+#: NEEDS WORK
+msgid "Start Detection"
+msgstr "Start Detektion"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 109
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 139
+#: NEEDS WORK
+msgid "Detecting Systems"
+msgstr "Registreringssystemer"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 110
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 140
+#: NEEDS WORK
+msgid "Please wait while we scan your system..."
+msgstr "Vent venligst, mens vi scanner dit system..."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 208
+#: NEEDS WORK
+msgid "Detection Failed"
+msgstr "Registrering mislykkedes"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 212
+#: NEEDS WORK
+msgid "Try Again"
+msgstr "Prøv igen"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 226
+#: NEEDS WORK
+msgid "No Systems Found"
+msgstr "Ingen systemer fundet"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 227
+#: NEEDS WORK
+msgid "No Linux installations found on this computer."
+msgstr "Ingen Linux-installationer fundet på denne computer."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 230
+#: NEEDS WORK
+msgid "Back"
+msgstr "Tilbage"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 250
+#: NEEDS WORK
+msgid "Select System to Restore"
+msgstr "Vælg system til gendannelse"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 256
+#: NEEDS WORK
+msgid "Detected Linux Systems"
+msgstr "Opdagede Linux-systemer"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 269
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 230
+#: NEEDS WORK
+msgid "Boot Configuration"
+msgstr "Boot-konfiguration"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 273
+#: NEEDS WORK
+msgid "Current Boot Mode"
+msgstr "Nuværende opstartstilstand"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 280
+#: NEEDS WORK
+msgid "EFI Partitions Found"
+msgstr "EFI-partitioner fundet"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 289
+#: NEEDS WORK
+msgid "Continue to Restore Options"
+msgstr "Fortsæt til gendannelsesindstillinger"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 374
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 55
+#: NEEDS WORK
+msgid "Restore Options"
+msgstr "Gendan indstillinger"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 380
+#: NEEDS WORK
+msgid ""
+"The restore can be done in 3 ways (Simple, Intermediate, or Complete). If in doubt, try the first "
+"option, restart the computer and see if it is resolved."
+msgstr ""
+"Gendannelsen kan udføres på 3 måder (Simpel, Mellemliggende eller Fuld). Hvis du er i tvivl, så "
+"prøv den første mulighed, genstart computeren og se om det er løst."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 406
+#: NEEDS WORK
+msgid "No internet - Options 2 and 3 require internet"
+msgstr "Ingen internet - Mulighederne 2 og 3 kræver internet"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 415
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 77
+#: NEEDS WORK
+msgid "Restore Methods"
+msgstr "Gendannelsesmetoder"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 419
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 118
+#: NEEDS WORK
+msgid "Simple Restore"
+msgstr "Simpel Gendannelse"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 420
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 119
+#: NEEDS WORK
+msgid "Just writes the Grub again at the beginning of the disk."
+msgstr "Skriver blot Grub igen i begyndelsen af disken."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 424
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 438
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 453
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 123
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 140
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 159
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 353
+#: NEEDS WORK
+msgid "Execute"
+msgstr "Udfør"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 433
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 132
+#: NEEDS WORK
+msgid "Intermediate Restore"
+msgstr "Mellemliggende gendannelse"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 434
+#: NEEDS WORK
+msgid "Reinstalls the grub package, regenerates configuration, and updates initrd."
+msgstr "Geninstallerer grub-pakken, regenererer konfigurationen og opdaterer initrd."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 448
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 151
+#: NEEDS WORK
+msgid "Complete Restore"
+msgstr "Fuld gendannelse"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 449
+#: NEEDS WORK
+msgid "Performs intermediate steps, updates system, and checks LTS kernel."
+msgstr "Udfører mellemtrin, opdaterer systemet og kontrollerer LTS-kernen."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 465
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 83
+#: NEEDS WORK
+msgid "Interactive Options"
+msgstr "Interaktive muligheder"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 469
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 173
+#: NEEDS WORK
+msgid "Interactive Terminal"
+msgstr "Interaktiv Terminal"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 470
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 174
+#: NEEDS WORK
+msgid "Opens a terminal inside the selected system."
+msgstr "Åbner et terminalvindue i det valgte system."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 474
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 488
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 502
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 178
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 192
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 206
+#: NEEDS WORK
+msgid "Open"
+msgstr "Åbn"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 483
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 187
+#: NEEDS WORK
+msgid "Control Center"
+msgstr "Kontrolcenter"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 484
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 188
+#: NEEDS WORK
+msgid "Opens the control center inside the selected system."
+msgstr "Åbner kontrolcentret inde i det valgte system."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 497
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 201
+#: NEEDS WORK
+msgid "Package Manager"
+msgstr "Pakkestyring"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 498
+#: NEEDS WORK
+msgid "Opens pamac-manager inside the selected system."
+msgstr "Åbner pamac-manager inde i det valgte system."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 595
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 338
+#: NEEDS WORK
+msgid "Simple restore will write GRUB to the beginning of the disk."
+msgstr "Simpel gendannelse vil skrive GRUB til begyndelsen af disken."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 596
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 339
+#: NEEDS WORK
+msgid "Intermediate restore will reinstall GRUB package and update configuration."
+msgstr "Mellemniveau gendannelse vil geninstallere GRUB-pakken og opdatere konfigurationen."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 597
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 340
+#: NEEDS WORK
+msgid "Complete restore will perform full system update and kernel check."
+msgstr "Fuld genopretning vil udføre en fuld systemopdatering og kernekontrol."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 598
+#: NEEDS WORK
+msgid "Interactive terminal will open inside the selected system."
+msgstr "Interaktiv terminal åbnes inden i det valgte system."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 599
+#: NEEDS WORK
+msgid "Control center will open inside the selected system."
+msgstr "Kontrolcenteret åbnes inde i det valgte system."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 600
+#: NEEDS WORK
+msgid "Package manager will open inside the selected system."
+msgstr "Pakkestyringsværktøjet åbnes inden i det valgte system."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 611
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 225
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 394
+#: NEEDS WORK
+msgid "Restore in Progress"
+msgstr "Gendannelse i gang"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 612
+#: NEEDS WORK
+msgid "Please wait while the restore operation completes..."
+msgstr "Vent venligst, mens gendannelsesoperationen afsluttes..."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 655
+#: NEEDS WORK
+msgid "Restore Completed"
+msgstr "Gendannelse Fuldført"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 656
+#: NEEDS WORK
+msgid "The restore operation completed successfully!"
+msgstr "Gendannelsesoperationen blev gennemført med succes!"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 659
+#: NEEDS WORK
+msgid "Restore Failed"
+msgstr "Gendannelse mislykkedes"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 660
+#: NEEDS WORK
+msgid "The restore operation failed. Please try again."
+msgstr "Gendannelsesoperationen mislykkedes. Prøv venligst igen."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 664
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 459
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 462
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 474
+#: NEEDS WORK
+msgid "Close"
+msgstr "Luk"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 688
+#: NEEDS WORK
+msgid "Restore Error"
+msgstr "Gendannelsesfejl"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 692
+#: NEEDS WORK
+msgid "Back to Options"
+msgstr "Tilbage til Indstillinger"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 59
+#: NEEDS WORK
+msgid "Linux System"
+msgstr "Linux-system"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 64
+#: NEEDS WORK
+msgid "No system detected"
+msgstr "Ingen system fundet"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 94
+#: NEEDS WORK
+msgid "Partition"
+msgstr "Partition"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 95
+#: NEEDS WORK
+msgid "Not selected"
+msgstr "Ikke valgt"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 101
+#: NEEDS WORK
+msgid "Filesystem"
+msgstr "Filsystem"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 108
+#: NEEDS WORK
+msgid "UUID"
+msgstr "UUID"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 109
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 155
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 171
+#: NEEDS WORK
+msgid "Not available"
+msgstr "Ikke tilgængelig"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 131
+#: NEEDS WORK
+msgid "Linux Installation"
+msgstr "Linux-installation"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 139
+#: NEEDS WORK
+msgid "Not specified"
+msgstr "Not specified"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 162
+#: NEEDS WORK
+msgid "No System"
+msgstr "Ingen system"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 163
+#: NEEDS WORK
+msgid "No Linux installation detected"
+msgstr "Ingen Linux-installation opdaget"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 169
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 291
+#: NEEDS WORK
+msgid "Not detected"
+msgstr "Ikke registreret"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 235
+#: NEEDS WORK
+msgid "Current system boot information"
+msgstr "Aktuel system opstartsoplysninger"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 258
+#: NEEDS WORK
+msgid "Boot Mode"
+msgstr "Boot-tilstand"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 259
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 273
+#: NEEDS WORK
+msgid "Detecting..."
+msgstr "Registrerer..."
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 265
+#: NEEDS WORK
+msgid "Live Session"
+msgstr "Live Session"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 266
+#: NEEDS WORK
+msgid "Checking..."
+msgstr "Tjekker..."
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 272
+#: NEEDS WORK
+msgid "Available Memory"
+msgstr "Tilgængelig hukommelse"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 283
+#: NEEDS WORK
+msgid "EFI/UEFI"
+msgstr "EFI/UEFI"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 285
+#: NEEDS WORK
+msgid "Legacy/BIOS"
+msgstr "Legacy/BIOS"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 289
+#: NEEDS WORK
+msgid "Active (Live Mode)"
+msgstr "Aktiv (Live-tilstand)"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 330
+#: NEEDS WORK
+msgid "Checking network connection..."
+msgstr "Tjekker netværksforbindelse..."
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 44
+#: NEEDS WORK
+msgid "Select Target Disk"
+msgstr "Vælg mål-disk"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 51
+#: NEEDS WORK
+msgid ""
+"Select the disk where GRUB will be installed. The bootloader will be written to the beginning of "
+"the selected disk."
+msgstr ""
+"Vælg den disk, hvor GRUB vil blive installeret. Bootloaderen vil blive skrevet til begyndelsen af "
+"den valgte disk."
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 61
+#: NEEDS WORK
+msgid "Available Disks"
+msgstr "Tilgængelige diske"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 67
+#: NEEDS WORK
+msgid "No Disks Found"
+msgstr "Ingen diske fundet"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 69
+#: NEEDS WORK
+msgid ""
+"No suitable disks were found for GRUB installation. Please check if your disks are properly "
+"connected."
+msgstr ""
+"Ingen egnede diske blev fundet til GRUB-installation. Kontroller venligst, om dine diske er korrekt "
+"tilsluttet."
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 121
+#: NEEDS WORK
+msgid "Unknown model"
+msgstr "Ukendt model"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 144
+#: NEEDS WORK
+msgid "GPT partition table detected. Make sure this is correct for Legacy boot mode."
+msgstr "GPT-partitionstabel registreret. Sørg for, at dette er korrekt til Legacy-boottilstand."
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 220
+#: NEEDS WORK
+msgid "Select EFI Partition"
+msgstr "Vælg EFI-partition"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 227
+#: NEEDS WORK
+msgid ""
+"Select the EFI System Partition where GRUB will be installed. This partition contains the boot "
+"files for UEFI systems."
+msgstr ""
+"Vælg EFI-systempartitionen, hvor GRUB vil blive installeret. Denne partition indeholder bootfilerne "
+"til UEFI-systemer."
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 237
+#: NEEDS WORK
+msgid "Available EFI Partitions"
+msgstr "Tilgængelige EFI-partitioner"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 243
+#: NEEDS WORK
+msgid "No EFI Partitions Found"
+msgstr "Ingen EFI-partitioner fundet"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 245
+#: NEEDS WORK
+msgid "No EFI System Partitions were found. Your system may not be configured for UEFI boot."
+msgstr ""
+"Der blev ikke fundet nogen EFI-systempartitioner. Dit system er muligvis ikke konfigureret til "
+"UEFI-opstart."
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
+# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
+#: NEEDS WORK
+msgid "EFI System Partition"
+msgstr "EFI-systempartition"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 62
+#: NEEDS WORK
+msgid ""
+"The restore can be done in 3 ways (Simple, Intermediate, or Complete). If in doubt, try the first "
+"option, restart the computer and see if it is resolved. If the problem persists, try the other "
+"options."
+msgstr ""
+"Gendannelsen kan udføres på 3 måder (Simpel, Mellemliggende eller Fuld). Hvis du er i tvivl, så "
+"prøv den første mulighed, genstart computeren og se om det er løst. Hvis problemet fortsætter, så "
+"prøv de andre muligheder."
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 134
+#: NEEDS WORK
+msgid "Reinstalls the grub package on the partition, regenerates the configuration, and updates the initrd."
+msgstr "Geninstallerer grub-pakken på partitionen, regenererer konfigurationen og opdaterer initrd."
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 153
+#: NEEDS WORK
+msgid ""
+"Performs the intermediate restore steps, updates the system, and checks if the LTS kernel is "
+"installed."
+msgstr ""
+"Udfører de mellemliggende gendannelsestrin, opdaterer systemet og kontrollerer, om LTS-kernen er "
+"installeret."
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 202
+#: NEEDS WORK
+msgid "Opens the pamac-manager package manager inside the selected system."
+msgstr "Åbner pamac-manager pakkehåndtereren inde i det valgte system."
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 240
+#: NEEDS WORK
+msgid "Preparing..."
+msgstr "Forbereder..."
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 263
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 352
+#: NEEDS WORK
+msgid "Cancel"
+msgstr "Annuller"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 297
+#: NEEDS WORK
+msgid "No internet connection - Options 2 and 3 require internet"
+msgstr "Ingen internetforbindelse - Mulighederne 2 og 3 kræver internet"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 311
+#: NEEDS WORK
+msgid "System interface not available"
+msgstr "Systemgrænseflade ikke tilgængelig"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 341
+#: NEEDS WORK
+msgid "Interactive terminal will open a command line inside the selected system."
+msgstr "Interaktiv terminal åbner en kommandolinje inde i det valgte system."
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 342
+#: NEEDS WORK
+msgid "Control center will open system settings inside the selected system."
+msgstr "Kontrolcenteret åbner systemindstillingerne i det valgte system."
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 343
+#: NEEDS WORK
+msgid "Package manager will open pamac-manager inside the selected system."
+msgstr "Pakkestyring vil åbne pamac-manager inde i det valgte system."
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 348
+#: NEEDS WORK
+msgid "Confirm Restore Operation"
+msgstr "Bekræft gendannelsesoperation"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 349
+#: NEEDS WORK
+msgid "Execute the selected restore operation?"
+msgstr "Udfør den valgte gendannelsesoperation?"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 374
+#: NEEDS WORK
+msgid "Internet Connection Required"
+msgstr "Internetforbindelse påkrævet"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 375
+#: NEEDS WORK
+msgid ""
+"This restore option requires an internet connection to download packages and updates. Please check "
+"your network connection and try again."
+msgstr ""
+"Denne gendannelsesmulighed kræver en internetforbindelse for at downloade pakker og opdateringer. "
+"Kontroller venligst din netværksforbindelse, og prøv igen."
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 379
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 533
+#: NEEDS WORK
+msgid "OK"
+msgstr "OK"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 386
+#: NEEDS WORK
+msgid "Simple Restore in Progress"
+msgstr "Simpel gendannelse i gang"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 387
+#: NEEDS WORK
+msgid "Intermediate Restore in Progress"
+msgstr "Mellemliggende gendannelse er i gang"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 388
+#: NEEDS WORK
+msgid "Complete Restore in Progress"
+msgstr "Fuld gendannelse i gang"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 389
+#: NEEDS WORK
+msgid "Opening Interactive Terminal"
+msgstr "Åbner interaktiv terminal"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 390
+#: NEEDS WORK
+msgid "Opening Control Center"
+msgstr "Åbner kontrolcenter"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 391
+#: NEEDS WORK
+msgid "Opening Package Manager"
+msgstr "Åbner Pakkeadministrator"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 395
+#: NEEDS WORK
+msgid "Initializing..."
+msgstr "Initialiserer..."
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 416
+#: NEEDS WORK
+msgid "Starting restore operation..."
+msgstr "Starter gendannelsesoperation..."
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 423
+#: NEEDS WORK
+msgid "Opening interactive session..."
+msgstr "Åbner interaktiv session..."
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 458
+#: NEEDS WORK
+msgid "Restore completed successfully!"
+msgstr "Gendannelse gennemført med succes!"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 461
+#: NEEDS WORK
+msgid "Restore failed. Please check the output above."
+msgstr "Gendannelse mislykkedes. Tjek venligst outputtet ovenfor."
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 473
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
+#: NEEDS WORK
+msgid "Error"
+msgstr "Fejl"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 485
+#: NEEDS WORK
+msgid "Cancel Restore?"
+msgstr "Annuller gendannelse?"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 486
+#: NEEDS WORK
+msgid "Are you sure you want to cancel the restore operation?"
+msgstr "Er du sikker på, at du vil annullere gendannelsesoperationen?"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 489
+#: NEEDS WORK
+msgid "No"
+msgstr "Nej"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 490
+#: NEEDS WORK
+msgid "Yes, Cancel"
+msgstr "Ja, Annuller"

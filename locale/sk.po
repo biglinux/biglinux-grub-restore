@@ -15,10 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-
 msgid "This utility should only be used in live mode!"
 msgstr "Tento nástroj by sa mal používať iba v živom režime!"
-
 msgid ""
 "<span font='12'>This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed "
 "on the HD or SSD.</span>\n"
@@ -37,16 +35,12 @@ msgstr ""
 "<span font='10' foreground='gray'>Môže to fungovať aj s inými distribúciami Linuxu.</span>\n"
 "\n"
 "Chcete pokračovať?"
-
 msgid "Restore Boot, Grub, and initrd"
 msgstr "Obnoviť Boot, Grub a initrd"
-
 msgid "Please wait..."
 msgstr "Prosím, počkajte..."
-
 msgid "No Linux installation found on this computer, process canceled."
 msgstr "Na tomto počítači nebola nájdená žiadna inštalácia Linuxu, proces zrušený."
-
 msgid ""
 "The boot in live mode is using EFI mode, but <span foreground='red'>no EFI partition</span> was "
 "found on this computer, \n"
@@ -63,7 +57,6 @@ msgstr ""
 "Skúste reštartovať a bootovať v režime Legacy alebo BIOS cez BIOS počítača.\n"
 "\n"
 "Chcete to skúsiť aj s nízkou pravdepodobnosťou úspechu?"
-
 msgid ""
 "The boot in live mode is using Legacy mode, also called BIOS, \n"
 "<span foreground='red'>but at least one EFI partition was found</span> on this computer, \n"
@@ -80,7 +73,6 @@ msgstr ""
 "Skúste reštartovať a bootovať v režime EFI cez BIOS počítača.\n"
 "\n"
 "Chcete to skúsiť aj s nízkou pravdepodobnosťou úspechu?"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -89,10 +81,8 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Vyberte možnosť:</span>\n"
 "\n"
 "Bolo nájdených viac ako jedna EFI partícia, vyberte, ktorú chcete použiť:"
-
 msgid "No EFI partition selected, process canceled."
 msgstr "Nebola vybraná žiadna EFI partícia, proces zrušený."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -101,10 +91,8 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Vyberte možnosť:</span>\n"
 "\n"
 "Na tomto počítači bolo nájdených viac ako jedna inštalácia Linuxu, vyberte, ktorú chcete obnoviť:"
-
 msgid "No partition selected, process canceled."
 msgstr "Žiadna partícia nebola vybraná, proces zrušený."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "    \n"
@@ -113,19 +101,14 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Vyberte možnosť:</span>\n"
 "    \n"
 "Bolo nájdených viac ako jedno úložné zariadenie, vyberte, na ktoré sa má zapísať spúšťanie:"
-
 msgid "Disk"
 msgstr "Disk"
-
 msgid "Size"
 msgstr "Veľkosť"
-
 msgid "Name"
 msgstr "Názov"
-
 msgid "Partition Table"
 msgstr "Tabuľka oddielov"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>    \n"
 "\n"
@@ -158,10 +141,8 @@ msgstr ""
 "<span font='11' foreground='gray'>UUID oddielu:</span> $UUID_PARTITION\n"
 "\n"
 "Chcete pokračovať?"
-
 msgid "Your computer is not connected to the internet, options 2 and 3 require internet to work."
 msgstr "Váš počítač nie je pripojený na internet, možnosti 2 a 3 vyžadujú internet na fungovanie."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select the desired option:</span>\n"
 "        \n"
@@ -178,40 +159,30 @@ msgstr ""
 "je problém vyriešený.\n"
 "\n"
 "Ak problém pretrváva, vyskúšajte ďalšie možnosti."
-
 msgid "Option"
 msgstr "Možnosť"
-
 msgid "Description"
 msgstr "Popis"
-
 msgid "Simple, just writes the Grub again at the beginning of the disk."
 msgstr "Jednoduché, jednoducho znovu zapíše Grub na začiatok disku."
-
 msgid ""
 "Intermediate, reinstalls the grub package on the partition, regenerates the configuration, and "
 "updates the initrd."
 msgstr "Stredne, preinštaluje balík grub na oddiele, regeneruje konfiguráciu a aktualizuje initrd."
-
 msgid ""
 "Complete, performs the intermediate restore steps, updates the system, and checks if the LTS kernel "
 "is installed."
 msgstr ""
 "Dokončuje, vykonáva medzistupne obnovenia, aktualizuje systém a kontroluje, či je nainštalované "
 "jadro LTS."
-
 msgid "Interactive, opens a terminal inside the selected system."
 msgstr "Interaktívne, otvorí terminál vo vnútri vybraného systému."
-
 msgid "Interactive, opens the control center inside the selected system."
 msgstr "Interaktívne, otvorí ovládacie centrum vo vnútri vybraného systému."
-
 msgid "Interactive, opens the pamac-manager package manager inside the selected system."
 msgstr "Interaktívne, otvorí správcu balíkov pamac-manager vo vybranom systéme."
-
 msgid "Completed!"
 msgstr "Dokončené!"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>\n"
 "    \n"

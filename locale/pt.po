@@ -15,10 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-
 msgid "This utility should only be used in live mode!"
 msgstr "Este utilitário deve ser usado apenas no modo live!"
-
 msgid ""
 "<span font='12'>This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed "
 "on the HD or SSD.</span>\n"
@@ -37,16 +35,12 @@ msgstr ""
 "<span font='10' foreground='gray'>Pode também funcionar com outras distribuições Linux.</span>\n"
 "\n"
 "Você deseja prosseguir?"
-
 msgid "Restore Boot, Grub, and initrd"
 msgstr "Restaurar Boot, Grub e initrd"
-
 msgid "Please wait..."
 msgstr "Por favor, aguarde..."
-
 msgid "No Linux installation found on this computer, process canceled."
 msgstr "Nenhuma instalação do Linux encontrada neste computador, processo cancelado."
-
 msgid ""
 "The boot in live mode is using EFI mode, but <span foreground='red'>no EFI partition</span> was "
 "found on this computer, \n"
@@ -63,7 +57,6 @@ msgstr ""
 "Tente reiniciar e inicializar em modo Legacy ou BIOS através do BIOS do computador.\n"
 "\n"
 "Você quer tentar mesmo com uma baixa probabilidade de sucesso?"
-
 msgid ""
 "The boot in live mode is using Legacy mode, also called BIOS, \n"
 "<span foreground='red'>but at least one EFI partition was found</span> on this computer, \n"
@@ -80,7 +73,6 @@ msgstr ""
 "Tente reiniciar e inicializar em modo EFI através do BIOS do computador.\n"
 "\n"
 "Você quer tentar mesmo com uma baixa probabilidade de sucesso?"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -89,10 +81,8 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Selecione uma opção:</span>\n"
 "\n"
 "Mais de uma partição EFI foi encontrada, selecione qual usar:"
-
 msgid "No EFI partition selected, process canceled."
 msgstr "Nenhuma partição EFI selecionada, processo cancelado."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -102,10 +92,8 @@ msgstr ""
 "\n"
 "Mais de uma instalação do Linux foi encontrada neste computador, selecione qual delas restaurar o "
 "boot:"
-
 msgid "No partition selected, process canceled."
 msgstr "Nenhuma partição selecionada, processo cancelado."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "    \n"
@@ -114,19 +102,14 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Selecione uma opção:</span>\n"
 "\n"
 "Mais de um dispositivo de armazenamento foi encontrado, selecione qual deles gravar o boot:"
-
 msgid "Disk"
 msgstr "Disco"
-
 msgid "Size"
 msgstr "Tamanho"
-
 msgid "Name"
 msgstr "Nome"
-
 msgid "Partition Table"
 msgstr "Tabela de Partição"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>    \n"
 "\n"
@@ -159,10 +142,8 @@ msgstr ""
 "<span font='11' foreground='gray'>UUID da partição:</span> $UUID_PARTITION\n"
 "\n"
 "Você deseja prosseguir?"
-
 msgid "Your computer is not connected to the internet, options 2 and 3 require internet to work."
 msgstr "Seu computador não está conectado à internet, as opções 2 e 3 requerem internet para funcionar."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select the desired option:</span>\n"
 "        \n"
@@ -179,40 +160,30 @@ msgstr ""
 "problema foi resolvido.\n"
 "\n"
 "Se o problema persistir, experimente as outras opções."
-
 msgid "Option"
 msgstr "Opção"
-
 msgid "Description"
 msgstr "Descrição"
-
 msgid "Simple, just writes the Grub again at the beginning of the disk."
 msgstr "Simples, apenas escreve o Grub novamente no início do disco."
-
 msgid ""
 "Intermediate, reinstalls the grub package on the partition, regenerates the configuration, and "
 "updates the initrd."
 msgstr "Intermediário, reinstala o pacote grub na partição, regenera a configuração e atualiza o initrd."
-
 msgid ""
 "Complete, performs the intermediate restore steps, updates the system, and checks if the LTS kernel "
 "is installed."
 msgstr ""
 "Conclui, executa os passos de restauração intermediária, atualiza o sistema e verifica se o kernel "
 "LTS está instalado."
-
 msgid "Interactive, opens a terminal inside the selected system."
 msgstr "Interativo, abre um terminal dentro do sistema selecionado."
-
 msgid "Interactive, opens the control center inside the selected system."
 msgstr "Interativo, abre o centro de controle dentro do sistema selecionado."
-
 msgid "Interactive, opens the pamac-manager package manager inside the selected system."
 msgstr "Interativo, abre o gerenciador de pacotes pamac-manager dentro do sistema selecionado."
-
 msgid "Completed!"
 msgstr "Concluído!"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>\n"
 "    \n"

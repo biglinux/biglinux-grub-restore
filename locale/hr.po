@@ -15,10 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-
 msgid "This utility should only be used in live mode!"
 msgstr "Ova alatka se smije koristiti samo u režimu rada uživo!"
-
 msgid ""
 "<span font='12'>This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed "
 "on the HD or SSD.</span>\n"
@@ -37,16 +35,12 @@ msgstr ""
 "<span font='10' foreground='gray'>Može također raditi s drugim Linux distribucijama.</span>\n"
 "\n"
 "Želite li nastaviti?"
-
 msgid "Restore Boot, Grub, and initrd"
 msgstr "Obnovi Boot, Grub i initrd"
-
 msgid "Please wait..."
 msgstr "Molimo pričekajte..."
-
 msgid "No Linux installation found on this computer, process canceled."
 msgstr "Nema instalacije Linuxa pronađene na ovom računalu, proces otkazan."
-
 msgid ""
 "The boot in live mode is using EFI mode, but <span foreground='red'>no EFI partition</span> was "
 "found on this computer, \n"
@@ -63,7 +57,6 @@ msgstr ""
 "Pokušajte ponovno pokrenuti i pokrenuti u Legacy ili BIOS načinu putem BIOS-a računala.\n"
 "\n"
 "Želite li pokušati čak i s malom vjerojatnošću uspjeha?"
-
 msgid ""
 "The boot in live mode is using Legacy mode, also called BIOS, \n"
 "<span foreground='red'>but at least one EFI partition was found</span> on this computer, \n"
@@ -80,7 +73,6 @@ msgstr ""
 "Pokušajte ponovno pokrenuti i pokrenuti u EFI načinu putem BIOS-a računala.\n"
 "\n"
 "Želite li pokušati čak i s niskom vjerojatnošću uspjeha?"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -89,10 +81,8 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Odaberite opciju:</span>\n"
 "\n"
 "Pronađeno je više od jedne EFI particije, odaberite koju želite koristiti:"
-
 msgid "No EFI partition selected, process canceled."
 msgstr "Nema odabrane EFI particije, proces otkazan."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -102,10 +92,8 @@ msgstr ""
 "\n"
 "Pronađena su više od jedne Linux instalacije na ovom računalu, odaberite koju želite vratiti za "
 "pokretanje:"
-
 msgid "No partition selected, process canceled."
 msgstr "Nema odabranih particija, proces je otkazan."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "    \n"
@@ -114,19 +102,14 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Odaberite opciju:</span>\n"
 "    \n"
 "Pronađeno je više od jednog uređaja za pohranu, odaberite na koji želite zapisati pokretanje:"
-
 msgid "Disk"
 msgstr "Disk"
-
 msgid "Size"
 msgstr "Veličina"
-
 msgid "Name"
 msgstr "Ime"
-
 msgid "Partition Table"
 msgstr "Tablica particija"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>    \n"
 "\n"
@@ -159,10 +142,8 @@ msgstr ""
 "<span font='11' foreground='gray'>UUID particije:</span> $UUID_PARTITION\n"
 "\n"
 "Želite li nastaviti?"
-
 msgid "Your computer is not connected to the internet, options 2 and 3 require internet to work."
 msgstr "Vaše računalo nije povezano s internetom, opcije 2 i 3 zahtijevaju internet za rad."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select the desired option:</span>\n"
 "        \n"
@@ -179,38 +160,28 @@ msgstr ""
 "provjerite je li problem riješen.\n"
 "\n"
 "Ako problem i dalje postoji, pokušajte s ostalim opcijama."
-
 msgid "Option"
 msgstr "Opcija"
-
 msgid "Description"
 msgstr "Opis"
-
 msgid "Simple, just writes the Grub again at the beginning of the disk."
 msgstr "Jednostavno, ponovno piše Grub na početak diska."
-
 msgid ""
 "Intermediate, reinstalls the grub package on the partition, regenerates the configuration, and "
 "updates the initrd."
 msgstr "Srednji, ponovo instalira grub paket na particiji, regenerira konfiguraciju i ažurira initrd."
-
 msgid ""
 "Complete, performs the intermediate restore steps, updates the system, and checks if the LTS kernel "
 "is installed."
 msgstr "Završava, izvršava međufaze vraćanja, ažurira sustav i provjerava je li LTS kernel instaliran."
-
 msgid "Interactive, opens a terminal inside the selected system."
 msgstr "Interaktivno, otvara terminal unutar odabranog sustava."
-
 msgid "Interactive, opens the control center inside the selected system."
 msgstr "Interaktivno, otvara kontrolni centar unutar odabranog sustava."
-
 msgid "Interactive, opens the pamac-manager package manager inside the selected system."
 msgstr "Interaktivno, otvara upravitelj paketa pamac-manager unutar odabranog sustava."
-
 msgid "Completed!"
 msgstr "Završeno!"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>\n"
 "    \n"

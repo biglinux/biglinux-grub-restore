@@ -15,10 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-
 msgid "This utility should only be used in live mode!"
 msgstr "Deze tool mag alleen in live-modus worden gebruikt!"
-
 msgid ""
 "<span font='12'>This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed "
 "on the HD or SSD.</span>\n"
@@ -37,16 +35,12 @@ msgstr ""
 "<span font='10' foreground='gray'>Het kan ook werken met andere Linux-distributies.</span>\n"
 "\n"
 "Wilt u doorgaan?"
-
 msgid "Restore Boot, Grub, and initrd"
 msgstr "Herstel Boot, Grub en initrd"
-
 msgid "Please wait..."
 msgstr "Even geduld..."
-
 msgid "No Linux installation found on this computer, process canceled."
 msgstr "Geen Linux-installatie gevonden op deze computer, proces geannuleerd."
-
 msgid ""
 "The boot in live mode is using EFI mode, but <span foreground='red'>no EFI partition</span> was "
 "found on this computer, \n"
@@ -64,7 +58,6 @@ msgstr ""
 "computer.\n"
 "\n"
 "Wilt u het toch proberen, ondanks de lage kans op succes?"
-
 msgid ""
 "The boot in live mode is using Legacy mode, also called BIOS, \n"
 "<span foreground='red'>but at least one EFI partition was found</span> on this computer, \n"
@@ -81,7 +74,6 @@ msgstr ""
 "Probeer opnieuw op te starten en op te starten in EFI-modus via de BIOS van de computer.\n"
 "\n"
 "Wil je het toch proberen, ook al is de kans op succes laag?"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -90,10 +82,8 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Selecteer een optie:</span>\n"
 "\n"
 "Er is meer dan één EFI-partitie gevonden, selecteer welke u wilt gebruiken:"
-
 msgid "No EFI partition selected, process canceled."
 msgstr "Geen EFI-partitie geselecteerd, proces geannuleerd."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -103,10 +93,8 @@ msgstr ""
 "\n"
 "Er zijn meer dan één Linux-installatie op deze computer gevonden, selecteer welke je wilt "
 "herstellen:"
-
 msgid "No partition selected, process canceled."
 msgstr "Geen partitie geselecteerd, proces geannuleerd."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "    \n"
@@ -116,19 +104,14 @@ msgstr ""
 "    \n"
 "Er is meer dan één opslagapparaat gevonden, selecteer welke je wilt gebruiken om de opstart te "
 "schrijven:"
-
 msgid "Disk"
 msgstr "Schijf"
-
 msgid "Size"
 msgstr "Grootte"
-
 msgid "Name"
 msgstr "Naam"
-
 msgid "Partition Table"
 msgstr "Partitietabel"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>    \n"
 "\n"
@@ -161,10 +144,8 @@ msgstr ""
 "<span font='11' foreground='gray'>Partitie UUID:</span> $UUID_PARTITION\n"
 "\n"
 "Wilt u doorgaan?"
-
 msgid "Your computer is not connected to the internet, options 2 and 3 require internet to work."
 msgstr "Uw computer is niet verbonden met het internet, opties 2 en 3 vereisen internet om te werken."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select the desired option:</span>\n"
 "        \n"
@@ -181,42 +162,32 @@ msgstr ""
 "opgelost.\n"
 "\n"
 "Als het probleem aanhoudt, probeer dan de andere opties."
-
 msgid "Option"
 msgstr "Optie"
-
 msgid "Description"
 msgstr "Beschrijving"
-
 msgid "Simple, just writes the Grub again at the beginning of the disk."
 msgstr "Eenvoudig, schrijft gewoon de Grub opnieuw aan het begin van de schijf."
-
 msgid ""
 "Intermediate, reinstalls the grub package on the partition, regenerates the configuration, and "
 "updates the initrd."
 msgstr ""
 "Tussenliggend, herinstalleert het grub-pakket op de partitie, genereert de configuratie opnieuw en "
 "werkt de initrd bij."
-
 msgid ""
 "Complete, performs the intermediate restore steps, updates the system, and checks if the LTS kernel "
 "is installed."
 msgstr ""
 "Voltooid, voert de tussenherstelstappen uit, werkt het systeem bij en controleert of de LTS-kernel "
 "is geïnstalleerd."
-
 msgid "Interactive, opens a terminal inside the selected system."
 msgstr "Interactief, opent een terminal binnen het geselecteerde systeem."
-
 msgid "Interactive, opens the control center inside the selected system."
 msgstr "Interactief, opent het bedieningscentrum binnen het geselecteerde systeem."
-
 msgid "Interactive, opens the pamac-manager package manager inside the selected system."
 msgstr "Interactief, opent de pamac-manager pakketbeheerder binnen het geselecteerde systeem."
-
 msgid "Completed!"
 msgstr "Voltooid!"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>\n"
 "    \n"
