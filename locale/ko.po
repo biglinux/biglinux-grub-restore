@@ -209,11 +209,6 @@ msgstr "이 컴퓨터에 설치된 Linux가 없습니다."
 msgid "Back"
 msgstr "뒤로"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 250
-#: NEEDS WORK
-msgid "Select System to Restore"
-msgstr "복원할 시스템 선택"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 256
 msgid "Detected Linux Systems"
 msgstr "감지된 리눅스 시스템"
@@ -233,14 +228,6 @@ msgstr "EFI 파티션 발견됨"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 289
 msgid "Continue to Restore Options"
 msgstr "옵션 복원 계속하기"
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 374
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 55
-#: NEEDS WORK
-msgid "Restore Options"
-msgstr "복원 옵션"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 380
 msgid ""
@@ -476,11 +463,6 @@ msgstr "리눅스 설치"
 msgid "Not specified"
 msgstr "지정되지 않음"
 # 
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 162
-#: NEEDS WORK
-msgid "No System"
-msgstr "시스템 없음"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 163
 msgid "No Linux installation detected"
 msgstr "Linux 설치가 감지되지 않았습니다."
@@ -531,11 +513,6 @@ msgstr "활성 (실시간 모드)"
 msgid "Checking network connection..."
 msgstr "네트워크 연결 확인 중..."
 # 
-# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 44
-#: NEEDS WORK
-msgid "Select Target Disk"
-msgstr "대상 디스크 선택"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 51
 msgid ""
 "Select the disk where GRUB will be installed. The bootloader will be written to the beginning of "
@@ -563,11 +540,6 @@ msgstr "알 수 없는 모델"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 144
 msgid "GPT partition table detected. Make sure this is correct for Legacy boot mode."
 msgstr "GPT 파티션 테이블이 감지되었습니다. 레거시 부트 모드에 대해 올바른지 확인하십시오."
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 220
-#: NEEDS WORK
-msgid "Select EFI Partition"
-msgstr "EFI 파티션 선택"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 227
 msgid ""
@@ -714,10 +686,6 @@ msgstr "복원이 성공적으로 완료되었습니다!"
 msgid "Restore failed. Please check the output above."
 msgstr "복원에 실패했습니다. 위의 출력을 확인하십시오."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
-msgid "Error"
-msgstr "오류"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 485
 msgid "Cancel Restore?"
 msgstr "복원 취소?"
@@ -733,3 +701,7 @@ msgstr "없음"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 490
 msgid "Yes, Cancel"
 msgstr "예, 취소"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
+msgid "Error"
+msgstr "오류"
