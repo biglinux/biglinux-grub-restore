@@ -208,6 +208,11 @@ msgstr "このコンピュータにLinuxのインストールは見つかりま�
 msgid "Back"
 msgstr "戻る"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 250
+#: NEEDS WORK
+msgid "Select System to Restore"
+msgstr "復元するシステムを選択してください"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 256
 msgid "Detected Linux Systems"
 msgstr "検出されたLinuxシステム"
@@ -227,6 +232,14 @@ msgstr "EFIパーティションが見つかりました"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 289
 msgid "Continue to Restore Options"
 msgstr "オプションの復元を続ける"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 374
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 55
+#: NEEDS WORK
+msgid "Restore Options"
+msgstr "復元オプション"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 380
 msgid ""
@@ -462,6 +475,11 @@ msgstr "Linuxのインストール"
 msgid "Not specified"
 msgstr "指定されていません"
 # 
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 162
+#: NEEDS WORK
+msgid "No System"
+msgstr "システムなし"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 163
 msgid "No Linux installation detected"
 msgstr "Linuxのインストールが検出されませんでした。"
@@ -512,6 +530,11 @@ msgstr "アクティブ（ライブモード）"
 msgid "Checking network connection..."
 msgstr "ネットワーク接続を確認しています..."
 # 
+# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 44
+#: NEEDS WORK
+msgid "Select Target Disk"
+msgstr "ターゲットディスクを選択"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 51
 msgid ""
 "Select the disk where GRUB will be installed. The bootloader will be written to the beginning of "
@@ -539,6 +562,11 @@ msgstr "不明なモデル"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 144
 msgid "GPT partition table detected. Make sure this is correct for Legacy boot mode."
 msgstr "GPTパーティションテーブルが検出されました。レガシーブートモードに対して正しいことを確認してください。"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 220
+#: NEEDS WORK
+msgid "Select EFI Partition"
+msgstr "EFIパーティションを選択"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 227
 msgid ""
@@ -634,6 +662,12 @@ msgid ""
 "your network connection and try again."
 msgstr "この復元オプションは、パッケージと更新をダウンロードするためにインターネット接続が必要です。ネットワーク接続を確認し、再試行してください。"
 # 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 379
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 533
+#: NEEDS WORK
+msgid "OK"
+msgstr "OK"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 379
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 533
 # 
@@ -684,6 +718,10 @@ msgstr "復元が成功しました！"
 msgid "Restore failed. Please check the output above."
 msgstr "復元に失敗しました。上記の出力を確認してください。"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
+msgid "Error"
+msgstr "エラー"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 485
 msgid "Cancel Restore?"
 msgstr "復元をキャンセルしますか？"
@@ -699,7 +737,3 @@ msgstr "いいえ"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 490
 msgid "Yes, Cancel"
 msgstr "はい、キャンセル"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
-msgid "Error"
-msgstr "エラー"
