@@ -216,11 +216,6 @@ msgstr "Inga Linux-installationer hittades på den här datorn."
 msgid "Back"
 msgstr "Tillbaka"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 250
-#: NEEDS WORK
-msgid "Select System to Restore"
-msgstr "Välj system att återställa"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 256
 msgid "Detected Linux Systems"
 msgstr "Upptäckta Linux-system"
@@ -240,14 +235,6 @@ msgstr "EFI-partitioner hittades"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 289
 msgid "Continue to Restore Options"
 msgstr "Fortsätt till Återställningsalternativ"
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 374
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 55
-#: NEEDS WORK
-msgid "Restore Options"
-msgstr "Återställningsalternativ"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 380
 msgid ""
@@ -485,11 +472,6 @@ msgstr "Linux-installation"
 msgid "Not specified"
 msgstr "Inte specificerat"
 # 
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 162
-#: NEEDS WORK
-msgid "No System"
-msgstr "Inga system"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 163
 msgid "No Linux installation detected"
 msgstr "Ingen Linux-installation upptäcktes"
@@ -540,11 +522,6 @@ msgstr "Aktiv (Live-läge)"
 msgid "Checking network connection..."
 msgstr "Kontrollerar nätverksanslutning..."
 # 
-# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 44
-#: NEEDS WORK
-msgid "Select Target Disk"
-msgstr "Välj målskiva"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 51
 msgid ""
 "Select the disk where GRUB will be installed. The bootloader will be written to the beginning of "
@@ -574,11 +551,6 @@ msgstr "Okänd modell"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 144
 msgid "GPT partition table detected. Make sure this is correct for Legacy boot mode."
 msgstr "GPT-partitionstabell upptäcktes. Se till att detta är korrekt för Legacy-bootläge."
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 220
-#: NEEDS WORK
-msgid "Select EFI Partition"
-msgstr "Välj EFI-partition"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 227
 msgid ""
@@ -682,7 +654,6 @@ msgstr ""
 # 
 # File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 379
 # File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 533
-#: NEEDS WORK
 msgid "OK"
 msgstr "OK"
 # 
@@ -736,10 +707,6 @@ msgstr "Återställning slutförd framgångsrikt!"
 msgid "Restore failed. Please check the output above."
 msgstr "Återställning misslyckades. Kontrollera utdata ovan."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
-msgid "Error"
-msgstr "Fel."
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 485
 msgid "Cancel Restore?"
 msgstr "Avbryt återställning?"
@@ -755,3 +722,7 @@ msgstr ""
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 490
 msgid "Yes, Cancel"
 msgstr "Ja, Avbryt"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
+msgid "Error"
+msgstr "Fel."

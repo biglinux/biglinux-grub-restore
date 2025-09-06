@@ -208,11 +208,6 @@ msgstr "在此计算机上未找到任何Linux安装。"
 msgid "Back"
 msgstr "返回"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 250
-#: NEEDS WORK
-msgid "Select System to Restore"
-msgstr "选择要还原的系统"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 256
 msgid "Detected Linux Systems"
 msgstr "检测到的Linux系统"
@@ -232,14 +227,6 @@ msgstr "找到EFI分区"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 289
 msgid "Continue to Restore Options"
 msgstr "继续恢复选项"
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 374
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 55
-#: NEEDS WORK
-msgid "Restore Options"
-msgstr "恢复选项"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 380
 msgid ""
@@ -475,11 +462,6 @@ msgstr "Linux 安装"
 msgid "Not specified"
 msgstr "未指定"
 # 
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 162
-#: NEEDS WORK
-msgid "No System"
-msgstr "没有系统"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 163
 msgid "No Linux installation detected"
 msgstr "未检测到Linux安装"
@@ -530,11 +512,6 @@ msgstr "活动（实时模式）"
 msgid "Checking network connection..."
 msgstr "检查网络连接..."
 # 
-# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 44
-#: NEEDS WORK
-msgid "Select Target Disk"
-msgstr "选择目标磁盘"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 51
 msgid ""
 "Select the disk where GRUB will be installed. The bootloader will be written to the beginning of "
@@ -562,11 +539,6 @@ msgstr "未知模型"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 144
 msgid "GPT partition table detected. Make sure this is correct for Legacy boot mode."
 msgstr "检测到GPT分区表。请确保这对于传统启动模式是正确的。"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 220
-#: NEEDS WORK
-msgid "Select EFI Partition"
-msgstr "选择 EFI 分区"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 227
 msgid ""
@@ -661,7 +633,6 @@ msgstr "此恢复选项需要互联网连接以下载软件包和更新。请检
 # 
 # File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 379
 # File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 533
-#: NEEDS WORK
 msgid "OK"
 msgstr "好的"
 # 
@@ -715,10 +686,6 @@ msgstr "恢复成功完成！"
 msgid "Restore failed. Please check the output above."
 msgstr "恢复失败。请检查上面的输出。"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
-msgid "Error"
-msgstr "错误"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 485
 msgid "Cancel Restore?"
 msgstr "取消恢复？"
@@ -734,3 +701,7 @@ msgstr "抱歉，我无法满足该请求。"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 490
 msgid "Yes, Cancel"
 msgstr "是，取消"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
+msgid "Error"
+msgstr "错误"
