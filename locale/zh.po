@@ -228,6 +228,20 @@ msgstr "找到EFI分区"
 msgid "Continue to Restore Options"
 msgstr "继续恢复选项"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 324
+msgid ""
+"Select the disk where GRUB will be installed. The bootloader will be written to the beginning (MBR) "
+"of the selected disk."
+msgstr "选择将安装GRUB的磁盘。引导加载程序将写入所选磁盘的开头（MBR）。"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 61
+msgid "Available Disks"
+msgstr "可用磁盘"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 121
+msgid "Unknown model"
+msgstr "未知模型"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 380
 msgid ""
 "The restore can be done in 3 ways (Simple, Intermediate, or Complete). If in doubt, try the first "
@@ -518,10 +532,6 @@ msgid ""
 "the selected disk."
 msgstr "选择将安装 GRUB 的磁盘。引导加载程序将写入所选磁盘的开头。"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 61
-msgid "Available Disks"
-msgstr "可用磁盘"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 67
 msgid "No Disks Found"
 msgstr "未找到磁盘"
@@ -531,10 +541,6 @@ msgid ""
 "No suitable disks were found for GRUB installation. Please check if your disks are properly "
 "connected."
 msgstr "未找到适合 GRUB 安装的磁盘。请检查您的磁盘是否正确连接。"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 121
-msgid "Unknown model"
-msgstr "未知模型"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 144
 msgid "GPT partition table detected. Make sure this is correct for Legacy boot mode."

@@ -244,6 +244,22 @@ msgstr "EFI-Partitionen gefunden"
 msgid "Continue to Restore Options"
 msgstr "Fortfahren zu Wiederherstellungsoptionen"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 324
+msgid ""
+"Select the disk where GRUB will be installed. The bootloader will be written to the beginning (MBR) "
+"of the selected disk."
+msgstr ""
+"Wählen Sie die Festplatte aus, auf der GRUB installiert werden soll. Der Bootloader wird am Anfang "
+"(MBR) der ausgewählten Festplatte geschrieben."
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 61
+msgid "Available Disks"
+msgstr "Verfügbare Laufwerke"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 121
+msgid "Unknown model"
+msgstr "Unbekanntes Modell"
+# 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 380
 msgid ""
 "The restore can be done in 3 ways (Simple, Intermediate, or Complete). If in doubt, try the first "
@@ -545,10 +561,6 @@ msgstr ""
 "Wählen Sie die Festplatte aus, auf der GRUB installiert werden soll. Der Bootloader wird am Anfang "
 "der ausgewählten Festplatte geschrieben."
 # 
-# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 61
-msgid "Available Disks"
-msgstr "Verfügbare Laufwerke"
-# 
 # File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 67
 msgid "No Disks Found"
 msgstr "Keine Datenträger gefunden"
@@ -560,10 +572,6 @@ msgid ""
 msgstr ""
 "Es wurden keine geeigneten Festplatten für die GRUB-Installation gefunden. Bitte überprüfen Sie, ob "
 "Ihre Festplatten ordnungsgemäß angeschlossen sind."
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 121
-msgid "Unknown model"
-msgstr "Unbekanntes Modell"
 # 
 # File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 144
 msgid "GPT partition table detected. Make sure this is correct for Legacy boot mode."

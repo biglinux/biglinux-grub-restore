@@ -240,6 +240,22 @@ msgstr "Βρέθηκαν διαμερίσματα EFI"
 msgid "Continue to Restore Options"
 msgstr "Συνεχίστε στην Επαναφορά Επιλογών"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 324
+msgid ""
+"Select the disk where GRUB will be installed. The bootloader will be written to the beginning (MBR) "
+"of the selected disk."
+msgstr ""
+"Επιλέξτε τον δίσκο όπου θα εγκατασταθεί το GRUB. Ο φορτωτής εκκίνησης θα γραφτεί στην αρχή (MBR) "
+"του επιλεγμένου δίσκου."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 61
+msgid "Available Disks"
+msgstr "Διαθέσιμες Δίσκοι"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 121
+msgid "Unknown model"
+msgstr "Άγνωστο μοντέλο"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 380
 msgid ""
 "The restore can be done in 3 ways (Simple, Intermediate, or Complete). If in doubt, try the first "
@@ -534,10 +550,6 @@ msgstr ""
 "Επιλέξτε τον δίσκο όπου θα εγκατασταθεί το GRUB. Ο φορτωτής εκκίνησης θα γραφτεί στην αρχή του "
 "επιλεγμένου δίσκου."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 61
-msgid "Available Disks"
-msgstr "Διαθέσιμες Δίσκοι"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 67
 msgid "No Disks Found"
 msgstr "Δεν βρέθηκαν δίσκοι"
@@ -549,10 +561,6 @@ msgid ""
 msgstr ""
 "Δεν βρέθηκαν κατάλληλοι δίσκοι για την εγκατάσταση του GRUB. Παρακαλώ ελέγξτε αν οι δίσκοι σας "
 "είναι σωστά συνδεδεμένοι."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 121
-msgid "Unknown model"
-msgstr "Άγνωστο μοντέλο"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 144
 msgid "GPT partition table detected. Make sure this is correct for Legacy boot mode."

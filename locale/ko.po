@@ -229,6 +229,20 @@ msgstr "EFI 파티션 발견됨"
 msgid "Continue to Restore Options"
 msgstr "옵션 복원 계속하기"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 324
+msgid ""
+"Select the disk where GRUB will be installed. The bootloader will be written to the beginning (MBR) "
+"of the selected disk."
+msgstr "GRUB가 설치될 디스크를 선택하십시오. 부트로더는 선택한 디스크의 시작 부분(MBR)에 기록됩니다."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 61
+msgid "Available Disks"
+msgstr "사용 가능한 디스크"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 121
+msgid "Unknown model"
+msgstr "알 수 없는 모델"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 380
 msgid ""
 "The restore can be done in 3 ways (Simple, Intermediate, or Complete). If in doubt, try the first "
@@ -519,10 +533,6 @@ msgid ""
 "the selected disk."
 msgstr "GRUB가 설치될 디스크를 선택하십시오. 부트로더는 선택한 디스크의 시작 부분에 기록됩니다."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 61
-msgid "Available Disks"
-msgstr "사용 가능한 디스크"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 67
 msgid "No Disks Found"
 msgstr "디스크를 찾을 수 없습니다."
@@ -532,10 +542,6 @@ msgid ""
 "No suitable disks were found for GRUB installation. Please check if your disks are properly "
 "connected."
 msgstr "GRUB 설치를 위한 적합한 디스크가 발견되지 않았습니다. 디스크가 제대로 연결되어 있는지 확인하십시오."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 121
-msgid "Unknown model"
-msgstr "알 수 없는 모델"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 144
 msgid "GPT partition table detected. Make sure this is correct for Legacy boot mode."
