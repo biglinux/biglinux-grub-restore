@@ -820,18 +820,60 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         try:
             print(f"DEBUG: Running restore operation mode {mode}")
             
-            # Execute the restore using system_interface
-            process = self.system_interface.execute_restore(mode)
-            
-            # Wait for completion
-            process.wait()
-            
-            success = process.returncode == 0
-            GLib.idle_add(self.on_restore_complete, mode, success)
+            # For VTE terminal, spawn process directly
+            if hasattr(self, 'terminal') and self.terminal:
+                # Determine script path
+                if self.system_interface.boot_mode == "EFI":
+                    script_name = 'grub-apply-efi'
+                else:
+                    script_name = 'grub-apply-legacy'
+                
+                script_path = self.system_interface.backend_path / script_name
+                
+                # Save restore mode first
+                with open('/tmp/grub-restore-apply-mode', 'w') as f:
+                    f.write(str(mode))
+                
+                # Spawn directly in VTE
+                success = self.terminal.spawn_async(
+                    Vte.PtyFlags.DEFAULT,
+                    None,  # working directory
+                    ['sudo', str(script_path)],  # command
+                    None,  # environment
+                    GLib.SpawnFlags.DO_NOT_REAP_CHILD,
+                    None,  # child setup
+                    None,  # child setup data
+                    -1,    # timeout
+                    None,  # cancellable
+                    self.on_terminal_spawn_complete,  # callback
+                    mode   # user data
+                )
+            else:
+                # Fallback - execute normally
+                process = self.system_interface.execute_restore(mode)
+                process.wait()
+                success = process.returncode == 0
+                GLib.idle_add(self.on_restore_complete, mode, success)
             
         except Exception as e:
             print(f"DEBUG: Restore operation failed: {e}")
             GLib.idle_add(self.on_restore_error, str(e))
+
+    def on_terminal_spawn_complete(self, terminal, pid, error, mode):
+        """Handle terminal spawn completion"""
+        if error:
+            print(f"DEBUG: Terminal spawn failed: {error}")
+            GLib.idle_add(self.on_restore_error, str(error))
+        else:
+            print(f"DEBUG: Terminal spawned successfully with PID: {pid}")
+            # Monitor child process
+            GLib.child_watch_add(pid, self.on_child_process_exit, mode)
+
+    def on_child_process_exit(self, pid, status, mode):
+        """Handle child process exit"""
+        success = status == 0
+        print(f"DEBUG: Child process {pid} exited with status {status}")
+        GLib.idle_add(self.on_restore_complete, mode, success)
 
     def on_restore_complete(self, mode, success):
         """Handle restore completion"""
@@ -864,6 +906,7 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         close_button.add_css_class("pill")
         close_button.add_css_class("suggested-action")
         close_button.set_size_request(100, -1)
+        close_button.set_halign(Gtk.Align.CENTER)
         close_button.connect("clicked", lambda w: self.get_application().quit())
         
         result_page.set_child(close_button)

@@ -200,12 +200,9 @@ class SystemInterface:
             # Execute with sudo for live mode
             cmd = ['sudo', str(script_path)]
             
-            process = subprocess.Popen(
-                cmd,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
-                text=True
-            )
+            # For non-interactive modes, capture output
+            # For interactive modes, let it run directly
+            process = subprocess.Popen(cmd)
             
             return process
             
