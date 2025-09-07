@@ -451,8 +451,8 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         radio_button.set_active(is_default)
         radio_button.connect('toggled', self.on_system_selected, system)
 
-        # Properly group radio buttons in GTK4 - fix grouping logic
-        if not hasattr(self, 'system_radio_group') or self.system_radio_group is None:
+        # Properly group radio buttons in GTK4
+        if self.system_radio_group is None:
             self.system_radio_group = radio_button
         else:
             radio_button.set_group(self.system_radio_group)
@@ -632,7 +632,7 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         # Option 6: Package Manager
         package_row = Adw.ActionRow()
         package_row.set_title(_("Package Manager"))
-        package_row.set_subtitle(_("Opens pamac inside the selected system."))
+        package_row.set_subtitle(_("Opens pamac-manager inside the selected system."))
         package_row.set_icon_name("system-software-install-symbolic")
 
         package_button = Gtk.Button()
@@ -820,11 +820,6 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         try:
             print(f"DEBUG: Running restore operation mode {mode}")
             
-            # For interactive modes (4, 5, 6), open external terminal
-            if mode in [4, 5, 6]:
-                GLib.idle_add(self.launch_interactive_mode, mode)
-                return
-            
             # Execute the restore using system_interface
             process = self.system_interface.execute_restore(mode)
             
@@ -837,58 +832,14 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         except Exception as e:
             print(f"DEBUG: Restore operation failed: {e}")
             GLib.idle_add(self.on_restore_error, str(e))
-            
-    def launch_interactive_mode(self, mode):
-        """Launch interactive modes in external terminal"""
-        try:
-            # Prepare script execution
-            if self.system_interface.boot_mode == "EFI":
-                script_name = 'grub-apply-efi'
-            else:
-                script_name = 'grub-apply-legacy'
-            
-            script_path = self.system_interface.backend_path / script_name
-            
-            # Launch in external terminal
-            cmd = [
-                'konsole', '--hold', '-e', 'sudo', str(script_path)
-            ]
-            
-            # Try different terminal emulators
-            terminals = ['konsole', 'gnome-terminal', 'xfce4-terminal', 'xterm']
-            
-            for terminal in terminals:
-                try:
-                    if terminal == 'konsole':
-                        subprocess.Popen(['konsole', '--hold', '-e', 'sudo', str(script_path)])
-                    elif terminal == 'gnome-terminal':
-                        subprocess.Popen(['gnome-terminal', '--', 'sudo', str(script_path)])
-                    elif terminal == 'xfce4-terminal':
-                        subprocess.Popen(['xfce4-terminal', '--hold', '-e', 'sudo', str(script_path)])
-                    else:  # xterm
-                        subprocess.Popen(['xterm', '-hold', '-e', 'sudo', str(script_path)])
-                    
-                    print(f"DEBUG: Launched interactive mode {mode} in {terminal}")
-                    
-                    # Show completion message immediately
-                    self.on_restore_complete(mode, True)
-                    return
-                    
-                except FileNotFoundError:
-                    continue
-            
-            # If no terminal found, show error
-            self.on_restore_error("No suitable terminal emulator found")
-            
-        except Exception as e:
-            print(f"DEBUG: Failed to launch interactive mode: {e}")
-            self.on_restore_error(str(e))
 
     def on_restore_complete(self, mode, success):
         """Handle restore completion"""
         print(f"DEBUG: Restore mode {mode} completed, success: {success}")
         
-        self.progress_spinner.stop()
+        # Stop spinner only if it exists (non-interactive modes)
+        if hasattr(self, 'progress_spinner') and self.progress_spinner:
+            self.progress_spinner.stop()
         
         # Clear content
         child = self.content_area.get_first_child()
@@ -922,7 +873,9 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         """Handle restore error"""
         print(f"DEBUG: Restore error: {error_msg}")
         
-        self.progress_spinner.stop()
+        # Stop spinner only if it exists (non-interactive modes)
+        if hasattr(self, 'progress_spinner') and self.progress_spinner:
+            self.progress_spinner.stop()
         
         # Clear content
         child = self.content_area.get_first_child()
