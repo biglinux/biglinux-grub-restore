@@ -373,9 +373,9 @@ msgstr "Отваря контролния център в избраната с�
 msgid "Package Manager"
 msgstr "Мениджър на пакети"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 498
-msgid "Opens pamac-manager inside the selected system."
-msgstr "Отваря pamac-manager в избраната система."
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 635
+msgid "Opens pamac inside the selected system."
+msgstr "Отваря pamac в избраната система."
 # 
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 # 
@@ -410,17 +410,21 @@ msgstr "Контролен център ще се отвори в избрана
 msgid "Package manager will open inside the selected system."
 msgstr "Мениджърът на пакети ще се отвори в избраната система."
 # 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 611
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 225
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 394
-msgid "Restore in Progress"
-msgstr "Възстановяване в процес"
-# 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 612
 msgid "Please wait while the restore operation completes..."
 msgstr "Моля, изчакайте, докато операцията по възстановяване завърши..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 785
+msgid "Show Details"
+msgstr "Покажи детайли"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 786
+msgid "Click to view technical details"
+msgstr "Щракнете, за да видите техническите детайли"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 810
+msgid "Terminal not available"
+msgstr "Терминалът не е наличен"
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 655
 msgid "Restore Completed"

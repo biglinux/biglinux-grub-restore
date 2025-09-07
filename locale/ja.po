@@ -360,9 +360,9 @@ msgstr "選択したシステム内のコントロールセンターを開きま
 msgid "Package Manager"
 msgstr "パッケージマネージャー"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 498
-msgid "Opens pamac-manager inside the selected system."
-msgstr "選択したシステム内でpamac-managerを開きます。"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 635
+msgid "Opens pamac inside the selected system."
+msgstr "選択したシステム内でpamacを開きます。"
 # 
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 # 
@@ -397,13 +397,21 @@ msgstr "選択したシステム内にコントロールセンターが開きま
 msgid "Package manager will open inside the selected system."
 msgstr "パッケージマネージャーは選択したシステム内で開きます。"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 611
-msgid "Restore in Progress"
-msgstr "復元中"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 612
 msgid "Please wait while the restore operation completes..."
 msgstr "復元操作が完了するまでお待ちください..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 785
+msgid "Show Details"
+msgstr "詳細を表示"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 786
+msgid "Click to view technical details"
+msgstr "技術的詳細を表示するにはクリックしてください"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 810
+msgid "Terminal not available"
+msgstr "ターミナルが利用できません"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 655
 msgid "Restore Completed"

@@ -366,9 +366,9 @@ msgstr "Avab valitud süsteemi sees juhtimiskeskuse."
 msgid "Package Manager"
 msgstr "Pakettihaldur"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 498
-msgid "Opens pamac-manager inside the selected system."
-msgstr "Avab pamac-manager'i valitud süsteemis."
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 635
+msgid "Opens pamac inside the selected system."
+msgstr "Avab pamaci valitud süsteemis."
 # 
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 # 
@@ -403,13 +403,21 @@ msgstr "Kontrollikeskus avatakse valitud süsteemis."
 msgid "Package manager will open inside the selected system."
 msgstr "Pakettihaldur avatakse valitud süsteemis."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 611
-msgid "Restore in Progress"
-msgstr "Taastamine käib."
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 612
 msgid "Please wait while the restore operation completes..."
 msgstr "Palun oodake, kuni taastamisoperatsioon lõpeb..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 785
+msgid "Show Details"
+msgstr "Näita üksikasju"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 786
+msgid "Click to view technical details"
+msgstr "Klõpsa, et vaadata tehnilisi üksikasju"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 810
+msgid "Terminal not available"
+msgstr "Terminal ei ole saadaval"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 655
 msgid "Restore Completed"

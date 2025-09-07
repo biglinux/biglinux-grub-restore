@@ -372,9 +372,9 @@ msgstr "Öppnar kontrollcentret i det valda systemet."
 msgid "Package Manager"
 msgstr "Paketförvaltare"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 498
-msgid "Opens pamac-manager inside the selected system."
-msgstr "Öppnar pamac-hanteraren i det valda systemet."
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 635
+msgid "Opens pamac inside the selected system."
+msgstr "Öppnar pamac inuti det valda systemet."
 # 
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 # 
@@ -409,13 +409,21 @@ msgstr "Kontrollcenter kommer att öppnas inuti det valda systemet."
 msgid "Package manager will open inside the selected system."
 msgstr "Paketförvaltaren öppnas inuti det valda systemet."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 611
-msgid "Restore in Progress"
-msgstr "Återställning pågår"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 612
 msgid "Please wait while the restore operation completes..."
 msgstr "Vänligen vänta medan återställningsoperationen slutförs..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 785
+msgid "Show Details"
+msgstr "Visa detaljer"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 786
+msgid "Click to view technical details"
+msgstr "Klicka för att visa tekniska detaljer"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 810
+msgid "Terminal not available"
+msgstr "Terminal är inte tillgänglig"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 655
 msgid "Restore Completed"

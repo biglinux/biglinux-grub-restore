@@ -369,9 +369,9 @@ msgstr "Abre el centro de control dentro del sistema seleccionado."
 msgid "Package Manager"
 msgstr "Administrador de paquetes"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 498
-msgid "Opens pamac-manager inside the selected system."
-msgstr "Abre pamac-manager dentro del sistema seleccionado."
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 635
+msgid "Opens pamac inside the selected system."
+msgstr "Abre pamac dentro del sistema seleccionado."
 # 
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 # 
@@ -408,13 +408,21 @@ msgstr "El centro de control se abrirá dentro del sistema seleccionado."
 msgid "Package manager will open inside the selected system."
 msgstr "El gestor de paquetes se abrirá dentro del sistema seleccionado."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 611
-msgid "Restore in Progress"
-msgstr "Restauración en progreso"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 612
 msgid "Please wait while the restore operation completes..."
 msgstr "Por favor, espere mientras se completa la operación de restauración..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 785
+msgid "Show Details"
+msgstr "Mostrar detalles"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 786
+msgid "Click to view technical details"
+msgstr "Haga clic para ver los detalles técnicos"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 810
+msgid "Terminal not available"
+msgstr "Terminal no disponible"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 655
 msgid "Restore Completed"

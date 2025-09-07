@@ -369,9 +369,9 @@ msgstr "Seçilen sistem içindeki kontrol merkezini açar."
 msgid "Package Manager"
 msgstr "Paket Yöneticisi"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 498
-msgid "Opens pamac-manager inside the selected system."
-msgstr "Seçilen sistem içinde pamac yöneticisini açar."
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 635
+msgid "Opens pamac inside the selected system."
+msgstr "Seçilen sistem içinde pamac'ı açar."
 # 
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 # 
@@ -406,13 +406,21 @@ msgstr "Kontrol merkezi, seçilen sistem içinde açılacaktır."
 msgid "Package manager will open inside the selected system."
 msgstr "Paket yöneticisi seçilen sistem içinde açılacaktır."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 611
-msgid "Restore in Progress"
-msgstr "Geri Yükleme Devam Ediyor"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 612
 msgid "Please wait while the restore operation completes..."
 msgstr "Lütfen geri yükleme işlemi tamamlanana kadar bekleyin..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 785
+msgid "Show Details"
+msgstr "Ayrıntıları Göster"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 786
+msgid "Click to view technical details"
+msgstr "Teknik detayları görüntülemek için tıklayın"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 810
+msgid "Terminal not available"
+msgstr "Terminal mevcut değil"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 655
 msgid "Restore Completed"

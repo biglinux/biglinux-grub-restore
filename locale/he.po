@@ -363,9 +363,9 @@ msgstr "פותח את מרכז הבקרה בתוך המערכת הנבחרת."
 msgid "Package Manager"
 msgstr "מנהל חבילות"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 498
-msgid "Opens pamac-manager inside the selected system."
-msgstr "פותח את pamac-manager בתוך המערכת הנבחרת."
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 635
+msgid "Opens pamac inside the selected system."
+msgstr "פותח את פאמק בתוך המערכת הנבחרת."
 # 
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 # 
@@ -400,13 +400,21 @@ msgstr "מרכז הבקרה ייפתח בתוך המערכת שנבחרה."
 msgid "Package manager will open inside the selected system."
 msgstr "מנהל החבילות ייפתח בתוך המערכת שנבחרה."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 611
-msgid "Restore in Progress"
-msgstr "שחזור בתהליך"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 612
 msgid "Please wait while the restore operation completes..."
 msgstr "אנא המתן בזמן שהפעולה לשחזור מסתיימת..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 785
+msgid "Show Details"
+msgstr "הצג פרטים"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 786
+msgid "Click to view technical details"
+msgstr "לחץ כדי לראות פרטים טכניים"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 810
+msgid "Terminal not available"
+msgstr "הטרמינל אינו זמין"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 655
 msgid "Restore Completed"

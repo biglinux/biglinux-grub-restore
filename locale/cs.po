@@ -369,9 +369,9 @@ msgstr "Otevírá ovládací centrum uvnitř vybraného systému."
 msgid "Package Manager"
 msgstr "Správce balíčků"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 498
-msgid "Opens pamac-manager inside the selected system."
-msgstr "Otevře pamac-manager uvnitř vybraného systému."
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 635
+msgid "Opens pamac inside the selected system."
+msgstr "Otevře pamac uvnitř vybraného systému."
 # 
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 # 
@@ -406,17 +406,21 @@ msgstr "Ovládací centrum se otevře uvnitř vybraného systému."
 msgid "Package manager will open inside the selected system."
 msgstr "Správce balíčků se otevře uvnitř vybraného systému."
 # 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 611
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 225
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 394
-msgid "Restore in Progress"
-msgstr "Obnova probíhá"
-# 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 612
 msgid "Please wait while the restore operation completes..."
 msgstr "Prosím, čekejte, až se operace obnovení dokončí..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 785
+msgid "Show Details"
+msgstr "Zobrazit podrobnosti"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 786
+msgid "Click to view technical details"
+msgstr "Klikněte pro zobrazení technických podrobností"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 810
+msgid "Terminal not available"
+msgstr "Terminál není k dispozici"
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 655
 msgid "Restore Completed"

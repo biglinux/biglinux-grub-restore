@@ -361,9 +361,9 @@ msgstr "선택한 시스템 내에서 제어 센터를 엽니다."
 msgid "Package Manager"
 msgstr "패키지 관리자"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 498
-msgid "Opens pamac-manager inside the selected system."
-msgstr "선택한 시스템 내에서 pamac-manager를 엽니다."
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 635
+msgid "Opens pamac inside the selected system."
+msgstr "선택한 시스템 내에서 pamac을 엽니다."
 # 
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 # 
@@ -398,13 +398,21 @@ msgstr "선택한 시스템 내에서 제어 센터가 열립니다."
 msgid "Package manager will open inside the selected system."
 msgstr "패키지 관리자가 선택한 시스템 내에서 열립니다."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 611
-msgid "Restore in Progress"
-msgstr "복원 진행 중"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 612
 msgid "Please wait while the restore operation completes..."
 msgstr "복원 작업이 완료될 때까지 기다려 주십시오..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 785
+msgid "Show Details"
+msgstr "세부정보 보기"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 786
+msgid "Click to view technical details"
+msgstr "기술 세부정보 보기 클릭"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 810
+msgid "Terminal not available"
+msgstr "터미널을 사용할 수 없습니다."
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 655
 msgid "Restore Completed"

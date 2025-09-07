@@ -368,9 +368,9 @@ msgstr "Opnar stjórnmiðstöðina innan valda kerfisins."
 msgid "Package Manager"
 msgstr "Pakkastjóri"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 498
-msgid "Opens pamac-manager inside the selected system."
-msgstr "Opnar pamac-stjórnanda innan valda kerfisins."
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 635
+msgid "Opens pamac inside the selected system."
+msgstr "Opnar pamac innan valda kerfisins."
 # 
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 # 
@@ -405,13 +405,21 @@ msgstr "Stýringarmiðstöðin mun opnast innan valda kerfisins."
 msgid "Package manager will open inside the selected system."
 msgstr "Pakkastjóri mun opnast innan valda kerfisins."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 611
-msgid "Restore in Progress"
-msgstr "Endurheimt í gangi"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 612
 msgid "Please wait while the restore operation completes..."
 msgstr "Vinsamlegast bíðu meðan endurheimtaraðgerðin lýkur..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 785
+msgid "Show Details"
+msgstr "Sýna upplýsingar"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 786
+msgid "Click to view technical details"
+msgstr "Smelltu til að skoða tæknilegar upplýsingar"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 810
+msgid "Terminal not available"
+msgstr "Terminal ekki í boði"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 655
 msgid "Restore Completed"

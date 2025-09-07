@@ -373,9 +373,9 @@ msgstr "Megnyitja a vezérlőközpontot a kiválasztott rendszerben."
 msgid "Package Manager"
 msgstr "Csomagkezelő"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 498
-msgid "Opens pamac-manager inside the selected system."
-msgstr "Megnyitja a pamac-menedzsert a kiválasztott rendszerben."
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 635
+msgid "Opens pamac inside the selected system."
+msgstr "Megnyitja a pamac-ot a kiválasztott rendszeren belül."
 # 
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 # 
@@ -410,13 +410,21 @@ msgstr "A vezérlőközpont a kiválasztott rendszerben fog megnyílni."
 msgid "Package manager will open inside the selected system."
 msgstr "A csomagkezelő a kiválasztott rendszerben fog megnyílni."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 611
-msgid "Restore in Progress"
-msgstr "Visszaállítás folyamatban"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 612
 msgid "Please wait while the restore operation completes..."
 msgstr "Kérjük, várjon, amíg a visszaállítási művelet befejeződik..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 785
+msgid "Show Details"
+msgstr "Részletek megjelenítése"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 786
+msgid "Click to view technical details"
+msgstr "Kattintson a technikai részletek megtekintéséhez"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 810
+msgid "Terminal not available"
+msgstr "Terminál nem elérhető"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 655
 msgid "Restore Completed"
