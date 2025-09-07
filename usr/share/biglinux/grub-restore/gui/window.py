@@ -295,6 +295,126 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         selection_box.append(continue_button)
         
         self.content_area.append(selection_box)
+        
+    def show_disk_selection(self):
+        """Show disk selection page for LEGACY mode"""
+        print("DEBUG: Showing disk selection page")
+        
+        # Clear content
+        child = self.content_area.get_first_child()
+        while child:
+            self.content_area.remove(child)
+            child = self.content_area.get_first_child()
+        
+        # Create main selection box
+        selection_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
+        selection_box.set_margin_top(24)
+        selection_box.set_margin_bottom(24)
+        selection_box.set_margin_start(24)
+        selection_box.set_margin_end(24)
+        
+        # Title
+        title_label = Gtk.Label()
+        title_label.set_markup(f"<span size='x-large' weight='bold'>{_('Select Target Disk')}</span>")
+        title_label.set_halign(Gtk.Align.CENTER)
+        selection_box.append(title_label)
+        
+        # Description
+        desc_label = Gtk.Label()
+        desc_label.set_text(_("Select the disk where GRUB will be installed. The bootloader will be written to the beginning (MBR) of the selected disk."))
+        desc_label.set_wrap(True)
+        desc_label.set_justify(Gtk.Justification.CENTER)
+        desc_label.add_css_class("dim-label")
+        selection_box.append(desc_label)
+        
+        # Disks group
+        disks_group = Adw.PreferencesGroup()
+        disks_group.set_title(_("Available Disks"))
+        disks_group.set_description(f"Found {len(self.system_interface.grub_disks)} disk(s)")
+        
+        # Add disk rows
+        self.selected_disk = None
+        for i, disk in enumerate(self.system_interface.grub_disks):
+            disk_row = self.create_disk_row(disk, i == 0)
+            disks_group.add(disk_row)
+        
+        selection_box.append(disks_group)
+        
+        # Continue button
+        continue_button = Gtk.Button()
+        continue_button.set_label(_("Continue to Restore Options"))
+        continue_button.add_css_class("pill")
+        continue_button.add_css_class("suggested-action")
+        continue_button.set_size_request(300, -1)
+        continue_button.set_halign(Gtk.Align.CENTER)
+        continue_button.connect("clicked", self.on_disk_continue_to_restore)
+        selection_box.append(continue_button)
+        
+        self.content_area.append(selection_box)
+
+    def create_disk_row(self, disk, is_default=False):
+        """Create a row for disk selection"""
+        disk_row = Adw.ActionRow()
+        
+        # Title: device + size
+        title = f"/dev/{disk.get('device', 'unknown')} ({disk.get('size', 'Unknown')})"
+        disk_row.set_title(title)
+        
+        # Subtitle: model + partition table
+        subtitle_parts = []
+        if disk.get('name') and disk['name'] != 'Unknown_Disk':
+            model_name = disk['name'].replace('_', ' ')
+            subtitle_parts.append(model_name)
+        
+        if disk.get('table'):
+            subtitle_parts.append(f"Partition table: {disk['table']}")
+        
+        if subtitle_parts:
+            disk_row.set_subtitle(" | ".join(subtitle_parts))
+        else:
+            disk_row.set_subtitle(_("Unknown model"))
+        
+        disk_row.set_icon_name("drive-harddisk-symbolic")
+        
+        # Radio button
+        radio_button = Gtk.CheckButton()
+        radio_button.set_active(is_default)
+        radio_button.connect('toggled', self.on_disk_selected, disk)
+        
+        # Group radio buttons
+        if not hasattr(self, 'disk_radio_group'):
+            self.disk_radio_group = radio_button
+        else:
+            radio_button.set_group(self.disk_radio_group)
+        
+        disk_row.add_prefix(radio_button)
+        
+        # Select first disk by default
+        if is_default:
+            self.selected_disk = disk
+        
+        return disk_row
+
+    def on_disk_selected(self, radio_button, disk):
+        """Handle disk selection"""
+        if radio_button.get_active():
+            self.selected_disk = disk
+            print(f"DEBUG: Selected disk: /dev/{disk.get('device', 'unknown')}")
+
+    def on_disk_continue_to_restore(self, button):
+        """Handle continue from disk selection"""
+        if not self.selected_disk:
+            print("DEBUG: No disk selected")
+            return
+            
+        print(f"DEBUG: Continuing with disk: /dev/{self.selected_disk.get('device', 'unknown')}")
+        
+        # Save selection with both system and disk
+        self.system_interface.save_selection(
+            self.selected_system, 
+            selected_disk=self.selected_disk['device']
+        )
+        self.show_restore_options()
 
     def create_system_row(self, system, is_default=False):
         """Create a row for system selection"""
@@ -320,11 +440,12 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         radio_button = Gtk.CheckButton()
         radio_button.set_active(is_default)
         radio_button.connect('toggled', self.on_system_selected, system)
-        
-        if hasattr(self, 'radio_group'):
-            radio_button.set_group(self.radio_group)
-        else:
+
+        # Properly group radio buttons in GTK4
+        if not hasattr(self, 'radio_group'):
             self.radio_group = radio_button
+        else:
+            radio_button.set_group(self.radio_group)
         
         system_row.add_prefix(radio_button)
         
@@ -348,9 +469,13 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
             
         print(f"DEBUG: Continuing with system: {self.selected_system.get('partition', 'Unknown')}")
         
-        # Save selection and show restore options
-        self.system_interface.save_selection(self.selected_system)
-        self.show_restore_options()
+        # For LEGACY mode, show disk selection first
+        if self.system_interface.boot_mode == "LEGACY":
+            self.show_disk_selection()
+        else:
+            # For EFI mode, go directly to restore options
+            self.system_interface.save_selection(self.selected_system)
+            self.show_restore_options()
         
     def show_restore_options(self):
         """Show restore options page with all 6 options"""

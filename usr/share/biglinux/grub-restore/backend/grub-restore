@@ -35,6 +35,9 @@ done
 
 log_message "Running os-prober to detect Linux systems..."
 
+# Clean up any existing temporary files to avoid permission issues
+sudo rm -f /tmp/os-prober /tmp/efi-partitions /tmp/grub-disks
+
 # Save the list of Linux partitions to /tmp/os-prober
 # Exclude partitions labeled "timeshift" and "subvol=@/"
 os-prober | grep :linux | grep -v timeshift | grep -v 'subvol=@/' > /tmp/os-prober 2>/dev/null
