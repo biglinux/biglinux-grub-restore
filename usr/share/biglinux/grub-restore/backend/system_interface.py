@@ -202,7 +202,13 @@ class SystemInterface:
             
             # For non-interactive modes, capture output
             # For interactive modes, let it run directly
-            process = subprocess.Popen(cmd)
+            process = subprocess.Popen(
+                cmd,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,  # Redirect stderr to stdout
+                text=True,
+                bufsize=1  # Line buffered
+            )
             
             return process
             
