@@ -221,11 +221,6 @@ msgstr "Keine Linux-Installationen auf diesem Computer gefunden."
 msgid "Back"
 msgstr "Zurück"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 250
-#: NEEDS WORK
-msgid "Select System to Restore"
-msgstr "System zur Wiederherstellung auswählen"
-# 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 256
 msgid "Detected Linux Systems"
 msgstr "Erkannte Linux-Systeme"
@@ -248,14 +243,6 @@ msgstr "EFI-Partitionen gefunden"
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 289
 msgid "Continue to Restore Options"
 msgstr "Fortfahren zu Wiederherstellungsoptionen"
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 374
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 55
-#: NEEDS WORK
-msgid "Restore Options"
-msgstr "Wiederherstellungsoptionen"
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 380
 msgid ""
@@ -500,11 +487,6 @@ msgstr "Linux-Installation"
 msgid "Not specified"
 msgstr "Not specified"
 # 
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 162
-#: NEEDS WORK
-msgid "No System"
-msgstr "Kein System"
-# 
 # File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 163
 msgid "No Linux installation detected"
 msgstr "Keine Linux-Installation erkannt"
@@ -555,11 +537,6 @@ msgstr "Aktiv (Live-Modus)"
 msgid "Checking network connection..."
 msgstr "Überprüfung der Netzwerkverbindung..."
 # 
-# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 44
-#: NEEDS WORK
-msgid "Select Target Disk"
-msgstr "Ziel-Disk auswählen"
-# 
 # File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 51
 msgid ""
 "Select the disk where GRUB will be installed. The bootloader will be written to the beginning of "
@@ -591,11 +568,6 @@ msgstr "Unbekanntes Modell"
 # File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 144
 msgid "GPT partition table detected. Make sure this is correct for Legacy boot mode."
 msgstr "GPT-Partitionstabelle erkannt. Stellen Sie sicher, dass dies für den Legacy-Bootmodus korrekt ist."
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 220
-#: NEEDS WORK
-msgid "Select EFI Partition"
-msgstr "EFI-Partition auswählen"
 # 
 # File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 227
 msgid ""
@@ -750,11 +722,6 @@ msgstr "Wiederherstellung erfolgreich abgeschlossen!"
 msgid "Restore failed. Please check the output above."
 msgstr "Wiederherstellung fehlgeschlagen. Bitte überprüfen Sie die obige Ausgabe."
 # 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 473
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
-msgid "Error"
-msgstr "Fehler"
-# 
 # File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 485
 msgid "Cancel Restore?"
 msgstr "Wiederherstellung abbrechen?"
@@ -770,3 +737,8 @@ msgstr "Nein"
 # File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 490
 msgid "Yes, Cancel"
 msgstr "Ja, Abbrechen"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 473
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
+msgid "Error"
+msgstr "Fehler"
