@@ -212,9 +212,25 @@ msgstr "Engin Linux uppsetningar fundust á þessum tölvu."
 msgid "Back"
 msgstr "Til baka"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 260
+#: NEEDS WORK
+msgid "Select System to Restore"
+msgstr "Veldu kerfi til að endurheimta"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 256
 msgid "Detected Linux Systems"
 msgstr "Linux kerfi greindust."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 267
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 344
+#: NEEDS WORK
+msgid "Found"
+msgstr "Fundið"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 267
+#: NEEDS WORK
+msgid "system(s)"
+msgstr "kerfi(kerfi)"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 269
 msgid "Boot Configuration"
@@ -228,9 +244,22 @@ msgstr "núverandi ræsiháttur"
 msgid "EFI Partitions Found"
 msgstr "EFI skiptur fundin"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 292
+#: NEEDS WORK
+msgid "partition(s)"
+msgstr "partisjon(partitjónir)"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 289
 msgid "Continue to Restore Options"
 msgstr "Halda áfram að endurheimta valkosti"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 329
+# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 44
+#: NEEDS WORK
+msgid "Select Target Disk"
+msgstr "Veldu markdisk"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 324
 msgid ""
@@ -244,9 +273,31 @@ msgstr ""
 msgid "Available Disks"
 msgstr "Tiltar Diska"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 344
+#: NEEDS WORK
+msgid "disk(s)"
+msgstr "diskur"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 381
+#: NEEDS WORK
+msgid "Partition table"
+msgstr "Partitjónartafla"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 121
 msgid "Unknown model"
 msgstr "Óþekktur líkan"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 101
+msgid "Filesystem"
+msgstr "Skýringakerfi"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 510
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 55
+#: NEEDS WORK
+msgid "Restore Options"
+msgstr "Endurðarvalkostir"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 380
 msgid ""
@@ -405,17 +456,28 @@ msgstr "Stýringarmiðstöðin mun opnast innan valda kerfisins."
 msgid "Package manager will open inside the selected system."
 msgstr "Pakkastjóri mun opnast innan valda kerfisins."
 # 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 766
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 225
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 394
+#: NEEDS WORK
+msgid "Restore in Progress"
+msgstr "Endurheimt í gangi"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 612
 msgid "Please wait while the restore operation completes..."
 msgstr "Vinsamlegast bíðu meðan endurheimtaraðgerðin lýkur..."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 785
-msgid "Show Details"
-msgstr "Sýna upplýsingar"
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 786
+#: NEEDS WORK
+msgid "Technical Details"
+msgstr "Tæknile upplýsingar"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 786
-msgid "Click to view technical details"
-msgstr "Smelltu til að skoða tæknilegar upplýsingar"
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 787
+#: NEEDS WORK
+msgid "Real-time execution log"
+msgstr "Rauntíma framkvæmdarskrá"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 810
 msgid "Terminal not available"
@@ -470,10 +532,6 @@ msgstr "Partisjon"
 msgid "Not selected"
 msgstr "Ekki valið"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 101
-msgid "Filesystem"
-msgstr "Skýringakerfi"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 108
 msgid "UUID"
 msgstr "UUID"
@@ -491,6 +549,11 @@ msgstr "Linux uppsetning"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 139
 msgid "Not specified"
 msgstr "Ekki tilgreint"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 162
+#: NEEDS WORK
+msgid "No System"
+msgstr "Engin ekki"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 163
 msgid "No Linux installation detected"
@@ -565,6 +628,11 @@ msgstr ""
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 144
 msgid "GPT partition table detected. Make sure this is correct for Legacy boot mode."
 msgstr "GPT skífu tafla greind. Vinsamlegast tryggðu að þetta sé rétt fyrir Legacy boot mód."
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 220
+#: NEEDS WORK
+msgid "Select EFI Partition"
+msgstr "Veldu EFI skiptimynd"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 227
 msgid ""
@@ -719,6 +787,10 @@ msgstr "Endurheimt lokið með góðum árangri!"
 msgid "Restore failed. Please check the output above."
 msgstr "Endurðun mistókst. Vinsamlegast athugaðu úttakið hér að ofan."
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
+msgid "Error"
+msgstr "Villa"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 485
 msgid "Cancel Restore?"
 msgstr "Hætta við endurheimt?"
@@ -734,7 +806,3 @@ msgstr ""
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 490
 msgid "Yes, Cancel"
 msgstr "Já, Hætta við"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
-msgid "Error"
-msgstr "Villa"
