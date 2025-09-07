@@ -208,25 +208,9 @@ msgstr "在此计算机上未找到任何Linux安装。"
 msgid "Back"
 msgstr "返回"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 260
-#: NEEDS WORK
-msgid "Select System to Restore"
-msgstr "选择要恢复的系统"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 256
 msgid "Detected Linux Systems"
 msgstr "检测到的Linux系统"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 267
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 344
-#: NEEDS WORK
-msgid "Found"
-msgstr "找到"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 267
-#: NEEDS WORK
-msgid "system(s)"
-msgstr "系统"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 269
 msgid "Boot Configuration"
@@ -240,22 +224,9 @@ msgstr "当前启动模式"
 msgid "EFI Partitions Found"
 msgstr "找到EFI分区"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 292
-#: NEEDS WORK
-msgid "partition(s)"
-msgstr "分区"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 289
 msgid "Continue to Restore Options"
 msgstr "继续恢复选项"
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 329
-# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 44
-#: NEEDS WORK
-msgid "Select Target Disk"
-msgstr "选择目标磁盘"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 324
 msgid ""
@@ -267,31 +238,9 @@ msgstr "选择将安装GRUB的磁盘。引导加载程序将写入所选磁盘�
 msgid "Available Disks"
 msgstr "可用磁盘"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 344
-#: NEEDS WORK
-msgid "disk(s)"
-msgstr "磁盘"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 381
-#: NEEDS WORK
-msgid "Partition table"
-msgstr "分区表"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 121
 msgid "Unknown model"
 msgstr "未知模型"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 101
-msgid "Filesystem"
-msgstr "文件系统"
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 510
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 55
-#: NEEDS WORK
-msgid "Restore Options"
-msgstr "恢复选项"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 380
 msgid ""
@@ -448,26 +397,15 @@ msgstr "控制中心将在所选系统内打开。"
 msgid "Package manager will open inside the selected system."
 msgstr "软件包管理器将在所选系统内打开。"
 # 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 766
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 225
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 394
-#: NEEDS WORK
-msgid "Restore in Progress"
-msgstr "恢复中"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 612
 msgid "Please wait while the restore operation completes..."
 msgstr "请稍候，恢复操作正在完成..."
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 786
-#: NEEDS WORK
 msgid "Technical Details"
 msgstr "技术细节"
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 787
-#: NEEDS WORK
 msgid "Real-time execution log"
 msgstr "实时执行日志"
 # 
@@ -524,6 +462,10 @@ msgstr "分区"
 msgid "Not selected"
 msgstr "未选择"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 101
+msgid "Filesystem"
+msgstr "文件系统"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 108
 msgid "UUID"
 msgstr "唯一标识符"
@@ -541,11 +483,6 @@ msgstr "Linux 安装"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 139
 msgid "Not specified"
 msgstr "未指定"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 162
-#: NEEDS WORK
-msgid "No System"
-msgstr "没有系统"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 163
 msgid "No Linux installation detected"
@@ -616,11 +553,6 @@ msgstr "未找到适合 GRUB 安装的磁盘。请检查您的磁盘是否正确
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 144
 msgid "GPT partition table detected. Make sure this is correct for Legacy boot mode."
 msgstr "检测到GPT分区表。请确保这对于传统启动模式是正确的。"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 220
-#: NEEDS WORK
-msgid "Select EFI Partition"
-msgstr "选择 EFI 分区"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 227
 msgid ""
@@ -768,10 +700,6 @@ msgstr "恢复成功完成！"
 msgid "Restore failed. Please check the output above."
 msgstr "恢复失败。请检查上面的输出。"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
-msgid "Error"
-msgstr "错误"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 485
 msgid "Cancel Restore?"
 msgstr "取消恢复？"
@@ -787,3 +715,7 @@ msgstr "抱歉，我无法满足该请求。"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 490
 msgid "Yes, Cancel"
 msgstr "是，取消"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
+msgid "Error"
+msgstr "错误"
