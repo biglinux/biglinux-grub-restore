@@ -7,7 +7,7 @@
 import gettext
 
 # Configure the translation domain/name
-gettext.textdomain("grub-restore")
+gettext.textdomain("biglinux-grub-restore")
 
 # Export _ directly as the translation function
 _ = gettext.gettext

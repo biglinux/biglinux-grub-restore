@@ -34,7 +34,7 @@ class SystemInterface:
         try:
             # Execute the detection script
             script_path = self.backend_path / 'grub-restore'
-            subprocess.run([str(script_path)], check=True)
+            subprocess.run(['sudo', str(script_path)], check=True)
             
             # Parse detection results
             self.parse_detection_results()
@@ -197,13 +197,8 @@ class SystemInterface:
         
         # Execute restore script
         try:
-            # All modes use same command (VTE terminal will handle interactive display)
-            cmd = [
-                'pkexec', 'env', 
-                f'DISPLAY={os.environ.get("DISPLAY", "")}',
-                f'XAUTHORITY={os.environ.get("XAUTHORITY", "")}',
-                str(script_path)
-            ]
+            # Execute with sudo for live mode
+            cmd = ['sudo', str(script_path)]
             
             process = subprocess.Popen(
                 cmd,
