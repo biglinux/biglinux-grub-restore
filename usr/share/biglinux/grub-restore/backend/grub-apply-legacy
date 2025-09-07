@@ -274,27 +274,25 @@ case "$RESTORE_MODE" in
         
     "4")
         log_message "Opening Interactive Terminal (Mode 4)"
-        show_progress "Mounting system and preparing chroot environment..."
-        
-        # Don't execute chroot here - just prepare the environment
-        # The VTE will handle the actual chroot
-        log_message "Interactive terminal environment ready"
-        exit 0
+        show_progress "Starting interactive shell..."
+        execute_chroot "bash" "Interactive shell"
         ;;
         
     "5")
         log_message "Opening Control Center (Mode 5)"
         show_progress "Starting control center..."
-        execute_chroot "DISPLAY=:0 bigcontrolcenter" "Control center"
-        ;;
         
+        # Use current environment variables
+        execute_chroot "env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY bigcontrolcenter" "Control center"
+        ;;
+
     "6")
-        log_message "Opening Package Manager (Mode 6)" 
+        log_message "Opening Package Manager (Mode 6)"
         show_progress "Removing package lock..."
         execute_chroot "rm -f /var/lib/pacman/db.lck" "Removing package lock"
         
         show_progress "Starting package manager..."
-        execute_chroot "DISPLAY=:0 pamac-manager" "Package manager"
+        execute_chroot "env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY pamac-manager" "Package manager"
         ;;
         
     *)

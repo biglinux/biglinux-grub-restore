@@ -390,7 +390,13 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         # Radio button
         radio_button = Gtk.CheckButton()
         radio_button.set_active(is_default)
-        radio_button.connect('toggled', self.on_disk_selected, disk)
+
+        # If only one disk, make it disabled and checked
+        if len(self.system_interface.grub_disks) == 1:
+            radio_button.set_active(True)
+            radio_button.set_sensitive(False)  # Gray out and disable
+        else:
+            radio_button.connect('toggled', self.on_disk_selected, disk)
         
         # Group radio buttons
         if not hasattr(self, 'disk_radio_group'):
@@ -450,7 +456,13 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         # Radio button
         radio_button = Gtk.CheckButton()
         radio_button.set_active(is_default)
-        radio_button.connect('toggled', self.on_system_selected, system)
+
+        # If only one system, make it disabled and checked
+        if len(self.system_interface.detected_systems) == 1:
+            radio_button.set_active(True)
+            radio_button.set_sensitive(False)  # Gray out and disable
+        else:
+            radio_button.connect('toggled', self.on_system_selected, system)
 
         # Properly group radio buttons in GTK4
         if self.system_radio_group is None:
@@ -822,34 +834,36 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         try:
             print(f"DEBUG: Running restore operation mode {mode}")
             
-            # Execute the restore using system_interface  
+            # Execute the restore using system_interface
             process = self.system_interface.execute_restore(mode)
             
-            # Monitor process output if VTE is available
+            # For interactive mode 4, handle specially
+            if mode == 4:
+                print("DEBUG: Setting up interactive terminal mode")
+                # Don't monitor - let it run interactively
+                return
+            
+            # Monitor output for other modes
             if hasattr(self, 'terminal') and self.terminal:
-                # Read output and feed to terminal
                 import threading
                 def monitor_process():
                     try:
-                        # Read output line by line
                         for line in iter(process.stdout.readline, ''):
                             if line:
-                                GLib.idle_add(self.terminal.feed, line.encode('utf-8'))
+                                clean_line = line.strip() + '\r\n'
+                                GLib.idle_add(self.terminal.feed, clean_line.encode('utf-8'))
                         
-                        # Wait for process to complete
                         process.wait()
                         success = process.returncode == 0
                         GLib.idle_add(self.on_restore_complete, mode, success)
                         
                     except Exception as e:
-                        print(f"DEBUG: Monitor process error: {e}")
                         GLib.idle_add(self.on_restore_error, str(e))
                 
                 thread = threading.Thread(target=monitor_process)
                 thread.daemon = True
                 thread.start()
             else:
-                # Fallback without VTE
                 process.wait()
                 success = process.returncode == 0
                 GLib.idle_add(self.on_restore_complete, mode, success)
