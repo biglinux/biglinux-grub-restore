@@ -1,11 +1,21 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import os
 import gi
+import subprocess
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
+# Add VTE import for terminal
+try:
+    gi.require_version('Vte', '3.91')
+    VTE_AVAILABLE = True
+except (ImportError, ValueError):
+    VTE_AVAILABLE = False
 
 from gi.repository import Gtk, Adw, GLib, Gio
+if VTE_AVAILABLE:
+    from gi.repository import Vte, Pango
 from utils.translation import _
 
 class GrubRestoreWindow(Adw.ApplicationWindow):
@@ -254,7 +264,7 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         # Systems group
         systems_group = Adw.PreferencesGroup()
         systems_group.set_title(_("Detected Linux Systems"))
-        systems_group.set_description(f"Found {len(self.system_interface.detected_systems)} system(s)")
+        systems_group.set_description(f"{_('Found')} {len(self.system_interface.detected_systems)} {_('system(s)')}")
         
         # Add system rows
         self.selected_system = None
@@ -278,7 +288,7 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         # EFI partitions info
         efi_info_row = Adw.ActionRow()
         efi_info_row.set_title(_("EFI Partitions Found"))
-        efi_info_row.set_subtitle(f"{len(self.system_interface.efi_partitions)} partition(s)")
+        efi_info_row.set_subtitle(f"{len(self.system_interface.efi_partitions)} {_('partition(s)')}")
         efi_info_row.set_icon_name("drive-harddisk-symbolic")
         boot_info_group.add(efi_info_row)
         
@@ -330,7 +340,7 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         # Disks group
         disks_group = Adw.PreferencesGroup()
         disks_group.set_title(_("Available Disks"))
-        disks_group.set_description(f"Found {len(self.system_interface.grub_disks)} disk(s)")
+        disks_group.set_description(f"{_('Found')} {len(self.system_interface.grub_disks)} {_('disk(s)')}")
         
         # Add disk rows
         self.selected_disk = None
@@ -367,7 +377,7 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
             subtitle_parts.append(model_name)
         
         if disk.get('table'):
-            subtitle_parts.append(f"Partition table: {disk['table']}")
+            subtitle_parts.append(f"{_('Partition table')}: {disk['table']}")
         
         if subtitle_parts:
             disk_row.set_subtitle(" | ".join(subtitle_parts))
@@ -427,7 +437,7 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         # Subtitle: filesystem and description
         subtitle_parts = []
         if system.get('filesystem'):
-            subtitle_parts.append(f"Filesystem: {system['filesystem']}")
+            subtitle_parts.append(f"{_('Filesystem')}: {system['filesystem']}")
         if system.get('description'):
             subtitle_parts.append(system['description'])
         
@@ -441,11 +451,11 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         radio_button.set_active(is_default)
         radio_button.connect('toggled', self.on_system_selected, system)
 
-        # Properly group radio buttons in GTK4
-        if not hasattr(self, 'radio_group'):
-            self.radio_group = radio_button
+        # Properly group radio buttons in GTK4 - fix grouping logic
+        if not hasattr(self, 'system_radio_group') or self.system_radio_group is None:
+            self.system_radio_group = radio_button
         else:
-            radio_button.set_group(self.radio_group)
+            radio_button.set_group(self.system_radio_group)
         
         system_row.add_prefix(radio_button)
         
@@ -603,32 +613,35 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         terminal_row.add_suffix(terminal_button)
         interactive_group.add(terminal_row)
         
-        # Option 5: Control Center
-        control_row = Adw.ActionRow()
-        control_row.set_title(_("Control Center"))
-        control_row.set_subtitle(_("Opens the control center inside the selected system."))
-        control_row.set_icon_name("preferences-system-symbolic")
-        
-        control_button = Gtk.Button()
-        control_button.set_label(_("Open"))
-        control_button.add_css_class("flat")
-        control_button.set_size_request(100, -1)
-        control_button.connect("clicked", lambda w: self.execute_restore(5))
-        control_row.add_suffix(control_button)
-        interactive_group.add(control_row)
+        # Option 5: Control Center (only if bigcontrolcenter exists)
+        if os.path.exists("/usr/bin/bigcontrolcenter"):
+            control_row = Adw.ActionRow()
+            control_row.set_title(_("Control Center"))
+            control_row.set_subtitle(_("Opens the control center inside the selected system."))
+            control_row.set_icon_name("preferences-system-symbolic")
+
+            control_button = Gtk.Button()
+            control_button.set_label(_("Open"))
+            control_button.add_css_class("flat")
+            control_button.set_size_request(100, -1)
+            control_button.connect("clicked", lambda w: self.execute_restore(5))
+            control_row.add_suffix(control_button)
+
+            interactive_group.add(control_row)
         
         # Option 6: Package Manager
         package_row = Adw.ActionRow()
         package_row.set_title(_("Package Manager"))
-        package_row.set_subtitle(_("Opens pamac-manager inside the selected system."))
+        package_row.set_subtitle(_("Opens pamac inside the selected system."))
         package_row.set_icon_name("system-software-install-symbolic")
-        
+
         package_button = Gtk.Button()
         package_button.set_label(_("Open"))
         package_button.add_css_class("flat")
         package_button.set_size_request(100, -1)
         package_button.connect("clicked", lambda w: self.execute_restore(6))
         package_row.add_suffix(package_button)
+
         interactive_group.add(package_row)
         
         options_box.append(interactive_group)
@@ -699,13 +712,22 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         # Show confirmation dialog
         if not self.show_restore_confirmation(mode):
             return
-        
-        # Clear content and show progress
+
+        # For interactive modes, don't show progress screen
+        if mode in [4, 5, 6]:
+            # Execute directly
+            import threading
+            thread = threading.Thread(target=self.run_restore_operation, args=(mode,))
+            thread.daemon = True
+            thread.start()
+            return
+
+        # Clear content and show progress for non-interactive modes
         child = self.content_area.get_first_child()
         while child:
             self.content_area.remove(child)
             child = self.content_area.get_first_child()
-        
+
         self.show_restore_progress(mode)
         
         # Execute in background thread
@@ -731,23 +753,78 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
 
     def show_restore_progress(self, mode):
         """Show restore progress page"""
-        progress_page = Adw.StatusPage()
-        progress_page.set_icon_name("system-run-symbolic")
-        progress_page.set_title(_("Restore in Progress"))
-        progress_page.set_description(_("Please wait while the restore operation completes..."))
+        # Create main progress box
+        progress_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
+        progress_box.set_margin_top(24)
+        progress_box.set_margin_bottom(24)
+        progress_box.set_margin_start(24)
+        progress_box.set_margin_end(24)
+        
+        # Title
+        title_label = Gtk.Label()
+        title_label.set_markup(f"<span size='x-large' weight='bold'>{_('Restore in Progress')}</span>")
+        title_label.set_halign(Gtk.Align.CENTER)
+        progress_box.append(title_label)
+        
+        # Description
+        desc_label = Gtk.Label()
+        desc_label.set_text(_("Please wait while the restore operation completes..."))
+        desc_label.set_halign(Gtk.Align.CENTER)
+        desc_label.add_css_class("dim-label")
+        progress_box.append(desc_label)
         
         # Progress spinner
         self.progress_spinner = Gtk.Spinner()
         self.progress_spinner.set_size_request(48, 48)
+        self.progress_spinner.set_halign(Gtk.Align.CENTER)
         self.progress_spinner.start()
-        progress_page.set_child(self.progress_spinner)
+        progress_box.append(self.progress_spinner)
         
-        self.content_area.append(progress_page)
+        # Expandable terminal section
+        terminal_expander = Adw.ExpanderRow()
+        terminal_expander.set_title(_("Show Details"))
+        terminal_expander.set_subtitle(_("Click to view technical details"))
+        terminal_expander.set_icon_name("utilities-terminal-symbolic")
+        
+        # Terminal frame and VTE
+        try:
+            gi.require_version('Vte', '3.91')
+            from gi.repository import Vte, Pango
+            
+            self.terminal = Vte.Terminal()
+            self.terminal.set_size_request(-1, 200)
+            self.terminal.set_font(Pango.FontDescription("monospace 9"))
+            self.terminal.set_scroll_on_output(True)
+            
+            terminal_frame = Gtk.Frame()
+            terminal_frame.set_child(self.terminal)
+            terminal_frame.set_margin_top(6)
+            terminal_frame.set_margin_bottom(6)
+            terminal_frame.set_margin_start(6)
+            terminal_frame.set_margin_end(6)
+            
+            terminal_expander.add_row(terminal_frame)
+        except Exception as e:
+            # Fallback if VTE is not available
+            error_label = Gtk.Label()
+            error_label.set_text(_("Terminal not available"))
+            terminal_expander.add_row(error_label)
+            self.terminal = None
+        
+        progress_box.append(terminal_expander)
+        
+        self.content_area.append(progress_box)
 
     def run_restore_operation(self, mode):
         """Run restore operation in background"""
         try:
             print(f"DEBUG: Running restore operation mode {mode}")
+            
+            # For interactive modes (4, 5, 6), open external terminal
+            if mode in [4, 5, 6]:
+                GLib.idle_add(self.launch_interactive_mode, mode)
+                return
+            
             # Execute the restore using system_interface
             process = self.system_interface.execute_restore(mode)
             
@@ -760,6 +837,52 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         except Exception as e:
             print(f"DEBUG: Restore operation failed: {e}")
             GLib.idle_add(self.on_restore_error, str(e))
+            
+    def launch_interactive_mode(self, mode):
+        """Launch interactive modes in external terminal"""
+        try:
+            # Prepare script execution
+            if self.system_interface.boot_mode == "EFI":
+                script_name = 'grub-apply-efi'
+            else:
+                script_name = 'grub-apply-legacy'
+            
+            script_path = self.system_interface.backend_path / script_name
+            
+            # Launch in external terminal
+            cmd = [
+                'konsole', '--hold', '-e', 'sudo', str(script_path)
+            ]
+            
+            # Try different terminal emulators
+            terminals = ['konsole', 'gnome-terminal', 'xfce4-terminal', 'xterm']
+            
+            for terminal in terminals:
+                try:
+                    if terminal == 'konsole':
+                        subprocess.Popen(['konsole', '--hold', '-e', 'sudo', str(script_path)])
+                    elif terminal == 'gnome-terminal':
+                        subprocess.Popen(['gnome-terminal', '--', 'sudo', str(script_path)])
+                    elif terminal == 'xfce4-terminal':
+                        subprocess.Popen(['xfce4-terminal', '--hold', '-e', 'sudo', str(script_path)])
+                    else:  # xterm
+                        subprocess.Popen(['xterm', '-hold', '-e', 'sudo', str(script_path)])
+                    
+                    print(f"DEBUG: Launched interactive mode {mode} in {terminal}")
+                    
+                    # Show completion message immediately
+                    self.on_restore_complete(mode, True)
+                    return
+                    
+                except FileNotFoundError:
+                    continue
+            
+            # If no terminal found, show error
+            self.on_restore_error("No suitable terminal emulator found")
+            
+        except Exception as e:
+            print(f"DEBUG: Failed to launch interactive mode: {e}")
+            self.on_restore_error(str(e))
 
     def on_restore_complete(self, mode, success):
         """Handle restore completion"""
@@ -789,7 +912,7 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         close_button.set_label(_("Close"))
         close_button.add_css_class("pill")
         close_button.add_css_class("suggested-action")
-        close_button.set_size_request(150, -1)
+        close_button.set_size_request(100, -1)
         close_button.connect("clicked", lambda w: self.get_application().quit())
         
         result_page.set_child(close_button)
