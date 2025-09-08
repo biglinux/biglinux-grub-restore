@@ -836,13 +836,6 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
             # Execute the restore using system_interface
             process = self.system_interface.execute_restore(mode)
             
-            # Interactive mode 4 is now handled separately in show_interactive_terminal()
-            # Modes 5 and 6 are handled here
-            if mode in [5, 6]:
-                print("DEBUG: Setting up interactive application mode")
-                # Don't monitor - let it run interactively
-                return
-            
             # Monitor output for other modes
             if hasattr(self, 'terminal') and self.terminal:
                 import threading
@@ -1076,9 +1069,9 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
                     if mount_result.returncode == 0:
                         print("DEBUG: System mounted successfully, starting interactive bash...")
                         
-                        # Start interactive bash in VTE terminal  
+                        # Start interactive bash in VTE terminal using sync method
                         cmd = ['sudo', 'manjaro-chroot', '/mnt', 'bash']
-                        GLib.idle_add(self.spawn_in_terminal, cmd)
+                        GLib.idle_add(self.spawn_in_terminal_sync, cmd)
                     else:
                         error_msg = mount_result.stderr or "Failed to mount system"
                         print(f"DEBUG: Mount failed: {error_msg}")
@@ -1096,41 +1089,27 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
             print(f"DEBUG: Failed to start chroot session: {e}")
             self.show_terminal_error(str(e))
 
-    def spawn_in_terminal(self, cmd):
-        """Spawn command in VTE terminal using modern async API"""
+    def spawn_in_terminal_sync(self, cmd):
+        """Spawn command in VTE terminal using sync method only"""
         try:
-            # Use modern async spawn method
-            if VTE_VERSION == '3.91':
-                self.interactive_terminal.spawn_async(
-                    Vte.PtyFlags.DEFAULT,
-                    None,  # working directory
-                    cmd,   # command and arguments
-                    None,  # environment
-                    GLib.SpawnFlags.DO_NOT_REAP_CHILD,
-                    None,  # child setup function
-                    None,  # child setup data
-                    -1,    # timeout (-1 = no timeout)
-                    None,  # cancellable
-                    self.on_spawn_complete,  # callback
-                    None   # user data
-                )
+            print(f"DEBUG: Spawning command: {' '.join(cmd)}")
+            
+            # Use only sync method - no async
+            success = self.interactive_terminal.spawn_sync(
+                Vte.PtyFlags.DEFAULT,
+                None,  # working directory  
+                cmd,   # command array
+                None,  # environment
+                GLib.SpawnFlags.DEFAULT,
+                None,  # child setup function
+                None   # child setup data
+            )
+            
+            if success:
+                print("DEBUG: Interactive terminal spawned successfully")
             else:
-                # Fallback to sync method for older VTE
-                success = self.interactive_terminal.spawn_sync(
-                    Vte.PtyFlags.DEFAULT,
-                    None,  # working directory  
-                    cmd,
-                    None,  # environment
-                    GLib.SpawnFlags.DO_NOT_REAP_CHILD,
-                    None,  # child setup
-                    None   # child setup data
-                )
-                
-                if success:
-                    print("DEBUG: Interactive terminal spawned successfully")
-                else:
-                    self.show_terminal_error("Failed to spawn terminal process")
-                
+                self.show_terminal_error("Failed to spawn terminal process")
+            
         except Exception as e:
             print(f"DEBUG: Failed to spawn terminal: {e}")
             self.show_terminal_error(f"Failed to start terminal: {e}")
