@@ -282,7 +282,7 @@ msgstr "No Linux installations found on this computer."
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 910
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 954
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 1033
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 1183
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 1188
 msgid "Back"
 msgstr "Back"
 
@@ -456,7 +456,7 @@ msgstr "Open"
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 634
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 1139
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 1144
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 187
 msgid "Control Center"
 msgstr "Control Center"
@@ -473,7 +473,7 @@ msgstr "Opens the control center inside the selected system."
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 649
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 1140
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 1145
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 201
 msgid "Package Manager"
 msgstr "Package Manager"
@@ -570,7 +570,7 @@ msgstr "The restore operation failed. Please try again."
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 918
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 962
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 1041
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 1191
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 1196
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 459
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 462
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 474
@@ -597,7 +597,7 @@ msgid "Terminal not available - VTE library not found"
 msgstr "Terminal not available - VTE library not found"
 
 #
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 1163
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 1168
 msgid "Preparing to launch application..."
 msgstr "Preparing to launch application..."
 
