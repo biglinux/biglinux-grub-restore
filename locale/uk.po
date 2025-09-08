@@ -201,6 +201,21 @@ msgstr "Виявлення систем"
 msgid "Please wait while we scan your system..."
 msgstr "Будь ласка, зачекайте, поки ми скануємо вашу систему..."
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 164
+#: NEEDS WORK
+msgid "Initializing detection..."
+msgstr "Ініціалізація виявлення..."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 167
+#: NEEDS WORK
+msgid "Scanning for Linux systems..."
+msgstr "Сканування для систем Linux..."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 170
+#: NEEDS WORK
+msgid "Analyzing boot configuration..."
+msgstr "Аналіз конфігурації завантаження..."
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 208
 msgid "Detection Failed"
 msgstr "Виявлення не вдалося"
@@ -221,9 +236,25 @@ msgstr "Не знайдено жодних установок Linux на цьо�
 msgid "Back"
 msgstr "Назад"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 262
+#: NEEDS WORK
+msgid "Select System to Restore"
+msgstr "Виберіть систему для відновлення"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 256
 msgid "Detected Linux Systems"
 msgstr "Виявлені системи Linux"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 269
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 346
+#: NEEDS WORK
+msgid "Found"
+msgstr "Знайдено"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 269
+#: NEEDS WORK
+msgid "system(s)"
+msgstr "система(и)"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 269
 msgid "Boot Configuration"
@@ -237,10 +268,23 @@ msgstr "Поточний режим завантаження"
 msgid "EFI Partitions Found"
 msgstr "Знайдено розділи EFI"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 294
+#: NEEDS WORK
+msgid "partition(s)"
+msgstr "partitions"
+# 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 300
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
 msgid "Continue"
 msgstr "Продолжити"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 331
+# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 44
+#: NEEDS WORK
+msgid "Select Target Disk"
+msgstr "Виберіть цільовий диск"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 324
 msgid ""
@@ -254,9 +298,31 @@ msgstr ""
 msgid "Available Disks"
 msgstr "Доступні диски"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 346
+#: NEEDS WORK
+msgid "disk(s)"
+msgstr "disk(s)"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 383
+#: NEEDS WORK
+msgid "Partition table"
+msgstr "Таблиця розділів"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 121
 msgid "Unknown model"
 msgstr "Невідомий модель"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 101
+msgid "Filesystem"
+msgstr "Файлова система"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 524
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 55
+#: NEEDS WORK
+msgid "Restore Options"
+msgstr "Відновлення параметрів"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 380
 msgid ""
@@ -415,6 +481,15 @@ msgstr "Центр керування відкриється всередині 
 msgid "Package manager will open inside the selected system."
 msgstr "Менеджер пакетів відкриється всередині вибраної системи."
 # 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 810
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 225
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 394
+#: NEEDS WORK
+msgid "Restore in Progress"
+msgstr "Відновлення триває"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 612
 msgid "Please wait while the restore operation completes..."
 msgstr "Будь ласка, зачекайте, поки завершиться операція відновлення..."
@@ -468,10 +543,6 @@ msgstr "Термінал, що працює всередині вибраної 
 msgid "Terminal not available - VTE library not found"
 msgstr "Термінал недоступний - бібліотеку VTE не знайдено"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 1163
-msgid "Preparing to launch application..."
-msgstr "Підготовка до запуску програми..."
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 59
 msgid "Linux System"
 msgstr "Система Linux"
@@ -487,10 +558,6 @@ msgstr "Розділ"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 95
 msgid "Not selected"
 msgstr "Не вибрано"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 101
-msgid "Filesystem"
-msgstr "Файлова система"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 108
 msgid "UUID"
@@ -509,6 +576,11 @@ msgstr "Встановлення Linux"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 139
 msgid "Not specified"
 msgstr "Не вказано"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 162
+#: NEEDS WORK
+msgid "No System"
+msgstr "Немає системи"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 163
 msgid "No Linux installation detected"
@@ -579,6 +651,11 @@ msgstr ""
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 144
 msgid "GPT partition table detected. Make sure this is correct for Legacy boot mode."
 msgstr "Виявлено таблицю розділів GPT. Переконайтеся, що це правильно для режиму завантаження Legacy."
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 220
+#: NEEDS WORK
+msgid "Select EFI Partition"
+msgstr "Виберіть розділ EFI"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 227
 msgid ""
@@ -735,6 +812,10 @@ msgstr "Відновлення успішно завершено!"
 msgid "Restore failed. Please check the output above."
 msgstr "Відновлення не вдалося. Будь ласка, перевірте вивід вище."
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
+msgid "Error"
+msgstr "Помилка"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 485
 msgid "Cancel Restore?"
 msgstr "Скасувати відновлення?"
@@ -750,7 +831,3 @@ msgstr ""
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 490
 msgid "Yes, Cancel"
 msgstr "Так, Скасувати"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
-msgid "Error"
-msgstr "Помилка"

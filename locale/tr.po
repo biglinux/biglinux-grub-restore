@@ -205,6 +205,21 @@ msgstr "Sistemleri Tespit Etme"
 msgid "Please wait while we scan your system..."
 msgstr "Lütfen sisteminizi tararken bekleyin..."
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 164
+#: NEEDS WORK
+msgid "Initializing detection..."
+msgstr "Algılama başlatılıyor..."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 167
+#: NEEDS WORK
+msgid "Scanning for Linux systems..."
+msgstr "Linux sistemleri taranıyor..."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 170
+#: NEEDS WORK
+msgid "Analyzing boot configuration..."
+msgstr "Önyükleme yapılandırması analiz ediliyor..."
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 208
 msgid "Detection Failed"
 msgstr "Algılama Başarısız oldu"
@@ -225,9 +240,25 @@ msgstr "Bu bilgisayarda hiçbir Linux kurulumu bulunamadı."
 msgid "Back"
 msgstr "Geri dön"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 262
+#: NEEDS WORK
+msgid "Select System to Restore"
+msgstr "Geri Yüklemek İçin Sistemi Seçin"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 256
 msgid "Detected Linux Systems"
 msgstr "Tespit Edilen Linux Sistemleri"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 269
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 346
+#: NEEDS WORK
+msgid "Found"
+msgstr "Bulundu"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 269
+#: NEEDS WORK
+msgid "system(s)"
+msgstr "sistem(ler)"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 269
 msgid "Boot Configuration"
@@ -241,10 +272,23 @@ msgstr "Mevcut Önyükleme Modu"
 msgid "EFI Partitions Found"
 msgstr "EFI Bölümleri Bulundu"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 294
+#: NEEDS WORK
+msgid "partition(s)"
+msgstr "bölüm(ler)"
+# 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 300
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
 msgid "Continue"
 msgstr "Devam et"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 331
+# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 44
+#: NEEDS WORK
+msgid "Select Target Disk"
+msgstr "Hedef Diski Seçin"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 324
 msgid ""
@@ -256,9 +300,31 @@ msgstr "GRUB'un yükleneceği diski seçin. Önyükleyici, seçilen diskin başl
 msgid "Available Disks"
 msgstr "Mevcut Diskler"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 346
+#: NEEDS WORK
+msgid "disk(s)"
+msgstr "disk(ler)"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 383
+#: NEEDS WORK
+msgid "Partition table"
+msgstr "Bölüm tablosu"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 121
 msgid "Unknown model"
 msgstr "Bilinmeyen model"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 101
+msgid "Filesystem"
+msgstr "Dosya Sistemi"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 524
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 55
+#: NEEDS WORK
+msgid "Restore Options"
+msgstr "Geri Yükleme Seçenekleri"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 380
 msgid ""
@@ -417,6 +483,15 @@ msgstr "Kontrol merkezi, seçilen sistem içinde açılacaktır."
 msgid "Package manager will open inside the selected system."
 msgstr "Paket yöneticisi seçilen sistem içinde açılacaktır."
 # 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 810
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 225
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 394
+#: NEEDS WORK
+msgid "Restore in Progress"
+msgstr "Geri Yükleme Devam Ediyor"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 612
 msgid "Please wait while the restore operation completes..."
 msgstr "Lütfen geri yükleme işlemi tamamlanana kadar bekleyin..."
@@ -470,10 +545,6 @@ msgstr "Seçilen sistem içinde çalışan terminal. Komutları doğrudan çalı
 msgid "Terminal not available - VTE library not found"
 msgstr "Terminal mevcut değil - VTE kütüphanesi bulunamadı"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 1163
-msgid "Preparing to launch application..."
-msgstr "Uygulamayı başlatmaya hazırlanıyor..."
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 59
 msgid "Linux System"
 msgstr "Linux Sistemi"
@@ -489,10 +560,6 @@ msgstr "Bölüm"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 95
 msgid "Not selected"
 msgstr "Seçilmedi"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 101
-msgid "Filesystem"
-msgstr "Dosya Sistemi"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 108
 msgid "UUID"
@@ -511,6 +578,11 @@ msgstr "Linux Kurulumu"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 139
 msgid "Not specified"
 msgstr "Belirtilmemiş"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 162
+#: NEEDS WORK
+msgid "No System"
+msgstr "Sistem Yok"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 163
 msgid "No Linux installation detected"
@@ -579,6 +651,11 @@ msgstr ""
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 144
 msgid "GPT partition table detected. Make sure this is correct for Legacy boot mode."
 msgstr "GPT bölüm tablosu tespit edildi. Bunun Legacy önyükleme modu için doğru olduğundan emin olun."
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 220
+#: NEEDS WORK
+msgid "Select EFI Partition"
+msgstr "EFI Bölümünü Seçin"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 227
 msgid ""
@@ -735,6 +812,10 @@ msgstr "Geri yükleme başarıyla tamamlandı!"
 msgid "Restore failed. Please check the output above."
 msgstr "Geri yükleme başarısız oldu. Lütfen yukarıdaki çıktıyı kontrol edin."
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
+msgid "Error"
+msgstr "Hata"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 485
 msgid "Cancel Restore?"
 msgstr "Geri Yüklemeyi İptal Et?"
@@ -750,7 +831,3 @@ msgstr "Hayır"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 490
 msgid "Yes, Cancel"
 msgstr "Evet, İptal et"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
-msgid "Error"
-msgstr "Hata"
