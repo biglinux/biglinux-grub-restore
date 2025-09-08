@@ -167,7 +167,6 @@ msgid "GRUB Restore Tool"
 msgstr "GRUB Gjenopprettingsverktøy"
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 86
-#: NEEDS WORK
 msgid "This tool should be used in"
 msgstr "Dette verktøyet bør brukes i"
 # 
@@ -175,12 +174,10 @@ msgstr "Dette verktøyet bør brukes i"
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 86
 # File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 265
-#: NEEDS WORK
 msgid "Mode"
 msgstr "Modus"
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 86
-#: NEEDS WORK
 msgid ""
 "to restore the BOOT of the BigLinux installed on the HD or SSD.\n"
 "\n"
@@ -193,7 +190,6 @@ msgstr ""
 "ikke fortsette med dette verktøyet."
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 94
-#: NEEDS WORK
 msgid "Start"
 msgstr "Start"
 # 
@@ -227,25 +223,9 @@ msgstr "Ingen Linux-installasjoner funnet på denne datamaskinen."
 msgid "Back"
 msgstr "Tilbake"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 260
-#: NEEDS WORK
-msgid "Select System to Restore"
-msgstr "Velg system for gjenoppretting"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 256
 msgid "Detected Linux Systems"
 msgstr "Oppdaget Linux-systemer"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 267
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 344
-#: NEEDS WORK
-msgid "Found"
-msgstr "Funnet"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 267
-#: NEEDS WORK
-msgid "system(s)"
-msgstr "system(er)"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 269
 msgid "Boot Configuration"
@@ -259,24 +239,10 @@ msgstr "Nåværende oppstartmodus"
 msgid "EFI Partitions Found"
 msgstr "EFI-partisjoner funnet"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 292
-#: NEEDS WORK
-msgid "partition(s)"
-msgstr "partisjon(er)"
-# 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 300
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
-#: NEEDS WORK
 msgid "Continue"
 msgstr "Fortsett"
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 329
-# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 44
-#: NEEDS WORK
-msgid "Select Target Disk"
-msgstr "Velg målskive"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 324
 msgid ""
@@ -290,31 +256,9 @@ msgstr ""
 msgid "Available Disks"
 msgstr "Tilgjengelige disker"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 344
-#: NEEDS WORK
-msgid "disk(s)"
-msgstr "disk(er)"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 381
-#: NEEDS WORK
-msgid "Partition table"
-msgstr "Partisjons tabell"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 121
 msgid "Unknown model"
 msgstr "Ukjent modell"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 101
-msgid "Filesystem"
-msgstr "Filssystem"
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 522
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 55
-#: NEEDS WORK
-msgid "Restore Options"
-msgstr "Gjenopprettingsalternativer"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 380
 msgid ""
@@ -473,15 +417,6 @@ msgstr "Kontrollsenteret vil åpne inne i det valgte systemet."
 msgid "Package manager will open inside the selected system."
 msgstr "Pakkebehandleren vil åpne inne i det valgte systemet."
 # 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 781
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 225
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 394
-#: NEEDS WORK
-msgid "Restore in Progress"
-msgstr "Gjenoppretting pågår"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 612
 msgid "Please wait while the restore operation completes..."
 msgstr "Vennligst vent mens gjenopprettingsoperasjonen fullføres..."
@@ -528,17 +463,14 @@ msgid "Restore Error"
 msgstr "Gjenopprettingsfeil"
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 997
-#: NEEDS WORK
 msgid "Terminal running inside the selected system. You can execute commands directly."
 msgstr "Terminal som kjører inne i det valgte systemet. Du kan kjøre kommandoer direkte."
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 1022
-#: NEEDS WORK
 msgid "Terminal not available - VTE library not found"
 msgstr "Terminal ikke tilgjengelig - VTE-bibliotek ikke funnet"
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 1163
-#: NEEDS WORK
 msgid "Preparing to launch application..."
 msgstr "Forbereder å starte applikasjonen..."
 # 
@@ -558,6 +490,10 @@ msgstr "Partisjon"
 msgid "Not selected"
 msgstr "Ikke valgt"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 101
+msgid "Filesystem"
+msgstr "Filssystem"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 108
 msgid "UUID"
 msgstr "UUID"
@@ -575,11 +511,6 @@ msgstr "Linux-installasjon"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 139
 msgid "Not specified"
 msgstr "Ikke spesifisert"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 162
-#: NEEDS WORK
-msgid "No System"
-msgstr "Ingen system"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 163
 msgid "No Linux installation detected"
@@ -620,7 +551,6 @@ msgid "Legacy/BIOS"
 msgstr "Legacy/BIOS"
 # 
 # File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 289
-#: NEEDS WORK
 msgid "Active"
 msgstr "Aktiv"
 # 
@@ -651,11 +581,6 @@ msgstr ""
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 144
 msgid "GPT partition table detected. Make sure this is correct for Legacy boot mode."
 msgstr "GPT partisjonstabell oppdaget. Sørg for at dette er korrekt for Legacy oppstartmodus."
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 220
-#: NEEDS WORK
-msgid "Select EFI Partition"
-msgstr "Velg EFI-partisjon"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 227
 msgid ""
@@ -812,10 +737,6 @@ msgstr "Gjenoppretting fullført!"
 msgid "Restore failed. Please check the output above."
 msgstr "Gjenoppretting mislyktes. Vennligst sjekk utdataene ovenfor."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
-msgid "Error"
-msgstr "Feil"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 485
 msgid "Cancel Restore?"
 msgstr "Avbryt gjenoppretting?"
@@ -835,3 +756,7 @@ msgstr "Nei"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 490
 msgid "Yes, Cancel"
 msgstr "Ja, Avbryt"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
+msgid "Error"
+msgstr "Feil"

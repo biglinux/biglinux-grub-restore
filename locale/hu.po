@@ -170,7 +170,6 @@ msgid "GRUB Restore Tool"
 msgstr "GRUB Visszaállító Eszköz"
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 86
-#: NEEDS WORK
 msgid "This tool should be used in"
 msgstr "Ezt az eszközt a következő helyen kell használni"
 # 
@@ -178,12 +177,10 @@ msgstr "Ezt az eszközt a következő helyen kell használni"
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 86
 # File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 265
-#: NEEDS WORK
 msgid "Mode"
 msgstr "Módus"
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 86
-#: NEEDS WORK
 msgid ""
 "to restore the BOOT of the BigLinux installed on the HD or SSD.\n"
 "\n"
@@ -196,7 +193,6 @@ msgstr ""
 "ezzel az eszközzel."
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 94
-#: NEEDS WORK
 msgid "Start"
 msgstr "Kezdés"
 # 
@@ -230,25 +226,9 @@ msgstr "Nincs Linux telepítés található ezen a számítógépen."
 msgid "Back"
 msgstr "Vissza"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 260
-#: NEEDS WORK
-msgid "Select System to Restore"
-msgstr "Rendszer kiválasztása a visszaállításhoz"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 256
 msgid "Detected Linux Systems"
 msgstr "Felfedezett Linux rendszerek"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 267
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 344
-#: NEEDS WORK
-msgid "Found"
-msgstr "Megtalálva"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 267
-#: NEEDS WORK
-msgid "system(s)"
-msgstr "rendszer(ek)"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 269
 msgid "Boot Configuration"
@@ -262,24 +242,10 @@ msgstr "Jelenlegi indítási mód"
 msgid "EFI Partitions Found"
 msgstr "EFI partíciók találva"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 292
-#: NEEDS WORK
-msgid "partition(s)"
-msgstr "partíció(k)"
-# 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 300
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
-#: NEEDS WORK
 msgid "Continue"
 msgstr "Folytatás"
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 329
-# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 44
-#: NEEDS WORK
-msgid "Select Target Disk"
-msgstr "Céllemez kiválasztása"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 324
 msgid ""
@@ -293,31 +259,9 @@ msgstr ""
 msgid "Available Disks"
 msgstr "Elérhető lemezek"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 344
-#: NEEDS WORK
-msgid "disk(s)"
-msgstr "lemez(ek)"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 381
-#: NEEDS WORK
-msgid "Partition table"
-msgstr "Partíciós tábla"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 121
 msgid "Unknown model"
 msgstr "Ismeretlen modell"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 101
-msgid "Filesystem"
-msgstr "Fájlrendszer"
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 522
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 55
-#: NEEDS WORK
-msgid "Restore Options"
-msgstr "Visszaállítási lehetőségek"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 380
 msgid ""
@@ -476,15 +420,6 @@ msgstr "A vezérlőközpont a kiválasztott rendszerben fog megnyílni."
 msgid "Package manager will open inside the selected system."
 msgstr "A csomagkezelő a kiválasztott rendszerben fog megnyílni."
 # 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 781
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 225
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 394
-#: NEEDS WORK
-msgid "Restore in Progress"
-msgstr "Visszaállítás folyamatban"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 612
 msgid "Please wait while the restore operation completes..."
 msgstr "Kérjük, várjon, amíg a visszaállítási művelet befejeződik..."
@@ -531,17 +466,14 @@ msgid "Restore Error"
 msgstr "Helyreállítási hiba"
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 997
-#: NEEDS WORK
 msgid "Terminal running inside the selected system. You can execute commands directly."
 msgstr "Terminál a kiválasztott rendszerben. Közvetlenül végrehajthat parancsokat."
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 1022
-#: NEEDS WORK
 msgid "Terminal not available - VTE library not found"
 msgstr "Terminál nem elérhető - VTE könyvtár nem található"
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 1163
-#: NEEDS WORK
 msgid "Preparing to launch application..."
 msgstr "Alkalmazás indítására készül..."
 # 
@@ -561,6 +493,10 @@ msgstr "Partíció"
 msgid "Not selected"
 msgstr "Nem kiválasztva"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 101
+msgid "Filesystem"
+msgstr "Fájlrendszer"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 108
 msgid "UUID"
 msgstr "UUID"
@@ -578,11 +514,6 @@ msgstr "Linux telepítés"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 139
 msgid "Not specified"
 msgstr "Nem megadott"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 162
-#: NEEDS WORK
-msgid "No System"
-msgstr "Nincs rendszer"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 163
 msgid "No Linux installation detected"
@@ -623,7 +554,6 @@ msgid "Legacy/BIOS"
 msgstr "Örökölt/BIOS"
 # 
 # File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 289
-#: NEEDS WORK
 msgid "Active"
 msgstr "Aktív"
 # 
@@ -654,11 +584,6 @@ msgstr ""
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 144
 msgid "GPT partition table detected. Make sure this is correct for Legacy boot mode."
 msgstr "GPT partíciós tábla észlelve. Győződjön meg arról, hogy ez helyes a Legacy indítási módhoz."
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 220
-#: NEEDS WORK
-msgid "Select EFI Partition"
-msgstr "EFI partíció kiválasztása"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 227
 msgid ""
@@ -809,10 +734,6 @@ msgstr "A helyreállítás sikeresen befejeződött!"
 msgid "Restore failed. Please check the output above."
 msgstr "A visszaállítás nem sikerült. Kérjük, ellenőrizze a fenti kimenetet."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
-msgid "Error"
-msgstr "Hiba"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 485
 msgid "Cancel Restore?"
 msgstr "Visszaállítás megszakítása?"
@@ -828,3 +749,7 @@ msgstr "Nem"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 490
 msgid "Yes, Cancel"
 msgstr "Igen, Mégse"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
+msgid "Error"
+msgstr "Hiba"
