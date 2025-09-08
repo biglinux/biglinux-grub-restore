@@ -80,18 +80,18 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         
         # Create welcome status page
         welcome_page = Adw.StatusPage()
-        welcome_page.set_icon_name("system-software-install")
+        welcome_page.set_icon_name("grub-icon")
         welcome_page.set_title(_("GRUB Restore Tool"))
         welcome_page.set_description(
-            _("This tool should be used in LIVE MODE to restore the BOOT "
-              "of the BigLinux installed on the HD or SSD.\n\n"
-              "If the installed system is booting correctly, there are no "
-              "boot problems, so it's better not to proceed with this tool.")
+            _("This tool should be used in") + " " + _("Mode") + " Live " + _("to restore the BOOT "
+            "of the BigLinux installed on the HD or SSD.\n\n"
+            "If the installed system is booting correctly, there are no "
+            "boot problems, so it's better not to proceed with this tool.")
         )
         
         # Start button with smaller size
         start_button = Gtk.Button()
-        start_button.set_label(_("Start Detection"))
+        start_button.set_label(_("Start"))
         start_button.add_css_class("pill")
         start_button.add_css_class("suggested-action")
         start_button.set_size_request(200, -1)  # Fixed width, auto height
@@ -297,7 +297,7 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         
         # Continue button
         continue_button = Gtk.Button()
-        continue_button.set_label(_("Continue to Restore Options"))
+        continue_button.set_label(_("Continue"))
         continue_button.add_css_class("pill")
         continue_button.add_css_class("suggested-action")
         continue_button.set_size_request(300, -1)
@@ -353,7 +353,7 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         
         # Continue button
         continue_button = Gtk.Button()
-        continue_button.set_label(_("Continue to Restore Options"))
+        continue_button.set_label(_("Continue"))
         continue_button.add_css_class("pill")
         continue_button.add_css_class("suggested-action")
         continue_button.set_size_request(300, -1)
@@ -541,7 +541,9 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         network_box.add_css_class("card")
         network_box.set_margin_top(6)
         network_box.set_margin_bottom(12)
-        
+        network_box.set_margin_start(5)
+        network_box.set_margin_end(5)
+
         network_icon = Gtk.Image()
         network_label = Gtk.Label()
         
@@ -726,13 +728,14 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         if not self.show_restore_confirmation(mode):
             return
 
-        # For interactive modes, don't show progress screen
-        if mode in [4, 5, 6]:
-            # Execute directly
-            import threading
-            thread = threading.Thread(target=self.run_restore_operation, args=(mode,))
-            thread.daemon = True
-            thread.start()
+        # For mode 4 (interactive terminal), show special terminal interface
+        if mode == 4:
+            self.show_interactive_terminal()
+            return
+
+        # For other interactive modes, show special interface
+        elif mode in [5, 6]:
+            self.show_interactive_application(mode)
             return
 
         # Clear content and show progress for non-interactive modes
@@ -837,9 +840,10 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
             # Execute the restore using system_interface
             process = self.system_interface.execute_restore(mode)
             
-            # For interactive mode 4, handle specially
-            if mode == 4:
-                print("DEBUG: Setting up interactive terminal mode")
+            # Interactive mode 4 is now handled separately in show_interactive_terminal()
+            # Modes 5 and 6 are handled here
+            if mode in [5, 6]:
+                print("DEBUG: Setting up interactive application mode")
                 # Don't monitor - let it run interactively
                 return
             
@@ -897,16 +901,28 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
             result_page.set_title(_("Restore Failed"))
             result_page.set_description(_("The restore operation failed. Please try again."))
         
+        # Button box for multiple buttons
+        button_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=12)
+        button_box.set_halign(Gtk.Align.CENTER)
+        
+        # Back button
+        back_button = Gtk.Button()
+        back_button.set_label(_("Back"))
+        back_button.add_css_class("pill")
+        back_button.set_size_request(100, -1)
+        back_button.connect("clicked", lambda w: self.show_restore_options())
+        button_box.append(back_button)
+        
         # Close button
         close_button = Gtk.Button()
         close_button.set_label(_("Close"))
         close_button.add_css_class("pill")
         close_button.add_css_class("suggested-action")
         close_button.set_size_request(100, -1)
-        close_button.set_halign(Gtk.Align.CENTER)
         close_button.connect("clicked", lambda w: self.get_application().quit())
+        button_box.append(close_button)
         
-        result_page.set_child(close_button)
+        result_page.set_child(button_box)
         self.content_area.append(result_page)
 
     def on_restore_error(self, error_msg):
@@ -929,11 +945,316 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         error_page.set_title(_("Restore Error"))
         error_page.set_description(f"Error: {error_msg}")
         
-        retry_button = Gtk.Button()
-        retry_button.set_label(_("Back to Options"))
-        retry_button.add_css_class("pill")
-        retry_button.set_size_request(150, -1)
-        retry_button.connect("clicked", lambda w: self.show_restore_options())
+        # Button box for multiple buttons
+        button_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=12)
+        button_box.set_halign(Gtk.Align.CENTER)
         
-        error_page.set_child(retry_button)
+        # Back button
+        back_button = Gtk.Button()
+        back_button.set_label(_("Back"))
+        back_button.add_css_class("pill")
+        back_button.set_size_request(100, -1)
+        back_button.connect("clicked", lambda w: self.show_restore_options())
+        button_box.append(back_button)
+        
+        # Close button
+        close_button = Gtk.Button()
+        close_button.set_label(_("Close"))
+        close_button.add_css_class("pill")
+        close_button.add_css_class("suggested-action")
+        close_button.set_size_request(100, -1)
+        close_button.connect("clicked", lambda w: self.get_application().quit())
+        button_box.append(close_button)
+        
+        error_page.set_child(button_box)
         self.content_area.append(error_page)
+        
+    def show_interactive_terminal(self):
+        """Show interactive terminal for mode 4"""
+        print("DEBUG: Showing interactive terminal interface")
+        
+        # Clear content
+        child = self.content_area.get_first_child()
+        while child:
+            self.content_area.remove(child)
+            child = self.content_area.get_first_child()
+        
+        # Create terminal interface box
+        terminal_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
+        terminal_box.set_margin_top(24)
+        terminal_box.set_margin_bottom(24)
+        terminal_box.set_margin_start(24)
+        terminal_box.set_margin_end(24)
+        
+        # Title
+        title_label = Gtk.Label()
+        title_label.set_markup(f"<span size='x-large' weight='bold'>{_('Interactive Terminal')}</span>")
+        title_label.set_halign(Gtk.Align.CENTER)
+        terminal_box.append(title_label)
+        
+        # Description
+        desc_label = Gtk.Label()
+        desc_label.set_text(_("Terminal running inside the selected system. You can execute commands directly."))
+        desc_label.set_wrap(True)
+        desc_label.set_justify(Gtk.Justification.CENTER)
+        desc_label.add_css_class("dim-label")
+        terminal_box.append(desc_label)
+        
+        # Terminal frame and VTE
+        if VTE_AVAILABLE:
+            self.interactive_terminal = Vte.Terminal()
+            self.interactive_terminal.set_size_request(-1, 400)
+            self.interactive_terminal.set_font(Pango.FontDescription("monospace 10"))
+            self.interactive_terminal.set_scroll_on_output(True)
+            
+            terminal_frame = Gtk.Frame()
+            terminal_frame.set_child(self.interactive_terminal)
+            terminal_frame.set_margin_top(12)
+            terminal_frame.set_margin_bottom(12)
+            
+            terminal_box.append(terminal_frame)
+            
+            # Start chroot session in terminal
+            self.start_chroot_session()
+        else:
+            # Fallback if VTE is not available
+            error_label = Gtk.Label()
+            error_label.set_text(_("Terminal not available - VTE library not found"))
+            error_label.add_css_class("error")
+            terminal_box.append(error_label)
+        
+        # Button box
+        button_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=12)
+        button_box.set_halign(Gtk.Align.CENTER)
+        button_box.set_margin_top(12)
+        
+        # Back button
+        back_button = Gtk.Button()
+        back_button.set_label(_("Back"))
+        back_button.add_css_class("pill")
+        back_button.set_size_request(100, -1)
+        back_button.connect("clicked", lambda w: self.show_restore_options())
+        button_box.append(back_button)
+        
+        # Close button
+        close_button = Gtk.Button()
+        close_button.set_label(_("Close"))
+        close_button.add_css_class("pill")
+        close_button.add_css_class("suggested-action")
+        close_button.set_size_request(100, -1)
+        close_button.connect("clicked", lambda w: self.get_application().quit())
+        button_box.append(close_button)
+        
+        terminal_box.append(button_box)
+        
+        self.content_area.append(terminal_box)
+
+    def start_chroot_session(self):
+        """Start chroot session in the interactive terminal"""
+        try:
+            print("DEBUG: Starting chroot session...")
+            
+            # Save restore mode
+            with open('/tmp/grub-restore-apply-mode', 'w') as f:
+                f.write('4')
+            
+            # Execute the chroot setup and start bash
+            if self.system_interface.boot_mode == "EFI":
+                script_path = self.system_interface.backend_path / 'grub-apply-efi'
+            else:
+                script_path = self.system_interface.backend_path / 'grub-apply-legacy'
+            
+            # Use manjaro-chroot directly for interactive session
+            cmd = ['sudo', 'manjaro-chroot', '/mnt', 'bash']
+            
+            # First mount the system using a background process
+            import threading
+            def setup_and_run():
+                try:
+                    # Mount system first
+                    setup_process = subprocess.run(['sudo', str(script_path)], 
+                                                capture_output=True, text=True, timeout=30)
+                    
+                    # If mount was successful, start interactive session
+                    if setup_process.returncode == 0:
+                        print("DEBUG: System mounted, starting interactive bash...")
+                        
+                        # Start interactive bash in VTE terminal
+                        GLib.idle_add(self.spawn_in_terminal, cmd)
+                    else:
+                        print(f"DEBUG: Mount failed: {setup_process.stderr}")
+                        GLib.idle_add(self.show_terminal_error, "Failed to mount system")
+                        
+                except Exception as e:
+                    print(f"DEBUG: Setup failed: {e}")
+                    GLib.idle_add(self.show_terminal_error, str(e))
+            
+            thread = threading.Thread(target=setup_and_run)
+            thread.daemon = True
+            thread.start()
+            
+        except Exception as e:
+            print(f"DEBUG: Failed to start chroot session: {e}")
+            self.show_terminal_error(str(e))
+
+    def spawn_in_terminal(self, cmd):
+        """Spawn command in VTE terminal"""
+        try:
+            self.interactive_terminal.spawn_async(
+                Vte.PtyFlags.DEFAULT,
+                None,  # working directory
+                cmd,
+                None,  # environment
+                GLib.SpawnFlags.DO_NOT_REAP_CHILD,
+                None,  # child setup
+                None,  # child setup data
+                -1,    # timeout
+                None,  # cancellable
+                None,  # callback
+                None   # user data
+            )
+            print("DEBUG: Interactive terminal spawned successfully")
+        except Exception as e:
+            print(f"DEBUG: Failed to spawn terminal: {e}")
+            self.show_terminal_error(f"Failed to start terminal: {e}")
+
+    def show_terminal_error(self, error_msg):
+        """Show terminal error message"""
+        if hasattr(self, 'interactive_terminal'):
+            error_text = f"Error: {error_msg}\r\n"
+            self.interactive_terminal.feed(error_text.encode('utf-8'))
+            
+    def show_interactive_application(self, mode):
+        """Show interface for interactive applications (modes 5 and 6)"""
+        print(f"DEBUG: Showing interactive application interface for mode {mode}")
+        
+        # Clear content
+        child = self.content_area.get_first_child()
+        while child:
+            self.content_area.remove(child)
+            child = self.content_area.get_first_child()
+        
+        # Application names
+        app_names = {
+            5: _("Control Center"),
+            6: _("Package Manager")
+        }
+        
+        app_commands = {
+            5: "bigcontrolcenter",
+            6: "pamac-manager"
+        }
+        
+        # Create application interface box
+        app_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
+        app_box.set_margin_top(24)
+        app_box.set_margin_bottom(24)
+        app_box.set_margin_start(24)
+        app_box.set_margin_end(24)
+        
+        # Title
+        title_label = Gtk.Label()
+        title_label.set_markup(f"<span size='x-large' weight='bold'>{app_names[mode]}</span>")
+        title_label.set_halign(Gtk.Align.CENTER)
+        app_box.append(title_label)
+        
+        # Status
+        self.app_status_label = Gtk.Label()
+        self.app_status_label.set_text(_("Preparing to launch application..."))
+        self.app_status_label.set_wrap(True)
+        self.app_status_label.set_justify(Gtk.Justification.CENTER)
+        self.app_status_label.add_css_class("dim-label")
+        app_box.append(self.app_status_label)
+        
+        # Progress spinner
+        self.app_spinner = Gtk.Spinner()
+        self.app_spinner.set_size_request(48, 48)
+        self.app_spinner.set_halign(Gtk.Align.CENTER)
+        self.app_spinner.start()
+        app_box.append(self.app_spinner)
+        
+        # Button box
+        button_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=12)
+        button_box.set_halign(Gtk.Align.CENTER)
+        button_box.set_margin_top(24)
+        
+        # Back button
+        back_button = Gtk.Button()
+        back_button.set_label(_("Back"))
+        back_button.add_css_class("pill")
+        back_button.set_size_request(100, -1)
+        back_button.connect("clicked", lambda w: self.show_restore_options())
+        button_box.append(back_button)
+        
+        # Close button
+        close_button = Gtk.Button()
+        close_button.set_label(_("Close"))
+        close_button.add_css_class("pill")
+        close_button.add_css_class("suggested-action")
+        close_button.set_size_request(100, -1)
+        close_button.connect("clicked", lambda w: self.get_application().quit())
+        button_box.append(close_button)
+        
+        app_box.append(button_box)
+        self.content_area.append(app_box)
+        
+        # Start the application in background
+        self.launch_chroot_application(mode, app_commands[mode])
+
+    def launch_chroot_application(self, mode, command):
+        """Launch application inside chroot"""
+        try:
+            print(f"DEBUG: Launching {command} in chroot...")
+            
+            # Save restore mode
+            with open('/tmp/grub-restore-apply-mode', 'w') as f:
+                f.write(str(mode))
+            
+            # Determine script path
+            if self.system_interface.boot_mode == "EFI":
+                script_path = self.system_interface.backend_path / 'grub-apply-efi'
+            else:
+                script_path = self.system_interface.backend_path / 'grub-apply-legacy'
+            
+            # Execute the script which will handle the chroot and application launch
+            import threading
+            def run_application():
+                try:
+                    GLib.idle_add(self.update_app_status, f"Mounting system and starting {command}...")
+                    
+                    process = subprocess.run(['sudo', str(script_path)], 
+                                        capture_output=True, text=True, timeout=120)
+                    
+                    if process.returncode == 0:
+                        GLib.idle_add(self.update_app_status, f"{command} completed successfully.")
+                        GLib.idle_add(self.stop_app_spinner)
+                    else:
+                        error_msg = process.stderr or process.stdout or "Unknown error"
+                        GLib.idle_add(self.update_app_status, f"Error: {error_msg}")
+                        GLib.idle_add(self.stop_app_spinner)
+                        
+                except subprocess.TimeoutExpired:
+                    GLib.idle_add(self.update_app_status, f"{command} session ended.")
+                    GLib.idle_add(self.stop_app_spinner)
+                except Exception as e:
+                    GLib.idle_add(self.update_app_status, f"Failed to start {command}: {e}")
+                    GLib.idle_add(self.stop_app_spinner)
+            
+            thread = threading.Thread(target=run_application)
+            thread.daemon = True
+            thread.start()
+            
+        except Exception as e:
+            print(f"DEBUG: Failed to launch application: {e}")
+            self.update_app_status(f"Failed to launch application: {e}")
+            self.stop_app_spinner()
+
+    def update_app_status(self, message):
+        """Update application status label"""
+        if hasattr(self, 'app_status_label'):
+            self.app_status_label.set_text(message)
+
+    def stop_app_spinner(self):
+        """Stop application spinner"""
+        if hasattr(self, 'app_spinner'):
+            self.app_spinner.stop()

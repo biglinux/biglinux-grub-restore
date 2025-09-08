@@ -262,7 +262,7 @@ class BootConfigWidget(Gtk.Box):
         
         # Live session row
         self.live_session_row = Adw.ActionRow()
-        self.live_session_row.set_title(_("Live Session"))
+        self.live_session_row.set_title(_("Mode") + " Live")
         self.live_session_row.set_subtitle(_("Checking..."))
         self.live_session_row.set_icon_name("media-optical-symbolic")
         self.details_group.add(self.live_session_row)
@@ -286,7 +286,7 @@ class BootConfigWidget(Gtk.Box):
         
         # Live session
         if SystemInfoHelper.is_live_session():
-            self.live_session_row.set_subtitle(_("Active (Live Mode)"))
+            self.live_session_row.set_subtitle(_("Active") + " (Live)")
         else:
             self.live_session_row.set_subtitle(_("Not detected"))
         

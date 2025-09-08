@@ -97,8 +97,8 @@ class RestoreOptionsWidget(Gtk.Box):
         status_box.add_css_class("card")
         status_box.set_margin_top(6)
         status_box.set_margin_bottom(6)
-        status_box.set_margin_start(12)
-        status_box.set_margin_end(12)
+        status_box.set_margin_start(17)
+        status_box.set_margin_end(17)
         
         self.network_icon = Gtk.Image()
         self.network_icon.set_pixel_size(16)

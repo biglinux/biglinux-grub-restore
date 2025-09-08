@@ -57,7 +57,7 @@ class GrubRestoreApplication(Adw.Application):
         """Show about dialog"""
         about = Adw.AboutDialog.new()
         about.set_application_name(_("BigLinux GRUB Restore"))
-        about.set_application_icon("system-software-install")
+        about.set_application_icon("grub-icon")
         about.set_developer_name("Biglinux")
         about.set_version("2.0.0")
         about.set_website("https://www.biglinux.com.br")
