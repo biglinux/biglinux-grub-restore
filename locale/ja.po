@@ -230,25 +230,9 @@ msgstr "このコンピュータにLinuxのインストールは見つかりま�
 msgid "Back"
 msgstr "戻る"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 262
-#: NEEDS WORK
-msgid "Select System to Restore"
-msgstr "復元するシステムを選択してください"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 256
 msgid "Detected Linux Systems"
 msgstr "検出されたLinuxシステム"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 269
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 346
-#: NEEDS WORK
-msgid "Found"
-msgstr "見つかりました"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 269
-#: NEEDS WORK
-msgid "system(s)"
-msgstr "システム(システム)"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 269
 msgid "Boot Configuration"
@@ -262,23 +246,10 @@ msgstr "現在のブートモード"
 msgid "EFI Partitions Found"
 msgstr "EFIパーティションが見つかりました"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 294
-#: NEEDS WORK
-msgid "partition(s)"
-msgstr "パーティション(パーティション)"
-# 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 300
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
 msgid "Continue"
 msgstr "続ける"
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 331
-# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 44
-#: NEEDS WORK
-msgid "Select Target Disk"
-msgstr "ターゲットディスクを選択"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 324
 msgid ""
@@ -290,31 +261,9 @@ msgstr "GRUBをインストールするディスクを選択してください�
 msgid "Available Disks"
 msgstr "利用可能なディスク"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 346
-#: NEEDS WORK
-msgid "disk(s)"
-msgstr "ディスク"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 383
-#: NEEDS WORK
-msgid "Partition table"
-msgstr "パーティションテーブル"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 121
 msgid "Unknown model"
 msgstr "不明なモデル"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 101
-msgid "Filesystem"
-msgstr "ファイルシステム"
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 524
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 55
-#: NEEDS WORK
-msgid "Restore Options"
-msgstr "復元オプション"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 380
 msgid ""
@@ -471,15 +420,6 @@ msgstr "選択したシステム内にコントロールセンターが開きま
 msgid "Package manager will open inside the selected system."
 msgstr "パッケージマネージャーは選択したシステム内で開きます。"
 # 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 777
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 225
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 394
-#: NEEDS WORK
-msgid "Restore in Progress"
-msgstr "復元中"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 612
 msgid "Please wait while the restore operation completes..."
 msgstr "復元操作が完了するまでお待ちください..."
@@ -549,6 +489,10 @@ msgstr "パーティション"
 msgid "Not selected"
 msgstr "未選択"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 101
+msgid "Filesystem"
+msgstr "ファイルシステム"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 108
 msgid "UUID"
 msgstr "UUID"
@@ -566,11 +510,6 @@ msgstr "Linuxのインストール"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 139
 msgid "Not specified"
 msgstr "指定されていません"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 162
-#: NEEDS WORK
-msgid "No System"
-msgstr "システムなし"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 163
 msgid "No Linux installation detected"
@@ -637,11 +576,6 @@ msgstr "GRUBのインストールに適したディスクが見つかりませ�
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 144
 msgid "GPT partition table detected. Make sure this is correct for Legacy boot mode."
 msgstr "GPTパーティションテーブルが検出されました。レガシーブートモードに対して正しいことを確認してください。"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 220
-#: NEEDS WORK
-msgid "Select EFI Partition"
-msgstr "EFIパーティションを選択"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 227
 msgid ""
@@ -792,10 +726,6 @@ msgstr "復元が成功しました！"
 msgid "Restore failed. Please check the output above."
 msgstr "復元に失敗しました。上記の出力を確認してください。"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
-msgid "Error"
-msgstr "エラー"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 485
 msgid "Cancel Restore?"
 msgstr "復元をキャンセルしますか？"
@@ -811,3 +741,7 @@ msgstr "いいえ"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 490
 msgid "Yes, Cancel"
 msgstr "はい、キャンセル"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
+msgid "Error"
+msgstr "エラー"
