@@ -1239,22 +1239,36 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
                         GLib.idle_add(self.stop_app_spinner)
                         return
                     
-                    GLib.idle_add(self.update_app_status, f"Starting {command}...")
-                    
-                    # Prepare environment variables for GUI applications
-                    env_vars = f"DISPLAY={os.environ.get('DISPLAY', ':0')} XAUTHORITY={os.environ.get('XAUTHORITY', '')}"
-                    
                     # Remove package lock for pamac-manager
                     if command == "pamac-manager":
                         subprocess.run(['sudo', 'manjaro-chroot', '/mnt', 'rm', '-f', '/var/lib/pacman/db.lck'], 
                                     capture_output=True)
-                    
-                    # Execute the GUI application in chroot
-                    chroot_cmd = ['sudo', 'manjaro-chroot', '/mnt', 'bash', '-c', f'{env_vars} {command}']
+
+                    GLib.idle_add(self.update_app_status, f"Starting {command}...")
+
+                    # Use the exact method that worked in tests (MÉTODO 1)
+                    display = os.environ.get('DISPLAY', ':0')
+                    xauth = os.environ.get('XAUTHORITY', '')
+
+                    print(f"DEBUG: DISPLAY={display}, XAUTHORITY={xauth}")
+
+                    # Build command exactly as tested
+                    if xauth:
+                        chroot_cmd = [
+                            'sudo', 'manjaro-chroot', '/mnt',
+                            'env', f'DISPLAY={display}', f'XAUTHORITY={xauth}',
+                            command
+                        ]
+                    else:
+                        chroot_cmd = [
+                            'sudo', 'manjaro-chroot', '/mnt',
+                            'env', f'DISPLAY={display}',
+                            command
+                        ]
                     
                     print(f"DEBUG: Executing command: {' '.join(chroot_cmd)}")
                     
-                    # Run the application
+                    # Run the application with the tested method
                     process = subprocess.run(chroot_cmd, capture_output=True, text=True, timeout=300)
                     
                     # Check result
