@@ -202,17 +202,14 @@ msgid "Please wait while we scan your system..."
 msgstr "Attendere mentre scansioniamo il tuo sistema..."
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 164
-#: NEEDS WORK
 msgid "Initializing detection..."
 msgstr "Inizializzazione della rilevazione..."
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 167
-#: NEEDS WORK
 msgid "Scanning for Linux systems..."
 msgstr "Scansione dei sistemi Linux..."
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 170
-#: NEEDS WORK
 msgid "Analyzing boot configuration..."
 msgstr "Analizzando la configurazione di avvio..."
 # 
@@ -236,25 +233,9 @@ msgstr "Nessuna installazione di Linux trovata su questo computer."
 msgid "Back"
 msgstr "Indietro"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 262
-#: NEEDS WORK
-msgid "Select System to Restore"
-msgstr "Seleziona il sistema da ripristinare"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 256
 msgid "Detected Linux Systems"
 msgstr "Sistemi Linux rilevati"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 269
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 346
-#: NEEDS WORK
-msgid "Found"
-msgstr "Trovato"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 269
-#: NEEDS WORK
-msgid "system(s)"
-msgstr "sistema(i)"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 269
 msgid "Boot Configuration"
@@ -268,23 +249,10 @@ msgstr "Modalità di avvio corrente"
 msgid "EFI Partitions Found"
 msgstr "Partizioni EFI Trovate"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 294
-#: NEEDS WORK
-msgid "partition(s)"
-msgstr "partizione(i)"
-# 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 300
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
 msgid "Continue"
 msgstr "Continua"
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 331
-# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 44
-#: NEEDS WORK
-msgid "Select Target Disk"
-msgstr "Seleziona disco di destinazione"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 324
 msgid ""
@@ -298,31 +266,9 @@ msgstr ""
 msgid "Available Disks"
 msgstr "Dischi disponibili"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 346
-#: NEEDS WORK
-msgid "disk(s)"
-msgstr "disco(i)"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 383
-#: NEEDS WORK
-msgid "Partition table"
-msgstr "Tabella delle partizioni"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 121
 msgid "Unknown model"
 msgstr "Modello sconosciuto"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 101
-msgid "Filesystem"
-msgstr "Filesystem"
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 524
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 55
-#: NEEDS WORK
-msgid "Restore Options"
-msgstr "Opzioni di Ripristino"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 380
 msgid ""
@@ -481,15 +427,6 @@ msgstr "Il centro di controllo si aprirà all'interno del sistema selezionato."
 msgid "Package manager will open inside the selected system."
 msgstr "Il gestore di pacchetti si aprirà all'interno del sistema selezionato."
 # 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 810
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 225
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 394
-#: NEEDS WORK
-msgid "Restore in Progress"
-msgstr "Ripristino in corso"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 612
 msgid "Please wait while the restore operation completes..."
 msgstr "Attendere prego mentre l'operazione di ripristino viene completata..."
@@ -559,6 +496,10 @@ msgstr "Partizione"
 msgid "Not selected"
 msgstr "Non selezionato"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 101
+msgid "Filesystem"
+msgstr "Filesystem"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 108
 msgid "UUID"
 msgstr "UUID"
@@ -576,11 +517,6 @@ msgstr "Installazione di Linux"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 139
 msgid "Not specified"
 msgstr "Non specificato"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 162
-#: NEEDS WORK
-msgid "No System"
-msgstr "Nessun sistema"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 163
 msgid "No Linux installation detected"
@@ -651,11 +587,6 @@ msgstr ""
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 144
 msgid "GPT partition table detected. Make sure this is correct for Legacy boot mode."
 msgstr "Tabella delle partizioni GPT rilevata. Assicurati che sia corretta per la modalità di avvio Legacy."
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 220
-#: NEEDS WORK
-msgid "Select EFI Partition"
-msgstr "Seleziona partizione EFI"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 227
 msgid ""
@@ -814,10 +745,6 @@ msgstr "Ripristino completato con successo!"
 msgid "Restore failed. Please check the output above."
 msgstr "Il ripristino è fallito. Controlla l'output sopra."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
-msgid "Error"
-msgstr "Errore"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 485
 msgid "Cancel Restore?"
 msgstr "Annulla ripristino?"
@@ -833,3 +760,7 @@ msgstr "No"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 490
 msgid "Yes, Cancel"
 msgstr "Sì, Annulla"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
+msgid "Error"
+msgstr "Errore"
