@@ -282,8 +282,11 @@ case "$RESTORE_MODE" in
         log_message "Opening Control Center (Mode 5)"
         show_progress "Starting control center..."
         
-        # Use current environment variables
-        execute_chroot "env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY bigcontrolcenter" "Control center"
+        # Enable X11 access temporarily
+        xhost + 2>/dev/null || true
+        execute_chroot "env DISPLAY=$DISPLAY bigcontrolcenter" "Control center"
+        # Restore X11 security
+        xhost - 2>/dev/null || true
         ;;
 
     "6")
@@ -292,7 +295,11 @@ case "$RESTORE_MODE" in
         execute_chroot "rm -f /var/lib/pacman/db.lck" "Removing package lock"
         
         show_progress "Starting package manager..."
-        execute_chroot "env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY pamac-manager" "Package manager"
+        # Enable X11 access temporarily
+        xhost + 2>/dev/null || true
+        execute_chroot "env DISPLAY=$DISPLAY pamac-manager" "Package manager"  
+        # Restore X11 security
+        xhost - 2>/dev/null || true
         ;;
         
     *)

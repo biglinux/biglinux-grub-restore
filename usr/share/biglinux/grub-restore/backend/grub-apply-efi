@@ -283,7 +283,11 @@ case "$RESTORE_MODE" in
         execute_chroot "rm -f /var/lib/pacman/db.lck" "Removing package lock"
         
         show_progress "Starting package manager..."
-        execute_chroot "env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY pamac-manager" "Package manager"
+        # Enable X11 access temporarily
+        xhost + 2>/dev/null || true
+        execute_chroot "env DISPLAY=$DISPLAY pamac-manager" "Package manager"  
+        # Restore X11 security
+        xhost - 2>/dev/null || true
         ;;
         
     *)

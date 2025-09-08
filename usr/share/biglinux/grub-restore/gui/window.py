@@ -4,18 +4,33 @@
 import os
 import gi
 import subprocess
+import threading
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
-# Add VTE import for terminal
+# Add VTE import for terminal with better error handling
+VTE_AVAILABLE = False
+VTE_VERSION = None
+
 try:
+    # Try VTE 3.91 first (GTK4)
     gi.require_version('Vte', '3.91')
+    from gi.repository import Vte, Pango
     VTE_AVAILABLE = True
+    VTE_VERSION = '3.91'
+    print("DEBUG: VTE 3.91 loaded successfully")
 except (ImportError, ValueError):
-    VTE_AVAILABLE = False
+    try:
+        # Fallback to VTE 2.91 (GTK3 compatibility)
+        gi.require_version('Vte', '2.91')
+        from gi.repository import Vte, Pango
+        VTE_AVAILABLE = True
+        VTE_VERSION = '2.91'
+        print("DEBUG: VTE 2.91 loaded as fallback")
+    except (ImportError, ValueError):
+        print("DEBUG: VTE not available - terminal features disabled")
+        VTE_AVAILABLE = False
 
 from gi.repository import Gtk, Adw, GLib, Gio
-if VTE_AVAILABLE:
-    from gi.repository import Vte, Pango
 from utils.translation import _
 
 class GrubRestoreWindow(Adw.ApplicationWindow):
@@ -101,36 +116,6 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         welcome_page.set_child(start_button)
         
         self.content_area.append(welcome_page)
-    
-    def on_start_detection(self, button):
-        """Handle start detection button click"""
-        
-        print("DEBUG: Start detection clicked!")
-        
-        # Clear existing content
-        child = self.content_area.get_first_child()
-        while child:
-            self.content_area.remove(child)
-            child = self.content_area.get_first_child()
-        
-        # Show detection page
-        detection_page = Adw.StatusPage()
-        detection_page.set_icon_name("view-refresh-symbolic")
-        detection_page.set_title(_("Detecting Systems"))
-        detection_page.set_description(_("Please wait while we scan your system..."))
-        
-        # Progress indicator
-        spinner = Gtk.Spinner()
-        spinner.set_size_request(48, 48)
-        spinner.start()
-        detection_page.set_child(spinner)
-        
-        self.content_area.append(detection_page)
-        
-        print("DEBUG: Detection page shown, starting actual detection...")
-        
-        # Start detection in background after 2 seconds (simulate work)
-        GLib.timeout_add_seconds(2, self.simulate_detection_complete)
 
     def on_start_detection(self, button):
         """Handle start detection button click"""
@@ -174,7 +159,16 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         """Run the actual system detection using shell scripts"""
         try:
             print("DEBUG: Running real system detection...")
+            
+            # Update UI with progress
+            GLib.idle_add(self.update_detection_progress, _("Initializing detection..."))
+            
+            # Start detection
+            GLib.idle_add(self.update_detection_progress, _("Scanning for Linux systems..."))
             self.system_interface.detect_systems()
+            
+            GLib.idle_add(self.update_detection_progress, _("Analyzing boot configuration..."))
+            
             print("DEBUG: Detection completed successfully")
             GLib.idle_add(self.show_detection_results)
         except Exception as e:
@@ -182,6 +176,14 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
             import traceback
             traceback.print_exc()
             GLib.idle_add(self.show_detection_error, str(e))
+
+    def update_detection_progress(self, message):
+        """Update detection progress message"""
+        # Find detection page and update description
+        child = self.content_area.get_first_child()
+        if child and isinstance(child, Adw.StatusPage):
+            child.set_description(message)
+        return False  # Remove from idle queue
 
     def show_detection_results(self):
         """Show real detection results"""
@@ -532,8 +534,8 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         desc_label.add_css_class("dim-label")
         options_box.append(desc_label)
         
-        # Check network status
-        self.network_available = self.check_network_connection()
+        # Check network status asynchronously
+        self.check_network_connection_async(self.on_network_check_complete)
         
         # Network status indicator
         network_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=8)
@@ -663,7 +665,16 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         
         self.content_area.append(options_box)
 
-    def check_network_connection(self):
+    def check_network_connection_async(self, callback):
+        """Check network connection asynchronously"""
+        def check_network():
+            result = self.check_network_connection_sync()
+            GLib.idle_add(callback, result)
+        
+        thread = threading.Thread(target=check_network, daemon=True)
+        thread.start()
+
+    def check_network_connection_sync(self):
         """Check if internet connection is available using multiple methods"""
         
         # Method 1: Try HTTP request (most reliable)
@@ -720,6 +731,30 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         print("DEBUG: All network tests failed - Network disconnected")
         return False
 
+    def on_network_check_complete(self, network_available):
+        """Handle network check completion"""
+        self.network_available = network_available
+        self.update_network_ui()
+
+    def update_network_ui(self):
+        """Update network UI elements"""
+        if self.network_available:
+            self.network_icon.set_icon_name("network-wireless-signal-excellent-symbolic")
+            self.network_label.set_text(_("Internet connection available"))
+            self.network_label.remove_css_class("warning")
+            self.network_label.add_css_class("success")
+        else:
+            self.network_icon.set_icon_name("network-wireless-offline-symbolic")
+            self.network_label.set_text(_("No internet - Options 2 and 3 require internet"))
+            self.network_label.remove_css_class("success")
+            self.network_label.add_css_class("warning")
+        
+        # Update button states
+        if hasattr(self, 'intermediate_button'):
+            self.intermediate_button.set_sensitive(self.network_available)
+        if hasattr(self, 'complete_button'):
+            self.complete_button.set_sensitive(self.network_available)
+
     def execute_restore(self, mode):
         """Execute restore operation"""
         print(f"DEBUG: Executing restore mode {mode}")
@@ -733,21 +768,15 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
             self.show_interactive_terminal()
             return
 
-        # For other interactive modes, show special interface
-        elif mode in [5, 6]:
-            self.show_interactive_application(mode)
-            return
-
-        # Clear content and show progress for non-interactive modes
+        # Clear content and show progress for all modes
         child = self.content_area.get_first_child()
         while child:
             self.content_area.remove(child)
             child = self.content_area.get_first_child()
 
         self.show_restore_progress(mode)
-        
+
         # Execute in background thread
-        import threading
         thread = threading.Thread(target=self.run_restore_operation, args=(mode,))
         thread.daemon = True
         thread.start()
@@ -1101,208 +1130,57 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
             self.show_terminal_error(str(e))
 
     def spawn_in_terminal(self, cmd):
-        """Spawn command in VTE terminal"""
+        """Spawn command in VTE terminal using modern async API"""
         try:
-            # Use the correct VTE spawn method
-            success = self.interactive_terminal.spawn_sync(
-                Vte.PtyFlags.DEFAULT,
-                None,  # working directory  
-                cmd,
-                None,  # environment
-                GLib.SpawnFlags.DO_NOT_REAP_CHILD,
-                None,  # child setup
-                None   # child setup data
-            )
-            
-            if success:
-                print("DEBUG: Interactive terminal spawned successfully")
+            # Use modern async spawn method
+            if VTE_VERSION == '3.91':
+                self.interactive_terminal.spawn_async(
+                    Vte.PtyFlags.DEFAULT,
+                    None,  # working directory
+                    cmd,   # command and arguments
+                    None,  # environment
+                    GLib.SpawnFlags.DO_NOT_REAP_CHILD,
+                    None,  # child setup function
+                    None,  # child setup data
+                    -1,    # timeout (-1 = no timeout)
+                    None,  # cancellable
+                    self.on_spawn_complete,  # callback
+                    None   # user data
+                )
             else:
-                self.show_terminal_error("Failed to spawn terminal process")
+                # Fallback to sync method for older VTE
+                success = self.interactive_terminal.spawn_sync(
+                    Vte.PtyFlags.DEFAULT,
+                    None,  # working directory  
+                    cmd,
+                    None,  # environment
+                    GLib.SpawnFlags.DO_NOT_REAP_CHILD,
+                    None,  # child setup
+                    None   # child setup data
+                )
+                
+                if success:
+                    print("DEBUG: Interactive terminal spawned successfully")
+                else:
+                    self.show_terminal_error("Failed to spawn terminal process")
                 
         except Exception as e:
             print(f"DEBUG: Failed to spawn terminal: {e}")
             self.show_terminal_error(f"Failed to start terminal: {e}")
+
+    def on_spawn_complete(self, terminal, pid, error, user_data):
+        """Handle spawn completion"""
+        if error:
+            print(f"DEBUG: Spawn failed: {error}")
+            self.show_terminal_error(f"Failed to start terminal: {error}")
+        else:
+            print(f"DEBUG: Interactive terminal spawned successfully (PID: {pid})")
 
     def show_terminal_error(self, error_msg):
         """Show terminal error message"""
         if hasattr(self, 'interactive_terminal'):
             error_text = f"Error: {error_msg}\r\n"
             self.interactive_terminal.feed(error_text.encode('utf-8'))
-            
-    def show_interactive_application(self, mode):
-        """Show interface for interactive applications (modes 5 and 6)"""
-        print(f"DEBUG: Showing interactive application interface for mode {mode}")
-        
-        # Clear content
-        child = self.content_area.get_first_child()
-        while child:
-            self.content_area.remove(child)
-            child = self.content_area.get_first_child()
-        
-        # Application names
-        app_names = {
-            5: _("Control Center"),
-            6: _("Package Manager")
-        }
-        
-        app_commands = {
-            5: "bigcontrolcenter",
-            6: "pamac-manager"
-        }
-        
-        # Create application interface box
-        app_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
-        app_box.set_margin_top(24)
-        app_box.set_margin_bottom(24)
-        app_box.set_margin_start(24)
-        app_box.set_margin_end(24)
-        
-        # Title
-        title_label = Gtk.Label()
-        title_label.set_markup(f"<span size='x-large' weight='bold'>{app_names[mode]}</span>")
-        title_label.set_halign(Gtk.Align.CENTER)
-        app_box.append(title_label)
-        
-        # Status
-        self.app_status_label = Gtk.Label()
-        self.app_status_label.set_text(_("Preparing to launch application..."))
-        self.app_status_label.set_wrap(True)
-        self.app_status_label.set_justify(Gtk.Justification.CENTER)
-        self.app_status_label.add_css_class("dim-label")
-        app_box.append(self.app_status_label)
-        
-        # Progress spinner
-        self.app_spinner = Gtk.Spinner()
-        self.app_spinner.set_size_request(48, 48)
-        self.app_spinner.set_halign(Gtk.Align.CENTER)
-        self.app_spinner.start()
-        app_box.append(self.app_spinner)
-        
-        # Button box
-        button_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=12)
-        button_box.set_halign(Gtk.Align.CENTER)
-        button_box.set_margin_top(24)
-        
-        # Back button
-        back_button = Gtk.Button()
-        back_button.set_label(_("Back"))
-        back_button.add_css_class("pill")
-        back_button.set_size_request(100, -1)
-        back_button.connect("clicked", lambda w: self.show_restore_options())
-        button_box.append(back_button)
-        
-        # Close button
-        close_button = Gtk.Button()
-        close_button.set_label(_("Close"))
-        close_button.add_css_class("pill")
-        close_button.add_css_class("suggested-action")
-        close_button.set_size_request(100, -1)
-        close_button.connect("clicked", lambda w: self.get_application().quit())
-        button_box.append(close_button)
-        
-        app_box.append(button_box)
-        self.content_area.append(app_box)
-        
-        # Start the application in background
-        self.launch_chroot_application(mode, app_commands[mode])
-
-    def launch_chroot_application(self, mode, command):
-        """Launch application inside chroot"""
-        try:
-            print(f"DEBUG: Launching {command} in chroot...")
-            
-            import threading
-            def run_application():
-                try:
-                    GLib.idle_add(self.update_app_status, f"Mounting system...")
-                    
-                    # Get system info
-                    selected_system = self.selected_system
-                    selected_partition = selected_system['partition']
-                    partition_format = selected_system.get('filesystem', 'ext4')
-                    
-                    # Unmount any existing mounts
-                    subprocess.run(['sudo', 'umount', '-l', '/mnt'], capture_output=True)
-                    subprocess.run(['sudo', 'umount', '-l', selected_partition], capture_output=True)
-                    
-                    # Mount the target partition
-                    if partition_format == "btrfs":
-                        mount_cmd = ['sudo', 'mount', selected_partition, '/mnt', '-o', 'subvol=@']
-                    else:
-                        mount_cmd = ['sudo', 'mount', selected_partition, '/mnt']
-                    
-                    mount_result = subprocess.run(mount_cmd, capture_output=True, text=True)
-                    
-                    if mount_result.returncode != 0:
-                        error_msg = mount_result.stderr or "Failed to mount system"
-                        GLib.idle_add(self.update_app_status, f"Mount failed: {error_msg}")
-                        GLib.idle_add(self.stop_app_spinner)
-                        return
-                    
-                    # Remove package lock for pamac-manager
-                    if command == "pamac-manager":
-                        subprocess.run(['sudo', 'manjaro-chroot', '/mnt', 'rm', '-f', '/var/lib/pacman/db.lck'], 
-                                    capture_output=True)
-
-                    GLib.idle_add(self.update_app_status, f"Starting {command}...")
-
-                    # Use the exact method that worked in tests (MÉTODO 1)
-                    display = os.environ.get('DISPLAY', ':0')
-                    xauth = os.environ.get('XAUTHORITY', '')
-
-                    print(f"DEBUG: DISPLAY={display}, XAUTHORITY={xauth}")
-
-                    # Build command exactly as tested
-                    if xauth:
-                        chroot_cmd = [
-                            'sudo', 'manjaro-chroot', '/mnt',
-                            'env', f'DISPLAY={display}', f'XAUTHORITY={xauth}',
-                            command
-                        ]
-                    else:
-                        chroot_cmd = [
-                            'sudo', 'manjaro-chroot', '/mnt',
-                            'env', f'DISPLAY={display}',
-                            command
-                        ]
-                    
-                    print(f"DEBUG: Executing command: {' '.join(chroot_cmd)}")
-                    
-                    # Run the application with the tested method
-                    process = subprocess.run(chroot_cmd, capture_output=True, text=True, timeout=300)
-                    
-                    # Check result
-                    if process.returncode == 0:
-                        GLib.idle_add(self.update_app_status, f"{command} completed successfully.")
-                    else:
-                        error_msg = process.stderr or process.stdout or "Unknown error"
-                        print(f"DEBUG: Application error: {error_msg}")
-                        GLib.idle_add(self.update_app_status, f"{command} completed.")
-                    
-                    GLib.idle_add(self.stop_app_spinner)
-                    
-                    # Unmount after completion
-                    subprocess.run(['sudo', 'umount', '-l', '/mnt'], capture_output=True)
-                    
-                except subprocess.TimeoutExpired:
-                    print(f"DEBUG: {command} session ended (timeout)")
-                    GLib.idle_add(self.update_app_status, f"{command} session ended.")
-                    GLib.idle_add(self.stop_app_spinner)
-                    subprocess.run(['sudo', 'umount', '-l', '/mnt'], capture_output=True)
-                except Exception as e:
-                    print(f"DEBUG: Failed to start {command}: {e}")
-                    GLib.idle_add(self.update_app_status, f"Failed to start {command}: {e}")
-                    GLib.idle_add(self.stop_app_spinner)
-                    subprocess.run(['sudo', 'umount', '-l', '/mnt'], capture_output=True)
-            
-            thread = threading.Thread(target=run_application)
-            thread.daemon = True
-            thread.start()
-            
-        except Exception as e:
-            print(f"DEBUG: Failed to launch application: {e}")
-            self.update_app_status(f"Failed to launch application: {e}")
-            self.stop_app_spinner()
 
     def update_app_status(self, message):
         """Update application status label"""
