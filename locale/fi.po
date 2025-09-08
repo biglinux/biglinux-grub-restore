@@ -221,9 +221,25 @@ msgstr "Tätä tietokonetta ei löytynyt Linux-asennuksia."
 msgid "Back"
 msgstr "Takaisin"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 260
+#: NEEDS WORK
+msgid "Select System to Restore"
+msgstr "Valitse palautettavaksi järjestelmä."
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 256
 msgid "Detected Linux Systems"
 msgstr "Havaitut Linux-järjestelmät"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 267
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 344
+#: NEEDS WORK
+msgid "Found"
+msgstr "Löydetty"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 267
+#: NEEDS WORK
+msgid "system(s)"
+msgstr "järjestelmä(t)"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 269
 msgid "Boot Configuration"
@@ -237,10 +253,23 @@ msgstr "Nykyinen käynnistystila"
 msgid "EFI Partitions Found"
 msgstr "EFI-osioita löytyi"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 292
+#: NEEDS WORK
+msgid "partition(s)"
+msgstr "osio(t)"
+# 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 300
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
 msgid "Continue"
 msgstr "Jatka"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 329
+# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 44
+#: NEEDS WORK
+msgid "Select Target Disk"
+msgstr "Valitse kohdelevy"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 324
 msgid ""
@@ -252,9 +281,31 @@ msgstr "Valitse levy, johon GRUB asennetaan. Käynnistyslataaja kirjoitetaan val
 msgid "Available Disks"
 msgstr "Saatavilla olevat levyt"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 344
+#: NEEDS WORK
+msgid "disk(s)"
+msgstr "levy(t)"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 381
+#: NEEDS WORK
+msgid "Partition table"
+msgstr "Osio-taulukko"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 121
 msgid "Unknown model"
 msgstr "Tuntematon malli"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 101
+msgid "Filesystem"
+msgstr "Tiedostojärjestelmä"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 522
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 55
+#: NEEDS WORK
+msgid "Restore Options"
+msgstr "Palautusasetukset"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 380
 msgid ""
@@ -414,6 +465,15 @@ msgstr "Ohjauskeskus avautuu valitussa järjestelmässä."
 msgid "Package manager will open inside the selected system."
 msgstr "Pakettihallinta avautuu valitussa järjestelmässä."
 # 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 781
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 225
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 394
+#: NEEDS WORK
+msgid "Restore in Progress"
+msgstr "Palautus käynnissä"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 612
 msgid "Please wait while the restore operation completes..."
 msgstr "Ole hyvä ja odota, kunnes palautustoiminto on valmis..."
@@ -487,10 +547,6 @@ msgstr "Osio"
 msgid "Not selected"
 msgstr "Ei valittu"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 101
-msgid "Filesystem"
-msgstr "Tiedostojärjestelmä"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 108
 msgid "UUID"
 msgstr "UUID"
@@ -508,6 +564,11 @@ msgstr "Linux-asennus"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 139
 msgid "Not specified"
 msgstr "Ei määritelty"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 162
+#: NEEDS WORK
+msgid "No System"
+msgstr "Ei järjestelmää"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 163
 msgid "No Linux installation detected"
@@ -574,6 +635,11 @@ msgstr "Sopivia levyjä ei löytynyt GRUB-asennusta varten. Tarkista, että levy
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 144
 msgid "GPT partition table detected. Make sure this is correct for Legacy boot mode."
 msgstr "GPT-osio taulukko havaittu. Varmista, että tämä on oikein Legacy-käynnistystilaa varten."
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 220
+#: NEEDS WORK
+msgid "Select EFI Partition"
+msgstr "Valitse EFI-osio"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 227
 msgid ""
@@ -730,6 +796,10 @@ msgstr "Palautus onnistui!"
 msgid "Restore failed. Please check the output above."
 msgstr "Palautus epäonnistui. Tarkista yllä oleva tuloste."
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
+msgid "Error"
+msgstr "Virhe"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 485
 msgid "Cancel Restore?"
 msgstr "Peruuta palautus?"
@@ -745,7 +815,3 @@ msgstr "Ei"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 490
 msgid "Yes, Cancel"
 msgstr "Kyllä, Peruuta"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
-msgid "Error"
-msgstr "Virhe"
