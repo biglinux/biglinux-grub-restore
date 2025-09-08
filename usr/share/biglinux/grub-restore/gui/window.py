@@ -534,9 +534,9 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         desc_label.add_css_class("dim-label")
         options_box.append(desc_label)
         
-        # Check network status asynchronously
-        self.check_network_connection_async(self.on_network_check_complete)
-        
+        # Check network status synchronously
+        network_available = self.check_network_connection_sync()
+
         # Network status indicator
         network_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=8)
         network_box.set_halign(Gtk.Align.CENTER)
@@ -548,8 +548,8 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
 
         network_icon = Gtk.Image()
         network_label = Gtk.Label()
-        
-        if self.network_available:
+
+        if network_available:
             network_icon.set_from_icon_name("network-wireless-signal-excellent-symbolic")
             network_label.set_text(_("Internet connection available"))
             network_label.add_css_class("success")
@@ -590,7 +590,7 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         intermediate_button.set_label(_("Execute"))
         intermediate_button.add_css_class("flat")
         intermediate_button.set_size_request(100, -1)
-        intermediate_button.set_sensitive(self.network_available)
+        intermediate_button.set_sensitive(network_available)
         intermediate_button.connect("clicked", lambda w: self.execute_restore(2))
         intermediate_row.add_suffix(intermediate_button)
         restore_group.add(intermediate_row)
@@ -605,7 +605,7 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         complete_button.set_label(_("Execute"))
         complete_button.add_css_class("flat")
         complete_button.set_size_request(100, -1)
-        complete_button.set_sensitive(self.network_available)
+        complete_button.set_sensitive(network_available)
         complete_button.connect("clicked", lambda w: self.execute_restore(3))
         complete_row.add_suffix(complete_button)
         restore_group.add(complete_row)
@@ -665,15 +665,6 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         
         self.content_area.append(options_box)
 
-    def check_network_connection_async(self, callback):
-        """Check network connection asynchronously"""
-        def check_network():
-            result = self.check_network_connection_sync()
-            GLib.idle_add(callback, result)
-        
-        thread = threading.Thread(target=check_network, daemon=True)
-        thread.start()
-
     def check_network_connection_sync(self):
         """Check if internet connection is available using multiple methods"""
         
@@ -730,30 +721,6 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         
         print("DEBUG: All network tests failed - Network disconnected")
         return False
-
-    def on_network_check_complete(self, network_available):
-        """Handle network check completion"""
-        self.network_available = network_available
-        self.update_network_ui()
-
-    def update_network_ui(self):
-        """Update network UI elements"""
-        if self.network_available:
-            self.network_icon.set_icon_name("network-wireless-signal-excellent-symbolic")
-            self.network_label.set_text(_("Internet connection available"))
-            self.network_label.remove_css_class("warning")
-            self.network_label.add_css_class("success")
-        else:
-            self.network_icon.set_icon_name("network-wireless-offline-symbolic")
-            self.network_label.set_text(_("No internet - Options 2 and 3 require internet"))
-            self.network_label.remove_css_class("success")
-            self.network_label.add_css_class("warning")
-        
-        # Update button states
-        if hasattr(self, 'intermediate_button'):
-            self.intermediate_button.set_sensitive(self.network_available)
-        if hasattr(self, 'complete_button'):
-            self.complete_button.set_sensitive(self.network_available)
 
     def execute_restore(self, mode):
         """Execute restore operation"""
