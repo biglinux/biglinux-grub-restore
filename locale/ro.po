@@ -166,23 +166,36 @@ msgstr "Ieșire"
 msgid "GRUB Restore Tool"
 msgstr "Instrument de restaurare GRUB"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 76
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 86
+#: NEEDS WORK
+msgid "This tool should be used in"
+msgstr "Acest instrument ar trebui folosit în"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 86
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 265
+#: NEEDS WORK
+msgid "Mode"
+msgstr "Modă"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 86
+#: NEEDS WORK
 msgid ""
-"This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed on the HD or "
-"SSD.\n"
+"to restore the BOOT of the BigLinux installed on the HD or SSD.\n"
 "\n"
 "If the installed system is booting correctly, there are no boot problems, so it's better not to "
 "proceed with this tool."
 msgstr ""
-"Acest instrument ar trebui folosit în MOD LIVE pentru a restaura BOOT-ul BigLinux instalat pe HD "
-"sau SSD.\n"
+"pentru a restaura BOOT-ul BigLinux instalat pe HD sau SSD.\n"
 "\n"
 "Dacă sistemul instalat pornește corect, nu există probleme de boot, așa că este mai bine să nu "
 "continuați cu acest instrument."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 84
-msgid "Start Detection"
-msgstr "Detectare început"
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 94
+#: NEEDS WORK
+msgid "Start"
+msgstr "Începe"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 109
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 139
@@ -214,9 +227,25 @@ msgstr "Nu au fost găsite instalări Linux pe acest computer."
 msgid "Back"
 msgstr "Înapoi"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 260
+#: NEEDS WORK
+msgid "Select System to Restore"
+msgstr "Selectați sistemul de restaurat"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 256
 msgid "Detected Linux Systems"
 msgstr "Sisteme Linux detectate"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 267
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 344
+#: NEEDS WORK
+msgid "Found"
+msgstr "Găsit"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 267
+#: NEEDS WORK
+msgid "system(s)"
+msgstr "sistem(e)"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 269
 msgid "Boot Configuration"
@@ -230,9 +259,24 @@ msgstr "Modul de Boot Curent"
 msgid "EFI Partitions Found"
 msgstr "Partiții EFI găsite"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 289
-msgid "Continue to Restore Options"
-msgstr "Continuați cu opțiunile de restaurare"
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 292
+#: NEEDS WORK
+msgid "partition(s)"
+msgstr "partiție(partiții)"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 300
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
+#: NEEDS WORK
+msgid "Continue"
+msgstr "Continuare"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 329
+# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 44
+#: NEEDS WORK
+msgid "Select Target Disk"
+msgstr "Selectați discul țintă"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 324
 msgid ""
@@ -246,9 +290,31 @@ msgstr ""
 msgid "Available Disks"
 msgstr "Discuri disponibile"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 344
+#: NEEDS WORK
+msgid "disk(s)"
+msgstr "disk(uri)"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 381
+#: NEEDS WORK
+msgid "Partition table"
+msgstr "Tabel de partiții"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 121
 msgid "Unknown model"
 msgstr "Model necunoscut"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 101
+msgid "Filesystem"
+msgstr "Sistem de fișiere"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 522
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 55
+#: NEEDS WORK
+msgid "Restore Options"
+msgstr "Opțiuni de restaurare"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 380
 msgid ""
@@ -407,6 +473,15 @@ msgstr "Centrul de control se va deschide în sistemul selectat."
 msgid "Package manager will open inside the selected system."
 msgstr "Managerul de pachete se va deschide în sistemul selectat."
 # 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 781
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 225
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 394
+#: NEEDS WORK
+msgid "Restore in Progress"
+msgstr "Restaurare în curs de desfășurare"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 612
 msgid "Please wait while the restore operation completes..."
 msgstr "Vă rugăm să așteptați în timp ce operațiunea de restaurare se finalizează..."
@@ -452,9 +527,20 @@ msgstr "Închide"
 msgid "Restore Error"
 msgstr "Eroare de restaurare"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 692
-msgid "Back to Options"
-msgstr "Înapoi la Opțiuni"
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 997
+#: NEEDS WORK
+msgid "Terminal running inside the selected system. You can execute commands directly."
+msgstr "Terminal rulând în interiorul sistemului selectat. Puteți executa comenzi direct."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 1022
+#: NEEDS WORK
+msgid "Terminal not available - VTE library not found"
+msgstr "Terminal indisponibil - biblioteca VTE nu a fost găsită"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 1163
+#: NEEDS WORK
+msgid "Preparing to launch application..."
+msgstr "Se pregătește lansarea aplicației..."
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 59
 msgid "Linux System"
@@ -471,10 +557,6 @@ msgstr "Partiție"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 95
 msgid "Not selected"
 msgstr "Neselectat"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 101
-msgid "Filesystem"
-msgstr "Sistem de fișiere"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 108
 msgid "UUID"
@@ -493,6 +575,11 @@ msgstr "Instalare Linux"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 139
 msgid "Not specified"
 msgstr "Nu este specificat"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 162
+#: NEEDS WORK
+msgid "No System"
+msgstr "Fără sistem"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 163
 msgid "No Linux installation detected"
@@ -516,10 +603,6 @@ msgstr "Mod de pornire"
 msgid "Detecting..."
 msgstr "Detectare..."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 265
-msgid "Live Session"
-msgstr "Sesiune live"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 266
 msgid "Checking..."
 msgstr "Verificare..."
@@ -536,9 +619,10 @@ msgstr "EFI/UEFI"
 msgid "Legacy/BIOS"
 msgstr "Moștenire/BIOS"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 289
-msgid "Active (Live Mode)"
-msgstr "Activat (Mod Live)"
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 289
+#: NEEDS WORK
+msgid "Active"
+msgstr "Activă"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 330
 msgid "Checking network connection..."
@@ -569,6 +653,11 @@ msgid "GPT partition table detected. Make sure this is correct for Legacy boot m
 msgstr ""
 "Tabelul de partiții GPT a fost detectat. Asigurați-vă că acesta este corect pentru modul de boot "
 "Legacy."
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 220
+#: NEEDS WORK
+msgid "Select EFI Partition"
+msgstr "Selectați partiția EFI"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 227
 msgid ""
@@ -727,6 +816,10 @@ msgstr "Restaurarea a fost finalizată cu succes!"
 msgid "Restore failed. Please check the output above."
 msgstr "Restaurarea a eșuat. Vă rugăm să verificați ieșirea de mai sus."
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
+msgid "Error"
+msgstr "Eroare"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 485
 msgid "Cancel Restore?"
 msgstr "Anulează Restaurarea?"
@@ -742,7 +835,3 @@ msgstr "Nu"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 490
 msgid "Yes, Cancel"
 msgstr "Da, Anulează"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
-msgid "Error"
-msgstr "Eroare"
