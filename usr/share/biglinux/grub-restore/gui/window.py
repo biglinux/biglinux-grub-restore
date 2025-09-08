@@ -1054,36 +1054,39 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         try:
             print("DEBUG: Starting chroot session...")
             
-            # Save restore mode
-            with open('/tmp/grub-restore-apply-mode', 'w') as f:
-                f.write('4')
-            
-            # Execute the chroot setup and start bash
-            if self.system_interface.boot_mode == "EFI":
-                script_path = self.system_interface.backend_path / 'grub-apply-efi'
-            else:
-                script_path = self.system_interface.backend_path / 'grub-apply-legacy'
-            
-            # Use manjaro-chroot directly for interactive session
-            cmd = ['sudo', 'manjaro-chroot', '/mnt', 'bash']
-            
-            # First mount the system using a background process
+            # Mount system manually for interactive session
             import threading
             def setup_and_run():
                 try:
-                    # Mount system first
-                    setup_process = subprocess.run(['sudo', str(script_path)], 
-                                                capture_output=True, text=True, timeout=30)
+                    print("DEBUG: Mounting system for interactive session...")
                     
-                    # If mount was successful, start interactive session
-                    if setup_process.returncode == 0:
-                        print("DEBUG: System mounted, starting interactive bash...")
+                    # Get system info
+                    selected_system = self.selected_system
+                    selected_partition = selected_system['partition']
+                    partition_format = selected_system.get('filesystem', 'ext4')
+                    
+                    # Unmount any existing mounts
+                    subprocess.run(['sudo', 'umount', '-l', '/mnt'], capture_output=True)
+                    subprocess.run(['sudo', 'umount', '-l', selected_partition], capture_output=True)
+                    
+                    # Mount the target partition
+                    if partition_format == "btrfs":
+                        mount_cmd = ['sudo', 'mount', selected_partition, '/mnt', '-o', 'subvol=@']
+                    else:
+                        mount_cmd = ['sudo', 'mount', selected_partition, '/mnt']
+                    
+                    mount_result = subprocess.run(mount_cmd, capture_output=True, text=True)
+                    
+                    if mount_result.returncode == 0:
+                        print("DEBUG: System mounted successfully, starting interactive bash...")
                         
-                        # Start interactive bash in VTE terminal
+                        # Start interactive bash in VTE terminal  
+                        cmd = ['sudo', 'manjaro-chroot', '/mnt', 'bash']
                         GLib.idle_add(self.spawn_in_terminal, cmd)
                     else:
-                        print(f"DEBUG: Mount failed: {setup_process.stderr}")
-                        GLib.idle_add(self.show_terminal_error, "Failed to mount system")
+                        error_msg = mount_result.stderr or "Failed to mount system"
+                        print(f"DEBUG: Mount failed: {error_msg}")
+                        GLib.idle_add(self.show_terminal_error, f"Mount failed: {error_msg}")
                         
                 except Exception as e:
                     print(f"DEBUG: Setup failed: {e}")
@@ -1100,20 +1103,22 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
     def spawn_in_terminal(self, cmd):
         """Spawn command in VTE terminal"""
         try:
-            self.interactive_terminal.spawn_async(
+            # Use the correct VTE spawn method
+            success = self.interactive_terminal.spawn_sync(
                 Vte.PtyFlags.DEFAULT,
-                None,  # working directory
+                None,  # working directory  
                 cmd,
                 None,  # environment
                 GLib.SpawnFlags.DO_NOT_REAP_CHILD,
                 None,  # child setup
-                None,  # child setup data
-                -1,    # timeout
-                None,  # cancellable
-                None,  # callback
-                None   # user data
+                None   # child setup data
             )
-            print("DEBUG: Interactive terminal spawned successfully")
+            
+            if success:
+                print("DEBUG: Interactive terminal spawned successfully")
+            else:
+                self.show_terminal_error("Failed to spawn terminal process")
+                
         except Exception as e:
             print(f"DEBUG: Failed to spawn terminal: {e}")
             self.show_terminal_error(f"Failed to start terminal: {e}")
@@ -1206,39 +1211,75 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         try:
             print(f"DEBUG: Launching {command} in chroot...")
             
-            # Save restore mode
-            with open('/tmp/grub-restore-apply-mode', 'w') as f:
-                f.write(str(mode))
-            
-            # Determine script path
-            if self.system_interface.boot_mode == "EFI":
-                script_path = self.system_interface.backend_path / 'grub-apply-efi'
-            else:
-                script_path = self.system_interface.backend_path / 'grub-apply-legacy'
-            
-            # Execute the script which will handle the chroot and application launch
             import threading
             def run_application():
                 try:
-                    GLib.idle_add(self.update_app_status, f"Mounting system and starting {command}...")
+                    GLib.idle_add(self.update_app_status, f"Mounting system...")
                     
-                    process = subprocess.run(['sudo', str(script_path)], 
-                                        capture_output=True, text=True, timeout=120)
+                    # Get system info
+                    selected_system = self.selected_system
+                    selected_partition = selected_system['partition']
+                    partition_format = selected_system.get('filesystem', 'ext4')
                     
+                    # Unmount any existing mounts
+                    subprocess.run(['sudo', 'umount', '-l', '/mnt'], capture_output=True)
+                    subprocess.run(['sudo', 'umount', '-l', selected_partition], capture_output=True)
+                    
+                    # Mount the target partition
+                    if partition_format == "btrfs":
+                        mount_cmd = ['sudo', 'mount', selected_partition, '/mnt', '-o', 'subvol=@']
+                    else:
+                        mount_cmd = ['sudo', 'mount', selected_partition, '/mnt']
+                    
+                    mount_result = subprocess.run(mount_cmd, capture_output=True, text=True)
+                    
+                    if mount_result.returncode != 0:
+                        error_msg = mount_result.stderr or "Failed to mount system"
+                        GLib.idle_add(self.update_app_status, f"Mount failed: {error_msg}")
+                        GLib.idle_add(self.stop_app_spinner)
+                        return
+                    
+                    GLib.idle_add(self.update_app_status, f"Starting {command}...")
+                    
+                    # Prepare environment variables for GUI applications
+                    env_vars = f"DISPLAY={os.environ.get('DISPLAY', ':0')} XAUTHORITY={os.environ.get('XAUTHORITY', '')}"
+                    
+                    # Remove package lock for pamac-manager
+                    if command == "pamac-manager":
+                        subprocess.run(['sudo', 'manjaro-chroot', '/mnt', 'rm', '-f', '/var/lib/pacman/db.lck'], 
+                                    capture_output=True)
+                    
+                    # Execute the GUI application in chroot
+                    chroot_cmd = ['sudo', 'manjaro-chroot', '/mnt', 'bash', '-c', f'{env_vars} {command}']
+                    
+                    print(f"DEBUG: Executing command: {' '.join(chroot_cmd)}")
+                    
+                    # Run the application
+                    process = subprocess.run(chroot_cmd, capture_output=True, text=True, timeout=300)
+                    
+                    # Check result
                     if process.returncode == 0:
                         GLib.idle_add(self.update_app_status, f"{command} completed successfully.")
-                        GLib.idle_add(self.stop_app_spinner)
                     else:
                         error_msg = process.stderr or process.stdout or "Unknown error"
-                        GLib.idle_add(self.update_app_status, f"Error: {error_msg}")
-                        GLib.idle_add(self.stop_app_spinner)
-                        
+                        print(f"DEBUG: Application error: {error_msg}")
+                        GLib.idle_add(self.update_app_status, f"{command} completed.")
+                    
+                    GLib.idle_add(self.stop_app_spinner)
+                    
+                    # Unmount after completion
+                    subprocess.run(['sudo', 'umount', '-l', '/mnt'], capture_output=True)
+                    
                 except subprocess.TimeoutExpired:
+                    print(f"DEBUG: {command} session ended (timeout)")
                     GLib.idle_add(self.update_app_status, f"{command} session ended.")
                     GLib.idle_add(self.stop_app_spinner)
+                    subprocess.run(['sudo', 'umount', '-l', '/mnt'], capture_output=True)
                 except Exception as e:
+                    print(f"DEBUG: Failed to start {command}: {e}")
                     GLib.idle_add(self.update_app_status, f"Failed to start {command}: {e}")
                     GLib.idle_add(self.stop_app_spinner)
+                    subprocess.run(['sudo', 'umount', '-l', '/mnt'], capture_output=True)
             
             thread = threading.Thread(target=run_application)
             thread.daemon = True
