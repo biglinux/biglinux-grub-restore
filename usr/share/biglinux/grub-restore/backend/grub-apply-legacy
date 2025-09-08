@@ -282,11 +282,31 @@ case "$RESTORE_MODE" in
         log_message "Opening Control Center (Mode 5)"
         show_progress "Starting control center..."
         
-        # Enable X11 access temporarily
-        xhost + 2>/dev/null || true
-        execute_chroot "env DISPLAY=$DISPLAY bigcontrolcenter" "Control center"
-        # Restore X11 security
-        xhost - 2>/dev/null || true
+        # Detect session type
+        SESSION_TYPE="${XDG_SESSION_TYPE:-x11}"
+        log_message "Session type: $SESSION_TYPE"
+        
+        if [ "$SESSION_TYPE" = "wayland" ]; then
+            log_message "Running in Wayland session - using XWayland"
+            
+            # Mount runtime directory
+            mount --bind /run/user/1000 /mnt/run/user/1000 2>/dev/null || true
+            
+            # Execute with Wayland environment
+            execute_chroot "env DISPLAY=$DISPLAY WAYLAND_DISPLAY=$WAYLAND_DISPLAY XDG_RUNTIME_DIR=/run/user/1000 GDK_BACKEND=x11 bigcontrolcenter" "Control center"
+            
+            # Cleanup
+            umount /mnt/run/user/1000 2>/dev/null || true
+            
+        else
+            log_message "Running in X11 session"
+            
+            # Enable X11 access temporarily
+            xhost + 2>/dev/null || true
+            execute_chroot "env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY bigcontrolcenter" "Control center"
+            # Restore X11 security
+            xhost - 2>/dev/null || true
+        fi
         ;;
 
     "6")
@@ -295,11 +315,38 @@ case "$RESTORE_MODE" in
         execute_chroot "rm -f /var/lib/pacman/db.lck" "Removing package lock"
         
         show_progress "Starting package manager..."
-        # Enable X11 access temporarily
-        xhost + 2>/dev/null || true
-        execute_chroot "env DISPLAY=$DISPLAY pamac-manager" "Package manager"  
-        # Restore X11 security
-        xhost - 2>/dev/null || true
+        
+        # Detect session type
+        SESSION_TYPE="${XDG_SESSION_TYPE:-x11}"
+        log_message "Session type: $SESSION_TYPE"
+        
+        if [ "$SESSION_TYPE" = "wayland" ]; then
+            log_message "Running in Wayland session - using XWayland"
+            
+            # For Wayland, force XWayland and copy socket
+            if [ -n "$WAYLAND_DISPLAY" ]; then
+                mkdir -p /mnt/run/user/1000
+                cp -r /run/user/1000/* /mnt/run/user/1000/ 2>/dev/null || true
+            fi
+            
+            # Mount runtime directory
+            mount --bind /run/user/1000 /mnt/run/user/1000 2>/dev/null || true
+            
+            # Execute with Wayland environment
+            execute_chroot "env DISPLAY=$DISPLAY WAYLAND_DISPLAY=$WAYLAND_DISPLAY XDG_RUNTIME_DIR=/run/user/1000 GDK_BACKEND=x11 pamac-manager" "Package manager"
+            
+            # Cleanup
+            umount /mnt/run/user/1000 2>/dev/null || true
+            
+        else
+            log_message "Running in X11 session"
+            
+            # Enable X11 access temporarily
+            xhost + 2>/dev/null || true
+            execute_chroot "env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY pamac-manager" "Package manager"
+            # Restore X11 security
+            xhost - 2>/dev/null || true
+        fi
         ;;
         
     *)
