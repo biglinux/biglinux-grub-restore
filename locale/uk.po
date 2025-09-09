@@ -290,18 +290,6 @@ msgstr ""
 msgid "The following system was detected. Press Continue to proceed with the restoration."
 msgstr "Виявлено наступну систему. Натисніть Продовжити, щоб продовжити відновлення."
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 331
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 352
-#: NEEDS WORK
-msgid "Partition:"
-msgstr "Partition:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 331
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 352
-#: NEEDS WORK
-msgid "Filesystem:"
-msgstr "Файлова система:"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 338
 msgid "2. Target EFI Partition"
 msgstr "2. Цільовий EFI розділ"
@@ -316,18 +304,6 @@ msgstr "EFI системний розділ"
 msgid "2. Target Disk (MBR)"
 msgstr "Цільовий диск (MBR)"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 344
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 375
-#: NEEDS WORK
-msgid "Model:"
-msgstr "Модель:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 344
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 375
-#: NEEDS WORK
-msgid "Partition Table:"
-msgstr "Таблиця розділів:"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 349
 msgid "Select the Linux installation you want to repair and the corresponding boot partition or disk."
 msgstr "Виберіть установку Linux, яку ви хочете відновити, та відповідний завантажувальний розділ або диск."
@@ -335,36 +311,6 @@ msgstr "Виберіть установку Linux, яку ви хочете ві
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 362
 msgid "2. Select Target EFI Partition"
 msgstr "2. Виберіть цільовий розділ EFI"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 431
-#: NEEDS WORK
-msgid "System to Restore:"
-msgstr "Система для відновлення:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 432
-#: NEEDS WORK
-msgid "Boot Mode:"
-msgstr "Режим завантаження:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 433
-#: NEEDS WORK
-msgid "Target EFI Partition:"
-msgstr "Цільовий EFI розділ:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 434
-#: NEEDS WORK
-msgid "Target Disk (MBR):"
-msgstr "Цільовий диск (MBR):"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 438
-#: NEEDS WORK
-msgid "Internet connection available."
-msgstr "Доступне з'єднання з Інтернетом."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 438
-#: NEEDS WORK
-msgid "No internet. Some options will be disabled."
-msgstr "Немає інтернету. Деякі параметри будуть вимкнені."
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 452
 msgid "Restore in Progress..."

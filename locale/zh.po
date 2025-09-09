@@ -282,18 +282,6 @@ msgstr ""
 msgid "The following system was detected. Press Continue to proceed with the restoration."
 msgstr "检测到以下系统。按继续以进行恢复。"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 331
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 352
-#: NEEDS WORK
-msgid "Partition:"
-msgstr "分区："
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 331
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 352
-#: NEEDS WORK
-msgid "Filesystem:"
-msgstr "文件系统："
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 338
 msgid "2. Target EFI Partition"
 msgstr "目标 EFI 分区"
@@ -308,18 +296,6 @@ msgstr "EFI系统分区"
 msgid "2. Target Disk (MBR)"
 msgstr "目标磁盘 (MBR)"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 344
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 375
-#: NEEDS WORK
-msgid "Model:"
-msgstr "模型："
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 344
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 375
-#: NEEDS WORK
-msgid "Partition Table:"
-msgstr "分区表："
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 349
 msgid "Select the Linux installation you want to repair and the corresponding boot partition or disk."
 msgstr "选择您要修复的Linux安装及相应的启动分区或磁盘。"
@@ -327,36 +303,6 @@ msgstr "选择您要修复的Linux安装及相应的启动分区或磁盘。"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 362
 msgid "2. Select Target EFI Partition"
 msgstr "2. 选择目标 EFI 分区"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 431
-#: NEEDS WORK
-msgid "System to Restore:"
-msgstr "恢复系统："
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 432
-#: NEEDS WORK
-msgid "Boot Mode:"
-msgstr "启动模式："
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 433
-#: NEEDS WORK
-msgid "Target EFI Partition:"
-msgstr "目标 EFI 分区："
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 434
-#: NEEDS WORK
-msgid "Target Disk (MBR):"
-msgstr "目标磁盘 (MBR):"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 438
-#: NEEDS WORK
-msgid "Internet connection available."
-msgstr "互联网连接可用。"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 438
-#: NEEDS WORK
-msgid "No internet. Some options will be disabled."
-msgstr "没有互联网。某些选项将被禁用。"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 452
 msgid "Restore in Progress..."

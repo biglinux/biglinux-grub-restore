@@ -290,18 +290,6 @@ msgstr ""
 msgid "The following system was detected. Press Continue to proceed with the restoration."
 msgstr "Le système suivant a été détecté. Appuyez sur Continuer pour procéder à la restauration."
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 331
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 352
-#: NEEDS WORK
-msgid "Partition:"
-msgstr "Partition :"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 331
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 352
-#: NEEDS WORK
-msgid "Filesystem:"
-msgstr "Système de fichiers :"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 338
 msgid "2. Target EFI Partition"
 msgstr "2. Partition EFI cible"
@@ -316,18 +304,6 @@ msgstr "Partition système EFI"
 msgid "2. Target Disk (MBR)"
 msgstr "Disque cible (MBR)"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 344
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 375
-#: NEEDS WORK
-msgid "Model:"
-msgstr "Modèle :"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 344
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 375
-#: NEEDS WORK
-msgid "Partition Table:"
-msgstr "Table de partition :"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 349
 msgid "Select the Linux installation you want to repair and the corresponding boot partition or disk."
 msgstr ""
@@ -337,36 +313,6 @@ msgstr ""
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 362
 msgid "2. Select Target EFI Partition"
 msgstr "2. Sélectionner la partition EFI cible"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 431
-#: NEEDS WORK
-msgid "System to Restore:"
-msgstr "Système de restauration :"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 432
-#: NEEDS WORK
-msgid "Boot Mode:"
-msgstr "Mode de démarrage :"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 433
-#: NEEDS WORK
-msgid "Target EFI Partition:"
-msgstr "Partition EFI cible :"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 434
-#: NEEDS WORK
-msgid "Target Disk (MBR):"
-msgstr "Disque cible (MBR) :"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 438
-#: NEEDS WORK
-msgid "Internet connection available."
-msgstr "Connexion Internet disponible."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 438
-#: NEEDS WORK
-msgid "No internet. Some options will be disabled."
-msgstr "Pas d'internet. Certaines options seront désactivées."
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 452
 msgid "Restore in Progress..."

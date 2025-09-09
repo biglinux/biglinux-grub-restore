@@ -290,18 +290,6 @@ msgstr ""
 msgid "The following system was detected. Press Continue to proceed with the restoration."
 msgstr "Aşağıdaki sistem tespit edildi. İyileştirmeye devam etmek için Devam'a basın."
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 331
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 352
-#: NEEDS WORK
-msgid "Partition:"
-msgstr "Bölüm:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 331
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 352
-#: NEEDS WORK
-msgid "Filesystem:"
-msgstr "Dosya Sistemi:"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 338
 msgid "2. Target EFI Partition"
 msgstr "2. Hedef EFI Bölümü"
@@ -316,18 +304,6 @@ msgstr "EFI Sistem Bölümü"
 msgid "2. Target Disk (MBR)"
 msgstr "Hedef Disk (MBR)"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 344
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 375
-#: NEEDS WORK
-msgid "Model:"
-msgstr "Model:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 344
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 375
-#: NEEDS WORK
-msgid "Partition Table:"
-msgstr "Bölüm Tablosu:"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 349
 msgid "Select the Linux installation you want to repair and the corresponding boot partition or disk."
 msgstr "Onarıp onarmak istediğiniz Linux kurulumunu ve ilgili önyükleme bölümünü veya diski seçin."
@@ -335,36 +311,6 @@ msgstr "Onarıp onarmak istediğiniz Linux kurulumunu ve ilgili önyükleme böl
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 362
 msgid "2. Select Target EFI Partition"
 msgstr "2. Hedef EFI Bölümünü Seçin"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 431
-#: NEEDS WORK
-msgid "System to Restore:"
-msgstr "Geri Yükleme Sistemi:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 432
-#: NEEDS WORK
-msgid "Boot Mode:"
-msgstr "Başlatma Modu:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 433
-#: NEEDS WORK
-msgid "Target EFI Partition:"
-msgstr "Hedef EFI Bölümü:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 434
-#: NEEDS WORK
-msgid "Target Disk (MBR):"
-msgstr "Hedef Disk (MBR):"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 438
-#: NEEDS WORK
-msgid "Internet connection available."
-msgstr "İnternet bağlantısı mevcut."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 438
-#: NEEDS WORK
-msgid "No internet. Some options will be disabled."
-msgstr "İnternet yok. Bazı seçenekler devre dışı kalacak."
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 452
 msgid "Restore in Progress..."

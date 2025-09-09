@@ -290,18 +290,6 @@ msgstr ""
 msgid "The following system was detected. Press Continue to proceed with the restoration."
 msgstr "Bol systém bol zistený. Stlačte Pokračovať, aby ste pokračovali v obnove."
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 331
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 352
-#: NEEDS WORK
-msgid "Partition:"
-msgstr "Partícia:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 331
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 352
-#: NEEDS WORK
-msgid "Filesystem:"
-msgstr "Súborový systém:"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 338
 msgid "2. Target EFI Partition"
 msgstr "2. Cieľová EFI partícia"
@@ -316,18 +304,6 @@ msgstr "EFI systémová partícia"
 msgid "2. Target Disk (MBR)"
 msgstr "Cieľový disk (MBR)"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 344
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 375
-#: NEEDS WORK
-msgid "Model:"
-msgstr "Model:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 344
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 375
-#: NEEDS WORK
-msgid "Partition Table:"
-msgstr "Tabuľka oddielov:"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 349
 msgid "Select the Linux installation you want to repair and the corresponding boot partition or disk."
 msgstr "Vyberte inštaláciu Linuxu, ktorú chcete opraviť, a zodpovedajúcu zavádzaciu partíciu alebo disk."
@@ -335,36 +311,6 @@ msgstr "Vyberte inštaláciu Linuxu, ktorú chcete opraviť, a zodpovedajúcu za
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 362
 msgid "2. Select Target EFI Partition"
 msgstr "2. Vyberte cieľovú EFI partíciu"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 431
-#: NEEDS WORK
-msgid "System to Restore:"
-msgstr "Systém na obnovenie:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 432
-#: NEEDS WORK
-msgid "Boot Mode:"
-msgstr "Režim spustenia:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 433
-#: NEEDS WORK
-msgid "Target EFI Partition:"
-msgstr "Cieľová EFI partícia:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 434
-#: NEEDS WORK
-msgid "Target Disk (MBR):"
-msgstr "Cieľový disk (MBR):"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 438
-#: NEEDS WORK
-msgid "Internet connection available."
-msgstr "Pripojenie na internet je k dispozícii."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 438
-#: NEEDS WORK
-msgid "No internet. Some options will be disabled."
-msgstr "Žiadny internet. Niektoré možnosti budú zakázané."
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 452
 msgid "Restore in Progress..."
