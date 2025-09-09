@@ -198,7 +198,7 @@ class SystemInterface:
         # Execute restore script
         try:
             # Execute with sudo for live mode
-            cmd = ['sudo', str(script_path)]
+            cmd = ['sudo', '-E', str(script_path)]
             
             # For non-interactive modes, capture output
             # For interactive modes, let it run directly
