@@ -278,13 +278,13 @@ case "$RESTORE_MODE" in
         log_message "Session type: $SESSION_TYPE"
         
         if [ "$SESSION_TYPE" = "wayland" ]; then
-            log_message "Running in Wayland session - using XWayland"
+            log_message "Running in Wayland session"
             
             # Mount runtime directory
             mount --bind /run/user/1000 /mnt/run/user/1000 2>/dev/null || true
             
             # Execute with Wayland environment
-            execute_chroot "env DISPLAY=$DISPLAY WAYLAND_DISPLAY=$WAYLAND_DISPLAY XDG_RUNTIME_DIR=/run/user/1000 GDK_BACKEND=x11 bigcontrolcenter" "Control center"
+            execute_chroot "env DISPLAY=$DISPLAY WAYLAND_DISPLAY=$WAYLAND_DISPLAY XDG_RUNTIME_DIR=/run/user/1000 bigcontrolcenter" "Control center"
             
             # Cleanup
             umount /mnt/run/user/1000 2>/dev/null || true
@@ -312,9 +312,9 @@ case "$RESTORE_MODE" in
         log_message "Session type: $SESSION_TYPE"
         
         if [ "$SESSION_TYPE" = "wayland" ]; then
-            log_message "Running in Wayland session - using XWayland"
+            log_message "Running in Wayland session"
             
-            # For Wayland, force XWayland and copy socket
+            # For Wayland, copy socket
             if [ -n "$WAYLAND_DISPLAY" ]; then
                 mkdir -p /mnt/run/user/1000
                 cp -r /run/user/1000/* /mnt/run/user/1000/ 2>/dev/null || true
@@ -324,7 +324,7 @@ case "$RESTORE_MODE" in
             mount --bind /run/user/1000 /mnt/run/user/1000 2>/dev/null || true
             
             # Execute with Wayland environment
-            execute_chroot "env DISPLAY=$DISPLAY WAYLAND_DISPLAY=$WAYLAND_DISPLAY XDG_RUNTIME_DIR=/run/user/1000 GDK_BACKEND=x11 pamac-manager" "Package manager"
+            execute_chroot "env DISPLAY=$DISPLAY WAYLAND_DISPLAY=$WAYLAND_DISPLAY XDG_RUNTIME_DIR=/run/user/1000 pamac-manager" "Package manager"
             
             # Cleanup
             umount /mnt/run/user/1000 2>/dev/null || true
