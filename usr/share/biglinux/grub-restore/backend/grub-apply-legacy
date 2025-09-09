@@ -289,11 +289,12 @@ case "$RESTORE_MODE" in
         if [ "$SESSION_TYPE" = "wayland" ]; then
             log_message "Running in Wayland session"
             
-            # Mount runtime directory
+            # Mount the user's runtime directory to make sockets available in chroot
             mount --bind /run/user/1000 /mnt/run/user/1000 2>/dev/null || true
             
-            # Execute with Wayland environment
-            execute_chroot "env DISPLAY=$DISPLAY WAYLAND_DISPLAY=$WAYLAND_DISPLAY XDG_RUNTIME_DIR=/run/user/1000 bigcontrolcenter" "Control center"
+            # Pass essential Wayland and D-Bus variables to the chroot environment
+            # DBUS_SESSION_BUS_ADDRESS is critical for modern GTK applications
+            execute_chroot "env DISPLAY=$DISPLAY WAYLAND_DISPLAY=$WAYLAND_DISPLAY XDG_RUNTIME_DIR=/run/user/1000 DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION_BUS_ADDRESS bigcontrolcenter" "Control center"
             
             # Cleanup
             umount /mnt/run/user/1000 2>/dev/null || true
@@ -323,17 +324,12 @@ case "$RESTORE_MODE" in
         if [ "$SESSION_TYPE" = "wayland" ]; then
             log_message "Running in Wayland session"
             
-            # For Wayland, copy socket
-            if [ -n "$WAYLAND_DISPLAY" ]; then
-                mkdir -p /mnt/run/user/1000
-                cp -r /run/user/1000/* /mnt/run/user/1000/ 2>/dev/null || true
-            fi
-            
-            # Mount runtime directory
+            # Mount the user's runtime directory to make sockets available in chroot
             mount --bind /run/user/1000 /mnt/run/user/1000 2>/dev/null || true
             
-            # Execute with Wayland environment
-            execute_chroot "env DISPLAY=$DISPLAY WAYLAND_DISPLAY=$WAYLAND_DISPLAY XDG_RUNTIME_DIR=/run/user/1000 pamac-manager" "Package manager"
+            # Pass essential Wayland and D-Bus variables to the chroot environment
+            # DBUS_SESSION_BUS_ADDRESS is critical for modern GTK applications
+            execute_chroot "env DISPLAY=$DISPLAY WAYLAND_DISPLAY=$WAYLAND_DISPLAY XDG_RUNTIME_DIR=/run/user/1000 DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION_BUS_ADDRESS pamac-manager" "Package manager"
             
             # Cleanup
             umount /mnt/run/user/1000 2>/dev/null || true
