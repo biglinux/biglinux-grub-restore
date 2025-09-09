@@ -5,61 +5,77 @@ import sys
 import os
 import gi
 
-print("1. Starting application...")
-
 # Ensure we're using the correct versions
-gi.require_version('Gtk', '4.0')
-gi.require_version('Adw', '1')
+try:
+    gi.require_version('Gtk', '4.0')
+    gi.require_version('Adw', '1')
+except (ImportError, ValueError) as e:
+    print(f"Error: Missing GTK4/Adwaita dependencies. {e}", file=sys.stderr)
+    sys.exit(1)
 
-print("2. GTK versions set...")
-
-from gi.repository import Gtk, Adw, GLib
-
-print("3. GTK imports successful...")
-
-# Simple translation function for testing
-def _(text):
-    return text
-
-print("4. Translation function ready...")
+from gi.repository import Gtk, Adw
 
 def main():
     """Main entry point for the application"""
     
-    print("5. In main function...")
-    
-    # Check if running in live mode (skip for testing)
-    # if not os.path.exists('/livefs-pkgs.txt'):
-    #     print("Not in live mode, but continuing for testing...")
-    
-    print("6. Live mode check passed...")
-    
-    # Try to import the main application
+    # Check if running as root, which is required for backend scripts
+    if os.geteuid() != 0:
+        print("This application needs to be run as root. Trying to relaunch with pkexec...")
+        try:
+            # Get the absolute path to the script being run to avoid path issues with pkexec
+            script_path = os.path.abspath(sys.argv[0])
+            
+            # Prepare environment variables to preserve for the GUI app
+            env_vars_to_preserve = []
+            for var in ['DISPLAY', 'XAUTHORITY', 'DBUS_SESSION_BUS_ADDRESS']:
+                if var in os.environ:
+                    env_vars_to_preserve.append(f'{var}={os.environ[var]}')
+
+            # Construct the full pkexec command
+            args = ['pkexec']
+            if env_vars_to_preserve:
+                args.extend(['env'] + env_vars_to_preserve)
+            
+            # Add the python interpreter, the absolute script path, and any other arguments
+            args.extend([sys.executable, script_path] + sys.argv[1:])
+            
+            os.execvp('pkexec', args)
+        except Exception as e:
+            print(f"Failed to relaunch with pkexec: {e}", file=sys.stderr)
+            # Fallback to a simple error dialog if pkexec fails
+            error_app = Gtk.Application()
+            def show_error(app):
+                dialog = Gtk.MessageDialog(
+                    transient_for=None,
+                    modal=True,
+                    message_type=Gtk.MessageType.ERROR,
+                    buttons=Gtk.ButtonsType.OK,
+                    text="Root privileges are required.",
+                    secondary_text="This application must be run as root to function correctly. Please run it with sudo or pkexec."
+                )
+                dialog.connect("response", lambda d, r: app.quit())
+                dialog.show()
+            error_app.connect('activate', show_error)
+            error_app.run(None)
+            sys.exit(1)
+
     try:
-        print("7. Importing GrubRestoreApplication...")
         from gui.application import GrubRestoreApplication
-        print("8. Import successful...")
         
-        # Create and run the application
-        print("9. Creating application...")
         app = GrubRestoreApplication()
-        print("10. Application created, running...")
         return app.run(sys.argv)
         
     except Exception as e:
-        print("ERROR: Failed to import or run application:", str(e))
         import traceback
         traceback.print_exc()
         
-        # CAPTURE the error message BEFORE defining the class
         error_message = "Failed to load main application:\n" + str(e)
         
-        # Fallback to simple window
-        print("Creating fallback window...")
-        
+        # Fallback to a simple Adwaita error window
         class FallbackApp(Adw.Application):
-            def __init__(self):
+            def __init__(self, error_msg):
                 super().__init__(application_id="com.biglinux.grub-restore.fallback")
+                self.error_msg = error_msg
             
             def do_activate(self):
                 window = Adw.ApplicationWindow(application=self)
@@ -68,17 +84,14 @@ def main():
                 
                 status_page = Adw.StatusPage()
                 status_page.set_title("Application Error")
-                status_page.set_description(error_message)
-                status_page.set_icon_name("dialog-error")
+                status_page.set_description(self.error_msg)
+                status_page.set_icon_name("dialog-error-symbolic")
                 
                 window.set_content(status_page)
                 window.present()
         
-        fallback_app = FallbackApp()
+        fallback_app = FallbackApp(error_message)
         return fallback_app.run(sys.argv)
 
 if __name__ == "__main__":
-    print("0. Starting main...")
-    exit_code = main()
-    print("11. Application finished with code:", exit_code)
-    sys.exit(exit_code)
+    sys.exit(main())

@@ -1,1139 +1,545 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import os
 import gi
-import subprocess
+import os
 import threading
+
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
-# Add VTE import for terminal with better error handling
-VTE_AVAILABLE = False
-VTE_VERSION = None
 
 try:
-    # Try VTE 3.91 first (GTK4)
     gi.require_version('Vte', '3.91')
-    from gi.repository import Vte, Pango
+    from gi.repository import Vte, Pango, Gdk, GLib
     VTE_AVAILABLE = True
-    VTE_VERSION = '3.91'
-    print("DEBUG: VTE 3.91 loaded successfully")
 except (ImportError, ValueError):
-    try:
-        # Fallback to VTE 2.91 (GTK3 compatibility)
-        gi.require_version('Vte', '2.91')
-        from gi.repository import Vte, Pango
-        VTE_AVAILABLE = True
-        VTE_VERSION = '2.91'
-        print("DEBUG: VTE 2.91 loaded as fallback")
-    except (ImportError, ValueError):
-        print("DEBUG: VTE not available - terminal features disabled")
-        VTE_AVAILABLE = False
+    VTE_AVAILABLE = False
 
-from gi.repository import Gtk, Adw, GLib, Gio
+from gi.repository import Gtk, Adw, Gio
+from backend.system_interface import SystemInterface
 from utils.translation import _
 
 class GrubRestoreWindow(Adw.ApplicationWindow):
-    """Main window for BigLinux GRUB Restore application"""
+    """Main window for the GRUB Restore application, using a wizard-style flow."""
     
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         
-        # Window properties
         self.set_title(_("BigLinux GRUB Restore"))
-        self.set_default_size(800, 600)
-        self.set_resizable(True)
+        self.set_default_size(1080, 660)
         
-        # Setup UI
-        self.setup_ui()
-    
-    def setup_ui(self):
-        """Setup the main UI structure"""
-        
-        # Create main box
-        main_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        
-        # Create header bar (NÃO usar set_titlebar para AdwApplicationWindow)
+        self.system_interface = SystemInterface()
+        self.selected_system = None
+        self.selected_efi_partition = None
+        self.selected_disk = None
+        self.current_process = None
+        self.current_mode = None
+
+        self.system_check_buttons = []
+        self.boot_target_check_buttons = []
+
+        self._build_ui()
+        self._create_window_actions()
+
+    def _build_ui(self):
+        """Build the main UI structure with a ViewStack."""
+        self.main_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        self.set_content(self.main_box)
+
         self.header_bar = Adw.HeaderBar()
-        main_box.append(self.header_bar)
+        self.main_box.append(self.header_bar)
         
-        # Create menu button
-        self.setup_menu()
+        self._setup_menu()
+
+        self.view_stack = Adw.ViewStack()
+        self.main_box.append(self.view_stack)
+
+        self.view_stack.add_named(self._create_welcome_page(), "welcome")
+        self.view_stack.add_named(self._create_detection_page(), "detection")
+        self.view_stack.add_named(self._create_selection_page(), "selection")
+        self.view_stack.add_named(self._create_restore_page(), "restore")
         
-        # Create main content area
-        self.content_area = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        self.content_area.set_vexpand(True)
-        self.content_area.set_hexpand(True)
-        main_box.append(self.content_area)
-        
-        # Set main content
-        self.set_content(main_box)
-        
-        # Show welcome page
-        self.show_welcome_page()
-    
-    def setup_menu(self):
-        """Setup application menu"""
+        self.view_stack.set_visible_child_name("welcome")
+
+    def _setup_menu(self):
+        """Setup the application menu."""
         menu_model = Gio.Menu()
         menu_model.append(_("About"), "app.about")
         menu_model.append(_("Quit"), "app.quit")
         
-        menu_button = Gtk.MenuButton()
-        menu_button.set_icon_name("open-menu-symbolic")
-        menu_button.set_menu_model(menu_model)
-        
+        menu_button = Gtk.MenuButton(menu_model=menu_model, icon_name="open-menu-symbolic")
         self.header_bar.pack_end(menu_button)
-    
-    def show_welcome_page(self):
-        """Show the welcome page"""
-        
-        # Clear existing content
-        child = self.content_area.get_first_child()
-        while child:
-            self.content_area.remove(child)
-            child = self.content_area.get_first_child()
-        
-        # Create welcome status page
-        welcome_page = Adw.StatusPage()
-        welcome_page.set_icon_name("grub-icon")
-        welcome_page.set_title(_("GRUB Restore Tool"))
-        welcome_page.set_description(
-            _("This tool should be used in") + " " + _("Mode") + " Live " + _("to restore the BOOT "
-            "of the BigLinux installed on the HD or SSD.\n\n"
-            "If the installed system is booting correctly, there are no "
-            "boot problems, so it's better not to proceed with this tool.")
+
+    def _create_window_actions(self):
+        """Create actions that are scoped to the window."""
+        copy_action = Gio.SimpleAction.new("copy_terminal", None)
+        copy_action.connect("activate", self._on_terminal_copy)
+        self.add_action(copy_action)
+
+        paste_action = Gio.SimpleAction.new("paste_terminal", None)
+        paste_action.connect("activate", self._on_terminal_paste)
+        self.add_action(paste_action)
+
+    # Page Creation Methods
+    def _create_welcome_page(self):
+        page = Adw.StatusPage(
+            title=_("GRUB Restore Tool")
         )
         
-        # Start button with smaller size
-        start_button = Gtk.Button()
-        start_button.set_label(_("Start"))
-        start_button.add_css_class("pill")
-        start_button.add_css_class("suggested-action")
-        start_button.set_size_request(200, -1)  # Fixed width, auto height
-        start_button.set_halign(Gtk.Align.CENTER)  # Center alignment
-        start_button.connect("clicked", self.on_start_detection)
-
-        welcome_page.set_child(start_button)
+        content_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12, halign=Gtk.Align.CENTER, valign=Gtk.Align.CENTER)
         
-        self.content_area.append(welcome_page)
-
-    def on_start_detection(self, button):
-        """Handle start detection button click"""
-        
-        print("DEBUG: Start detection clicked!")
-        
-        # Clear existing content
-        child = self.content_area.get_first_child()
-        while child:
-            self.content_area.remove(child)
-            child = self.content_area.get_first_child()
-        
-        # Show detection page
-        detection_page = Adw.StatusPage()
-        detection_page.set_icon_name("view-refresh-symbolic")
-        detection_page.set_title(_("Detecting Systems"))
-        detection_page.set_description(_("Please wait while we scan your system..."))
-        
-        # Progress indicator
-        spinner = Gtk.Spinner()
-        spinner.set_size_request(48, 48)
-        spinner.start()
-        detection_page.set_child(spinner)
-        
-        self.content_area.append(detection_page)
-        
-        print("DEBUG: Detection page shown, starting real detection...")
-        
-        # Initialize system interface and run real detection
-        from backend.system_interface import SystemInterface
-        import threading
-        
-        self.system_interface = SystemInterface()
-        
-        # Run detection in background thread
-        thread = threading.Thread(target=self.run_real_detection)
-        thread.daemon = True
-        thread.start()
-
-    def run_real_detection(self):
-        """Run the actual system detection using shell scripts"""
-        try:
-            print("DEBUG: Running real system detection...")
-            
-            # Update UI with progress
-            GLib.idle_add(self.update_detection_progress, _("Initializing detection..."))
-            
-            # Start detection
-            GLib.idle_add(self.update_detection_progress, _("Scanning for Linux systems..."))
-            self.system_interface.detect_systems()
-            
-            GLib.idle_add(self.update_detection_progress, _("Analyzing boot configuration..."))
-            
-            print("DEBUG: Detection completed successfully")
-            GLib.idle_add(self.show_detection_results)
-        except Exception as e:
-            print(f"DEBUG: Detection failed: {e}")
-            import traceback
-            traceback.print_exc()
-            GLib.idle_add(self.show_detection_error, str(e))
-
-    def update_detection_progress(self, message):
-        """Update detection progress message"""
-        # Find detection page and update description
-        child = self.content_area.get_first_child()
-        if child and isinstance(child, Adw.StatusPage):
-            child.set_description(message)
-        return False  # Remove from idle queue
-
-    def show_detection_results(self):
-        """Show real detection results"""
-        systems = self.system_interface.detected_systems
-        efi_partitions = self.system_interface.efi_partitions
-        boot_mode = self.system_interface.boot_mode
-        
-        print(f"DEBUG: Found {len(systems)} systems, {len(efi_partitions)} EFI partitions, boot mode: {boot_mode}")
-        
-        # Clear existing content
-        child = self.content_area.get_first_child()
-        while child:
-            self.content_area.remove(child)
-            child = self.content_area.get_first_child()
-        
-        # Show results
-        if not systems:
-            self.show_no_systems_found()
-            return
-            
-        # Show selection page
-        self.show_system_selection()
-
-    def show_detection_error(self, error_msg):
-        """Show detection error"""
-        # Clear existing content  
-        child = self.content_area.get_first_child()
-        while child:
-            self.content_area.remove(child)
-            child = self.content_area.get_first_child()
-        
-        error_page = Adw.StatusPage()
-        error_page.set_icon_name("dialog-error-symbolic")
-        error_page.set_title(_("Detection Failed"))
-        error_page.set_description(f"Error: {error_msg}")
-        
-        retry_button = Gtk.Button()
-        retry_button.set_label(_("Try Again"))
-        retry_button.add_css_class("pill")
-        retry_button.add_css_class("suggested-action")
-        retry_button.set_size_request(200, -1)  # Fixed width
-        retry_button.set_halign(Gtk.Align.CENTER)  # Center alignment
-        retry_button.connect("clicked", lambda x: self.show_welcome_page())
-
-        error_page.set_child(retry_button)
-        self.content_area.append(error_page)
-
-    def show_no_systems_found(self):
-        """Show when no systems are found"""
-        no_systems_page = Adw.StatusPage()
-        no_systems_page.set_icon_name("dialog-warning-symbolic")
-        no_systems_page.set_title(_("No Systems Found"))
-        no_systems_page.set_description(_("No Linux installations found on this computer."))
-        
-        back_button = Gtk.Button()
-        back_button.set_label(_("Back"))
-        back_button.add_css_class("pill")
-        back_button.connect("clicked", lambda x: self.show_welcome_page())
-        
-        no_systems_page.set_child(back_button)
-        self.content_area.append(no_systems_page)
-
-    def show_system_selection(self):
-        """Show system selection page with real system list"""
-        print("DEBUG: Showing system selection page")
-        
-        # Create main selection box
-        selection_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
-        selection_box.set_margin_top(24)
-        selection_box.set_margin_bottom(24)
-        selection_box.set_margin_start(24)
-        selection_box.set_margin_end(24)
-        
-        # Title
-        title_label = Gtk.Label()
-        title_label.set_markup(f"<span size='x-large' weight='bold'>{_('Select System to Restore')}</span>")
-        title_label.set_halign(Gtk.Align.CENTER)
-        selection_box.append(title_label)
-        
-        # Systems group
-        systems_group = Adw.PreferencesGroup()
-        systems_group.set_title(_("Detected Linux Systems"))
-        systems_group.set_description(f"{_('Found')} {len(self.system_interface.detected_systems)} {_('system(s)')}")
-        
-        # Add system rows
-        self.selected_system = None
-        self.system_radio_group = None
-        for i, system in enumerate(self.system_interface.detected_systems):
-            system_row = self.create_system_row(system, i == 0)
-            systems_group.add(system_row)
-        
-        selection_box.append(systems_group)
-        
-        # Boot info group
-        boot_info_group = Adw.PreferencesGroup()
-        boot_info_group.set_title(_("Boot Configuration"))
-        
-        # Boot mode info
-        boot_mode_row = Adw.ActionRow()
-        boot_mode_row.set_title(_("Current Boot Mode"))
-        boot_mode_row.set_subtitle(self.system_interface.boot_mode or "Unknown")
-        boot_mode_row.set_icon_name("emblem-system-symbolic")
-        boot_info_group.add(boot_mode_row)
-        
-        # EFI partitions info
-        efi_info_row = Adw.ActionRow()
-        efi_info_row.set_title(_("EFI Partitions Found"))
-        efi_info_row.set_subtitle(f"{len(self.system_interface.efi_partitions)} {_('partition(s)')}")
-        efi_info_row.set_icon_name("drive-harddisk-symbolic")
-        boot_info_group.add(efi_info_row)
-        
-        selection_box.append(boot_info_group)
-        
-        # Continue button
-        continue_button = Gtk.Button()
-        continue_button.set_label(_("Continue"))
-        continue_button.add_css_class("pill")
-        continue_button.add_css_class("suggested-action")
-        continue_button.set_size_request(300, -1)
-        continue_button.set_halign(Gtk.Align.CENTER)
-        continue_button.connect("clicked", self.on_continue_to_restore)
-        selection_box.append(continue_button)
-        
-        self.content_area.append(selection_box)
-        
-    def show_disk_selection(self):
-        """Show disk selection page for LEGACY mode"""
-        print("DEBUG: Showing disk selection page")
-        
-        # Clear content
-        child = self.content_area.get_first_child()
-        while child:
-            self.content_area.remove(child)
-            child = self.content_area.get_first_child()
-        
-        # Create main selection box
-        selection_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
-        selection_box.set_margin_top(24)
-        selection_box.set_margin_bottom(24)
-        selection_box.set_margin_start(24)
-        selection_box.set_margin_end(24)
-        
-        # Title
-        title_label = Gtk.Label()
-        title_label.set_markup(f"<span size='x-large' weight='bold'>{_('Select Target Disk')}</span>")
-        title_label.set_halign(Gtk.Align.CENTER)
-        selection_box.append(title_label)
-        
-        # Description
-        desc_label = Gtk.Label()
-        desc_label.set_text(_("Select the disk where GRUB will be installed. The bootloader will be written to the beginning (MBR) of the selected disk."))
-        desc_label.set_wrap(True)
-        desc_label.set_justify(Gtk.Justification.CENTER)
-        desc_label.add_css_class("dim-label")
-        selection_box.append(desc_label)
-        
-        # Disks group
-        disks_group = Adw.PreferencesGroup()
-        disks_group.set_title(_("Available Disks"))
-        disks_group.set_description(f"{_('Found')} {len(self.system_interface.grub_disks)} {_('disk(s)')}")
-        
-        # Add disk rows
-        self.selected_disk = None
-        for i, disk in enumerate(self.system_interface.grub_disks):
-            disk_row = self.create_disk_row(disk, i == 0)
-            disks_group.add(disk_row)
-        
-        selection_box.append(disks_group)
-        
-        # Continue button
-        continue_button = Gtk.Button()
-        continue_button.set_label(_("Continue"))
-        continue_button.add_css_class("pill")
-        continue_button.add_css_class("suggested-action")
-        continue_button.set_size_request(300, -1)
-        continue_button.set_halign(Gtk.Align.CENTER)
-        continue_button.connect("clicked", self.on_disk_continue_to_restore)
-        selection_box.append(continue_button)
-        
-        self.content_area.append(selection_box)
-
-    def create_disk_row(self, disk, is_default=False):
-        """Create a row for disk selection"""
-        disk_row = Adw.ActionRow()
-        
-        # Title: device + size
-        title = f"/dev/{disk.get('device', 'unknown')} ({disk.get('size', 'Unknown')})"
-        disk_row.set_title(title)
-        
-        # Subtitle: model + partition table
-        subtitle_parts = []
-        if disk.get('name') and disk['name'] != 'Unknown_Disk':
-            model_name = disk['name'].replace('_', ' ')
-            subtitle_parts.append(model_name)
-        
-        if disk.get('table'):
-            subtitle_parts.append(f"{_('Partition table')}: {disk['table']}")
-        
-        if subtitle_parts:
-            disk_row.set_subtitle(" | ".join(subtitle_parts))
-        else:
-            disk_row.set_subtitle(_("Unknown model"))
-        
-        disk_row.set_icon_name("drive-harddisk-symbolic")
-        
-        # Radio button
-        radio_button = Gtk.CheckButton()
-        radio_button.set_active(is_default)
-
-        # If only one disk, make it disabled and checked
-        if len(self.system_interface.grub_disks) == 1:
-            radio_button.set_active(True)
-            radio_button.set_sensitive(False)  # Gray out and disable
-        else:
-            radio_button.connect('toggled', self.on_disk_selected, disk)
-        
-        # Group radio buttons
-        if not hasattr(self, 'disk_radio_group'):
-            self.disk_radio_group = radio_button
-        else:
-            radio_button.set_group(self.disk_radio_group)
-        
-        disk_row.add_prefix(radio_button)
-        
-        # Select first disk by default
-        if is_default:
-            self.selected_disk = disk
-        
-        return disk_row
-
-    def on_disk_selected(self, radio_button, disk):
-        """Handle disk selection"""
-        if radio_button.get_active():
-            self.selected_disk = disk
-            print(f"DEBUG: Selected disk: /dev/{disk.get('device', 'unknown')}")
-
-    def on_disk_continue_to_restore(self, button):
-        """Handle continue from disk selection"""
-        if not self.selected_disk:
-            print("DEBUG: No disk selected")
-            return
-            
-        print(f"DEBUG: Continuing with disk: /dev/{self.selected_disk.get('device', 'unknown')}")
-        
-        # Save selection with both system and disk
-        self.system_interface.save_selection(
-            self.selected_system, 
-            selected_disk=self.selected_disk['device']
+        description_label = Gtk.Label(use_markup=True, justify=Gtk.Justification.CENTER, wrap=True, max_width_chars=50)
+        description_label.set_markup(
+            _("This tool helps restore the bootloader (GRUB) for your installed Linux systems. It should be run from a live session.") +
+            "\n\n<b>" + _("Warning: Only use this tool if your installed system is failing to boot. If your system starts normally, do not proceed.") + "</b>"
         )
-        self.show_restore_options()
+        content_box.append(description_label)
 
-    def create_system_row(self, system, is_default=False):
-        """Create a row for system selection"""
-        system_row = Adw.ActionRow()
-        
-        # Title: partition + name
-        title = f"{system.get('partition', 'Unknown')} - {system.get('name', 'Unknown System')}"
-        system_row.set_title(title)
-        
-        # Subtitle: filesystem and description
-        subtitle_parts = []
-        if system.get('filesystem'):
-            subtitle_parts.append(f"{_('Filesystem')}: {system['filesystem']}")
-        if system.get('description'):
-            subtitle_parts.append(system['description'])
-        
-        if subtitle_parts:
-            system_row.set_subtitle(" | ".join(subtitle_parts))
-        
-        system_row.set_icon_name("computer-symbolic")
-        
-        # Radio button
-        radio_button = Gtk.CheckButton()
-        radio_button.set_active(is_default)
+        start_button = Gtk.Button(label=_("Start Detection"), css_classes=["suggested-action", "pill"], margin_top=12, halign=Gtk.Align.CENTER)
+        start_button.connect("clicked", self._on_start_detection)
+        content_box.append(start_button)
 
-        # If only one system, make it disabled and checked
-        if len(self.system_interface.detected_systems) == 1:
-            radio_button.set_active(True)
-            radio_button.set_sensitive(False)  # Gray out and disable
-        else:
-            radio_button.connect('toggled', self.on_system_selected, system)
+        page.set_child(content_box)
+        return page
 
-        # Properly group radio buttons in GTK4
-        if self.system_radio_group is None:
-            self.system_radio_group = radio_button
-        else:
-            radio_button.set_group(self.system_radio_group)
-        
-        system_row.add_prefix(radio_button)
-        
-        # Select first system by default
-        if is_default:
-            self.selected_system = system
-        
-        return system_row
+    def _create_detection_page(self):
+        page = Adw.StatusPage(
+            title=_("Detecting Systems"),
+            description=_("Scanning your drives for Linux installations..."),
+            icon_name="system-search-symbolic"
+        )
+        spinner = Gtk.Spinner(spinning=True, width_request=48, height_request=48)
+        page.set_child(spinner)
+        return page
 
-    def on_system_selected(self, radio_button, system):
-        """Handle system selection"""
-        if radio_button.get_active():
-            self.selected_system = system
-            print(f"DEBUG: Selected system: {system.get('partition', 'Unknown')}")
+    def _create_selection_page(self):
+        page_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12, margin_top=12, margin_bottom=12, margin_start=12, margin_end=12)
+        
+        self.guidance_label = Gtk.Label(
+            justify=Gtk.Justification.CENTER, wrap=True, css_classes=["dim-label"], margin_bottom=12
+        )
+        page_box.append(self.guidance_label)
+        
+        selection_page = Adw.PreferencesPage()
+        scrolled_window = Gtk.ScrolledWindow(child=selection_page, vexpand=True)
+        
+        self.systems_group = Adw.PreferencesGroup(title=_("1. Select Linux System to Restore"))
+        selection_page.add(self.systems_group)
+        
+        self.boot_specific_group = Adw.PreferencesGroup()
+        selection_page.add(self.boot_specific_group)
 
-    def on_continue_to_restore(self, button):
-        """Handle continue to restore options"""
-        if not self.selected_system:
-            print("DEBUG: No system selected")
-            return
-            
-        print(f"DEBUG: Continuing with system: {self.selected_system.get('partition', 'Unknown')}")
+        self.continue_button = Gtk.Button(
+            label=_("Continue"), sensitive=False, css_classes=["suggested-action", "pill"], 
+            halign=Gtk.Align.CENTER, margin_bottom=12, margin_top=6
+        )
+        self.continue_button.connect("clicked", self._on_selection_continue)
         
-        # For LEGACY mode, show disk selection first
-        if self.system_interface.boot_mode == "LEGACY":
-            self.show_disk_selection()
-        else:
-            # For EFI mode, go directly to restore options
-            self.system_interface.save_selection(self.selected_system)
-            self.show_restore_options()
-        
-    def show_restore_options(self):
-        """Show restore options page with all 6 options"""
-        print("DEBUG: Showing restore options")
-        
-        # Clear content
-        child = self.content_area.get_first_child()
-        while child:
-            self.content_area.remove(child)
-            child = self.content_area.get_first_child()
-        
-        # Create main options box
-        options_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
-        options_box.set_margin_top(24)
-        options_box.set_margin_bottom(24)
-        options_box.set_margin_start(24)
-        options_box.set_margin_end(24)
-        
-        # Title
-        title_label = Gtk.Label()
-        title_label.set_markup(f"<span size='x-large' weight='bold'>{_('Restore Options')}</span>")
-        title_label.set_halign(Gtk.Align.CENTER)
-        options_box.append(title_label)
-        
-        # Description
-        desc_label = Gtk.Label()
-        desc_label.set_text(_("The restore can be done in 3 ways (Simple, Intermediate, or Complete). "
-                            "If in doubt, try the first option, restart the computer and see if it is resolved."))
-        desc_label.set_wrap(True)
-        desc_label.set_justify(Gtk.Justification.CENTER)
-        desc_label.add_css_class("dim-label")
-        options_box.append(desc_label)
-        
-        # Check network status synchronously
-        network_available = self.check_network_connection_sync()
+        page_box.append(scrolled_window)
+        page_box.append(self.continue_button)
+        return page_box
 
-        # Network status indicator
-        network_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=8)
-        network_box.set_halign(Gtk.Align.CENTER)
-        network_box.add_css_class("card")
-        network_box.set_margin_top(6)
-        network_box.set_margin_bottom(12)
-        network_box.set_margin_start(5)
-        network_box.set_margin_end(5)
+    def _create_restore_page(self):
+        self.restore_page_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        
+        self.restore_content_flipper = Adw.ViewStack()
+        
+        options_view = self._create_restore_options_view()
+        self.restore_content_flipper.add_named(options_view, "options")
+        
+        progress_view = self._create_restore_progress_view()
+        self.restore_content_flipper.add_named(progress_view, "progress")
+        
+        self.restore_page_box.append(self.restore_content_flipper)
+        return self.restore_page_box
 
-        network_icon = Gtk.Image()
-        network_label = Gtk.Label()
+    def _create_restore_options_view(self):
+        clamp = Adw.Clamp(maximum_size=800)
+        box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=18, margin_top=24, margin_bottom=24, margin_start=12, margin_end=12)
+        clamp.set_child(box)
+        
+        self.summary_label = Gtk.Label(halign=Gtk.Align.CENTER, justify=Gtk.Justification.CENTER, wrap=True)
+        self.summary_label.get_style_context().add_class("title-4")
+        box.append(self.summary_label)
+        
+        self.network_status_label = Gtk.Label(halign=Gtk.Align.CENTER)
+        box.append(self.network_status_label)
+        
+        restore_guidance = Gtk.Label(
+            label=_("If you are unsure, try the 'Simple Restore' first. If the problem persists after restarting, then try the other options."),
+            justify=Gtk.Justification.CENTER, wrap=True, margin_bottom=6
+        )
+        box.append(restore_guidance)
 
-        if network_available:
-            network_icon.set_from_icon_name("network-wireless-signal-excellent-symbolic")
-            network_label.set_text(_("Internet connection available"))
-            network_label.add_css_class("success")
-        else:
-            network_icon.set_from_icon_name("network-wireless-offline-symbolic") 
-            network_label.set_text(_("No internet - Options 2 and 3 require internet"))
-            network_label.add_css_class("warning")
-        
-        network_box.append(network_icon)
-        network_box.append(network_label)
-        options_box.append(network_box)
-        
-        # Main restore options group
-        restore_group = Adw.PreferencesGroup()
-        restore_group.set_title(_("Restore Methods"))
-        
-        # Option 1: Simple
-        simple_row = Adw.ActionRow()
-        simple_row.set_title(_("Simple Restore"))
-        simple_row.set_subtitle(_("Just writes the Grub again at the beginning of the disk."))
-        simple_row.set_icon_name("emblem-ok-symbolic")
-        
-        simple_button = Gtk.Button()
-        simple_button.set_label(_("Execute"))
-        simple_button.add_css_class("suggested-action")
-        simple_button.set_size_request(100, -1)
-        simple_button.connect("clicked", lambda w: self.execute_restore(1))
-        simple_row.add_suffix(simple_button)
-        restore_group.add(simple_row)
-        
-        # Option 2: Intermediate  
-        intermediate_row = Adw.ActionRow()
-        intermediate_row.set_title(_("Intermediate Restore"))
-        intermediate_row.set_subtitle(_("Reinstalls the grub package, regenerates configuration, and updates initrd."))
-        intermediate_row.set_icon_name("view-refresh-symbolic")
-        
-        intermediate_button = Gtk.Button()
-        intermediate_button.set_label(_("Execute"))
-        intermediate_button.add_css_class("flat")
-        intermediate_button.set_size_request(100, -1)
-        intermediate_button.set_sensitive(network_available)
-        intermediate_button.connect("clicked", lambda w: self.execute_restore(2))
-        intermediate_row.add_suffix(intermediate_button)
-        restore_group.add(intermediate_row)
-        
-        # Option 3: Complete
-        complete_row = Adw.ActionRow()
-        complete_row.set_title(_("Complete Restore"))
-        complete_row.set_subtitle(_("Performs intermediate steps, updates system, and checks LTS kernel."))
-        complete_row.set_icon_name("software-update-available-symbolic")
-        
-        complete_button = Gtk.Button()
-        complete_button.set_label(_("Execute"))
-        complete_button.add_css_class("flat")
-        complete_button.set_size_request(100, -1)
-        complete_button.set_sensitive(network_available)
-        complete_button.connect("clicked", lambda w: self.execute_restore(3))
-        complete_row.add_suffix(complete_button)
-        restore_group.add(complete_row)
-        
-        options_box.append(restore_group)
-        
-        # Interactive options group
-        interactive_group = Adw.PreferencesGroup()
-        interactive_group.set_title(_("Interactive Options"))
-        
-        # Option 4: Terminal
-        terminal_row = Adw.ActionRow()
-        terminal_row.set_title(_("Interactive Terminal"))
-        terminal_row.set_subtitle(_("Opens a terminal inside the selected system."))
-        terminal_row.set_icon_name("utilities-terminal-symbolic")
-        
-        terminal_button = Gtk.Button()
-        terminal_button.set_label(_("Open"))
-        terminal_button.add_css_class("flat")
-        terminal_button.set_size_request(100, -1)
-        terminal_button.connect("clicked", lambda w: self.execute_restore(4))
-        terminal_row.add_suffix(terminal_button)
-        interactive_group.add(terminal_row)
-        
-        # Option 5: Control Center (only if bigcontrolcenter exists)
-        if os.path.exists("/usr/bin/bigcontrolcenter"):
-            control_row = Adw.ActionRow()
-            control_row.set_title(_("Control Center"))
-            control_row.set_subtitle(_("Opens the control center inside the selected system."))
-            control_row.set_icon_name("preferences-system-symbolic")
+        restore_group = Adw.PreferencesGroup(title=_("Restore Methods"))
+        interactive_group = Adw.PreferencesGroup(title=_("Interactive Tools"))
+        box.append(restore_group)
+        box.append(interactive_group)
 
-            control_button = Gtk.Button()
-            control_button.set_label(_("Open"))
-            control_button.add_css_class("flat")
-            control_button.set_size_request(100, -1)
-            control_button.connect("clicked", lambda w: self.execute_restore(5))
-            control_row.add_suffix(control_button)
-
-            interactive_group.add(control_row)
-        
-        # Option 6: Package Manager
-        package_row = Adw.ActionRow()
-        package_row.set_title(_("Package Manager"))
-        package_row.set_subtitle(_("Opens pamac-manager inside the selected system."))
-        package_row.set_icon_name("system-software-install-symbolic")
-
-        package_button = Gtk.Button()
-        package_button.set_label(_("Open"))
-        package_button.add_css_class("flat")
-        package_button.set_size_request(100, -1)
-        package_button.connect("clicked", lambda w: self.execute_restore(6))
-        package_row.add_suffix(package_button)
-
-        interactive_group.add(package_row)
-        
-        options_box.append(interactive_group)
-        
-        self.content_area.append(options_box)
-
-    def check_network_connection_sync(self):
-        """Check if internet connection is available using multiple methods"""
-        
-        # Method 1: Try HTTP request (most reliable)
-        try:
-            print("DEBUG: Checking network via HTTP request...")
-            import urllib.request
-            
-            # Try to open a simple HTTP connection
-            with urllib.request.urlopen('http://detectportal.firefox.com/canonical.html', timeout=5) as response:
-                if response.getcode() == 200:
-                    print("DEBUG: HTTP test successful - Network connected")
-                    return True
-        except Exception as e:
-            print(f"DEBUG: HTTP test failed: {e}")
-        
-        # Method 2: Try DNS resolution
-        try:
-            print("DEBUG: Checking network via DNS resolution...")
-            import socket
-            
-            # Try to resolve a known domain
-            socket.gethostbyname('google.com')
-            print("DEBUG: DNS resolution successful - Network connected")
-            return True
-        except Exception as e:
-            print(f"DEBUG: DNS resolution failed: {e}")
-        
-        # Method 3: Try wget/curl as fallback
-        try:
-            print("DEBUG: Checking network via wget...")
-            import subprocess
-            
-            result = subprocess.run(['wget', '--quiet', '--spider', '--timeout=5', 'http://google.com'], 
-                                capture_output=True, timeout=10)
-            if result.returncode == 0:
-                print("DEBUG: wget test successful - Network connected")
-                return True
-        except Exception as e:
-            print(f"DEBUG: wget test failed: {e}")
-        
-        # Method 4: Try ping as last resort
-        try:
-            print("DEBUG: Checking network via ping (last resort)...")
-            import subprocess
-            
-            result = subprocess.run(['ping', '-c', '1', '-W', '3', '8.8.8.8'], 
-                                capture_output=True, timeout=5)
-            if result.returncode == 0:
-                print("DEBUG: ping test successful - Network connected")
-                return True
-        except Exception as e:
-            print(f"DEBUG: ping test failed: {e}")
-        
-        print("DEBUG: All network tests failed - Network disconnected")
-        return False
-
-    def execute_restore(self, mode):
-        """Execute restore operation"""
-        print(f"DEBUG: Executing restore mode {mode}")
-        
-        # Show confirmation dialog
-        if not self.show_restore_confirmation(mode):
-            return
-
-        # For mode 4 (interactive terminal), show special terminal interface
-        if mode == 4:
-            self.show_interactive_terminal()
-            return
-
-        # Clear content and show progress for all modes
-        child = self.content_area.get_first_child()
-        while child:
-            self.content_area.remove(child)
-            child = self.content_area.get_first_child()
-
-        self.show_restore_progress(mode)
-
-        # Execute in background thread
-        thread = threading.Thread(target=self.run_restore_operation, args=(mode,))
-        thread.daemon = True
-        thread.start()
-
-    def show_restore_confirmation(self, mode):
-        """Show confirmation dialog"""
-        mode_descriptions = {
-            1: _("Simple restore will write GRUB to the beginning of the disk."),
-            2: _("Intermediate restore will reinstall GRUB package and update configuration."),
-            3: _("Complete restore will perform full system update and kernel check."),
-            4: _("Interactive terminal will open inside the selected system."),
-            5: _("Control center will open inside the selected system."),
-            6: _("Package manager will open inside the selected system.")
+        modes = {
+            1: (_("Simple Restore"), _("Rewrites GRUB to the boot sector."), "emblem-ok-symbolic", restore_group, True),
+            2: (_("Intermediate Restore"), _("Reinstalls GRUB package and regenerates configs."), "view-refresh-symbolic", restore_group, False),
+            3: (_("Complete Restore"), _("Updates system, kernel, and performs intermediate restore."), "software-update-available-symbolic", restore_group, False),
+            4: (_("Interactive Terminal"), _("Opens a terminal inside the selected system."), "utilities-terminal-symbolic", interactive_group, True),
+            5: (_("Control Center"), _("Opens the control center inside the selected system."), "preferences-system-symbolic", interactive_group, True),
+            6: (_("Package Manager"), _("Opens the package manager inside the selected system."), "system-software-install-symbolic", interactive_group, True),
         }
         
-        # For now, always return True (would normally show Adw.AlertDialog)
-        print(f"DEBUG: Would show confirmation for mode {mode}: {mode_descriptions.get(mode, 'Unknown')}")
-        return True
+        self.restore_buttons = {}
+        for mode, (title, subtitle, icon, group, net_independent) in modes.items():
+            row = Adw.ActionRow(title=title, subtitle=subtitle, icon_name=icon)
+            
+            button = Gtk.Button(label=_("Execute"))
+            button.connect("clicked", self._on_execute_restore, mode)
 
-    def show_restore_progress(self, mode):
-        """Show restore progress page"""
-        # Create main progress box
-        progress_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
-        progress_box.set_margin_top(24)
-        progress_box.set_margin_bottom(24)
-        progress_box.set_margin_start(24)
-        progress_box.set_margin_end(24)
+            row.add_suffix(button)
+            row.set_activatable_widget(button)
+            group.add(row)
+            self.restore_buttons[mode] = (button, net_independent)
+            
+        return clamp
+
+    def _create_restore_progress_view(self):
+        self.progress_flipper = Adw.ViewStack()
+
+        progress_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12, margin_top=24, margin_bottom=24, margin_start=24, margin_end=24)
         
-        # Title
-        title_label = Gtk.Label()
-        title_label.set_markup(f"<span size='x-large' weight='bold'>{_('Restore in Progress')}</span>")
-        title_label.set_halign(Gtk.Align.CENTER)
-        progress_box.append(title_label)
+        self.progress_title_label = Gtk.Label(halign=Gtk.Align.CENTER)
+        self.progress_title_label.get_style_context().add_class("title-2")
+        progress_box.append(self.progress_title_label)
         
-        # Description
-        desc_label = Gtk.Label()
-        desc_label.set_text(_("Please wait while the restore operation completes..."))
-        desc_label.set_halign(Gtk.Align.CENTER)
-        desc_label.add_css_class("dim-label")
-        progress_box.append(desc_label)
-        
-        # Progress spinner
-        self.progress_spinner = Gtk.Spinner()
-        self.progress_spinner.set_size_request(48, 48)
-        self.progress_spinner.set_halign(Gtk.Align.CENTER)
-        self.progress_spinner.start()
+        self.progress_spinner = Gtk.Spinner(spinning=True, width_request=32, height_request=32, halign=Gtk.Align.CENTER)
         progress_box.append(self.progress_spinner)
         
-        # Expandable terminal section
-        terminal_expander = Adw.ExpanderRow()
-        terminal_expander.set_title(_("Technical Details"))
-        terminal_expander.set_subtitle(_("Real-time execution log"))
-        terminal_expander.set_icon_name("utilities-terminal-symbolic")
-        terminal_expander.set_expanded(True)
-        
-        # Terminal frame and VTE
-        try:
-            gi.require_version('Vte', '3.91')
-            from gi.repository import Vte, Pango
-            
-            self.terminal = Vte.Terminal()
-            self.terminal.set_size_request(-1, 200)
-            self.terminal.set_font(Pango.FontDescription("monospace 9"))
-            self.terminal.set_scroll_on_output(True)
-            
-            terminal_frame = Gtk.Frame()
-            terminal_frame.set_child(self.terminal)
-            terminal_frame.set_margin_top(6)
-            terminal_frame.set_margin_bottom(6)
-            terminal_frame.set_margin_start(6)
-            terminal_frame.set_margin_end(6)
-            
-            terminal_expander.add_row(terminal_frame)
-        except Exception as e:
-            # Fallback if VTE is not available
-            error_label = Gtk.Label()
-            error_label.set_text(_("Terminal not available"))
-            terminal_expander.add_row(error_label)
-            self.terminal = None
-        
-        progress_box.append(terminal_expander)
-        
-        self.content_area.append(progress_box)
-
-    def run_restore_operation(self, mode):
-        """Run restore operation in background"""
-        try:
-            print(f"DEBUG: Running restore operation mode {mode}")
-            
-            # Execute the restore using system_interface
-            process = self.system_interface.execute_restore(mode)
-            
-            # Monitor output for other modes
-            if hasattr(self, 'terminal') and self.terminal:
-                import threading
-                def monitor_process():
-                    try:
-                        for line in iter(process.stdout.readline, ''):
-                            if line:
-                                clean_line = line.strip() + '\r\n'
-                                GLib.idle_add(self.terminal.feed, clean_line.encode('utf-8'))
-                        
-                        process.wait()
-                        success = process.returncode == 0
-                        GLib.idle_add(self.on_restore_complete, mode, success)
-                        
-                    except Exception as e:
-                        GLib.idle_add(self.on_restore_error, str(e))
-                
-                thread = threading.Thread(target=monitor_process)
-                thread.daemon = True
-                thread.start()
-            else:
-                process.wait()
-                success = process.returncode == 0
-                GLib.idle_add(self.on_restore_complete, mode, success)
-            
-        except Exception as e:
-            print(f"DEBUG: Restore operation failed: {e}")
-            GLib.idle_add(self.on_restore_error, str(e))
-
-    def on_restore_complete(self, mode, success):
-        """Handle restore completion"""
-        print(f"DEBUG: Restore mode {mode} completed, success: {success}")
-        
-        # Stop spinner only if it exists (non-interactive modes)
-        if hasattr(self, 'progress_spinner') and self.progress_spinner:
-            self.progress_spinner.stop()
-        
-        # Clear content
-        child = self.content_area.get_first_child()
-        while child:
-            self.content_area.remove(child)
-            child = self.content_area.get_first_child()
-        
-        # Show result
-        result_page = Adw.StatusPage()
-        if success:
-            result_page.set_icon_name("emblem-ok-symbolic")
-            result_page.set_title(_("Restore Completed"))
-            result_page.set_description(_("The restore operation completed successfully!"))
-        else:
-            result_page.set_icon_name("dialog-error-symbolic")
-            result_page.set_title(_("Restore Failed"))
-            result_page.set_description(_("The restore operation failed. Please try again."))
-        
-        # Button box for multiple buttons
-        button_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=12)
-        button_box.set_halign(Gtk.Align.CENTER)
-        
-        # Back button
-        back_button = Gtk.Button()
-        back_button.set_label(_("Back"))
-        back_button.add_css_class("pill")
-        back_button.set_size_request(100, -1)
-        back_button.connect("clicked", lambda w: self.show_restore_options())
-        button_box.append(back_button)
-        
-        # Close button
-        close_button = Gtk.Button()
-        close_button.set_label(_("Close"))
-        close_button.add_css_class("pill")
-        close_button.add_css_class("suggested-action")
-        close_button.set_size_request(100, -1)
-        close_button.connect("clicked", lambda w: self.get_application().quit())
-        button_box.append(close_button)
-        
-        result_page.set_child(button_box)
-        self.content_area.append(result_page)
-
-    def on_restore_error(self, error_msg):
-        """Handle restore error"""
-        print(f"DEBUG: Restore error: {error_msg}")
-        
-        # Stop spinner only if it exists (non-interactive modes)
-        if hasattr(self, 'progress_spinner') and self.progress_spinner:
-            self.progress_spinner.stop()
-        
-        # Clear content
-        child = self.content_area.get_first_child()
-        while child:
-            self.content_area.remove(child)
-            child = self.content_area.get_first_child()
-        
-        # Show error
-        error_page = Adw.StatusPage()
-        error_page.set_icon_name("dialog-error-symbolic")
-        error_page.set_title(_("Restore Error"))
-        error_page.set_description(f"Error: {error_msg}")
-        
-        # Button box for multiple buttons
-        button_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=12)
-        button_box.set_halign(Gtk.Align.CENTER)
-        
-        # Back button
-        back_button = Gtk.Button()
-        back_button.set_label(_("Back"))
-        back_button.add_css_class("pill")
-        back_button.set_size_request(100, -1)
-        back_button.connect("clicked", lambda w: self.show_restore_options())
-        button_box.append(back_button)
-        
-        # Close button
-        close_button = Gtk.Button()
-        close_button.set_label(_("Close"))
-        close_button.add_css_class("pill")
-        close_button.add_css_class("suggested-action")
-        close_button.set_size_request(100, -1)
-        close_button.connect("clicked", lambda w: self.get_application().quit())
-        button_box.append(close_button)
-        
-        error_page.set_child(button_box)
-        self.content_area.append(error_page)
-        
-    def show_interactive_terminal(self):
-        """Show interactive terminal for mode 4"""
-        print("DEBUG: Showing interactive terminal interface")
-        
-        # Clear content
-        child = self.content_area.get_first_child()
-        while child:
-            self.content_area.remove(child)
-            child = self.content_area.get_first_child()
-        
-        # Create terminal interface box
-        terminal_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
-        terminal_box.set_margin_top(24)
-        terminal_box.set_margin_bottom(24)
-        terminal_box.set_margin_start(24)
-        terminal_box.set_margin_end(24)
-        
-        # Title
-        title_label = Gtk.Label()
-        title_label.set_markup(f"<span size='x-large' weight='bold'>{_('Interactive Terminal')}</span>")
-        title_label.set_halign(Gtk.Align.CENTER)
-        terminal_box.append(title_label)
-        
-        # Description
-        desc_label = Gtk.Label()
-        desc_label.set_text(_("Terminal running inside the selected system. You can execute commands directly."))
-        desc_label.set_wrap(True)
-        desc_label.set_justify(Gtk.Justification.CENTER)
-        desc_label.add_css_class("dim-label")
-        terminal_box.append(desc_label)
-        
-        # Terminal frame and VTE
         if VTE_AVAILABLE:
-            self.interactive_terminal = Vte.Terminal()
-            self.interactive_terminal.set_size_request(-1, 400)
-            self.interactive_terminal.set_font(Pango.FontDescription("monospace 10"))
-            self.interactive_terminal.set_scroll_on_output(True)
-            
-            terminal_frame = Gtk.Frame()
-            terminal_frame.set_child(self.interactive_terminal)
-            terminal_frame.set_margin_top(12)
-            terminal_frame.set_margin_bottom(12)
-            
-            terminal_box.append(terminal_frame)
-            
-            # Start chroot session in terminal
-            self.start_chroot_session()
-        else:
-            # Fallback if VTE is not available
-            error_label = Gtk.Label()
-            error_label.set_text(_("Terminal not available - VTE library not found"))
-            error_label.add_css_class("error")
-            terminal_box.append(error_label)
-        
-        # Button box
-        button_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=12)
-        button_box.set_halign(Gtk.Align.CENTER)
-        button_box.set_margin_top(12)
-        
-        # Back button
-        back_button = Gtk.Button()
-        back_button.set_label(_("Back"))
-        back_button.add_css_class("pill")
-        back_button.set_size_request(100, -1)
-        back_button.connect("clicked", lambda w: self.show_restore_options())
-        button_box.append(back_button)
-        
-        # Close button
-        close_button = Gtk.Button()
-        close_button.set_label(_("Close"))
-        close_button.add_css_class("pill")
-        close_button.add_css_class("suggested-action")
-        close_button.set_size_request(100, -1)
-        close_button.connect("clicked", lambda w: self.get_application().quit())
-        button_box.append(close_button)
-        
-        terminal_box.append(button_box)
-        
-        self.content_area.append(terminal_box)
-
-    def start_chroot_session(self):
-        """Start chroot session in the interactive terminal"""
-        try:
-            print("DEBUG: Starting chroot session...")
-            
-            # Mount system manually for interactive session
-            import threading
-            def setup_and_run():
-                try:
-                    print("DEBUG: Mounting system for interactive session...")
-                    
-                    # Get system info
-                    selected_system = self.selected_system
-                    selected_partition = selected_system['partition']
-                    partition_format = selected_system.get('filesystem', 'ext4')
-                    
-                    # Unmount any existing mounts
-                    subprocess.run(['sudo', 'umount', '-l', '/mnt'], capture_output=True)
-                    subprocess.run(['sudo', 'umount', '-l', selected_partition], capture_output=True)
-                    
-                    # Mount the target partition
-                    if partition_format == "btrfs":
-                        mount_cmd = ['sudo', 'mount', selected_partition, '/mnt', '-o', 'subvol=@']
-                    else:
-                        mount_cmd = ['sudo', 'mount', selected_partition, '/mnt']
-                    
-                    mount_result = subprocess.run(mount_cmd, capture_output=True, text=True)
-                    
-                    if mount_result.returncode == 0:
-                        print("DEBUG: System mounted successfully, starting interactive bash...")
-                        
-                        # Start interactive bash in VTE terminal using sync method
-                        cmd = ['sudo', 'manjaro-chroot', '/mnt', 'bash']
-                        GLib.idle_add(self.spawn_in_terminal_sync, cmd)
-                    else:
-                        error_msg = mount_result.stderr or "Failed to mount system"
-                        print(f"DEBUG: Mount failed: {error_msg}")
-                        GLib.idle_add(self.show_terminal_error, f"Mount failed: {error_msg}")
-                        
-                except Exception as e:
-                    print(f"DEBUG: Setup failed: {e}")
-                    GLib.idle_add(self.show_terminal_error, str(e))
-            
-            thread = threading.Thread(target=setup_and_run)
-            thread.daemon = True
-            thread.start()
-            
-        except Exception as e:
-            print(f"DEBUG: Failed to start chroot session: {e}")
-            self.show_terminal_error(str(e))
-
-    def spawn_in_terminal_sync(self, cmd):
-        """Spawn command in VTE terminal using sync method only"""
-        try:
-            print(f"DEBUG: Spawning command: {' '.join(cmd)}")
-            
-            # Use only sync method - no async
-            success = self.interactive_terminal.spawn_sync(
-                Vte.PtyFlags.DEFAULT,
-                None,  # working directory  
-                cmd,   # command array
-                None,  # environment
-                GLib.SpawnFlags.DEFAULT,
-                None,  # child setup function
-                None   # child setup data
+            self.terminal = Vte.Terminal(
+                scroll_on_output=True, font_desc=Pango.FontDescription("Monospace 13"), vexpand=True
             )
-            
-            if success:
-                print("DEBUG: Interactive terminal spawned successfully")
-            else:
-                self.show_terminal_error("Failed to spawn terminal process")
-            
-        except Exception as e:
-            print(f"DEBUG: Failed to spawn terminal: {e}")
-            self.show_terminal_error(f"Failed to start terminal: {e}")
-
-    def on_spawn_complete(self, terminal, pid, error, user_data):
-        """Handle spawn completion"""
-        if error:
-            print(f"DEBUG: Spawn failed: {error}")
-            self.show_terminal_error(f"Failed to start terminal: {error}")
+            self._setup_terminal_context_menu()
+            scrolled_term = Gtk.ScrolledWindow(child=self.terminal, min_content_height=300)
+            progress_box.append(scrolled_term)
         else:
-            print(f"DEBUG: Interactive terminal spawned successfully (PID: {pid})")
+            self.terminal = None
+            progress_box.append(Gtk.Label(label=_("VTE terminal widget not available.")))
 
-    def show_terminal_error(self, error_msg):
-        """Show terminal error message"""
-        if hasattr(self, 'interactive_terminal'):
-            error_text = f"Error: {error_msg}\r\n"
-            self.interactive_terminal.feed(error_text.encode('utf-8'))
+        self.interactive_finish_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=12, halign=Gtk.Align.CENTER, visible=False, margin_top=12)
+        close_session_button = Gtk.Button(label=_("Close Terminal"), css_classes=["pill", "destructive-action"])
+        close_session_button.connect("clicked", self._on_close_interactive_session)
+        self.interactive_finish_box.append(close_session_button)
+        progress_box.append(self.interactive_finish_box)
 
-    def update_app_status(self, message):
-        """Update application status label"""
-        if hasattr(self, 'app_status_label'):
-            self.app_status_label.set_text(message)
+        self.progress_flipper.add_named(progress_box, "progress")
+        return self.progress_flipper
 
-    def stop_app_spinner(self):
-        """Stop application spinner"""
-        if hasattr(self, 'app_spinner'):
-            self.app_spinner.stop()
+    def _get_result_messages(self, mode, error_msg=None):
+        if error_msg: return {"title": _("Operation Failed!"), "description": error_msg}
+        titles = {1: _("Simple Restore Completed"), 2: _("Intermediate Restore Completed"), 3: _("Complete Restore Completed")}
+        descriptions = {
+            1: _("The GRUB bootloader has been rewritten. You can now restart your computer."),
+            2: _("The GRUB package was reinstalled and configurations were regenerated."),
+            3: _("The system, kernel, and GRUB have been updated and restored."),
+        }
+        return {"title": titles.get(mode, _("Operation Completed Successfully!")), "description": descriptions.get(mode, _("You can now close this tool and restart your computer."))}
+
+    def _create_result_page(self, success, title, description):
+        status_page = Adw.StatusPage(title=title, description=description, icon_name="emblem-ok-symbolic" if success else "dialog-error-symbolic")
+        button_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=12, halign=Gtk.Align.CENTER)
+        back_button = Gtk.Button(label=_("Go Back"), css_classes=["pill"])
+        back_button.connect("clicked", self._on_result_go_back)
+        close_button = Gtk.Button(label=_("Close"), css_classes=["pill", "suggested-action" if success else "destructive-action"])
+        close_button.connect("clicked", lambda w: self.get_application().quit())
+        button_box.append(back_button)
+        button_box.append(close_button)
+        status_page.set_child(button_box)
+        return status_page
+
+    def _setup_terminal_context_menu(self):
+        if not self.terminal: return
+        menu_model = Gio.Menu()
+        menu_model.append(_("Copy"), "win.copy_terminal")
+        menu_model.append(_("Paste"), "win.paste_terminal")
+        self.terminal_menu = Gtk.PopoverMenu.new_from_model(menu_model)
+        self.terminal_menu.set_parent(self.terminal)
+        click_controller = Gtk.GestureClick.new()
+        click_controller.set_button(Gdk.BUTTON_SECONDARY)
+        click_controller.connect("pressed", self._on_terminal_right_click)
+        self.terminal.add_controller(click_controller)
+
+    def _on_terminal_right_click(self, controller, n_press, x, y):
+        self.lookup_action("copy_terminal").set_enabled(self.terminal.get_has_selection())
+        self.terminal_menu.popup()
+
+    def _on_terminal_copy(self, action, param):
+        if self.terminal: self.terminal.copy_clipboard_format(Vte.Format.TEXT)
+
+    def _on_terminal_paste(self, action, param):
+        if self.terminal: self.terminal.paste_clipboard()
+
+    # Event Handlers & Logic
+    def _on_start_detection(self, button):
+        self.view_stack.set_visible_child_name("detection")
+        threading.Thread(target=self._run_detection_thread, daemon=True).start()
+
+    def _run_detection_thread(self):
+        try:
+            self.system_interface.detect_systems()
+            GLib.idle_add(self._populate_selection_page)
+        except Exception as e:
+            GLib.idle_add(self._show_error, _("Detection Failed"), str(e))
+
+    def _populate_selection_page(self):
+        for check_button in self.system_check_buttons:
+            row = check_button.get_ancestor(Adw.ActionRow)
+            if row: self.systems_group.remove(row)
+        
+        for check_button in self.boot_target_check_buttons:
+            row = check_button.get_ancestor(Adw.ActionRow)
+            if row: self.boot_specific_group.remove(row)
+
+        self.system_check_buttons.clear()
+        self.boot_target_check_buttons.clear()
+
+        if not self.system_interface.detected_systems:
+            self._show_error(_("No Systems Found"), _("No Linux installations could be detected on your drives."))
+            return
+
+        if self.system_interface.boot_mode == "EFI" and not self.system_interface.efi_partitions:
+            self._show_error(
+                _("Boot Mode Mismatch"),
+                _("The live session is running in EFI mode, but no EFI partition was found on your drives. Restoration is likely to fail.\n\nPlease restart your computer and ensure you are booting in Legacy/BIOS mode.")
+            )
+            return
+        
+        if self.system_interface.boot_mode == "LEGACY" and self.system_interface.efi_partitions:
+            self._show_error(
+                _("Boot Mode Mismatch"),
+                _("The live session is running in Legacy/BIOS mode, but an EFI partition was detected. Restoration is likely to fail.\n\nPlease restart your computer and ensure you are booting in EFI mode.")
+            )
+            return
+
+        is_single_system = len(self.system_interface.detected_systems) == 1
+        is_single_boot_target = (len(self.system_interface.efi_partitions) == 1 if self.system_interface.boot_mode == "EFI"
+                                 else len(self.system_interface.grub_disks) == 1)
+
+        self.boot_specific_group.set_sensitive(True)
+
+        if is_single_system and is_single_boot_target:
+            self.guidance_label.set_label(_("The following system was detected. Press Continue to proceed with the restoration."))
+
+            system = self.system_interface.detected_systems[0]
+            self.selected_system = system
+            row = Adw.ActionRow(title=system['name'], subtitle=f"{_('Partition:')} {system['partition']} | {_('Filesystem:')} {system.get('filesystem', 'N/A')}")
+            row.set_activatable(False)
+            self.systems_group.add(row)
+            
+            if self.system_interface.boot_mode == "EFI":
+                part = self.system_interface.efi_partitions[0]
+                self.selected_efi_partition = part
+                self.boot_specific_group.set_title(_("2. Target EFI Partition"))
+                row = Adw.ActionRow(title=part, subtitle=_("EFI System Partition"))
+            else: # LEGACY
+                disk = self.system_interface.grub_disks[0]
+                self.selected_disk = disk['device']
+                self.boot_specific_group.set_title(_("2. Target Disk (MBR)"))
+                row = Adw.ActionRow(title=f"/dev/{disk['device']} ({disk['size']})", subtitle=f"{_('Model:')} {disk['name'].replace('_', ' ')} | {_('Partition Table:')} {disk['table'].upper()}")
+            row.set_activatable(False)
+            self.boot_specific_group.add(row)
+
+        else:
+            self.guidance_label.set_label(_("Select the Linux installation you want to repair and the corresponding boot partition or disk."))
+
+            for i, system in enumerate(self.system_interface.detected_systems):
+                row = Adw.ActionRow(title=system['name'], subtitle=f"{_('Partition:')} {system['partition']} | {_('Filesystem:')} {system.get('filesystem', 'N/A')}")
+                check = Gtk.CheckButton(css_classes=["radio"])
+                if self.system_check_buttons: check.set_group(self.system_check_buttons[0])
+                check.connect("toggled", self._on_system_toggled, i)
+                self.system_check_buttons.append(check)
+                row.add_suffix(check)
+                row.set_activatable_widget(check)
+                self.systems_group.add(row)
+
+            if self.system_interface.boot_mode == "EFI":
+                self.boot_specific_group.set_title(_("2. Select Target EFI Partition"))
+                for i, part in enumerate(self.system_interface.efi_partitions):
+                    row = Adw.ActionRow(title=part, subtitle=_("EFI System Partition"))
+                    check = Gtk.CheckButton(css_classes=["radio"])
+                    if self.boot_target_check_buttons: check.set_group(self.boot_target_check_buttons[0])
+                    check.connect("toggled", self._on_boot_target_toggled, i)
+                    self.boot_target_check_buttons.append(check)
+                    row.add_suffix(check)
+                    row.set_activatable_widget(check)
+                    self.boot_specific_group.add(row)
+            else: # LEGACY
+                self.boot_specific_group.set_title(_("2. Target Disk (MBR)"))
+                for i, disk in enumerate(self.system_interface.grub_disks):
+                    row = Adw.ActionRow(title=f"/dev/{disk['device']} ({disk['size']})", subtitle=f"{_('Model:')} {disk['name'].replace('_', ' ')} | {_('Partition Table:')} {disk['table'].upper()}")
+                    check = Gtk.CheckButton(css_classes=["radio"])
+                    if self.boot_target_check_buttons: check.set_group(self.boot_target_check_buttons[0])
+                    check.connect("toggled", self._on_boot_target_toggled, i)
+                    self.boot_target_check_buttons.append(check)
+                    row.add_suffix(check)
+                    row.set_activatable_widget(check)
+                    self.boot_specific_group.add(row)
+
+            if len(self.system_check_buttons) == 1:
+                self.system_check_buttons[0].set_active(True)
+            if len(self.boot_target_check_buttons) == 1:
+                self.boot_target_check_buttons[0].set_active(True)
+
+        self.view_stack.set_visible_child_name("selection")
+        self._check_selection_completeness()
+
+    def _check_selection_completeness(self):
+        system_ok = self.selected_system is not None
+        boot_target_ok = (self.selected_efi_partition is not None) if self.system_interface.boot_mode == "EFI" else (self.selected_disk is not None)
+        self.continue_button.set_sensitive(system_ok and boot_target_ok)
+
+    def _on_system_toggled(self, check_button, index):
+        if check_button.get_active():
+            self.selected_system = self.system_interface.detected_systems[index]
+            self.boot_specific_group.set_sensitive(True)
+        else:
+            self.selected_system = None
+            self.boot_specific_group.set_sensitive(False)
+            for btn in self.boot_target_check_buttons:
+                if btn.get_active():
+                    btn.set_active(False)
+                    break
+        
+        self._check_selection_completeness()
+
+    def _on_boot_target_toggled(self, check_button, index):
+        if not check_button.get_active():
+            self.selected_efi_partition = None
+            self.selected_disk = None
+        elif self.system_interface.boot_mode == "EFI":
+            self.selected_efi_partition = self.system_interface.efi_partitions[index]
+            self.selected_disk = None
+        else: # LEGACY
+            self.selected_disk = self.system_interface.grub_disks[index]['device']
+            self.selected_efi_partition = None
+        
+        self._check_selection_completeness()
+
+    def _on_selection_continue(self, button):
+        self.system_interface.save_selection(self.selected_system, self.selected_efi_partition, self.selected_disk)
+        self._prepare_restore_page()
+        self.view_stack.set_visible_child_name("restore")
+
+    def _prepare_restore_page(self):
+        summary = self.system_interface.get_system_summary(self.selected_system, self.selected_efi_partition, self.selected_disk)
+        summary_text = f"<b>{_('System to Restore:')}</b> {summary['system']['name']} on {summary['system']['partition']}\n"
+        summary_text += f"<b>{_('Boot Mode:')}</b> {summary['boot_mode']}\n"
+        if 'efi_partition' in summary: summary_text += f"<b>{_('Target EFI Partition:')}</b> {summary['efi_partition']}"
+        if 'disk' in summary: summary_text += f"<b>{_('Target Disk (MBR):')}</b> /dev/{summary['disk']['device']}"
+        self.summary_label.set_markup(summary_text)
+        
+        is_connected = self.system_interface.check_network_connection()
+        net_markup = f"<span foreground='green'>{_('Internet connection available.')}</span>" if is_connected else f"<span foreground='orange'>{_('No internet. Some options will be disabled.')}</span>"
+        self.network_status_label.set_markup(net_markup)
+        
+        for mode, (button, net_independent) in self.restore_buttons.items():
+            button.set_sensitive(net_independent or is_connected)
+
+    def _on_execute_restore(self, button, mode):
+        self.current_mode = mode
+        self.restore_content_flipper.set_visible_child_name("progress")
+        self.progress_flipper.set_visible_child_name("progress")
+        self.progress_spinner.start()
+        if self.terminal: self.terminal.feed(b'\033c')
+
+        if mode in [1, 2, 3]:
+            self.progress_title_label.set_text(_("Restore in Progress..."))
+            threading.Thread(target=self._run_restore_thread, args=(mode,), daemon=True).start()
+        else:
+            self.progress_title_label.set_text(_("Preparing Interactive Session..."))
+            threading.Thread(target=self._run_interactive_session, args=(mode,), daemon=True).start()
+
+    def _on_close_interactive_session(self, button):
+        if self.terminal: self.terminal.feed_child(b'exit\n')
+
+    def _run_restore_thread(self, mode):
+        try:
+            self.current_process = self.system_interface.execute_restore(mode)
+            for line in iter(self.current_process.stdout.readline, ''):
+                if self.terminal: GLib.idle_add(self.terminal.feed, f"{line.strip()}\r\n".encode('utf-8'))
+            self.current_process.wait()
+            GLib.idle_add(self._on_restore_finished, self.current_process.returncode == 0)
+        except Exception as e:
+            GLib.idle_add(self._on_restore_finished, False, str(e))
+
+    def _run_interactive_session(self, mode):
+        result = self.system_interface.prepare_chroot()
+        if result.returncode != 0:
+            GLib.idle_add(self._on_restore_finished, False, f"Failed to prepare chroot:\n{result.stderr}")
+            return
+        
+        if mode == 6:
+            try:
+                lock_file_path = "/mnt/var/lib/pacman/db.lck"
+                if os.path.exists(lock_file_path): os.remove(lock_file_path)
+            except OSError as e:
+                GLib.idle_add(self._on_restore_finished, False, f"Failed to remove pacman lock: {e}")
+                return
+        GLib.idle_add(self._spawn_interactive_in_vte, mode)
+
+    def _spawn_interactive_in_vte(self, mode):
+        if not self.terminal:
+            self._on_restore_finished(False, "VTE Terminal not available.")
+            return
+
+        cmd_map = {4: ["bash"], 5: ["bash", "-c", "bigcontrolcenter"], 6: ["bash", "-c", "pamac-manager"]}
+        cmd = cmd_map.get(mode)
+        if not cmd: return
+        full_cmd = ["manjaro-chroot", "/mnt"] + cmd
+
+        self.progress_title_label.set_text(_("Interactive Session Active"))
+        self.progress_spinner.stop()
+        if mode == 4: self.interactive_finish_box.set_visible(True)
+        
+        try:
+            self.terminal.spawn_sync(Vte.PtyFlags.DEFAULT, None, full_cmd, [], GLib.SpawnFlags.DEFAULT, None, None)
+            self.terminal.connect("child-exited", self._on_interactive_child_exited)
+        except Exception as e:
+            self._on_restore_finished(False, str(e))
+
+    def _on_interactive_child_exited(self, terminal, status):
+        self.interactive_finish_box.set_visible(False)
+        GLib.idle_add(self.progress_title_label.set_text, _("Cleaning up session..."))
+        threading.Thread(target=self._run_cleanup_thread, args=(status,), daemon=True).start()
+
+    def _run_cleanup_thread(self, exit_status):
+        result = self.system_interface.cleanup_chroot()
+        success = (exit_status == 0 and result.returncode == 0)
+        error_msg = result.stderr if result.returncode != 0 else None
+        GLib.idle_add(self._on_restore_finished, success, error_msg)
+
+    def _on_restore_finished(self, success, error_msg=None):
+        self.progress_spinner.stop()
+        if self.current_mode in [4, 5, 6] and success:
+            self._on_result_go_back(None)
+            return
+
+        messages = self._get_result_messages(self.current_mode, error_msg)
+        if self.progress_flipper.get_child_by_name("result"):
+            self.progress_flipper.remove(self.progress_flipper.get_child_by_name("result"))
+
+        result_page = self._create_result_page(success, messages["title"], messages["description"])
+        self.progress_flipper.add_named(result_page, "result")
+        self.progress_flipper.set_visible_child_name("result")
+
+    def _on_result_go_back(self, button):
+        self.restore_content_flipper.set_visible_child_name("options")
+        self.progress_flipper.set_visible_child_name("progress")
+
+    def _show_error(self, title, message):
+        error_page = Adw.StatusPage(title=title, description=message, icon_name="dialog-error-symbolic")
+        back_button = Gtk.Button(label=_("Go Back"), css_classes=["pill"])
+        back_button.connect("clicked", lambda w: self.view_stack.set_visible_child_name("welcome"))
+        error_page.set_child(back_button)
+        
+        if self.view_stack.get_child_by_name("error_page"):
+            self.view_stack.remove(self.view_stack.get_child_by_name("error_page"))
+            
+        self.view_stack.add_named(error_page, "error_page")
+        self.view_stack.set_visible_child_name("error_page")

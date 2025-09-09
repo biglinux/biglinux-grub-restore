@@ -1,415 +1,79 @@
 #!/bin/bash
-##################################
-#  BigLinux GRUB Restore - Legacy Apply Script
-#  Author: Bruno Goncalves (www.biglinux.com.br) 
-#  Date: 2024
-#  
-#  Description: Apply GRUB restore for Legacy/BIOS systems
-#  Adapted for GTK4 frontend
-#  
-# Licensed by GPL V2 or greater
-##################################
+# Handles non-interactive restore modes (1-3) for Legacy systems.
 
-# Translation setup
+set -e
+
+# ... (funções de log, mount, unmount, execute_chroot permanecem as mesmas) ...
+#<editor-fold desc="Helper Functions">
 export TEXTDOMAINDIR="/usr/share/locale"
 export TEXTDOMAIN=grub-restore
-
-# Function to log messages with timestamps
-log_message() {
-    echo "$(date '+%Y-%m-%d %H:%M:%S'): $1" >&2
-}
-
-# Function to show progress
-show_progress() {
-    echo "PROGRESS: $1"
-}
-
-# Function to handle errors
-handle_error() {
-    local error_msg="$1"
-    local exit_code="${2:-1}"
-    log_message "ERROR: $error_msg"
-    echo "ERROR: $error_msg" >&2
-    exit $exit_code
-}
-
-# Function to check if command exists
-command_exists() {
-    command -v "$1" >/dev/null 2>&1
-}
-
-# Validate required commands
-validate_commands() {
-    local required_commands=("manjaro-chroot" "grub-install" "mount" "umount")
-    
-    for cmd in "${required_commands[@]}"; do
-        if ! command_exists "$cmd"; then
-            handle_error "Required command not found: $cmd"
-        fi
-    done
-}
-
-# Function to safely mount partition
+log_message() { echo "$(date '+%Y-%m-%d %H:%M:%S'): $1" >&2; }
+show_progress() { echo "PROGRESS: $1"; }
+handle_error() { log_message "ERROR: $1"; echo "ERROR: $1" >&2; exit "${2:-1}"; }
 safe_mount() {
-    local partition="$1"
-    local mount_point="$2"
-    local mount_options="$3"
-    
-    # Unmount if already mounted
-    umount -l "$mount_point" 2>/dev/null || true
-    
-    # Create mount point if it doesn't exist
-    mkdir -p "$mount_point"
-    
-    # Mount with options
-    if [ -n "$mount_options" ]; then
-        if mount "$partition" -o "$mount_options" "$mount_point"; then
-            log_message "Successfully mounted $partition to $mount_point with options: $mount_options"
-            return 0
-        else
-            handle_error "Failed to mount $partition to $mount_point with options: $mount_options"
-        fi
-    else
-        if mount "$partition" "$mount_point"; then
-            log_message "Successfully mounted $partition to $mount_point"
-            return 0
-        else
-            handle_error "Failed to mount $partition to $mount_point"
-        fi
-    fi
+    umount -l "$2" 2>/dev/null || true
+    mkdir -p "$2"
+    if mount "$1" -o "$3" "$2"; then log_message "Mounted $1 to $2"; else handle_error "Failed to mount $1"; fi
 }
-
-# Function to safely unmount
 safe_unmount() {
-    local mount_point="$1"
-    local description="$2"
-    
-    log_message "Unmounting $description: $mount_point"
-    if umount "$mount_point" 2>/dev/null; then
-        log_message "Successfully unmounted $mount_point"
-    else
-        log_message "Warning: Could not unmount $mount_point (may not be mounted)"
-    fi
+    if umount "$1"; then log_message "Unmounted $1"; else log_message "Warning: Could not unmount $1"; fi
 }
-
-# Function to execute chroot command with error handling
 execute_chroot() {
-    local command="$1"
-    local description="$2"
-    
-    log_message "Executing in chroot: $command"
-    show_progress "$description"
-    
-    if manjaro-chroot /mnt $command; then
-        log_message "Successfully executed: $command"
-        return 0
-    else
-        local exit_code=$?
-        log_message "Failed to execute: $command (exit code: $exit_code)"
-        return $exit_code
-    fi
+    log_message "Chroot: $2"
+    show_progress "$2"
+    if ! manjaro-chroot /mnt $1; then handle_error "Failed: $2"; fi
 }
+#</editor-fold>
 
-# Function to validate disk device
-validate_disk() {
-    local disk="$1"
-    
-    if [ ! -b "/dev/$disk" ]; then
-        handle_error "Disk device does not exist: /dev/$disk"
-    fi
-    
-    # Check if disk is not a partition
-    if [[ "$disk" =~ [0-9]+$ ]]; then
-        log_message "Warning: $disk appears to be a partition, not a disk"
-    fi
-}
+# Main script
+log_message "Starting Legacy GRUB restore script"
 
-# Main script starts here
-log_message "Starting Legacy/BIOS GRUB restore script"
+# Read config
+DISK_SELECTED=$(cat /tmp/grub-disks-selected)
+SELECTED_PARTITION=$(awk -F: '{ print $1}' /tmp/os-prober-selected)
+PARTITION_FORMAT=$(awk -F: '{ print $5 }' /tmp/os-prober-selected)
+RESTORE_MODE=$(cat /tmp/grub-restore-apply-mode)
 
-# Validate environment
-validate_commands
-
-# Read configuration from temporary files
-if [ ! -f /tmp/grub-disks-selected ]; then
-    handle_error "Disk selection file not found"
-fi
-
-if [ ! -f /tmp/os-prober-selected ]; then
-    handle_error "OS selection file not found"
-fi
-
-if [ ! -f /tmp/grub-restore-apply-mode ]; then
-    handle_error "Restore mode file not found"
-fi
-
-# Read variables
-DISK_SELECTED="$(cat /tmp/grub-disks-selected)"
-SELECTED_PARTITION="$(awk -F: '{ print $1}' /tmp/os-prober-selected)"
-SELECTED_OS="$(awk -F: '{ print $2 " - " $3 }' /tmp/os-prober-selected)"
-PARTITION_FORMAT="$(awk -F: '{ print $5 }' /tmp/os-prober-selected)"
-UUID_PARTITION="$(awk -F: '{ print $6 }' /tmp/os-prober-selected | sed 's|UUID=||g')"
-RESTORE_MODE="$(cat /tmp/grub-restore-apply-mode)"
-
-# Validate variables
-if [ -z "$DISK_SELECTED" ]; then
-    handle_error "Target disk not specified"
-fi
-
-if [ -z "$SELECTED_PARTITION" ]; then
-    handle_error "Target partition not specified"
-fi
-
-if [ -z "$RESTORE_MODE" ]; then
-    handle_error "Restore mode not specified"
-fi
-
-# Validate disk and partition
-validate_disk "$DISK_SELECTED"
-
-if [ ! -b "$SELECTED_PARTITION" ]; then
-    handle_error "Target partition does not exist: $SELECTED_PARTITION"
-fi
-
-# Log configuration
-log_message "Configuration:"
-log_message "  Target Disk: /dev/$DISK_SELECTED"
-log_message "  Target Partition: $SELECTED_PARTITION"
-log_message "  Selected OS: $SELECTED_OS"
-log_message "  Partition Format: $PARTITION_FORMAT"
-log_message "  UUID: $UUID_PARTITION"
-log_message "  Restore Mode: $RESTORE_MODE"
-
-# Unmount existing mounts
+# Mount
 show_progress "Preparing mount points..."
-safe_unmount "$SELECTED_PARTITION" "target partition"
-safe_unmount "/mnt" "mount directory"
+mount_opts=""
+[ "$PARTITION_FORMAT" = "btrfs" ] && mount_opts="subvol=@"
+safe_mount "$SELECTED_PARTITION" "/mnt" "$mount_opts"
 
-# Mount the target partition
-show_progress "Mounting target partition..."
-if [ "$PARTITION_FORMAT" = "btrfs" ]; then
-    safe_mount "$SELECTED_PARTITION" "/mnt" "subvol=@"
-else
-    safe_mount "$SELECTED_PARTITION" "/mnt"
-fi
-
-# Execute restore based on mode
+# Execute
 case "$RESTORE_MODE" in
     "1")
-        log_message "Executing Simple Restore (Mode 1)"
-        show_progress "Installing GRUB to MBR..."
-        
-        if grub-install --root-directory=/mnt "/dev/$DISK_SELECTED"; then
-            log_message "GRUB installation to MBR completed successfully"
-        else
-            handle_error "GRUB installation to MBR failed"
-        fi
+        log_message "Executing Simple Restore"
+        if ! grub-install --root-directory=/mnt "/dev/$DISK_SELECTED"; then handle_error "GRUB installation to MBR failed"; fi
         ;;
-        
     "2")
-        log_message "Executing Intermediate Restore (Mode 2)"
-        
-        show_progress "Removing package lock..."
+        log_message "Executing Intermediate Restore"
         execute_chroot "rm -f /var/lib/pacman/db.lck" "Removing package lock"
-        
-        show_progress "Updating GRUB package..."
-        if ! execute_chroot "pacman --noconfirm -Sy grub" "Updating GRUB package"; then
-            log_message "Warning: GRUB package update failed, continuing..."
-        fi
-        
-        show_progress "Installing GRUB..."
-        if ! execute_chroot "grub-install --force --target=i386-pc --recheck --boot-directory=/boot /dev/$DISK_SELECTED" "Installing GRUB"; then
-            handle_error "GRUB installation failed"
-        fi
-        
-        show_progress "Regenerating initramfs..."
-        if ! execute_chroot "mkinitcpio -P" "Regenerating initramfs"; then
-            log_message "Warning: initramfs regeneration failed, continuing..."
-        fi
-        
-        show_progress "Generating GRUB configuration..."
-        if ! execute_chroot "grub-mkconfig -o /boot/grub/grub.cfg" "Generating GRUB configuration"; then
-            handle_error "GRUB configuration generation failed"
-        fi
+        execute_chroot "pacman --noconfirm -Sy grub" "Updating GRUB package"
+        execute_chroot "grub-install --force --target=i386-pc --recheck --boot-directory=/boot /dev/$DISK_SELECTED" "Installing GRUB"
+        execute_chroot "mkinitcpio -P" "Regenerating initramfs"
+        execute_chroot "grub-mkconfig -o /boot/grub/grub.cfg" "Generating GRUB configuration"
         ;;
-        
     "3")
-        log_message "Executing Complete Restore (Mode 3)"
-        
-        show_progress "Removing package lock..."
+        log_message "Executing Complete Restore"
         execute_chroot "rm -f /var/lib/pacman/db.lck" "Removing package lock"
-        
-        show_progress "Updating package database..."
-        if ! execute_chroot "pamac update --force-refresh --no-confirm" "Updating package database"; then
-            log_message "Warning: Package database update failed, trying alternative method..."
-            execute_chroot "pacman --noconfirm -Sy" "Updating package database (alternative)"
-        fi
-        
-        show_progress "Installing/updating core packages..."
-        if ! execute_chroot "pamac install linux grub --no-confirm" "Installing core packages"; then
-            log_message "Warning: pamac install failed, trying pacman..."
-            execute_chroot "pacman --noconfirm -S grub" "Installing GRUB via pacman"
-            execute_chroot "pacman --noconfirm -S linux" "Installing Linux kernel via pacman"
-        fi
-        
-        show_progress "Performing full system update..."
-        execute_chroot "pacman --noconfirm -Syyuu grub" "Updating GRUB"
-        execute_chroot "pacman --noconfirm -Syyuu linux" "Updating Linux kernel"
-        
-        show_progress "Installing GRUB..."
-        if ! execute_chroot "grub-install --force --target=i386-pc --recheck --boot-directory=/boot /dev/$DISK_SELECTED" "Installing GRUB"; then
-            handle_error "GRUB installation failed"
-        fi
-        
-        show_progress "Regenerating initramfs..."
-        if ! execute_chroot "mkinitcpio -P" "Regenerating initramfs"; then
-            log_message "Warning: initramfs regeneration failed, continuing..."
-        fi
-        
-        show_progress "Generating GRUB configuration..."
-        if ! execute_chroot "grub-mkconfig -o /boot/grub/grub.cfg" "Generating GRUB configuration"; then
-            handle_error "GRUB configuration generation failed"
-        fi
+        execute_chroot "pacman --noconfirm -Syyu" "Updating system"
+        execute_chroot "pacman --noconfirm -S grub linux" "Installing core packages"
+        execute_chroot "grub-install --force --target=i386-pc --recheck --boot-directory=/boot /dev/$DISK_SELECTED" "Installing GRUB"
+        execute_chroot "mkinitcpio -P" "Regenerating initramfs"
+        execute_chroot "grub-mkconfig -o /boot/grub/grub.cfg" "Generating GRUB configuration"
         ;;
-        
-    "4")
-        log_message "Opening Interactive Terminal (Mode 4)"
-        show_progress "Starting interactive shell..."
-        execute_chroot "bash" "Interactive shell"
-        ;;
-        
-    "5")
-        log_message "Opening Control Center (Mode 5)"
-        show_progress "Starting control center..."
-        
-        # Detect session type
-        SESSION_TYPE="${XDG_SESSION_TYPE:-x11}"
-        log_message "Session type: $SESSION_TYPE"
-        
-        if [ "$SESSION_TYPE" = "wayland" ]; then
-            log_message "Running in Wayland session"
-            
-            # Mount the user's runtime directory to make sockets available in chroot
-            mount --bind /run/user/1000 /mnt/run/user/1000 2>/dev/null || true
-            
-            # For XWayland fallback, we might need X11 authority.
-            # Copy it if it exists, but don't fail if it doesn't.
-            CHROOT_XAUTH_FILE="/tmp/.docker.xauth"
-            if [ -n "$XAUTHORITY" ] && [ -f "$XAUTHORITY" ]; then
-                cp "$XAUTHORITY" "/mnt$CHROOT_XAUTH_FILE"
-            fi
-
-            # Execute with all potentially necessary environment variables for Wayland and XWayland fallback
-            execute_chroot "env DISPLAY=$DISPLAY WAYLAND_DISPLAY=$WAYLAND_DISPLAY XDG_RUNTIME_DIR=/run/user/1000 DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION_BUS_ADDRESS XAUTHORITY=$CHROOT_XAUTH_FILE bigcontrolcenter" "Control center"
-            
-            # Cleanup
-            rm "/mnt$CHROOT_XAUTH_FILE" 2>/dev/null || true
-            umount /mnt/run/user/1000 2>/dev/null || true
-            
-        else
-            log_message "Running in X11 session"
-            
-            # For X11, we need both Xauthority and D-Bus access for modern GTK apps
-            if [ -n "$XAUTHORITY" ] && [ -f "$XAUTHORITY" ]; then
-                # 1. Mount the user runtime dir to make D-Bus socket available
-                mount --bind /run/user/1000 /mnt/run/user/1000 2>/dev/null || true
-
-                # 2. Copy the Xauthority file into the chroot
-                CHROOT_XAUTH_FILE="/tmp/.docker.xauth"
-                cp "$XAUTHORITY" "/mnt$CHROOT_XAUTH_FILE"
-                
-                # 3. Execute with all necessary environment variables
-                execute_chroot "env DISPLAY=$DISPLAY XAUTHORITY=$CHROOT_XAUTH_FILE DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION_BUS_ADDRESS bigcontrolcenter" "Control center"
-                
-                # 4. Cleanup
-                rm "/mnt$CHROOT_XAUTH_FILE" 2>/dev/null || true
-                umount /mnt/run/user/1000 2>/dev/null || true
-            else
-                log_message "Warning: XAUTHORITY file not found, graphical app may fail."
-                # Fallback to old method if XAUTHORITY is not set
-                xhost + 2>/dev/null || true
-                execute_chroot "env DISPLAY=$DISPLAY pamac-manager" "Package manager"
-                xhost - 2>/dev/null || true
-            fi
-        fi
-        ;;
-
-    "6")
-        log_message "Opening Package Manager (Mode 6)"
-        show_progress "Removing package lock..."
-        execute_chroot "rm -f /var/lib/pacman/db.lck" "Removing package lock"
-        
-        show_progress "Starting package manager..."
-        
-        # Detect session type
-        SESSION_TYPE="${XDG_SESSION_TYPE:-x11}"
-        log_message "Session type: $SESSION_TYPE"
-        
-        if [ "$SESSION_TYPE" = "wayland" ]; then
-            log_message "Running in Wayland session"
-            
-            # Mount the user's runtime directory to make sockets available in chroot
-            mount --bind /run/user/1000 /mnt/run/user/1000 2>/dev/null || true
-            
-            # For XWayland fallback, we might need X11 authority.
-            # Copy it if it exists, but don't fail if it doesn't.
-            CHROOT_XAUTH_FILE="/tmp/.docker.xauth"
-            if [ -n "$XAUTHORITY" ] && [ -f "$XAUTHORITY" ]; then
-                cp "$XAUTHORITY" "/mnt$CHROOT_XAUTH_FILE"
-            fi
-
-            # Execute with all potentially necessary environment variables for Wayland and XWayland fallback
-            execute_chroot "env DISPLAY=$DISPLAY WAYLAND_DISPLAY=$WAYLAND_DISPLAY XDG_RUNTIME_DIR=/run/user/1000 DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION_BUS_ADDRESS XAUTHORITY=$CHROOT_XAUTH_FILE pamac-manager" "Package manager"
-            
-            # Cleanup
-            rm "/mnt$CHROOT_XAUTH_FILE" 2>/dev/null || true
-            umount /mnt/run/user/1000 2>/dev/null || true
-            
-        else
-            log_message "Running in X11 session"
-            
-            # For X11, we need both Xauthority and D-Bus access for modern GTK apps
-            if [ -n "$XAUTHORITY" ] && [ -f "$XAUTHORITY" ]; then
-                # 1. Mount the user runtime dir to make D-Bus socket available
-                mount --bind /run/user/1000 /mnt/run/user/1000 2>/dev/null || true
-
-                # 2. Copy the Xauthority file into the chroot
-                CHROOT_XAUTH_FILE="/tmp/.docker.xauth"
-                cp "$XAUTHORITY" "/mnt$CHROOT_XAUTH_FILE"
-                
-                # 3. Execute with all necessary environment variables
-                execute_chroot "env DISPLAY=$DISPLAY XAUTHORITY=$CHROOT_XAUTH_FILE DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION_BUS_ADDRESS pamac-manager" "Package manager"
-                
-                # 4. Cleanup
-                rm "/mnt$CHROOT_XAUTH_FILE" 2>/dev/null || true
-                umount /mnt/run/user/1000 2>/dev/null || true
-            else
-                log_message "Warning: XAUTHORITY file not found, graphical app may fail."
-                # Fallback to old method if XAUTHORITY is not set
-                xhost + 2>/dev/null || true
-                execute_chroot "env DISPLAY=$DISPLAY pamac-manager" "Package manager"
-                xhost - 2>/dev/null || true
-            fi
-        fi
-        ;;
-        
     *)
-        handle_error "Invalid restore mode: $RESTORE_MODE"
+        handle_error "Invalid non-interactive mode: $RESTORE_MODE"
         ;;
 esac
 
-# Cleanup and unmount
+# Cleanup
 show_progress "Syncing filesystems..."
 sync
-sleep 2
-
 show_progress "Unmounting filesystems..."
-safe_unmount "/mnt/boot" "boot directory"
-sleep 1
-safe_unmount "/mnt" "target partition"
-sleep 1
+safe_unmount "/mnt"
 
 log_message "Legacy GRUB restore completed successfully"
 show_progress "Restore operation completed!"
-
 exit 0

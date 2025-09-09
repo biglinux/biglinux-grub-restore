@@ -36,7 +36,7 @@ done
 log_message "Running os-prober to detect Linux systems..."
 
 # Clean up any existing temporary files to avoid permission issues
-sudo rm -f /tmp/os-prober /tmp/efi-partitions /tmp/grub-disks
+rm -f /tmp/os-prober /tmp/efi-partitions /tmp/grub-disks
 
 # Save the list of Linux partitions to /tmp/os-prober
 # Exclude partitions labeled "timeshift" and "subvol=@/"
@@ -47,7 +47,7 @@ log_message "Checking for additional btrfs partitions..."
 for i in $(blkid | grep -e 'TYPE="btrfs"' | cut -f1 -d:)
 do
     # Check if the partition is already in the /tmp/os-prober
-    if [ "$(grep "$i" /tmp/os-prober 2>/dev/null)" = "" ]; then
+    if ! grep -q "$i" /tmp/os-prober 2>/dev/null; then
         # Try to get more info about the btrfs partition
         label=$(blkid -s LABEL -o value "$i" 2>/dev/null)
         if [ -n "$label" ] && [ "$label" != "timeshift-btrfs" ]; then
@@ -76,7 +76,7 @@ mkdir -p /boot/efi
 DEVICE_LIVE_BOOT_TMP="$(readlink -f "$(df -h /run/miso/bootmnt/ 2>/dev/null | awk '{ print $1 }' | grep '/dev/')" 2>/dev/null | sed 's|/dev/||g')"
 
 if [ -n "$DEVICE_LIVE_BOOT_TMP" ]; then
-    if [ "$(echo "$DEVICE_LIVE_BOOT_TMP" | grep dm)" != "" ]; then
+    if [[ "$DEVICE_LIVE_BOOT_TMP" == dm-* ]]; then
         DEVICE_LIVE_BOOT="$(ls /sys/block/${DEVICE_LIVE_BOOT_TMP}/slaves 2>/dev/null | sed 's|[0-9]||g')"
     else
         DEVICE_LIVE_BOOT="$DEVICE_LIVE_BOOT_TMP"
@@ -120,33 +120,28 @@ log_message "Starting disk detection..."
 rm -f /tmp/grub-disks
 
 # Get disk information like model and label type
-for i in $(LANG=C lsblk 2>/dev/null | grep disk | grep -v zram | awk '{ print $1 ":" $4}' | grep -v "$DEVICE_LIVE_BOOT")
+for i in $(LANG=C lsblk -dno NAME,SIZE,MODEL,PTTYPE | grep -v zram | grep -v "$DEVICE_LIVE_BOOT")
 do
-    disk_device="${i%:*}"
-    disk_size="${i#*:}"
+    read -r disk_device disk_size disk_model disk_label_type <<< "$i"
     
     if [ -b "/dev/$disk_device" ]; then
         log_message "Processing disk: /dev/$disk_device"
         
-        # Get disk model
-        DISKNAME="$(LANG=C LANGUAGE=C fdisk -l /dev/${disk_device} 2>/dev/null | grep -e "Disk model:" | sed 's|Disk model: ||g' | sed -e 's/  */_/g;s|_$||g')"
-        if [ -z "$DISKNAME" ] || [ "$DISKNAME" = "_" ]; then
-            # Try alternative method for disk name
-            DISKNAME="$(lsblk -dno MODEL /dev/${disk_device} 2>/dev/null | sed 's/ /_/g')"
-            if [ -z "$DISKNAME" ]; then
-                DISKNAME="Unknown_Disk"
-            fi
+        # Fallback for model if lsblk fails
+        if [ -z "$disk_model" ]; then
+            disk_model="$(cat /sys/block/$disk_device/device/model 2>/dev/null | tr -s ' ' '_')"
         fi
-        
-        # Get disk label type
-        DISKLABELTYPE="$(LANG=C LANGUAGE=C fdisk -l /dev/${disk_device} 2>/dev/null | grep -e "Disklabel type:" | sed 's|Disklabel type: ||g' | sed -e 's/  *//g;s| ||g')"
-        if [ -z "$DISKLABELTYPE" ]; then
-            DISKLABELTYPE="unknown"
+        [ -z "$disk_model" ] && disk_model="Unknown_Disk"
+
+        # Fallback for label type
+        if [ -z "$disk_label_type" ]; then
+            disk_label_type="$(blkid -s PTTYPE -o value /dev/$disk_device 2>/dev/null)"
         fi
+        [ -z "$disk_label_type" ] && disk_label_type="unknown"
         
         # Save the disk information to /tmp/grub-disks
-        echo "${disk_device} ${disk_size} ${DISKNAME} ${DISKLABELTYPE}" >> /tmp/grub-disks
-        log_message "Added disk: ${disk_device} (${disk_size}, ${DISKNAME}, ${DISKLABELTYPE})"
+        echo "${disk_device} ${disk_size} ${disk_model// /_} ${disk_label_type}" >> /tmp/grub-disks
+        log_message "Added disk: ${disk_device} (${disk_size}, ${disk_model}, ${disk_label_type})"
     fi
 done
 
@@ -154,18 +149,6 @@ done
 touch /tmp/grub-disks
 
 log_message "Found $(wc -l < /tmp/grub-disks) disk(s)"
-
-# Summary
-log_message "Detection completed:"
-log_message "- Linux systems: $(wc -l < /tmp/os-prober)"
-log_message "- EFI partitions: $(wc -l < /tmp/efi-partitions)" 
-log_message "- Available disks: $(wc -l < /tmp/grub-disks)"
-
-# Determine boot mode
-if [ -d /sys/firmware/efi ]; then
-    log_message "Current boot mode: EFI"
-else
-    log_message "Current boot mode: Legacy/BIOS"
-fi
+log_message "Detection completed."
 
 exit 0
