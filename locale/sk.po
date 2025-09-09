@@ -38,29 +38,6 @@ msgstr "Ukončiť"
 msgid "GRUB Restore Tool"
 msgstr "Nástroj na obnovenie GRUB"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 99
-#: NEEDS WORK
-msgid ""
-"This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed on the HD or "
-"SSD."
-msgstr ""
-"Tento nástroj by sa mal používať v REŽIME ŽIVÉHO SYSTÉMU na obnovenie BOOT-u BigLinux "
-"nainštalovaného na HD alebo SSD."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 100
-#: NEEDS WORK
-msgid ""
-"If the installed system is booting correctly, there are no boot problems, so it's better not to "
-"proceed with this tool."
-msgstr ""
-"Ak nainštalovaný systém správne bootuje, nie sú žiadne problémy s bootovaním, takže je lepšie s "
-"týmto nástrojom nepokračovať."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 101
-#: NEEDS WORK
-msgid "It may also work with other Linux distributions."
-msgstr "Môže to fungovať aj s inými distribúciami Linuxu."
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
 msgstr "Začiatok detekcie"
@@ -317,35 +294,10 @@ msgstr "Žiadne systémy nenájdené"
 msgid "No Linux installations could be detected on your drives."
 msgstr "Na vašich diskoch neboli zistené žiadne inštalácie Linuxu."
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
-#: NEEDS WORK
-msgid "Partition:"
-msgstr "Partícia:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
-#: NEEDS WORK
-msgid "FS:"
-msgstr "FS:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
-#: NEEDS WORK
-msgid "UUID:"
-msgstr "UUID:"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
 msgid "EFI System Partition"
 msgstr "EFI systémová partícia"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 392
-#: NEEDS WORK
-msgid "Model:"
-msgstr "Model:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 392
-#: NEEDS WORK
-msgid "Partition Table:"
-msgstr "Tabuľka oddielov:"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 450
 msgid "Live Boot Mode"
@@ -388,7 +340,6 @@ msgstr ""
 "možnosti môžu zlyhať, ak je váš počítač offline."
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 475
-#: NEEDS WORK
 msgid "OK"
 msgstr "OK"
 # 

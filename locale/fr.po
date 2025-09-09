@@ -38,29 +38,6 @@ msgstr "Quitter"
 msgid "GRUB Restore Tool"
 msgstr "Outil de restauration GRUB"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 99
-#: NEEDS WORK
-msgid ""
-"This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed on the HD or "
-"SSD."
-msgstr ""
-"Cet outil doit être utilisé en MODE LIVE pour restaurer le BOOT de BigLinux installé sur le HD ou "
-"le SSD."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 100
-#: NEEDS WORK
-msgid ""
-"If the installed system is booting correctly, there are no boot problems, so it's better not to "
-"proceed with this tool."
-msgstr ""
-"Si le système installé démarre correctement, il n'y a pas de problèmes de démarrage, il vaut donc "
-"mieux ne pas continuer avec cet outil."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 101
-#: NEEDS WORK
-msgid "It may also work with other Linux distributions."
-msgstr "Il peut également fonctionner avec d'autres distributions Linux."
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
 msgstr "Détection de démarrage"
@@ -318,35 +295,10 @@ msgstr "Aucun système trouvé"
 msgid "No Linux installations could be detected on your drives."
 msgstr "Aucune installation de Linux n'a pu être détectée sur vos disques."
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
-#: NEEDS WORK
-msgid "Partition:"
-msgstr "Partition :"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
-#: NEEDS WORK
-msgid "FS:"
-msgstr "FS:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
-#: NEEDS WORK
-msgid "UUID:"
-msgstr "UUID :"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
 msgid "EFI System Partition"
 msgstr "Partition système EFI"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 392
-#: NEEDS WORK
-msgid "Model:"
-msgstr "Modèle :"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 392
-#: NEEDS WORK
-msgid "Partition Table:"
-msgstr "Table de partition :"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 450
 msgid "Live Boot Mode"
@@ -389,7 +341,6 @@ msgstr ""
 "télécharger des packages. Ces options peuvent échouer si votre ordinateur est hors ligne."
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 475
-#: NEEDS WORK
 msgid "OK"
 msgstr "D'accord"
 # 

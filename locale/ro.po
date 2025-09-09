@@ -38,29 +38,6 @@ msgstr "Ieșire"
 msgid "GRUB Restore Tool"
 msgstr "Instrument de restaurare GRUB"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 99
-#: NEEDS WORK
-msgid ""
-"This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed on the HD or "
-"SSD."
-msgstr ""
-"Acest instrument ar trebui să fie folosit în MOD LIVE pentru a restaura BOOT-ul BigLinux instalat "
-"pe HD sau SSD."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 100
-#: NEEDS WORK
-msgid ""
-"If the installed system is booting correctly, there are no boot problems, so it's better not to "
-"proceed with this tool."
-msgstr ""
-"Dacă sistemul instalat pornește corect, nu există probleme de boot, așa că este mai bine să nu "
-"continuați cu acest instrument."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 101
-#: NEEDS WORK
-msgid "It may also work with other Linux distributions."
-msgstr "Poate funcționa și cu alte distribuții Linux."
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
 msgstr "Detectare început"
@@ -317,35 +294,10 @@ msgstr "Niciun sistem găsit"
 msgid "No Linux installations could be detected on your drives."
 msgstr "Nu au fost detectate instalări Linux pe unitățile dvs."
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
-#: NEEDS WORK
-msgid "Partition:"
-msgstr "Partiție:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
-#: NEEDS WORK
-msgid "FS:"
-msgstr "FS:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
-#: NEEDS WORK
-msgid "UUID:"
-msgstr "UUID:"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
 msgid "EFI System Partition"
 msgstr "Partiție de sistem EFI"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 392
-#: NEEDS WORK
-msgid "Model:"
-msgstr "Model:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 392
-#: NEEDS WORK
-msgid "Partition Table:"
-msgstr "Tabel de partiții:"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 450
 msgid "Live Boot Mode"
@@ -388,7 +340,6 @@ msgstr ""
 "pachete. Aceste opțiuni pot eșua dacă computerul tău este offline."
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 475
-#: NEEDS WORK
 msgid "OK"
 msgstr "OK"
 # 

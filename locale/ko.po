@@ -38,25 +38,6 @@ msgstr "종료"
 msgid "GRUB Restore Tool"
 msgstr "GRUB 복구 도구"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 99
-#: NEEDS WORK
-msgid ""
-"This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed on the HD or "
-"SSD."
-msgstr "이 도구는 HD 또는 SSD에 설치된 BigLinux의 부트 복원을 위해 라이브 모드에서 사용해야 합니다."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 100
-#: NEEDS WORK
-msgid ""
-"If the installed system is booting correctly, there are no boot problems, so it's better not to "
-"proceed with this tool."
-msgstr "설치된 시스템이 정상적으로 부팅되고 있다면 부팅 문제가 없으므로 이 도구를 진행하지 않는 것이 좋습니다."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 101
-#: NEEDS WORK
-msgid "It may also work with other Linux distributions."
-msgstr "다른 리눅스 배포판에서도 작동할 수 있습니다."
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
 msgstr "탐지 시작"
@@ -310,35 +291,10 @@ msgstr "시스템을 찾을 수 없습니다."
 msgid "No Linux installations could be detected on your drives."
 msgstr "드라이브에서 감지된 Linux 설치가 없습니다."
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
-#: NEEDS WORK
-msgid "Partition:"
-msgstr "파티션:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
-#: NEEDS WORK
-msgid "FS:"
-msgstr "FS:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
-#: NEEDS WORK
-msgid "UUID:"
-msgstr "UUID:"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
 msgid "EFI System Partition"
 msgstr "EFI 시스템 파티션"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 392
-#: NEEDS WORK
-msgid "Model:"
-msgstr "모델:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 392
-#: NEEDS WORK
-msgid "Partition Table:"
-msgstr "파티션 테이블:"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 450
 msgid "Live Boot Mode"

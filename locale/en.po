@@ -17,91 +17,68 @@ msgstr ""
 #
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 #
-# File: usr/share/biglinux/grub-restore/gui/application.py, line: 50
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 28
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 50
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 28
 msgid "BigLinux GRUB Restore"
 msgstr "BigLinux GRUB Restore"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/application.py, line: 58
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 58
 msgid "A tool to restore the GRUB bootloader."
 msgstr "A tool to restore the GRUB bootloader."
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 73
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 73
 msgid "About"
 msgstr "About"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 74
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 74
 msgid "Quit"
 msgstr "Quit"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 92
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 92
 msgid "GRUB Restore Tool"
 msgstr "GRUB Restore Tool"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 99
-msgid ""
-"This tool should be used in LIVE MODE to restore the BOOT of the BigLinux "
-"installed on the HD or SSD."
-msgstr ""
-"This tool should be used in LIVE MODE to restore the BOOT of the BigLinux "
-"installed on the HD or SSD."
-
-#
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 100
-msgid ""
-"If the installed system is booting correctly, there are no boot problems, so "
-"it's better not to proceed with this tool."
-msgstr ""
-"If the installed system is booting correctly, there are no boot problems, so "
-"it's better not to proceed with this tool."
-
-#
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 101
-msgid "It may also work with other Linux distributions."
-msgstr "It may also work with other Linux distributions."
-
-#
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 105
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 105
 msgid "Start Detection"
 msgstr "Start Detection"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 114
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 114
 msgid "Detecting Systems"
 msgstr "Detecting Systems"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 115
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 115
 msgid "Scanning your drives for Linux installations..."
 msgstr "Scanning your drives for Linux installations..."
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 133
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 133
 msgid "1. Select Linux System to Restore"
 msgstr "1. Select Linux System to Restore"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 136
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 136
 msgid "2. Select Target EFI Partition"
 msgstr "2. Select Target EFI Partition"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 137
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 137
 msgid "2. Select Target Disk (MBR)"
 msgstr "2. Select Target Disk (MBR)"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 143
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 143
 msgid "Continue"
 msgstr "Continue"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 175
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 175
 msgid ""
 "If you are unsure, try the 'Simple Restore' first. If the problem persists "
 "after restarting, then try the other options."
@@ -110,182 +87,182 @@ msgstr ""
 "after restarting, then try the other options."
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 179
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 179
 msgid "Restore Methods"
 msgstr "Restore Methods"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 180
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 180
 msgid "Interactive Tools"
 msgstr "Interactive Tools"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 181
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 181
 msgid "Configuration Summary"
 msgstr "Configuration Summary"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 189
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 189
 msgid "Simple Restore"
 msgstr "Simple Restore"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 189
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 189
 msgid "Rewrites GRUB to the boot sector."
 msgstr "Rewrites GRUB to the boot sector."
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 190
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 190
 msgid "Intermediate Restore"
 msgstr "Intermediate Restore"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 190
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 190
 msgid "Reinstalls GRUB package and regenerates configs."
 msgstr "Reinstalls GRUB package and regenerates configs."
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 191
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 191
 msgid "Complete Restore"
 msgstr "Complete Restore"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 191
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 191
 msgid "Updates system, kernel, and performs intermediate restore."
 msgstr "Updates system, kernel, and performs intermediate restore."
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 192
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 192
 msgid "Interactive Terminal"
 msgstr "Interactive Terminal"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 192
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 192
 msgid "Opens a terminal inside the selected system."
 msgstr "Opens a terminal inside the selected system."
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 193
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 193
 msgid "Control Center"
 msgstr "Control Center"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 193
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 193
 msgid "Opens the control center inside the selected system."
 msgstr "Opens the control center inside the selected system."
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 194
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 194
 msgid "Package Manager"
 msgstr "Package Manager"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 194
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 194
 msgid "Opens the package manager inside the selected system."
 msgstr "Opens the package manager inside the selected system."
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 202
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 202
 msgid "Execute"
 msgstr "Execute"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 231
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 231
 msgid "VTE terminal widget not available."
 msgstr "VTE terminal widget not available."
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 235
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 235
 msgid "Close Terminal"
 msgstr "Close Terminal"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 245
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 273
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 578
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 245
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 273
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 578
 msgid "Go Back"
 msgstr "Go Back"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 247
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 247
 msgid "Close"
 msgstr "Close"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 259
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 259
 msgid "Operation Failed!"
 msgstr "Operation Failed!"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 260
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 260
 msgid "Simple Restore Completed"
 msgstr "Simple Restore Completed"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 260
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 260
 msgid "Intermediate Restore Completed"
 msgstr "Intermediate Restore Completed"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 260
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 260
 msgid "Complete Restore Completed"
 msgstr "Complete Restore Completed"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 262
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 262
 msgid ""
 "The GRUB bootloader has been rewritten. You can now restart your computer."
 msgstr ""
 "The GRUB bootloader has been rewritten. You can now restart your computer."
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 263
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 263
 msgid "The GRUB package was reinstalled and configurations were regenerated."
 msgstr "The GRUB package was reinstalled and configurations were regenerated."
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 264
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 264
 msgid "The system, kernel, and GRUB have been updated and restored."
 msgstr "The system, kernel, and GRUB have been updated and restored."
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 266
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 266
 msgid "Operation Completed Successfully!"
 msgstr "Operation Completed Successfully!"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 266
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 266
 msgid "You can now close this tool and restart your computer."
 msgstr "You can now close this tool and restart your computer."
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 276
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 276
 msgid "Proceed Anyway"
 msgstr "Proceed Anyway"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 287
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 287
 msgid "Copy"
 msgstr "Copy"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 288
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 288
 msgid "Paste"
 msgstr "Paste"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 317
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 317
 msgid "Detection Failed"
 msgstr "Detection Failed"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 326
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 331
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 326
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 331
 msgid "Potential Boot Mode Mismatch"
 msgstr "Potential Boot Mode Mismatch"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 327
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 327
 msgid ""
 "The boot in live mode is using EFI mode, but no EFI partition was found on "
 "this computer, most likely the Grub restore will not work.\n"
@@ -304,7 +281,7 @@ msgstr ""
 "Do you want to try even with a low probability of success?"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 332
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 332
 msgid ""
 "The boot in live mode is using Legacy mode, also called BIOS, but at least "
 "one EFI partition was found on this computer, most likely the Grub restore "
@@ -323,87 +300,62 @@ msgstr ""
 "Do you want to try even with a low probability of success?"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 350
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 350
 msgid "No Systems Found"
 msgstr "No Systems Found"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 350
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 350
 msgid "No Linux installations could be detected on your drives."
 msgstr "No Linux installations could be detected on your drives."
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
-msgid "Partition:"
-msgstr "Partition:"
-
-#
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
-msgid "FS:"
-msgstr "FS:"
-
-#
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
-msgid "UUID:"
-msgstr "UUID:"
-
-#
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 374
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 374
 msgid "EFI System Partition"
 msgstr "EFI System Partition"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 392
-msgid "Model:"
-msgstr "Model:"
-
-#
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 392
-msgid "Partition Table:"
-msgstr "Partition Table:"
-
-#
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 450
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 450
 msgid "Live Boot Mode"
 msgstr "Live Boot Mode"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 451
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "Selected System"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 452
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 452
 msgid "Selected Partition"
 msgstr "Selected Partition"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 453
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 453
 msgid "Partition UUID"
 msgstr "Partition UUID"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 457
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 457
 msgid "Target (EFI Restore)"
 msgstr "Target (EFI Restore)"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 460
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 460
 msgid "Target (Legacy Restore)"
 msgstr "Target (Legacy Restore)"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 461
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
 msgid "Disk Details"
 msgstr "Disk Details"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 472
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 472
 msgid "No Internet Connection Detected"
 msgstr "No Internet Connection Detected"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 473
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 473
 msgid ""
 "Intermediate and Complete restore options require an internet connection to "
 "download packages. These options may fail if your computer is offline."
@@ -412,26 +364,26 @@ msgstr ""
 "download packages. These options may fail if your computer is offline."
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 475
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 475
 msgid "OK"
 msgstr "OK"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 487
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 487
 msgid "Restore in Progress..."
 msgstr "Restore in Progress..."
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 490
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 490
 msgid "Preparing Interactive Session..."
 msgstr "Preparing Interactive Session..."
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 531
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 531
 msgid "Interactive Session Active"
 msgstr "Interactive Session Active"
 
 #
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 543
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 543
 msgid "Cleaning up session..."
 msgstr "Cleaning up session..."

@@ -38,25 +38,6 @@ msgstr "צא"
 msgid "GRUB Restore Tool"
 msgstr "כלי שחזור GRUB"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 99
-#: NEEDS WORK
-msgid ""
-"This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed on the HD or "
-"SSD."
-msgstr "כלי זה צריך לשמש במצב חי כדי לשחזר את האתחול של BigLinux המותקן על ה-HD או ה-SSD."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 100
-#: NEEDS WORK
-msgid ""
-"If the installed system is booting correctly, there are no boot problems, so it's better not to "
-"proceed with this tool."
-msgstr "אם המערכת המותקנת מתחילה כראוי, אין בעיות בהפעלה, לכן עדיף לא להמשיך עם הכלי הזה."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 101
-#: NEEDS WORK
-msgid "It may also work with other Linux distributions."
-msgstr "זה עשוי לעבוד גם עם הפצות לינוקס אחרות."
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
 msgstr "התחל גילוי"
@@ -310,35 +291,10 @@ msgstr "לא נמצאו מערכות"
 msgid "No Linux installations could be detected on your drives."
 msgstr "לא נמצאו התקנות לינוקס בכוננים שלך."
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
-#: NEEDS WORK
-msgid "Partition:"
-msgstr "מחיצה:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
-#: NEEDS WORK
-msgid "FS:"
-msgstr "FS:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
-#: NEEDS WORK
-msgid "UUID:"
-msgstr "מזהה ייחודי:"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
 msgid "EFI System Partition"
 msgstr "מחיצת מערכת EFI"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 392
-#: NEEDS WORK
-msgid "Model:"
-msgstr "מודל:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 392
-#: NEEDS WORK
-msgid "Partition Table:"
-msgstr "טבלת מחיצות:"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 450
 msgid "Live Boot Mode"
@@ -381,7 +337,6 @@ msgstr ""
 "המחשב שלך לא מחובר לאינטרנט."
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 475
-#: NEEDS WORK
 msgid "OK"
 msgstr "אוקי"
 # 

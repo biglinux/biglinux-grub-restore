@@ -38,29 +38,6 @@ msgstr "Изход"
 msgid "GRUB Restore Tool"
 msgstr "Инструмент за възстановяване на GRUB"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 99
-#: NEEDS WORK
-msgid ""
-"This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed on the HD or "
-"SSD."
-msgstr ""
-"Този инструмент трябва да се използва в ЖИВА РЕЖИМ, за да възстанови ЗАРЕЖДАНЕТО на BigLinux, "
-"инсталиран на HD или SSD."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 100
-#: NEEDS WORK
-msgid ""
-"If the installed system is booting correctly, there are no boot problems, so it's better not to "
-"proceed with this tool."
-msgstr ""
-"Ако инсталираната система се зарежда правилно, няма проблеми с зареждането, така че е по-добре да "
-"не продължавате с този инструмент."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 101
-#: NEEDS WORK
-msgid "It may also work with other Linux distributions."
-msgstr "Може да работи и с други дистрибуции на Linux."
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
 msgstr "Започване на откриване"
@@ -317,35 +294,10 @@ msgstr "Няма намерени системи"
 msgid "No Linux installations could be detected on your drives."
 msgstr "Не бяха открити инсталации на Linux на вашите дискове."
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
-#: NEEDS WORK
-msgid "Partition:"
-msgstr "Разделение:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
-#: NEEDS WORK
-msgid "FS:"
-msgstr "FS:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
-#: NEEDS WORK
-msgid "UUID:"
-msgstr "UUID:"
-# 
 # File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
 # File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
 msgid "EFI System Partition"
 msgstr "EFI системен дял"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 392
-#: NEEDS WORK
-msgid "Model:"
-msgstr "Модел:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 392
-#: NEEDS WORK
-msgid "Partition Table:"
-msgstr "Таблица на дяловете:"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 450
 msgid "Live Boot Mode"
@@ -388,7 +340,6 @@ msgstr ""
 "опции могат да се провалят, ако компютърът ви е офлайн."
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 475
-#: NEEDS WORK
 msgid "OK"
 msgstr "Добре"
 # 

@@ -38,29 +38,6 @@ msgstr "Afslut"
 msgid "GRUB Restore Tool"
 msgstr "GRUB Gendannelsesværktøj"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 99
-#: NEEDS WORK
-msgid ""
-"This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed on the HD or "
-"SSD."
-msgstr ""
-"Dette værktøj skal bruges i LIVE TILSTAND for at gendanne BOOT'en af BigLinux installeret på HD "
-"eller SSD."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 100
-#: NEEDS WORK
-msgid ""
-"If the installed system is booting correctly, there are no boot problems, so it's better not to "
-"proceed with this tool."
-msgstr ""
-"Hvis det installerede system starter korrekt, er der ingen opstartsproblemer, så det er bedre ikke "
-"at fortsætte med dette værktøj."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 101
-#: NEEDS WORK
-msgid "It may also work with other Linux distributions."
-msgstr "Det kan også fungere med andre Linux-distributioner."
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
 msgstr "Start Detektion"
@@ -318,35 +295,10 @@ msgstr "Ingen systemer fundet"
 msgid "No Linux installations could be detected on your drives."
 msgstr "Ingen Linux-installationer kunne findes på dine drev."
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
-#: NEEDS WORK
-msgid "Partition:"
-msgstr "Partition:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
-#: NEEDS WORK
-msgid "FS:"
-msgstr "FS:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
-#: NEEDS WORK
-msgid "UUID:"
-msgstr "UUID:"
-# 
 # File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
 # File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
 msgid "EFI System Partition"
 msgstr "EFI-systempartition"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 392
-#: NEEDS WORK
-msgid "Model:"
-msgstr "Model:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 392
-#: NEEDS WORK
-msgid "Partition Table:"
-msgstr "Partitionstabel:"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 450
 msgid "Live Boot Mode"
@@ -389,7 +341,6 @@ msgstr ""
 "pakker. Disse muligheder kan fejle, hvis din computer er offline."
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 475
-#: NEEDS WORK
 msgid "OK"
 msgstr "OK"
 # 
