@@ -233,9 +233,25 @@ msgstr "Na tomto počítači neboli nájdené žiadne inštalácie Linuxu."
 msgid "Back"
 msgstr "Späť"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 262
+#: NEEDS WORK
+msgid "Select System to Restore"
+msgstr "Vyberte systém na obnovenie"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 256
 msgid "Detected Linux Systems"
 msgstr "Zistené systémy Linux"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 269
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 346
+#: NEEDS WORK
+msgid "Found"
+msgstr "Nájdené"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 269
+#: NEEDS WORK
+msgid "system(s)"
+msgstr "systém(y)"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 269
 msgid "Boot Configuration"
@@ -249,10 +265,23 @@ msgstr "Aktuálny režim spustenia"
 msgid "EFI Partitions Found"
 msgstr "Nájdené EFI oddiely"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 294
+#: NEEDS WORK
+msgid "partition(s)"
+msgstr "partícia(e)"
+# 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 300
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
 msgid "Continue"
 msgstr "Pokračovať"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 331
+# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 44
+#: NEEDS WORK
+msgid "Select Target Disk"
+msgstr "Vyberte cieľový disk"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 324
 msgid ""
@@ -266,9 +295,31 @@ msgstr ""
 msgid "Available Disks"
 msgstr "Dostupné disky"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 346
+#: NEEDS WORK
+msgid "disk(s)"
+msgstr "disk(y)"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 383
+#: NEEDS WORK
+msgid "Partition table"
+msgstr "Tabuľka oddielov"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 121
 msgid "Unknown model"
 msgstr "Neznámy model"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 101
+msgid "Filesystem"
+msgstr "Súborový systém"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 524
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 55
+#: NEEDS WORK
+msgid "Restore Options"
+msgstr "Možnosti obnovenia"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 380
 msgid ""
@@ -427,6 +478,15 @@ msgstr "Ovládacie centrum sa otvorí v rámci vybraného systému."
 msgid "Package manager will open inside the selected system."
 msgstr "Správca balíkov sa otvorí v rámci vybraného systému."
 # 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 777
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 225
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 394
+#: NEEDS WORK
+msgid "Restore in Progress"
+msgstr "Obnova prebieha"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 612
 msgid "Please wait while the restore operation completes..."
 msgstr "Prosím, počkajte, kým sa operácia obnovenia dokončí..."
@@ -496,10 +556,6 @@ msgstr "Partícia"
 msgid "Not selected"
 msgstr "Nie je vybrané"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 101
-msgid "Filesystem"
-msgstr "Súborový systém"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 108
 msgid "UUID"
 msgstr "UUID"
@@ -517,6 +573,11 @@ msgstr "Inštalácia Linuxu"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 139
 msgid "Not specified"
 msgstr "Nespecifikované"
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 162
+#: NEEDS WORK
+msgid "No System"
+msgstr "Žiadny systém"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 163
 msgid "No Linux installation detected"
@@ -585,6 +646,11 @@ msgstr ""
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 144
 msgid "GPT partition table detected. Make sure this is correct for Legacy boot mode."
 msgstr "Detekovaná tabuľka oddielov GPT. Uistite sa, že je to správne pre režim spúšťania Legacy."
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 220
+#: NEEDS WORK
+msgid "Select EFI Partition"
+msgstr "Vyberte oddiel EFI"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 227
 msgid ""
@@ -741,6 +807,10 @@ msgstr "Obnovenie bolo úspešne dokončené!"
 msgid "Restore failed. Please check the output above."
 msgstr "Obnovenie zlyhalo. Skontrolujte výstup vyššie."
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
+msgid "Error"
+msgstr "Chyba"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 485
 msgid "Cancel Restore?"
 msgstr "Zrušiť obnovenie?"
@@ -756,7 +826,3 @@ msgstr "Nie"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 490
 msgid "Yes, Cancel"
 msgstr "Áno, Zrušiť"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
-msgid "Error"
-msgstr "Chyba"
