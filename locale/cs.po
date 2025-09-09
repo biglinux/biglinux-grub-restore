@@ -17,140 +17,14 @@ msgstr ""
 # 
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 # 
-# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 17
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 102
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 146
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 170
-msgid "Unknown"
-msgstr "Neznámý"
-# 
-# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 85
-msgid "Unknown CPU"
-msgstr "Neznámý CPU"
-# 
-# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 98
-msgid "Unknown Memory"
-msgstr "Neznámá paměť"
-# 
-# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 120
-msgid "Live Media"
-msgstr "Živá média"
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 172
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 123
-msgid "Unknown System"
-msgstr "Neznámý systém"
-# 
-# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 207
-msgid "Simple restore - Just writes the Grub again at the beginning of the disk."
-msgstr "Jednoduché obnovení - Jen znovu zapíše Grub na začátek disku."
-# 
-# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 208
-msgid "Intermediate restore - Reinstalls the grub package, regenerates configuration, and updates initrd."
-msgstr "Mezile obnova - Znovu nainstaluje balíček grub, regeneruje konfiguraci a aktualizuje initrd."
-# 
-# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 209
-msgid "Complete restore - Performs intermediate steps, updates system, and checks LTS kernel."
-msgstr "Úplné obnovení - Provádí mezikroky, aktualizuje systém a kontroluje LTS jádro."
-# 
-# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 210
-msgid "Interactive terminal - Opens a terminal inside the selected system."
-msgstr "Interaktivní terminál - Otevře terminál uvnitř vybraného systému."
-# 
-# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 211
-msgid "Interactive control center - Opens the control center inside the selected system."
-msgstr "Interaktivní ovládací centrum - Otevírá ovládací centrum uvnitř vybraného systému."
-# 
-# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 212
-msgid "Interactive package manager - Opens pamac-manager inside the selected system."
-msgstr "Interaktivní správce balíčků - Otevře pamac-manager uvnitř vybraného systému."
-# 
-# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 214
-msgid "Unknown restore mode"
-msgstr "Neznámý režim obnovení"
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 239
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 402
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 292
-msgid "Internet connection available"
-msgstr "Dostupné internetové připojení"
-# 
-# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 245
-msgid "No internet connection detected. Options 2 and 3 require internet to work."
-msgstr "Není detekováno připojení k internetu. Možnosti 2 a 3 vyžadují internet k fungování."
-# 
-# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 266
-msgid "Permission denied. Please check if you have administrator privileges."
-msgstr "Přístup odepřen. Zkontrolujte, zda máte administrátorská práva."
-# 
-# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 267
-msgid "Required file not found. The system may be corrupted."
-msgstr "Požadovaný soubor nebyl nalezen. Systém může být poškozen."
-# 
-# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 268
-msgid "Device is busy. Please unmount any mounted partitions and try again."
-msgstr "Zařízení je zaneprázdněné. Prosím, odpojte všechny připojené oddíly a zkuste to znovu."
-# 
-# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 269
-msgid "No space left on device. Please free up some space and try again."
-msgstr "Na zařízení není dostatek místa. Uvolněte prosím nějaké místo a zkuste to znovu."
-# 
-# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 270
-msgid "Network connection failed. Please check your internet connection."
-msgstr "Selhání síťového připojení. Zkontrolujte své internetové připojení."
-# 
-# File: usr/share/biglinux/grub-restore/utils/helpers.py, line: 271
-msgid "Operation timed out. Please try again."
-msgstr "Operace vypršela. Zkuste to prosím znovu."
-# 
-# File: usr/share/biglinux/grub-restore/backend/system_interface.py, line: 129
-msgid "EFI Boot without EFI Partition"
-msgstr "EFI spuštění bez EFI oddílu"
-# 
-# File: usr/share/biglinux/grub-restore/backend/system_interface.py, line: 131
-msgid ""
-"The boot in live mode is using EFI mode, but no EFI partition was found on this computer. Most "
-"likely the Grub restore will not work.\n"
-"\n"
-"Try restarting and booting in Legacy or BIOS mode through the computer's BIOS."
-msgstr ""
-"Zavádění v živém režimu používá režim EFI, ale na tomto počítači nebyla nalezena žádná EFI "
-"partition. Je velmi pravděpodobné, že obnova Grubu nebude fungovat.\n"
-"\n"
-"Zkuste restartovat a zavést v režimu Legacy nebo BIOS prostřednictvím BIOSu počítače."
-# 
-# File: usr/share/biglinux/grub-restore/backend/system_interface.py, line: 139
-msgid "Legacy Boot with EFI Partition"
-msgstr "Zpětná kompatibilita s EFI oddílem"
-# 
-# File: usr/share/biglinux/grub-restore/backend/system_interface.py, line: 141
-msgid ""
-"The boot in live mode is using Legacy mode, also called BIOS, but at least one EFI partition was "
-"found on this computer. Most likely the Grub restore will not work.\n"
-"\n"
-"Try restarting and booting in EFI mode through the computer's BIOS."
-msgstr ""
-"Zavádění v živém režimu používá režim Legacy, také nazývaný BIOS, ale na tomto počítači byla "
-"nalezena alespoň jedna EFI oddíl. Je velmi pravděpodobné, že obnovení Grubu nebude fungovat.\n"
-"\n"
-"Zkuste restartovat a zavést v režimu EFI prostřednictvím BIOSu počítače."
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
 # File: usr/share/biglinux/grub-restore/gui/application.py, line: 59
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 18
 msgid "BigLinux GRUB Restore"
 msgstr "BigLinux GRUB Obnovení"
 # 
-# File: usr/share/biglinux/grub-restore/gui/application.py, line: 67
-msgid "Restore GRUB bootloader and repair boot issues"
-msgstr "Obnovit GRUB zaváděč a opravit problémy se zaváděním"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 58
+msgid "A tool to restore the GRUB bootloader."
+msgstr "Nástroj pro obnovení zaváděcího programu GRUB."
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 53
 msgid "About"
@@ -164,124 +38,51 @@ msgstr "Ukončit"
 msgid "GRUB Restore Tool"
 msgstr "Nástroj pro obnovení GRUB"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 86
-msgid "This tool should be used in"
-msgstr "Tento nástroj by měl být použit v"
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 86
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 265
-msgid "Mode"
-msgstr "Režim"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 86
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 93
 msgid ""
-"to restore the BOOT of the BigLinux installed on the HD or SSD.\n"
-"\n"
-"If the installed system is booting correctly, there are no boot problems, so it's better not to "
-"proceed with this tool."
+"This tool helps restore the bootloader (GRUB) for your installed Linux systems. It should be run "
+"from a live session."
 msgstr ""
-"obnovit BOOT BigLinux nainstalovaného na HD nebo SSD.\n"
-"\n"
-"Pokud nainstalovaný systém správně bootuje, nejsou žádné problémy s bootováním, takže je lepší s "
-"tímto nástrojem nepokračovat."
+"Tento nástroj pomáhá obnovit zaváděcí program (GRUB) pro vaše nainstalované systémy Linux. Měl by "
+"být spuštěn z živé relace."
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 94
-msgid "Start"
-msgstr "Start"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 94
+msgid ""
+"Warning: Only use this tool if your installed system is failing to boot. If your system starts "
+"normally, do not proceed."
+msgstr ""
+"Upozornění: Používejte tento nástroj pouze v případě, že váš nainstalovaný systém se nedaří "
+"spustit. Pokud se váš systém spouští normálně, nepokračujte."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
+msgid "Start Detection"
+msgstr "Zahájení detekce"
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 109
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 139
 msgid "Detecting Systems"
 msgstr "Detekující systémy"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 110
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 140
-msgid "Please wait while we scan your system..."
-msgstr "Prosím, čekejte, zatímco skenujeme váš systém..."
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 108
+msgid "Scanning your drives for Linux installations..."
+msgstr "Skenování vašich disků na instalace Linuxu..."
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 164
-msgid "Initializing detection..."
-msgstr "Inicializace detekce..."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 167
-msgid "Scanning for Linux systems..."
-msgstr "Skenování systémů Linux..."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 170
-msgid "Analyzing boot configuration..."
-msgstr "Analyzuji konfiguraci zavádění..."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 208
-msgid "Detection Failed"
-msgstr "Detekce selhala"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 212
-msgid "Try Again"
-msgstr "Zkusit znovu"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 226
-msgid "No Systems Found"
-msgstr "Žádné systémy nenalezeny"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 227
-msgid "No Linux installations found on this computer."
-msgstr "Na tomto počítači nebyly nalezeny žádné instalace Linuxu."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 230
-msgid "Back"
-msgstr "Zpět"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 256
-msgid "Detected Linux Systems"
-msgstr "Zjištěné systémy Linux"
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 269
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 230
-msgid "Boot Configuration"
-msgstr "Konfigurace spouštění"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 273
-msgid "Current Boot Mode"
-msgstr "Aktuální režim spouštění"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 280
-msgid "EFI Partitions Found"
-msgstr "Nalezené EFI oddíly"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 126
+msgid "1. Select Linux System to Restore"
+msgstr "1. Vyberte systém Linux k obnovení"
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 300
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
 msgid "Continue"
 msgstr "Pokračovat"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 324
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 169
 msgid ""
-"Select the disk where GRUB will be installed. The bootloader will be written to the beginning (MBR) "
-"of the selected disk."
-msgstr "Vyberte disk, na který bude GRUB nainstalován. Zavaděč bude zapsán na začátek (MBR) vybraného disku."
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 61
-msgid "Available Disks"
-msgstr "Dostupné disky"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 121
-msgid "Unknown model"
-msgstr "Neznámý model"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 380
-msgid ""
-"The restore can be done in 3 ways (Simple, Intermediate, or Complete). If in doubt, try the first "
-"option, restart the computer and see if it is resolved."
+"If you are unsure, try the 'Simple Restore' first. If the problem persists after restarting, then "
+"try the other options."
 msgstr ""
-"Obnovení lze provést třemi způsoby (Jednoduché, Střední nebo Kompletní). Pokud si nejste jisti, "
-"vyzkoušejte první možnost, restartujte počítač a zjistěte, zda je problém vyřešen."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 406
-msgid "No internet - Options 2 and 3 require internet"
-msgstr "Žádný internet - Možnosti 2 a 3 vyžadují internet"
+"Pokud si nejste jisti, nejprve vyzkoušejte 'Jednoduché obnovení'. Pokud problém přetrvává po "
+"restartování, zkuste další možnosti."
 # 
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 # 
@@ -290,6 +91,10 @@ msgstr "Žádný internet - Možnosti 2 a 3 vyžadují internet"
 msgid "Restore Methods"
 msgstr "Obnovit metody"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 175
+msgid "Interactive Tools"
+msgstr "Interaktivní nástroje"
+# 
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 419
@@ -297,24 +102,9 @@ msgstr "Obnovit metody"
 msgid "Simple Restore"
 msgstr "Jednoduché obnovení"
 # 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 420
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 119
-msgid "Just writes the Grub again at the beginning of the disk."
-msgstr "Jednoduše znovu zapíše Grub na začátek disku."
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 424
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 438
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 453
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 123
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 140
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 159
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 353
-msgid "Execute"
-msgstr "Provést"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 180
+msgid "Rewrites GRUB to the boot sector."
+msgstr "Přepisuje GRUB do spouštěcího sektoru."
 # 
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 # 
@@ -323,9 +113,9 @@ msgstr "Provést"
 msgid "Intermediate Restore"
 msgstr "Mezilehlí Obnovení"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 434
-msgid "Reinstalls the grub package, regenerates configuration, and updates initrd."
-msgstr "Znovu nainstaluje balíček grub, regeneruje konfiguraci a aktualizuje initrd."
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 181
+msgid "Reinstalls GRUB package and regenerates configs."
+msgstr "Přeinstaluje balíček GRUB a znovu vygeneruje konfigurace."
 # 
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 # 
@@ -334,16 +124,9 @@ msgstr "Znovu nainstaluje balíček grub, regeneruje konfiguraci a aktualizuje i
 msgid "Complete Restore"
 msgstr "Úplné obnovení"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 449
-msgid "Performs intermediate steps, updates system, and checks LTS kernel."
-msgstr "Provádí mezikroky, aktualizuje systém a kontroluje LTS jádro."
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 465
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 83
-msgid "Interactive Options"
-msgstr "Interaktivní možnosti"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 182
+msgid "Updates system, kernel, and performs intermediate restore."
+msgstr "Aktualizuje systém, jádro a provádí mezilehlé obnovení."
 # 
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 # 
@@ -358,17 +141,6 @@ msgstr "Interaktivní terminál"
 # File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 174
 msgid "Opens a terminal inside the selected system."
 msgstr "Otevře terminál uvnitř vybraného systému."
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 474
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 488
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 502
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 178
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 192
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 206
-msgid "Open"
-msgstr "Otevřít"
 # 
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 # 
@@ -391,74 +163,70 @@ msgstr "Otevírá ovládací centrum uvnitř vybraného systému."
 msgid "Package Manager"
 msgstr "Správce balíčků"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 635
-msgid "Opens pamac-manager inside the selected system."
-msgstr "Otevře pamac-manager uvnitř vybraného systému."
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 185
+msgid "Opens the package manager inside the selected system."
+msgstr "Otevře správce balíčků uvnitř vybraného systému."
 # 
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 595
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 338
-msgid "Simple restore will write GRUB to the beginning of the disk."
-msgstr "Jednoduché obnovení zapíše GRUB na začátek disku."
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 424
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 438
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 453
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 123
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 140
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 159
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 353
+msgid "Execute"
+msgstr "Provést"
 # 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 223
+msgid "VTE terminal widget not available."
+msgstr "Widget terminálu VTE není k dispozici."
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 596
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 339
-msgid "Intermediate restore will reinstall GRUB package and update configuration."
-msgstr "Mezilehlí obnovení přeinstaluje balíček GRUB a aktualizuje konfiguraci."
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 226
+msgid "Close Terminal"
+msgstr "Zavřít terminál"
 # 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 235
+msgid "Operation Failed!"
+msgstr "Operace se nezdařila!"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 597
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 340
-msgid "Complete restore will perform full system update and kernel check."
-msgstr "Úplné obnovení provede úplnou aktualizaci systému a kontrolu jádra."
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 236
+msgid "Simple Restore Completed"
+msgstr "Jednoduché obnovení dokončeno"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 598
-msgid "Interactive terminal will open inside the selected system."
-msgstr "Interaktivní terminál se otevře uvnitř vybraného systému."
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 236
+msgid "Intermediate Restore Completed"
+msgstr "Obnovení na úrovni střední bylo dokončeno"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 599
-msgid "Control center will open inside the selected system."
-msgstr "Ovládací centrum se otevře uvnitř vybraného systému."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 600
-msgid "Package manager will open inside the selected system."
-msgstr "Správce balíčků se otevře uvnitř vybraného systému."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 612
-msgid "Please wait while the restore operation completes..."
-msgstr "Prosím, čekejte, až se operace obnovení dokončí..."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 786
-msgid "Technical Details"
-msgstr "Technické detaily"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 787
-msgid "Real-time execution log"
-msgstr "Protokol provádění v reálném čase"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 810
-msgid "Terminal not available"
-msgstr "Terminál není k dispozici"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 655
-msgid "Restore Completed"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 236
+msgid "Complete Restore Completed"
 msgstr "Obnovení dokončeno"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 656
-msgid "The restore operation completed successfully!"
-msgstr "Obnova byla úspěšně dokončena!"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 238
+msgid "The GRUB bootloader has been rewritten. You can now restart your computer."
+msgstr "Bootloader GRUB byl přepsán. Nyní můžete restartovat svůj počítač."
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 659
-msgid "Restore Failed"
-msgstr "Obnovení se nezdařilo"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 239
+msgid "The GRUB package was reinstalled and configurations were regenerated."
+msgstr "Balíček GRUB byl znovu nainstalován a konfigurace byly znovu vygenerovány."
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 660
-msgid "The restore operation failed. Please try again."
-msgstr "Obnova selhála. Zkuste to prosím znovu."
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 240
+msgid "The system, kernel, and GRUB have been updated and restored."
+msgstr "Systém, jádro a GRUB byly aktualizovány a obnoveny."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 242
+msgid "Operation Completed Successfully!"
+msgstr "Operace byla úspěšně dokončena!"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 242
+msgid "You can now close this tool and restart your computer."
+msgstr "Nyní můžete tuto aplikaci zavřít a restartovat počítač."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 247
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 537
+msgid "Go Back"
+msgstr "Jít zpět"
 # 
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 # 
@@ -469,288 +237,92 @@ msgstr "Obnova selhála. Zkuste to prosím znovu."
 msgid "Close"
 msgstr "Zavřít"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 688
-msgid "Restore Error"
-msgstr "Chyba obnovení"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 259
+msgid "Copy"
+msgstr "Kopírovat"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 997
-msgid "Terminal running inside the selected system. You can execute commands directly."
-msgstr "Terminál běžící uvnitř vybraného systému. Můžete přímo vykonávat příkazy."
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 260
+msgid "Paste"
+msgstr "Vložit"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 1022
-msgid "Terminal not available - VTE library not found"
-msgstr "Terminál není k dispozici - Knihovna VTE nebyla nalezena"
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 208
+msgid "Detection Failed"
+msgstr "Detekce selhala"
 # 
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 59
-msgid "Linux System"
-msgstr "Linuxový systém"
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 226
+msgid "No Systems Found"
+msgstr "Žádné systémy nenalezeny"
 # 
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 64
-msgid "No system detected"
-msgstr "Žádný systém nebyl detekován"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 303
+msgid "No Linux installations could be detected on your drives."
+msgstr "Na vašich discích nebyly nalezeny žádné instalace Linuxu."
 # 
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 94
-msgid "Partition"
-msgstr "Oddíl"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 308
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 315
+msgid "Boot Mode Mismatch"
+msgstr "Nesoulad režimu spouštění"
 # 
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 95
-msgid "Not selected"
-msgstr "Není vybráno"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 101
-msgid "Filesystem"
-msgstr "Souborový systém"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 108
-msgid "UUID"
-msgstr "UUID"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 109
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 155
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 171
-msgid "Not available"
-msgstr "Není k dispozici"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 131
-msgid "Linux Installation"
-msgstr "Instalace Linuxu"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 139
-msgid "Not specified"
-msgstr "Not specified"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 163
-msgid "No Linux installation detected"
-msgstr "Nebyla zjištěna žádná instalace Linuxu"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 169
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 291
-msgid "Not detected"
-msgstr "Není detekováno"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 235
-msgid "Current system boot information"
-msgstr "Aktuální informace o zavádění systému"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 258
-msgid "Boot Mode"
-msgstr "Režim spouštění"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 259
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 273
-msgid "Detecting..."
-msgstr "Detekování..."
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 266
-msgid "Checking..."
-msgstr "Kontrola..."
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 272
-msgid "Available Memory"
-msgstr "Dostupná paměť"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 283
-msgid "EFI/UEFI"
-msgstr "EFI/UEFI"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 285
-msgid "Legacy/BIOS"
-msgstr "Legacy/BIOS"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 289
-msgid "Active"
-msgstr "Aktivní"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 330
-msgid "Checking network connection..."
-msgstr "Kontrola síťového připojení..."
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 51
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 309
 msgid ""
-"Select the disk where GRUB will be installed. The bootloader will be written to the beginning of "
-"the selected disk."
-msgstr "Vyberte disk, na který bude GRUB nainstalován. Bootloader bude zapsán na začátek vybraného disku."
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 67
-msgid "No Disks Found"
-msgstr "Žádné disky nenalezeny"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 69
-msgid ""
-"No suitable disks were found for GRUB installation. Please check if your disks are properly "
-"connected."
+"The live session is running in EFI mode, but no EFI partition was found on your drives. Restoration "
+"is likely to fail.\n"
+"\n"
+"Please restart your computer and ensure you are booting in Legacy/BIOS mode."
 msgstr ""
-"Nebyly nalezeny žádné vhodné disky pro instalaci GRUB. Zkontrolujte, zda jsou vaše disky správně "
-"připojeny."
+"Živá relace běží v režimu EFI, ale na vašich discích nebyla nalezena žádná EFI partition. Obnovení "
+"pravděpodobně selže.\n"
+"\n"
+"Prosím, restartujte svůj počítač a ujistěte se, že bootujete v režimu Legacy/BIOS."
 # 
-# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 144
-msgid "GPT partition table detected. Make sure this is correct for Legacy boot mode."
-msgstr "Byla detekována tabulka oddílů GPT. Ujistěte se, že je to správné pro režim spuštění Legacy."
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 227
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 316
 msgid ""
-"Select the EFI System Partition where GRUB will be installed. This partition contains the boot "
-"files for UEFI systems."
+"The live session is running in Legacy/BIOS mode, but an EFI partition was detected. Restoration is "
+"likely to fail.\n"
+"\n"
+"Please restart your computer and ensure you are booting in EFI mode."
 msgstr ""
-"Vyberte oddíl EFI systému, kam bude GRUB nainstalován. Tento oddíl obsahuje spouštěcí soubory pro "
-"systémy UEFI."
+"Živá relace běží v režimu Legacy/BIOS, ale byla detekována EFI oddíl. Obnovení pravděpodobně selže.\n"
+"\n"
+"Prosím, restartujte počítač a ujistěte se, že bootujete v režimu EFI."
 # 
-# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 237
-msgid "Available EFI Partitions"
-msgstr "Dostupné EFI oddíly"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 327
+msgid "The following system was detected. Press Continue to proceed with the restoration."
+msgstr "Byl detekován následující systém. Stiskněte Pokračovat pro pokračování v obnovení."
 # 
-# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 243
-msgid "No EFI Partitions Found"
-msgstr "Nebyly nalezeny žádné oddíly EFI"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 245
-msgid "No EFI System Partitions were found. Your system may not be configured for UEFI boot."
-msgstr "Nebyly nalezeny žádné systémové oddíly EFI. Váš systém nemusí být nakonfigurován pro UEFI boot."
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 338
+msgid "2. Target EFI Partition"
+msgstr "2. Cílová EFI oddíl"
 # 
 # File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
 # File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
 msgid "EFI System Partition"
 msgstr "EFI systémová oddíl"
 # 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 62
-msgid ""
-"The restore can be done in 3 ways (Simple, Intermediate, or Complete). If in doubt, try the first "
-"option, restart the computer and see if it is resolved. If the problem persists, try the other "
-"options."
-msgstr ""
-"Obnovení lze provést třemi způsoby (Jednoduché, Střední nebo Kompletní). Pokud si nejste jisti, "
-"vyzkoušejte první možnost, restartujte počítač a zjistěte, zda je problém vyřešen. Pokud problém "
-"přetrvává, vyzkoušejte další možnosti."
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 343
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 373
+msgid "2. Target Disk (MBR)"
+msgstr "Cílový disk (MBR)"
 # 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 134
-msgid "Reinstalls the grub package on the partition, regenerates the configuration, and updates the initrd."
-msgstr "Znovu nainstaluje balíček grub na oddílu, regeneruje konfiguraci a aktualizuje initrd."
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 349
+msgid "Select the Linux installation you want to repair and the corresponding boot partition or disk."
+msgstr "Vyberte instalaci Linuxu, kterou chcete opravit, a odpovídající zaváděcí oddíl nebo disk."
 # 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 153
-msgid ""
-"Performs the intermediate restore steps, updates the system, and checks if the LTS kernel is "
-"installed."
-msgstr "Provádí mezikroky obnovení, aktualizuje systém a kontroluje, zda je nainstalováno jádro LTS."
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 362
+msgid "2. Select Target EFI Partition"
+msgstr "2. Vyberte cílovou EFI partition"
 # 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 202
-msgid "Opens the pamac-manager package manager inside the selected system."
-msgstr "Otevře správce balíčků pamac-manager uvnitř vybraného systému."
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 452
+msgid "Restore in Progress..."
+msgstr "Obnova probíhá..."
 # 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 240
-msgid "Preparing..."
-msgstr "Připravuje se..."
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 455
+msgid "Preparing Interactive Session..."
+msgstr "Příprava interaktivní relace..."
 # 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 263
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 352
-msgid "Cancel"
-msgstr "Zrušit"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 496
+msgid "Interactive Session Active"
+msgstr "Interaktivní relace aktivní"
 # 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 297
-msgid "No internet connection - Options 2 and 3 require internet"
-msgstr "Žádné připojení k internetu - Možnosti 2 a 3 vyžadují internet"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 311
-msgid "System interface not available"
-msgstr "Systémové rozhraní není k dispozici"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 341
-msgid "Interactive terminal will open a command line inside the selected system."
-msgstr "Interaktivní terminál otevře příkazový řádek uvnitř vybraného systému."
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 342
-msgid "Control center will open system settings inside the selected system."
-msgstr "Ovládací centrum otevře systémová nastavení uvnitř vybraného systému."
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 343
-msgid "Package manager will open pamac-manager inside the selected system."
-msgstr "Správce balíčků otevře pamac-manager uvnitř vybraného systému."
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 348
-msgid "Confirm Restore Operation"
-msgstr "Potvrďte operaci obnovení"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 349
-msgid "Execute the selected restore operation?"
-msgstr "Proveďte vybranou operaci obnovení?"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 374
-msgid "Internet Connection Required"
-msgstr "Požadované připojení k internetu"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 375
-msgid ""
-"This restore option requires an internet connection to download packages and updates. Please check "
-"your network connection and try again."
-msgstr ""
-"Tato možnost obnovení vyžaduje připojení k internetu pro stažení balíčků a aktualizací. "
-"Zkontrolujte své síťové připojení a zkuste to znovu."
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 379
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 533
-msgid "OK"
-msgstr "OK"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 386
-msgid "Simple Restore in Progress"
-msgstr "Jednoduché obnovení probíhá"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 387
-msgid "Intermediate Restore in Progress"
-msgstr "Probíhá obnovení na úrovni Intermediate"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 388
-msgid "Complete Restore in Progress"
-msgstr "Probíhá úplné obnovení"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 389
-msgid "Opening Interactive Terminal"
-msgstr "Otevírání interaktivního terminálu"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 390
-msgid "Opening Control Center"
-msgstr "Otevírání Ovládacího centra"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 391
-msgid "Opening Package Manager"
-msgstr "Otevírání správce balíčků"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 395
-msgid "Initializing..."
-msgstr "Inicializace..."
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 416
-msgid "Starting restore operation..."
-msgstr "Zahájení operace obnovení..."
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 423
-msgid "Opening interactive session..."
-msgstr "Otevírání interaktivní relace..."
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 458
-msgid "Restore completed successfully!"
-msgstr "Obnovení bylo úspěšně dokončeno!"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 461
-msgid "Restore failed. Please check the output above."
-msgstr "Obnovení se nezdařilo. Zkontrolujte výstup výše."
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 485
-msgid "Cancel Restore?"
-msgstr "Zrušit obnovení?"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 486
-msgid "Are you sure you want to cancel the restore operation?"
-msgstr "Opravdu si přejete zrušit operaci obnovení?"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 489
-msgid "No"
-msgstr "Ne"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 490
-msgid "Yes, Cancel"
-msgstr "Ano, Zrušit"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 473
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
-msgid "Error"
-msgstr "Chyba"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 508
+msgid "Cleaning up session..."
+msgstr "Úklid relace..."
