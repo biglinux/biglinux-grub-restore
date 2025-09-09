@@ -38,22 +38,6 @@ msgstr "Вихід"
 msgid "GRUB Restore Tool"
 msgstr "Інструмент відновлення GRUB"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 93
-msgid ""
-"This tool helps restore the bootloader (GRUB) for your installed Linux systems. It should be run "
-"from a live session."
-msgstr ""
-"Цей інструмент допомагає відновити завантажувач (GRUB) для ваших встановлених систем Linux. Його "
-"слід запускати з живої сесії."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 94
-msgid ""
-"Warning: Only use this tool if your installed system is failing to boot. If your system starts "
-"normally, do not proceed."
-msgstr ""
-"Увага: Використовуйте цей інструмент лише у разі, якщо ваша встановлена система не завантажується. "
-"Якщо ваша система завантажується нормально, не продовжуйте."
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
 msgstr "Почати виявлення"
@@ -70,6 +54,14 @@ msgstr "Сканування ваших дисків на наявність у�
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 126
 msgid "1. Select Linux System to Restore"
 msgstr "1. Виберіть систему Linux для відновлення"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 362
+msgid "2. Select Target EFI Partition"
+msgstr "2. Виберіть цільовий розділ EFI"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 137
+msgid "2. Select Target Disk (MBR)"
+msgstr "2. Виберіть цільовий диск (MBR)"
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 300
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
@@ -94,6 +86,10 @@ msgstr "Методи відновлення"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 175
 msgid "Interactive Tools"
 msgstr "Інтерактивні інструменти"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 181
+msgid "Configuration Summary"
+msgstr "Підсумок конфігурації"
 # 
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 # 
@@ -187,6 +183,20 @@ msgstr "Віджет терміналу VTE недоступний."
 msgid "Close Terminal"
 msgstr "Закрити термінал"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 247
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 537
+msgid "Go Back"
+msgstr "Повернутися назад"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 664
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 459
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 462
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 474
+msgid "Close"
+msgstr "Закрити"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 235
 msgid "Operation Failed!"
 msgstr "Операція не вдалася!"
@@ -223,19 +233,9 @@ msgstr "Операція успішно завершена!"
 msgid "You can now close this tool and restart your computer."
 msgstr "Тепер ви можете закрити цей інструмент і перезавантажити комп'ютер."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 247
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 537
-msgid "Go Back"
-msgstr "Повернутися назад"
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 664
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 459
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 462
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 474
-msgid "Close"
-msgstr "Закрити"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 276
+msgid "Proceed Anyway"
+msgstr "Продовжити все одно"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 259
 msgid "Copy"
@@ -249,6 +249,43 @@ msgstr "Вставити"
 msgid "Detection Failed"
 msgstr "Виявлення не вдалося"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 326
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 331
+msgid "Potential Boot Mode Mismatch"
+msgstr "Можливе невідповідність режиму завантаження"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 327
+msgid ""
+"The boot in live mode is using EFI mode, but no EFI partition was found on this computer, most "
+"likely the Grub restore will not work.\n"
+"\n"
+"Try restarting and booting in Legacy or BIOS mode through the computer's BIOS.\n"
+"\n"
+"Do you want to try even with a low probability of success?"
+msgstr ""
+"Завантаження в режимі живого середовища використовує режим EFI, але на цьому комп'ютері не знайдено "
+"розділ EFI, найімовірніше, відновлення Grub не спрацює.\n"
+"\n"
+"Спробуйте перезавантажити комп'ютер і завантажитися в режимі Legacy або BIOS через BIOS комп'ютера.\n"
+"\n"
+"Ви хочете спробувати, навіть з низькою ймовірністю успіху?"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 332
+msgid ""
+"The boot in live mode is using Legacy mode, also called BIOS, but at least one EFI partition was "
+"found on this computer, most likely the Grub restore will not work.\n"
+"\n"
+"Try restarting and booting in EFI mode through the computer's BIOS.\n"
+"\n"
+"Do you want to try even with a low probability of success?"
+msgstr ""
+"Завантаження в живому режимі використовує режим Legacy, також відомий як BIOS, але на цьому "
+"комп'ютері знайдено принаймні один EFI-розділ, найімовірніше, відновлення Grub не спрацює.\n"
+"\n"
+"Спробуйте перезавантажити комп'ютер і завантажитися в режимі EFI через BIOS комп'ютера.\n"
+"\n"
+"Ви хочете спробувати, навіть з низькою ймовірністю успіху?"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 226
 msgid "No Systems Found"
 msgstr "Системи не знайдено"
@@ -257,60 +294,54 @@ msgstr "Системи не знайдено"
 msgid "No Linux installations could be detected on your drives."
 msgstr "Не вдалося виявити жодних установок Linux на ваших дисках."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 308
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 315
-msgid "Boot Mode Mismatch"
-msgstr "Несумісність режиму завантаження"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 309
-msgid ""
-"The live session is running in EFI mode, but no EFI partition was found on your drives. Restoration "
-"is likely to fail.\n"
-"\n"
-"Please restart your computer and ensure you are booting in Legacy/BIOS mode."
-msgstr ""
-"Сесія в реальному часі працює в режимі EFI, але на ваших дисках не знайдено жодного EFI-розділу. "
-"Відновлення, ймовірно, не вдасться.\n"
-"\n"
-"Будь ласка, перезавантажте комп'ютер і переконайтеся, що ви завантажуєтеся в режимі Legacy/BIOS."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 316
-msgid ""
-"The live session is running in Legacy/BIOS mode, but an EFI partition was detected. Restoration is "
-"likely to fail.\n"
-"\n"
-"Please restart your computer and ensure you are booting in EFI mode."
-msgstr ""
-"Сесія в реальному часі працює в режимі Legacy/BIOS, але було виявлено розділ EFI. Відновлення, "
-"ймовірно, не вдасться.\n"
-"\n"
-"Будь ласка, перезавантажте комп'ютер і переконайтеся, що ви завантажуєтеся в режимі EFI."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 327
-msgid "The following system was detected. Press Continue to proceed with the restoration."
-msgstr "Виявлено наступну систему. Натисніть Продовжити, щоб продовжити відновлення."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 338
-msgid "2. Target EFI Partition"
-msgstr "2. Цільовий EFI розділ"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
 msgid "EFI System Partition"
 msgstr "EFI системний розділ"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 343
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 373
-msgid "2. Target Disk (MBR)"
-msgstr "Цільовий диск (MBR)"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 450
+msgid "Live Boot Mode"
+msgstr "Режим живого завантаження"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 349
-msgid "Select the Linux installation you want to repair and the corresponding boot partition or disk."
-msgstr "Виберіть установку Linux, яку ви хочете відновити, та відповідний завантажувальний розділ або диск."
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
+msgid "Selected System"
+msgstr "Вибрана система"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 362
-msgid "2. Select Target EFI Partition"
-msgstr "2. Виберіть цільовий розділ EFI"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 452
+msgid "Selected Partition"
+msgstr "Вибраний розділ"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 453
+msgid "Partition UUID"
+msgstr "UUID розділу"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 457
+msgid "Target (EFI Restore)"
+msgstr "Ціль (Відновлення EFI)"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 460
+msgid "Target (Legacy Restore)"
+msgstr "Ціль (Спадкове відновлення)"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+msgid "Disk Details"
+msgstr "Деталі диска"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 472
+msgid "No Internet Connection Detected"
+msgstr "Не виявлено з'єднання з Інтернетом"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 473
+msgid ""
+"Intermediate and Complete restore options require an internet connection to download packages. "
+"These options may fail if your computer is offline."
+msgstr ""
+"Середні та повні варіанти відновлення потребують підключення до Інтернету для завантаження пакетів. "
+"Ці варіанти можуть не спрацювати, якщо ваш комп'ютер не підключений до мережі."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 475
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 475
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 452
 msgid "Restore in Progress..."

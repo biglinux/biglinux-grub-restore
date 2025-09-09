@@ -38,18 +38,6 @@ msgstr "종료"
 msgid "GRUB Restore Tool"
 msgstr "GRUB 복구 도구"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 93
-msgid ""
-"This tool helps restore the bootloader (GRUB) for your installed Linux systems. It should be run "
-"from a live session."
-msgstr "이 도구는 설치된 리눅스 시스템의 부트로더(GRUB)를 복원하는 데 도움을 줍니다. 라이브 세션에서 실행해야 합니다."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 94
-msgid ""
-"Warning: Only use this tool if your installed system is failing to boot. If your system starts "
-"normally, do not proceed."
-msgstr "경고: 설치된 시스템이 부팅에 실패하는 경우에만 이 도구를 사용하십시오. 시스템이 정상적으로 시작되면 진행하지 마십시오."
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
 msgstr "탐지 시작"
@@ -66,6 +54,14 @@ msgstr "드라이브에서 Linux 설치를 스캔하는 중..."
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 126
 msgid "1. Select Linux System to Restore"
 msgstr "1. 복원할 Linux 시스템 선택"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 362
+msgid "2. Select Target EFI Partition"
+msgstr "대상 EFI 파티션 선택"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 137
+msgid "2. Select Target Disk (MBR)"
+msgstr "대상 디스크 선택 (MBR)"
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 300
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
@@ -88,6 +84,10 @@ msgstr "복원 방법"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 175
 msgid "Interactive Tools"
 msgstr "인터랙티브 도구"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 181
+msgid "Configuration Summary"
+msgstr "구성 요약"
 # 
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 # 
@@ -181,6 +181,20 @@ msgstr "VTE 터미널 위젯을 사용할 수 없습니다."
 msgid "Close Terminal"
 msgstr "터미널 닫기"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 247
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 537
+msgid "Go Back"
+msgstr "뒤로 가기"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 664
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 459
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 462
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 474
+msgid "Close"
+msgstr "닫기"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 235
 msgid "Operation Failed!"
 msgstr "작업 실패!"
@@ -217,19 +231,9 @@ msgstr "작업이 성공적으로 완료되었습니다!"
 msgid "You can now close this tool and restart your computer."
 msgstr "이 도구를 닫고 컴퓨터를 재시작할 수 있습니다."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 247
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 537
-msgid "Go Back"
-msgstr "뒤로 가기"
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 664
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 459
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 462
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 474
-msgid "Close"
-msgstr "닫기"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 276
+msgid "Proceed Anyway"
+msgstr "계속 진행하십시오"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 259
 msgid "Copy"
@@ -243,6 +247,42 @@ msgstr "붙여넣기"
 msgid "Detection Failed"
 msgstr "탐지 실패"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 326
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 331
+msgid "Potential Boot Mode Mismatch"
+msgstr "부팅 모드 불일치 가능성"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 327
+msgid ""
+"The boot in live mode is using EFI mode, but no EFI partition was found on this computer, most "
+"likely the Grub restore will not work.\n"
+"\n"
+"Try restarting and booting in Legacy or BIOS mode through the computer's BIOS.\n"
+"\n"
+"Do you want to try even with a low probability of success?"
+msgstr ""
+"라이브 모드에서 부팅은 EFI 모드를 사용하고 있지만, 이 컴퓨터에서 EFI 파티션이 발견되지 않았습니다. 따라서 Grub 복원이 작동하지 않을 가능성이 높습니다.\n"
+"\n"
+"컴퓨터의 BIOS를 통해 레거시 또는 BIOS 모드로 다시 시작하고 부팅해 보십시오.\n"
+"\n"
+"성공 확률이 낮더라도 시도하시겠습니까?"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 332
+msgid ""
+"The boot in live mode is using Legacy mode, also called BIOS, but at least one EFI partition was "
+"found on this computer, most likely the Grub restore will not work.\n"
+"\n"
+"Try restarting and booting in EFI mode through the computer's BIOS.\n"
+"\n"
+"Do you want to try even with a low probability of success?"
+msgstr ""
+"라이브 모드에서 부팅은 레거시 모드(바이오스라고도 함)를 사용하고 있지만, 이 컴퓨터에서 최소한 하나의 EFI 파티션이 발견되었습니다. 따라서 Grub 복구가 작동하지 않을 "
+"가능성이 높습니다.\n"
+"\n"
+"컴퓨터의 BIOS를 통해 EFI 모드로 다시 시작하고 부팅해 보시기 바랍니다.\n"
+"\n"
+"성공 확률이 낮음에도 불구하고 시도하시겠습니까?"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 226
 msgid "No Systems Found"
 msgstr "시스템을 찾을 수 없습니다."
@@ -251,58 +291,54 @@ msgstr "시스템을 찾을 수 없습니다."
 msgid "No Linux installations could be detected on your drives."
 msgstr "드라이브에서 감지된 Linux 설치가 없습니다."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 308
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 315
-msgid "Boot Mode Mismatch"
-msgstr "부팅 모드 불일치"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 309
-msgid ""
-"The live session is running in EFI mode, but no EFI partition was found on your drives. Restoration "
-"is likely to fail.\n"
-"\n"
-"Please restart your computer and ensure you are booting in Legacy/BIOS mode."
-msgstr ""
-"라이브 세션이 EFI 모드에서 실행되고 있지만 드라이브에서 EFI 파티션을 찾을 수 없습니다. 복원이 실패할 가능성이 높습니다.\n"
-"\n"
-"컴퓨터를 재시작하고 레거시/BIOS 모드로 부팅되고 있는지 확인하십시오."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 316
-msgid ""
-"The live session is running in Legacy/BIOS mode, but an EFI partition was detected. Restoration is "
-"likely to fail.\n"
-"\n"
-"Please restart your computer and ensure you are booting in EFI mode."
-msgstr ""
-"라이브 세션이 레거시/BIOS 모드에서 실행되고 있지만 EFI 파티션이 감지되었습니다. 복원이 실패할 가능성이 높습니다.\n"
-"\n"
-"컴퓨터를 재시작하고 EFI 모드로 부팅되고 있는지 확인하십시오."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 327
-msgid "The following system was detected. Press Continue to proceed with the restoration."
-msgstr "다음 시스템이 감지되었습니다. 복원을 진행하려면 계속을 누르십시오."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 338
-msgid "2. Target EFI Partition"
-msgstr "2. 대상 EFI 파티션"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
 msgid "EFI System Partition"
 msgstr "EFI 시스템 파티션"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 343
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 373
-msgid "2. Target Disk (MBR)"
-msgstr "대상 디스크 (MBR)"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 450
+msgid "Live Boot Mode"
+msgstr "라이브 부트 모드"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 349
-msgid "Select the Linux installation you want to repair and the corresponding boot partition or disk."
-msgstr "수리할 Linux 설치와 해당 부트 파티션 또는 디스크를 선택하십시오."
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
+msgid "Selected System"
+msgstr "선택한 시스템"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 362
-msgid "2. Select Target EFI Partition"
-msgstr "대상 EFI 파티션 선택"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 452
+msgid "Selected Partition"
+msgstr "선택한 파티션"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 453
+msgid "Partition UUID"
+msgstr "파티션 UUID"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 457
+msgid "Target (EFI Restore)"
+msgstr "대상 (EFI 복원)"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 460
+msgid "Target (Legacy Restore)"
+msgstr "대상 (레거시 복원)"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+msgid "Disk Details"
+msgstr "디스크 세부정보"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 472
+msgid "No Internet Connection Detected"
+msgstr "인터넷 연결이 감지되지 않았습니다."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 473
+msgid ""
+"Intermediate and Complete restore options require an internet connection to download packages. "
+"These options may fail if your computer is offline."
+msgstr "중간 및 전체 복원 옵션은 패키지를 다운로드하기 위해 인터넷 연결이 필요합니다. 컴퓨터가 오프라인인 경우 이러한 옵션이 실패할 수 있습니다."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 475
+msgid "OK"
+msgstr "알겠습니다."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 475
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 452
 msgid "Restore in Progress..."

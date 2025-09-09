@@ -38,22 +38,6 @@ msgstr "Välja"
 msgid "GRUB Restore Tool"
 msgstr "GRUBi taastamise tööriist"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 93
-msgid ""
-"This tool helps restore the bootloader (GRUB) for your installed Linux systems. It should be run "
-"from a live session."
-msgstr ""
-"See tööriist aitab taastada käivituslaadurit (GRUB) teie installitud Linuxi süsteemidele. Seda "
-"tuleks käivitada eluseansist."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 94
-msgid ""
-"Warning: Only use this tool if your installed system is failing to boot. If your system starts "
-"normally, do not proceed."
-msgstr ""
-"Hoiatus: Kasutage seda tööriista ainult siis, kui teie installitud süsteem ei käivitu. Kui teie "
-"süsteem käivitub normaalselt, ärge jätkake."
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
 msgstr "Alustamine tuvastamine"
@@ -70,6 +54,14 @@ msgstr "Skannitakse teie kettaid Linuxi installatsioonide leidmiseks..."
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 126
 msgid "1. Select Linux System to Restore"
 msgstr "Valige taastamiseks Linuxi süsteem"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 362
+msgid "2. Select Target EFI Partition"
+msgstr "2. Valige siht EFI partitsioon"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 137
+msgid "2. Select Target Disk (MBR)"
+msgstr "2. Valige sihtketas (MBR)"
 # 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 300
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
@@ -94,6 +86,10 @@ msgstr "Taaste meetodid"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 175
 msgid "Interactive Tools"
 msgstr "Interaktiivsed tööriistad"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 181
+msgid "Configuration Summary"
+msgstr "Konfiguratsiooni kokkuvõte"
 # 
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 # 
@@ -187,6 +183,20 @@ msgstr "VTE terminali vidin ei ole saadaval."
 msgid "Close Terminal"
 msgstr "Sulge terminal"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 247
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 537
+msgid "Go Back"
+msgstr "Mine tagasi"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 664
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 459
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 462
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 474
+msgid "Close"
+msgstr "Sulge"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 235
 msgid "Operation Failed!"
 msgstr "Tegevus ebaõnnestus!"
@@ -223,19 +233,9 @@ msgstr "Tegevus lõpetati edukalt!"
 msgid "You can now close this tool and restart your computer."
 msgstr "Saate nüüd selle tööriista sulgeda ja arvuti taaskäivitada."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 247
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 537
-msgid "Go Back"
-msgstr "Mine tagasi"
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 664
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 459
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 462
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 474
-msgid "Close"
-msgstr "Sulge"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 276
+msgid "Proceed Anyway"
+msgstr "Jätka ikkagi"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 259
 msgid "Copy"
@@ -249,6 +249,43 @@ msgstr "Kleebi"
 msgid "Detection Failed"
 msgstr "Tuvastamine ebaõnnestus"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 326
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 331
+msgid "Potential Boot Mode Mismatch"
+msgstr "Võimalik käivitamisrežiimi kokkusobimatus"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 327
+msgid ""
+"The boot in live mode is using EFI mode, but no EFI partition was found on this computer, most "
+"likely the Grub restore will not work.\n"
+"\n"
+"Try restarting and booting in Legacy or BIOS mode through the computer's BIOS.\n"
+"\n"
+"Do you want to try even with a low probability of success?"
+msgstr ""
+"Live-režiimis käivitamine kasutab EFI-režiimi, kuid sellel arvutil ei leitud EFI-partitsiooni, "
+"seega tõenäoliselt Grub'i taastamine ei toimi.\n"
+"\n"
+"Proovige taaskäivitada ja käivitada Legacy või BIOS-režiimis arvuti BIOS-i kaudu.\n"
+"\n"
+"Kas soovite proovida isegi madala eduvõimalusega?"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 332
+msgid ""
+"The boot in live mode is using Legacy mode, also called BIOS, but at least one EFI partition was "
+"found on this computer, most likely the Grub restore will not work.\n"
+"\n"
+"Try restarting and booting in EFI mode through the computer's BIOS.\n"
+"\n"
+"Do you want to try even with a low probability of success?"
+msgstr ""
+"Live-režiimis käivitamine kasutab Legacy-režiimi, mida nimetatakse ka BIOS-iks, kuid sellel arvutil "
+"leiti vähemalt üks EFI-partitsioon, seega tõenäoliselt Grubi taastamine ei toimi.\n"
+"\n"
+"Proovige taaskäivitada ja käivitada EFI-režiimis arvuti BIOS-i kaudu.\n"
+"\n"
+"Kas soovite proovida, isegi kui eduvõimalus on madal?"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 226
 msgid "No Systems Found"
 msgstr "Süsteeme ei leitud"
@@ -257,60 +294,54 @@ msgstr "Süsteeme ei leitud"
 msgid "No Linux installations could be detected on your drives."
 msgstr "Teie ketastel ei leitud ühtegi Linuxi installatsiooni."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 308
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 315
-msgid "Boot Mode Mismatch"
-msgstr "Käivitamisrežiimi kokkusobimatus"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 309
-msgid ""
-"The live session is running in EFI mode, but no EFI partition was found on your drives. Restoration "
-"is likely to fail.\n"
-"\n"
-"Please restart your computer and ensure you are booting in Legacy/BIOS mode."
-msgstr ""
-"Elav sessioon töötab EFI-režiimis, kuid teie ketastel ei leitud EFI-partitsiooni. Taastamine "
-"tõenäoliselt ebaõnnestub.\n"
-"\n"
-"Palun taaskäivitage oma arvuti ja veenduge, et käivitate Legacy/BIOS-režiimis."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 316
-msgid ""
-"The live session is running in Legacy/BIOS mode, but an EFI partition was detected. Restoration is "
-"likely to fail.\n"
-"\n"
-"Please restart your computer and ensure you are booting in EFI mode."
-msgstr ""
-"Elu seans töötab Legacy/BIOS režiimis, kuid tuvastati EFI partitsioon. Taastamine tõenäoliselt "
-"ebaõnnestub.\n"
-"\n"
-"Palun taaskäivitage oma arvuti ja veenduge, et käivitate EFI režiimis."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 327
-msgid "The following system was detected. Press Continue to proceed with the restoration."
-msgstr "Tuvastati järgmine süsteem. Taasteprotsessi jätkamiseks vajutage Jätka."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 338
-msgid "2. Target EFI Partition"
-msgstr "2. Siht EFI partitsioon"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
 msgid "EFI System Partition"
 msgstr "EFI süsteemiosakond"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 343
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 373
-msgid "2. Target Disk (MBR)"
-msgstr "2. Sihtketas (MBR)"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 450
+msgid "Live Boot Mode"
+msgstr "Elu käivitamise režiim"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 349
-msgid "Select the Linux installation you want to repair and the corresponding boot partition or disk."
-msgstr "Valige Linuxi installatsioon, mida soovite parandada, ja vastav käivituspartitsioon või -ketas."
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
+msgid "Selected System"
+msgstr "Valitud süsteem"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 362
-msgid "2. Select Target EFI Partition"
-msgstr "2. Valige siht EFI partitsioon"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 452
+msgid "Selected Partition"
+msgstr "Valitud partitsioon"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 453
+msgid "Partition UUID"
+msgstr "Partitsiooni UUID"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 457
+msgid "Target (EFI Restore)"
+msgstr "Siht (EFI taastamine)"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 460
+msgid "Target (Legacy Restore)"
+msgstr "Siht (Pärand taastamine)"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+msgid "Disk Details"
+msgstr "Ketta üksikasjad"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 472
+msgid "No Internet Connection Detected"
+msgstr "Internetiühendust ei leitud"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 473
+msgid ""
+"Intermediate and Complete restore options require an internet connection to download packages. "
+"These options may fail if your computer is offline."
+msgstr ""
+"Vahepealne ja Täielik taastamisvalik nõuavad pakettide allalaadimiseks internetiühendust. Need "
+"valikud võivad ebaõnnestuda, kui teie arvuti on võrguühenduseta."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 475
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 475
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 452
 msgid "Restore in Progress..."
