@@ -292,21 +292,45 @@ case "$RESTORE_MODE" in
             # Mount the user's runtime directory to make sockets available in chroot
             mount --bind /run/user/1000 /mnt/run/user/1000 2>/dev/null || true
             
-            # Pass essential Wayland and D-Bus variables to the chroot environment
-            # DBUS_SESSION_BUS_ADDRESS is critical for modern GTK applications
-            execute_chroot "env DISPLAY=$DISPLAY WAYLAND_DISPLAY=$WAYLAND_DISPLAY XDG_RUNTIME_DIR=/run/user/1000 DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION_BUS_ADDRESS bigcontrolcenter" "Control center"
+            # For XWayland fallback, we might need X11 authority.
+            # Copy it if it exists, but don't fail if it doesn't.
+            CHROOT_XAUTH_FILE="/tmp/.docker.xauth"
+            if [ -n "$XAUTHORITY" ] && [ -f "$XAUTHORITY" ]; then
+                cp "$XAUTHORITY" "/mnt$CHROOT_XAUTH_FILE"
+            fi
+
+            # Execute with all potentially necessary environment variables for Wayland and XWayland fallback
+            execute_chroot "env DISPLAY=$DISPLAY WAYLAND_DISPLAY=$WAYLAND_DISPLAY XDG_RUNTIME_DIR=/run/user/1000 DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION_BUS_ADDRESS XAUTHORITY=$CHROOT_XAUTH_FILE bigcontrolcenter" "Control center"
             
             # Cleanup
+            rm "/mnt$CHROOT_XAUTH_FILE" 2>/dev/null || true
             umount /mnt/run/user/1000 2>/dev/null || true
             
         else
             log_message "Running in X11 session"
             
-            # Enable X11 access temporarily
-            xhost + 2>/dev/null || true
-            execute_chroot "env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY bigcontrolcenter" "Control center"
-            # Restore X11 security
-            xhost - 2>/dev/null || true
+            # For X11, we need both Xauthority and D-Bus access for modern GTK apps
+            if [ -n "$XAUTHORITY" ] && [ -f "$XAUTHORITY" ]; then
+                # 1. Mount the user runtime dir to make D-Bus socket available
+                mount --bind /run/user/1000 /mnt/run/user/1000 2>/dev/null || true
+
+                # 2. Copy the Xauthority file into the chroot
+                CHROOT_XAUTH_FILE="/tmp/.docker.xauth"
+                cp "$XAUTHORITY" "/mnt$CHROOT_XAUTH_FILE"
+                
+                # 3. Execute with all necessary environment variables
+                execute_chroot "env DISPLAY=$DISPLAY XAUTHORITY=$CHROOT_XAUTH_FILE DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION_BUS_ADDRESS bigcontrolcenter" "Control center"
+                
+                # 4. Cleanup
+                rm "/mnt$CHROOT_XAUTH_FILE" 2>/dev/null || true
+                umount /mnt/run/user/1000 2>/dev/null || true
+            else
+                log_message "Warning: XAUTHORITY file not found, graphical app may fail."
+                # Fallback to old method if XAUTHORITY is not set
+                xhost + 2>/dev/null || true
+                execute_chroot "env DISPLAY=$DISPLAY pamac-manager" "Package manager"
+                xhost - 2>/dev/null || true
+            fi
         fi
         ;;
 
@@ -327,21 +351,45 @@ case "$RESTORE_MODE" in
             # Mount the user's runtime directory to make sockets available in chroot
             mount --bind /run/user/1000 /mnt/run/user/1000 2>/dev/null || true
             
-            # Pass essential Wayland and D-Bus variables to the chroot environment
-            # DBUS_SESSION_BUS_ADDRESS is critical for modern GTK applications
-            execute_chroot "env DISPLAY=$DISPLAY WAYLAND_DISPLAY=$WAYLAND_DISPLAY XDG_RUNTIME_DIR=/run/user/1000 DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION_BUS_ADDRESS pamac-manager" "Package manager"
+            # For XWayland fallback, we might need X11 authority.
+            # Copy it if it exists, but don't fail if it doesn't.
+            CHROOT_XAUTH_FILE="/tmp/.docker.xauth"
+            if [ -n "$XAUTHORITY" ] && [ -f "$XAUTHORITY" ]; then
+                cp "$XAUTHORITY" "/mnt$CHROOT_XAUTH_FILE"
+            fi
+
+            # Execute with all potentially necessary environment variables for Wayland and XWayland fallback
+            execute_chroot "env DISPLAY=$DISPLAY WAYLAND_DISPLAY=$WAYLAND_DISPLAY XDG_RUNTIME_DIR=/run/user/1000 DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION_BUS_ADDRESS XAUTHORITY=$CHROOT_XAUTH_FILE pamac-manager" "Package manager"
             
             # Cleanup
+            rm "/mnt$CHROOT_XAUTH_FILE" 2>/dev/null || true
             umount /mnt/run/user/1000 2>/dev/null || true
             
         else
             log_message "Running in X11 session"
             
-            # Enable X11 access temporarily
-            xhost + 2>/dev/null || true
-            execute_chroot "env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY pamac-manager" "Package manager"
-            # Restore X11 security
-            xhost - 2>/dev/null || true
+            # For X11, we need both Xauthority and D-Bus access for modern GTK apps
+            if [ -n "$XAUTHORITY" ] && [ -f "$XAUTHORITY" ]; then
+                # 1. Mount the user runtime dir to make D-Bus socket available
+                mount --bind /run/user/1000 /mnt/run/user/1000 2>/dev/null || true
+
+                # 2. Copy the Xauthority file into the chroot
+                CHROOT_XAUTH_FILE="/tmp/.docker.xauth"
+                cp "$XAUTHORITY" "/mnt$CHROOT_XAUTH_FILE"
+                
+                # 3. Execute with all necessary environment variables
+                execute_chroot "env DISPLAY=$DISPLAY XAUTHORITY=$CHROOT_XAUTH_FILE DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION_BUS_ADDRESS pamac-manager" "Package manager"
+                
+                # 4. Cleanup
+                rm "/mnt$CHROOT_XAUTH_FILE" 2>/dev/null || true
+                umount /mnt/run/user/1000 2>/dev/null || true
+            else
+                log_message "Warning: XAUTHORITY file not found, graphical app may fail."
+                # Fallback to old method if XAUTHORITY is not set
+                xhost + 2>/dev/null || true
+                execute_chroot "env DISPLAY=$DISPLAY pamac-manager" "Package manager"
+                xhost - 2>/dev/null || true
+            fi
         fi
         ;;
         
