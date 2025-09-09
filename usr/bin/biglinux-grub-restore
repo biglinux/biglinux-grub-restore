@@ -13,5 +13,8 @@
 # Change to application directory
 cd /usr/share/biglinux/grub-restore
 
+# Permission to root use graphical apps
+xhost +si:localuser:root
+
 # Execute the Python application
 exec python main.py "$@"

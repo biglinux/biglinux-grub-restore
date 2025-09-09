@@ -18,13 +18,15 @@ class SystemInterface:
             'efi_selected': '/tmp/efi-selected',
             'grub_disks': '/tmp/grub-disks',
             'grub_disks_selected': '/tmp/grub-disks-selected',
-            'restore_mode': '/tmp/grub-restore-apply-mode'
+            'restore_mode': '/tmp/grub-restore-apply-mode',
+            'effective_boot_mode': '/tmp/effective-boot-mode'
         }
         
         self.detected_systems = []
         self.efi_partitions = []
         self.grub_disks = []
         self.boot_mode = None
+        self.effective_boot_mode = None
         
     def detect_systems(self):
         """Run system detection using the backend script"""
@@ -91,8 +93,8 @@ class SystemInterface:
         except (subprocess.CalledProcessError, subprocess.TimeoutExpired):
             return False
     
-    def save_selection(self, selected_system, selected_efi=None, selected_disk=None):
-        for key in ['os_prober_selected', 'efi_selected', 'grub_disks_selected']:
+    def save_selection(self, selected_system, selected_efi=None, selected_disk=None, effective_boot_mode=None):
+        for key in ['os_prober_selected', 'efi_selected', 'grub_disks_selected', 'effective_boot_mode']:
             try:
                 if os.path.exists(self.temp_files[key]): os.remove(self.temp_files[key])
             except OSError as e: print(f"Warning: Could not remove {self.temp_files[key]}: {e}")
@@ -103,11 +105,13 @@ class SystemInterface:
                 line = f"{system['partition']}:{system['name']}:{system['description']}::{system['filesystem']}:UUID={system['uuid']}\n"
                 f.write(line)
         
-        if selected_efi and self.boot_mode == "EFI":
+        if selected_efi:
             with open(self.temp_files['efi_selected'], 'w') as f: f.write(selected_efi + '\n')
         
-        if selected_disk and self.boot_mode == "LEGACY":
+        if selected_disk:
             with open(self.temp_files['grub_disks_selected'], 'w') as f: f.write(selected_disk + '\n')
+
+        self.effective_boot_mode = effective_boot_mode if effective_boot_mode else self.boot_mode
     
     def _prepare_mode_file(self, mode):
         """Helper to prepare the mode file."""
@@ -122,7 +126,7 @@ class SystemInterface:
     def execute_restore(self, mode):
         """Execute non-interactive restore, streaming output."""
         self._prepare_mode_file(mode)
-        script_name = 'grub-apply-efi' if self.boot_mode == "EFI" else 'grub-apply-legacy'
+        script_name = 'grub-apply-efi' if self.effective_boot_mode == "EFI" else 'grub-apply-legacy'
         script_path = self.backend_path / script_name
         try:
             return subprocess.Popen(
@@ -145,8 +149,8 @@ class SystemInterface:
 
     def get_system_summary(self, selected_system, selected_efi=None, selected_disk=None):
         summary = {'boot_mode': self.boot_mode, 'system': selected_system}
-        if self.boot_mode == "EFI" and selected_efi:
+        if selected_efi:
             summary['efi_partition'] = selected_efi
-        if self.boot_mode == "LEGACY" and selected_disk:
+        if selected_disk:
             summary['disk'] = next((d for d in self.grub_disks if d['device'] == selected_disk), None)
         return summary
