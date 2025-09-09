@@ -38,6 +38,25 @@ msgstr "終了"
 msgid "GRUB Restore Tool"
 msgstr "GRUB復元ツール"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 99
+#: NEEDS WORK
+msgid ""
+"This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed on the HD or "
+"SSD."
+msgstr "このツールは、HDまたはSSDにインストールされたBigLinuxのブートを復元するために、ライブモードで使用する必要があります。"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 100
+#: NEEDS WORK
+msgid ""
+"If the installed system is booting correctly, there are no boot problems, so it's better not to "
+"proceed with this tool."
+msgstr "インストールされたシステムが正常にブートしている場合、ブートの問題はないため、このツールを使用しない方が良いです。"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 101
+#: NEEDS WORK
+msgid "It may also work with other Linux distributions."
+msgstr "他のLinuxディストリビューションでも動作する可能性があります。"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
 msgstr "検出開始"
@@ -291,10 +310,35 @@ msgstr "システムが見つかりませんでした。"
 msgid "No Linux installations could be detected on your drives."
 msgstr "ドライブ上にLinuxインストールが検出されませんでした。"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
+#: NEEDS WORK
+msgid "Partition:"
+msgstr "パーティション:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
+#: NEEDS WORK
+msgid "FS:"
+msgstr "FS:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
+#: NEEDS WORK
+msgid "UUID:"
+msgstr "UUID:"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
 msgid "EFI System Partition"
 msgstr "EFIシステムパーティション"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 392
+#: NEEDS WORK
+msgid "Model:"
+msgstr "モデル:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 392
+#: NEEDS WORK
+msgid "Partition Table:"
+msgstr "パーティションテーブル:"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 450
 msgid "Live Boot Mode"
@@ -333,6 +377,11 @@ msgid ""
 "Intermediate and Complete restore options require an internet connection to download packages. "
 "These options may fail if your computer is offline."
 msgstr "中間および完全復元オプションは、パッケージをダウンロードするためにインターネット接続を必要とします。これらのオプションは、コンピュータがオフラインの場合、失敗する可能性があります。"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 475
+#: NEEDS WORK
+msgid "OK"
+msgstr "OK"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 475
 # 

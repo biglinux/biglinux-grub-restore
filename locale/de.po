@@ -38,6 +38,29 @@ msgstr "Beenden"
 msgid "GRUB Restore Tool"
 msgstr "GRUB Wiederherstellungstool"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 99
+#: NEEDS WORK
+msgid ""
+"This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed on the HD or "
+"SSD."
+msgstr ""
+"Dieses Tool sollte im LIVE-MODUS verwendet werden, um den BOOT von BigLinux, das auf der HD oder "
+"SSD installiert ist, wiederherzustellen."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 100
+#: NEEDS WORK
+msgid ""
+"If the installed system is booting correctly, there are no boot problems, so it's better not to "
+"proceed with this tool."
+msgstr ""
+"Wenn das installierte System korrekt bootet, gibt es keine Bootprobleme, daher ist es besser, mit "
+"diesem Tool nicht fortzufahren."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 101
+#: NEEDS WORK
+msgid "It may also work with other Linux distributions."
+msgstr "Es könnte auch mit anderen Linux-Distributionen funktionieren."
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
 msgstr "Start-Erkennung"
@@ -295,10 +318,35 @@ msgstr "Keine Systeme gefunden"
 msgid "No Linux installations could be detected on your drives."
 msgstr "Es konnten keine Linux-Installationen auf Ihren Laufwerken erkannt werden."
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
+#: NEEDS WORK
+msgid "Partition:"
+msgstr "Partition:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
+#: NEEDS WORK
+msgid "FS:"
+msgstr "FS:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
+#: NEEDS WORK
+msgid "UUID:"
+msgstr "UUID:"
+# 
 # File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
 # File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
 msgid "EFI System Partition"
 msgstr "EFI-Systempartition"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 392
+#: NEEDS WORK
+msgid "Model:"
+msgstr "Modell:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 392
+#: NEEDS WORK
+msgid "Partition Table:"
+msgstr "Partitionstabelle:"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 450
 msgid "Live Boot Mode"
@@ -340,6 +388,11 @@ msgstr ""
 "Die Optionen für die Zwischen- und die vollständige Wiederherstellung erfordern eine "
 "Internetverbindung, um Pakete herunterzuladen. Diese Optionen können fehlschlagen, wenn Ihr "
 "Computer offline ist."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 475
+#: NEEDS WORK
+msgid "OK"
+msgstr "OK"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 475
 # 

@@ -38,6 +38,25 @@ msgstr "退出"
 msgid "GRUB Restore Tool"
 msgstr "GRUB恢复工具"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 99
+#: NEEDS WORK
+msgid ""
+"This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed on the HD or "
+"SSD."
+msgstr "此工具应在实时模式下使用，以恢复安装在硬盘或固态硬盘上的 BigLinux 的引导。"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 100
+#: NEEDS WORK
+msgid ""
+"If the installed system is booting correctly, there are no boot problems, so it's better not to "
+"proceed with this tool."
+msgstr "如果已安装的系统正常启动，则没有启动问题，因此最好不要继续使用此工具。"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 101
+#: NEEDS WORK
+msgid "It may also work with other Linux distributions."
+msgstr "它也可能与其他Linux发行版兼容。"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
 msgstr "开始检测"
@@ -290,10 +309,35 @@ msgstr "未找到系统"
 msgid "No Linux installations could be detected on your drives."
 msgstr "在您的驱动器上未检测到任何Linux安装。"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
+#: NEEDS WORK
+msgid "Partition:"
+msgstr "分区："
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
+#: NEEDS WORK
+msgid "FS:"
+msgstr "文件系统:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
+#: NEEDS WORK
+msgid "UUID:"
+msgstr "UUID："
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
 msgid "EFI System Partition"
 msgstr "EFI系统分区"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 392
+#: NEEDS WORK
+msgid "Model:"
+msgstr "模型："
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 392
+#: NEEDS WORK
+msgid "Partition Table:"
+msgstr "分区表："
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 450
 msgid "Live Boot Mode"
@@ -332,6 +376,11 @@ msgid ""
 "Intermediate and Complete restore options require an internet connection to download packages. "
 "These options may fail if your computer is offline."
 msgstr "中级和完整恢复选项需要互联网连接以下载软件包。如果您的计算机处于离线状态，这些选项可能会失败。"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 475
+#: NEEDS WORK
+msgid "OK"
+msgstr "好的"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 475
 # 

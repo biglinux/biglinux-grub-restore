@@ -38,6 +38,29 @@ msgstr "Έξοδος"
 msgid "GRUB Restore Tool"
 msgstr "Εργαλείο Επαναφοράς GRUB"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 99
+#: NEEDS WORK
+msgid ""
+"This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed on the HD or "
+"SSD."
+msgstr ""
+"Αυτό το εργαλείο θα πρέπει να χρησιμοποιείται σε ΖΩΝΤΑΝΗ ΛΕΙΤΟΥΡΓΙΑ για να αποκαταστήσει την "
+"ΕΚΚΙΝΗΣΗ του BigLinux που είναι εγκατεστημένο στον σκληρό δίσκο ή το SSD."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 100
+#: NEEDS WORK
+msgid ""
+"If the installed system is booting correctly, there are no boot problems, so it's better not to "
+"proceed with this tool."
+msgstr ""
+"Αν το εγκατεστημένο σύστημα εκκινεί σωστά, δεν υπάρχουν προβλήματα εκκίνησης, οπότε είναι καλύτερα "
+"να μην προχωρήσετε με αυτό το εργαλείο."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 101
+#: NEEDS WORK
+msgid "It may also work with other Linux distributions."
+msgstr "Μπορεί επίσης να λειτουργήσει με άλλες διανομές Linux."
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
 msgstr "Έναρξη Ανίχνευσης"
@@ -295,10 +318,35 @@ msgstr "Δεν βρέθηκαν συστήματα"
 msgid "No Linux installations could be detected on your drives."
 msgstr "Δεν ανιχνεύθηκαν εγκαταστάσεις Linux στους δίσκους σας."
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
+#: NEEDS WORK
+msgid "Partition:"
+msgstr "Κατανομή:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
+#: NEEDS WORK
+msgid "FS:"
+msgstr "FS:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
+#: NEEDS WORK
+msgid "UUID:"
+msgstr "UUID:"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
 msgid "EFI System Partition"
 msgstr "Διαμέρισμα Συστήματος EFI"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 392
+#: NEEDS WORK
+msgid "Model:"
+msgstr "Μοντέλο:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 392
+#: NEEDS WORK
+msgid "Partition Table:"
+msgstr "Πίνακας Κατανομής:"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 450
 msgid "Live Boot Mode"
@@ -339,6 +387,11 @@ msgid ""
 msgstr ""
 "Οι επιλογές ενδιάμεσης και πλήρους επαναφοράς απαιτούν σύνδεση στο διαδίκτυο για τη λήψη πακέτων. "
 "Αυτές οι επιλογές ενδέχεται να αποτύχουν αν ο υπολογιστής σας είναι εκτός σύνδεσης."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 475
+#: NEEDS WORK
+msgid "OK"
+msgstr "Εντάξει"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 475
 # 
