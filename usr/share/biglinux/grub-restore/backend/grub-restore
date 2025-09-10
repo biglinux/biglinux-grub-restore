@@ -119,28 +119,23 @@ log_message "Starting disk detection..."
 
 rm -f /tmp/grub-disks
 
-# Get disk information like model and label type
-for i in $(LANG=C lsblk -dno NAME,SIZE,MODEL,PTTYPE | grep -v zram | grep -v "$DEVICE_LIVE_BOOT")
+# Get disk information like model and label type using the more compatible method
+for i in $(LANG=C lsblk | grep disk | grep -v zram | awk '{ print $1 ":" $4}' | grep -v "$DEVICE_LIVE_BOOT")
 do
-    read -r disk_device disk_size disk_model disk_label_type <<< "$i"
+    disk_device="${i%:*}"
+    disk_size="${i#*:}"
     
     if [ -b "/dev/$disk_device" ]; then
         log_message "Processing disk: /dev/$disk_device"
         
-        # Fallback for model if lsblk fails
-        if [ -z "$disk_model" ]; then
-            disk_model="$(cat /sys/block/$disk_device/device/model 2>/dev/null | tr -s ' ' '_')"
-        fi
+        disk_model=$(LANG=C LANGUAGE=C fdisk -l "/dev/$disk_device" 2>/dev/null | grep "Disk model:" | sed 's/Disk model: //g' | tr -s ' ' '_')
         [ -z "$disk_model" ] && disk_model="Unknown_Disk"
 
-        # Fallback for label type
-        if [ -z "$disk_label_type" ]; then
-            disk_label_type="$(blkid -s PTTYPE -o value /dev/$disk_device 2>/dev/null)"
-        fi
+        disk_label_type=$(LANG=C LANGUAGE=C fdisk -l "/dev/$disk_device" 2>/dev/null | grep "Disklabel type:" | sed 's/Disklabel type: //g')
         [ -z "$disk_label_type" ] && disk_label_type="unknown"
         
         # Save the disk information to /tmp/grub-disks
-        echo "${disk_device} ${disk_size} ${disk_model// /_} ${disk_label_type}" >> /tmp/grub-disks
+        echo "${disk_device} ${disk_size} ${disk_model} ${disk_label_type}" >> /tmp/grub-disks
         log_message "Added disk: ${disk_device} (${disk_size}, ${disk_model}, ${disk_label_type})"
     fi
 done
