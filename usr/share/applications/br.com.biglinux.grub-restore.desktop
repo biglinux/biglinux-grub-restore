@@ -85,7 +85,7 @@ Comment[uk]=BigLinux GRUB Restore допомагає вам відновити �
 Comment[zh]=BigLinux GRUB Restore 帮助您在系统引导程序损坏或无法访问时恢复和还原它
 Exec=biglinux-grub-restore
 Icon=grub-icon
-StartupWMClass=biglinux-grub-restore
+StartupWMClass=br.com.biglinux.grub-restore
 StartupNotify=true
 Terminal=false
 Type=Application
@@ -119,3 +119,9 @@ Keywords[tr]=grub;bootloader;geri yükle;kurtarma;önyükleme;sistem;onarım;dü
 Keywords[uk]=grub;bootloader;відновити;відновлення;завантаження;система;ремонт;виправити;mbr;efi;uefi;
 Keywords[zh]=grub;bootloader;恢复;恢复;引导;系统;修复;修理;mbr;efi;uefi;
 X-GNOME-UsesNotifications=true
+
+Actions=SoftwareRender;
+
+[Desktop Action SoftwareRender]
+Name=Software Render
+Exec=SoftwareRender biglinux-grub-restore

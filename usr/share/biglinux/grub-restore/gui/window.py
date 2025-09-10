@@ -25,7 +25,7 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         
-        self.set_title(_("BigLinux GRUB Restore"))
+        self.set_title(_("Restore the installed system"))
         self.set_default_size(1080, 660)
         
         self.system_interface = SystemInterface()
@@ -53,6 +53,14 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         self.set_content(self.main_box)
 
         self.header_bar = Adw.HeaderBar()
+        
+        # Add application icon to the header bar for clear identification
+        app_icon = Gtk.Image(
+            icon_name="grub-icon",
+            pixel_size=22
+        )
+        self.header_bar.pack_start(app_icon)
+
         self.main_box.append(self.header_bar)
         
         self._setup_menu()
@@ -88,15 +96,22 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
 
     # Page Creation Methods
     def _create_welcome_page(self):
+        # Use the icon_name property to display the application icon prominently
         page = Adw.StatusPage(
-            title=_("GRUB Restore Tool")
+            icon_name="grub-icon"
         )
         
-        content_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12, halign=Gtk.Align.CENTER, valign=Gtk.Align.CENTER)
+        content_box = Gtk.Box(
+            orientation=Gtk.Orientation.VERTICAL, 
+            spacing=12, 
+            halign=Gtk.Align.CENTER, 
+            valign=Gtk.Align.CENTER,
+            margin_top=24  # Add space between icon and text
+        )
         
         description_label = Gtk.Label(use_markup=True, justify=Gtk.Justification.CENTER, wrap=True, max_width_chars=60)
         description_label.set_markup(
-            f"<span font='12'>{_('This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed on the HD or SSD.')}</span>"
+            f"<span font='12'>{_('This tool should be used in {mode_name} to restore the BOOT of the BigLinux installed on the HD or SSD.').format(mode_name='<b>LIVE MODE</b>')}</span>"
             f"\n\n<span font='12' foreground='red' weight='bold'>{_('If the installed system is booting correctly, there are no boot problems, so it\'s better not to proceed with this tool.')}</span>"
             f"\n<span font='10' foreground='gray'>{_('It may also work with other Linux distributions.')}</span>"
         )
@@ -447,7 +462,7 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         summary = self.system_interface.get_system_summary(self.selected_system, self.selected_efi_partition, self.selected_disk)
         
         rows_data = [
-            (_("Live Boot Mode"), summary['boot_mode']),
+            (f"Live {_('Boot Mode')}", summary['boot_mode']),
             (_("Selected System"), summary['system']['name']),
             (_("Selected Partition"), f"{summary['system']['partition']} ({summary['system']['filesystem']})"),
             (_("Partition UUID"), summary['system']['uuid']),
@@ -485,9 +500,11 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
 
         if mode in [1, 2, 3]:
             self.progress_title_label.set_text(_("Restore in Progress..."))
+            self.progress_title_label.set_visible(True)
             threading.Thread(target=self._run_restore_thread, args=(mode,), daemon=True).start()
         else:
             self.progress_title_label.set_text(_("Preparing Interactive Session..."))
+            self.progress_title_label.set_visible(True)
             threading.Thread(target=self._run_interactive_session, args=(mode,), daemon=True).start()
 
     def _on_close_interactive_session(self, button):
@@ -528,9 +545,24 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         if not cmd: return
         full_cmd = ["manjaro-chroot", "/mnt"] + cmd
 
-        self.progress_title_label.set_text(_("Interactive Session Active"))
+        # Set a more descriptive title or hide it completely
+        title_map = {
+            5: _("Interactive Session: Control Center"),
+            6: _("Interactive Session: Package Manager"),
+        }
+        
+        if mode in title_map:
+            self.progress_title_label.set_text(title_map[mode])
+            self.progress_title_label.set_visible(True)
+        elif mode == 4:
+            # For the terminal, hide the title to maximize vertical space
+            self.progress_title_label.set_visible(False)
+        
         self.progress_spinner.stop()
-        if mode == 4: self.interactive_finish_box.set_visible(True)
+        
+        # Only show the "Close Terminal" button for the actual terminal session
+        if mode == 4:
+            self.interactive_finish_box.set_visible(True)
         
         try:
             self.terminal.spawn_sync(Vte.PtyFlags.DEFAULT, None, full_cmd, [], GLib.SpawnFlags.DEFAULT, None, None)
@@ -540,6 +572,8 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
 
     def _on_interactive_child_exited(self, terminal, status):
         self.interactive_finish_box.set_visible(False)
+        # Make sure the title is visible again for the cleanup message
+        self.progress_title_label.set_visible(True)
         GLib.idle_add(self.progress_title_label.set_text, _("Cleaning up session..."))
         threading.Thread(target=self._run_cleanup_thread, args=(status,), daemon=True).start()
 
@@ -560,6 +594,7 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         # For non-interactive restores, update the current page instead of switching
         messages = self._get_result_messages(self.current_mode, error_msg)
         self.progress_title_label.set_text(messages["title"])
+        self.progress_title_label.set_visible(True)
         self.completion_status_label.set_text(messages["description"])
         
         # Add error class for visual feedback on failure
