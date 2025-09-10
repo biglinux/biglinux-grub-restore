@@ -48,7 +48,7 @@ class GrubRestoreApplication(Adw.Application):
         about_window = Adw.AboutWindow(
             transient_for=self.get_active_window(),
             application_name=_("BigLinux GRUB Restore"),
-            application_icon="grub-icon", # Make sure this icon is installed
+            application_icon="biglinux-grub-restore",
             developer_name="BigLinux Team",
             version="3.0.0",
             website="https://www.biglinux.com.br",
@@ -56,6 +56,6 @@ class GrubRestoreApplication(Adw.Application):
             copyright="© 2024 BigLinux",
             license_type=Gtk.License.GPL_2_0,
             comments=_("A tool to restore the GRUB bootloader."),
-            developers=["Bruno Gonçalves", "Tales A. Mendonça"],
+            developers=["BigLinux Team"],
         )
         about_window.present()

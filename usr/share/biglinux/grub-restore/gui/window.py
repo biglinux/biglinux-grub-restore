@@ -57,7 +57,7 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         
         # Add application icon to the header bar for clear identification
         app_icon = Gtk.Image(
-            icon_name="grub-icon",
+            icon_name="biglinux-grub-restore",
             pixel_size=22
         )
         self.header_bar.pack_start(app_icon)
@@ -99,7 +99,7 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
     def _create_welcome_page(self):
         # Use the icon_name property to display the application icon prominently
         page = Adw.StatusPage(
-            icon_name="grub-icon"
+            icon_name="biglinux-grub-restore"
         )
         
         content_box = Gtk.Box(
