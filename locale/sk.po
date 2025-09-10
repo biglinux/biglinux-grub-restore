@@ -38,6 +38,30 @@ msgstr "O aplikácii"
 msgid "Quit"
 msgstr "Ukončiť"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 115
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"This tool should be used in {mode_name} to restore the BOOT of the BigLinux installed on the HD or "
+"SSD."
+msgstr ""
+"Tento nástroj by mal byť použitý v {mode_name} na obnovenie BOOT-u BigLinux nainštalovaného na HD "
+"alebo SSD."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 116
+#: NEEDS WORK
+msgid ""
+"If the installed system is booting correctly, there are no boot problems, so it's better not to "
+"proceed with this tool."
+msgstr ""
+"Ak nainštalovaný systém správne bootuje, nie sú žiadne problémy s bootovaním, takže je lepšie s "
+"týmto nástrojom nepokračovať."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 117
+#: NEEDS WORK
+msgid "It may also work with other Linux distributions."
+msgstr "Môže to fungovať aj s inými distribúciami Linuxu."
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
 msgstr "Začiatok detekcie"
@@ -294,14 +318,49 @@ msgstr "Žiadne systémy nenájdené"
 msgid "No Linux installations could be detected on your drives."
 msgstr "Na vašich diskoch neboli zistené žiadne inštalácie Linuxu."
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 373
+#: NEEDS WORK
+msgid "Partition:"
+msgstr "Partícia:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 373
+#: NEEDS WORK
+msgid "FS:"
+msgstr "FS:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 373
+#: NEEDS WORK
+msgid "UUID:"
+msgstr "UUID:"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
 msgid "EFI System Partition"
 msgstr "EFI systémová partícia"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 409
+#: NEEDS WORK
+msgid "Model:"
+msgstr "Model:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 409
+#: NEEDS WORK
+msgid "Partition Table:"
+msgstr "Tabuľka oddielov:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 460
+#: NEEDS WORK
+msgid "Failed to mount the selected system for verification:"
+msgstr "Nepodarilo sa pripojiť vybraný systém na overenie:"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
 msgid "Mount Failed"
 msgstr "Pripojenie zlyhalo"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 479
+#: NEEDS WORK
+msgid "Boot Mode"
+msgstr "Režim spustenia"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"

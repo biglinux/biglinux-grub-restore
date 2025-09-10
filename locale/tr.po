@@ -38,6 +38,30 @@ msgstr "Hakkında"
 msgid "Quit"
 msgstr "Çıkış yap"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 115
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"This tool should be used in {mode_name} to restore the BOOT of the BigLinux installed on the HD or "
+"SSD."
+msgstr ""
+"Bu araç, HD veya SSD'ye kurulu BigLinux'un BOOT'unu geri yüklemek için {mode_name} modunda "
+"kullanılmalıdır."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 116
+#: NEEDS WORK
+msgid ""
+"If the installed system is booting correctly, there are no boot problems, so it's better not to "
+"proceed with this tool."
+msgstr ""
+"Yüklenen sistem düzgün bir şekilde başlatılıyorsa, herhangi bir önyükleme sorunu yoktur, bu nedenle "
+"bu aracı kullanmaya devam etmemek daha iyidir."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 117
+#: NEEDS WORK
+msgid "It may also work with other Linux distributions."
+msgstr "Diğer Linux dağıtımlarıyla da çalışabilir."
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
 msgstr "Algılamayı Başlat"
@@ -296,14 +320,49 @@ msgstr "Sistem Bulunamadı"
 msgid "No Linux installations could be detected on your drives."
 msgstr "Sürücülerinizde hiçbir Linux kurulumu tespit edilemedi."
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 373
+#: NEEDS WORK
+msgid "Partition:"
+msgstr "Bölüm:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 373
+#: NEEDS WORK
+msgid "FS:"
+msgstr "FS:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 373
+#: NEEDS WORK
+msgid "UUID:"
+msgstr "UUID:"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
 msgid "EFI System Partition"
 msgstr "EFI Sistem Bölümü"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 409
+#: NEEDS WORK
+msgid "Model:"
+msgstr "Model:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 409
+#: NEEDS WORK
+msgid "Partition Table:"
+msgstr "Bölüm Tablosu:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 460
+#: NEEDS WORK
+msgid "Failed to mount the selected system for verification:"
+msgstr "Seçilen sistemi doğrulama için bağlama başarısız oldu:"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
 msgid "Mount Failed"
 msgstr "Bağlama Başarısız"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 479
+#: NEEDS WORK
+msgid "Boot Mode"
+msgstr "Başlangıç Modu"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
