@@ -176,7 +176,7 @@ msgstr "Close Terminal"
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 262
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 290
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 633
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 639
 msgid "Go Back"
 msgstr "Go Back"
 
@@ -297,62 +297,62 @@ msgstr ""
 "Do you want to try even with a low probability of success?"
 
 #
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 367
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 370
 msgid "No Systems Found"
 msgstr "No Systems Found"
 
 #
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 367
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 370
 msgid "No Linux installations could be detected on your drives."
 msgstr "No Linux installations could be detected on your drives."
 
 #
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 391
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 398
 msgid "EFI System Partition"
 msgstr "EFI System Partition"
 
 #
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 467
 msgid "Mount Failed"
 msgstr "Mount Failed"
 
 #
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 480
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 486
 msgid "Selected System"
 msgstr "Selected System"
 
 #
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 481
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 487
 msgid "Selected Partition"
 msgstr "Selected Partition"
 
 #
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 482
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 488
 msgid "Partition UUID"
 msgstr "Partition UUID"
 
 #
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 486
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 492
 msgid "Target (EFI Restore)"
 msgstr "Target (EFI Restore)"
 
 #
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 489
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 495
 msgid "Target (Legacy Restore)"
 msgstr "Target (Legacy Restore)"
 
 #
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 490
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 496
 msgid "Disk Details"
 msgstr "Disk Details"
 
 #
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 507
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 513
 msgid "No Internet Connection Detected"
 msgstr "No Internet Connection Detected"
 
 #
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 508
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 514
 msgid ""
 "Intermediate and Complete restore options require an internet connection to "
 "download packages. These options may fail if your computer is offline."
@@ -361,31 +361,31 @@ msgstr ""
 "download packages. These options may fail if your computer is offline."
 
 #
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 510
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 516
 msgid "OK"
 msgstr "OK"
 
 #
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 522
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 528
 msgid "Restore in Progress..."
 msgstr "Restore in Progress..."
 
 #
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 526
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 532
 msgid "Preparing Interactive Session..."
 msgstr "Preparing Interactive Session..."
 
 #
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 570
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 576
 msgid "Interactive Session: Control Center"
 msgstr "Interactive Session: Control Center"
 
 #
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 571
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 577
 msgid "Interactive Session: Package Manager"
 msgstr "Interactive Session: Package Manager"
 
 #
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 597
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 603
 msgid "Cleaning up session..."
 msgstr "Cleaning up session..."
