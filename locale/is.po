@@ -38,30 +38,6 @@ msgstr "Um umfjöllun"
 msgid "Quit"
 msgstr "Hætta við"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 115
-#: NEEDS WORK
-#, python-brace-format
-msgid ""
-"This tool should be used in {mode_name} to restore the BOOT of the BigLinux installed on the HD or "
-"SSD."
-msgstr ""
-"Þetta verkfæri ætti að nota í {mode_name} til að endurheimta BOOT BigLinux sem er uppsett á HD eða "
-"SSD."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 116
-#: NEEDS WORK
-msgid ""
-"If the installed system is booting correctly, there are no boot problems, so it's better not to "
-"proceed with this tool."
-msgstr ""
-"Ef kerfið sem er sett upp er að ræsa rétt, eru engin ræsivandamál, svo það er betra að halda sig "
-"frá þessu tóli."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 117
-#: NEEDS WORK
-msgid "It may also work with other Linux distributions."
-msgstr "Það gæti einnig virkað með öðrum Linux dreifingum."
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
 msgstr "Byrjun greiningar"
@@ -318,49 +294,14 @@ msgstr "Engin fannst ekki"
 msgid "No Linux installations could be detected on your drives."
 msgstr "Engin Linux uppsetningar fundust á drifunum þínum."
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 373
-#: NEEDS WORK
-msgid "Partition:"
-msgstr "Partisjon:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 373
-#: NEEDS WORK
-msgid "FS:"
-msgstr "FS:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 373
-#: NEEDS WORK
-msgid "UUID:"
-msgstr "UUID:"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
 msgid "EFI System Partition"
 msgstr "EFI kerfiskipartition"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 409
-#: NEEDS WORK
-msgid "Model:"
-msgstr "Líkan:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 409
-#: NEEDS WORK
-msgid "Partition Table:"
-msgstr "Partisjonartafla:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 460
-#: NEEDS WORK
-msgid "Failed to mount the selected system for verification:"
-msgstr "Mistók að festa valda kerfið til staðfestingar:"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
 msgid "Mount Failed"
 msgstr "Mountun mistókst"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 479
-#: NEEDS WORK
-msgid "Boot Mode"
-msgstr "Raðgerðarhamur"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"

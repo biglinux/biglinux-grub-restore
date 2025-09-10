@@ -38,30 +38,6 @@ msgstr "Про програму"
 msgid "Quit"
 msgstr "Вихід"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 115
-#: NEEDS WORK
-#, python-brace-format
-msgid ""
-"This tool should be used in {mode_name} to restore the BOOT of the BigLinux installed on the HD or "
-"SSD."
-msgstr ""
-"Цей інструмент слід використовувати в {mode_name} для відновлення завантаження BigLinux, "
-"встановленого на жорсткому диску або SSD."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 116
-#: NEEDS WORK
-msgid ""
-"If the installed system is booting correctly, there are no boot problems, so it's better not to "
-"proceed with this tool."
-msgstr ""
-"Якщо встановлена система завантажується правильно, проблем із завантаженням немає, тому краще не "
-"продовжувати з цим інструментом."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 117
-#: NEEDS WORK
-msgid "It may also work with other Linux distributions."
-msgstr "Воно також може працювати з іншими дистрибутивами Linux."
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
 msgstr "Почати виявлення"
@@ -318,49 +294,14 @@ msgstr "Системи не знайдено"
 msgid "No Linux installations could be detected on your drives."
 msgstr "Не вдалося виявити жодних установок Linux на ваших дисках."
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 373
-#: NEEDS WORK
-msgid "Partition:"
-msgstr "Partition:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 373
-#: NEEDS WORK
-msgid "FS:"
-msgstr "FS:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 373
-#: NEEDS WORK
-msgid "UUID:"
-msgstr "UUID:"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
 msgid "EFI System Partition"
 msgstr "EFI системний розділ"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 409
-#: NEEDS WORK
-msgid "Model:"
-msgstr "Модель:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 409
-#: NEEDS WORK
-msgid "Partition Table:"
-msgstr "Таблиця розділів:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 460
-#: NEEDS WORK
-msgid "Failed to mount the selected system for verification:"
-msgstr "Не вдалося змонтувати вибрану систему для перевірки:"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
 msgid "Mount Failed"
 msgstr "Монтування не вдалося"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 479
-#: NEEDS WORK
-msgid "Boot Mode"
-msgstr "Режим завантаження"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"

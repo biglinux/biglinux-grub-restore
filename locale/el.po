@@ -38,30 +38,6 @@ msgstr "Σχετικά"
 msgid "Quit"
 msgstr "Έξοδος"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 115
-#: NEEDS WORK
-#, python-brace-format
-msgid ""
-"This tool should be used in {mode_name} to restore the BOOT of the BigLinux installed on the HD or "
-"SSD."
-msgstr ""
-"Αυτό το εργαλείο θα πρέπει να χρησιμοποιείται σε {mode_name} για να αποκαταστήσει το BOOT του "
-"BigLinux που είναι εγκατεστημένο στον HD ή SSD."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 116
-#: NEEDS WORK
-msgid ""
-"If the installed system is booting correctly, there are no boot problems, so it's better not to "
-"proceed with this tool."
-msgstr ""
-"Αν το εγκατεστημένο σύστημα εκκινεί σωστά, δεν υπάρχουν προβλήματα εκκίνησης, οπότε είναι καλύτερα "
-"να μην προχωρήσετε με αυτό το εργαλείο."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 117
-#: NEEDS WORK
-msgid "It may also work with other Linux distributions."
-msgstr "Μπορεί επίσης να λειτουργήσει με άλλες διανομές Linux."
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
 msgstr "Έναρξη Ανίχνευσης"
@@ -319,49 +295,14 @@ msgstr "Δεν βρέθηκαν συστήματα"
 msgid "No Linux installations could be detected on your drives."
 msgstr "Δεν ανιχνεύθηκαν εγκαταστάσεις Linux στους δίσκους σας."
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 373
-#: NEEDS WORK
-msgid "Partition:"
-msgstr "Κατανομή:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 373
-#: NEEDS WORK
-msgid "FS:"
-msgstr "FS:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 373
-#: NEEDS WORK
-msgid "UUID:"
-msgstr "UUID:"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
 msgid "EFI System Partition"
 msgstr "Διαμέρισμα Συστήματος EFI"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 409
-#: NEEDS WORK
-msgid "Model:"
-msgstr "Μοντέλο:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 409
-#: NEEDS WORK
-msgid "Partition Table:"
-msgstr "Πίνακας Κατανομής:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 460
-#: NEEDS WORK
-msgid "Failed to mount the selected system for verification:"
-msgstr "Αποτυχία τοποθέτησης του επιλεγμένου συστήματος για επαλήθευση:"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
 msgid "Mount Failed"
 msgstr "Αποτυχία τοποθέτησης"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 479
-#: NEEDS WORK
-msgid "Boot Mode"
-msgstr "Λειτουργία εκκίνησης"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
