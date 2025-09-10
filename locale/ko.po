@@ -38,6 +38,26 @@ msgstr "정보"
 msgid "Quit"
 msgstr "종료"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 115
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"This tool should be used in {mode_name} to restore the BOOT of the BigLinux installed on the HD or "
+"SSD."
+msgstr "이 도구는 HD 또는 SSD에 설치된 BigLinux의 부트 복원을 위해 {mode_name}에서 사용해야 합니다."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 116
+#: NEEDS WORK
+msgid ""
+"If the installed system is booting correctly, there are no boot problems, so it's better not to "
+"proceed with this tool."
+msgstr "설치된 시스템이 정상적으로 부팅되고 있다면 부팅 문제가 없으므로 이 도구를 진행하지 않는 것이 좋습니다."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 117
+#: NEEDS WORK
+msgid "It may also work with other Linux distributions."
+msgstr "다른 리눅스 배포판에서도 작동할 수 있습니다."
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
 msgstr "탐지 시작"
@@ -291,14 +311,49 @@ msgstr "시스템을 찾을 수 없습니다."
 msgid "No Linux installations could be detected on your drives."
 msgstr "드라이브에서 감지된 Linux 설치가 없습니다."
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 376
+#: NEEDS WORK
+msgid "Partition:"
+msgstr "파티션:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 376
+#: NEEDS WORK
+msgid "FS:"
+msgstr "FS:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 376
+#: NEEDS WORK
+msgid "UUID:"
+msgstr "UUID:"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
 msgid "EFI System Partition"
 msgstr "EFI 시스템 파티션"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 415
+#: NEEDS WORK
+msgid "Model:"
+msgstr "모델:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 415
+#: NEEDS WORK
+msgid "Partition Table:"
+msgstr "파티션 테이블:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 466
+#: NEEDS WORK
+msgid "Failed to mount the selected system for verification:"
+msgstr "선택한 시스템을 검증하기 위해 마운트하는 데 실패했습니다:"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
 msgid "Mount Failed"
 msgstr "마운트 실패"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 485
+#: NEEDS WORK
+msgid "Boot Mode"
+msgstr "부팅 모드"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
