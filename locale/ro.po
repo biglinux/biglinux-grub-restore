@@ -26,6 +26,10 @@ msgstr "Restaurare GRUB BigLinux"
 msgid "A tool to restore the GRUB bootloader."
 msgstr "Un instrument pentru a restaura bootloaderul GRUB."
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 28
+msgid "Restore the installed system"
+msgstr "Restaurare sistemul instalat"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 53
 msgid "About"
 msgstr "Despre"
@@ -33,10 +37,6 @@ msgstr "Despre"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 54
 msgid "Quit"
 msgstr "Ieșire"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 74
-msgid "GRUB Restore Tool"
-msgstr "Instrument de restaurare GRUB"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
@@ -299,10 +299,6 @@ msgstr "Nu au fost detectate instalări Linux pe unitățile dvs."
 msgid "EFI System Partition"
 msgstr "Partiție de sistem EFI"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 450
-msgid "Live Boot Mode"
-msgstr "Modul de Boot Live"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "Sistem selectat"
@@ -355,9 +351,13 @@ msgstr "Restaurare în curs..."
 msgid "Preparing Interactive Session..."
 msgstr "Pregătirea sesiunii interactive..."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 496
-msgid "Interactive Session Active"
-msgstr "Sesiune interactivă activă"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 550
+msgid "Interactive Session: Control Center"
+msgstr "Sesiune Interactivă: Centru de Control"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 551
+msgid "Interactive Session: Package Manager"
+msgstr "Sesiune Interactivă: Manager de Pachete"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 508
 msgid "Cleaning up session..."

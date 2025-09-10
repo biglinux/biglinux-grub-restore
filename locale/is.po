@@ -26,6 +26,10 @@ msgstr "BigLinux GRUB Endurðun"
 msgid "A tool to restore the GRUB bootloader."
 msgstr "Verkfæri til að endurheimta GRUB ræsivélina."
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 28
+msgid "Restore the installed system"
+msgstr "Endurðu uppsetta kerfið"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 53
 msgid "About"
 msgstr "Um umfjöllun"
@@ -33,10 +37,6 @@ msgstr "Um umfjöllun"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 54
 msgid "Quit"
 msgstr "Hætta við"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 74
-msgid "GRUB Restore Tool"
-msgstr "GRUB endurunarverkfæri"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
@@ -299,10 +299,6 @@ msgstr "Engin Linux uppsetningar fundust á drifunum þínum."
 msgid "EFI System Partition"
 msgstr "EFI kerfiskipartition"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 450
-msgid "Live Boot Mode"
-msgstr "Lifandi Boot Hamur"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "Valin kerfi"
@@ -355,9 +351,13 @@ msgstr "Endurheimt í gangi..."
 msgid "Preparing Interactive Session..."
 msgstr "Að undirbúa gagnvirka lotu..."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 496
-msgid "Interactive Session Active"
-msgstr "Samskipti virkt"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 550
+msgid "Interactive Session: Control Center"
+msgstr "Samskipti: Stjórnborð"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 551
+msgid "Interactive Session: Package Manager"
+msgstr "Samskipti: Pakka Stjóri"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 508
 msgid "Cleaning up session..."

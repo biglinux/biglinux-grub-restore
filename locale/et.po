@@ -26,6 +26,10 @@ msgstr "BigLinux GRUB Taastamine"
 msgid "A tool to restore the GRUB bootloader."
 msgstr "Tööriist GRUB käivitaja taastamiseks."
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 28
+msgid "Restore the installed system"
+msgstr "Taasta installitud süsteem"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 53
 msgid "About"
 msgstr "Teave"
@@ -33,10 +37,6 @@ msgstr "Teave"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 54
 msgid "Quit"
 msgstr "Välja"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 74
-msgid "GRUB Restore Tool"
-msgstr "GRUBi taastamise tööriist"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
@@ -299,10 +299,6 @@ msgstr "Teie ketastel ei leitud ühtegi Linuxi installatsiooni."
 msgid "EFI System Partition"
 msgstr "EFI süsteemiosakond"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 450
-msgid "Live Boot Mode"
-msgstr "Elu käivitamise režiim"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "Valitud süsteem"
@@ -355,9 +351,13 @@ msgstr "Taastamine käib..."
 msgid "Preparing Interactive Session..."
 msgstr "Valmistamine interaktiivseks seansiks..."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 496
-msgid "Interactive Session Active"
-msgstr "Interaktiivne seanss aktiivne"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 550
+msgid "Interactive Session: Control Center"
+msgstr "Interaktiivne seanss: Kontrollikeskus"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 551
+msgid "Interactive Session: Package Manager"
+msgstr "Interaktiivne seanss: Pakettide haldur"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 508
 msgid "Cleaning up session..."

@@ -26,6 +26,10 @@ msgstr "빅리눅스 GRUB 복원"
 msgid "A tool to restore the GRUB bootloader."
 msgstr "GRUB 부트로더를 복원하는 도구."
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 28
+msgid "Restore the installed system"
+msgstr "설치된 시스템 복원"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 53
 msgid "About"
 msgstr "정보"
@@ -33,10 +37,6 @@ msgstr "정보"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 54
 msgid "Quit"
 msgstr "종료"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 74
-msgid "GRUB Restore Tool"
-msgstr "GRUB 복구 도구"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
@@ -296,10 +296,6 @@ msgstr "드라이브에서 감지된 Linux 설치가 없습니다."
 msgid "EFI System Partition"
 msgstr "EFI 시스템 파티션"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 450
-msgid "Live Boot Mode"
-msgstr "라이브 부트 모드"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "선택한 시스템"
@@ -348,9 +344,13 @@ msgstr "복원 진행 중..."
 msgid "Preparing Interactive Session..."
 msgstr "인터랙티브 세션 준비 중..."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 496
-msgid "Interactive Session Active"
-msgstr "인터랙티브 세션 활성화"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 550
+msgid "Interactive Session: Control Center"
+msgstr "인터랙티브 세션: 제어 센터"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 551
+msgid "Interactive Session: Package Manager"
+msgstr "인터랙티브 세션: 패키지 관리자"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 508
 msgid "Cleaning up session..."

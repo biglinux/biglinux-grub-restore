@@ -26,6 +26,10 @@ msgstr "BigLinux GRUB Gendannelse"
 msgid "A tool to restore the GRUB bootloader."
 msgstr "Et værktøj til at gendanne GRUB bootloaderen."
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 28
+msgid "Restore the installed system"
+msgstr "Gendan det installerede system"
+# 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 53
 msgid "About"
 msgstr "Om"
@@ -33,10 +37,6 @@ msgstr "Om"
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 54
 msgid "Quit"
 msgstr "Afslut"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 74
-msgid "GRUB Restore Tool"
-msgstr "GRUB Gendannelsesværktøj"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
@@ -300,10 +300,6 @@ msgstr "Ingen Linux-installationer kunne findes på dine drev."
 msgid "EFI System Partition"
 msgstr "EFI-systempartition"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 450
-msgid "Live Boot Mode"
-msgstr "Live Boot-tilstand"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "Valgt system"
@@ -356,9 +352,13 @@ msgstr "Gendannelse i gang..."
 msgid "Preparing Interactive Session..."
 msgstr "Forbereder interaktiv session..."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 496
-msgid "Interactive Session Active"
-msgstr "Interaktiv session aktiv"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 550
+msgid "Interactive Session: Control Center"
+msgstr "Interaktiv session: Kontrolcenter"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 551
+msgid "Interactive Session: Package Manager"
+msgstr "Interaktiv session: Pakkeadministrator"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 508
 msgid "Cleaning up session..."

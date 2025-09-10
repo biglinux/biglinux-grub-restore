@@ -26,6 +26,10 @@ msgstr "BigLinux GRUB Επαναφορά"
 msgid "A tool to restore the GRUB bootloader."
 msgstr "Ένα εργαλείο για την αποκατάσταση του φορτωτή εκκίνησης GRUB."
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 28
+msgid "Restore the installed system"
+msgstr "Επαναφέρετε το εγκατεστημένο σύστημα"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 53
 msgid "About"
 msgstr "Σχετικά"
@@ -33,10 +37,6 @@ msgstr "Σχετικά"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 54
 msgid "Quit"
 msgstr "Έξοδος"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 74
-msgid "GRUB Restore Tool"
-msgstr "Εργαλείο Επαναφοράς GRUB"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
@@ -300,10 +300,6 @@ msgstr "Δεν ανιχνεύθηκαν εγκαταστάσεις Linux στο�
 msgid "EFI System Partition"
 msgstr "Διαμέρισμα Συστήματος EFI"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 450
-msgid "Live Boot Mode"
-msgstr "Ζωντανή Λειτουργία Εκκίνησης"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "Επιλεγμένο Σύστημα"
@@ -356,9 +352,13 @@ msgstr "Αποκατάσταση σε εξέλιξη..."
 msgid "Preparing Interactive Session..."
 msgstr "Προετοιμασία Διαδραστικής Συνεδρίας..."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 496
-msgid "Interactive Session Active"
-msgstr "Διαδραστική Συνεδρία Ενεργή"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 550
+msgid "Interactive Session: Control Center"
+msgstr "Διαδραστική Συνεδρία: Κέντρο Ελέγχου"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 551
+msgid "Interactive Session: Package Manager"
+msgstr "Διαδραστική Συνεδρία: Διαχειριστής Πακέτων"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 508
 msgid "Cleaning up session..."

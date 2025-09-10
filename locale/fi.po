@@ -26,6 +26,10 @@ msgstr "BigLinux GRUB Palautus"
 msgid "A tool to restore the GRUB bootloader."
 msgstr "Työkalu GRUB-käynnistyslataimen palauttamiseen."
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 28
+msgid "Restore the installed system"
+msgstr "Palauta asennettu järjestelmä"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 53
 msgid "About"
 msgstr "Tietoja"
@@ -33,10 +37,6 @@ msgstr "Tietoja"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 54
 msgid "Quit"
 msgstr "Lopeta"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 74
-msgid "GRUB Restore Tool"
-msgstr "GRUB Palautustyökalu"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
@@ -299,10 +299,6 @@ msgstr "Yhtään Linux-asennusta ei voitu havaita levyiltäsi."
 msgid "EFI System Partition"
 msgstr "EFI-järjestelmäosio"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 450
-msgid "Live Boot Mode"
-msgstr "Live Boot -tila"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "Valittu järjestelmä"
@@ -355,9 +351,13 @@ msgstr "Palautus käynnissä..."
 msgid "Preparing Interactive Session..."
 msgstr "Valmistellaan vuorovaikutteista istuntoa..."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 496
-msgid "Interactive Session Active"
-msgstr "Vuorovaikutteinen istunto aktiivinen"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 550
+msgid "Interactive Session: Control Center"
+msgstr "Interaktiivinen istunto: Ohjauskeskus"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 551
+msgid "Interactive Session: Package Manager"
+msgstr "Vuorovaikutteinen Istunto: Pakettien Hallinta"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 508
 msgid "Cleaning up session..."

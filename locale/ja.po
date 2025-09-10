@@ -26,6 +26,10 @@ msgstr "BigLinux GRUB 復元"
 msgid "A tool to restore the GRUB bootloader."
 msgstr "GRUBブートローダーを復元するためのツール。"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 28
+msgid "Restore the installed system"
+msgstr "インストールされたシステムを復元する"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 53
 msgid "About"
 msgstr "情報について"
@@ -33,10 +37,6 @@ msgstr "情報について"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 54
 msgid "Quit"
 msgstr "終了"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 74
-msgid "GRUB Restore Tool"
-msgstr "GRUB復元ツール"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
@@ -296,10 +296,6 @@ msgstr "ドライブ上にLinuxインストールが検出されませんでし�
 msgid "EFI System Partition"
 msgstr "EFIシステムパーティション"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 450
-msgid "Live Boot Mode"
-msgstr "ライブブートモード"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "選択されたシステム"
@@ -350,9 +346,13 @@ msgstr "復元中..."
 msgid "Preparing Interactive Session..."
 msgstr "インタラクティブセッションを準備中..."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 496
-msgid "Interactive Session Active"
-msgstr "インタラクティブセッションがアクティブです"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 550
+msgid "Interactive Session: Control Center"
+msgstr "インタラクティブセッション：コントロールセンター"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 551
+msgid "Interactive Session: Package Manager"
+msgstr "インタラクティブセッション：パッケージマネージャー"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 508
 msgid "Cleaning up session..."

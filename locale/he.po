@@ -26,6 +26,10 @@ msgstr "שחזור GRUB של BigLinux"
 msgid "A tool to restore the GRUB bootloader."
 msgstr "כלי לשחזור מנהל האתחול GRUB."
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 28
+msgid "Restore the installed system"
+msgstr "שחזר את המערכת המותקנת"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 53
 msgid "About"
 msgstr "אודות"
@@ -33,10 +37,6 @@ msgstr "אודות"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 54
 msgid "Quit"
 msgstr "צא"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 74
-msgid "GRUB Restore Tool"
-msgstr "כלי שחזור GRUB"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
@@ -296,10 +296,6 @@ msgstr "לא נמצאו התקנות לינוקס בכוננים שלך."
 msgid "EFI System Partition"
 msgstr "מחיצת מערכת EFI"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 450
-msgid "Live Boot Mode"
-msgstr "מצב הפעלה חי"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "מערכת נבחרת"
@@ -352,9 +348,13 @@ msgstr "שחזור בתהליך..."
 msgid "Preparing Interactive Session..."
 msgstr "מכין מפגש אינטראקטיבי..."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 496
-msgid "Interactive Session Active"
-msgstr "מושב אינטראקטיבי פעיל"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 550
+msgid "Interactive Session: Control Center"
+msgstr "סשן אינטראקטיבי: מרכז שליטה"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 551
+msgid "Interactive Session: Package Manager"
+msgstr "סשן אינטראקטיבי: מנהל חבילות"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 508
 msgid "Cleaning up session..."

@@ -26,6 +26,10 @@ msgstr "BigLinux GRUB Wiederherstellung"
 msgid "A tool to restore the GRUB bootloader."
 msgstr "Ein Werkzeug zur Wiederherstellung des GRUB-Bootloaders."
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 28
+msgid "Restore the installed system"
+msgstr "Stellen Sie das installierte System wieder her."
+# 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 53
 msgid "About"
 msgstr "Über"
@@ -33,10 +37,6 @@ msgstr "Über"
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 54
 msgid "Quit"
 msgstr "Beenden"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 74
-msgid "GRUB Restore Tool"
-msgstr "GRUB Wiederherstellungstool"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
@@ -300,10 +300,6 @@ msgstr "Es konnten keine Linux-Installationen auf Ihren Laufwerken erkannt werde
 msgid "EFI System Partition"
 msgstr "EFI-Systempartition"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 450
-msgid "Live Boot Mode"
-msgstr "Live-Boot-Modus"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "Ausgewähltes System"
@@ -357,9 +353,13 @@ msgstr "Wiederherstellung läuft..."
 msgid "Preparing Interactive Session..."
 msgstr "Interaktive Sitzung wird vorbereitet..."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 496
-msgid "Interactive Session Active"
-msgstr "Interaktive Sitzung Aktiv"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 550
+msgid "Interactive Session: Control Center"
+msgstr "Interaktive Sitzung: Steuerzentrale"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 551
+msgid "Interactive Session: Package Manager"
+msgstr "Interaktive Sitzung: Paketmanager"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 508
 msgid "Cleaning up session..."

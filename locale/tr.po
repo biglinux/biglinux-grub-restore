@@ -26,6 +26,10 @@ msgstr "BigLinux GRUB Geri Yükleme"
 msgid "A tool to restore the GRUB bootloader."
 msgstr "GRUB önyükleyicisini geri yüklemek için bir araç."
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 28
+msgid "Restore the installed system"
+msgstr "Yüklenen sistemi geri yükle"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 53
 msgid "About"
 msgstr "Hakkında"
@@ -33,10 +37,6 @@ msgstr "Hakkında"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 54
 msgid "Quit"
 msgstr "Çıkış yap"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 74
-msgid "GRUB Restore Tool"
-msgstr "GRUB Kurtarma Aracı"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
@@ -301,10 +301,6 @@ msgstr "Sürücülerinizde hiçbir Linux kurulumu tespit edilemedi."
 msgid "EFI System Partition"
 msgstr "EFI Sistem Bölümü"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 450
-msgid "Live Boot Mode"
-msgstr "Canlı Önyükleme Modu"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "Seçili Sistem"
@@ -357,9 +353,13 @@ msgstr "Geri Yükleme Devam Ediyor..."
 msgid "Preparing Interactive Session..."
 msgstr "Etkileşimli Oturum Hazırlanıyor..."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 496
-msgid "Interactive Session Active"
-msgstr "Etkileşimli Oturum Aktif"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 550
+msgid "Interactive Session: Control Center"
+msgstr "Etkileşimli Oturum: Kontrol Merkezi"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 551
+msgid "Interactive Session: Package Manager"
+msgstr "Etkileşimli Oturum: Paket Yöneticisi"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 508
 msgid "Cleaning up session..."

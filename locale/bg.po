@@ -26,6 +26,10 @@ msgstr "BigLinux GRUB Възстановяване"
 msgid "A tool to restore the GRUB bootloader."
 msgstr "Инструмент за възстановяване на GRUB зареждача."
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 28
+msgid "Restore the installed system"
+msgstr "Възстановете инсталираната система"
+# 
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 53
 msgid "About"
 msgstr "За програмата"
@@ -33,10 +37,6 @@ msgstr "За програмата"
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 54
 msgid "Quit"
 msgstr "Изход"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 74
-msgid "GRUB Restore Tool"
-msgstr "Инструмент за възстановяване на GRUB"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
@@ -299,10 +299,6 @@ msgstr "Не бяха открити инсталации на Linux на ваш
 msgid "EFI System Partition"
 msgstr "EFI системен дял"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 450
-msgid "Live Boot Mode"
-msgstr "Режим на живо"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "Избраната система"
@@ -355,9 +351,13 @@ msgstr "Възстановяването е в ход..."
 msgid "Preparing Interactive Session..."
 msgstr "Подготовка на интерактивна сесия..."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 496
-msgid "Interactive Session Active"
-msgstr "Активна интерактивна сесия"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 550
+msgid "Interactive Session: Control Center"
+msgstr "Интерактивна сесия: Контролен център"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 551
+msgid "Interactive Session: Package Manager"
+msgstr "Интерактивна сесия: Мениджър на пакети"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 508
 msgid "Cleaning up session..."

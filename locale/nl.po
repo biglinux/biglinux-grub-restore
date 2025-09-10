@@ -26,6 +26,10 @@ msgstr "BigLinux GRUB Herstel"
 msgid "A tool to restore the GRUB bootloader."
 msgstr "Een hulpmiddel om de GRUB-opstartloader te herstellen."
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 28
+msgid "Restore the installed system"
+msgstr "Herstel het geïnstalleerde systeem"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 53
 msgid "About"
 msgstr "Over"
@@ -33,10 +37,6 @@ msgstr "Over"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 54
 msgid "Quit"
 msgstr "Afsluiten"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 74
-msgid "GRUB Restore Tool"
-msgstr "GRUB Herstelhulpmiddel"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
@@ -300,10 +300,6 @@ msgstr "Er zijn geen Linux-installaties op uw schijven gedetecteerd."
 msgid "EFI System Partition"
 msgstr "EFI-systeempartitie"
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 450
-msgid "Live Boot Mode"
-msgstr "Live Boot-modus"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "Geselecteerd Systeem"
@@ -356,9 +352,13 @@ msgstr "Herstel in uitvoering..."
 msgid "Preparing Interactive Session..."
 msgstr "Voorbereiden interactieve sessie..."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 496
-msgid "Interactive Session Active"
-msgstr "Interactieve sessie actief"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 550
+msgid "Interactive Session: Control Center"
+msgstr "Interactieve Sessie: Controlecentrum"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 551
+msgid "Interactive Session: Package Manager"
+msgstr "Interactieve Sessie: Pakketbeheerder"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 508
 msgid "Cleaning up session..."
