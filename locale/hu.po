@@ -38,6 +38,30 @@ msgstr "Névjegy"
 msgid "Quit"
 msgstr "Kilépés"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 114
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"This tool should be used in {mode_name} to restore the BOOT of the BigLinux installed on the HD or "
+"SSD."
+msgstr ""
+"Ezt az eszközt a {mode_name} módban kell használni a BigLinux BOOT-jának helyreállításához, amely a "
+"HD-n vagy SSD-n van telepítve."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 115
+#: NEEDS WORK
+msgid ""
+"If the installed system is booting correctly, there are no boot problems, so it's better not to "
+"proceed with this tool."
+msgstr ""
+"Ha a telepített rendszer megfelelően indul, nincsenek indítási problémák, ezért jobb, ha nem "
+"folytatja ezzel az eszközzel."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 116
+#: NEEDS WORK
+msgid "It may also work with other Linux distributions."
+msgstr "Más Linux disztribúciókkal is működhet."
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
 msgstr "Kezdés észlelés"
@@ -294,10 +318,40 @@ msgstr "Nincs található rendszer"
 msgid "No Linux installations could be detected on your drives."
 msgstr "Nem található Linux telepítés a meghajtóin."
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 371
+#: NEEDS WORK
+msgid "Partition:"
+msgstr "Partíció:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 371
+#: NEEDS WORK
+msgid "FS:"
+msgstr "FS:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 371
+#: NEEDS WORK
+msgid "UUID:"
+msgstr "UUID:"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
 msgid "EFI System Partition"
 msgstr "EFI rendszerpartíció"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 407
+#: NEEDS WORK
+msgid "Model:"
+msgstr "Modell:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 407
+#: NEEDS WORK
+msgid "Partition Table:"
+msgstr "Partíciótábla:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 465
+#: NEEDS WORK
+msgid "Boot Mode"
+msgstr "Indítási mód"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"

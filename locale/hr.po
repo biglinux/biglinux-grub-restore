@@ -38,6 +38,28 @@ msgstr "O programu"
 msgid "Quit"
 msgstr "Izlaz"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 114
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"This tool should be used in {mode_name} to restore the BOOT of the BigLinux installed on the HD or "
+"SSD."
+msgstr "Ovaj alat treba koristiti u {mode_name} za vraćanje BOOT-a BigLinuxa instaliranog na HD-u ili SSD-u."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 115
+#: NEEDS WORK
+msgid ""
+"If the installed system is booting correctly, there are no boot problems, so it's better not to "
+"proceed with this tool."
+msgstr ""
+"Ako instalirani sustav ispravno pokreće, nema problema s pokretanjem, pa je bolje ne nastaviti s "
+"ovim alatom."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 116
+#: NEEDS WORK
+msgid "It may also work with other Linux distributions."
+msgstr "Može također raditi s drugim Linux distribucijama."
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
 msgstr "Pokreni otkrivanje"
@@ -294,10 +316,40 @@ msgstr "Nema pronađenih sustava"
 msgid "No Linux installations could be detected on your drives."
 msgstr "Nema instalacija sustava Linux koje su pronađene na vašim pogonima."
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 371
+#: NEEDS WORK
+msgid "Partition:"
+msgstr "Particija:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 371
+#: NEEDS WORK
+msgid "FS:"
+msgstr "FS:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 371
+#: NEEDS WORK
+msgid "UUID:"
+msgstr "UUID:"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
 msgid "EFI System Partition"
 msgstr "EFI sustav particija"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 407
+#: NEEDS WORK
+msgid "Model:"
+msgstr "Model:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 407
+#: NEEDS WORK
+msgid "Partition Table:"
+msgstr "Tablica particija:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 465
+#: NEEDS WORK
+msgid "Boot Mode"
+msgstr "Način pokretanja"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"

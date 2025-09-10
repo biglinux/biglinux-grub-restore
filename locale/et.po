@@ -38,6 +38,30 @@ msgstr "Teave"
 msgid "Quit"
 msgstr "Välja"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 114
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"This tool should be used in {mode_name} to restore the BOOT of the BigLinux installed on the HD or "
+"SSD."
+msgstr ""
+"Seda tööriista tuleks kasutada {mode_name} režiimis, et taastada BigLinuxi BOOT, mis on installitud "
+"HD-le või SSD-le."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 115
+#: NEEDS WORK
+msgid ""
+"If the installed system is booting correctly, there are no boot problems, so it's better not to "
+"proceed with this tool."
+msgstr ""
+"Kui installitud süsteem käivitub õigesti, ei esine käivitamisprobleeme, seega on parem mitte "
+"jätkata selle tööriistaga."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 116
+#: NEEDS WORK
+msgid "It may also work with other Linux distributions."
+msgstr "See võib töötada ka teiste Linuxi distributsioonidega."
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
 msgstr "Alustamine tuvastamine"
@@ -294,10 +318,40 @@ msgstr "Süsteeme ei leitud"
 msgid "No Linux installations could be detected on your drives."
 msgstr "Teie ketastel ei leitud ühtegi Linuxi installatsiooni."
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 371
+#: NEEDS WORK
+msgid "Partition:"
+msgstr "Partitsioon:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 371
+#: NEEDS WORK
+msgid "FS:"
+msgstr "FS:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 371
+#: NEEDS WORK
+msgid "UUID:"
+msgstr "UUID:"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
 msgid "EFI System Partition"
 msgstr "EFI süsteemiosakond"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 407
+#: NEEDS WORK
+msgid "Model:"
+msgstr "Mudel:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 407
+#: NEEDS WORK
+msgid "Partition Table:"
+msgstr "Partitsioonitabel:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 465
+#: NEEDS WORK
+msgid "Boot Mode"
+msgstr "Käivitamisrežiim"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"

@@ -38,6 +38,30 @@ msgstr "Sobre"
 msgid "Quit"
 msgstr "Sair"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 114
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"This tool should be used in {mode_name} to restore the BOOT of the BigLinux installed on the HD or "
+"SSD."
+msgstr ""
+"Esta ferramenta deve ser usada no {mode_name} para restaurar o BOOT do BigLinux instalado no HD ou "
+"SSD."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 115
+#: NEEDS WORK
+msgid ""
+"If the installed system is booting correctly, there are no boot problems, so it's better not to "
+"proceed with this tool."
+msgstr ""
+"Se o sistema instalado está inicializando corretamente, não há problemas de inicialização, então é "
+"melhor não prosseguir com esta ferramenta."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 116
+#: NEEDS WORK
+msgid "It may also work with other Linux distributions."
+msgstr "Pode também funcionar com outras distribuições Linux."
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
 msgstr "Iniciar Detecção"
@@ -295,10 +319,40 @@ msgstr "Nenhum sistema encontrado"
 msgid "No Linux installations could be detected on your drives."
 msgstr "Nenhuma instalação do Linux pôde ser detectada em seus discos."
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 371
+#: NEEDS WORK
+msgid "Partition:"
+msgstr "Partição:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 371
+#: NEEDS WORK
+msgid "FS:"
+msgstr "FS:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 371
+#: NEEDS WORK
+msgid "UUID:"
+msgstr "UUID:"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
 msgid "EFI System Partition"
 msgstr "Partição do Sistema EFI"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 407
+#: NEEDS WORK
+msgid "Model:"
+msgstr "Modelo:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 407
+#: NEEDS WORK
+msgid "Partition Table:"
+msgstr "Tabela de Partição:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 465
+#: NEEDS WORK
+msgid "Boot Mode"
+msgstr "Modo de Inicialização"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
