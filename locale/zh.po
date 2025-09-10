@@ -295,6 +295,10 @@ msgstr "在您的驱动器上未检测到任何Linux安装。"
 msgid "EFI System Partition"
 msgstr "EFI系统分区"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+msgid "Mount Failed"
+msgstr "挂载失败"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "所选系统"

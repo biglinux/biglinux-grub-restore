@@ -299,6 +299,10 @@ msgstr "Engin Linux uppsetningar fundust á drifunum þínum."
 msgid "EFI System Partition"
 msgstr "EFI kerfiskipartition"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+msgid "Mount Failed"
+msgstr "Mountun mistókst"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "Valin kerfi"

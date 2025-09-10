@@ -299,6 +299,10 @@ msgstr "Nem található Linux telepítés a meghajtóin."
 msgid "EFI System Partition"
 msgstr "EFI rendszerpartíció"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+msgid "Mount Failed"
+msgstr "Csatolás sikertelen"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "Kiválasztott rendszer"

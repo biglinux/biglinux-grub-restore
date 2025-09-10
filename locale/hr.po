@@ -299,6 +299,10 @@ msgstr "Nema instalacija sustava Linux koje su pronađene na vašim pogonima."
 msgid "EFI System Partition"
 msgstr "EFI sustav particija"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+msgid "Mount Failed"
+msgstr "Mountanje nije uspjelo"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "Odabrani sustav"

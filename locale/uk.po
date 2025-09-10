@@ -299,6 +299,10 @@ msgstr "Не вдалося виявити жодних установок Linux
 msgid "EFI System Partition"
 msgstr "EFI системний розділ"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+msgid "Mount Failed"
+msgstr "Монтування не вдалося"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "Вибрана система"

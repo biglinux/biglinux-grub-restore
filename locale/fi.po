@@ -299,6 +299,10 @@ msgstr "Yhtään Linux-asennusta ei voitu havaita levyiltäsi."
 msgid "EFI System Partition"
 msgstr "EFI-järjestelmäosio"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+msgid "Mount Failed"
+msgstr "Montaaminen epäonnistui"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "Valittu järjestelmä"

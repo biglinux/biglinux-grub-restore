@@ -299,6 +299,10 @@ msgstr "Nu au fost detectate instalări Linux pe unitățile dvs."
 msgid "EFI System Partition"
 msgstr "Partiție de sistem EFI"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+msgid "Mount Failed"
+msgstr "Montare eșuat"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "Sistem selectat"

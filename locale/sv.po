@@ -299,6 +299,10 @@ msgstr "Inga Linux-installationer kunde upptäckas på dina enheter."
 msgid "EFI System Partition"
 msgstr "EFI-systempartition"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+msgid "Mount Failed"
+msgstr "Montering misslyckades"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "Valt system"

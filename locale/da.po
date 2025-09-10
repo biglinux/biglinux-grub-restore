@@ -300,6 +300,10 @@ msgstr "Ingen Linux-installationer kunne findes på dine drev."
 msgid "EFI System Partition"
 msgstr "EFI-systempartition"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+msgid "Mount Failed"
+msgstr "Montering mislykkedes"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "Valgt system"

@@ -300,6 +300,10 @@ msgstr "Δεν ανιχνεύθηκαν εγκαταστάσεις Linux στο�
 msgid "EFI System Partition"
 msgstr "Διαμέρισμα Συστήματος EFI"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+msgid "Mount Failed"
+msgstr "Αποτυχία τοποθέτησης"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "Επιλεγμένο Σύστημα"

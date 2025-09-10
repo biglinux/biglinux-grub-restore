@@ -299,6 +299,10 @@ msgstr "Na vašich diskoch neboli zistené žiadne inštalácie Linuxu."
 msgid "EFI System Partition"
 msgstr "EFI systémová partícia"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+msgid "Mount Failed"
+msgstr "Pripojenie zlyhalo"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "Vybraný systém"

@@ -296,6 +296,10 @@ msgstr "드라이브에서 감지된 Linux 설치가 없습니다."
 msgid "EFI System Partition"
 msgstr "EFI 시스템 파티션"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+msgid "Mount Failed"
+msgstr "마운트 실패"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "선택한 시스템"

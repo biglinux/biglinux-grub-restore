@@ -296,6 +296,10 @@ msgstr "לא נמצאו התקנות לינוקס בכוננים שלך."
 msgid "EFI System Partition"
 msgstr "מחיצת מערכת EFI"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+msgid "Mount Failed"
+msgstr "ההרכבה נכשלה"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "מערכת נבחרת"

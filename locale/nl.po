@@ -300,6 +300,10 @@ msgstr "Er zijn geen Linux-installaties op uw schijven gedetecteerd."
 msgid "EFI System Partition"
 msgstr "EFI-systeempartitie"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+msgid "Mount Failed"
+msgstr "Mounten mislukt"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "Geselecteerd Systeem"

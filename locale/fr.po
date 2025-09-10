@@ -300,6 +300,10 @@ msgstr "Aucune installation de Linux n'a pu être détectée sur vos disques."
 msgid "EFI System Partition"
 msgstr "Partition système EFI"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+msgid "Mount Failed"
+msgstr "Échec de la montée"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "Système sélectionné"

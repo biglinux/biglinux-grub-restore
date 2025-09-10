@@ -299,6 +299,10 @@ msgstr "Teie ketastel ei leitud ühtegi Linuxi installatsiooni."
 msgid "EFI System Partition"
 msgstr "EFI süsteemiosakond"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+msgid "Mount Failed"
+msgstr "Mälu mountimine ebaõnnestus"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "Valitud süsteem"

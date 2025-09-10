@@ -296,6 +296,10 @@ msgstr "ドライブ上にLinuxインストールが検出されませんでし�
 msgid "EFI System Partition"
 msgstr "EFIシステムパーティション"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+msgid "Mount Failed"
+msgstr "マウントに失敗しました"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "選択されたシステム"

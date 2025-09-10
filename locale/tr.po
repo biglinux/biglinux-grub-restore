@@ -301,6 +301,10 @@ msgstr "Sürücülerinizde hiçbir Linux kurulumu tespit edilemedi."
 msgid "EFI System Partition"
 msgstr "EFI Sistem Bölümü"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+msgid "Mount Failed"
+msgstr "Bağlama Başarısız"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "Seçili Sistem"
