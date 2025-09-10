@@ -75,6 +75,10 @@ def main():
             sys.exit(1)
 
     # --- SETTINGS APPLICATION (RUNNING AS ROOT) ---
+    
+    # Force Cairo renderer for compatibility, especially in Live environments
+    os.environ['GSK_RENDERER'] = 'cairo'
+    
     parser = argparse.ArgumentParser()
     parser.add_argument('--color-scheme-from-user', type=str, default='default')
     parser.add_argument('--button-layout-from-user', type=str, default=None)

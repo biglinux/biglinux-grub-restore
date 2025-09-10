@@ -26,7 +26,7 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         super().__init__(**kwargs)
         
         self.set_title(_("Restore the installed system"))
-        self.set_default_size(1080, 660)
+        self.set_default_size(960, 660)
         
         self.system_interface = SystemInterface()
         self.selected_system = None
@@ -39,6 +39,7 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         self.system_rows = []
         self.efi_rows = []
         self.legacy_rows = []
+        self.restore_rows = {}
 
         self.system_check_buttons = []
         self.boot_target_check_buttons = []
@@ -221,6 +222,7 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
             row.set_activatable_widget(button)
             group.add(row)
             self.restore_buttons[mode] = (button, net_independent)
+            self.restore_rows[mode] = row
             
         return scrolled_window
 
@@ -451,10 +453,22 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
     def _on_selection_continue(self, button):
         effective_boot_mode = "EFI" if self.selected_efi_partition else "LEGACY"
         self.system_interface.save_selection(self.selected_system, self.selected_efi_partition, self.selected_disk, effective_boot_mode)
-        self._prepare_restore_page()
+        
+        # Mount the selected system to check for available tools
+        result = self.system_interface.prepare_chroot()
+        if result.returncode != 0:
+            error_msg = f"{_('Failed to mount the selected system for verification:')}\n{result.stderr}"
+            self._show_error(_("Mount Failed"), error_msg)
+            return
+
+        # Check for the existence of specific applications in the mounted system
+        show_control_center = os.path.exists("/mnt/usr/bin/bigcontrolcenter")
+        show_pamac = os.path.exists("/mnt/usr/bin/pamac-manager")
+
+        self._prepare_restore_page(show_control_center, show_pamac)
         self.view_stack.set_visible_child_name("restore")
 
-    def _prepare_restore_page(self):
+    def _prepare_restore_page(self, show_control_center, show_pamac):
         children_to_remove = [child for child in Gtk.Widget.observe_children(self.summary_group)]
         for child in children_to_remove:
             self.summary_group.remove(child)
@@ -479,6 +493,12 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
             row = Adw.ActionRow(title=title, subtitle=subtitle)
             row.set_activatable(False)
             self.summary_group.add(row)
+        
+        # Set visibility of interactive tool rows based on file checks
+        if 5 in self.restore_rows:
+            self.restore_rows[5].set_visible(show_control_center)
+        if 6 in self.restore_rows:
+            self.restore_rows[6].set_visible(show_pamac)
         
         is_connected = self.system_interface.check_network_connection()
         if not is_connected:
