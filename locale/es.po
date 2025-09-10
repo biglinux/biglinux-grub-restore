@@ -38,30 +38,6 @@ msgstr "Acerca de"
 msgid "Quit"
 msgstr "Salir"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 115
-#: NEEDS WORK
-#, python-brace-format
-msgid ""
-"This tool should be used in {mode_name} to restore the BOOT of the BigLinux installed on the HD or "
-"SSD."
-msgstr ""
-"Esta herramienta debe usarse en {mode_name} para restaurar el BOOT de BigLinux instalado en el HD o "
-"SSD."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 116
-#: NEEDS WORK
-msgid ""
-"If the installed system is booting correctly, there are no boot problems, so it's better not to "
-"proceed with this tool."
-msgstr ""
-"Si el sistema instalado está arrancando correctamente, no hay problemas de arranque, por lo que es "
-"mejor no continuar con esta herramienta."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 117
-#: NEEDS WORK
-msgid "It may also work with other Linux distributions."
-msgstr "También puede funcionar con otras distribuciones de Linux."
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
 msgstr "Iniciar detección"
@@ -319,49 +295,14 @@ msgstr "No se encontraron sistemas"
 msgid "No Linux installations could be detected on your drives."
 msgstr "No se pudieron detectar instalaciones de Linux en sus unidades."
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 376
-#: NEEDS WORK
-msgid "Partition:"
-msgstr "Partición:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 376
-#: NEEDS WORK
-msgid "FS:"
-msgstr "FS:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 376
-#: NEEDS WORK
-msgid "UUID:"
-msgstr "UUID:"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
 msgid "EFI System Partition"
 msgstr "Partición del sistema EFI"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 415
-#: NEEDS WORK
-msgid "Model:"
-msgstr "Modelo:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 415
-#: NEEDS WORK
-msgid "Partition Table:"
-msgstr "Tabla de particiones:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 466
-#: NEEDS WORK
-msgid "Failed to mount the selected system for verification:"
-msgstr "Error al montar el sistema seleccionado para la verificación:"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
 msgid "Mount Failed"
 msgstr "Montaje fallido"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 485
-#: NEEDS WORK
-msgid "Boot Mode"
-msgstr "Modo de arranque"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
