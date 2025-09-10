@@ -38,30 +38,6 @@ msgstr "O aplikaci"
 msgid "Quit"
 msgstr "Ukončit"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 114
-#: NEEDS WORK
-#, python-brace-format
-msgid ""
-"This tool should be used in {mode_name} to restore the BOOT of the BigLinux installed on the HD or "
-"SSD."
-msgstr ""
-"Tento nástroj by měl být použit v {mode_name} k obnovení BOOTu BigLinux nainstalovaného na HD nebo "
-"SSD."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 115
-#: NEEDS WORK
-msgid ""
-"If the installed system is booting correctly, there are no boot problems, so it's better not to "
-"proceed with this tool."
-msgstr ""
-"Pokud nainstalovaný systém správně bootuje, nejsou žádné problémy s bootováním, takže je lepší s "
-"tímto nástrojem nepokračovat."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 116
-#: NEEDS WORK
-msgid "It may also work with other Linux distributions."
-msgstr "Může také fungovat s jinými distribucemi Linuxu."
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
 msgstr "Zahájení detekce"
@@ -318,40 +294,10 @@ msgstr "Žádné systémy nenalezeny"
 msgid "No Linux installations could be detected on your drives."
 msgstr "Na vašich discích nebyly nalezeny žádné instalace Linuxu."
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 371
-#: NEEDS WORK
-msgid "Partition:"
-msgstr "Oddíl:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 371
-#: NEEDS WORK
-msgid "FS:"
-msgstr "FS:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 371
-#: NEEDS WORK
-msgid "UUID:"
-msgstr "UUID:"
-# 
 # File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
 # File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
 msgid "EFI System Partition"
 msgstr "EFI systémová oddíl"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 407
-#: NEEDS WORK
-msgid "Model:"
-msgstr "Model:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 407
-#: NEEDS WORK
-msgid "Partition Table:"
-msgstr "Tabulka oddílů:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 465
-#: NEEDS WORK
-msgid "Boot Mode"
-msgstr "Režim spouštění"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"

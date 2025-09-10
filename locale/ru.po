@@ -38,30 +38,6 @@ msgstr "О программе"
 msgid "Quit"
 msgstr "Выйти"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 114
-#: NEEDS WORK
-#, python-brace-format
-msgid ""
-"This tool should be used in {mode_name} to restore the BOOT of the BigLinux installed on the HD or "
-"SSD."
-msgstr ""
-"Этот инструмент следует использовать в {mode_name} для восстановления ЗАГРУЗКИ BigLinux, "
-"установленного на HDD или SSD."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 115
-#: NEEDS WORK
-msgid ""
-"If the installed system is booting correctly, there are no boot problems, so it's better not to "
-"proceed with this tool."
-msgstr ""
-"Если установленная система загружается правильно и нет проблем с загрузкой, лучше не продолжать "
-"использовать этот инструмент."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 116
-#: NEEDS WORK
-msgid "It may also work with other Linux distributions."
-msgstr "Он также может работать с другими дистрибутивами Linux."
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
 msgstr "Начать обнаружение"
@@ -318,40 +294,10 @@ msgstr "Системы не найдены"
 msgid "No Linux installations could be detected on your drives."
 msgstr "На ваших дисках не обнаружено установок Linux."
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 371
-#: NEEDS WORK
-msgid "Partition:"
-msgstr "Разделение:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 371
-#: NEEDS WORK
-msgid "FS:"
-msgstr "ФС:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 371
-#: NEEDS WORK
-msgid "UUID:"
-msgstr "UUID:"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
 msgid "EFI System Partition"
 msgstr "EFI системный раздел"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 407
-#: NEEDS WORK
-msgid "Model:"
-msgstr "Модель:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 407
-#: NEEDS WORK
-msgid "Partition Table:"
-msgstr "Таблица разделов:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 465
-#: NEEDS WORK
-msgid "Boot Mode"
-msgstr "Режим загрузки"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"

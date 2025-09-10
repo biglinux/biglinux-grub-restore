@@ -38,30 +38,6 @@ msgstr "Om"
 msgid "Quit"
 msgstr "Avslutt"
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 114
-#: NEEDS WORK
-#, python-brace-format
-msgid ""
-"This tool should be used in {mode_name} to restore the BOOT of the BigLinux installed on the HD or "
-"SSD."
-msgstr ""
-"Dette verktøyet bør brukes i {mode_name} for å gjenopprette BOOT av BigLinux installert på HD eller "
-"SSD."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 115
-#: NEEDS WORK
-msgid ""
-"If the installed system is booting correctly, there are no boot problems, so it's better not to "
-"proceed with this tool."
-msgstr ""
-"Hvis det installerte systemet starter riktig, er det ingen oppstartsproblemer, så det er bedre å "
-"ikke fortsette med dette verktøyet."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 116
-#: NEEDS WORK
-msgid "It may also work with other Linux distributions."
-msgstr "Det kan også fungere med andre Linux-distribusjoner."
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
 msgstr "Startgjenkjenning"
@@ -318,40 +294,10 @@ msgstr "Ingen systemer funnet"
 msgid "No Linux installations could be detected on your drives."
 msgstr "Ingen Linux-installasjoner kunne bli oppdaget på diskene dine."
 # 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 371
-#: NEEDS WORK
-msgid "Partition:"
-msgstr "Partisjon:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 371
-#: NEEDS WORK
-msgid "FS:"
-msgstr "FS:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 371
-#: NEEDS WORK
-msgid "UUID:"
-msgstr "UUID:"
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
 msgid "EFI System Partition"
 msgstr "EFI-systempartisjon"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 407
-#: NEEDS WORK
-msgid "Model:"
-msgstr "Modell:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 407
-#: NEEDS WORK
-msgid "Partition Table:"
-msgstr "Partisjons tabell:"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 465
-#: NEEDS WORK
-msgid "Boot Mode"
-msgstr "Oppstartmodus"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
