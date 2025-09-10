@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the biglinux-grub-restore package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: biglinux-grub-restore\n"
@@ -15,10 +14,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-
 msgid "This utility should only be used in live mode!"
 msgstr "Þetta verkfæri ætti aðeins að nota í lifandi ham!"
-
 msgid ""
 "<span font='12'>This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed "
 "on the HD or SSD.</span>\n"
@@ -37,16 +34,12 @@ msgstr ""
 "<span font='10' foreground='gray'>Það gæti einnig virkað með öðrum Linux dreifingum.</span>\n"
 "\n"
 "Viltu halda áfram?"
-
 msgid "Restore Boot, Grub, and initrd"
 msgstr "Endurðu Boot, Grub og initrd"
-
 msgid "Please wait..."
 msgstr "Vinsamlegast bíðu..."
-
 msgid "No Linux installation found on this computer, process canceled."
 msgstr "Engin Linux uppsetning fannst á þessum tölvu, ferlið aflýst."
-
 msgid ""
 "The boot in live mode is using EFI mode, but <span foreground='red'>no EFI partition</span> was "
 "found on this computer, \n"
@@ -63,7 +56,6 @@ msgstr ""
 "Reyndu að endurræsa og boot í Legacy eða BIOS ham í gegnum BIOS tölvunnar.\n"
 "\n"
 "Viltu reyna jafnvel með lága líkurnar á árangri?"
-
 msgid ""
 "The boot in live mode is using Legacy mode, also called BIOS, \n"
 "<span foreground='red'>but at least one EFI partition was found</span> on this computer, \n"
@@ -80,7 +72,6 @@ msgstr ""
 "Reyndu að endurræsa og boot í EFI ham í gegnum BIOS tölvunnar.\n"
 "\n"
 "Viltu reyna jafnvel með lága líkurnar á árangri?"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -89,10 +80,8 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Veldu valkost:</span>\n"
 "\n"
 "Fundust fleiri en eina EFI skiptingu, veldu hvaða á að nota:"
-
 msgid "No EFI partition selected, process canceled."
 msgstr "Engin EFI valin, ferlið hætt."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -101,10 +90,8 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Veldu valkost:</span>\n"
 "\n"
 "Fundust fleiri en eina Linux uppsetningu á þessum tölvu, veldu hvaða á að endurheimta ræsingu:"
-
 msgid "No partition selected, process canceled."
 msgstr "Engin valin ekki valin, ferlið hætt."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "    \n"
@@ -113,19 +100,14 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Veldu valkost:</span>\n"
 "\n"
 "Fleiri en einn geymslutæki fannst, veldu hvaða einn á að skrifa upphafið á:"
-
 msgid "Disk"
 msgstr "Diskur"
-
 msgid "Size"
 msgstr "stærð"
-
 msgid "Name"
 msgstr "Nafn"
-
 msgid "Partition Table"
 msgstr "skiptöflur"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>    \n"
 "\n"
@@ -158,10 +140,8 @@ msgstr ""
 "<span font='11' foreground='gray'>UUID skiptingar:</span> $UUID_PARTITION\n"
 "\n"
 "Viltu halda áfram?"
-
 msgid "Your computer is not connected to the internet, options 2 and 3 require internet to work."
 msgstr "Þinn tölva er ekki tengd internetinu, valkostir 2 og 3 krafist internet til að virka."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select the desired option:</span>\n"
 "        \n"
@@ -178,40 +158,30 @@ msgstr ""
 "það leysist.\n"
 "\n"
 "Ef vandamálið heldur áfram, reyndu aðra valkosti."
-
 msgid "Option"
 msgstr "Valkostur"
-
 msgid "Description"
 msgstr "Lýsing"
-
 msgid "Simple, just writes the Grub again at the beginning of the disk."
 msgstr "Einfach, schreibt den Grub erneut am Anfang der Festplatte."
-
 msgid ""
 "Intermediate, reinstalls the grub package on the partition, regenerates the configuration, and "
 "updates the initrd."
 msgstr "מדיום, מתקין מחדש את חבילת grub על המחיצה, מייצר מחדש את הקונפיגורציה, ומעדכן את initrd."
-
 msgid ""
 "Complete, performs the intermediate restore steps, updates the system, and checks if the LTS kernel "
 "is installed."
 msgstr ""
 "Fullnæging, framkvæmir millistig endurheimtarskref, uppfærir kerfið og athugar hvort LTS kjarni sé "
 "uppsettur."
-
 msgid "Interactive, opens a terminal inside the selected system."
 msgstr "Interactive, opnar terminal inn í valda kerfið."
-
 msgid "Interactive, opens the control center inside the selected system."
 msgstr "Interactive, opnar stjórnmiðstöðina innan valda kerfisins."
-
 msgid "Interactive, opens the pamac-manager package manager inside the selected system."
 msgstr "Interactive, opnar pakka stjórnunina pamac-manager innan valda kerfisins."
-
 msgid "Completed!"
 msgstr "Completed!"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>\n"
 "    \n"

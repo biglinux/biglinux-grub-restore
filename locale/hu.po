@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the biglinux-grub-restore package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: biglinux-grub-restore\n"
@@ -15,10 +14,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-
 msgid "This utility should only be used in live mode!"
 msgstr "Ez az eszköz csak éles módban használható!"
-
 msgid ""
 "<span font='12'>This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed "
 "on the HD or SSD.</span>\n"
@@ -37,16 +34,12 @@ msgstr ""
 "<span font='10' foreground='gray'>Más Linux disztribúciókkal is működhet.</span>\n"
 "\n"
 "Szeretné folytatni?"
-
 msgid "Restore Boot, Grub, and initrd"
 msgstr "Boot, Grub és initrd helyreállítása"
-
 msgid "Please wait..."
 msgstr "Kérjük, várjon..."
-
 msgid "No Linux installation found on this computer, process canceled."
 msgstr "Nincs Linux telepítés ezen a számítógépen, a folyamat megszakítva."
-
 msgid ""
 "The boot in live mode is using EFI mode, but <span foreground='red'>no EFI partition</span> was "
 "found on this computer, \n"
@@ -63,7 +56,6 @@ msgstr ""
 "Próbálja meg újraindítani és indítani a Legacy vagy BIOS módban a számítógép BIOS-án keresztül.\n"
 "\n"
 "Szeretné megpróbálni, még alacsony sikerességi valószínűség mellett is?"
-
 msgid ""
 "The boot in live mode is using Legacy mode, also called BIOS, \n"
 "<span foreground='red'>but at least one EFI partition was found</span> on this computer, \n"
@@ -80,7 +72,6 @@ msgstr ""
 "Próbálja meg újraindítani és EFI módban indítani a számítógép BIOS-án keresztül.\n"
 "\n"
 "Szeretné megpróbálni, még alacsony sikerességi valószínűség mellett is?"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -89,10 +80,8 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Válasszon egy lehetőséget:</span>\n"
 "\n"
 "Több mint egy EFI partíciót találtunk, válassza ki, melyiket szeretné használni:"
-
 msgid "No EFI partition selected, process canceled."
 msgstr "Nincs kiválasztva EFI partíció, a folyamat megszakítva."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -102,10 +91,8 @@ msgstr ""
 "\n"
 "Több Linux telepítést találtunk ezen a számítógépen, válassza ki, melyiket szeretné helyreállítani "
 "a boot-ot:"
-
 msgid "No partition selected, process canceled."
 msgstr "Nincs kiválasztott partíció, a folyamat megszakítva."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "    \n"
@@ -114,19 +101,14 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Válasszon egy lehetőséget:</span>\n"
 "    \n"
 "Több tárolóeszközt találtunk, válassza ki, melyikre szeretné írni a bootot:"
-
 msgid "Disk"
 msgstr "Lemez"
-
 msgid "Size"
 msgstr "Méret"
-
 msgid "Name"
 msgstr "Név"
-
 msgid "Partition Table"
 msgstr "Partíciós tábla"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>    \n"
 "\n"
@@ -159,12 +141,10 @@ msgstr ""
 "<span font='11' foreground='gray'>Partíció UUID:</span> $UUID_PARTITION\n"
 "\n"
 "Folytatni szeretné?"
-
 msgid "Your computer is not connected to the internet, options 2 and 3 require internet to work."
 msgstr ""
 "A számítógépe nincs csatlakoztatva az internethez, a 2. és 3. lehetőség internetkapcsolatot igényel "
 "a működéshez."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select the desired option:</span>\n"
 "        \n"
@@ -181,42 +161,32 @@ msgstr ""
 "és nézd meg, hogy megoldódott-e.\n"
 "\n"
 "Ha a probléma továbbra is fennáll, próbáld ki a többi lehetőséget."
-
 msgid "Option"
 msgstr "Opció"
-
 msgid "Description"
 msgstr "Leírás"
-
 msgid "Simple, just writes the Grub again at the beginning of the disk."
 msgstr "Egyszerű, csak újraírja a Grub-ot a lemez elejére."
-
 msgid ""
 "Intermediate, reinstalls the grub package on the partition, regenerates the configuration, and "
 "updates the initrd."
 msgstr ""
 "Középhaladó, újratelepíti a grub csomagot a partíción, újragenerálja a konfigurációt, és frissíti "
 "az initrd-t."
-
 msgid ""
 "Complete, performs the intermediate restore steps, updates the system, and checks if the LTS kernel "
 "is installed."
 msgstr ""
 "Befejezi, végrehajtja a köztes visszaállítási lépéseket, frissíti a rendszert, és ellenőrzi, hogy "
 "az LTS kernel telepítve van-e."
-
 msgid "Interactive, opens a terminal inside the selected system."
 msgstr "Interaktív, terminált nyit a kiválasztott rendszerben."
-
 msgid "Interactive, opens the control center inside the selected system."
 msgstr "Interaktív, megnyitja a vezérlőközpontot a kiválasztott rendszerben."
-
 msgid "Interactive, opens the pamac-manager package manager inside the selected system."
 msgstr "Interaktív, megnyitja a pamac-manager csomagkezelőt a kiválasztott rendszerben."
-
 msgid "Completed!"
 msgstr "Kész!"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>\n"
 "    \n"

@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the biglinux-grub-restore package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: biglinux-grub-restore\n"
@@ -15,10 +14,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-
 msgid "This utility should only be used in live mode!"
 msgstr "Tento nástroj by měl být používán pouze v živém režimu!"
-
 msgid ""
 "<span font='12'>This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed "
 "on the HD or SSD.</span>\n"
@@ -37,16 +34,12 @@ msgstr ""
 "<span font='10' foreground='gray'>Může také fungovat s jinými distribucemi Linuxu.</span>\n"
 "\n"
 "Chcete pokračovat?"
-
 msgid "Restore Boot, Grub, and initrd"
 msgstr "Obnovit Boot, Grub a initrd"
-
 msgid "Please wait..."
 msgstr "Prosím, čekejte..."
-
 msgid "No Linux installation found on this computer, process canceled."
 msgstr "Na tomto počítači nebyla nalezena žádná instalace Linuxu, proces byl zrušen."
-
 msgid ""
 "The boot in live mode is using EFI mode, but <span foreground='red'>no EFI partition</span> was "
 "found on this computer, \n"
@@ -63,7 +56,6 @@ msgstr ""
 "Zkuste restartovat a zavést v režimu Legacy nebo BIOS prostřednictvím BIOSu počítače.\n"
 "\n"
 "Chcete to zkusit i s nízkou pravděpodobností úspěchu?"
-
 msgid ""
 "The boot in live mode is using Legacy mode, also called BIOS, \n"
 "<span foreground='red'>but at least one EFI partition was found</span> on this computer, \n"
@@ -80,7 +72,6 @@ msgstr ""
 "Zkuste restartovat a zavést v režimu EFI prostřednictvím BIOSu počítače.\n"
 "\n"
 "Chcete to zkusit i s nízkou pravděpodobností úspěchu?"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -89,10 +80,8 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Vyberte možnost:</span>\n"
 "\n"
 "Bylo nalezeno více než jedna EFI oddíl, vyberte, který použít:"
-
 msgid "No EFI partition selected, process canceled."
 msgstr "Nebyla vybrána žádná EFI oddíl, proces zrušen."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -102,10 +91,8 @@ msgstr ""
 "\n"
 "Na tomto počítači bylo nalezeno více než jedna instalace Linuxu, vyberte, kterou chcete obnovit "
 "spouštění:"
-
 msgid "No partition selected, process canceled."
 msgstr "Žádná partition nebyla vybrána, proces byl zrušen."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "    \n"
@@ -114,19 +101,14 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Vyberte možnost:</span>\n"
 "    \n"
 "Bylo nalezeno více než jedno úložné zařízení, vyberte, na které chcete zapsat zaváděcí sektor:"
-
 msgid "Disk"
 msgstr "Disk"
-
 msgid "Size"
 msgstr "Velikost"
-
 msgid "Name"
 msgstr "Jméno"
-
 msgid "Partition Table"
 msgstr "Tabulka oddílů"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>    \n"
 "\n"
@@ -159,10 +141,8 @@ msgstr ""
 "<span font='11' foreground='gray'>UUID oddílu:</span> $UUID_PARTITION\n"
 "\n"
 "Chcete pokračovat?"
-
 msgid "Your computer is not connected to the internet, options 2 and 3 require internet to work."
 msgstr "Váš počítač není připojen k internetu, možnosti 2 a 3 vyžadují internet k fungování."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select the desired option:</span>\n"
 "        \n"
@@ -179,40 +159,30 @@ msgstr ""
 "zjistěte, zda je problém vyřešen.\n"
 "\n"
 "Pokud problém přetrvává, vyzkoušejte další možnosti."
-
 msgid "Option"
 msgstr "Možnost"
-
 msgid "Description"
 msgstr "Popis"
-
 msgid "Simple, just writes the Grub again at the beginning of the disk."
 msgstr "Jednoduše znovu zapíše Grub na začátek disku."
-
 msgid ""
 "Intermediate, reinstalls the grub package on the partition, regenerates the configuration, and "
 "updates the initrd."
 msgstr "Střední, přeinstaluje balíček grub na oddílu, regeneruje konfiguraci a aktualizuje initrd."
-
 msgid ""
 "Complete, performs the intermediate restore steps, updates the system, and checks if the LTS kernel "
 "is installed."
 msgstr ""
 "Dokončeno, provádí mezikrok obnovení, aktualizuje systém a kontroluje, zda je nainstalováno jádro "
 "LTS."
-
 msgid "Interactive, opens a terminal inside the selected system."
 msgstr "Interaktivní, otevře terminál uvnitř vybraného systému."
-
 msgid "Interactive, opens the control center inside the selected system."
 msgstr "Interaktivní, otevře ovládací centrum uvnitř vybraného systému."
-
 msgid "Interactive, opens the pamac-manager package manager inside the selected system."
 msgstr "Interaktivní, otevře správce balíčků pamac-manager uvnitř vybraného systému."
-
 msgid "Completed!"
 msgstr "Dokončeno!"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>\n"
 "    \n"

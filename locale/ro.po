@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the biglinux-grub-restore package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: biglinux-grub-restore\n"
@@ -15,10 +14,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-
 msgid "This utility should only be used in live mode!"
 msgstr "Această utilitate ar trebui utilizată doar în modul live!"
-
 msgid ""
 "<span font='12'>This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed "
 "on the HD or SSD.</span>\n"
@@ -37,16 +34,12 @@ msgstr ""
 "<span font='10' foreground='gray'>De asemenea, ar putea funcționa cu alte distribuții Linux.</span>\n"
 "\n"
 "Vrei să continui?"
-
 msgid "Restore Boot, Grub, and initrd"
 msgstr "Restaurare Boot, Grub și initrd"
-
 msgid "Please wait..."
 msgstr "Vă rugăm să așteptați..."
-
 msgid "No Linux installation found on this computer, process canceled."
 msgstr "Nu a fost găsită nicio instalare Linux pe acest computer, procesul a fost anulat."
-
 msgid ""
 "The boot in live mode is using EFI mode, but <span foreground='red'>no EFI partition</span> was "
 "found on this computer, \n"
@@ -63,7 +56,6 @@ msgstr ""
 "Încercați să reporniți și să bootați în modul Legacy sau BIOS prin BIOS-ul computerului.\n"
 "\n"
 "Doriți să încercați chiar și cu o probabilitate scăzută de succes?"
-
 msgid ""
 "The boot in live mode is using Legacy mode, also called BIOS, \n"
 "<span foreground='red'>but at least one EFI partition was found</span> on this computer, \n"
@@ -80,7 +72,6 @@ msgstr ""
 "Încercați să reporniți și să bootați în modul EFI prin BIOS-ul computerului.\n"
 "\n"
 "Doriți să încercați chiar și cu o probabilitate scăzută de succes?"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -89,10 +80,8 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Selectați o opțiune:</span>\n"
 "\n"
 "Au fost găsite mai multe partiții EFI, selectați pe care doriți să o utilizați:"
-
 msgid "No EFI partition selected, process canceled."
 msgstr "Nici o partiție EFI selectată, procesul a fost anulat."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -102,10 +91,8 @@ msgstr ""
 "\n"
 "Au fost găsite mai multe instalări Linux pe acest computer, selectați pe care doriți să o "
 "restaurați pentru boot:"
-
 msgid "No partition selected, process canceled."
 msgstr "Nici o partiție selectată, proces anulat."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "    \n"
@@ -114,19 +101,14 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Selectați o opțiune:</span>\n"
 "    \n"
 "Au fost găsite mai multe dispozitive de stocare, selectați pe care doriți să scrieți boot-ul:"
-
 msgid "Disk"
 msgstr "Disc"
-
 msgid "Size"
 msgstr "Dimensiune"
-
 msgid "Name"
 msgstr "Nume"
-
 msgid "Partition Table"
 msgstr "Tabel de partiții"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>    \n"
 "\n"
@@ -159,10 +141,8 @@ msgstr ""
 "<span font='11' foreground='gray'>UUID partiție:</span> $UUID_PARTITION\n"
 "\n"
 "Doriți să continuați?"
-
 msgid "Your computer is not connected to the internet, options 2 and 3 require internet to work."
 msgstr "Computerul tău nu este conectat la internet, opțiunile 2 și 3 necesită internet pentru a funcționa."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select the desired option:</span>\n"
 "        \n"
@@ -179,42 +159,32 @@ msgstr ""
 "dacă s-a rezolvat.\n"
 "\n"
 "Dacă problema persistă, încercați celelalte opțiuni."
-
 msgid "Option"
 msgstr "Opțiune"
-
 msgid "Description"
 msgstr "Descriere"
-
 msgid "Simple, just writes the Grub again at the beginning of the disk."
 msgstr "Simplu, scrie din nou Grub la începutul discului."
-
 msgid ""
 "Intermediate, reinstalls the grub package on the partition, regenerates the configuration, and "
 "updates the initrd."
 msgstr ""
 "Intermediar, reinstalează pachetul grub pe partiție, regenerează configurația și actualizează "
 "initrd."
-
 msgid ""
 "Complete, performs the intermediate restore steps, updates the system, and checks if the LTS kernel "
 "is installed."
 msgstr ""
 "Completează, efectuează pașii intermediați de restaurare, actualizează sistemul și verifică dacă "
 "kernelul LTS este instalat."
-
 msgid "Interactive, opens a terminal inside the selected system."
 msgstr "Interactiv, deschide un terminal în sistemul selectat."
-
 msgid "Interactive, opens the control center inside the selected system."
 msgstr "Interactiv, deschide centrul de control în interiorul sistemului selectat."
-
 msgid "Interactive, opens the pamac-manager package manager inside the selected system."
 msgstr "Interactiv, deschide managerul de pachete pamac-manager în sistemul selectat."
-
 msgid "Completed!"
 msgstr "Finalizat!"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>\n"
 "    \n"

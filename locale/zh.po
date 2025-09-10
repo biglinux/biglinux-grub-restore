@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the biglinux-grub-restore package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: biglinux-grub-restore\n"
@@ -15,10 +14,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-
 msgid "This utility should only be used in live mode!"
 msgstr "此工具仅应在实时模式下使用！"
-
 msgid ""
 "<span font='12'>This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed "
 "on the HD or SSD.</span>\n"
@@ -35,16 +32,12 @@ msgstr ""
 "<span font='10' foreground='gray'>它也可能适用于其他 Linux 发行版。</span>\n"
 "\n"
 "您想继续吗？"
-
 msgid "Restore Boot, Grub, and initrd"
 msgstr "恢复引导、Grub 和 initrd"
-
 msgid "Please wait..."
 msgstr "请稍候..."
-
 msgid "No Linux installation found on this computer, process canceled."
 msgstr "未在此计算机上找到Linux安装，过程已取消。"
-
 msgid ""
 "The boot in live mode is using EFI mode, but <span foreground='red'>no EFI partition</span> was "
 "found on this computer, \n"
@@ -59,7 +52,6 @@ msgstr ""
 "尝试重新启动并通过计算机的BIOS以传统或BIOS模式启动。\n"
 "\n"
 "您想尝试即使成功的概率很低吗？"
-
 msgid ""
 "The boot in live mode is using Legacy mode, also called BIOS, \n"
 "<span foreground='red'>but at least one EFI partition was found</span> on this computer, \n"
@@ -76,7 +68,6 @@ msgstr ""
 "尝试重新启动并通过计算机的BIOS以EFI模式启动。\n"
 "\n"
 "您想尝试即使成功的概率很低吗？"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -85,10 +76,8 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>选择一个选项：</span>\n"
 "\n"
 "发现多个 EFI 分区，请选择要使用的分区："
-
 msgid "No EFI partition selected, process canceled."
 msgstr "未选择EFI分区，过程已取消。"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -97,10 +86,8 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>选择一个选项：</span>\n"
 "\n"
 "在此计算机上发现了多个Linux安装，请选择要恢复引导的安装："
-
 msgid "No partition selected, process canceled."
 msgstr "未选择分区，过程已取消。"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "    \n"
@@ -109,19 +96,14 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>选择一个选项：</span>\n"
 "    \n"
 "发现多个存储设备，请选择要写入启动的设备："
-
 msgid "Disk"
 msgstr "磁盘"
-
 msgid "Size"
 msgstr "大小"
-
 msgid "Name"
 msgstr "名称"
-
 msgid "Partition Table"
 msgstr "分区表"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>    \n"
 "\n"
@@ -154,10 +136,8 @@ msgstr ""
 "<span font='11' foreground='gray'>分区 UUID：</span> $UUID_PARTITION\n"
 "\n"
 "您想继续吗？"
-
 msgid "Your computer is not connected to the internet, options 2 and 3 require internet to work."
 msgstr "您的计算机未连接到互联网，选项 2 和 3 需要互联网才能工作。"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select the desired option:</span>\n"
 "        \n"
@@ -172,38 +152,28 @@ msgstr ""
 "恢复可以通过三种方式进行（<span foreground='gray'>简单、中级或完整</span>），如果有疑问，请尝试第一个选项，重启计算机并查看是否解决。\n"
 "\n"
 "如果问题仍然存在，请尝试其他选项。"
-
 msgid "Option"
 msgstr "选项"
-
 msgid "Description"
 msgstr "描述"
-
 msgid "Simple, just writes the Grub again at the beginning of the disk."
 msgstr "简单地在磁盘的开头重新写入Grub。"
-
 msgid ""
 "Intermediate, reinstalls the grub package on the partition, regenerates the configuration, and "
 "updates the initrd."
 msgstr "中级，重新安装分区上的grub软件包，重新生成配置，并更新initrd。"
-
 msgid ""
 "Complete, performs the intermediate restore steps, updates the system, and checks if the LTS kernel "
 "is installed."
 msgstr "完成，执行中间恢复步骤，更新系统，并检查是否安装了LTS内核。"
-
 msgid "Interactive, opens a terminal inside the selected system."
 msgstr "交互式，在所选系统内打开终端。"
-
 msgid "Interactive, opens the control center inside the selected system."
 msgstr "交互式，打开所选系统内的控制中心。"
-
 msgid "Interactive, opens the pamac-manager package manager inside the selected system."
 msgstr "交互式，在所选系统内打开 pamac-manager 包管理器。"
-
 msgid "Completed!"
 msgstr "已完成！"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>\n"
 "    \n"

@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the biglinux-grub-restore package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: biglinux-grub-restore\n"
@@ -15,10 +14,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.4.4\n"
-
 msgid "This utility should only be used in live mode!"
 msgstr "Dieses Utility sollte nur im Live-Modus verwendet werden!"
-
 msgid ""
 "<span font='12'>This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed on "
 "the HD or SSD.</span>\n"
@@ -38,16 +35,12 @@ msgstr ""
 "</span>\n"
 "\n"
 "Möchten Sie fortfahren?"
-
 msgid "Restore Boot, Grub, and initrd"
 msgstr "Boot, Grub und initrd wiederherstellen"
-
 msgid "Please wait..."
 msgstr "Bitte warten Sie ..."
-
 msgid "No Linux installation found on this computer, process canceled."
 msgstr "Keine Linux-Installation auf diesem Computer gefunden, Prozess abgebrochen."
-
 msgid ""
 "The boot in live mode is using EFI mode, but <span foreground='red'>no EFI partition</span> was found "
 "on this computer, \n"
@@ -64,7 +57,6 @@ msgstr ""
 "Versuchen Sie, im Legacy- oder BIOS-Modus über das BIOS des Computers neu zu starten und zu booten.\n"
 "\n"
 "Wollen Sie es versuchen, selbst bei einer geringen Erfolgswahrscheinlichkeit?"
-
 msgid ""
 "The boot in live mode is using Legacy mode, also called BIOS, \n"
 "<span foreground='red'>but at least one EFI partition was found</span> on this computer, \n"
@@ -81,7 +73,6 @@ msgstr ""
 "Versuchen Sie, im EFI-Modus über das BIOS des Computers neu zu starten und zu booten.\n"
 "\n"
 "Wollen Sie es versuchen, selbst bei einer geringen Erfolgswahrscheinlichkeit?"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -90,10 +81,8 @@ msgstr ""
 "<span font='16' foreground='LightSkyBlue'>Wählen Sie eine Option aus:</span>\n"
 "\n"
 "Es wurde mehr als eine EFI-Partition gefunden, wählen Sie die zu verwendende Partition aus:"
-
 msgid "No EFI partition selected, process canceled."
 msgstr "Keine EFI-Partition ausgewählt, Prozess abgebrochen."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "\n"
@@ -103,10 +92,8 @@ msgstr ""
 "\n"
 "Es wurde mehr als eine Linux-Installation auf diesem Computer gefunden, wählen Sie diejenige aus, die "
 "wiederhergestellt werden soll:"
-
 msgid "No partition selected, process canceled."
 msgstr "Keine Partition ausgewählt, Prozess abgebrochen."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
 "    \n"
@@ -116,19 +103,14 @@ msgstr ""
 "    \n"
 "Es wurde mehr als ein Speichergerät gefunden, wählen Sie dasjenige aus, auf das der Boot geschrieben "
 "werden soll:"
-
 msgid "Disk"
 msgstr "Festplatte"
-
 msgid "Size"
 msgstr "Größe"
-
 msgid "Name"
 msgstr "Name"
-
 msgid "Partition Table"
 msgstr "Partitionstabelle"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>    \n"
 "\n"
@@ -161,12 +143,10 @@ msgstr ""
 "<span font='11' foreground='gray'>Partition UUID:</span> $UUID_PARTITION\n"
 "\n"
 "Möchten Sie fortfahren?"
-
 msgid "Your computer is not connected to the internet, options 2 and 3 require internet to work."
 msgstr ""
 "Ihr Computer ist nicht mit dem Internet verbunden. Für die Optionen 2 und 3 ist das Internet "
 "erforderlich."
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Select the desired option:</span>\n"
 "        \n"
@@ -182,42 +162,32 @@ msgstr ""
 "sehen Sie, ob das Problem gelöst ist.\n"
 "\n"
 "Wenn das Problem weiterhin besteht, versuchen Sie die anderen Optionen."
-
 msgid "Option"
 msgstr "Option"
-
 msgid "Description"
 msgstr "Beschreibung"
-
 msgid "Simple, just writes the Grub again at the beginning of the disk."
 msgstr "Simple, schreibt den Grub einfach wieder an den Anfang der Festplatte."
-
 msgid ""
 "Intermediate, reinstalls the grub package on the partition, regenerates the configuration, and updates "
 "the initrd."
 msgstr ""
 "Intermediär, installiert das grub-Paket auf der Partition neu, regeneriert die Konfiguration und "
 "aktualisiert die initrd."
-
 msgid ""
 "Complete, performs the intermediate restore steps, updates the system, and checks if the LTS kernel is "
 "installed."
 msgstr ""
 "Vollständig, führt die intermediären Schritte zur Wiederherstellung durch, aktualisiert das System und "
 "überprüft, ob der LTS-Kernel installiert ist."
-
 msgid "Interactive, opens a terminal inside the selected system."
 msgstr "Interaktiv, öffnet ein Terminal innerhalb des ausgewählten Systems."
-
 msgid "Interactive, opens the control center inside the selected system."
 msgstr "Interaktiv, öffnet das Kontrollzentrum innerhalb des ausgewählten Systems."
-
 msgid "Interactive, opens the pamac-manager package manager inside the selected system."
 msgstr "Interaktiv, öffnet den Paketmanager pamac-manager innerhalb des ausgewählten Systems."
-
 msgid "Completed!"
 msgstr "Abgeschlossen!"
-
 msgid ""
 "<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>\n"
 "    \n"
