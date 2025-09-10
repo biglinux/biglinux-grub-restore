@@ -14,188 +14,350 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-msgid "This utility should only be used in live mode!"
-msgstr "このユーティリティはライブモードでのみ使用する必要があります！"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 59
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 18
+msgid "BigLinux GRUB Restore"
+msgstr "BigLinux GRUB 復元"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 58
+msgid "A tool to restore the GRUB bootloader."
+msgstr "GRUBブートローダーを復元するためのツール。"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 28
+msgid "Restore the installed system"
+msgstr "インストールされたシステムを復元する"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 53
+msgid "About"
+msgstr "情報について"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 54
+msgid "Quit"
+msgstr "終了"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
+msgid "Start Detection"
+msgstr "検出開始"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 109
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 139
+msgid "Detecting Systems"
+msgstr "システムの検出"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 108
+msgid "Scanning your drives for Linux installations..."
+msgstr "ドライブをスキャンしてLinuxインストールを探しています..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 126
+msgid "1. Select Linux System to Restore"
+msgstr "1. 復元するLinuxシステムを選択してください"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 362
+msgid "2. Select Target EFI Partition"
+msgstr "2. ターゲットEFIパーティションを選択してください"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 137
+msgid "2. Select Target Disk (MBR)"
+msgstr "ターゲットディスクを選択 (MBR)"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 300
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
+msgid "Continue"
+msgstr "続ける"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 169
 msgid ""
-"<span font='12'>This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed "
-"on the HD or SSD.</span>\n"
-"\n"
-"<span font='12' foreground='red'>If the installed system is booting correctly, there are no boot "
-"problems, so it's better not to proceed with this tool.</span>\n"
-"<span font='10' foreground='gray'>It may also work with other Linux distributions.</span>\n"
-"\n"
-"Do you want to proceed?"
-msgstr ""
-"<span font='12'>このツールは、HDまたはSSDにインストールされたBigLinuxのブートを復元するためにLIVEモードで使用する必要があります。</span>\n"
-"\n"
-"<span font='12' foreground='red'>インストールされたシステムが正常にブートしている場合、ブートの問題はないため、このツールを使用しない方が良いです。</span>\n"
-"<span font='10' foreground='gray'>他のLinuxディストリビューションでも動作する可能性があります。</span>\n"
-"\n"
-"続行しますか？"
-msgid "Restore Boot, Grub, and initrd"
-msgstr "ブート、Grub、およびinitrdを復元する"
-msgid "Please wait..."
-msgstr "お待ちください..."
-msgid "No Linux installation found on this computer, process canceled."
-msgstr "このコンピュータにLinuxのインストールが見つかりませんでした。プロセスはキャンセルされました。"
+"If you are unsure, try the 'Simple Restore' first. If the problem persists after restarting, then "
+"try the other options."
+msgstr "問題が不明な場合は、まず「シンプルリストア」を試してください。再起動後も問題が続く場合は、他のオプションを試してください。"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 415
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 77
+msgid "Restore Methods"
+msgstr "復元方法"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 175
+msgid "Interactive Tools"
+msgstr "インタラクティブツール"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 181
+msgid "Configuration Summary"
+msgstr "設定の概要"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 419
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 118
+msgid "Simple Restore"
+msgstr "シンプルリストア"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 180
+msgid "Rewrites GRUB to the boot sector."
+msgstr "GRUBをブートセクターに書き込みます。"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 433
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 132
+msgid "Intermediate Restore"
+msgstr "中間復元"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 181
+msgid "Reinstalls GRUB package and regenerates configs."
+msgstr "GRUBパッケージを再インストールし、設定を再生成します。"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 448
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 151
+msgid "Complete Restore"
+msgstr "完全復元"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 182
+msgid "Updates system, kernel, and performs intermediate restore."
+msgstr "システム、カーネルを更新し、中間復元を実行します。"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 469
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 173
+msgid "Interactive Terminal"
+msgstr "インタラクティブターミナル"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 470
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 174
+msgid "Opens a terminal inside the selected system."
+msgstr "選択したシステム内でターミナルを開きます。"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 483
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 187
+msgid "Control Center"
+msgstr "コントロールセンター"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 484
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 188
+msgid "Opens the control center inside the selected system."
+msgstr "選択したシステム内のコントロールセンターを開きます。"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 497
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 201
+msgid "Package Manager"
+msgstr "パッケージマネージャー"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 185
+msgid "Opens the package manager inside the selected system."
+msgstr "選択したシステム内でパッケージマネージャーを開きます。"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 424
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 438
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 453
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 123
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 140
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 159
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 353
+msgid "Execute"
+msgstr "実行"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 223
+msgid "VTE terminal widget not available."
+msgstr "VTEターミナルウィジェットが利用できません。"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 226
+msgid "Close Terminal"
+msgstr "ターミナルを閉じる"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 247
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 537
+msgid "Go Back"
+msgstr "戻る"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 664
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 459
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 462
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 474
+msgid "Close"
+msgstr "閉じる"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 235
+msgid "Operation Failed!"
+msgstr "操作に失敗しました！"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 236
+msgid "Simple Restore Completed"
+msgstr "シンプルな復元が完了しました"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 236
+msgid "Intermediate Restore Completed"
+msgstr "中間復元が完了しました"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 236
+msgid "Complete Restore Completed"
+msgstr "完全復元が完了しました"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 238
+msgid "The GRUB bootloader has been rewritten. You can now restart your computer."
+msgstr "GRUBブートローダーが書き換えられました。これでコンピュータを再起動できます。"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 239
+msgid "The GRUB package was reinstalled and configurations were regenerated."
+msgstr "GRUBパッケージが再インストールされ、設定が再生成されました。"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 240
+msgid "The system, kernel, and GRUB have been updated and restored."
+msgstr "システム、カーネル、およびGRUBが更新され、復元されました。"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 242
+msgid "Operation Completed Successfully!"
+msgstr "操作が正常に完了しました！"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 242
+msgid "You can now close this tool and restart your computer."
+msgstr "このツールを閉じて、コンピュータを再起動できます。"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 276
+msgid "Proceed Anyway"
+msgstr "とにかく進む"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 259
+msgid "Copy"
+msgstr "コピー"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 260
+msgid "Paste"
+msgstr "貼り付け"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 208
+msgid "Detection Failed"
+msgstr "検出に失敗しました"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 326
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 331
+msgid "Potential Boot Mode Mismatch"
+msgstr "潜在的なブートモードの不一致"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 327
 msgid ""
-"The boot in live mode is using EFI mode, but <span foreground='red'>no EFI partition</span> was "
-"found on this computer, \n"
-"most likely the Grub restore will not work. \n"
+"The boot in live mode is using EFI mode, but no EFI partition was found on this computer, most "
+"likely the Grub restore will not work.\n"
 "\n"
 "Try restarting and booting in Legacy or BIOS mode through the computer's BIOS.\n"
 "\n"
 "Do you want to try even with a low probability of success?"
 msgstr ""
-"ライブモードでのブートはEFIモードを使用していますが、このコンピュータには<span "
-"foreground='red'>EFIパーティション</span>が見つかりませんでした。おそらくGrubの復元は機能しないでしょう。\n"
+"ライブモードでのブートはEFIモードを使用していますが、このコンピュータにはEFIパーティションが見つかりませんでした。おそらくGrubの復元は機能しないでしょう。\n"
 "\n"
 "コンピュータのBIOSを通じてレガシーまたはBIOSモードで再起動してブートしてみてください。\n"
 "\n"
 "成功の可能性が低くても試してみますか？"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 332
 msgid ""
-"The boot in live mode is using Legacy mode, also called BIOS, \n"
-"<span foreground='red'>but at least one EFI partition was found</span> on this computer, \n"
-"most likely the Grub restore will not work. \n"
+"The boot in live mode is using Legacy mode, also called BIOS, but at least one EFI partition was "
+"found on this computer, most likely the Grub restore will not work.\n"
 "\n"
 "Try restarting and booting in EFI mode through the computer's BIOS.\n"
 "\n"
 "Do you want to try even with a low probability of success?"
 msgstr ""
 "ライブモードでのブートはレガシーモード（BIOSとも呼ばれる）を使用していますが、このコンピュータには少なくとも1"
-"つのEFIパーティションが見つかりました。おそらく、Grubの復元は機能しないでしょう。\n"
+"つのEFIパーティションが見つかりました。おそらくGrubの復元は機能しないでしょう。\n"
 "\n"
 "コンピュータのBIOSを通じてEFIモードで再起動してブートしてみてください。\n"
 "\n"
 "成功の可能性が低くても試してみますか？"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 226
+msgid "No Systems Found"
+msgstr "システムが見つかりませんでした。"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 303
+msgid "No Linux installations could be detected on your drives."
+msgstr "ドライブ上にLinuxインストールが検出されませんでした。"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
+msgid "EFI System Partition"
+msgstr "EFIシステムパーティション"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+msgid "Mount Failed"
+msgstr "マウントに失敗しました"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
+msgid "Selected System"
+msgstr "選択されたシステム"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 452
+msgid "Selected Partition"
+msgstr "選択したパーティション"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 453
+msgid "Partition UUID"
+msgstr "パーティションUUID"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 457
+msgid "Target (EFI Restore)"
+msgstr "ターゲット (EFI リストア)"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 460
+msgid "Target (Legacy Restore)"
+msgstr "ターゲット（レガシーリストア）"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+msgid "Disk Details"
+msgstr "ディスクの詳細"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 472
+msgid "No Internet Connection Detected"
+msgstr "インターネット接続が検出されませんでした"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 473
 msgid ""
-"<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
-"\n"
-"More than one EFI partition was found, select which one to use:"
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>オプションを選択してください：</span>\n"
-"\n"
-"複数のEFIパーティションが見つかりました。使用するものを選択してください："
-msgid "No EFI partition selected, process canceled."
-msgstr "EFIパーティションが選択されていないため、プロセスはキャンセルされました。"
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
-"\n"
-"More than one Linux installation was found on this computer, select which one to restore the boot:"
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>オプションを選択してください：</span>\n"
-"\n"
-"このコンピュータには複数のLinuxインストールが見つかりました。ブートを復元するものを選択してください："
-msgid "No partition selected, process canceled."
-msgstr "パーティションが選択されていないため、プロセスはキャンセルされました。"
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
-"    \n"
-"More than one storage device was found, select which one to write the boot to:"
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>オプションを選択してください：</span>\n"
-"\n"
-"複数のストレージデバイスが見つかりました。ブートを書き込むデバイスを選択してください："
-msgid "Disk"
-msgstr "ディスク"
-msgid "Size"
-msgstr "サイズ"
-msgid "Name"
-msgstr "名前"
-msgid "Partition Table"
-msgstr "パーティションテーブル"
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>    \n"
-"\n"
-"<span font='11' foreground='gray'>Boot mode:</span>  LEGACY/BIOS\n"
-"<span font='11' foreground='gray'>Selected disk:</span> $DISK_SELECTED\n"
-"    \n"
-"<span font='11' foreground='gray'>Disk partition table:</span> $DISK_TABLE\n"
-"    \n"
-"<span font='11' foreground='gray'>Disk size:</span> $DISK_SIZE\n"
-"   \n"
-"<span font='11' foreground='gray'>Selected partition:</span> $SELECTED_PARTITION\n"
-"<span font='11' foreground='gray'>Selected system:</span> $SELECTED_OS\n"
-"<span font='11' foreground='gray'>Partition format:</span> $PARTITION_FORMAT\n"
-"<span font='11' foreground='gray'>Partition UUID:</span> $UUID_PARTITION\n"
-"\n"
-"Do you want to proceed?"
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>データを確認してください：</span>    \n"
-"\n"
-"<span font='11' foreground='gray'>ブートモード：</span>  LEGACY/BIOS\n"
-"<span font='11' foreground='gray'>選択されたディスク：</span> $DISK_SELECTED\n"
-"    \n"
-"<span font='11' foreground='gray'>ディスクパーティションテーブル：</span> $DISK_TABLE\n"
-"    \n"
-"<span font='11' foreground='gray'>ディスクサイズ：</span> $DISK_SIZE\n"
-"   \n"
-"<span font='11' foreground='gray'>選択されたパーティション：</span> $SELECTED_PARTITION\n"
-"<span font='11' foreground='gray'>選択されたシステム：</span> $SELECTED_OS\n"
-"<span font='11' foreground='gray'>パーティションフォーマット：</span> $PARTITION_FORMAT\n"
-"<span font='11' foreground='gray'>パーティションUUID：</span> $UUID_PARTITION\n"
-"\n"
-"続行しますか？"
-msgid "Your computer is not connected to the internet, options 2 and 3 require internet to work."
-msgstr "あなたのコンピュータはインターネットに接続されていません。オプション2と3は動作するためにインターネットが必要です。"
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Select the desired option:</span>\n"
-"        \n"
-"The restore can be done in 3 ways (<span foreground='gray'>Simple, Intermediate, or "
-"Complete</span>), if in doubt, try the first option, restart the computer and see if it is "
-"resolved.\n"
-"\n"
-"If the problem persists, try the other options."
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>希望するオプションを選択してください：</span>\n"
-"        \n"
-"復元は3つの方法で行うことができます（<span "
-"foreground='gray'>簡単、中間、または完全</span>）。迷った場合は、最初のオプションを試し、コンピュータを再起動して問題が解決されたか確認してください。\n"
-"\n"
-"問題が解決しない場合は、他のオプションを試してください。"
-msgid "Option"
-msgstr "オプション"
-msgid "Description"
-msgstr "説明"
-msgid "Simple, just writes the Grub again at the beginning of the disk."
-msgstr "シンプルに、ディスクの先頭にGrubを再度書き込みます。"
-msgid ""
-"Intermediate, reinstalls the grub package on the partition, regenerates the configuration, and "
-"updates the initrd."
-msgstr "中級、パーティションにgrubパッケージを再インストールし、設定を再生成し、initrdを更新します。"
-msgid ""
-"Complete, performs the intermediate restore steps, updates the system, and checks if the LTS kernel "
-"is installed."
-msgstr "完了し、中間復元手順を実行し、システムを更新し、LTSカーネルがインストールされているかを確認します。"
-msgid "Interactive, opens a terminal inside the selected system."
-msgstr "インタラクティブ、選択したシステム内にターミナルを開きます。"
-msgid "Interactive, opens the control center inside the selected system."
-msgstr "インタラクティブ、選択したシステム内のコントロールセンターを開きます。"
-msgid "Interactive, opens the pamac-manager package manager inside the selected system."
-msgstr "インタラクティブ、選択したシステム内でpamac-managerパッケージマネージャーを開きます。"
-msgid "Completed!"
-msgstr "完了しました！"
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>\n"
-"    \n"
-"<span font='11' foreground='gray'>Boot mode:</span> EFI\n"
-"<span font='11' foreground='gray'>EFI partition:</span> $EFI_PARTITION\n"
-"    \n"
-"<span font='11' foreground='gray'>Selected partition:</span> $SELECTED_PARTITION\n"
-"<span font='11' foreground='gray'>Selected system:</span> $SELECTED_OS\n"
-"<span font='11' foreground='gray'>Partition format:</span> $PARTITION_FORMAT\n"
-"<span font='11' foreground='gray'>Partition UUID:</span> $UUID_PARTITION\n"
-"\n"
-"Do you want to proceed?"
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>データを確認してください：</span>\n"
-"    \n"
-"<span font='11' foreground='gray'>ブートモード：</span> EFI\n"
-"<span font='11' foreground='gray'>EFIパーティション：</span> $EFI_PARTITION\n"
-"    \n"
-"<span font='11' foreground='gray'>選択したパーティション：</span> $SELECTED_PARTITION\n"
-"<span font='11' foreground='gray'>選択したシステム：</span> $SELECTED_OS\n"
-"<span font='11' foreground='gray'>パーティションフォーマット：</span> $PARTITION_FORMAT\n"
-"<span font='11' foreground='gray'>パーティションUUID：</span> $UUID_PARTITION\n"
-"\n"
-"続行しますか？"
+"Intermediate and Complete restore options require an internet connection to download packages. "
+"These options may fail if your computer is offline."
+msgstr "中間および完全復元オプションは、パッケージをダウンロードするためにインターネット接続を必要とします。これらのオプションは、コンピュータがオフラインの場合、失敗する可能性があります。"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 475
+msgid "OK"
+msgstr "OK"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 475
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 475
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 452
+msgid "Restore in Progress..."
+msgstr "復元中..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 455
+msgid "Preparing Interactive Session..."
+msgstr "インタラクティブセッションを準備中..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 550
+msgid "Interactive Session: Control Center"
+msgstr "インタラクティブセッション：コントロールセンター"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 551
+msgid "Interactive Session: Package Manager"
+msgstr "インタラクティブセッション：パッケージマネージャー"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 508
+msgid "Cleaning up session..."
+msgstr "セッションをクリーンアップ中..."

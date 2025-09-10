@@ -14,198 +14,356 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-msgid "This utility should only be used in live mode!"
-msgstr "Dette værktøj bør kun bruges i live-tilstand!"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/application.py, line: 59
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 18
+msgid "BigLinux GRUB Restore"
+msgstr "BigLinux GRUB Gendannelse"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 58
+msgid "A tool to restore the GRUB bootloader."
+msgstr "Et værktøj til at gendanne GRUB bootloaderen."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 28
+msgid "Restore the installed system"
+msgstr "Gendan det installerede system"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 53
+msgid "About"
+msgstr "Om"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 54
+msgid "Quit"
+msgstr "Afslut"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
+msgid "Start Detection"
+msgstr "Start Detektion"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 109
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 139
+msgid "Detecting Systems"
+msgstr "Registreringssystemer"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 108
+msgid "Scanning your drives for Linux installations..."
+msgstr "Scanner dine drev for Linux-installationer..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 126
+msgid "1. Select Linux System to Restore"
+msgstr "1. Vælg Linux-system til gendannelse"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 362
+msgid "2. Select Target EFI Partition"
+msgstr "2. Vælg mål EFI-partition"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 137
+msgid "2. Select Target Disk (MBR)"
+msgstr "2. Vælg mål-disk (MBR)"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 300
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
+msgid "Continue"
+msgstr "Fortsæt"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 169
 msgid ""
-"<span font='12'>This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed "
-"on the HD or SSD.</span>\n"
-"\n"
-"<span font='12' foreground='red'>If the installed system is booting correctly, there are no boot "
-"problems, so it's better not to proceed with this tool.</span>\n"
-"<span font='10' foreground='gray'>It may also work with other Linux distributions.</span>\n"
-"\n"
-"Do you want to proceed?"
+"If you are unsure, try the 'Simple Restore' first. If the problem persists after restarting, then "
+"try the other options."
 msgstr ""
-"<span font='12'>Dette værktøj skal bruges i LIVE TILSTAND for at gendanne BOOT'en af BigLinux "
-"installeret på HD eller SSD.</span>\n"
-"\n"
-"<span font='12' foreground='red'>Hvis det installerede system booter korrekt, er der ingen "
-"bootproblemer, så det er bedre ikke at fortsætte med dette værktøj.</span>\n"
-"<span font='10' foreground='gray'>Det kan også fungere med andre Linux-distributioner.</span>\n"
-"\n"
-"Vil du fortsætte?"
-msgid "Restore Boot, Grub, and initrd"
-msgstr "Gendan Boot, Grub og initrd"
-msgid "Please wait..."
-msgstr "Vent venligst..."
-msgid "No Linux installation found on this computer, process canceled."
-msgstr "Ingen Linux-installation fundet på denne computer, proces annulleret."
+"Hvis du er usikker, så prøv først 'Simpel Gendannelse'. Hvis problemet fortsætter efter genstart, "
+"så prøv de andre muligheder."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 415
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 77
+msgid "Restore Methods"
+msgstr "Gendannelsesmetoder"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 175
+msgid "Interactive Tools"
+msgstr "Interaktive værktøjer"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 181
+msgid "Configuration Summary"
+msgstr "Konfigurationsoversigt"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 419
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 118
+msgid "Simple Restore"
+msgstr "Simpel Gendannelse"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 180
+msgid "Rewrites GRUB to the boot sector."
+msgstr "Skriver GRUB til boot-sektoren."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 433
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 132
+msgid "Intermediate Restore"
+msgstr "Mellemliggende gendannelse"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 181
+msgid "Reinstalls GRUB package and regenerates configs."
+msgstr "Geninstallerer GRUB-pakken og regenererer konfigurationer."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 448
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 151
+msgid "Complete Restore"
+msgstr "Fuld gendannelse"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 182
+msgid "Updates system, kernel, and performs intermediate restore."
+msgstr "Opdaterer system, kerne og udfører mellemrestore."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 469
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 173
+msgid "Interactive Terminal"
+msgstr "Interaktiv Terminal"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 470
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 174
+msgid "Opens a terminal inside the selected system."
+msgstr "Åbner et terminalvindue i det valgte system."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 483
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 187
+msgid "Control Center"
+msgstr "Kontrolcenter"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 484
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 188
+msgid "Opens the control center inside the selected system."
+msgstr "Åbner kontrolcentret inde i det valgte system."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 497
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 201
+msgid "Package Manager"
+msgstr "Pakkestyring"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 185
+msgid "Opens the package manager inside the selected system."
+msgstr "Åbner pakkeadministratoren inde i det valgte system."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 424
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 438
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 453
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 123
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 140
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 159
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 353
+msgid "Execute"
+msgstr "Udfør"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 223
+msgid "VTE terminal widget not available."
+msgstr "VTE terminal-widget er ikke tilgængelig."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 226
+msgid "Close Terminal"
+msgstr "Luk Terminal"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 247
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 537
+msgid "Go Back"
+msgstr "Gå tilbage"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 664
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 459
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 462
+# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 474
+msgid "Close"
+msgstr "Luk"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 235
+msgid "Operation Failed!"
+msgstr "Operationen mislykkedes!"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 236
+msgid "Simple Restore Completed"
+msgstr "Simpel gendannelse fuldført"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 236
+msgid "Intermediate Restore Completed"
+msgstr "Mellemliggende gendannelse fuldført"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 236
+msgid "Complete Restore Completed"
+msgstr "Fuldstændig gendannelse gennemført"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 238
+msgid "The GRUB bootloader has been rewritten. You can now restart your computer."
+msgstr "GRUB-opstarteren er blevet omskrevet. Du kan nu genstarte din computer."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 239
+msgid "The GRUB package was reinstalled and configurations were regenerated."
+msgstr "GRUB-pakken blev geninstalleret, og konfigurationerne blev regenereret."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 240
+msgid "The system, kernel, and GRUB have been updated and restored."
+msgstr "Systemet, kernen og GRUB er blevet opdateret og gendannet."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 242
+msgid "Operation Completed Successfully!"
+msgstr "Operationen blev gennemført med succes!"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 242
+msgid "You can now close this tool and restart your computer."
+msgstr "Du kan nu lukke dette værktøj og genstarte din computer."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 276
+msgid "Proceed Anyway"
+msgstr "Fortsæt alligevel"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 259
+msgid "Copy"
+msgstr "Kopier"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 260
+msgid "Paste"
+msgstr "Indsæt"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 208
+msgid "Detection Failed"
+msgstr "Registrering mislykkedes"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 326
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 331
+msgid "Potential Boot Mode Mismatch"
+msgstr "Potentiel boot-tilstand mismatch"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 327
 msgid ""
-"The boot in live mode is using EFI mode, but <span foreground='red'>no EFI partition</span> was "
-"found on this computer, \n"
-"most likely the Grub restore will not work. \n"
+"The boot in live mode is using EFI mode, but no EFI partition was found on this computer, most "
+"likely the Grub restore will not work.\n"
 "\n"
 "Try restarting and booting in Legacy or BIOS mode through the computer's BIOS.\n"
 "\n"
 "Do you want to try even with a low probability of success?"
 msgstr ""
-"Boot i live-tilstand bruger EFI-tilstand, men <span foreground='red'>ingen EFI-partition</span> "
-"blev fundet på denne computer, \n"
-"mest sandsynligt vil Grub-gendannelse ikke fungere. \n"
+"Boot i live-tilstand bruger EFI-tilstand, men der blev ikke fundet nogen EFI-partition på denne "
+"computer, sandsynligvis vil Grub-gendannelsen ikke fungere.\n"
 "\n"
 "Prøv at genstarte og boote i Legacy- eller BIOS-tilstand gennem computerens BIOS.\n"
 "\n"
 "Vil du prøve, selv med en lav sandsynlighed for succes?"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 332
 msgid ""
-"The boot in live mode is using Legacy mode, also called BIOS, \n"
-"<span foreground='red'>but at least one EFI partition was found</span> on this computer, \n"
-"most likely the Grub restore will not work. \n"
+"The boot in live mode is using Legacy mode, also called BIOS, but at least one EFI partition was "
+"found on this computer, most likely the Grub restore will not work.\n"
 "\n"
 "Try restarting and booting in EFI mode through the computer's BIOS.\n"
 "\n"
 "Do you want to try even with a low probability of success?"
 msgstr ""
-"Boot i live-tilstand bruger Legacy-tilstand, også kaldet BIOS, \n"
-"<span foreground='red'>men der blev fundet mindst én EFI-partition</span> på denne computer, \n"
-"mest sandsynligt vil Grub-gendannelsen ikke fungere. \n"
+"Boot i live-tilstand bruger Legacy-tilstand, også kaldet BIOS, men der blev fundet mindst én "
+"EFI-partition på denne computer, og det er meget sandsynligt, at Grub-gendannelsen ikke vil "
+"fungere.\n"
 "\n"
 "Prøv at genstarte og boote i EFI-tilstand gennem computerens BIOS.\n"
 "\n"
 "Vil du prøve, selv med en lav sandsynlighed for succes?"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 226
+msgid "No Systems Found"
+msgstr "Ingen systemer fundet"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 303
+msgid "No Linux installations could be detected on your drives."
+msgstr "Ingen Linux-installationer kunne findes på dine drev."
+# 
+# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
+# File: usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
+msgid "EFI System Partition"
+msgstr "EFI-systempartition"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+msgid "Mount Failed"
+msgstr "Montering mislykkedes"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
+msgid "Selected System"
+msgstr "Valgt system"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 452
+msgid "Selected Partition"
+msgstr "Valgt partition"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 453
+msgid "Partition UUID"
+msgstr "Partition UUID"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 457
+msgid "Target (EFI Restore)"
+msgstr "Mål (EFI Gendannelse)"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 460
+msgid "Target (Legacy Restore)"
+msgstr "Mål (Legacy Gendannelse)"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+msgid "Disk Details"
+msgstr "Diskdetaljer"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 472
+msgid "No Internet Connection Detected"
+msgstr "Ingen internetforbindelse registreret"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 473
 msgid ""
-"<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
-"\n"
-"More than one EFI partition was found, select which one to use:"
+"Intermediate and Complete restore options require an internet connection to download packages. "
+"These options may fail if your computer is offline."
 msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Vælg en mulighed:</span>\n"
-"\n"
-"Der blev fundet mere end én EFI-partition, vælg hvilken der skal bruges:"
-msgid "No EFI partition selected, process canceled."
-msgstr "Ingen EFI-partition valgt, proces annulleret."
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
-"\n"
-"More than one Linux installation was found on this computer, select which one to restore the boot:"
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Vælg en mulighed:</span>\n"
-"\n"
-"Der blev fundet mere end én Linux-installation på denne computer, vælg hvilken en der skal "
-"gendannes til opstart:"
-msgid "No partition selected, process canceled."
-msgstr "Ingen partition valgt, proces annulleret."
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
-"    \n"
-"More than one storage device was found, select which one to write the boot to:"
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Vælg en mulighed:</span>\n"
-"    \n"
-"Mere end én lagringsenhed blev fundet, vælg hvilken en der skal skrives til boot:"
-msgid "Disk"
-msgstr "Disk"
-msgid "Size"
-msgstr "Størrelse"
-msgid "Name"
-msgstr "Navn"
-msgid "Partition Table"
-msgstr "Partitionstabel"
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>    \n"
-"\n"
-"<span font='11' foreground='gray'>Boot mode:</span>  LEGACY/BIOS\n"
-"<span font='11' foreground='gray'>Selected disk:</span> $DISK_SELECTED\n"
-"    \n"
-"<span font='11' foreground='gray'>Disk partition table:</span> $DISK_TABLE\n"
-"    \n"
-"<span font='11' foreground='gray'>Disk size:</span> $DISK_SIZE\n"
-"   \n"
-"<span font='11' foreground='gray'>Selected partition:</span> $SELECTED_PARTITION\n"
-"<span font='11' foreground='gray'>Selected system:</span> $SELECTED_OS\n"
-"<span font='11' foreground='gray'>Partition format:</span> $PARTITION_FORMAT\n"
-"<span font='11' foreground='gray'>Partition UUID:</span> $UUID_PARTITION\n"
-"\n"
-"Do you want to proceed?"
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Bekræft dataene:</span>    \n"
-"\n"
-"<span font='11' foreground='gray'>Boot-tilstand:</span>  LEGACY/BIOS\n"
-"<span font='11' foreground='gray'>Valgt disk:</span> $DISK_SELECTED\n"
-"    \n"
-"<span font='11' foreground='gray'>Diskpartitionstabel:</span> $DISK_TABLE\n"
-"    \n"
-"<span font='11' foreground='gray'>Diskstørrelse:</span> $DISK_SIZE\n"
-"   \n"
-"<span font='11' foreground='gray'>Valgt partition:</span> $SELECTED_PARTITION\n"
-"<span font='11' foreground='gray'>Valgt system:</span> $SELECTED_OS\n"
-"<span font='11' foreground='gray'>Partitionformat:</span> $PARTITION_FORMAT\n"
-"<span font='11' foreground='gray'>Partition UUID:</span> $UUID_PARTITION\n"
-"\n"
-"Vil du fortsætte?"
-msgid "Your computer is not connected to the internet, options 2 and 3 require internet to work."
-msgstr "Din computer er ikke tilsluttet internettet, mulighederne 2 og 3 kræver internet for at fungere."
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Select the desired option:</span>\n"
-"        \n"
-"The restore can be done in 3 ways (<span foreground='gray'>Simple, Intermediate, or "
-"Complete</span>), if in doubt, try the first option, restart the computer and see if it is "
-"resolved.\n"
-"\n"
-"If the problem persists, try the other options."
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Vælg den ønskede mulighed:</span>\n"
-"        \n"
-"Gendannelsen kan udføres på 3 måder (<span foreground='gray'>Simpel, Mellemliggende eller "
-"Fuld</span>), hvis du er i tvivl, så prøv den første mulighed, genstart computeren og se om det er "
-"løst.\n"
-"\n"
-"Hvis problemet fortsætter, så prøv de andre muligheder."
-msgid "Option"
-msgstr "Mulighed"
-msgid "Description"
-msgstr "Beskrivelse"
-msgid "Simple, just writes the Grub again at the beginning of the disk."
-msgstr "Simpel, skriver bare Grub igen i begyndelsen af disken."
-msgid ""
-"Intermediate, reinstalls the grub package on the partition, regenerates the configuration, and "
-"updates the initrd."
-msgstr ""
-"Mellemniveau, geninstallerer grub-pakken på partitionen, regenererer konfigurationen og opdaterer "
-"initrd."
-msgid ""
-"Complete, performs the intermediate restore steps, updates the system, and checks if the LTS kernel "
-"is installed."
-msgstr ""
-"Fuldfører, udfører de mellemliggende gendannelsestrin, opdaterer systemet og kontrollerer, om "
-"LTS-kernen er installeret."
-msgid "Interactive, opens a terminal inside the selected system."
-msgstr "Interaktiv, åbner et terminalvindue inde i det valgte system."
-msgid "Interactive, opens the control center inside the selected system."
-msgstr "Interaktiv, åbner kontrolcentret inde i det valgte system."
-msgid "Interactive, opens the pamac-manager package manager inside the selected system."
-msgstr "Interaktiv, åbner pamac-manager pakkehåndteringen inde i det valgte system."
-msgid "Completed!"
-msgstr "Færdig!"
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>\n"
-"    \n"
-"<span font='11' foreground='gray'>Boot mode:</span> EFI\n"
-"<span font='11' foreground='gray'>EFI partition:</span> $EFI_PARTITION\n"
-"    \n"
-"<span font='11' foreground='gray'>Selected partition:</span> $SELECTED_PARTITION\n"
-"<span font='11' foreground='gray'>Selected system:</span> $SELECTED_OS\n"
-"<span font='11' foreground='gray'>Partition format:</span> $PARTITION_FORMAT\n"
-"<span font='11' foreground='gray'>Partition UUID:</span> $UUID_PARTITION\n"
-"\n"
-"Do you want to proceed?"
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Bekræft dataene:</span>\n"
-"    \n"
-"<span font='11' foreground='gray'>Boot-tilstand:</span> EFI\n"
-"<span font='11' foreground='gray'>EFI-partition:</span> $EFI_PARTITION\n"
-"    \n"
-"<span font='11' foreground='gray'>Valgt partition:</span> $SELECTED_PARTITION\n"
-"<span font='11' foreground='gray'>Valgt system:</span> $SELECTED_OS\n"
-"<span font='11' foreground='gray'>Partitionformat:</span> $PARTITION_FORMAT\n"
-"<span font='11' foreground='gray'>Partition UUID:</span> $UUID_PARTITION\n"
-"\n"
-"Ønsker du at fortsætte?"
+"Mellemliggende og fuldstændig gendannelsesmuligheder kræver en internetforbindelse for at downloade "
+"pakker. Disse muligheder kan fejle, hvis din computer er offline."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 475
+msgid "OK"
+msgstr "OK"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 475
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 475
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 452
+msgid "Restore in Progress..."
+msgstr "Gendannelse i gang..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 455
+msgid "Preparing Interactive Session..."
+msgstr "Forbereder interaktiv session..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 550
+msgid "Interactive Session: Control Center"
+msgstr "Interaktiv session: Kontrolcenter"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 551
+msgid "Interactive Session: Package Manager"
+msgstr "Interaktiv session: Pakkeadministrator"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 508
+msgid "Cleaning up session..."
+msgstr "Rydder op i session..."

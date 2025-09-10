@@ -14,200 +14,351 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-msgid "This utility should only be used in live mode!"
-msgstr "Ez az eszköz csak éles módban használható!"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 59
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 18
+msgid "BigLinux GRUB Restore"
+msgstr "BigLinux GRUB Visszaállítás"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 58
+msgid "A tool to restore the GRUB bootloader."
+msgstr "Eszköz a GRUB indítóbetöltő helyreállításához."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 28
+msgid "Restore the installed system"
+msgstr "Állítsa vissza a telepített rendszert."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 53
+msgid "About"
+msgstr "Névjegy"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 54
+msgid "Quit"
+msgstr "Kilépés"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
+msgid "Start Detection"
+msgstr "Kezdés észlelés"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 109
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 139
+msgid "Detecting Systems"
+msgstr "Rendszerek észlelése"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 108
+msgid "Scanning your drives for Linux installations..."
+msgstr "A meghajtóidat Linux telepítések után keresem..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 126
+msgid "1. Select Linux System to Restore"
+msgstr "1. Válassza ki a helyreállítandó Linux rendszert"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 362
+msgid "2. Select Target EFI Partition"
+msgstr "2. Válassza ki a cél EFI partíciót"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 137
+msgid "2. Select Target Disk (MBR)"
+msgstr "2. Válassza ki a céldisket (MBR)"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 300
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
+msgid "Continue"
+msgstr "Folytatás"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 169
 msgid ""
-"<span font='12'>This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed "
-"on the HD or SSD.</span>\n"
-"\n"
-"<span font='12' foreground='red'>If the installed system is booting correctly, there are no boot "
-"problems, so it's better not to proceed with this tool.</span>\n"
-"<span font='10' foreground='gray'>It may also work with other Linux distributions.</span>\n"
-"\n"
-"Do you want to proceed?"
+"If you are unsure, try the 'Simple Restore' first. If the problem persists after restarting, then "
+"try the other options."
 msgstr ""
-"<span font='12'>Ezt az eszközt ÉLŐ MÓDBAN kell használni a BigLinux HD-n vagy SSD-n történő "
-"BOOT-jának helyreállításához.</span>\n"
-"\n"
-"<span font='12' foreground='red'>Ha a telepített rendszer helyesen bootol, nincsenek boot "
-"problémák, ezért jobb, ha nem folytatja ezzel az eszközzel.</span>\n"
-"<span font='10' foreground='gray'>Más Linux disztribúciókkal is működhet.</span>\n"
-"\n"
-"Szeretné folytatni?"
-msgid "Restore Boot, Grub, and initrd"
-msgstr "Boot, Grub és initrd helyreállítása"
-msgid "Please wait..."
-msgstr "Kérjük, várjon..."
-msgid "No Linux installation found on this computer, process canceled."
-msgstr "Nincs Linux telepítés ezen a számítógépen, a folyamat megszakítva."
+"Ha nem biztos benne, először próbálja ki az 'Egyszerű visszaállítást'. Ha a probléma továbbra is "
+"fennáll a újraindítás után, akkor próbálja ki a többi lehetőséget."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 415
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 77
+msgid "Restore Methods"
+msgstr "Visszaállítási Módszerek"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 175
+msgid "Interactive Tools"
+msgstr "Interaktív Eszközök"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 181
+msgid "Configuration Summary"
+msgstr "Konfigurációs összegzés"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 419
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 118
+msgid "Simple Restore"
+msgstr "Egyszerű visszaállítás"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 180
+msgid "Rewrites GRUB to the boot sector."
+msgstr "Átírja a GRUB-ot a rendszerindító szektorba."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 433
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 132
+msgid "Intermediate Restore"
+msgstr "Köztes visszaállítás"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 181
+msgid "Reinstalls GRUB package and regenerates configs."
+msgstr "Újratelepíti a GRUB csomagot és újragenerálja a konfigurációkat."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 448
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 151
+msgid "Complete Restore"
+msgstr "Teljes visszaállítás"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 182
+msgid "Updates system, kernel, and performs intermediate restore."
+msgstr "Frissíti a rendszert, a kernelt, és végrehajtja a köztes visszaállítást."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 469
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 173
+msgid "Interactive Terminal"
+msgstr "Interaktív Terminál"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 470
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 174
+msgid "Opens a terminal inside the selected system."
+msgstr "Megnyit egy terminált a kiválasztott rendszeren belül."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 483
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 187
+msgid "Control Center"
+msgstr "Vezérlőközpont"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 484
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 188
+msgid "Opens the control center inside the selected system."
+msgstr "Megnyitja a vezérlőközpontot a kiválasztott rendszerben."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 497
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 201
+msgid "Package Manager"
+msgstr "Csomagkezelő"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 185
+msgid "Opens the package manager inside the selected system."
+msgstr "Megnyitja a csomagkezelőt a kiválasztott rendszerben."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 424
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 438
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 453
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 123
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 140
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 159
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 353
+msgid "Execute"
+msgstr "Végrehajtás"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 223
+msgid "VTE terminal widget not available."
+msgstr "A VTE terminál widget nem elérhető."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 226
+msgid "Close Terminal"
+msgstr "Terminál bezárása"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 247
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 537
+msgid "Go Back"
+msgstr "Vissza"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 664
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 459
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 462
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 474
+msgid "Close"
+msgstr "Bezárás"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 235
+msgid "Operation Failed!"
+msgstr "Művelet sikertelen!"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 236
+msgid "Simple Restore Completed"
+msgstr "Egyszerű visszaállítás befejeződött"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 236
+msgid "Intermediate Restore Completed"
+msgstr "Köztes visszaállítás befejeződött"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 236
+msgid "Complete Restore Completed"
+msgstr "Teljes visszaállítás befejeződött"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 238
+msgid "The GRUB bootloader has been rewritten. You can now restart your computer."
+msgstr "A GRUB betöltőprogram újraírásra került. Most újraindíthatja a számítógépét."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 239
+msgid "The GRUB package was reinstalled and configurations were regenerated."
+msgstr "A GRUB csomag újratelepítve lett, és a konfigurációk újragenerálódtak."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 240
+msgid "The system, kernel, and GRUB have been updated and restored."
+msgstr "A rendszer, a kernel és a GRUB frissítve és visszaállítva lett."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 242
+msgid "Operation Completed Successfully!"
+msgstr "A művelet sikeresen befejeződött!"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 242
+msgid "You can now close this tool and restart your computer."
+msgstr "Most már bezárhatja ezt az eszközt, és újraindíthatja a számítógépét."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 276
+msgid "Proceed Anyway"
+msgstr "Folytatás mindenképpen"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 259
+msgid "Copy"
+msgstr "Másolás"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 260
+msgid "Paste"
+msgstr "Beillesztés"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 208
+msgid "Detection Failed"
+msgstr "A észlelés meghiúsult"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 326
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 331
+msgid "Potential Boot Mode Mismatch"
+msgstr "Lehetséges indítási mód eltérés"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 327
 msgid ""
-"The boot in live mode is using EFI mode, but <span foreground='red'>no EFI partition</span> was "
-"found on this computer, \n"
-"most likely the Grub restore will not work. \n"
+"The boot in live mode is using EFI mode, but no EFI partition was found on this computer, most "
+"likely the Grub restore will not work.\n"
 "\n"
 "Try restarting and booting in Legacy or BIOS mode through the computer's BIOS.\n"
 "\n"
 "Do you want to try even with a low probability of success?"
 msgstr ""
-"A live módban való indítás EFI módban történik, de <span foreground='red'>nem található EFI "
-"partíció</span> ezen a számítógépen, \n"
-"valószínűleg a Grub helyreállítás nem fog működni. \n"
+"A live módban való indítás EFI módban történik, de ezen a számítógépen nem található EFI partíció, "
+"valószínűleg a Grub helyreállítás nem fog működni.\n"
 "\n"
 "Próbálja meg újraindítani és indítani a Legacy vagy BIOS módban a számítógép BIOS-án keresztül.\n"
 "\n"
 "Szeretné megpróbálni, még alacsony sikerességi valószínűség mellett is?"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 332
 msgid ""
-"The boot in live mode is using Legacy mode, also called BIOS, \n"
-"<span foreground='red'>but at least one EFI partition was found</span> on this computer, \n"
-"most likely the Grub restore will not work. \n"
+"The boot in live mode is using Legacy mode, also called BIOS, but at least one EFI partition was "
+"found on this computer, most likely the Grub restore will not work.\n"
 "\n"
 "Try restarting and booting in EFI mode through the computer's BIOS.\n"
 "\n"
 "Do you want to try even with a low probability of success?"
 msgstr ""
-"A live módban történő indítás Legacy módban történik, más néven BIOS, \n"
-"<span foreground='red'>de legalább egy EFI partíciót találtunk</span> ezen a számítógépen, \n"
-"valószínűleg a Grub helyreállítás nem fog működni. \n"
+"A live módban való indítás a Legacy módban történik, amelyet BIOS-nak is neveznek, de legalább egy "
+"EFI partíciót találtak ezen a számítógépen, valószínűleg a Grub helyreállítás nem fog működni.\n"
 "\n"
 "Próbálja meg újraindítani és EFI módban indítani a számítógép BIOS-án keresztül.\n"
 "\n"
 "Szeretné megpróbálni, még alacsony sikerességi valószínűség mellett is?"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 226
+msgid "No Systems Found"
+msgstr "Nincs található rendszer"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 303
+msgid "No Linux installations could be detected on your drives."
+msgstr "Nem található Linux telepítés a meghajtóin."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
+msgid "EFI System Partition"
+msgstr "EFI rendszerpartíció"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+msgid "Mount Failed"
+msgstr "Csatolás sikertelen"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
+msgid "Selected System"
+msgstr "Kiválasztott rendszer"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 452
+msgid "Selected Partition"
+msgstr "Kiválasztott partíció"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 453
+msgid "Partition UUID"
+msgstr "Partíció UUID"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 457
+msgid "Target (EFI Restore)"
+msgstr "Cél (EFI Visszaállítás)"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 460
+msgid "Target (Legacy Restore)"
+msgstr "Cél (Örökölt Visszaállítás)"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+msgid "Disk Details"
+msgstr "Lemez részletei"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 472
+msgid "No Internet Connection Detected"
+msgstr "Nincs internetkapcsolat észlelve"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 473
 msgid ""
-"<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
-"\n"
-"More than one EFI partition was found, select which one to use:"
+"Intermediate and Complete restore options require an internet connection to download packages. "
+"These options may fail if your computer is offline."
 msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Válasszon egy lehetőséget:</span>\n"
-"\n"
-"Több mint egy EFI partíciót találtunk, válassza ki, melyiket szeretné használni:"
-msgid "No EFI partition selected, process canceled."
-msgstr "Nincs kiválasztva EFI partíció, a folyamat megszakítva."
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
-"\n"
-"More than one Linux installation was found on this computer, select which one to restore the boot:"
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Válasszon egy lehetőséget:</span>\n"
-"\n"
-"Több Linux telepítést találtunk ezen a számítógépen, válassza ki, melyiket szeretné helyreállítani "
-"a boot-ot:"
-msgid "No partition selected, process canceled."
-msgstr "Nincs kiválasztott partíció, a folyamat megszakítva."
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
-"    \n"
-"More than one storage device was found, select which one to write the boot to:"
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Válasszon egy lehetőséget:</span>\n"
-"    \n"
-"Több tárolóeszközt találtunk, válassza ki, melyikre szeretné írni a bootot:"
-msgid "Disk"
-msgstr "Lemez"
-msgid "Size"
-msgstr "Méret"
-msgid "Name"
-msgstr "Név"
-msgid "Partition Table"
-msgstr "Partíciós tábla"
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>    \n"
-"\n"
-"<span font='11' foreground='gray'>Boot mode:</span>  LEGACY/BIOS\n"
-"<span font='11' foreground='gray'>Selected disk:</span> $DISK_SELECTED\n"
-"    \n"
-"<span font='11' foreground='gray'>Disk partition table:</span> $DISK_TABLE\n"
-"    \n"
-"<span font='11' foreground='gray'>Disk size:</span> $DISK_SIZE\n"
-"   \n"
-"<span font='11' foreground='gray'>Selected partition:</span> $SELECTED_PARTITION\n"
-"<span font='11' foreground='gray'>Selected system:</span> $SELECTED_OS\n"
-"<span font='11' foreground='gray'>Partition format:</span> $PARTITION_FORMAT\n"
-"<span font='11' foreground='gray'>Partition UUID:</span> $UUID_PARTITION\n"
-"\n"
-"Do you want to proceed?"
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Erősítse meg az adatokat:</span>    \n"
-"\n"
-"<span font='11' foreground='gray'>Indítási mód:</span>  LEGACY/BIOS\n"
-"<span font='11' foreground='gray'>Kiválasztott lemez:</span> $DISK_SELECTED\n"
-"    \n"
-"<span font='11' foreground='gray'>Lemezpartíció táblázat:</span> $DISK_TABLE\n"
-"    \n"
-"<span font='11' foreground='gray'>Lemez mérete:</span> $DISK_SIZE\n"
-"   \n"
-"<span font='11' foreground='gray'>Kiválasztott partíció:</span> $SELECTED_PARTITION\n"
-"<span font='11' foreground='gray'>Kiválasztott rendszer:</span> $SELECTED_OS\n"
-"<span font='11' foreground='gray'>Partíció formátum:</span> $PARTITION_FORMAT\n"
-"<span font='11' foreground='gray'>Partíció UUID:</span> $UUID_PARTITION\n"
-"\n"
-"Folytatni szeretné?"
-msgid "Your computer is not connected to the internet, options 2 and 3 require internet to work."
-msgstr ""
-"A számítógépe nincs csatlakoztatva az internethez, a 2. és 3. lehetőség internetkapcsolatot igényel "
-"a működéshez."
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Select the desired option:</span>\n"
-"        \n"
-"The restore can be done in 3 ways (<span foreground='gray'>Simple, Intermediate, or "
-"Complete</span>), if in doubt, try the first option, restart the computer and see if it is "
-"resolved.\n"
-"\n"
-"If the problem persists, try the other options."
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Válaszd ki a kívánt lehetőséget:</span>\n"
-"        \n"
-"A visszaállítás 3 módon végezhető el (<span foreground='gray'>Egyszerű, Közepes vagy "
-"Teljes</span>), ha kétségeid vannak, próbáld ki az első lehetőséget, indítsd újra a számítógépet, "
-"és nézd meg, hogy megoldódott-e.\n"
-"\n"
-"Ha a probléma továbbra is fennáll, próbáld ki a többi lehetőséget."
-msgid "Option"
-msgstr "Opció"
-msgid "Description"
-msgstr "Leírás"
-msgid "Simple, just writes the Grub again at the beginning of the disk."
-msgstr "Egyszerű, csak újraírja a Grub-ot a lemez elejére."
-msgid ""
-"Intermediate, reinstalls the grub package on the partition, regenerates the configuration, and "
-"updates the initrd."
-msgstr ""
-"Középhaladó, újratelepíti a grub csomagot a partíción, újragenerálja a konfigurációt, és frissíti "
-"az initrd-t."
-msgid ""
-"Complete, performs the intermediate restore steps, updates the system, and checks if the LTS kernel "
-"is installed."
-msgstr ""
-"Befejezi, végrehajtja a köztes visszaállítási lépéseket, frissíti a rendszert, és ellenőrzi, hogy "
-"az LTS kernel telepítve van-e."
-msgid "Interactive, opens a terminal inside the selected system."
-msgstr "Interaktív, terminált nyit a kiválasztott rendszerben."
-msgid "Interactive, opens the control center inside the selected system."
-msgstr "Interaktív, megnyitja a vezérlőközpontot a kiválasztott rendszerben."
-msgid "Interactive, opens the pamac-manager package manager inside the selected system."
-msgstr "Interaktív, megnyitja a pamac-manager csomagkezelőt a kiválasztott rendszerben."
-msgid "Completed!"
-msgstr "Kész!"
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>\n"
-"    \n"
-"<span font='11' foreground='gray'>Boot mode:</span> EFI\n"
-"<span font='11' foreground='gray'>EFI partition:</span> $EFI_PARTITION\n"
-"    \n"
-"<span font='11' foreground='gray'>Selected partition:</span> $SELECTED_PARTITION\n"
-"<span font='11' foreground='gray'>Selected system:</span> $SELECTED_OS\n"
-"<span font='11' foreground='gray'>Partition format:</span> $PARTITION_FORMAT\n"
-"<span font='11' foreground='gray'>Partition UUID:</span> $UUID_PARTITION\n"
-"\n"
-"Do you want to proceed?"
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Erősítse meg az adatokat:</span>\n"
-"    \n"
-"<span font='11' foreground='gray'>Indítási mód:</span> EFI\n"
-"<span font='11' foreground='gray'>EFI partíció:</span> $EFI_PARTITION\n"
-"    \n"
-"<span font='11' foreground='gray'>Kiválasztott partíció:</span> $SELECTED_PARTITION\n"
-"<span font='11' foreground='gray'>Kiválasztott rendszer:</span> $SELECTED_OS\n"
-"<span font='11' foreground='gray'>Partíció formátum:</span> $PARTITION_FORMAT\n"
-"<span font='11' foreground='gray'>Partíció UUID:</span> $UUID_PARTITION\n"
-"\n"
-"Folytatni szeretné?"
+"A köztes és teljes visszaállítási lehetőségek internetkapcsolatot igényelnek a csomagok "
+"letöltéséhez. Ezek a lehetőségek hibát okozhatnak, ha a számítógépe offline állapotban van."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 475
+msgid "OK"
+msgstr "Rendben"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 452
+msgid "Restore in Progress..."
+msgstr "Visszaállítás folyamatban..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 455
+msgid "Preparing Interactive Session..."
+msgstr "Interaktív ülés előkészítése..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 550
+msgid "Interactive Session: Control Center"
+msgstr "Interaktív Ülés: Vezérlőközpont"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 551
+msgid "Interactive Session: Package Manager"
+msgstr "Interaktív Ülés: Csomagkezelő"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 508
+msgid "Cleaning up session..."
+msgstr "Munkamenet tisztítása..."

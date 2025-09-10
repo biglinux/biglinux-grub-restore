@@ -1,0 +1,81 @@
+#!/bin/bash
+# Handles non-interactive restore modes (1-3) for EFI systems.
+
+set -e
+
+# ... (funções de log, mount, unmount, execute_chroot permanecem as mesmas) ...
+#<editor-fold desc="Helper Functions">
+export TEXTDOMAINDIR="/usr/share/locale"
+export TEXTDOMAIN=grub-restore
+log_message() { echo "$(date '+%Y-%m-%d %H:%M:%S'): $1" >&2; }
+show_progress() { echo "PROGRESS: $1"; }
+handle_error() { log_message "ERROR: $1"; echo "ERROR: $1" >&2; exit "${2:-1}"; }
+safe_mount() {
+    umount -l "$2" 2>/dev/null || true
+    mkdir -p "$2"
+    if mount "$1" -o "$3" "$2"; then log_message "Mounted $1 to $2"; else handle_error "Failed to mount $1"; fi
+}
+safe_unmount() {
+    if umount "$1"; then log_message "Unmounted $1"; else log_message "Warning: Could not unmount $1"; fi
+}
+execute_chroot() {
+    log_message "Chroot: $2"
+    show_progress "$2"
+    if ! manjaro-chroot /mnt $1; then handle_error "Failed: $2"; fi
+}
+#</editor-fold>
+
+# Main script
+log_message "Starting EFI GRUB restore script"
+
+# Read config
+EFI_PARTITION=$(cat /tmp/efi-selected)
+SELECTED_PARTITION=$(awk -F: '{ print $1}' /tmp/os-prober-selected)
+PARTITION_FORMAT=$(awk -F: '{ print $5 }' /tmp/os-prober-selected)
+RESTORE_MODE=$(cat /tmp/grub-restore-apply-mode)
+
+# Mount
+show_progress "Preparing mount points..."
+mount_opts=""
+[ "$PARTITION_FORMAT" = "btrfs" ] && mount_opts="subvol=@"
+safe_mount "$SELECTED_PARTITION" "/mnt" "$mount_opts"
+safe_mount "$EFI_PARTITION" "/mnt/boot/efi"
+
+# Execute
+case "$RESTORE_MODE" in
+    "1")
+        log_message "Executing Simple Restore"
+        execute_chroot "grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=biglinux --recheck" "Installing GRUB"
+        ;;
+    "2")
+        log_message "Executing Intermediate Restore"
+        execute_chroot "rm -f /var/lib/pacman/db.lck" "Removing package lock"
+        execute_chroot "pacman --noconfirm -Sy grub" "Updating GRUB package"
+        execute_chroot "grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=biglinux --recheck" "Installing GRUB"
+        execute_chroot "mkinitcpio -P" "Regenerating initramfs"
+        execute_chroot "grub-mkconfig -o /boot/grub/grub.cfg" "Generating GRUB configuration"
+        ;;
+    "3")
+        log_message "Executing Complete Restore"
+        execute_chroot "rm -f /var/lib/pacman/db.lck" "Removing package lock"
+        execute_chroot "pacman --noconfirm -Syyu" "Updating system"
+        execute_chroot "pacman --noconfirm -S grub linux" "Installing core packages"
+        execute_chroot "grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=biglinux --recheck" "Installing GRUB"
+        execute_chroot "mkinitcpio -P" "Regenerating initramfs"
+        execute_chroot "grub-mkconfig -o /boot/grub/grub.cfg" "Generating GRUB configuration"
+        ;;
+    *)
+        handle_error "Invalid non-interactive mode: $RESTORE_MODE"
+        ;;
+esac
+
+# Cleanup
+show_progress "Syncing filesystems..."
+sync
+show_progress "Unmounting filesystems..."
+safe_unmount "/mnt/boot/efi"
+safe_unmount "/mnt"
+
+log_message "EFI GRUB restore completed successfully"
+show_progress "Restore operation completed!"
+exit 0

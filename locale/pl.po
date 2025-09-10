@@ -14,198 +14,352 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-msgid "This utility should only be used in live mode!"
-msgstr "To narzędzie powinno być używane tylko w trybie na żywo!"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 59
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 18
+msgid "BigLinux GRUB Restore"
+msgstr "Przywracanie GRUB BigLinux"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 58
+msgid "A tool to restore the GRUB bootloader."
+msgstr "Narzędzie do przywracania bootloadera GRUB."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 28
+msgid "Restore the installed system"
+msgstr "Przywróć zainstalowany system"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 53
+msgid "About"
+msgstr "O programie"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 54
+msgid "Quit"
+msgstr "Zakończ"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
+msgid "Start Detection"
+msgstr "Rozpocznij wykrywanie"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 109
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 139
+msgid "Detecting Systems"
+msgstr "Wykrywanie systemów"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 108
+msgid "Scanning your drives for Linux installations..."
+msgstr "Skanowanie twoich dysków w poszukiwaniu instalacji systemu Linux..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 126
+msgid "1. Select Linux System to Restore"
+msgstr "1. Wybierz system Linux do przywrócenia"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 362
+msgid "2. Select Target EFI Partition"
+msgstr "2. Wybierz docelową partycję EFI"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 137
+msgid "2. Select Target Disk (MBR)"
+msgstr "2. Wybierz dysk docelowy (MBR)"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 300
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
+msgid "Continue"
+msgstr "Kontynuuj"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 169
 msgid ""
-"<span font='12'>This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed "
-"on the HD or SSD.</span>\n"
-"\n"
-"<span font='12' foreground='red'>If the installed system is booting correctly, there are no boot "
-"problems, so it's better not to proceed with this tool.</span>\n"
-"<span font='10' foreground='gray'>It may also work with other Linux distributions.</span>\n"
-"\n"
-"Do you want to proceed?"
+"If you are unsure, try the 'Simple Restore' first. If the problem persists after restarting, then "
+"try the other options."
 msgstr ""
-"<span font='12'>To narzędzie powinno być używane w TRYBIE NA ŻYWO, aby przywrócić BOOT BigLinux "
-"zainstalowanego na HD lub SSD.</span>\n"
-"\n"
-"<span font='12' foreground='red'>Jeśli zainstalowany system uruchamia się poprawnie, nie ma "
-"problemów z uruchamianiem, więc lepiej nie kontynuować korzystania z tego narzędzia.</span>\n"
-"<span font='10' foreground='gray'>Może również działać z innymi dystrybucjami Linuksa.</span>\n"
-"\n"
-"Czy chcesz kontynuować?"
-msgid "Restore Boot, Grub, and initrd"
-msgstr "Przywróć Boot, Grub i initrd"
-msgid "Please wait..."
-msgstr "Proszę czekać..."
-msgid "No Linux installation found on this computer, process canceled."
-msgstr "Nie znaleziono instalacji systemu Linux na tym komputerze, proces anulowany."
+"Jeśli nie jesteś pewien, najpierw spróbuj 'Proste przywracanie'. Jeśli problem nadal występuje po "
+"ponownym uruchomieniu, spróbuj innych opcji."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 415
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 77
+msgid "Restore Methods"
+msgstr "Metody przywracania"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 175
+msgid "Interactive Tools"
+msgstr "Narzędzia interaktywne"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 181
+msgid "Configuration Summary"
+msgstr "Podsumowanie konfiguracji"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 419
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 118
+msgid "Simple Restore"
+msgstr "Proste Przywracanie"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 180
+msgid "Rewrites GRUB to the boot sector."
+msgstr "Przepisuje GRUB do sektora rozruchowego."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 433
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 132
+msgid "Intermediate Restore"
+msgstr "Przywracanie pośrednie"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 181
+msgid "Reinstalls GRUB package and regenerates configs."
+msgstr "Ponownie instaluje pakiet GRUB i regeneruje konfiguracje."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 448
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 151
+msgid "Complete Restore"
+msgstr "Pełne przywracanie"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 182
+msgid "Updates system, kernel, and performs intermediate restore."
+msgstr "Aktualizuje system, jądro i wykonuje przywracanie pośrednie."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 469
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 173
+msgid "Interactive Terminal"
+msgstr "Interaktywny terminal"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 470
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 174
+msgid "Opens a terminal inside the selected system."
+msgstr "Otwiera terminal wewnątrz wybranego systemu."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 483
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 187
+msgid "Control Center"
+msgstr "Centrum sterowania"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 484
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 188
+msgid "Opens the control center inside the selected system."
+msgstr "Otwiera centrum sterowania wewnątrz wybranego systemu."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 497
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 201
+msgid "Package Manager"
+msgstr "Menadżer pakietów"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 185
+msgid "Opens the package manager inside the selected system."
+msgstr "Otwiera menedżera pakietów w wybranym systemie."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 424
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 438
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 453
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 123
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 140
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 159
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 353
+msgid "Execute"
+msgstr "Wykonaj"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 223
+msgid "VTE terminal widget not available."
+msgstr "Widget terminala VTE niedostępny."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 226
+msgid "Close Terminal"
+msgstr "Zamknij terminal"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 247
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 537
+msgid "Go Back"
+msgstr "Wróć"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 664
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 459
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 462
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 474
+msgid "Close"
+msgstr "Zamknij"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 235
+msgid "Operation Failed!"
+msgstr "Operacja nie powiodła się!"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 236
+msgid "Simple Restore Completed"
+msgstr "Proste przywracanie zakończone"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 236
+msgid "Intermediate Restore Completed"
+msgstr "Przywracanie pośrednie zakończone"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 236
+msgid "Complete Restore Completed"
+msgstr "Przywracanie zakończone pomyślnie"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 238
+msgid "The GRUB bootloader has been rewritten. You can now restart your computer."
+msgstr "Bootloader GRUB został przepisany. Możesz teraz zrestartować swój komputer."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 239
+msgid "The GRUB package was reinstalled and configurations were regenerated."
+msgstr "Pakiet GRUB został ponownie zainstalowany, a konfiguracje zostały wygenerowane na nowo."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 240
+msgid "The system, kernel, and GRUB have been updated and restored."
+msgstr "System, jądro i GRUB zostały zaktualizowane i przywrócone."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 242
+msgid "Operation Completed Successfully!"
+msgstr "Operacja zakończona pomyślnie!"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 242
+msgid "You can now close this tool and restart your computer."
+msgstr "Możesz teraz zamknąć to narzędzie i zrestartować komputer."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 276
+msgid "Proceed Anyway"
+msgstr "Kontynuuj mimo to"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 259
+msgid "Copy"
+msgstr "Kopiuj"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 260
+msgid "Paste"
+msgstr "Wklej"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 208
+msgid "Detection Failed"
+msgstr "Wykrywanie nie powiodło się"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 326
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 331
+msgid "Potential Boot Mode Mismatch"
+msgstr "Potencjalna niezgodność trybu rozruchu"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 327
 msgid ""
-"The boot in live mode is using EFI mode, but <span foreground='red'>no EFI partition</span> was "
-"found on this computer, \n"
-"most likely the Grub restore will not work. \n"
+"The boot in live mode is using EFI mode, but no EFI partition was found on this computer, most "
+"likely the Grub restore will not work.\n"
 "\n"
 "Try restarting and booting in Legacy or BIOS mode through the computer's BIOS.\n"
 "\n"
 "Do you want to try even with a low probability of success?"
 msgstr ""
-"Uruchomienie w trybie na żywo korzysta z trybu EFI, ale <span foreground='red'>nie znaleziono "
-"partycji EFI</span> na tym komputerze, \n"
-"najprawdopodobniej przywracanie Gruba nie zadziała. \n"
+"Uruchomienie w trybie na żywo korzysta z trybu EFI, ale na tym komputerze nie znaleziono partycji "
+"EFI, najprawdopodobniej przywracanie Grub nie zadziała.\n"
 "\n"
-"Spróbuj ponownie uruchomić komputer i uruchomić w trybie Legacy lub BIOS przez BIOS komputera.\n"
+"Spróbuj ponownie uruchomić i uruchomić w trybie Legacy lub BIOS przez BIOS komputera.\n"
 "\n"
-"Czy chcesz spróbować mimo niskiego prawdopodobieństwa sukcesu?"
+"Czy chcesz spróbować, mimo niskiego prawdopodobieństwa sukcesu?"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 332
 msgid ""
-"The boot in live mode is using Legacy mode, also called BIOS, \n"
-"<span foreground='red'>but at least one EFI partition was found</span> on this computer, \n"
-"most likely the Grub restore will not work. \n"
+"The boot in live mode is using Legacy mode, also called BIOS, but at least one EFI partition was "
+"found on this computer, most likely the Grub restore will not work.\n"
 "\n"
 "Try restarting and booting in EFI mode through the computer's BIOS.\n"
 "\n"
 "Do you want to try even with a low probability of success?"
 msgstr ""
-"Uruchomienie w trybie na żywo korzysta z trybu Legacy, znanego również jako BIOS, \n"
-"<span foreground='red'>ale na tym komputerze znaleziono przynajmniej jedną partycję EFI</span>, \n"
-"najprawdopodobniej przywracanie Gruba nie zadziała. \n"
+"Uruchomienie w trybie na żywo korzysta z trybu Legacy, znanego również jako BIOS, ale na tym "
+"komputerze znaleziono przynajmniej jedną partycję EFI, co oznacza, że przywracanie Grub "
+"najprawdopodobniej nie zadziała.\n"
 "\n"
-"Spróbuj ponownie uruchomić i uruchomić w trybie EFI przez BIOS komputera.\n"
+"Spróbuj ponownie uruchomić komputer i uruchomić w trybie EFI przez BIOS komputera.\n"
 "\n"
 "Czy chcesz spróbować, mimo niskiego prawdopodobieństwa sukcesu?"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 226
+msgid "No Systems Found"
+msgstr "Nie znaleziono systemów"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 303
+msgid "No Linux installations could be detected on your drives."
+msgstr "Nie wykryto żadnych instalacji systemu Linux na twoich dyskach."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
+msgid "EFI System Partition"
+msgstr "Partycja systemowa EFI"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+msgid "Mount Failed"
+msgstr "Montaż nie powiódł się"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
+msgid "Selected System"
+msgstr "Wybrany system"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 452
+msgid "Selected Partition"
+msgstr "Wybrana partycja"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 453
+msgid "Partition UUID"
+msgstr "UUID partycji"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 457
+msgid "Target (EFI Restore)"
+msgstr "Cel (Przywracanie EFI)"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 460
+msgid "Target (Legacy Restore)"
+msgstr "Cel (Przywracanie starszej wersji)"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+msgid "Disk Details"
+msgstr "Szczegóły dysku"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 472
+msgid "No Internet Connection Detected"
+msgstr "Nie wykryto połączenia z Internetem"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 473
 msgid ""
-"<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
-"\n"
-"More than one EFI partition was found, select which one to use:"
+"Intermediate and Complete restore options require an internet connection to download packages. "
+"These options may fail if your computer is offline."
 msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Wybierz opcję:</span>\n"
-"\n"
-"Znaleziono więcej niż jedną partycję EFI, wybierz, którą chcesz użyć:"
-msgid "No EFI partition selected, process canceled."
-msgstr "Nie wybrano partycji EFI, proces anulowany."
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
-"\n"
-"More than one Linux installation was found on this computer, select which one to restore the boot:"
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Wybierz opcję:</span>\n"
-"\n"
-"Znaleziono więcej niż jedną instalację systemu Linux na tym komputerze, wybierz, którą chcesz "
-"przywrócić do rozruchu:"
-msgid "No partition selected, process canceled."
-msgstr "Nie wybrano partycji, proces anulowany."
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
-"    \n"
-"More than one storage device was found, select which one to write the boot to:"
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Wybierz opcję:</span>\n"
-"    \n"
-"Znaleziono więcej niż jedno urządzenie pamięci, wybierz, na którym chcesz zapisać rozruch:"
-msgid "Disk"
-msgstr "Dysk"
-msgid "Size"
-msgstr "Rozmiar"
-msgid "Name"
-msgstr "Nazwa"
-msgid "Partition Table"
-msgstr "Tabela partycji"
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>    \n"
-"\n"
-"<span font='11' foreground='gray'>Boot mode:</span>  LEGACY/BIOS\n"
-"<span font='11' foreground='gray'>Selected disk:</span> $DISK_SELECTED\n"
-"    \n"
-"<span font='11' foreground='gray'>Disk partition table:</span> $DISK_TABLE\n"
-"    \n"
-"<span font='11' foreground='gray'>Disk size:</span> $DISK_SIZE\n"
-"   \n"
-"<span font='11' foreground='gray'>Selected partition:</span> $SELECTED_PARTITION\n"
-"<span font='11' foreground='gray'>Selected system:</span> $SELECTED_OS\n"
-"<span font='11' foreground='gray'>Partition format:</span> $PARTITION_FORMAT\n"
-"<span font='11' foreground='gray'>Partition UUID:</span> $UUID_PARTITION\n"
-"\n"
-"Do you want to proceed?"
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Potwierdź dane:</span>    \n"
-"\n"
-"<span font='11' foreground='gray'>Tryb rozruchu:</span>  LEGACY/BIOS\n"
-"<span font='11' foreground='gray'>Wybrany dysk:</span> $DISK_SELECTED\n"
-"    \n"
-"<span font='11' foreground='gray'>Tabela partycji dysku:</span> $DISK_TABLE\n"
-"    \n"
-"<span font='11' foreground='gray'>Rozmiar dysku:</span> $DISK_SIZE\n"
-"   \n"
-"<span font='11' foreground='gray'>Wybrana partycja:</span> $SELECTED_PARTITION\n"
-"<span font='11' foreground='gray'>Wybrany system:</span> $SELECTED_OS\n"
-"<span font='11' foreground='gray'>Format partycji:</span> $PARTITION_FORMAT\n"
-"<span font='11' foreground='gray'>UUID partycji:</span> $UUID_PARTITION\n"
-"\n"
-"Czy chcesz kontynuować?"
-msgid "Your computer is not connected to the internet, options 2 and 3 require internet to work."
-msgstr ""
-"Twój komputer nie jest połączony z internetem, opcje 2 i 3 wymagają połączenia z internetem, aby "
-"działały."
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Select the desired option:</span>\n"
-"        \n"
-"The restore can be done in 3 ways (<span foreground='gray'>Simple, Intermediate, or "
-"Complete</span>), if in doubt, try the first option, restart the computer and see if it is "
-"resolved.\n"
-"\n"
-"If the problem persists, try the other options."
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Wybierz żądaną opcję:</span>\n"
-"        \n"
-"Przywracanie można wykonać na 3 sposoby (<span foreground='gray'>Prosty, Średni lub Pełny</span>), "
-"w razie wątpliwości spróbuj pierwszej opcji, uruchom ponownie komputer i sprawdź, czy problem "
-"został rozwiązany.\n"
-"\n"
-"Jeśli problem będzie się utrzymywał, spróbuj innych opcji."
-msgid "Option"
-msgstr "Opcja"
-msgid "Description"
-msgstr "Opis"
-msgid "Simple, just writes the Grub again at the beginning of the disk."
-msgstr "Prosto, po prostu zapisuje Grub ponownie na początku dysku."
-msgid ""
-"Intermediate, reinstalls the grub package on the partition, regenerates the configuration, and "
-"updates the initrd."
-msgstr "Średni, ponownie instaluje pakiet grub na partycji, regeneruje konfigurację i aktualizuje initrd."
-msgid ""
-"Complete, performs the intermediate restore steps, updates the system, and checks if the LTS kernel "
-"is installed."
-msgstr ""
-"Ukończono, wykonuje pośrednie kroki przywracania, aktualizuje system i sprawdza, czy jądro LTS jest "
-"zainstalowane."
-msgid "Interactive, opens a terminal inside the selected system."
-msgstr "Interaktywny, otwiera terminal wewnątrz wybranego systemu."
-msgid "Interactive, opens the control center inside the selected system."
-msgstr "Interaktywny, otwiera centrum sterowania w wybranym systemie."
-msgid "Interactive, opens the pamac-manager package manager inside the selected system."
-msgstr "Interaktywny, otwiera menedżera pakietów pamac-manager wewnątrz wybranego systemu."
-msgid "Completed!"
-msgstr "Ukończono!"
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>\n"
-"    \n"
-"<span font='11' foreground='gray'>Boot mode:</span> EFI\n"
-"<span font='11' foreground='gray'>EFI partition:</span> $EFI_PARTITION\n"
-"    \n"
-"<span font='11' foreground='gray'>Selected partition:</span> $SELECTED_PARTITION\n"
-"<span font='11' foreground='gray'>Selected system:</span> $SELECTED_OS\n"
-"<span font='11' foreground='gray'>Partition format:</span> $PARTITION_FORMAT\n"
-"<span font='11' foreground='gray'>Partition UUID:</span> $UUID_PARTITION\n"
-"\n"
-"Do you want to proceed?"
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Potwierdź dane:</span>\n"
-"    \n"
-"<span font='11' foreground='gray'>Tryb rozruchu:</span> EFI\n"
-"<span font='11' foreground='gray'>Partycja EFI:</span> $EFI_PARTITION\n"
-"    \n"
-"<span font='11' foreground='gray'>Wybrana partycja:</span> $SELECTED_PARTITION\n"
-"<span font='11' foreground='gray'>Wybrany system:</span> $SELECTED_OS\n"
-"<span font='11' foreground='gray'>Format partycji:</span> $PARTITION_FORMAT\n"
-"<span font='11' foreground='gray'>UUID partycji:</span> $UUID_PARTITION\n"
-"\n"
-"Czy chcesz kontynuować?"
+"Opcje przywracania pośredniego i pełnego wymagają połączenia z internetem w celu pobrania pakietów. "
+"Te opcje mogą nie działać, jeśli komputer jest offline."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 475
+msgid "OK"
+msgstr "OK"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 452
+msgid "Restore in Progress..."
+msgstr "Przywracanie w toku..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 455
+msgid "Preparing Interactive Session..."
+msgstr "Przygotowywanie interaktywnej sesji..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 550
+msgid "Interactive Session: Control Center"
+msgstr "Interaktywna sesja: Centrum sterowania"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 551
+msgid "Interactive Session: Package Manager"
+msgstr "Interaktywna sesja: Menedżer pakietów"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 508
+msgid "Cleaning up session..."
+msgstr "Czyszczenie sesji..."

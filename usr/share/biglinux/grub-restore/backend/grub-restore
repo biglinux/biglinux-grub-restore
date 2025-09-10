@@ -1,0 +1,149 @@
+#!/bin/bash
+
+# BigLinux GRUB Restore - System Detection Script
+# www.biglinux.com.br
+# By Bruno Gonçalves
+# Adapted for GTK4 frontend
+# License: GPL v2 or greater
+
+# Translation setup
+export TEXTDOMAINDIR="/usr/share/locale"
+export TEXTDOMAIN=grub-restore
+
+# Function to log messages
+log_message() {
+    echo "$(date '+%Y-%m-%d %H:%M:%S'): $1" >&2
+}
+
+# Function to safely unmount partitions
+safe_unmount() {
+    local partition="$1"
+    if mountpoint -q "$partition" 2>/dev/null; then
+        log_message "Unmounting $partition"
+        umount -l "$partition" 2>/dev/null || true
+    fi
+}
+
+log_message "Starting system detection..."
+
+# Search partitions btrfs, ext, xfs and vfat
+log_message "Unmounting existing partitions..."
+for i in $(blkid | grep -e 'TYPE="btrfs"' -e 'TYPE="ext."' -e 'TYPE="xfs"' -e 'TYPE="vfat"' | cut -f1 -d:)
+do
+    safe_unmount "$i"
+done
+
+log_message "Running os-prober to detect Linux systems..."
+
+# Clean up any existing temporary files to avoid permission issues
+rm -f /tmp/os-prober /tmp/efi-partitions /tmp/grub-disks
+
+# Save the list of Linux partitions to /tmp/os-prober
+# Exclude partitions labeled "timeshift" and "subvol=@/"
+os-prober | grep :linux | grep -v timeshift | grep -v 'subvol=@/' > /tmp/os-prober 2>/dev/null
+
+# Add other btrfs partitions that os-prober might have missed
+log_message "Checking for additional btrfs partitions..."
+for i in $(blkid | grep -e 'TYPE="btrfs"' | cut -f1 -d:)
+do
+    # Check if the partition is already in the /tmp/os-prober
+    if ! grep -q "$i" /tmp/os-prober 2>/dev/null; then
+        # Try to get more info about the btrfs partition
+        label=$(blkid -s LABEL -o value "$i" 2>/dev/null)
+        if [ -n "$label" ] && [ "$label" != "timeshift-btrfs" ]; then
+            log_message "Adding btrfs partition: $i with label: $label"
+            echo "$i:$label:Linux:::btrfs::" >> /tmp/os-prober 
+        elif [ -z "$label" ]; then
+            log_message "Adding unlabeled btrfs partition: $i"
+            echo "$i:Btrfs System:Linux:::btrfs::" >> /tmp/os-prober 
+        fi
+    fi
+done
+
+# Ensure os-prober file exists even if empty
+touch /tmp/os-prober
+
+log_message "Detected $(wc -l < /tmp/os-prober) Linux system(s)"
+
+# EFI Detection
+log_message "Starting EFI partition detection..."
+
+# Remove file if exists and create the directory if it doesn't already exist
+rm -f /tmp/efi-partitions
+mkdir -p /boot/efi
+
+# Save the device name of the live boot to exclude it
+DEVICE_LIVE_BOOT_TMP="$(readlink -f "$(df -h /run/miso/bootmnt/ 2>/dev/null | awk '{ print $1 }' | grep '/dev/')" 2>/dev/null | sed 's|/dev/||g')"
+
+if [ -n "$DEVICE_LIVE_BOOT_TMP" ]; then
+    if [[ "$DEVICE_LIVE_BOOT_TMP" == dm-* ]]; then
+        DEVICE_LIVE_BOOT="$(ls /sys/block/${DEVICE_LIVE_BOOT_TMP}/slaves 2>/dev/null | sed 's|[0-9]||g')"
+    else
+        DEVICE_LIVE_BOOT="$DEVICE_LIVE_BOOT_TMP"
+    fi
+    log_message "Live boot device: $DEVICE_LIVE_BOOT"
+else
+    DEVICE_LIVE_BOOT=""
+    log_message "Could not determine live boot device"
+fi
+
+# Mount and check if there is a directory /boot/efi/EFI
+log_message "Scanning for EFI partitions..."
+for i in $(LANG=C LANGUAGE=C fdisk -l 2>/dev/null | grep -e "EFI System" -e "FAT" | cut -f1 -d" " | grep -v "$DEVICE_LIVE_BOOT")
+do
+    if [ -b "$i" ]; then
+        log_message "Checking potential EFI partition: $i"
+        umount -l /boot/efi 2>/dev/null || true
+        
+        if mount "$i" /boot/efi 2>/dev/null; then
+            if [ -d /boot/efi/EFI ]; then
+                log_message "Valid EFI partition found: $i"
+                echo "$i" >> /tmp/efi-partitions
+            else
+                log_message "No EFI directory found in: $i"
+            fi
+            umount -l /boot/efi 2>/dev/null || true
+        else
+            log_message "Failed to mount: $i"
+        fi
+    fi
+done
+
+# Ensure efi-partitions file exists even if empty
+touch /tmp/efi-partitions
+
+log_message "Found $(wc -l < /tmp/efi-partitions) EFI partition(s)"
+
+# Disk Detection
+log_message "Starting disk detection..."
+
+rm -f /tmp/grub-disks
+
+# Get disk information like model and label type using the more compatible method
+for i in $(LANG=C lsblk | grep disk | grep -v zram | awk '{ print $1 ":" $4}' | grep -v "$DEVICE_LIVE_BOOT")
+do
+    disk_device="${i%:*}"
+    disk_size="${i#*:}"
+    
+    if [ -b "/dev/$disk_device" ]; then
+        log_message "Processing disk: /dev/$disk_device"
+        
+        disk_model=$(LANG=C LANGUAGE=C fdisk -l "/dev/$disk_device" 2>/dev/null | grep "Disk model:" | sed 's/Disk model: //g' | tr -s ' ' '_')
+        [ -z "$disk_model" ] && disk_model="Unknown_Disk"
+
+        disk_label_type=$(LANG=C LANGUAGE=C fdisk -l "/dev/$disk_device" 2>/dev/null | grep "Disklabel type:" | sed 's/Disklabel type: //g')
+        [ -z "$disk_label_type" ] && disk_label_type="unknown"
+        
+        # Save the disk information to /tmp/grub-disks
+        echo "${disk_device} ${disk_size} ${disk_model} ${disk_label_type}" >> /tmp/grub-disks
+        log_message "Added disk: ${disk_device} (${disk_size}, ${disk_model}, ${disk_label_type})"
+    fi
+done
+
+# Ensure grub-disks file exists even if empty
+touch /tmp/grub-disks
+
+log_message "Found $(wc -l < /tmp/grub-disks) disk(s)"
+log_message "Detection completed."
+
+exit 0

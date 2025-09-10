@@ -14,199 +14,357 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-msgid "This utility should only be used in live mode!"
-msgstr "Bu yardımcı program yalnızca canlı modda kullanılmalıdır!"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 59
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 18
+msgid "BigLinux GRUB Restore"
+msgstr "BigLinux GRUB Geri Yükleme"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 58
+msgid "A tool to restore the GRUB bootloader."
+msgstr "GRUB önyükleyicisini geri yüklemek için bir araç."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 28
+msgid "Restore the installed system"
+msgstr "Yüklenen sistemi geri yükle"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 53
+msgid "About"
+msgstr "Hakkında"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 54
+msgid "Quit"
+msgstr "Çıkış yap"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
+msgid "Start Detection"
+msgstr "Algılamayı Başlat"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 109
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 139
+msgid "Detecting Systems"
+msgstr "Sistemleri Tespit Etme"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 108
+msgid "Scanning your drives for Linux installations..."
+msgstr "Sürücülerinizde Linux kurulumları taranıyor..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 126
+msgid "1. Select Linux System to Restore"
+msgstr "1. Geri Yüklemek İçin Linux Sistemini Seçin"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 362
+msgid "2. Select Target EFI Partition"
+msgstr "2. Hedef EFI Bölümünü Seçin"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 137
+msgid "2. Select Target Disk (MBR)"
+msgstr "2. Hedef Diski Seçin (MBR)"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 300
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
+msgid "Continue"
+msgstr "Devam et"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 169
 msgid ""
-"<span font='12'>This tool should be used in LIVE MODE to restore the BOOT of the BigLinux installed "
-"on the HD or SSD.</span>\n"
-"\n"
-"<span font='12' foreground='red'>If the installed system is booting correctly, there are no boot "
-"problems, so it's better not to proceed with this tool.</span>\n"
-"<span font='10' foreground='gray'>It may also work with other Linux distributions.</span>\n"
-"\n"
-"Do you want to proceed?"
+"If you are unsure, try the 'Simple Restore' first. If the problem persists after restarting, then "
+"try the other options."
 msgstr ""
-"<span font='12'>Bu araç, HD veya SSD'ye kurulu BigLinux'un BOOT'unu geri yüklemek için CANLI MODDA "
-"kullanılmalıdır.</span>\n"
-"\n"
-"<span font='12' foreground='red'>Eğer kurulu sistem düzgün bir şekilde başlatılıyorsa, herhangi bir "
-"önyükleme sorunu yoktur, bu nedenle bu aracı kullanmaya devam etmemek daha iyidir.</span>\n"
-"<span font='10' foreground='gray'>Diğer Linux dağıtımlarıyla da çalışabilir.</span>\n"
-"\n"
-"Devam etmek istiyor musunuz?"
-msgid "Restore Boot, Grub, and initrd"
-msgstr "Önyükleme, Grub ve initrd'yi Geri Yükle"
-msgid "Please wait..."
-msgstr "Lütfen bekleyin..."
-msgid "No Linux installation found on this computer, process canceled."
-msgstr "Bu bilgisayarda Linux kurulumu bulunamadı, işlem iptal edildi."
+"Emin değilseniz, önce 'Basit Geri Yükleme'yi deneyin. Sorun yeniden başladıktan sonra devam ederse, "
+"diğer seçenekleri deneyin."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 415
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 77
+msgid "Restore Methods"
+msgstr "Geri Yükleme Yöntemleri"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 175
+msgid "Interactive Tools"
+msgstr "Etkileşimli Araçlar"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 181
+msgid "Configuration Summary"
+msgstr "Yapılandırma Özeti"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 419
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 118
+msgid "Simple Restore"
+msgstr "Basit Geri Yükleme"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 180
+msgid "Rewrites GRUB to the boot sector."
+msgstr "GRUB'u önyükleme sektörüne yeniden yazar."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 433
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 132
+msgid "Intermediate Restore"
+msgstr "Ara Yedekleme"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 181
+msgid "Reinstalls GRUB package and regenerates configs."
+msgstr "GRUB paketini yeniden yükler ve yapılandırmaları yeniden oluşturur."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 448
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 151
+msgid "Complete Restore"
+msgstr "Tamamla Geri Yükleme"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 182
+msgid "Updates system, kernel, and performs intermediate restore."
+msgstr "Sistem güncellemeleri, çekirdek ve ara geri yükleme işlemleri gerçekleştirir."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 469
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 173
+msgid "Interactive Terminal"
+msgstr "Etkileşimli Terminal"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 470
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 174
+msgid "Opens a terminal inside the selected system."
+msgstr "Seçilen sistem içinde bir terminal açar."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 483
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 187
+msgid "Control Center"
+msgstr "Kontrol Merkezi"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 484
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 188
+msgid "Opens the control center inside the selected system."
+msgstr "Seçilen sistem içindeki kontrol merkezini açar."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 497
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 201
+msgid "Package Manager"
+msgstr "Paket Yöneticisi"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 185
+msgid "Opens the package manager inside the selected system."
+msgstr "Seçilen sistem içinde paket yöneticisini açar."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 424
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 438
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 453
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 123
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 140
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 159
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 353
+msgid "Execute"
+msgstr "Çalıştır"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 223
+msgid "VTE terminal widget not available."
+msgstr "VTE terminal bileşeni mevcut değil."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 226
+msgid "Close Terminal"
+msgstr "Terminali Kapat"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 247
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 537
+msgid "Go Back"
+msgstr "Geri Dön"
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 664
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 459
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 462
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 474
+msgid "Close"
+msgstr "Kapat"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 235
+msgid "Operation Failed!"
+msgstr "İşlem Başarısız!"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 236
+msgid "Simple Restore Completed"
+msgstr "Basit Geri Yükleme Tamamlandı"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 236
+msgid "Intermediate Restore Completed"
+msgstr "Ara Yedekleme Tamamlandı"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 236
+msgid "Complete Restore Completed"
+msgstr "Tamir Tamamlandı"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 238
+msgid "The GRUB bootloader has been rewritten. You can now restart your computer."
+msgstr "GRUB önyükleyicisi yeniden yazıldı. Artık bilgisayarınızı yeniden başlatabilirsiniz."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 239
+msgid "The GRUB package was reinstalled and configurations were regenerated."
+msgstr "GRUB paketi yeniden yüklendi ve yapılandırmalar yeniden oluşturuldu."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 240
+msgid "The system, kernel, and GRUB have been updated and restored."
+msgstr "Sistem, çekirdek ve GRUB güncellenmiş ve geri yüklenmiştir."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 242
+msgid "Operation Completed Successfully!"
+msgstr "İşlem Başarıyla Tamamlandı!"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 242
+msgid "You can now close this tool and restart your computer."
+msgstr "Bu aracı kapatıp bilgisayarınızı yeniden başlatabilirsiniz."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 276
+msgid "Proceed Anyway"
+msgstr "Yine de Devam Et"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 259
+msgid "Copy"
+msgstr "Kopyala"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 260
+msgid "Paste"
+msgstr "Yapıştır"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 208
+msgid "Detection Failed"
+msgstr "Algılama Başarısız oldu"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 326
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 331
+msgid "Potential Boot Mode Mismatch"
+msgstr "Olası Önyükleme Modu Uyuşmazlığı"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 327
 msgid ""
-"The boot in live mode is using EFI mode, but <span foreground='red'>no EFI partition</span> was "
-"found on this computer, \n"
-"most likely the Grub restore will not work. \n"
+"The boot in live mode is using EFI mode, but no EFI partition was found on this computer, most "
+"likely the Grub restore will not work.\n"
 "\n"
 "Try restarting and booting in Legacy or BIOS mode through the computer's BIOS.\n"
 "\n"
 "Do you want to try even with a low probability of success?"
 msgstr ""
-"Canlı modda önyükleme EFI modunu kullanıyor, ancak bu bilgisayarda <span foreground='red'>hiçbir "
-"EFI bölümü</span> bulunamadı, \n"
-"muhtemelen Grub geri yüklemesi çalışmayacak. \n"
+"Canlı modda önyükleme, EFI modunu kullanıyor, ancak bu bilgisayarda hiçbir EFI bölümü bulunamadı, "
+"muhtemelen Grub onarma işlemi çalışmayacak.\n"
 "\n"
-"Bilgisayarın BIOS'u aracılığıyla Legacy veya BIOS modunda yeniden başlatmayı ve önyüklemeyi "
-"deneyin.\n"
+"Bilgisayarın BIOS'u aracılığıyla Legacy veya BIOS modunda yeniden başlatmayı ve önyüklemeyi denemek "
+"ister misiniz?\n"
 "\n"
 "Başarı olasılığı düşük olsa bile denemek ister misiniz?"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 332
 msgid ""
-"The boot in live mode is using Legacy mode, also called BIOS, \n"
-"<span foreground='red'>but at least one EFI partition was found</span> on this computer, \n"
-"most likely the Grub restore will not work. \n"
+"The boot in live mode is using Legacy mode, also called BIOS, but at least one EFI partition was "
+"found on this computer, most likely the Grub restore will not work.\n"
 "\n"
 "Try restarting and booting in EFI mode through the computer's BIOS.\n"
 "\n"
 "Do you want to try even with a low probability of success?"
 msgstr ""
-"Canlı modda önyükleme, BIOS olarak da adlandırılan Legacy modunu kullanıyor, \n"
-"<span foreground='red'>ancak bu bilgisayarda en az bir EFI bölümü bulundu</span>, \n"
-"muhtemelen Grub geri yüklemesi çalışmayacaktır. \n"
+"Canlı modda önyükleme, BIOS olarak da adlandırılan Legacy modunu kullanıyor, ancak bu bilgisayarda "
+"en az bir EFI bölümü bulundu, muhtemelen Grub onarma işlemi çalışmayacak.\n"
 "\n"
-"Bilgisayarın BIOS'u aracılığıyla EFI modunda yeniden başlatmayı ve önyüklemeyi deneyin.\n"
+"Bilgisayarın BIOS'u aracılığıyla EFI modunda yeniden başlatmayı ve önyüklemeyi denemek ister "
+"misiniz?\n"
 "\n"
 "Başarı olasılığı düşük olsa bile denemek ister misiniz?"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 226
+msgid "No Systems Found"
+msgstr "Sistem Bulunamadı"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 303
+msgid "No Linux installations could be detected on your drives."
+msgstr "Sürücülerinizde hiçbir Linux kurulumu tespit edilemedi."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
+msgid "EFI System Partition"
+msgstr "EFI Sistem Bölümü"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+msgid "Mount Failed"
+msgstr "Bağlama Başarısız"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
+msgid "Selected System"
+msgstr "Seçili Sistem"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 452
+msgid "Selected Partition"
+msgstr "Seçili Bölüm"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 453
+msgid "Partition UUID"
+msgstr "Bölüm UUID"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 457
+msgid "Target (EFI Restore)"
+msgstr "Hedef (EFI Geri Yükleme)"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 460
+msgid "Target (Legacy Restore)"
+msgstr "Hedef (Eski Yedekleme)"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+msgid "Disk Details"
+msgstr "Disk Ayrıntıları"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 472
+msgid "No Internet Connection Detected"
+msgstr "İnternet Bağlantısı Tespit Edilmedi"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 473
 msgid ""
-"<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
-"\n"
-"More than one EFI partition was found, select which one to use:"
+"Intermediate and Complete restore options require an internet connection to download packages. "
+"These options may fail if your computer is offline."
 msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Bir seçenek seçin:</span>\n"
-"\n"
-"Birden fazla EFI bölümü bulundu, hangisini kullanmak istediğinizi seçin:"
-msgid "No EFI partition selected, process canceled."
-msgstr "Hiçbir EFI bölümü seçilmedi, işlem iptal edildi."
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
-"\n"
-"More than one Linux installation was found on this computer, select which one to restore the boot:"
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Bir seçenek seçin:</span>\n"
-"\n"
-"Bu bilgisayarda birden fazla Linux kurulumu bulundu, hangi kurulumun önyüklemesini geri yüklemek "
-"istediğinizi seçin:"
-msgid "No partition selected, process canceled."
-msgstr "Hiçbir bölüm seçilmedi, işlem iptal edildi."
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Select an option:</span>\n"
-"    \n"
-"More than one storage device was found, select which one to write the boot to:"
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Bir seçenek seçin:</span>\n"
-"    \n"
-"Birden fazla depolama aygıtı bulundu, önyükleme yazmak için hangisini seçeceğinizi belirtin:"
-msgid "Disk"
-msgstr "Disk"
-msgid "Size"
-msgstr "Boyut"
-msgid "Name"
-msgstr "İsim"
-msgid "Partition Table"
-msgstr "Bölüm Tablosu"
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>    \n"
-"\n"
-"<span font='11' foreground='gray'>Boot mode:</span>  LEGACY/BIOS\n"
-"<span font='11' foreground='gray'>Selected disk:</span> $DISK_SELECTED\n"
-"    \n"
-"<span font='11' foreground='gray'>Disk partition table:</span> $DISK_TABLE\n"
-"    \n"
-"<span font='11' foreground='gray'>Disk size:</span> $DISK_SIZE\n"
-"   \n"
-"<span font='11' foreground='gray'>Selected partition:</span> $SELECTED_PARTITION\n"
-"<span font='11' foreground='gray'>Selected system:</span> $SELECTED_OS\n"
-"<span font='11' foreground='gray'>Partition format:</span> $PARTITION_FORMAT\n"
-"<span font='11' foreground='gray'>Partition UUID:</span> $UUID_PARTITION\n"
-"\n"
-"Do you want to proceed?"
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Verileri onaylayın:</span>    \n"
-"\n"
-"<span font='11' foreground='gray'>Başlatma modu:</span>  LEGACY/BIOS\n"
-"<span font='11' foreground='gray'>Seçilen disk:</span> $DISK_SELECTED\n"
-"    \n"
-"<span font='11' foreground='gray'>Disk bölüm tablosu:</span> $DISK_TABLE\n"
-"    \n"
-"<span font='11' foreground='gray'>Disk boyutu:</span> $DISK_SIZE\n"
-"   \n"
-"<span font='11' foreground='gray'>Seçilen bölüm:</span> $SELECTED_PARTITION\n"
-"<span font='11' foreground='gray'>Seçilen sistem:</span> $SELECTED_OS\n"
-"<span font='11' foreground='gray'>Bölüm formatı:</span> $PARTITION_FORMAT\n"
-"<span font='11' foreground='gray'>Bölüm UUID'si:</span> $UUID_PARTITION\n"
-"\n"
-"Devam etmek istiyor musunuz?"
-msgid "Your computer is not connected to the internet, options 2 and 3 require internet to work."
-msgstr "Bilgisayarınız internete bağlı değil, 2 ve 3. seçeneklerin çalışması için internete ihtiyaç var."
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Select the desired option:</span>\n"
-"        \n"
-"The restore can be done in 3 ways (<span foreground='gray'>Simple, Intermediate, or "
-"Complete</span>), if in doubt, try the first option, restart the computer and see if it is "
-"resolved.\n"
-"\n"
-"If the problem persists, try the other options."
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>İstenilen seçeneği seçin:</span>\n"
-"        \n"
-"Geri yükleme 3 şekilde yapılabilir (<span foreground='gray'>Basit, Orta veya Tam</span>), eğer "
-"şüpheniz varsa, ilk seçeneği deneyin, bilgisayarı yeniden başlatın ve sorunun çözülüp çözülmediğine "
-"bakın.\n"
-"\n"
-"Eğer sorun devam ederse, diğer seçenekleri deneyin."
-msgid "Option"
-msgstr "Seçenek"
-msgid "Description"
-msgstr "Açıklama"
-msgid "Simple, just writes the Grub again at the beginning of the disk."
-msgstr "Basit, sadece diskin başında Grub'u tekrar yazar."
-msgid ""
-"Intermediate, reinstalls the grub package on the partition, regenerates the configuration, and "
-"updates the initrd."
-msgstr ""
-"Ara yüz, bölümde grub paketini yeniden kurar, yapılandırmayı yeniden oluşturur ve initrd'yi "
-"günceller."
-msgid ""
-"Complete, performs the intermediate restore steps, updates the system, and checks if the LTS kernel "
-"is installed."
-msgstr ""
-"Tamamlandı, ara geri yükleme adımlarını gerçekleştirir, sistemi günceller ve LTS çekirdeğinin "
-"kurulu olup olmadığını kontrol eder."
-msgid "Interactive, opens a terminal inside the selected system."
-msgstr "Etkileşimli, seçilen sistem içinde bir terminal açar."
-msgid "Interactive, opens the control center inside the selected system."
-msgstr "Etkileşimli, seçilen sistemin kontrol merkezini açar."
-msgid "Interactive, opens the pamac-manager package manager inside the selected system."
-msgstr "Etkileşimli, seçilen sistem içinde pamac-manager paket yöneticisini açar."
-msgid "Completed!"
-msgstr "Tamamlandı!"
-msgid ""
-"<span font='16' foreground='LightSkyBlue'>Confirm the data:</span>\n"
-"    \n"
-"<span font='11' foreground='gray'>Boot mode:</span> EFI\n"
-"<span font='11' foreground='gray'>EFI partition:</span> $EFI_PARTITION\n"
-"    \n"
-"<span font='11' foreground='gray'>Selected partition:</span> $SELECTED_PARTITION\n"
-"<span font='11' foreground='gray'>Selected system:</span> $SELECTED_OS\n"
-"<span font='11' foreground='gray'>Partition format:</span> $PARTITION_FORMAT\n"
-"<span font='11' foreground='gray'>Partition UUID:</span> $UUID_PARTITION\n"
-"\n"
-"Do you want to proceed?"
-msgstr ""
-"<span font='16' foreground='LightSkyBlue'>Verileri onaylayın:</span>\n"
-"    \n"
-"<span font='11' foreground='gray'>Başlatma modu:</span> EFI\n"
-"<span font='11' foreground='gray'>EFI bölümü:</span> $EFI_PARTITION\n"
-"    \n"
-"<span font='11' foreground='gray'>Seçilen bölüm:</span> $SELECTED_PARTITION\n"
-"<span font='11' foreground='gray'>Seçilen sistem:</span> $SELECTED_OS\n"
-"<span font='11' foreground='gray'>Bölüm formatı:</span> $PARTITION_FORMAT\n"
-"<span font='11' foreground='gray'>Bölüm UUID'si:</span> $UUID_PARTITION\n"
-"\n"
-"Devam etmek istiyor musunuz?"
+"Ara ve Tam geri yükleme seçenekleri, paketleri indirmek için bir internet bağlantısı gerektirir. Bu "
+"seçenekler, bilgisayarınız çevrimdışıysa başarısız olabilir."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 475
+msgid "OK"
+msgstr "Tamam"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 475
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 475
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 452
+msgid "Restore in Progress..."
+msgstr "Geri Yükleme Devam Ediyor..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 455
+msgid "Preparing Interactive Session..."
+msgstr "Etkileşimli Oturum Hazırlanıyor..."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 550
+msgid "Interactive Session: Control Center"
+msgstr "Etkileşimli Oturum: Kontrol Merkezi"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 551
+msgid "Interactive Session: Package Manager"
+msgstr "Etkileşimli Oturum: Paket Yöneticisi"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 508
+msgid "Cleaning up session..."
+msgstr "Oturum temizleniyor..."
