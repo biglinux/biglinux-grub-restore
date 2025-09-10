@@ -38,6 +38,30 @@ msgstr "Tietoja"
 msgid "Quit"
 msgstr "Lopeta"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 115
+#: NEEDS WORK
+#, python-brace-format
+msgid ""
+"This tool should be used in {mode_name} to restore the BOOT of the BigLinux installed on the HD or "
+"SSD."
+msgstr ""
+"Tätä työkalua tulisi käyttää tilassa {mode_name} BigLinuxin käynnistyksen palauttamiseksi, joka on "
+"asennettu HD:lle tai SSD:lle."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 116
+#: NEEDS WORK
+msgid ""
+"If the installed system is booting correctly, there are no boot problems, so it's better not to "
+"proceed with this tool."
+msgstr ""
+"Jos asennettu järjestelmä käynnistyy oikein, ei ole käynnistysongelmia, joten on parempi olla "
+"jatkamatta tämän työkalun kanssa."
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 117
+#: NEEDS WORK
+msgid "It may also work with other Linux distributions."
+msgstr "Se voi myös toimia muiden Linux-jakeluiden kanssa."
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
 msgstr "Aloita tunnistus"
@@ -294,14 +318,49 @@ msgstr "Ei järjestelmiä löytynyt"
 msgid "No Linux installations could be detected on your drives."
 msgstr "Yhtään Linux-asennusta ei voitu havaita levyiltäsi."
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 373
+#: NEEDS WORK
+msgid "Partition:"
+msgstr "Osio:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 373
+#: NEEDS WORK
+msgid "FS:"
+msgstr "FS:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 373
+#: NEEDS WORK
+msgid "UUID:"
+msgstr "UUID:"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
 msgid "EFI System Partition"
 msgstr "EFI-järjestelmäosio"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 409
+#: NEEDS WORK
+msgid "Model:"
+msgstr "Malli:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 409
+#: NEEDS WORK
+msgid "Partition Table:"
+msgstr "Osio-taulukko:"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 460
+#: NEEDS WORK
+msgid "Failed to mount the selected system for verification:"
+msgstr "Valitun järjestelmän liittäminen varmennusta varten epäonnistui:"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
 msgid "Mount Failed"
 msgstr "Montaaminen epäonnistui"
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 479
+#: NEEDS WORK
+msgid "Boot Mode"
+msgstr "Käynnistystila"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
