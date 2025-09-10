@@ -26,7 +26,7 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         super().__init__(**kwargs)
         
         self.set_title(_("Restore the installed system"))
-        self.set_default_size(960, 660)
+        self.set_default_size(1080, 660)
         
         self.system_interface = SystemInterface()
         self.selected_system = None
@@ -362,6 +362,9 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         self.system_check_buttons.clear()
         self.boot_target_check_buttons.clear()
         self.legacy_boot_target_check_buttons.clear()
+        
+        self.selected_efi_partition = None
+        self.selected_disk = None
 
         if not self.system_interface.detected_systems:
             self._show_error(_("No Systems Found"), _("No Linux installations could be detected on your drives."))
@@ -384,9 +387,13 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
             self.systems_group.add(row)
             self.system_rows.append(row)
 
-        is_single_efi = len(self.system_interface.efi_partitions) == 1
-        self.efi_group.set_visible(bool(self.system_interface.efi_partitions))
-        if self.system_interface.efi_partitions:
+        boot_mode = self.system_interface.boot_mode
+        
+        self.efi_group.set_visible(boot_mode == "EFI")
+        self.legacy_group.set_visible(boot_mode == "LEGACY")
+
+        if boot_mode == "EFI" and self.system_interface.efi_partitions:
+            is_single_efi = len(self.system_interface.efi_partitions) == 1
             for i, part in enumerate(self.system_interface.efi_partitions):
                 row = Adw.ActionRow(title=part, subtitle=_("EFI System Partition"))
                 if is_single_efi:
@@ -402,9 +409,8 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
                 self.efi_group.add(row)
                 self.efi_rows.append(row)
 
-        is_single_legacy = len(self.system_interface.grub_disks) == 1
-        self.legacy_group.set_visible(bool(self.system_interface.grub_disks))
-        if self.system_interface.grub_disks:
+        if boot_mode == "LEGACY" and self.system_interface.grub_disks:
+            is_single_legacy = len(self.system_interface.grub_disks) == 1
             for i, disk in enumerate(self.system_interface.grub_disks):
                 row = Adw.ActionRow(title=f"/dev/{disk['device']} ({disk['size']})", subtitle=f"{_('Model:')} {disk['name'].replace('_', ' ')} | {_('Partition Table:')} {disk['table'].upper()}")
                 if is_single_legacy:
