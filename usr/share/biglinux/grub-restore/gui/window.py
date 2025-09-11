@@ -111,8 +111,13 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         )
         
         description_label = Gtk.Label(use_markup=True, justify=Gtk.Justification.CENTER, wrap=True, max_width_chars=60)
+        
+        # Use printf-style formatting for better gettext compatibility
+        mode_name = '<b>LIVE MODE</b>'
+        welcome_message = _('This tool should be used in %s to restore the BOOT of the BigLinux installed on the HD or SSD.') % mode_name
+        
         description_label.set_markup(
-            f"<span font='12'>{_('This tool should be used in {mode_name} to restore the BOOT of the BigLinux installed on the HD or SSD.').format(mode_name='<b>LIVE MODE</b>')}</span>"
+            f"<span font='12'>{welcome_message}</span>"
             f"\n\n<span font='12' foreground='red' weight='bold'>{_('If the installed system is booting correctly, there are no boot problems, so it\'s better not to proceed with this tool.')}</span>"
             f"\n<span font='10' foreground='gray'>{_('It may also work with other Linux distributions.')}</span>"
         )
