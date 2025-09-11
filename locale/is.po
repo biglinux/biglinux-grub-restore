@@ -38,6 +38,11 @@ msgstr "Um umfjöllun"
 msgid "Quit"
 msgstr "Hætta við"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 117
+#, python-format
+msgid "This tool should be used in %s to restore the BOOT of the BigLinux installed on the HD or SSD."
+msgstr "Þetta verkfæri ætti að nota í %s til að endurheimta BOOT BigLinux sem er uppsett á HD eða SSD."
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
 msgstr "Byrjun greiningar"

@@ -38,6 +38,11 @@ msgstr "Tietoja"
 msgid "Quit"
 msgstr "Lopeta"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 117
+#, python-format
+msgid "This tool should be used in %s to restore the BOOT of the BigLinux installed on the HD or SSD."
+msgstr "Tätä työkalua tulisi käyttää %s palauttamaan BigLinuxin BOOT, joka on asennettu HD:lle tai SSD:lle."
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 msgid "Start Detection"
 msgstr "Aloita tunnistus"
