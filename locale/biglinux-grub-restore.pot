@@ -15,13 +15,52 @@ msgstr  "Project-Id-Version: biglinux-grub-restore\n"
         "Content-Transfer-Encoding: 8bit\n"
 
 #
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 50
-msgid   "BigLinux GRUB Restore"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line: 76
+msgid   "Root privileges are required."
 msgstr  ""
 
 #
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 58
-msgid   "A tool to restore the GRUB bootloader."
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line: 77
+msgid   "This application must be run as root to function correctly. Please "
+        "run it with sudo or pkexec."
+msgstr  ""
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line: 125
+msgid   "Failed to load main application:\n"
+msgstr  ""
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line: 134
+msgid   "Restore the installed system - Error"
+msgstr  ""
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line: 138
+msgid   "Application Error"
+msgstr  ""
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/backend/system_interface.py, line: 40
+msgid   "No error output"
+msgstr  ""
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/backend/system_interface.py, line: 41
+#, python-format
+msgid   "Detection script failed: %s"
+msgstr  ""
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/backend/system_interface.py, line: 43
+#, python-format
+msgid   "System detection failed: %s"
+msgstr  ""
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/backend/system_interface.py, line: 138
+#, python-format
+msgid   "Failed to execute restore: %s"
 msgstr  ""
 
 #
@@ -37,6 +76,11 @@ msgstr  ""
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 83
 msgid   "Quit"
+msgstr  ""
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 116
+msgid   "<b>LIVE MODE</b>"
 msgstr  ""
 
 #
@@ -304,6 +348,11 @@ msgid   "Mount Failed"
 msgstr  ""
 
 #
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 490
+msgid   "Live Boot Mode"
+msgstr  ""
+
+#
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 491
 msgid   "Selected System"
 msgstr  ""
@@ -361,6 +410,24 @@ msgid   "Preparing Interactive Session..."
 msgstr  ""
 
 #
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 557
+#, python-format
+msgid   "Failed to prepare chroot:\n"
+        "%s"
+msgstr  ""
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 565
+#, python-format
+msgid   "Failed to remove pacman lock: %s"
+msgstr  ""
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 571
+msgid   "VTE Terminal not available."
+msgstr  ""
+
+#
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 581
 msgid   "Interactive Session: Control Center"
 msgstr  ""
@@ -373,4 +440,14 @@ msgstr  ""
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 608
 msgid   "Cleaning up session..."
+msgstr  ""
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 50
+msgid   "BigLinux GRUB Restore"
+msgstr  ""
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 58
+msgid   "A tool to restore the GRUB bootloader."
 msgstr  ""
