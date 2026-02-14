@@ -3,78 +3,115 @@
 
 set -e
 
-# ... (funções de log, mount, unmount, execute_chroot permanecem as mesmas) ...
-#<editor-fold desc="Helper Functions">
+# --- Helper Functions ---
 export TEXTDOMAINDIR="/usr/share/locale"
 export TEXTDOMAIN=grub-restore
+
 log_message() { echo "$(date '+%Y-%m-%d %H:%M:%S'): $1" >&2; }
 show_progress() { echo "PROGRESS: $1"; }
-handle_error() { log_message "ERROR: $1"; echo "ERROR: $1" >&2; exit "${2:-1}"; }
-safe_mount() {
-    umount -l "$2" 2>/dev/null || true
-    mkdir -p "$2"
-    if mount "$1" -o "$3" "$2"; then log_message "Mounted $1 to $2"; else handle_error "Failed to mount $1"; fi
+handle_error() { 
+    log_message "ERROR: $1"
+    # Tenta desmontar tudo antes de sair em caso de erro
+    umount -l /mnt/boot/efi 2>/dev/null || true
+    umount -l /mnt 2>/dev/null || true
+    echo "ERROR: $1" >&2
+    exit "${2:-1}"
 }
-safe_unmount() {
-    if umount "$1"; then log_message "Unmounted $1"; else log_message "Warning: Could not unmount $1"; fi
-}
-execute_chroot() {
-    log_message "Chroot: $2"
-    show_progress "$2"
-    if ! manjaro-chroot /mnt $1; then handle_error "Failed: $2"; fi
-}
-#</editor-fold>
 
-# Main script
+safe_mount() {
+    local dev="$1"
+    local target="$2"
+    local opts="$3"
+    
+    log_message "Attempting to mount $dev on $target with opts: $opts"
+    mkdir -p "$target"
+    
+    if [ -n "$opts" ]; then
+        mount "$dev" "$target" -o "$opts" || handle_error "Failed to mount $dev on $target"
+    else
+        mount "$dev" "$target" || handle_error "Failed to mount $dev on $target"
+    fi
+}
+
+execute_chroot() {
+    local cmd="$1"
+    local desc="$2"
+    log_message "Chroot executing: $desc ($cmd)"
+    show_progress "$desc"
+    # Usando bash via stdin para evitar problemas de quoting no manjaro-chroot/bash -c
+    if ! echo "$cmd" | manjaro-chroot /mnt /bin/bash; then 
+        handle_error "Failed during: $desc" 
+    fi
+}
+
+# --- Main Script ---
 log_message "Starting EFI GRUB restore script"
+
+# Verificar se os arquivos temporários existem
+[ ! -f /tmp/efi-selected ] && handle_error "EFI partition selection not found."
+[ ! -f /tmp/os-prober-selected ] && handle_error "System partition selection not found."
 
 # Read config
 EFI_PARTITION=$(cat /tmp/efi-selected)
-SELECTED_PARTITION=$(awk -F: '{ print $1}' /tmp/os-prober-selected)
-PARTITION_FORMAT=$(awk -F: '{ print $5 }' /tmp/os-prober-selected)
-RESTORE_MODE=$(cat /tmp/grub-restore-apply-mode)
+SELECTED_PARTITION=$(awk -F: '{ print $1 }' /tmp/os-prober-selected)
+PARTITION_FORMAT=$(awk -F: '{ print $5 }' /tmp/os-prober-selected) # Field 5 is filesystem (e.g. btrfs)
+RESTORE_MODE=$(cat /tmp/grub-restore-apply-mode 2>/dev/null || echo "1")
 
-# Mount
+# --- Preparation ---
 show_progress "Preparing mount points..."
-mount_opts=""
-[ "$PARTITION_FORMAT" = "btrfs" ] && mount_opts="subvol=@"
-safe_mount "$SELECTED_PARTITION" "/mnt" "$mount_opts"
-safe_mount "$EFI_PARTITION" "/mnt/boot/efi"
 
-# Execute
+# Limpeza de montagens antigas
+umount -l /mnt/boot/efi 2>/dev/null || true
+umount -l /mnt 2>/dev/null || true
+
+# Lógica de Montagem Btrfs vs Outros
+if [ "$PARTITION_FORMAT" = "btrfs" ]; then
+    # Monta o subvolume @ (padrão BigLinux/Manjaro)
+    safe_mount "$SELECTED_PARTITION" "/mnt" "subvol=@,defaults,compress=zstd"
+else
+    safe_mount "$SELECTED_PARTITION" "/mnt" "defaults"
+fi
+
+# Garantir que o diretório boot/efi existe no sistema alvo antes de montar
+mkdir -p /mnt/boot/efi
+safe_mount "$EFI_PARTITION" "/mnt/boot/efi" "defaults"
+
+# --- Execution ---
 case "$RESTORE_MODE" in
     "1")
         log_message "Executing Simple Restore"
         execute_chroot "grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=biglinux --recheck" "Installing GRUB"
+        execute_chroot "grub-mkconfig -o /boot/grub/grub.cfg" "Updating configuration"
         ;;
     "2")
         log_message "Executing Intermediate Restore"
-        execute_chroot "rm -f /var/lib/pacman/db.lck" "Removing package lock"
-        execute_chroot "pacman --noconfirm -Sy grub" "Updating GRUB package"
+        execute_chroot "rm -f /var/lib/pacman/db.lck" "Cleaning package lock"
+        execute_chroot "pacman --noconfirm -Sy grub" "Reinstalling GRUB package"
         execute_chroot "grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=biglinux --recheck" "Installing GRUB"
         execute_chroot "mkinitcpio -P" "Regenerating initramfs"
-        execute_chroot "grub-mkconfig -o /boot/grub/grub.cfg" "Generating GRUB configuration"
+        execute_chroot "grub-mkconfig -o /boot/grub/grub.cfg" "Generating GRUB config"
         ;;
     "3")
         log_message "Executing Complete Restore"
-        execute_chroot "rm -f /var/lib/pacman/db.lck" "Removing package lock"
-        execute_chroot "pacman --noconfirm -Syyu" "Updating system"
+        execute_chroot "rm -f /var/lib/pacman/db.lck" "Cleaning package lock"
+        # Atualiza as chaves antes de tentar atualizar o sistema em modo de recuperação
+        execute_chroot "pacman-key --init && pacman-key --populate archlinux biglinux" "Refreshing keys"
+        execute_chroot "pacman --noconfirm -Syu" "Updating system"
         execute_chroot "pacman --noconfirm -S grub linux" "Installing core packages"
         execute_chroot "grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=biglinux --recheck" "Installing GRUB"
         execute_chroot "mkinitcpio -P" "Regenerating initramfs"
-        execute_chroot "grub-mkconfig -o /boot/grub/grub.cfg" "Generating GRUB configuration"
+        execute_chroot "grub-mkconfig -o /boot/grub/grub.cfg" "Generating GRUB config"
         ;;
     *)
-        handle_error "Invalid non-interactive mode: $RESTORE_MODE"
+        handle_error "Invalid mode: $RESTORE_MODE"
         ;;
 esac
 
-# Cleanup
-show_progress "Syncing filesystems..."
+# --- Cleanup ---
+show_progress "Finishing process..."
 sync
-show_progress "Unmounting filesystems..."
-safe_unmount "/mnt/boot/efi"
-safe_unmount "/mnt"
+umount -l /mnt/boot/efi
+umount -l /mnt
 
 log_message "EFI GRUB restore completed successfully"
 show_progress "Restore operation completed!"
