@@ -113,7 +113,7 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         description_label = Gtk.Label(use_markup=True, justify=Gtk.Justification.CENTER, wrap=True, max_width_chars=60)
         
         # Use printf-style formatting for better gettext compatibility
-        mode_name = '<b>LIVE MODE</b>'
+        mode_name = _('<b>LIVE MODE</b>')
         welcome_message = _('This tool should be used in %s to restore the BOOT of the BigLinux installed on the HD or SSD.') % mode_name
         
         description_label.set_markup(
@@ -378,7 +378,7 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         is_single_system = len(self.system_interface.detected_systems) == 1
         
         for i, system in enumerate(self.system_interface.detected_systems):
-            row = Adw.ActionRow(title=system['name'], subtitle=f"{_('Partition:')} {system['partition']} | {_('FS:')} {system.get('filesystem', 'N/A')} | {_('UUID:')} {system.get('uuid', 'N/A')}")
+            row = Adw.ActionRow(title=system['name'], subtitle=f"{_('Partition:')} {system['partition']} | {_('FS:')} {system.get('filesystem', _('N/A'))} | {_('UUID:')} {system.get('uuid', _('N/A'))}")
             if is_single_system:
                 self.selected_system = self.system_interface.detected_systems[0]
                 row.add_suffix(Gtk.Image(icon_name="emblem-ok-symbolic", visible=True))
@@ -487,7 +487,7 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         summary = self.system_interface.get_system_summary(self.selected_system, self.selected_efi_partition, self.selected_disk)
         
         rows_data = [
-            (f"Live {_('Boot Mode')}", summary['boot_mode']),
+            (_("Live Boot Mode"), summary['boot_mode']),
             (_("Selected System"), summary['system']['name']),
             (_("Selected Partition"), f"{summary['system']['partition']} ({summary['system']['filesystem']})"),
             (_("Partition UUID"), summary['system']['uuid']),
@@ -554,7 +554,7 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
     def _run_interactive_session(self, mode):
         result = self.system_interface.prepare_chroot()
         if result.returncode != 0:
-            GLib.idle_add(self._on_restore_finished, False, f"Failed to prepare chroot:\n{result.stderr}")
+            GLib.idle_add(self._on_restore_finished, False, _("Failed to prepare chroot:\n%s") % result.stderr)
             return
         
         if mode == 6:
@@ -562,16 +562,16 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
                 lock_file_path = "/mnt/var/lib/pacman/db.lck"
                 if os.path.exists(lock_file_path): os.remove(lock_file_path)
             except OSError as e:
-                GLib.idle_add(self._on_restore_finished, False, f"Failed to remove pacman lock: {e}")
+                GLib.idle_add(self._on_restore_finished, False, _("Failed to remove pacman lock: %s") % e)
                 return
         GLib.idle_add(self._spawn_interactive_in_vte, mode)
 
     def _spawn_interactive_in_vte(self, mode):
         if not self.terminal:
-            self._on_restore_finished(False, "VTE Terminal not available.")
+            self._on_restore_finished(False, _("VTE Terminal not available."))
             return
 
-        cmd_map = {4: ["bash"], 5: ["bash", "-c", "bigcontrolcenter"], 6: ["bash", "-c", "pamac-manager"]}
+        cmd_map = {4: ["bash"], 5: ["bash", "-c", "bigcontrolcenter --no-sandbox"], 6: ["bash", "-c", "pamac-manager --no-sandbox"]}
         cmd = cmd_map.get(mode)
         if not cmd: return
         full_cmd = ["manjaro-chroot", "/mnt"] + cmd

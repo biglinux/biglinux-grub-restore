@@ -189,7 +189,7 @@ msgstr "סגור טרמינל"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 247
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 537
 msgid "Go Back"
-msgstr "חזור назад"
+msgstr "חזור"
 # 
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 # 

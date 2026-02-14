@@ -61,12 +61,20 @@ def main():
             os.execvp('pkexec', args)
         except Exception as e:
             print(f"Failed to relaunch with pkexec: {e}", file=sys.stderr)
+            
+            # Use local import to avoid issues if dependencies are missing at top level
+            # causing immediate crash before this handler
+            try:
+                from utils.translation import _
+            except ImportError:
+                _ = lambda x: x
+
             error_app = Gtk.Application()
             def show_error(app):
                 dialog = Gtk.MessageDialog(
                     transient_for=None, modal=True, message_type=Gtk.MessageType.ERROR,
-                    buttons=Gtk.ButtonsType.OK, text="Root privileges are required.",
-                    secondary_text="This application must be run as root to function correctly. Please run it with sudo or pkexec."
+                    buttons=Gtk.ButtonsType.OK, text=_("Root privileges are required."),
+                    secondary_text=_("This application must be run as root to function correctly. Please run it with sudo or pkexec.")
                 )
                 dialog.connect("response", lambda d, r: app.quit())
                 dialog.show()
@@ -111,7 +119,10 @@ def main():
         import traceback
         traceback.print_exc()
         
-        error_message = "Failed to load main application:\n" + str(e)
+        # Import translation here to ensure it's available after potential path setup
+        from utils.translation import _
+        
+        error_message = _("Failed to load main application:\n") + str(e)
         
         class FallbackApp(Adw.Application):
             def __init__(self, error_msg):
@@ -120,11 +131,11 @@ def main():
             
             def do_activate(self):
                 window = Adw.ApplicationWindow(application=self)
-                window.set_title("Restore the installed system - Error")
+                window.set_title(_("Restore the installed system - Error"))
                 window.set_default_size(600, 400)
                 
                 status_page = Adw.StatusPage()
-                status_page.set_title("Application Error")
+                status_page.set_title(_("Application Error"))
                 status_page.set_description(self.error_msg)
                 status_page.set_icon_name("dialog-error-symbolic")
                 

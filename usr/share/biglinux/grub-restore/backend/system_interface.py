@@ -37,10 +37,10 @@ class SystemInterface:
             self.determine_boot_config()
             return True
         except subprocess.CalledProcessError as e:
-            error_output = e.stderr.decode() if e.stderr else "No error output"
-            raise Exception(f"Detection script failed: {error_output}")
+            error_output = e.stderr.decode() if e.stderr else _("No error output")
+            raise Exception(_("Detection script failed: %s") % error_output)
         except Exception as e:
-            raise Exception(f"System detection failed: {e}")
+            raise Exception(_("System detection failed: %s") % e)
     
     def parse_detection_results(self):
         """Parse the results from detection script"""
@@ -57,8 +57,8 @@ class SystemInterface:
                             'name': parts[1],
                             'description': parts[2],
                             'type': parts[3],
-                            'filesystem': parts[4] if len(parts) > 4 else '',
-                            'uuid': parts[5].replace('UUID=', '') if len(parts) > 5 else ''
+                            'filesystem': parts[5] if (len(parts) > 5 and parts[5] == 'btrfs') else (parts[4] if len(parts) > 4 else ''),
+                            'uuid': (parts[5].replace('UUID=', '') if len(parts) > 5 and parts[5] != 'btrfs' else '')
                         })
         except FileNotFoundError: self.detected_systems = []
         
@@ -135,7 +135,7 @@ class SystemInterface:
                 text=True, bufsize=1
             )
         except Exception as e:
-            raise Exception(f"Failed to execute restore: {e}")
+            raise Exception(_("Failed to execute restore: %s") % e)
 
     def prepare_chroot(self):
         """Runs the script to mount partitions for chroot."""

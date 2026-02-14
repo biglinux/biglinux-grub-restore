@@ -73,7 +73,7 @@ msgstr "2. Виберіть цільовий диск (MBR)"
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 300
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
 msgid "Continue"
-msgstr "Продолжити"
+msgstr "Продовжити"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 169
 msgid ""
