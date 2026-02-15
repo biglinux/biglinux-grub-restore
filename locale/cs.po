@@ -15,16 +15,46 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 # 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line: 76
+msgid "Root privileges are required."
+msgstr "Jsou vyžadována oprávnění správce."
 # 
-# File: usr/share/biglinux/grub-restore/gui/application.py, line: 59
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 18
-msgid "BigLinux GRUB Restore"
-msgstr "BigLinux GRUB Obnovení"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line: 77
+msgid "This application must be run as root to function correctly. Please run it with sudo or pkexec."
+msgstr ""
+"Tato aplikace musí být spuštěna jako root, aby správně fungovala. Prosím, spusťte ji s sudo nebo "
+"pkexec."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 58
-msgid "A tool to restore the GRUB bootloader."
-msgstr "Nástroj pro obnovení zaváděcího programu GRUB."
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line: 125
+msgid "Failed to load main application:\n"
+msgstr "Nepodařilo se načíst hlavní aplikaci:"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line: 134
+msgid "Restore the installed system - Error"
+msgstr "Obnovit nainstalovaný systém - Chyba"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line: 138
+msgid "Application Error"
+msgstr "Chyba aplikace"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/backend/system_interface.py, line: 40
+msgid "No error output"
+msgstr "Žádný chybový výstup"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/backend/system_interface.py, line: 41
+#, python-format
+msgid "Detection script failed: %s"
+msgstr "Skript pro detekci selhal: %s"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/backend/system_interface.py, line: 43
+#, python-format
+msgid "System detection failed: %s"
+msgstr "Zjištění systému selhalo: %s"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/backend/system_interface.py, line: 138
+#, python-format
+msgid "Failed to execute restore: %s"
+msgstr "Nepodařilo se provést obnovení: %s"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 28
 msgid "Restore the installed system"
@@ -37,6 +67,10 @@ msgstr "O aplikaci"
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 54
 msgid "Quit"
 msgstr "Ukončit"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 116
+msgid "<b>LIVE MODE</b>"
+msgstr "<b>ŽIVÝ REŽIM</b>"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 117
 #, python-format
@@ -308,6 +342,10 @@ msgstr "EFI systémová oddíl"
 msgid "Mount Failed"
 msgstr "Připojení se nezdařilo"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 490
+msgid "Live Boot Mode"
+msgstr "Živý režim zavádění"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "Vybraný systém"
@@ -360,6 +398,24 @@ msgstr "Obnova probíhá..."
 msgid "Preparing Interactive Session..."
 msgstr "Příprava interaktivní relace..."
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 557
+#, python-format
+msgid ""
+"Failed to prepare chroot:\n"
+"%s"
+msgstr ""
+"Nepodařilo se připravit chroot:  \n"
+"%s"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 565
+#, python-format
+msgid "Failed to remove pacman lock: %s"
+msgstr "Nepodařilo se odstranit zámek pacman: %s"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 571
+msgid "VTE Terminal not available."
+msgstr "Terminál VTE není k dispozici."
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 550
 msgid "Interactive Session: Control Center"
 msgstr "Interaktivní relace: Řídicí centrum"
@@ -371,3 +427,14 @@ msgstr "Interaktivní relace: Správce balíčků"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 508
 msgid "Cleaning up session..."
 msgstr "Úklid relace..."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: usr/share/biglinux/grub-restore/gui/application.py, line: 59
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 18
+msgid "BigLinux GRUB Restore"
+msgstr "BigLinux GRUB Obnovení"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 58
+msgid "A tool to restore the GRUB bootloader."
+msgstr "Nástroj pro obnovení zaváděcího programu GRUB."

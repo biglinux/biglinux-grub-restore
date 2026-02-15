@@ -15,16 +15,46 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 # 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line: 76
+msgid "Root privileges are required."
+msgstr "Kök ayrıcalıkları gereklidir."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 59
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 18
-msgid "BigLinux GRUB Restore"
-msgstr "BigLinux GRUB Geri Yükleme"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line: 77
+msgid "This application must be run as root to function correctly. Please run it with sudo or pkexec."
+msgstr ""
+"Bu uygulamanın doğru çalışabilmesi için kök olarak çalıştırılması gerekmektedir. Lütfen bunu sudo "
+"veya pkexec ile çalıştırın."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 58
-msgid "A tool to restore the GRUB bootloader."
-msgstr "GRUB önyükleyicisini geri yüklemek için bir araç."
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line: 125
+msgid "Failed to load main application:\n"
+msgstr "Ana uygulama yüklenemedi:"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line: 134
+msgid "Restore the installed system - Error"
+msgstr "Yüklenen sistemi geri yükle - Hata"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line: 138
+msgid "Application Error"
+msgstr "Uygulama Hatası"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/backend/system_interface.py, line: 40
+msgid "No error output"
+msgstr "Hata çıktısı yok"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/backend/system_interface.py, line: 41
+#, python-format
+msgid "Detection script failed: %s"
+msgstr "Algılama betiği başarısız oldu: %s"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/backend/system_interface.py, line: 43
+#, python-format
+msgid "System detection failed: %s"
+msgstr "Sistem tespiti başarısız oldu: %s"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/backend/system_interface.py, line: 138
+#, python-format
+msgid "Failed to execute restore: %s"
+msgstr "Geri yükleme işlemi başarısız oldu: %s"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 28
 msgid "Restore the installed system"
@@ -37,6 +67,10 @@ msgstr "Hakkında"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 54
 msgid "Quit"
 msgstr "Çıkış yap"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 116
+msgid "<b>LIVE MODE</b>"
+msgstr "<b>CANLI MOD</b>"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 117
 #, python-format
@@ -310,6 +344,10 @@ msgstr "EFI Sistem Bölümü"
 msgid "Mount Failed"
 msgstr "Bağlama Başarısız"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 490
+msgid "Live Boot Mode"
+msgstr "Canlı Önyükleme Modu"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "Seçili Sistem"
@@ -362,6 +400,24 @@ msgstr "Geri Yükleme Devam Ediyor..."
 msgid "Preparing Interactive Session..."
 msgstr "Etkileşimli Oturum Hazırlanıyor..."
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 557
+#, python-format
+msgid ""
+"Failed to prepare chroot:\n"
+"%s"
+msgstr ""
+"Chroot hazırlama başarısız oldu:  \n"
+"%s"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 565
+#, python-format
+msgid "Failed to remove pacman lock: %s"
+msgstr "Pacman kilidini kaldırma başarısız oldu: %s"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 571
+msgid "VTE Terminal not available."
+msgstr "VTE Terminal mevcut değil."
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 550
 msgid "Interactive Session: Control Center"
 msgstr "Etkileşimli Oturum: Kontrol Merkezi"
@@ -373,3 +429,14 @@ msgstr "Etkileşimli Oturum: Paket Yöneticisi"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 508
 msgid "Cleaning up session..."
 msgstr "Oturum temizleniyor..."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 59
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 18
+msgid "BigLinux GRUB Restore"
+msgstr "BigLinux GRUB Geri Yükleme"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 58
+msgid "A tool to restore the GRUB bootloader."
+msgstr "GRUB önyükleyicisini geri yüklemek için bir araç."

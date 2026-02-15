@@ -15,16 +15,46 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 # 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line: 76
+msgid "Root privileges are required."
+msgstr "Krafðar eru rótarréttindi."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 59
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 18
-msgid "BigLinux GRUB Restore"
-msgstr "BigLinux GRUB Endurðun"
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line: 77
+msgid "This application must be run as root to function correctly. Please run it with sudo or pkexec."
+msgstr ""
+"Þetta forrit verður að keyra sem root til að virka rétt. Vinsamlegast keyrið það með sudo eða "
+"pkexec."
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 58
-msgid "A tool to restore the GRUB bootloader."
-msgstr "Verkfæri til að endurheimta GRUB ræsivélina."
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line: 125
+msgid "Failed to load main application:\n"
+msgstr "Ekki tókst að hlaða aðalforritinu:"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line: 134
+msgid "Restore the installed system - Error"
+msgstr "Endurðu uppsetta kerfið - Villa"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line: 138
+msgid "Application Error"
+msgstr "villa villa villa"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/backend/system_interface.py, line: 40
+msgid "No error output"
+msgstr "Engin villa ekki."
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/backend/system_interface.py, line: 41
+#, python-format
+msgid "Detection script failed: %s"
+msgstr "Skipt fyrir greiningu mistókst: %s"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/backend/system_interface.py, line: 43
+#, python-format
+msgid "System detection failed: %s"
+msgstr "Kerfiskun er ekki að virka: %s"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/backend/system_interface.py, line: 138
+#, python-format
+msgid "Failed to execute restore: %s"
+msgstr "Ekki tókst að framkvæma endurheimt: %s"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 28
 msgid "Restore the installed system"
@@ -37,6 +67,10 @@ msgstr "Um umfjöllun"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 54
 msgid "Quit"
 msgstr "Hætta við"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 116
+msgid "<b>LIVE MODE</b>"
+msgstr "<b>LÍF MODE</b>"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 117
 #, python-format
@@ -308,6 +342,10 @@ msgstr "EFI kerfiskipartition"
 msgid "Mount Failed"
 msgstr "Mountun mistókst"
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 490
+msgid "Live Boot Mode"
+msgstr "Lifandi Boot Hamur"
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 msgid "Selected System"
 msgstr "Valin kerfi"
@@ -360,6 +398,24 @@ msgstr "Endurheimt í gangi..."
 msgid "Preparing Interactive Session..."
 msgstr "Að undirbúa gagnvirka lotu..."
 # 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 557
+#, python-format
+msgid ""
+"Failed to prepare chroot:\n"
+"%s"
+msgstr ""
+"Mistók að undirbúa chroot:  \n"
+"%s"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 565
+#, python-format
+msgid "Failed to remove pacman lock: %s"
+msgstr "Ekki tókst að fjarlægja pacman lásinn: %s"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 571
+msgid "VTE Terminal not available."
+msgstr "VTE terminal ekki tiltækt."
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 550
 msgid "Interactive Session: Control Center"
 msgstr "Samskipti: Stjórnborð"
@@ -371,3 +427,14 @@ msgstr "Samskipti: Pakka Stjóri"
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 508
 msgid "Cleaning up session..."
 msgstr "Að hreinsa upp lotu..."
+# 
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 59
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 18
+msgid "BigLinux GRUB Restore"
+msgstr "BigLinux GRUB Endurðun"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 58
+msgid "A tool to restore the GRUB bootloader."
+msgstr "Verkfæri til að endurheimta GRUB ræsivélina."
