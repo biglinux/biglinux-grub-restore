@@ -44,13 +44,13 @@ safe_mount "$SELECTED_PARTITION" "/mnt" "$mount_opts"
 case "$RESTORE_MODE" in
     "1")
         log_message "Executing Simple Restore"
-        if ! grub-install --root-directory=/mnt "/dev/$DISK_SELECTED"; then handle_error "GRUB installation to MBR failed"; fi
+        if ! grub-install --root-directory=/mnt "$DISK_SELECTED"; then handle_error "GRUB installation to MBR failed"; fi
         ;;
     "2")
         log_message "Executing Intermediate Restore"
         execute_chroot "rm -f /var/lib/pacman/db.lck" "Removing package lock"
         execute_chroot "pacman --noconfirm -Sy grub" "Updating GRUB package"
-        execute_chroot "grub-install --force --target=i386-pc --recheck --boot-directory=/boot /dev/$DISK_SELECTED" "Installing GRUB"
+        execute_chroot "grub-install --force --target=i386-pc --recheck --boot-directory=/boot $DISK_SELECTED" "Installing GRUB"
         execute_chroot "mkinitcpio -P" "Regenerating initramfs"
         execute_chroot "grub-mkconfig -o /boot/grub/grub.cfg" "Generating GRUB configuration"
         ;;
@@ -59,7 +59,7 @@ case "$RESTORE_MODE" in
         execute_chroot "rm -f /var/lib/pacman/db.lck" "Removing package lock"
         execute_chroot "pacman --noconfirm -Syyu" "Updating system"
         execute_chroot "pacman --noconfirm -S grub linux" "Installing core packages"
-        execute_chroot "grub-install --force --target=i386-pc --recheck --boot-directory=/boot /dev/$DISK_SELECTED" "Installing GRUB"
+        execute_chroot "grub-install --force --target=i386-pc --recheck --boot-directory=/boot $DISK_SELECTED" "Installing GRUB"
         execute_chroot "mkinitcpio -P" "Regenerating initramfs"
         execute_chroot "grub-mkconfig -o /boot/grub/grub.cfg" "Generating GRUB configuration"
         ;;

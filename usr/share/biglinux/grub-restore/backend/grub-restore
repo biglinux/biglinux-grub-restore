@@ -142,10 +142,14 @@ done
 # 4. Detecção de Discos Físicos (Melhorado para NVMe e SSDs)
 log_message "Starting disk detection..."
 # lsblk -d (apenas dispositivos físicos) -n (sem cabeçalho)
-for dev in $(lsblk -dno NAME | grep -v "zram" | grep -v "loop" | grep -v "sr"); do
+for dev_raw in $(lsblk -dno NAME | grep -v "zram" | grep -v "loop" | grep -v "sr"); do
+    # Normalize dev name (strip /dev/ prefix if present)
+    dev=${dev_raw#/dev/}
+
     # Pula o disco do Live Boot (apenas se definido)
     if [ -n "$DEVICE_LIVE_BOOT" ]; then
-        if [[ "$dev" == "$DEVICE_LIVE_BOOT" ]]; then
+        clean_live_boot=${DEVICE_LIVE_BOOT#/dev/}
+        if [[ "$dev" == "$clean_live_boot" ]]; then
             log_message "Skipping live boot device (exact match): $dev"
             continue
         fi
