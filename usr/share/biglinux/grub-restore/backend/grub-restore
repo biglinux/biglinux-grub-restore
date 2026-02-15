@@ -142,16 +142,28 @@ done
 # 4. Detecção de Discos Físicos (Melhorado para NVMe e SSDs)
 log_message "Starting disk detection..."
 # lsblk -d (apenas dispositivos físicos) -n (sem cabeçalho)
-lsblk -dn -o NAME,SIZE,MODEL,PTTYPE | grep -v "zram" | grep -v "loop" | while read -r name size model pttype; do
-    # Pula o disco do Live Boot
-    [[ "$name" == *"$DEVICE_LIVE_BOOT"* ]] && continue
+for dev in $(lsblk -dno NAME | grep -v "zram" | grep -v "loop" | grep -v "sr"); do
+    # Pula o disco do Live Boot (apenas se definido)
+    if [ -n "$DEVICE_LIVE_BOOT" ]; then
+        if [[ "$dev" == "$DEVICE_LIVE_BOOT" ]]; then
+            log_message "Skipping live boot device (exact match): $dev"
+            continue
+        fi
+    fi
     
+    # Get details individually to avoid parsing issues
+    size=$(lsblk -dn -o SIZE "/dev/$dev" | head -n1)
+    if [ -z "$size" ]; then size="Unknown"; fi
+    
+    model=$(lsblk -dn -o MODEL "/dev/$dev" | head -n1)
     # Limpeza básica de strings
     clean_model=$(echo "${model:-Unknown_Disk}" | tr ' ' '_')
-    clean_pttype=$(echo "${pttype:-unknown}")
     
-    echo "/dev/${name} ${size} ${clean_model} ${clean_pttype}" >> /tmp/grub-disks
-    log_message "Added disk: /dev/${name} (${size}, ${clean_model}, ${clean_pttype})"
+    pttype=$(lsblk -dn -o PTTYPE "/dev/$dev" | head -n1)
+    clean_pttype=$(echo "${pttype:-unknown}" | tr ' ' '_')
+    
+    echo "/dev/${dev} ${size} ${clean_model} ${clean_pttype}" >> /tmp/grub-disks
+    log_message "Added disk: /dev/${dev} (${size}, ${clean_model}, ${clean_pttype})"
 done
 
 log_message "Detection completed. Systems: $(wc -l < /tmp/os-prober), EFI: $(wc -l < /tmp/efi-partitions), Disks: $(wc -l < /tmp/grub-disks)"
