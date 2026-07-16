@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the biglinux-grub-restore package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: biglinux-grub-restore\n"
@@ -362,6 +363,27 @@ msgstr "未找到系统"
 msgid "No Linux installations could be detected on your drives."
 msgstr "在您的驱动器上未检测到任何Linux安装。"
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 558
+#: NEEDS WORK
+msgid "Partition:"
+msgstr "分区："
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 558
+#: NEEDS WORK
+msgid "FS:"
+msgstr "文件系统:"
+# 
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 615
+#: usr/share/biglinux/grub-restore/gui/window.py:558
+#: usr/share/biglinux/grub-restore/gui/window.py:615
+msgid "N/A"
+msgstr ""
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 558
+#: NEEDS WORK
+msgid "UUID:"
+msgstr "UUID："
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 597
 #: usr/share/biglinux/grub-restore/gui/window.py:597
 msgid ""
@@ -391,12 +413,6 @@ msgstr ""
 msgid "Unknown disk"
 msgstr ""
 # 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 615
-#: usr/share/biglinux/grub-restore/gui/window.py:558
-#: usr/share/biglinux/grub-restore/gui/window.py:615
-msgid "N/A"
-msgstr ""
-# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 620
 #: usr/share/biglinux/grub-restore/gui/window.py:620
 msgid "Recommended"
@@ -407,6 +423,16 @@ msgstr ""
 msgid "Legacy mode writes GRUB to a whole disk. Verify the model and size before continuing."
 msgstr ""
 # 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 647
+#: NEEDS WORK
+msgid "Model:"
+msgstr "模型："
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 647
+#: NEEDS WORK
+msgid "Partition Table:"
+msgstr "分区表："
+# 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 712
 #: usr/share/biglinux/grub-restore/gui/window.py:712
 msgid "Verifying Selection"
@@ -416,6 +442,11 @@ msgstr ""
 #: usr/share/biglinux/grub-restore/gui/window.py:714
 msgid "Mounting the selected system safely for verification..."
 msgstr ""
+# 
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 727
+#: NEEDS WORK
+msgid "Failed to mount the selected system for verification:"
+msgstr "无法挂载所选系统以进行验证："
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
 #: usr/share/biglinux/grub-restore/gui/window.py:772
