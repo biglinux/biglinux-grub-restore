@@ -4,81 +4,174 @@
 import sys
 import os
 import gi
-
-print("1. Starting application...")
+import subprocess
+import argparse
 
 # Ensure we're using the correct versions
-gi.require_version('Gtk', '4.0')
-gi.require_version('Adw', '1')
-
-print("2. GTK versions set...")
+try:
+    gi.require_version("Gtk", "4.0")
+    gi.require_version("Adw", "1")
+except (ImportError, ValueError) as e:
+    print(f"Error: Missing GTK4/Adwaita dependencies. {e}", file=sys.stderr)
+    sys.exit(1)
 
 from gi.repository import Gtk, Adw, GLib
 
-print("3. GTK imports successful...")
 
-# Simple translation function for testing
-def _(text):
-    return text
+def get_user_gsetting(schema, key):
+    """Gets a user's gsettings value."""
+    try:
+        result = subprocess.run(
+            ["gsettings", "get", schema, key], capture_output=True, text=True, check=True
+        )
+        return result.stdout.strip().strip("'")
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return None
 
-print("4. Translation function ready...")
 
 def main():
     """Main entry point for the application"""
-    
-    print("5. In main function...")
-    
-    # Check if running in live mode (skip for testing)
-    # if not os.path.exists('/livefs-pkgs.txt'):
-    #     print("Not in live mode, but continuing for testing...")
-    
-    print("6. Live mode check passed...")
-    
-    # Try to import the main application
+
+    # Set the program name for Wayland association
+    GLib.set_prgname("br.com.biglinux.grub-restore")
+
+    # Check if running as root
+    if os.geteuid() != 0:
+        print("This application needs to be run as root. Trying to relaunch with pkexec...")
+        try:
+            script_path = os.path.abspath(sys.argv[0])
+
+            # --- USER SETTINGS DETECTION (RUNNING AS USER) ---
+            user_scheme = (
+                get_user_gsetting("org.gnome.desktop.interface", "color-scheme") or "default"
+            )
+            user_button_layout = (
+                get_user_gsetting("org.gnome.desktop.wm.preferences", "button-layout") or ""
+            )
+            user_monospace_font = (
+                get_user_gsetting("org.gnome.desktop.interface", "monospace-font-name")
+                or "Monospace 10"
+            )
+
+            env_vars_to_preserve = []
+            for var in ["DISPLAY", "XAUTHORITY", "DBUS_SESSION_BUS_ADDRESS", "WAYLAND_DISPLAY"]:
+                if var in os.environ:
+                    env_vars_to_preserve.append(f"{var}={os.environ[var]}")
+
+            args = ["pkexec"]
+            if env_vars_to_preserve:
+                args.extend(["env"] + env_vars_to_preserve)
+
+            args.extend([sys.executable, script_path] + sys.argv[1:])
+            # Pass detected settings to the root process
+            args.append(f"--color-scheme-from-user={user_scheme}")
+            args.append(f"--button-layout-from-user={user_button_layout}")
+            args.append(f"--monospace-font-from-user={user_monospace_font}")
+            args.append(f"--user-uid={os.getuid()}")
+            args.append(f"--user-gid={os.getgid()}")
+
+            os.execvp("pkexec", args)
+        except Exception as e:
+            print(f"Failed to relaunch with pkexec: {e}", file=sys.stderr)
+
+            # Use local import to avoid issues if dependencies are missing at top level
+            # causing immediate crash before this handler
+            try:
+                from utils.translation import _
+            except ImportError:
+
+                def _(message):
+                    return message
+
+            error_app = Gtk.Application()
+
+            def show_error(app):
+                dialog = Gtk.MessageDialog(
+                    transient_for=None,
+                    modal=True,
+                    message_type=Gtk.MessageType.ERROR,
+                    buttons=Gtk.ButtonsType.OK,
+                    text=_("Root privileges are required."),
+                    secondary_text=_(
+                        "This application must be run as root to function correctly. Please run it with sudo or pkexec."
+                    ),
+                )
+                dialog.connect("response", lambda d, r: app.quit())
+                dialog.show()
+
+            error_app.connect("activate", show_error)
+            error_app.run(None)
+            sys.exit(1)
+
+    # --- SETTINGS APPLICATION (RUNNING AS ROOT) ---
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--color-scheme-from-user", type=str, default="default")
+    parser.add_argument("--button-layout-from-user", type=str, default=None)
+    parser.add_argument("--monospace-font-from-user", type=str, default="Monospace 10")
+    parser.add_argument("--user-uid", type=int, default=0)
+    parser.add_argument("--user-gid", type=int, default=0)
+    args, unknown = parser.parse_known_args()
+
+    # Apply color scheme
+    scheme_map = {
+        "default": Adw.ColorScheme.DEFAULT,
+        "prefer-light": Adw.ColorScheme.FORCE_LIGHT,
+        "prefer-dark": Adw.ColorScheme.FORCE_DARK,
+    }
+    color_scheme_to_apply = scheme_map.get(args.color_scheme_from_user, Adw.ColorScheme.DEFAULT)
+    if color_scheme_to_apply != Adw.ColorScheme.DEFAULT:
+        style_manager = Adw.StyleManager.get_default()
+        style_manager.set_color_scheme(color_scheme_to_apply)
+
+    # Apply button layout
+    if args.button_layout_from_user:
+        gtk_settings = Gtk.Settings.get_default()
+        gtk_settings.set_property("gtk-decoration-layout", args.button_layout_from_user)
+
+    # VTE runs as root, so explicitly carry the user's terminal font across pkexec.
+    os.environ["GRUB_RESTORE_MONOSPACE_FONT"] = args.monospace_font_from_user
+    os.environ["GRUB_RESTORE_USER_UID"] = str(args.user_uid)
+    os.environ["GRUB_RESTORE_USER_GID"] = str(args.user_gid)
+
     try:
-        print("7. Importing GrubRestoreApplication...")
         from gui.application import GrubRestoreApplication
-        print("8. Import successful...")
-        
-        # Create and run the application
-        print("9. Creating application...")
+
+        # Pass the original sys.argv (without our custom args) to the app
         app = GrubRestoreApplication()
-        print("10. Application created, running...")
-        return app.run(sys.argv)
-        
+        return app.run([sys.argv[0]] + unknown)
+
     except Exception as e:
-        print("ERROR: Failed to import or run application:", str(e))
         import traceback
+
         traceback.print_exc()
-        
-        # CAPTURE the error message BEFORE defining the class
-        error_message = "Failed to load main application:\n" + str(e)
-        
-        # Fallback to simple window
-        print("Creating fallback window...")
-        
+
+        # Import translation here to ensure it's available after potential path setup
+        from utils.translation import _
+
+        error_message = _("Failed to load main application:") + "\n" + str(e)
+
         class FallbackApp(Adw.Application):
-            def __init__(self):
+            def __init__(self, error_msg):
                 super().__init__(application_id="com.biglinux.grub-restore.fallback")
-            
+                self.error_msg = error_msg
+
             def do_activate(self):
                 window = Adw.ApplicationWindow(application=self)
-                window.set_title("BigLinux GRUB Restore - Error")
+                window.set_title(_("Restore the installed system - Error"))
                 window.set_default_size(600, 400)
-                
+
                 status_page = Adw.StatusPage()
-                status_page.set_title("Application Error")
-                status_page.set_description(error_message)
-                status_page.set_icon_name("dialog-error")
-                
+                status_page.set_title(_("Application Error"))
+                status_page.set_description(self.error_msg)
+                status_page.set_icon_name("dialog-error-symbolic")
+
                 window.set_content(status_page)
                 window.present()
-        
-        fallback_app = FallbackApp()
+
+        fallback_app = FallbackApp(error_message)
         return fallback_app.run(sys.argv)
 
+
 if __name__ == "__main__":
-    print("0. Starting main...")
-    exit_code = main()
-    print("11. Application finished with code:", exit_code)
-    sys.exit(exit_code)
+    sys.exit(main())

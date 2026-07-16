@@ -20,3 +20,12 @@ def test_backend_steps_have_user_facing_progress_text():
     assert GrubRestoreWindow._translate_backend_step("Installing GRUB for EFI") == _(
         "Installing GRUB for EFI..."
     )
+    assert GrubRestoreWindow._translate_backend_step("Validating repaired boot files") == _(
+        "Validating the repaired boot files..."
+    )
+
+
+def test_backend_boot_errors_are_translated():
+    message = "No initramfs image was found after regeneration."
+
+    assert GrubRestoreWindow._translate_backend_error(message) == _(message)

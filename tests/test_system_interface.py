@@ -239,6 +239,32 @@ def test_fstab_resolves_subvolume_boot_and_efi(tmp_path):
     assert system["supported"] is True
 
 
+def test_stale_fstab_does_not_override_detected_root_subvolume(tmp_path):
+    interface, _runner = build_interface(tmp_path)
+    interface._load_block_inventory()
+    root = tmp_path / "mounted-root"
+    (root / "etc").mkdir(parents=True)
+    (root / "etc/os-release").write_text("ID=biglinux\n", encoding="utf-8")
+    (root / "etc/fstab").write_text(
+        "UUID=OLD-ROOT / btrfs defaults,subvol=@old 0 0\n", encoding="utf-8"
+    )
+    system = {
+        "filesystem": "btrfs",
+        "name": "Detected",
+        "root_subvol": "@system",
+        "boot_partition": "",
+        "boot_subvol": "",
+        "efi_partition": "",
+        "efi_mountpoint": "/boot/efi",
+    }
+
+    interface._read_installation_metadata(root, system)
+
+    assert system["root_subvol"] == "@system"
+    assert system["fstab_root_subvol"] == "@old"
+    assert system["fstab_root_path"] == ""
+
+
 def test_human_readable_sizes():
     assert SystemInterface.format_size(536_870_912) == "512.0 MiB"
     assert SystemInterface.format_size(1_073_741_824) == "1.0 GiB"
@@ -261,3 +287,185 @@ def test_runtime_is_not_removed_when_mount_cleanup_fails(tmp_path):
     interface.cleanup_runtime()
 
     assert interface.runtime_dir.exists()
+
+
+def create_boot_fixture(interface, *, root_spec, fstab_subvol, grub_uuid, grub_subvol):
+    root = interface.mount_point
+    (root / "etc").mkdir(parents=True, exist_ok=True)
+    (root / "boot/grub").mkdir(parents=True, exist_ok=True)
+    (root / "usr/bin").mkdir(parents=True, exist_ok=True)
+    (root / "etc/mkinitcpio.d").mkdir(parents=True, exist_ok=True)
+    (root / "etc/os-release").write_text("ID=biglinux\n", encoding="utf-8")
+    (root / "etc/fstab").write_text(
+        f"{root_spec} / btrfs defaults,subvol={fstab_subvol} 0 0\n",
+        encoding="utf-8",
+    )
+    (root / "boot/vmlinuz-linux").touch()
+    (root / "boot/initramfs-linux.img").touch()
+    (root / "usr/bin/mkinitcpio").touch()
+    (root / "etc/mkinitcpio.conf").write_text(
+        "HOOKS=(base udev autodetect block filesystems fsck)\n", encoding="utf-8"
+    )
+    (root / "etc/mkinitcpio.d/linux.preset").touch()
+    (root / "boot/grub/grub.cfg").write_text(
+        f"menuentry test {{\n  linux /boot/vmlinuz-linux root=UUID={grub_uuid} "
+        f"rootflags=subvol={grub_subvol} rw\n}}\n",
+        encoding="utf-8",
+    )
+
+
+def selected_system():
+    return {
+        "partition": "/dev/nvme0n1p2",
+        "filesystem": "btrfs",
+        "uuid": "ROOT-UUID",
+        "root_subvol": "@system",
+        "boot_partition": "",
+        "boot_subvol": "",
+        "efi_mountpoint": "/boot/efi",
+        "distro_id": "biglinux",
+        "supported": True,
+    }
+
+
+def test_boot_diagnostics_accept_matching_root_configuration(tmp_path):
+    interface, _runner = build_interface(tmp_path)
+    interface._load_block_inventory()
+    system = selected_system()
+    interface.save_selection(system, effective_boot_mode="EFI")
+    create_boot_fixture(
+        interface,
+        root_spec="UUID=ROOT-UUID",
+        fstab_subvol="@system",
+        grub_uuid="ROOT-UUID",
+        grub_subvol="@system",
+    )
+
+    report = interface.diagnose_mounted_system()
+
+    assert report["status"] == "ok"
+    assert report["blocking"] is False
+    assert report["issues"] == []
+
+
+def test_boot_diagnostics_offers_repair_for_stale_fstab(tmp_path):
+    interface, _runner = build_interface(tmp_path)
+    interface._load_block_inventory()
+    system = selected_system()
+    interface.save_selection(system, effective_boot_mode="EFI")
+    create_boot_fixture(
+        interface,
+        root_spec="UUID=OLD-ROOT",
+        fstab_subvol="@old",
+        grub_uuid="OLD-ROOT",
+        grub_subvol="@old",
+    )
+
+    report = interface.diagnose_mounted_system()
+    codes = {issue["code"] for issue in report["issues"]}
+
+    assert report["status"] == "repair"
+    assert report["blocking"] is False
+    assert report["repairable"] is True
+    assert report["requires_confirmation"] is True
+    assert {"fstab_root_mismatch", "fstab_subvol_mismatch"} <= codes
+    assert {"grub_root_mismatch", "grub_subvol_mismatch"} <= codes
+
+
+def test_boot_diagnostics_offers_repair_for_wrong_fstab_filesystem(tmp_path):
+    interface, _runner = build_interface(tmp_path)
+    interface._load_block_inventory()
+    system = selected_system()
+    interface.save_selection(system, effective_boot_mode="EFI")
+    create_boot_fixture(
+        interface,
+        root_spec="UUID=ROOT-UUID",
+        fstab_subvol="@system",
+        grub_uuid="ROOT-UUID",
+        grub_subvol="@system",
+    )
+    fstab = interface.mount_point / "etc/fstab"
+    fstab.write_text("UUID=ROOT-UUID / ext4 defaults,subvol=@system 0 0\n", encoding="utf-8")
+
+    report = interface.diagnose_mounted_system()
+
+    assert report["status"] == "repair"
+    assert report["repair_fstab"] is True
+    assert "fstab_filesystem_mismatch" in {issue["code"] for issue in report["issues"]}
+
+
+def test_boot_diagnostics_blocks_missing_kernel(tmp_path):
+    interface, _runner = build_interface(tmp_path)
+    interface._load_block_inventory()
+    system = selected_system()
+    interface.save_selection(system, effective_boot_mode="EFI")
+    create_boot_fixture(
+        interface,
+        root_spec="UUID=ROOT-UUID",
+        fstab_subvol="@system",
+        grub_uuid="ROOT-UUID",
+        grub_subvol="@system",
+    )
+    (interface.mount_point / "boot/vmlinuz-linux").unlink()
+
+    report = interface.diagnose_mounted_system()
+
+    assert report["status"] == "blocked"
+    assert report["blocking"] is True
+    assert "missing_kernel" in {issue["code"] for issue in report["issues"]}
+
+
+def test_boot_diagnostics_offers_repair_for_missing_mkinitcpio_hooks(tmp_path):
+    interface, _runner = build_interface(tmp_path)
+    interface._load_block_inventory()
+    system = selected_system()
+    interface.save_selection(system, effective_boot_mode="EFI")
+    create_boot_fixture(
+        interface,
+        root_spec="UUID=ROOT-UUID",
+        fstab_subvol="@system",
+        grub_uuid="ROOT-UUID",
+        grub_subvol="@system",
+    )
+    (interface.mount_point / "etc/mkinitcpio.conf").write_text(
+        "HOOKS=(base udev autodetect fsck)\n", encoding="utf-8"
+    )
+
+    report = interface.diagnose_mounted_system()
+
+    assert report["status"] == "repair"
+    assert report["repair_mkinitcpio"] is True
+    assert report["missing_mkinitcpio_hooks"] == ["block", "filesystems"]
+
+
+def test_boot_diagnostics_blocks_missing_mkinitcpio_presets(tmp_path):
+    interface, _runner = build_interface(tmp_path)
+    interface._load_block_inventory()
+    system = selected_system()
+    interface.save_selection(system, effective_boot_mode="EFI")
+    create_boot_fixture(
+        interface,
+        root_spec="UUID=ROOT-UUID",
+        fstab_subvol="@system",
+        grub_uuid="ROOT-UUID",
+        grub_subvol="@system",
+    )
+    (interface.mount_point / "etc/mkinitcpio.d/linux.preset").unlink()
+
+    report = interface.diagnose_mounted_system()
+
+    assert report["status"] == "blocked"
+    assert "missing_mkinitcpio_presets" in {issue["code"] for issue in report["issues"]}
+
+
+def test_backend_arguments_include_root_identity(tmp_path, monkeypatch):
+    interface, _runner = build_interface(tmp_path)
+    interface._load_block_inventory()
+    system = selected_system()
+    interface.save_selection(system, effective_boot_mode="EFI")
+    monkeypatch.setattr(interface, "_validate_device", lambda path, *, expected_types: path)
+
+    arguments = interface._backend_arguments(include_target=False)
+
+    assert arguments[arguments.index("--root-uuid") + 1] == "ROOT-UUID"
+    assert arguments[arguments.index("--root-subvol") + 1] == "@system"

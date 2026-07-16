@@ -2,308 +2,450 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the biglinux-grub-restore package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: biglinux-grub-restore\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2026-07-16 18:59-0300\n"
+"PO-Revision-Date: 2026-07-16 17:35-0300\n"
+"Last-Translator: BigLinux Translation Team <translations@biglinux.com.br>\n"
+"Language-Team: fi\n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 17
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 102
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 146
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 170
-msgid "Unknown"
-msgstr "Tuntematon"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 85
-msgid "Unknown CPU"
-msgstr "Tuntematon CPU"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 98
-msgid "Unknown Memory"
-msgstr "Tuntematon muisti"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 120
-msgid "Live Media"
-msgstr "Live Media"
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 172
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 123
-msgid "Unknown System"
-msgstr "Tuntematon järjestelmä"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 207
-msgid "Simple restore - Just writes the Grub again at the beginning of the disk."
-msgstr "Yksinkertainen palautus - Kirjoittaa vain Grubin uudelleen levyn alkuun."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 208
-msgid "Intermediate restore - Reinstalls the grub package, regenerates configuration, and updates initrd."
-msgstr "Välikäynnistys - Asentaa grub-paketin uudelleen, luo konfiguraation ja päivittää initrd:n."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 209
-msgid "Complete restore - Performs intermediate steps, updates system, and checks LTS kernel."
-msgstr "Täydellinen palautus - Suorittaa välikohtia, päivittää järjestelmän ja tarkistaa LTS-ytimen."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 210
-msgid "Interactive terminal - Opens a terminal inside the selected system."
-msgstr "Interaktiivinen pääte - Avaa pääte valitussa järjestelmässä."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 211
-msgid "Interactive control center - Opens the control center inside the selected system."
-msgstr "Interaktiivinen ohjauskeskus - Avaa ohjauskeskuksen valitussa järjestelmässä."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 212
-msgid "Interactive package manager - Opens pamac-manager inside the selected system."
-msgstr "Interaktiivinen pakettienhallinta - Avaa pamac-hallinnan valitussa järjestelmässä."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 214
-msgid "Unknown restore mode"
-msgstr "Tuntematon palautustila"
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 239
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 402
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 292
-msgid "Internet connection available"
-msgstr "Internet-yhteys saatavilla"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 245
-msgid "No internet connection detected. Options 2 and 3 require internet to work."
-msgstr "Internet-yhteyttä ei havaittu. Vaihtoehdot 2 ja 3 vaativat internetin toimiakseen."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 266
-msgid "Permission denied. Please check if you have administrator privileges."
-msgstr "Käyttöoikeus evätty. Tarkista, onko sinulla järjestelmänvalvojan oikeudet."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 267
-msgid "Required file not found. The system may be corrupted."
-msgstr "Vaadittua tiedostoa ei löytynyt. Järjestelmä saattaa olla vaurioitunut."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 268
-msgid "Device is busy. Please unmount any mounted partitions and try again."
-msgstr "Laite on varattu. Poista käytöstä kaikki liitetyt osiot ja yritä uudelleen."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 269
-msgid "No space left on device. Please free up some space and try again."
-msgstr "Laiteessa ei ole tilaa jäljellä. Vapauta tilaa ja yritä uudelleen."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 270
-msgid "Network connection failed. Please check your internet connection."
-msgstr "Verkkoyhteys epäonnistui. Tarkista internet-yhteytesi."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/utils/helpers.py, line: 271
-msgid "Operation timed out. Please try again."
-msgstr "Toiminto aikakatkaistiin. Yritä uudelleen."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/backend/system_interface.py, line: 129
-msgid "EFI Boot without EFI Partition"
-msgstr "EFI-bootti ilman EFI-osioita"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/backend/system_interface.py, line: 131
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line: 76
+#: usr/share/biglinux/grub-restore/main.py:94
+msgid "Root privileges are required."
+msgstr "Root-oikeudet vaaditaan."
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line: 77
+#: usr/share/biglinux/grub-restore/main.py:96
 msgid ""
-"The boot in live mode is using EFI mode, but no EFI partition was found on this computer. Most "
-"likely the Grub restore will not work.\n"
-"\n"
-"Try restarting and booting in Legacy or BIOS mode through the computer's BIOS."
+"This application must be run as root to function correctly. Please run it "
+"with sudo or pkexec."
 msgstr ""
-"Käynnistys live-tilassa käyttää EFI-tilaa, mutta tätä tietokonetta ei löytynyt EFI-osioita. "
-"Todennäköisesti Grubin palautus ei toimi.\n"
-"\n"
-"Yritä käynnistää uudelleen ja käynnistää Legacy- tai BIOS-tilassa tietokoneen BIOSin kautta."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/backend/system_interface.py, line: 139
-msgid "Legacy Boot with EFI Partition"
-msgstr "Perinteinen käynnistys EFI-osioineen"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/backend/system_interface.py, line: 141
+"Tätä sovellusta on suoritettava pääkäyttäjänä, jotta se toimii oikein. "
+"Suorita se sudo- tai pkexec-komennolla."
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line: 125
+#: usr/share/biglinux/grub-restore/main.py:152
+msgid "Failed to load main application:"
+msgstr "Pääsovelluksen lataaminen epäonnistui:"
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line: 134
+#: usr/share/biglinux/grub-restore/main.py:161
+msgid "Restore the installed system - Error"
+msgstr "Palauta asennettu järjestelmä - Virhe"
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line: 138
+#: usr/share/biglinux/grub-restore/main.py:165
+msgid "Application Error"
+msgstr "Sovellusvirhe"
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:154
+msgid "Linux system"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:305
+msgid "Could not unmount the temporary system inspection point."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:370
+msgid "Could not unmount the temporary EFI inspection point."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:390
+#: usr/share/biglinux/grub-restore/gui/window.py:614
+msgid "Unknown disk"
+msgstr ""
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/backend/system_interface.py, line: 43
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:416
+#, python-format
+msgid "System detection failed: %s"
+msgstr "Järjestelmän tunnistus epäonnistui: %s"
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:439
+msgid "Configured as /boot/efi in the selected system"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:442
+msgid "Same physical disk as the selected system"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:445
+msgid "Contains an existing EFI boot directory"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:447
+msgid "Valid EFI System Partition"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:462
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:468
+msgid "Unknown size"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:523
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:774
+msgid "No system was selected."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:547
+#: usr/share/biglinux/grub-restore/gui/window.py:1110
+msgid "The selected root does not contain a recognizable Linux installation."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:553
+#: usr/share/biglinux/grub-restore/gui/window.py:1113
+msgid "The selected root filesystem has no UUID."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:561
+msgid "No root filesystem entry was found in /etc/fstab."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:569
+msgid "The root entry in /etc/fstab points to a different or missing device."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:577
 msgid ""
-"The boot in live mode is using Legacy mode, also called BIOS, but at least one EFI partition was "
-"found on this computer. Most likely the Grub restore will not work.\n"
-"\n"
-"Try restarting and booting in EFI mode through the computer's BIOS."
+"The root filesystem type in /etc/fstab does not match the detected system."
 msgstr ""
-"Käynnistyslive-tilassa käyttää Legacy-tilaa, jota kutsutaan myös BIOS:ksi, mutta ainakin yksi "
-"EFI-osio löytyi tältä tietokoneelta. Todennäköisesti Grubin palautus ei toimi.\n"
-"\n"
-"Yritä käynnistää uudelleen ja käynnistää EFI-tilassa tietokoneen BIOSin kautta."
-# 
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:589
+msgid "The root subvolume in /etc/fstab does not match the detected system."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:613
+msgid "No bootable kernel image was found in /boot."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:619
+msgid "No initramfs image was found; the repair must regenerate it."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:631
+#: usr/share/biglinux/grub-restore/gui/window.py:1119
+msgid "No supported initramfs generator was found in the installed system."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:646
+#: usr/share/biglinux/grub-restore/gui/window.py:1122
+msgid "No mkinitcpio preset was found; no initramfs can be regenerated safely."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:652
+msgid "The HOOKS array in /etc/mkinitcpio.conf could not be read."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:663
+msgid ""
+"The initramfs configuration is missing hooks required to find and mount the "
+"root filesystem."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:689
+msgid "The current GRUB configuration references a different root UUID."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:695
+msgid "The current GRUB configuration references a different Btrfs subvolume."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:701
+msgid "No GRUB configuration file was found; the repair must create it."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:715
+msgid "Btrfs reports device errors. Back up important data before writing."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:755
+#, python-format
+msgid "Invalid block device selected: %s"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:757
+#, python-format
+msgid "Selected block device no longer exists: %s"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:803
+msgid "The selected partition is not a validated EFI System Partition."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:810
+msgid "The selected GPT disk has no BIOS boot partition."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:816
+#: usr/share/biglinux/grub-restore/gui/window.py:1183
+msgid "Invalid restore mode."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:818
+msgid "This GRUB restore backend currently supports x86-64 only."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:821
+msgid ""
+"Package repair is supported only for BigLinux, Arch Linux, and Manjaro "
+"systems."
+msgstr ""
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/backend/system_interface.py, line: 138
+#: usr/share/biglinux/grub-restore/backend/system_interface.py:844
+#, python-format
+msgid "Failed to execute restore: %s"
+msgstr "Palautuksen suorittaminen epäonnistui: %s"
+
+#
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
+#
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 59
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 18
+#: usr/share/biglinux/grub-restore/gui/application.py:65
 msgid "BigLinux GRUB Restore"
 msgstr "BigLinux GRUB Palautus"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 67
-msgid "Restore GRUB bootloader and repair boot issues"
-msgstr "Palauta GRUB-käynnistyslataaja ja korjaa käynnistysongelmat"
-# 
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 58
+#: usr/share/biglinux/grub-restore/gui/application.py:73
+msgid "A tool to restore the GRUB bootloader."
+msgstr "Työkalu GRUB-käynnistyslataimen palauttamiseen."
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 28
+#: usr/share/biglinux/grub-restore/gui/window.py:31
+msgid "Restore the installed system"
+msgstr "Palauta asennettu järjestelmä"
+
+#
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 53
+#: usr/share/biglinux/grub-restore/gui/window.py:91
 msgid "About"
 msgstr "Tietoja"
-# 
+
+#
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 54
+#: usr/share/biglinux/grub-restore/gui/window.py:92
 msgid "Quit"
 msgstr "Lopeta"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 74
-msgid "GRUB Restore Tool"
-msgstr "GRUB Palautustyökalu"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 86
-msgid "This tool should be used in"
-msgstr "Tätä työkalua tulisi käyttää ohjelmassa"
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 86
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 265
-msgid "Mode"
-msgstr "Tila"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 86
-msgid ""
-"to restore the BOOT of the BigLinux installed on the HD or SSD.\n"
-"\n"
-"If the installed system is booting correctly, there are no boot problems, so it's better not to "
-"proceed with this tool."
+
+#: usr/share/biglinux/grub-restore/gui/window.py:130
+msgid "LIVE MODE"
 msgstr ""
-"palauttaa BigLinuxin käynnistys HD:lle tai SSD:lle.\n"
-"\n"
-"Jos asennettu järjestelmä käynnistyy oikein, käynnistysongelmia ei ole, joten on parempi olla "
-"jatkamatta tämän työkalun käyttöä."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 94
-msgid "Start"
-msgstr "Aloita"
-# 
+
+#: usr/share/biglinux/grub-restore/gui/window.py:135
+msgid ""
+"Use this tool from a live system to restore the bootloader of an installed "
+"Linux system."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:145
+msgid ""
+"If the installed system starts correctly, do not continue: no boot repair is "
+"necessary."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:155
+msgid "Boot repair can also work with other Linux distributions."
+msgstr ""
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
+#: usr/share/biglinux/grub-restore/gui/window.py:163
+msgid "Start Detection"
+msgstr "Aloita tunnistus"
+
+#
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 109
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 139
+#: usr/share/biglinux/grub-restore/gui/window.py:176
+#: usr/share/biglinux/grub-restore/gui/window.py:516
 msgid "Detecting Systems"
 msgstr "Järjestelmien havaitseminen"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 110
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 140
-msgid "Please wait while we scan your system..."
-msgstr "Ole hyvä ja odota, kun skannaamme järjestelmääsi..."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 164
-msgid "Initializing detection..."
-msgstr "Alustetaan tunnistusta..."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 167
-msgid "Scanning for Linux systems..."
-msgstr "Skannaus Linux-järjestelmille..."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 170
-msgid "Analyzing boot configuration..."
-msgstr "Analysoidaan käynnistyskonfiguraatiota..."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 208
-msgid "Detection Failed"
-msgstr "Havaitseminen epäonnistui"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 212
-msgid "Try Again"
-msgstr "Yritä uudelleen"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 226
-msgid "No Systems Found"
-msgstr "Ei järjestelmiä löytynyt"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 227
-msgid "No Linux installations found on this computer."
-msgstr "Tätä tietokonetta ei löytynyt Linux-asennuksia."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 230
-msgid "Back"
-msgstr "Takaisin"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 256
-msgid "Detected Linux Systems"
-msgstr "Havaitut Linux-järjestelmät"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 269
-msgid "Boot Configuration"
-msgstr "Käynnistyskonfiguraatio"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 273
-msgid "Current Boot Mode"
-msgstr "Nykyinen käynnistystila"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 280
-msgid "EFI Partitions Found"
-msgstr "EFI-osioita löytyi"
-# 
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 108
+#: usr/share/biglinux/grub-restore/gui/window.py:177
+#: usr/share/biglinux/grub-restore/gui/window.py:517
+msgid "Scanning your drives for Linux installations..."
+msgstr "Skannataan levyjäsi Linux-asennusten etsimiseksi..."
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 126
+#: usr/share/biglinux/grub-restore/gui/window.py:202
+msgid "1. Select Linux System to Restore"
+msgstr "1. Valitse palautettavan Linux-järjestelmän."
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 362
+#: usr/share/biglinux/grub-restore/gui/window.py:205
+msgid "2. Select Target EFI Partition"
+msgstr "2. Valitse kohde EFI-osio"
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 137
+#: usr/share/biglinux/grub-restore/gui/window.py:206
+msgid "2. Select Target Disk (MBR)"
+msgstr "2. Valitse kohdelevy (MBR)"
+
+#
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 300
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
+#: usr/share/biglinux/grub-restore/gui/window.py:212
+#: usr/share/biglinux/grub-restore/gui/window.py:956
 msgid "Continue"
 msgstr "Jatka"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 324
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 247
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 537
+#: usr/share/biglinux/grub-restore/gui/window.py:228
+#: usr/share/biglinux/grub-restore/gui/window.py:424
+#: usr/share/biglinux/grub-restore/gui/window.py:1334
+msgid "Go Back"
+msgstr "Palaa takaisin"
+
+#: usr/share/biglinux/grub-restore/gui/window.py:270
 msgid ""
-"Select the disk where GRUB will be installed. The bootloader will be written to the beginning (MBR) "
-"of the selected disk."
-msgstr "Valitse levy, johon GRUB asennetaan. Käynnistyslataaja kirjoitetaan valitun levyn alkuun (MBR)."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 61
-msgid "Available Disks"
-msgstr "Saatavilla olevat levyt"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 121
-msgid "Unknown model"
-msgstr "Tuntematon malli"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 380
-msgid ""
-"The restore can be done in 3 ways (Simple, Intermediate, or Complete). If in doubt, try the first "
-"option, restart the computer and see if it is resolved."
+"Start with 'Diagnose and Repair Boot'. Package repair is needed only when "
+"GRUB itself is damaged or missing."
 msgstr ""
-"Palautus voidaan tehdä kolmella tavalla (Yksinkertainen, Keskitaso tai Täydellinen). Jos olet "
-"epävarma, kokeile ensimmäistä vaihtoehtoa, käynnistä tietokone uudelleen ja katso, onko se "
-"ratkaistu."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 406
-msgid "No internet - Options 2 and 3 require internet"
-msgstr "Ei internetiä - Vaihtoehdot 2 ja 3 vaativat internetin."
-# 
+
+#
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
+#
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 415
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 77
+#: usr/share/biglinux/grub-restore/gui/window.py:277
 msgid "Restore Methods"
 msgstr "Palautusmenetelmät"
-# 
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 175
+#: usr/share/biglinux/grub-restore/gui/window.py:278
+msgid "Interactive Tools"
+msgstr "Interaktiiviset työkalut"
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 181
+#: usr/share/biglinux/grub-restore/gui/window.py:280
+msgid "Configuration Summary"
+msgstr "Konfiguraatiosummary"
+
+#: usr/share/biglinux/grub-restore/gui/window.py:288
+msgid "Change Selection"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:300
+msgid "Diagnose and Repair Boot"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:302
+msgid ""
+"Checks the root filesystem, rebuilds initramfs, reinstalls GRUB, and "
+"validates the result."
+msgstr ""
+
+#
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 419
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 118
-msgid "Simple Restore"
-msgstr "Yksinkertainen palautus"
-# 
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 433
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 132
+#: usr/share/biglinux/grub-restore/gui/window.py:309
+msgid "Intermediate Restore"
+msgstr "Väli palautus"
+
+#: usr/share/biglinux/grub-restore/gui/window.py:310
+#: usr/share/biglinux/grub-restore/gui/window.py:842
+msgid "Requires internet. Reinstalls the GRUB package and regenerates configs."
+msgstr ""
+
+#
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 420
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 119
-msgid "Just writes the Grub again at the beginning of the disk."
-msgstr "Kirjoittaa Grubin uudelleen levyn alkuun."
-# 
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 448
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 151
+#: usr/share/biglinux/grub-restore/gui/window.py:316
+msgid "Complete Restore"
+msgstr "Täydellinen palautus"
+
+#: usr/share/biglinux/grub-restore/gui/window.py:318
+#: usr/share/biglinux/grub-restore/gui/window.py:846
+msgid ""
+"Requires internet. Updates the system and restores GRUB without replacing "
+"the installed kernel."
+msgstr ""
+
+#
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 469
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 173
+#: usr/share/biglinux/grub-restore/gui/window.py:325
+msgid "Interactive Terminal"
+msgstr "Interaktiivinen terminaali"
+
+#
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 470
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 174
+#: usr/share/biglinux/grub-restore/gui/window.py:326
+msgid "Opens a terminal inside the selected system."
+msgstr "Avaa terminaali valitussa järjestelmässä."
+
+#
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 483
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 187
+#: usr/share/biglinux/grub-restore/gui/window.py:332
+msgid "Control Center"
+msgstr "Ohjauskeskus"
+
+#
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 484
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 188
+#: usr/share/biglinux/grub-restore/gui/window.py:333
+msgid "Opens the control center inside the selected system."
+msgstr "Avaa ohjauskeskus valitussa järjestelmässä."
+
+#
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 497
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 201
+#: usr/share/biglinux/grub-restore/gui/window.py:339
+msgid "Package Manager"
+msgstr "Pakettihallinta"
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 185
+#: usr/share/biglinux/grub-restore/gui/window.py:340
+msgid "Opens the package manager inside the selected system."
+msgstr "Avaa pakettien hallinta valitussa järjestelmässä."
+
+#
+# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
+#
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 424
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 438
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 453
@@ -311,449 +453,540 @@ msgstr "Kirjoittaa Grubin uudelleen levyn alkuun."
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 140
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 159
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 353
+#: usr/share/biglinux/grub-restore/gui/window.py:352
 msgid "Execute"
 msgstr "Suorita"
-# 
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 223
+#: usr/share/biglinux/grub-restore/gui/window.py:394
+msgid "VTE terminal widget not available."
+msgstr "VTE-terminaaliväline ei ole käytettävissä."
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 226
+#: usr/share/biglinux/grub-restore/gui/window.py:405
+msgid "Close Terminal"
+msgstr "Sulje pääte"
+
+#
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 433
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 132
-msgid "Intermediate Restore"
-msgstr "Väli palautus"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 434
-msgid "Reinstalls the grub package, regenerates configuration, and updates initrd."
-msgstr "Asentaa grub-paketin uudelleen, luo konfiguraatio uudelleen ja päivittää initrd:n."
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 448
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 151
-msgid "Complete Restore"
-msgstr "Täydellinen palautus"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 449
-msgid "Performs intermediate steps, updates system, and checks LTS kernel."
-msgstr "Suorittaa väliaskelia, päivittää järjestelmän ja tarkistaa LTS-ytimen."
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 465
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 83
-msgid "Interactive Options"
-msgstr "Vuorovaikutteiset asetukset"
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 469
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 173
-msgid "Interactive Terminal"
-msgstr "Interaktiivinen terminaali"
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 470
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 174
-msgid "Opens a terminal inside the selected system."
-msgstr "Avaa terminaali valitussa järjestelmässä."
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 474
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 488
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 502
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 178
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 192
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 206
-msgid "Open"
-msgstr "Avaa"
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 483
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 187
-msgid "Control Center"
-msgstr "Ohjauskeskus"
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 484
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 188
-msgid "Opens the control center inside the selected system."
-msgstr "Avaa ohjauskeskus valitussa järjestelmässä."
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 497
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 201
-msgid "Package Manager"
-msgstr "Pakettihallinta"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 635
-msgid "Opens pamac-manager inside the selected system."
-msgstr "Avaa pamac-manager valitussa järjestelmässä."
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 595
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 338
-msgid "Simple restore will write GRUB to the beginning of the disk."
-msgstr "Yksinkertainen palautus kirjoittaa GRUBin levyn alkuun."
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 596
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 339
-msgid "Intermediate restore will reinstall GRUB package and update configuration."
-msgstr "Välikäynnistys palauttaa GRUB-paketin ja päivittää asetukset."
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 597
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 340
-msgid "Complete restore will perform full system update and kernel check."
-msgstr "Kattava palautus suorittaa täydellisen järjestelmäpäivityksen ja ytimen tarkistuksen."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 598
-msgid "Interactive terminal will open inside the selected system."
-msgstr "Interaktiivinen terminaali avautuu valitussa järjestelmässä."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 599
-msgid "Control center will open inside the selected system."
-msgstr "Ohjauskeskus avautuu valitussa järjestelmässä."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 600
-msgid "Package manager will open inside the selected system."
-msgstr "Pakettihallinta avautuu valitussa järjestelmässä."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 612
-msgid "Please wait while the restore operation completes..."
-msgstr "Ole hyvä ja odota, kunnes palautustoiminto on valmis..."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 786
-msgid "Technical Details"
-msgstr "Tekniset tiedot"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 787
-msgid "Real-time execution log"
-msgstr "Reaaliaikainen suoritustiedosto"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 810
-msgid "Terminal not available"
-msgstr "Pääte ei ole käytettävissä"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 655
-msgid "Restore Completed"
-msgstr "Palautus valmis"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 656
-msgid "The restore operation completed successfully!"
-msgstr "Palautustoiminto suoritettiin onnistuneesti!"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 659
-msgid "Restore Failed"
-msgstr "Palautus epäonnistui"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 660
-msgid "The restore operation failed. Please try again."
-msgstr "Palautustoiminto epäonnistui. Yritä uudelleen."
-# 
-# #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
-# 
+#
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 664
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 459
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 462
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 474
+#: usr/share/biglinux/grub-restore/gui/window.py:426
 msgid "Close"
 msgstr "Sulje"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 688
-msgid "Restore Error"
-msgstr "Palautusvirhe"
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 997
-msgid "Terminal running inside the selected system. You can execute commands directly."
-msgstr "Pääte, joka toimii valitun järjestelmän sisällä. Voit suorittaa komentoja suoraan."
-# 
-# File: usr/share/biglinux/grub-restore/gui/window.py, line: 1022
-msgid "Terminal not available - VTE library not found"
-msgstr "Pääte ei ole käytettävissä - VTE-kirjastoa ei löytynyt"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 59
-msgid "Linux System"
-msgstr "Linux-järjestelmä"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 64
-msgid "No system detected"
-msgstr "Ei järjestelmää havaittu"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 94
-msgid "Partition"
-msgstr "Osio"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 95
-msgid "Not selected"
-msgstr "Ei valittu"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 101
-msgid "Filesystem"
-msgstr "Tiedostojärjestelmä"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 108
-msgid "UUID"
-msgstr "UUID"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 109
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 155
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 171
-msgid "Not available"
-msgstr "Ei saatavilla"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 131
-msgid "Linux Installation"
-msgstr "Linux-asennus"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 139
-msgid "Not specified"
-msgstr "Ei määritelty"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 163
-msgid "No Linux installation detected"
-msgstr "Ei Linux-asennusta havaittu"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 169
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 291
-msgid "Not detected"
-msgstr "Ei havaittu"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 235
-msgid "Current system boot information"
-msgstr "Nykyinen järjestelmän käynnistystiedot"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 258
-msgid "Boot Mode"
-msgstr "Käynnistystila"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 259
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 273
-msgid "Detecting..."
-msgstr "Havaitseminen..."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 266
-msgid "Checking..."
-msgstr "Tarkistetaan..."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 272
-msgid "Available Memory"
-msgstr "Saatavilla oleva muisti"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 283
-msgid "EFI/UEFI"
-msgstr "EFI/UEFI"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 285
-msgid "Legacy/BIOS"
-msgstr "Perintö/BIOS"
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 289
-msgid "Active"
-msgstr "Aktiivinen"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/system_info.py, line: 330
-msgid "Checking network connection..."
-msgstr "Tarkistetaan verkkoyhteyttä..."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 51
-msgid ""
-"Select the disk where GRUB will be installed. The bootloader will be written to the beginning of "
-"the selected disk."
-msgstr "Valitse levy, johon GRUB asennetaan. Käynnistyslataaja kirjoitetaan valitun levyn alkuun."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 67
-msgid "No Disks Found"
-msgstr "Ei levyjä löytynyt"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 69
-msgid ""
-"No suitable disks were found for GRUB installation. Please check if your disks are properly "
-"connected."
-msgstr "Sopivia levyjä ei löytynyt GRUB-asennusta varten. Tarkista, että levyt on kytketty oikein."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 144
-msgid "GPT partition table detected. Make sure this is correct for Legacy boot mode."
-msgstr "GPT-osio taulukko havaittu. Varmista, että tämä on oikein Legacy-käynnistystilaa varten."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 227
-msgid ""
-"Select the EFI System Partition where GRUB will be installed. This partition contains the boot "
-"files for UEFI systems."
+
+#: usr/share/biglinux/grub-restore/gui/window.py:440
+msgid "Copy Log"
 msgstr ""
-"Valitse EFI-järjestelmäosio, johon GRUB asennetaan. Tämä osio sisältää käynnistystiedostot "
-"UEFI-järjestelmille."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 237
-msgid "Available EFI Partitions"
-msgstr "Saatavilla olevat EFI-osastot"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 243
-msgid "No EFI Partitions Found"
-msgstr "Ei EFI-osioita löytynyt"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 245
-msgid "No EFI System Partitions were found. Your system may not be configured for UEFI boot."
+
+#: usr/share/biglinux/grub-restore/gui/window.py:442
+msgid "Save Log"
 msgstr ""
-"EFI-järjestelmäosioita ei löytynyt. Järjestelmääsi ei ehkä ole konfiguroitu UEFI-käynnistystä "
-"varten."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 297
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/disk_selector.py, line: 299
-msgid "EFI System Partition"
-msgstr "EFI-järjestelmäosio"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 62
-msgid ""
-"The restore can be done in 3 ways (Simple, Intermediate, or Complete). If in doubt, try the first "
-"option, restart the computer and see if it is resolved. If the problem persists, try the other "
-"options."
-msgstr ""
-"Palautus voidaan tehdä kolmella tavalla (Yksinkertainen, Keskitaso tai Täydellinen). Jos olet "
-"epävarma, kokeile ensimmäistä vaihtoehtoa, käynnistä tietokone uudelleen ja katso, onko ongelma "
-"ratkaistu. Jos ongelma jatkuu, kokeile muita vaihtoehtoja."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 134
-msgid "Reinstalls the grub package on the partition, regenerates the configuration, and updates the initrd."
-msgstr "Asentaa grub-paketin uudelleen osiolle, luo konfiguraatio uudelleen ja päivittää initrd:n."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 153
-msgid ""
-"Performs the intermediate restore steps, updates the system, and checks if the LTS kernel is "
-"installed."
-msgstr "Suorittaa väli palautusvaiheet, päivittää järjestelmän ja tarkistaa, onko LTS-ydin asennettuna."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 202
-msgid "Opens the pamac-manager package manager inside the selected system."
-msgstr "Avaa pamac-manager-pakettihallinta valitussa järjestelmässä."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 240
-msgid "Preparing..."
-msgstr "Valmistellaan..."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 263
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 352
+
+#: usr/share/biglinux/grub-restore/gui/window.py:445
+#: usr/share/biglinux/grub-restore/gui/window.py:926
+#: usr/share/biglinux/grub-restore/gui/window.py:955
 msgid "Cancel"
-msgstr "Peruuta"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 297
-msgid "No internet connection - Options 2 and 3 require internet"
-msgstr "Ei internetyhteyttä - Vaihtoehdot 2 ja 3 vaativat internetin"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 311
-msgid "System interface not available"
-msgstr "Järjestelmäliittymä ei ole saatavilla"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 341
-msgid "Interactive terminal will open a command line inside the selected system."
-msgstr "Interaktiivinen terminaali avaa komentorivin valitussa järjestelmässä."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 342
-msgid "Control center will open system settings inside the selected system."
-msgstr "Ohjauskeskus avaa järjestelmäasetukset valitussa järjestelmässä."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 343
-msgid "Package manager will open pamac-manager inside the selected system."
-msgstr "Pakettienhallinta avaa pamac-hallinnan valitussa järjestelmässä."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 348
-msgid "Confirm Restore Operation"
-msgstr "Vahvista palautustoiminto"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 349
-msgid "Execute the selected restore operation?"
-msgstr "Suorita valittu palautustoiminto?"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 374
-msgid "Internet Connection Required"
-msgstr "Internet-yhteys vaaditaan"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 375
-msgid ""
-"This restore option requires an internet connection to download packages and updates. Please check "
-"your network connection and try again."
 msgstr ""
-"Tämä palautusvaihtoehto vaatii internet-yhteyden pakettien ja päivitysten lataamista varten. "
-"Tarkista verkkoyhteytesi ja yritä uudelleen."
-# 
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 379
-# File: usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 533
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 235
+#: usr/share/biglinux/grub-restore/gui/window.py:457
+msgid "Operation Failed!"
+msgstr "Toiminto epäonnistui!"
+
+#: usr/share/biglinux/grub-restore/gui/window.py:459
+msgid "Boot Repair Completed"
+msgstr ""
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 236
+#: usr/share/biglinux/grub-restore/gui/window.py:460
+msgid "Intermediate Restore Completed"
+msgstr "Väli palautus valmis"
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 236
+#: usr/share/biglinux/grub-restore/gui/window.py:461
+msgid "Complete Restore Completed"
+msgstr "Täydellinen palautus suoritettu"
+
+#: usr/share/biglinux/grub-restore/gui/window.py:465
+msgid ""
+"The root configuration, initramfs, and GRUB boot files were validated. You "
+"can now restart your computer."
+msgstr ""
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 239
+#: usr/share/biglinux/grub-restore/gui/window.py:467
+msgid "The GRUB package was reinstalled and configurations were regenerated."
+msgstr "GRUB-paketti asennettiin uudelleen ja asetukset luotiin uudelleen."
+
+#: usr/share/biglinux/grub-restore/gui/window.py:468
+msgid "The system was updated and GRUB was restored."
+msgstr ""
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 242
+#: usr/share/biglinux/grub-restore/gui/window.py:471
+msgid "Operation Completed Successfully!"
+msgstr "Toiminto suoritettu onnistuneesti!"
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 242
+#: usr/share/biglinux/grub-restore/gui/window.py:473
+msgid "You can now close this tool and restart your computer."
+msgstr "Voit nyt sulkea tämän työkalun ja käynnistää tietokoneesi uudelleen."
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 259
+#: usr/share/biglinux/grub-restore/gui/window.py:481
+msgid "Copy"
+msgstr "Kopioi"
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 260
+#: usr/share/biglinux/grub-restore/gui/window.py:482
+msgid "Paste"
+msgstr "Liitä"
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 208
+#: usr/share/biglinux/grub-restore/gui/window.py:526
+msgid "Detection Failed"
+msgstr "Havaitseminen epäonnistui"
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 226
+#: usr/share/biglinux/grub-restore/gui/window.py:549
+msgid "No Systems Found"
+msgstr "Ei järjestelmiä löytynyt"
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 303
+#: usr/share/biglinux/grub-restore/gui/window.py:549
+msgid "No Linux installations could be detected on your drives."
+msgstr "Yhtään Linux-asennusta ei voitu havaita levyiltäsi."
+
+#: usr/share/biglinux/grub-restore/gui/window.py:558
+msgid "Partition:"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:558
+msgid "FS:"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:558
+#: usr/share/biglinux/grub-restore/gui/window.py:615
+msgid "N/A"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:558
+msgid "UUID:"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:597
+msgid ""
+"Only validated EFI System Partitions are shown. The best match is selected "
+"automatically when confidence is high."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:608
+msgid ""
+"No validated EFI System Partition was found. Reboot the live system in the "
+"firmware mode used by the installed system, or verify the disk partition "
+"table."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:612
+#, python-format
+msgid "%(size)s • %(model)s • disk %(disk)s"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:620
+msgid "Recommended"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:643
+msgid ""
+"Legacy mode writes GRUB to a whole disk. Verify the model and size before "
+"continuing."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:647
+msgid "Model:"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:647
+msgid "Partition Table:"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:712
+msgid "Verifying Selection"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:714
+msgid "Mounting the selected system safely for verification..."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:727
+msgid "Failed to mount the selected system for verification:"
+msgstr ""
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+#: usr/share/biglinux/grub-restore/gui/window.py:772
+msgid "Mount Failed"
+msgstr "Montaaminen epäonnistui"
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 490
+#: usr/share/biglinux/grub-restore/gui/window.py:792
+msgid "Live Boot Mode"
+msgstr "Live Boot -tila"
+
+#: usr/share/biglinux/grub-restore/gui/window.py:793
+msgid "Secure Boot"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:793
+msgid "Enabled"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:793
+msgid "Disabled"
+msgstr ""
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
+#: usr/share/biglinux/grub-restore/gui/window.py:794
+msgid "Selected System"
+msgstr "Valittu järjestelmä"
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 452
+#: usr/share/biglinux/grub-restore/gui/window.py:796
+msgid "Selected Partition"
+msgstr "Valittu osio"
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 453
+#: usr/share/biglinux/grub-restore/gui/window.py:799
+msgid "Partition UUID"
+msgstr "Osio UUID"
+
+#: usr/share/biglinux/grub-restore/gui/window.py:804
+msgid "Ready for repair"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:805
+msgid "Boot issues detected; repair is recommended"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:806
+msgid "Root configuration repair requires confirmation"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:807
+msgid "Repair blocked; review the detected errors"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:808
+msgid "Unknown status"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:809
+#: usr/share/biglinux/grub-restore/gui/window.py:880
+msgid "Boot Check"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:811
+msgid "Detected Root Subvolume"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:813
+msgid "Configured Root"
+msgstr ""
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 457
+#: usr/share/biglinux/grub-restore/gui/window.py:816
+msgid "Target (EFI Restore)"
+msgstr "Kohde (EFI Palautus)"
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 460
+#: usr/share/biglinux/grub-restore/gui/window.py:819
+msgid "Target (Legacy Restore)"
+msgstr "Kohde (Perinteinen palautus)"
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
+#: usr/share/biglinux/grub-restore/gui/window.py:822
+msgid "Disk Details"
+msgstr "Levy tiedot"
+
+#: usr/share/biglinux/grub-restore/gui/window.py:855
+msgid "Package repair is available only for BigLinux, Arch Linux, and Manjaro."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:858
+msgid "Complete system update is unavailable for this distribution."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:863
+msgid "Secure Boot Is Enabled"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:865
+msgid ""
+"GRUB files can be restored, but the firmware may reject an unsigned "
+"bootloader. Verify the distribution's Secure Boot support before restarting."
+msgstr ""
+
+#
+# File: usr/share/biglinux/grub-restore/gui/window.py, line: 475
+#: usr/share/biglinux/grub-restore/gui/window.py:868
+#: usr/share/biglinux/grub-restore/gui/window.py:883
+#: usr/share/biglinux/grub-restore/gui/window.py:899
 msgid "OK"
 msgstr "OK"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 379
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 533
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 379
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 533
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 386
-msgid "Simple Restore in Progress"
-msgstr "Yksinkertainen palautus käynnissä"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 387
-msgid "Intermediate Restore in Progress"
-msgstr "Väli palautus käynnissä"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 388
-msgid "Complete Restore in Progress"
-msgstr "Täydellinen palautus käynnissä"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 389
-msgid "Opening Interactive Terminal"
-msgstr "Avaaminen interaktiivinen terminaali"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 390
-msgid "Opening Control Center"
-msgstr "Avaamalla ohjauskeskuksen"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 391
-msgid "Opening Package Manager"
-msgstr "Avaamassa Pakettihallintoa"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 395
-msgid "Initializing..."
-msgstr "Alustetaan..."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 416
-msgid "Starting restore operation..."
-msgstr "Aloitetaan palautustoiminto..."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 423
-msgid "Opening interactive session..."
-msgstr "Avaaminen interaktiiviseen istuntoon..."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 458
-msgid "Restore completed successfully!"
-msgstr "Palautus onnistui!"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 461
-msgid "Restore failed. Please check the output above."
-msgstr "Palautus epäonnistui. Tarkista yllä oleva tuloste."
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 485
-msgid "Cancel Restore?"
-msgstr "Peruuta palautus?"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 486
-msgid "Are you sure you want to cancel the restore operation?"
-msgstr "Oletko varma, että haluat peruuttaa palautustoiminnon?"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 489
-msgid "No"
-msgstr "Ei"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 490
-msgid "Yes, Cancel"
-msgstr "Kyllä, Peruuta"
-# 
-# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/widgets/restore_options.py, line: 529
-msgid "Error"
-msgstr "Virhe"
+
+#: usr/share/biglinux/grub-restore/gui/window.py:873
+msgid "Boot Repair Is Blocked"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:874
+msgid "Root Configuration Problem Detected"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:875
+msgid "Boot Problems Detected"
+msgstr ""
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 472
+#: usr/share/biglinux/grub-restore/gui/window.py:894
+msgid "No Internet Connection Detected"
+msgstr "Ei internetyhteyttä havaittu"
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 473
+#: usr/share/biglinux/grub-restore/gui/window.py:896
+msgid ""
+"Intermediate and Complete restore options require an internet connection to "
+"download packages. These options may fail if your computer is offline."
+msgstr ""
+"Väli- ja täydellinen palautusvaihtoehdot vaativat internet-yhteyden "
+"pakettien lataamista varten. Nämä vaihtoehdot saattavat epäonnistua, jos "
+"tietokoneesi on offline-tilassa."
+
+#: usr/share/biglinux/grub-restore/gui/window.py:917
+msgid ""
+"Backups will be created before correcting the root or initramfs "
+"configuration."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:923
+msgid "Confirm Boot Configuration Repair"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:927
+msgid "Repair and Continue"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:950
+msgid "Confirm Package Repair"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:952
+msgid ""
+"This operation changes packages in the installed system. Keep the computer "
+"connected to power and do not close the application."
+msgstr ""
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 475
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 475
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 452
+#: usr/share/biglinux/grub-restore/gui/window.py:993
+msgid "Restore in Progress..."
+msgstr "Palautus käynnissä..."
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 455
+#: usr/share/biglinux/grub-restore/gui/window.py:1001
+msgid "Preparing Interactive Session..."
+msgstr "Valmistellaan vuorovaikutteista istuntoa..."
+
+#: usr/share/biglinux/grub-restore/gui/window.py:1014
+msgid "Cancelling and cleaning up..."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:1025
+msgid "Save Restore Log"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:1048
+#: usr/share/biglinux/grub-restore/gui/window.py:1050
+msgid "Could Not Save Log"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:1078
+#, python-format
+msgid "Restore process exited with code %d."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:1087
+msgid "Preparing mount points..."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:1088
+msgid "Preparing the package database..."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:1089
+msgid "Refreshing package signing keys..."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:1090
+msgid "Updating the installed system..."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:1091
+msgid "Reinstalling the GRUB package..."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:1092
+msgid "Installing GRUB for EFI..."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:1093
+msgid "Installing GRUB in Legacy mode..."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:1094
+msgid "Regenerating initramfs..."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:1095
+msgid "Generating the GRUB configuration..."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:1097
+msgid "Repairing the root filesystem configuration..."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:1099
+msgid "Repairing the initramfs configuration..."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:1100
+msgid "Validating the repaired boot files..."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:1101
+msgid "Checking the GRUB configuration..."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:1102
+msgid "Finishing the restore..."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:1116
+msgid "The selected root UUID changed after detection. Run detection again."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:1125
+msgid "The generated GRUB configuration is missing or empty."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:1128
+msgid "No bootable kernel image was found after the repair."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:1131
+msgid "No initramfs image was found after regeneration."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:1134
+msgid ""
+"The generated GRUB configuration does not reference the selected root UUID."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:1137
+msgid ""
+"The generated GRUB configuration does not reference the detected Btrfs root "
+"subvolume."
+msgstr ""
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 571
+#: usr/share/biglinux/grub-restore/gui/window.py:1144
+#: usr/share/biglinux/grub-restore/gui/window.py:1173
+msgid "VTE Terminal not available."
+msgstr "VTE-terminaali ei ole saatavilla."
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 557
+#: usr/share/biglinux/grub-restore/gui/window.py:1157
+#, python-format
+msgid ""
+"Failed to prepare chroot:\n"
+"%s"
+msgstr ""
+"Chrootin valmistelu epäonnistui:  \n"
+"%s"
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 565
+#: usr/share/biglinux/grub-restore/gui/window.py:1167
+#, python-format
+msgid "Failed to remove pacman lock: %s"
+msgstr "Ei voitu poistaa pacman-lukkoa: %s"
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 550
+#: usr/share/biglinux/grub-restore/gui/window.py:1189
+msgid "Interactive Session: Control Center"
+msgstr "Interaktiivinen istunto: Ohjauskeskus"
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 551
+#: usr/share/biglinux/grub-restore/gui/window.py:1190
+msgid "Interactive Session: Package Manager"
+msgstr "Vuorovaikutteinen Istunto: Pakettien Hallinta"
+
+#
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 508
+#: usr/share/biglinux/grub-restore/gui/window.py:1233
+msgid "Cleaning up session..."
+msgstr "Siivotaan istuntoa..."
+
+#: usr/share/biglinux/grub-restore/gui/window.py:1261
+msgid "The operation was cancelled. Review the log for cleanup details."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:1296
+msgid "A restore operation is still running"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:1297
+msgid "Closing now will cancel the operation and clean up mounted filesystems."
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:1299
+msgid "Keep Running"
+msgstr ""
+
+#: usr/share/biglinux/grub-restore/gui/window.py:1300
+msgid "Cancel and Close"
+msgstr ""
