@@ -816,6 +816,10 @@ msgid "The generated GRUB configuration does not reference the detected Btrfs ro
 msgstr "A configuração do GRUB gerada não referencia o subvolume raiz Btrfs detectado."
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 571
+#: usr/share/biglinux/grub-restore/gui/window.py:1174
+msgid "GRUB was restored, but a filesystem could not be unmounted."
+msgstr "O GRUB foi restaurado, mas não foi possível desmontar um sistema de arquivos."
+
 #: usr/share/biglinux/grub-restore/gui/window.py:1144
 #: usr/share/biglinux/grub-restore/gui/window.py:1173
 msgid "VTE Terminal not available."

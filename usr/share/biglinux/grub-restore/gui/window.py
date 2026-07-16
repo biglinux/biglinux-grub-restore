@@ -221,6 +221,7 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         selection_buttons = Gtk.Box(
             orientation=Gtk.Orientation.HORIZONTAL,
             spacing=12,
+            homogeneous=True,
             halign=Gtk.Align.CENTER,
             margin_bottom=12,
             margin_top=6,
@@ -1068,7 +1069,11 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
                     backend_error = line.removeprefix("EVENT:ERROR:").strip()
                     self.last_restore_error = self._translate_backend_error(backend_error)
                 if self.terminal:
-                    GLib.idle_add(self.terminal.feed, line.replace("\n", "\r\n").encode("utf-8"))
+                    colored_line = self._colorize_terminal_line(line)
+                    GLib.idle_add(
+                        self.terminal.feed,
+                        colored_line.replace("\n", "\r\n").encode("utf-8"),
+                    )
             self.current_process.wait()
             success = self.current_process.returncode == 0
             error_msg = None
@@ -1080,6 +1085,35 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
             GLib.idle_add(self._on_restore_finished, success, error_msg)
         except Exception as e:
             GLib.idle_add(self._on_restore_finished, False, str(e))
+
+    @staticmethod
+    def _colorize_terminal_line(line):
+        """Add ANSI colors to the terminal view without changing saved logs."""
+        if "\033[" in line:
+            return line
+        normalized = line.casefold()
+        color = ""
+        if any(
+            marker in normalized
+            for marker in ("no error reported", "completed", "success", "finished")
+        ):
+            color = "\033[1;32m"
+        elif any(marker in normalized for marker in ("error", "failed", "failure", "fatal")):
+            color = "\033[1;31m"
+        elif "warning" in normalized:
+            color = "\033[1;33m"
+        elif any(
+            marker in normalized
+            for marker in ("installing", "generating", "regenerating", "validating")
+        ):
+            color = "\033[1;32m"
+        elif any(marker in normalized for marker in ("mounting", "chroot executing")):
+            color = "\033[1;36m"
+        if not color:
+            return line
+        body = line.removesuffix("\n")
+        newline = "\n" if line.endswith("\n") else ""
+        return f"{color}{body}\033[0m{newline}"
 
     @staticmethod
     def _translate_backend_step(step):
@@ -1135,6 +1169,9 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
             ),
             "The generated GRUB configuration does not reference the detected Btrfs root subvolume.": _(
                 "The generated GRUB configuration does not reference the detected Btrfs root subvolume."
+            ),
+            "GRUB was restored, but a filesystem could not be unmounted.": _(
+                "GRUB was restored, but a filesystem could not be unmounted."
             ),
         }
         return translations.get(error, error)

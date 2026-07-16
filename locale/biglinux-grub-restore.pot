@@ -731,6 +731,11 @@ msgid   "The generated GRUB configuration does not reference the detected "
 msgstr  ""
 
 #
+# File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 1174
+msgid   "GRUB was restored, but a filesystem could not be unmounted."
+msgstr  ""
+
+#
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 1144
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 1173
 msgid   "VTE Terminal not available."

@@ -37,6 +37,53 @@ def test_cleanup_rejects_global_mount_point():
     assert "Unsafe mount point" in result.stderr
 
 
+def test_cleanup_retries_busy_mounts_before_succeeding():
+    script = r"""
+source "$1"
+MOUNT_POINT=/tmp/biglinux-grub-restore-test/mnt
+attempts=0
+findmnt() { printf '%s\n' "$MOUNT_POINT/boot/efi" "$MOUNT_POINT"; }
+umount() {
+    attempts=$((attempts + 1))
+    (( attempts > 2 ))
+}
+sleep() { :; }
+cleanup_mount_tree
+printf 'attempts=%s\n' "$attempts"
+"""
+
+    result = subprocess.run(
+        ["bash", "-c", script, "bash", BACKEND / "common.sh"],
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+
+    assert result.returncode == 0, result.stderr
+    assert "attempts=4" in result.stdout
+
+
+def test_cleanup_lazy_detaches_after_repeated_busy_mounts():
+    script = r"""
+source "$1"
+MOUNT_POINT=/tmp/biglinux-grub-restore-test/mnt
+findmnt() { printf '%s\n' "$MOUNT_POINT"; }
+umount() { [[ "$1" == "--lazy" ]]; }
+sleep() { :; }
+cleanup_mount_tree
+"""
+
+    result = subprocess.run(
+        ["bash", "-c", script, "bash", BACKEND / "common.sh"],
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+
+    assert result.returncode == 0, result.stderr
+    assert "lazy-detached busy recovery mount" in result.stderr
+
+
 def test_fstab_root_repair_creates_backup(tmp_path):
     mount_point = tmp_path / "mnt"
     fstab = mount_point / "etc/fstab"

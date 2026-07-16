@@ -85,12 +85,27 @@ require_block_device() {
 }
 
 cleanup_mount_tree() {
+    local pass
     local target
     local failed=0
     [[ -n "$MOUNT_POINT" ]] || return 0
+
+    for pass in 1 2 3; do
+        failed=0
+        while IFS= read -r target; do
+            [[ -n "$target" ]] || continue
+            umount -- "$target" 2>/dev/null || failed=1
+        done < <(findmnt -Rno TARGET "$MOUNT_POINT" 2>/dev/null | sort -r)
+        [[ "$failed" == 0 ]] && return 0
+        sleep 0.25
+    done
+
+    failed=0
     while IFS= read -r target; do
         [[ -n "$target" ]] || continue
-        if ! umount "$target" 2>/dev/null; then
+        if umount --lazy -- "$target" 2>/dev/null; then
+            log_message "Warning: lazy-detached busy recovery mount $target"
+        else
             log_message "Warning: could not unmount $target"
             failed=1
         fi
