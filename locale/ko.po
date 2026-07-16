@@ -7,22 +7,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: biglinux-grub-restore\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-16 18:59-0300\n"
-"PO-Revision-Date: 2026-07-16 17:35-0300\n"
 "Last-Translator: BigLinux Translation Team <translations@biglinux.com.br>\n"
 "Language-Team: ko\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line: 76
 #: usr/share/biglinux/grub-restore/main.py:94
 msgid "Root privileges are required."
 msgstr "루트 권한이 필요합니다."
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line: 77
 #: usr/share/biglinux/grub-restore/main.py:96
@@ -32,186 +28,147 @@ msgid ""
 msgstr ""
 "이 애플리케이션은 올바르게 작동하려면 루트로 실행해야 합니다. sudo 또는 "
 "pkexec로 실행하십시오."
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line: 125
 #: usr/share/biglinux/grub-restore/main.py:152
 msgid "Failed to load main application:"
 msgstr "주 애플리케이션을 로드하지 못했습니다:"
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line: 134
 #: usr/share/biglinux/grub-restore/main.py:161
 msgid "Restore the installed system - Error"
 msgstr "설치된 시스템 복원 - 오류"
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line: 138
 #: usr/share/biglinux/grub-restore/main.py:165
 msgid "Application Error"
 msgstr "응용 프로그램 오류"
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:154
 msgid "Linux system"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:305
 msgid "Could not unmount the temporary system inspection point."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:370
 msgid "Could not unmount the temporary EFI inspection point."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:390
 #: usr/share/biglinux/grub-restore/gui/window.py:614
 msgid "Unknown disk"
 msgstr ""
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/backend/system_interface.py, line: 43
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:416
 #, python-format
 msgid "System detection failed: %s"
 msgstr "시스템 감지 실패: %s"
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:439
 msgid "Configured as /boot/efi in the selected system"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:442
 msgid "Same physical disk as the selected system"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:445
 msgid "Contains an existing EFI boot directory"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:447
 msgid "Valid EFI System Partition"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:462
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:468
 msgid "Unknown size"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:523
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:774
 msgid "No system was selected."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:547
 #: usr/share/biglinux/grub-restore/gui/window.py:1110
 msgid "The selected root does not contain a recognizable Linux installation."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:553
 #: usr/share/biglinux/grub-restore/gui/window.py:1113
 msgid "The selected root filesystem has no UUID."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:561
 msgid "No root filesystem entry was found in /etc/fstab."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:569
 msgid "The root entry in /etc/fstab points to a different or missing device."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:577
 msgid ""
 "The root filesystem type in /etc/fstab does not match the detected system."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:589
 msgid "The root subvolume in /etc/fstab does not match the detected system."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:613
 msgid "No bootable kernel image was found in /boot."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:619
 msgid "No initramfs image was found; the repair must regenerate it."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:631
 #: usr/share/biglinux/grub-restore/gui/window.py:1119
 msgid "No supported initramfs generator was found in the installed system."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:646
 #: usr/share/biglinux/grub-restore/gui/window.py:1122
 msgid "No mkinitcpio preset was found; no initramfs can be regenerated safely."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:652
 msgid "The HOOKS array in /etc/mkinitcpio.conf could not be read."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:663
 msgid ""
 "The initramfs configuration is missing hooks required to find and mount the "
 "root filesystem."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:689
 msgid "The current GRUB configuration references a different root UUID."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:695
 msgid "The current GRUB configuration references a different Btrfs subvolume."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:701
 msgid "No GRUB configuration file was found; the repair must create it."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:715
 msgid "Btrfs reports device errors. Back up important data before writing."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:755
 #, python-format
 msgid "Invalid block device selected: %s"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:757
 #, python-format
 msgid "Selected block device no longer exists: %s"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:803
 msgid "The selected partition is not a validated EFI System Partition."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:810
 msgid "The selected GPT disk has no BIOS boot partition."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:816
 #: usr/share/biglinux/grub-restore/gui/window.py:1183
 msgid "Invalid restore mode."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:818
 msgid "This GRUB restore backend currently supports x86-64 only."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:821
 msgid ""
 "Package repair is supported only for BigLinux, Arch Linux, and Manjaro "
 "systems."
 msgstr ""
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/backend/system_interface.py, line: 138
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:844
 #, python-format
 msgid "Failed to execute restore: %s"
 msgstr "복원 실행 실패: %s"
-
 #
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 #
@@ -220,57 +177,47 @@ msgstr "복원 실행 실패: %s"
 #: usr/share/biglinux/grub-restore/gui/application.py:65
 msgid "BigLinux GRUB Restore"
 msgstr "빅리눅스 GRUB 복원"
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/application.py, line: 58
 #: usr/share/biglinux/grub-restore/gui/application.py:73
 msgid "A tool to restore the GRUB bootloader."
 msgstr "GRUB 부트로더를 복원하는 도구."
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 28
 #: usr/share/biglinux/grub-restore/gui/window.py:31
 msgid "Restore the installed system"
 msgstr "설치된 시스템 복원"
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 53
 #: usr/share/biglinux/grub-restore/gui/window.py:91
 msgid "About"
 msgstr "정보"
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 54
 #: usr/share/biglinux/grub-restore/gui/window.py:92
 msgid "Quit"
 msgstr "종료"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:130
 msgid "LIVE MODE"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:135
 msgid ""
 "Use this tool from a live system to restore the bootloader of an installed "
 "Linux system."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:145
 msgid ""
 "If the installed system starts correctly, do not continue: no boot repair is "
 "necessary."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:155
 msgid "Boot repair can also work with other Linux distributions."
 msgstr ""
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 98
 #: usr/share/biglinux/grub-restore/gui/window.py:163
 msgid "Start Detection"
 msgstr "탐지 시작"
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 109
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 139
@@ -278,32 +225,27 @@ msgstr "탐지 시작"
 #: usr/share/biglinux/grub-restore/gui/window.py:516
 msgid "Detecting Systems"
 msgstr "시스템 감지"
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 108
 #: usr/share/biglinux/grub-restore/gui/window.py:177
 #: usr/share/biglinux/grub-restore/gui/window.py:517
 msgid "Scanning your drives for Linux installations..."
 msgstr "드라이브에서 Linux 설치를 스캔하는 중..."
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 126
 #: usr/share/biglinux/grub-restore/gui/window.py:202
 msgid "1. Select Linux System to Restore"
 msgstr "1. 복원할 Linux 시스템 선택"
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 362
 #: usr/share/biglinux/grub-restore/gui/window.py:205
 msgid "2. Select Target EFI Partition"
 msgstr "대상 EFI 파티션 선택"
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 137
 #: usr/share/biglinux/grub-restore/gui/window.py:206
 msgid "2. Select Target Disk (MBR)"
 msgstr "대상 디스크 선택 (MBR)"
-
 #
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 300
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
@@ -311,7 +253,6 @@ msgstr "대상 디스크 선택 (MBR)"
 #: usr/share/biglinux/grub-restore/gui/window.py:956
 msgid "Continue"
 msgstr "계속"
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 247
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 537
@@ -320,13 +261,11 @@ msgstr "계속"
 #: usr/share/biglinux/grub-restore/gui/window.py:1334
 msgid "Go Back"
 msgstr "뒤로 가기"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:270
 msgid ""
 "Start with 'Diagnose and Repair Boot'. Package repair is needed only when "
 "GRUB itself is damaged or missing."
 msgstr ""
-
 #
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 #
@@ -335,33 +274,27 @@ msgstr ""
 #: usr/share/biglinux/grub-restore/gui/window.py:277
 msgid "Restore Methods"
 msgstr "복원 방법"
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 175
 #: usr/share/biglinux/grub-restore/gui/window.py:278
 msgid "Interactive Tools"
 msgstr "인터랙티브 도구"
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 181
 #: usr/share/biglinux/grub-restore/gui/window.py:280
 msgid "Configuration Summary"
 msgstr "구성 요약"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:288
 msgid "Change Selection"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:300
 msgid "Diagnose and Repair Boot"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:302
 msgid ""
 "Checks the root filesystem, rebuilds initramfs, reinstalls GRUB, and "
 "validates the result."
 msgstr ""
-
 #
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 #
@@ -370,12 +303,10 @@ msgstr ""
 #: usr/share/biglinux/grub-restore/gui/window.py:309
 msgid "Intermediate Restore"
 msgstr "중간 복원"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:310
 #: usr/share/biglinux/grub-restore/gui/window.py:842
 msgid "Requires internet. Reinstalls the GRUB package and regenerates configs."
 msgstr ""
-
 #
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 #
@@ -384,14 +315,12 @@ msgstr ""
 #: usr/share/biglinux/grub-restore/gui/window.py:316
 msgid "Complete Restore"
 msgstr "완전 복원"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:318
 #: usr/share/biglinux/grub-restore/gui/window.py:846
 msgid ""
 "Requires internet. Updates the system and restores GRUB without replacing "
 "the installed kernel."
 msgstr ""
-
 #
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 #
@@ -400,7 +329,6 @@ msgstr ""
 #: usr/share/biglinux/grub-restore/gui/window.py:325
 msgid "Interactive Terminal"
 msgstr "대화형 터미널"
-
 #
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 #
@@ -409,7 +337,6 @@ msgstr "대화형 터미널"
 #: usr/share/biglinux/grub-restore/gui/window.py:326
 msgid "Opens a terminal inside the selected system."
 msgstr "선택한 시스템 내에서 터미널을 엽니다."
-
 #
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 #
@@ -418,7 +345,6 @@ msgstr "선택한 시스템 내에서 터미널을 엽니다."
 #: usr/share/biglinux/grub-restore/gui/window.py:332
 msgid "Control Center"
 msgstr "제어 센터"
-
 #
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 #
@@ -427,7 +353,6 @@ msgstr "제어 센터"
 #: usr/share/biglinux/grub-restore/gui/window.py:333
 msgid "Opens the control center inside the selected system."
 msgstr "선택한 시스템 내에서 제어 센터를 엽니다."
-
 #
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 #
@@ -436,13 +361,11 @@ msgstr "선택한 시스템 내에서 제어 센터를 엽니다."
 #: usr/share/biglinux/grub-restore/gui/window.py:339
 msgid "Package Manager"
 msgstr "패키지 관리자"
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 185
 #: usr/share/biglinux/grub-restore/gui/window.py:340
 msgid "Opens the package manager inside the selected system."
 msgstr "선택한 시스템 내에서 패키지 관리자를 엽니다."
-
 #
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 #
@@ -456,19 +379,16 @@ msgstr "선택한 시스템 내에서 패키지 관리자를 엽니다."
 #: usr/share/biglinux/grub-restore/gui/window.py:352
 msgid "Execute"
 msgstr "실행"
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 223
 #: usr/share/biglinux/grub-restore/gui/window.py:394
 msgid "VTE terminal widget not available."
 msgstr "VTE 터미널 위젯을 사용할 수 없습니다."
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 226
 #: usr/share/biglinux/grub-restore/gui/window.py:405
 msgid "Close Terminal"
 msgstr "터미널 닫기"
-
 #
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 #
@@ -479,277 +399,222 @@ msgstr "터미널 닫기"
 #: usr/share/biglinux/grub-restore/gui/window.py:426
 msgid "Close"
 msgstr "닫기"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:440
 msgid "Copy Log"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:442
 msgid "Save Log"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:445
 #: usr/share/biglinux/grub-restore/gui/window.py:926
 #: usr/share/biglinux/grub-restore/gui/window.py:955
 msgid "Cancel"
 msgstr ""
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 235
 #: usr/share/biglinux/grub-restore/gui/window.py:457
 msgid "Operation Failed!"
 msgstr "작업 실패!"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:459
 msgid "Boot Repair Completed"
 msgstr ""
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 236
 #: usr/share/biglinux/grub-restore/gui/window.py:460
 msgid "Intermediate Restore Completed"
 msgstr "중간 복원 완료"
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 236
 #: usr/share/biglinux/grub-restore/gui/window.py:461
 msgid "Complete Restore Completed"
 msgstr "완전 복원 완료"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:465
 msgid ""
 "The root configuration, initramfs, and GRUB boot files were validated. You "
 "can now restart your computer."
 msgstr ""
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 239
 #: usr/share/biglinux/grub-restore/gui/window.py:467
 msgid "The GRUB package was reinstalled and configurations were regenerated."
 msgstr "GRUB 패키지가 재설치되었고 구성 파일이 재생성되었습니다."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:468
 msgid "The system was updated and GRUB was restored."
 msgstr ""
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 242
 #: usr/share/biglinux/grub-restore/gui/window.py:471
 msgid "Operation Completed Successfully!"
 msgstr "작업이 성공적으로 완료되었습니다!"
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 242
 #: usr/share/biglinux/grub-restore/gui/window.py:473
 msgid "You can now close this tool and restart your computer."
 msgstr "이 도구를 닫고 컴퓨터를 재시작할 수 있습니다."
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 259
 #: usr/share/biglinux/grub-restore/gui/window.py:481
 msgid "Copy"
 msgstr "복사"
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 260
 #: usr/share/biglinux/grub-restore/gui/window.py:482
 msgid "Paste"
 msgstr "붙여넣기"
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 208
 #: usr/share/biglinux/grub-restore/gui/window.py:526
 msgid "Detection Failed"
 msgstr "탐지 실패"
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 226
 #: usr/share/biglinux/grub-restore/gui/window.py:549
 msgid "No Systems Found"
 msgstr "시스템을 찾을 수 없습니다."
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 303
 #: usr/share/biglinux/grub-restore/gui/window.py:549
 msgid "No Linux installations could be detected on your drives."
 msgstr "드라이브에서 감지된 Linux 설치가 없습니다."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:558
 msgid "Partition:"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:558
 msgid "FS:"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:558
 #: usr/share/biglinux/grub-restore/gui/window.py:615
 msgid "N/A"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:558
 msgid "UUID:"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:597
 msgid ""
 "Only validated EFI System Partitions are shown. The best match is selected "
 "automatically when confidence is high."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:608
 msgid ""
 "No validated EFI System Partition was found. Reboot the live system in the "
 "firmware mode used by the installed system, or verify the disk partition "
 "table."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:612
 #, python-format
 msgid "%(size)s • %(model)s • disk %(disk)s"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:620
 msgid "Recommended"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:643
 msgid ""
 "Legacy mode writes GRUB to a whole disk. Verify the model and size before "
 "continuing."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:647
 msgid "Model:"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:647
 msgid "Partition Table:"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:712
 msgid "Verifying Selection"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:714
 msgid "Mounting the selected system safely for verification..."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:727
 msgid "Failed to mount the selected system for verification:"
 msgstr ""
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
 #: usr/share/biglinux/grub-restore/gui/window.py:772
 msgid "Mount Failed"
 msgstr "마운트 실패"
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 490
 #: usr/share/biglinux/grub-restore/gui/window.py:792
 msgid "Live Boot Mode"
 msgstr "라이브 부트 모드"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:793
 msgid "Secure Boot"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:793
 msgid "Enabled"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:793
 msgid "Disabled"
 msgstr ""
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 451
 #: usr/share/biglinux/grub-restore/gui/window.py:794
 msgid "Selected System"
 msgstr "선택한 시스템"
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 452
 #: usr/share/biglinux/grub-restore/gui/window.py:796
 msgid "Selected Partition"
 msgstr "선택한 파티션"
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 453
 #: usr/share/biglinux/grub-restore/gui/window.py:799
 msgid "Partition UUID"
 msgstr "파티션 UUID"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:804
 msgid "Ready for repair"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:805
 msgid "Boot issues detected; repair is recommended"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:806
 msgid "Root configuration repair requires confirmation"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:807
 msgid "Repair blocked; review the detected errors"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:808
 msgid "Unknown status"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:809
 #: usr/share/biglinux/grub-restore/gui/window.py:880
 msgid "Boot Check"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:811
 msgid "Detected Root Subvolume"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:813
 msgid "Configured Root"
 msgstr ""
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 457
 #: usr/share/biglinux/grub-restore/gui/window.py:816
 msgid "Target (EFI Restore)"
 msgstr "대상 (EFI 복원)"
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 460
 #: usr/share/biglinux/grub-restore/gui/window.py:819
 msgid "Target (Legacy Restore)"
 msgstr "대상 (레거시 복원)"
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 461
 #: usr/share/biglinux/grub-restore/gui/window.py:822
 msgid "Disk Details"
 msgstr "디스크 세부정보"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:855
 msgid "Package repair is available only for BigLinux, Arch Linux, and Manjaro."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:858
 msgid "Complete system update is unavailable for this distribution."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:863
 msgid "Secure Boot Is Enabled"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:865
 msgid ""
 "GRUB files can be restored, but the firmware may reject an unsigned "
 "bootloader. Verify the distribution's Secure Boot support before restarting."
 msgstr ""
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 475
 #: usr/share/biglinux/grub-restore/gui/window.py:868
@@ -757,25 +622,20 @@ msgstr ""
 #: usr/share/biglinux/grub-restore/gui/window.py:899
 msgid "OK"
 msgstr "알겠습니다."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:873
 msgid "Boot Repair Is Blocked"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:874
 msgid "Root Configuration Problem Detected"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:875
 msgid "Boot Problems Detected"
 msgstr ""
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 472
 #: usr/share/biglinux/grub-restore/gui/window.py:894
 msgid "No Internet Connection Detected"
 msgstr "인터넷 연결이 감지되지 않았습니다."
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 473
 #: usr/share/biglinux/grub-restore/gui/window.py:896
@@ -785,31 +645,25 @@ msgid ""
 msgstr ""
 "중간 및 전체 복원 옵션은 패키지를 다운로드하기 위해 인터넷 연결이 필요합니"
 "다. 컴퓨터가 오프라인인 경우 이러한 옵션이 실패할 수 있습니다."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:917
 msgid ""
 "Backups will be created before correcting the root or initramfs "
 "configuration."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:923
 msgid "Confirm Boot Configuration Repair"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:927
 msgid "Repair and Continue"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:950
 msgid "Confirm Package Repair"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:952
 msgid ""
 "This operation changes packages in the installed system. Keep the computer "
 "connected to power and do not close the application."
 msgstr ""
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 475
 #
@@ -817,121 +671,94 @@ msgstr ""
 #: usr/share/biglinux/grub-restore/gui/window.py:993
 msgid "Restore in Progress..."
 msgstr "복원 진행 중..."
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 455
 #: usr/share/biglinux/grub-restore/gui/window.py:1001
 msgid "Preparing Interactive Session..."
 msgstr "인터랙티브 세션 준비 중..."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1014
 msgid "Cancelling and cleaning up..."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1025
 msgid "Save Restore Log"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1048
 #: usr/share/biglinux/grub-restore/gui/window.py:1050
 msgid "Could Not Save Log"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1078
 #, python-format
 msgid "Restore process exited with code %d."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1087
 msgid "Preparing mount points..."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1088
 msgid "Preparing the package database..."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1089
 msgid "Refreshing package signing keys..."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1090
 msgid "Updating the installed system..."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1091
 msgid "Reinstalling the GRUB package..."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1092
 msgid "Installing GRUB for EFI..."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1093
 msgid "Installing GRUB in Legacy mode..."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1094
 msgid "Regenerating initramfs..."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1095
 msgid "Generating the GRUB configuration..."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1097
 msgid "Repairing the root filesystem configuration..."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1099
 msgid "Repairing the initramfs configuration..."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1100
 msgid "Validating the repaired boot files..."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1101
 msgid "Checking the GRUB configuration..."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1102
 msgid "Finishing the restore..."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1116
 msgid "The selected root UUID changed after detection. Run detection again."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1125
 msgid "The generated GRUB configuration is missing or empty."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1128
 msgid "No bootable kernel image was found after the repair."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1131
 msgid "No initramfs image was found after regeneration."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1134
 msgid ""
 "The generated GRUB configuration does not reference the selected root UUID."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1137
 msgid ""
 "The generated GRUB configuration does not reference the detected Btrfs root "
 "subvolume."
 msgstr ""
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 571
 #: usr/share/biglinux/grub-restore/gui/window.py:1144
 #: usr/share/biglinux/grub-restore/gui/window.py:1173
 msgid "VTE Terminal not available."
 msgstr "VTE 터미널을 사용할 수 없습니다."
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 557
 #: usr/share/biglinux/grub-restore/gui/window.py:1157
@@ -940,48 +767,39 @@ msgid ""
 "Failed to prepare chroot:\n"
 "%s"
 msgstr "chroot 준비에 실패했습니다: %s"
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 565
 #: usr/share/biglinux/grub-restore/gui/window.py:1167
 #, python-format
 msgid "Failed to remove pacman lock: %s"
 msgstr "pacman 잠금 해제를 실패했습니다: %s"
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 550
 #: usr/share/biglinux/grub-restore/gui/window.py:1189
 msgid "Interactive Session: Control Center"
 msgstr "인터랙티브 세션: 제어 센터"
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 551
 #: usr/share/biglinux/grub-restore/gui/window.py:1190
 msgid "Interactive Session: Package Manager"
 msgstr "인터랙티브 세션: 패키지 관리자"
-
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 508
 #: usr/share/biglinux/grub-restore/gui/window.py:1233
 msgid "Cleaning up session..."
 msgstr "세션 정리 중..."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1261
 msgid "The operation was cancelled. Review the log for cleanup details."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1296
 msgid "A restore operation is still running"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1297
 msgid "Closing now will cancel the operation and clean up mounted filesystems."
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1299
 msgid "Keep Running"
 msgstr ""
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1300
 msgid "Cancel and Close"
 msgstr ""
