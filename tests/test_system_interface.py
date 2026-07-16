@@ -126,16 +126,25 @@ class FakeRunner:
     def __init__(self, block_inventory):
         self.block_inventory = block_inventory
         self.calls = []
+        self.os_prober_output = "/dev/nvme0n1p2:BigCommunity:BigLinux:linux\n"
+        self.mount_returncode = 32
+        self.btrfs_subvolume_output = ""
 
     def __call__(self, args, **kwargs):
         self.calls.append(args)
         if args[0] == "lsblk":
             return subprocess.CompletedProcess(args, 0, json.dumps(self.block_inventory), "")
         if args[0] == "os-prober":
-            output = "/dev/nvme0n1p2:BigCommunity:BigLinux:linux\n"
-            return subprocess.CompletedProcess(args, 0, output, "")
+            return subprocess.CompletedProcess(args, 0, self.os_prober_output, "")
         if args[0] == "mount":
-            return subprocess.CompletedProcess(args, 32, "", "fixture does not mount")
+            return subprocess.CompletedProcess(
+                args,
+                self.mount_returncode,
+                "",
+                "" if self.mount_returncode == 0 else "fixture does not mount",
+            )
+        if args[:3] == ["btrfs", "subvolume", "list"]:
+            return subprocess.CompletedProcess(args, 0, self.btrfs_subvolume_output, "")
         return subprocess.CompletedProcess(args, 0, "", "")
 
 
@@ -154,6 +163,38 @@ def test_detection_excludes_live_and_regular_fat_partitions(tmp_path):
     assert [item["partition"] for item in interface.detected_systems] == ["/dev/nvme0n1p2"]
     assert interface.detected_systems[0]["disk"] == "/dev/nvme0n1"
     assert "/dev/sda" not in [item["device"] for item in interface.grub_disks]
+
+
+def test_detection_inspects_filesystems_when_os_prober_returns_nothing(tmp_path):
+    interface, runner = build_interface(tmp_path)
+    runner.os_prober_output = ""
+    runner.mount_returncode = 0
+    runner.btrfs_subvolume_output = "ID 256 gen 1 top level 5 path @\n"
+    (interface.probe_point / "@/etc").mkdir(parents=True)
+    (interface.probe_point / "@/etc/os-release").write_text(
+        'ID=biglinux\nPRETTY_NAME="BigLinux fallback"\n', encoding="utf-8"
+    )
+
+    interface.detect_systems()
+
+    assert [item["partition"] for item in interface.detected_systems] == ["/dev/nvme0n1p2"]
+    assert interface.detected_systems[0]["name"] == "BigLinux fallback"
+    assert interface.detected_systems[0]["root_subvol"] == "@"
+
+
+def test_filesystem_fallback_excludes_every_partition_on_live_disk(tmp_path):
+    block_inventory = inventory()
+    block_inventory["blockdevices"][0]["children"].append(
+        device("/dev/sda2", "part", fstype="ext4", uuid="LIVE-ROOT")
+    )
+    interface = SystemInterface(
+        command_runner=FakeRunner(block_inventory), runtime_dir=tmp_path / "session"
+    )
+    interface._load_block_inventory()
+
+    candidates = interface._filesystem_system_candidates()
+
+    assert "/dev/sda2" not in [item["partition"] for item in candidates]
 
 
 def test_recommends_esp_on_same_physical_disk(tmp_path):

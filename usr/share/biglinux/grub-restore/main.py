@@ -54,7 +54,7 @@ def main():
             )
 
             env_vars_to_preserve = []
-            for var in ["DISPLAY", "XAUTHORITY", "DBUS_SESSION_BUS_ADDRESS", "WAYLAND_DISPLAY"]:
+            for var in ["DISPLAY", "XAUTHORITY", "WAYLAND_DISPLAY", "XDG_RUNTIME_DIR"]:
                 if var in os.environ:
                     env_vars_to_preserve.append(f"{var}={os.environ[var]}")
 

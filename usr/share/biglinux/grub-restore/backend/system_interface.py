@@ -21,6 +21,17 @@ from utils.translation import _
 EFI_PARTTYPE_GUID = "c12a7328-f81f-11d2-ba4b-00a0c93ec93b"
 BIOS_BOOT_PARTTYPE_GUID = "21686148-6449-6e6f-744e-656564454649"
 SUPPORTED_DISTROS = {"arch", "biglinux", "bigcommunity", "manjaro"}
+LINUX_ROOT_FILESYSTEMS = {
+    "btrfs",
+    "ext2",
+    "ext3",
+    "ext4",
+    "f2fs",
+    "jfs",
+    "nilfs2",
+    "reiserfs",
+    "xfs",
+}
 
 
 class SystemInterface:
@@ -170,6 +181,41 @@ class SystemInterface:
             )
         return systems
 
+    def _filesystem_system_candidates(self):
+        """Return non-live block devices that can contain a Linux root."""
+        live_disks = self._live_disks()
+        candidates = []
+        for device in self.block_devices:
+            filesystem = (device.get("fstype") or "").lower()
+            if device.get("type") not in {"part", "crypt", "lvm"}:
+                continue
+            if filesystem not in LINUX_ROOT_FILESYSTEMS:
+                continue
+            disk = self._top_disk(device["path"])
+            if disk and os.path.realpath(disk["path"]) in live_disks:
+                continue
+            candidates.append(
+                {
+                    "partition": device["path"],
+                    "name": device.get("label") or device.get("partlabel") or _("Linux system"),
+                    "description": "",
+                    "type": "linux",
+                    "filesystem": filesystem,
+                    "uuid": device.get("uuid") or "",
+                    "root_subvol": "",
+                    "fstab_root_spec": "",
+                    "fstab_root_path": "",
+                    "fstab_root_subvol": "",
+                    "boot_partition": "",
+                    "boot_subvol": "",
+                    "efi_partition": "",
+                    "efi_mountpoint": "/boot/efi",
+                    "distro_id": "",
+                    "supported": False,
+                }
+            )
+        return candidates
+
     @staticmethod
     def _parse_os_release(path):
         values = {}
@@ -264,7 +310,7 @@ class SystemInterface:
                 timeout=15,
             )
             if result.returncode != 0:
-                return
+                return False
             if filesystem == "btrfs":
                 result = self._run_command(
                     ["btrfs", "subvolume", "list", str(self.probe_point)],
@@ -292,13 +338,14 @@ class SystemInterface:
                     preferred_name = subvol in {"@", "root", "@root"}
                     roots.append((not name_match, not preferred_name, len(subvol), subvol, root))
             if not roots:
-                return
+                return False
             roots.sort()
             _name_rank, _preferred_rank, _length, subvol, root = roots[0]
             system["root_subvol"] = subvol
             self._read_installation_metadata(root, system)
+            return True
         except (OSError, subprocess.SubprocessError):
-            return
+            return False
         finally:
             self._unmount_probe(
                 self.probe_point,
@@ -406,6 +453,17 @@ class SystemInterface:
             self.detected_systems = self._parse_os_prober(result.stdout)
             for system in self.detected_systems:
                 self._inspect_system(system)
+            known_devices = {
+                os.path.realpath(system["partition"]) for system in self.detected_systems
+            }
+            for candidate in self._filesystem_system_candidates():
+                canonical = os.path.realpath(candidate["partition"])
+                if canonical in known_devices:
+                    continue
+                if self._inspect_system(candidate):
+                    self.detected_systems.append(candidate)
+                    known_devices.add(canonical)
+            for system in self.detected_systems:
                 disk = self._top_disk(system["partition"])
                 system["disk"] = disk["path"] if disk else ""
             self.efi_partitions = self._detect_efi_partitions()
