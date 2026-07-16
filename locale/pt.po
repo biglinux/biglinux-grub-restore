@@ -7,22 +7,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: biglinux-grub-restore\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-16 19:31-0300\n"
-"PO-Revision-Date: 2026-07-16 17:35-0300\n"
 "Last-Translator: BigLinux Translation Team <translations@biglinux.com.br>\n"
 "Language-Team: pt\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line:
 # 76
 #: usr/share/biglinux/grub-restore/main.py:94
 msgid "Root privileges are required."
 msgstr "São necessárias permissões de root."
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line:
 # 77
 #: usr/share/biglinux/grub-restore/main.py:96
@@ -32,133 +28,107 @@ msgid ""
 msgstr ""
 "Este aplicativo deve ser executado como root para funcionar corretamente. "
 "Por favor, execute-o com sudo ou pkexec."
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line:
 # 125
 #: usr/share/biglinux/grub-restore/main.py:152
 msgid "Failed to load main application:"
 msgstr "Falha ao carregar o aplicativo principal:"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line:
 # 134
 #: usr/share/biglinux/grub-restore/main.py:161
 msgid "Restore the installed system - Error"
 msgstr "Restaurar o sistema instalado - Erro"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/main.py, line:
 # 138
 #: usr/share/biglinux/grub-restore/main.py:165
 msgid "Application Error"
 msgstr "Erro de Aplicativo"
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:165
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:200
 msgid "Linux system"
 msgstr "Sistema Linux"
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:352
 msgid "Could not unmount the temporary system inspection point."
 msgstr "Não foi possível desmontar o ponto temporário de inspeção do sistema."
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:417
 msgid "Could not unmount the temporary EFI inspection point."
 msgstr "Não foi possível desmontar o ponto temporário de inspeção EFI."
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:437
 #: usr/share/biglinux/grub-restore/gui/window.py:614
 msgid "Unknown disk"
 msgstr "Disco desconhecido"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-
 # restore/backend/system_interface.py, line: 43
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:474
 #, python-format
 msgid "System detection failed: %s"
 msgstr "Falha na detecção do sistema: %s"
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:497
 msgid "Configured as /boot/efi in the selected system"
 msgstr "Configurada como /boot/efi no sistema selecionado"
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:500
 msgid "Same physical disk as the selected system"
 msgstr "Mesmo disco físico do sistema selecionado"
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:503
 msgid "Contains an existing EFI boot directory"
 msgstr "Contém um diretório de inicialização EFI existente"
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:505
 msgid "Valid EFI System Partition"
 msgstr "Partição do Sistema EFI válida"
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:520
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:526
 msgid "Unknown size"
 msgstr "Tamanho desconhecido"
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:581
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:832
 msgid "No system was selected."
 msgstr "Nenhum sistema foi selecionado."
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:605
 #: usr/share/biglinux/grub-restore/gui/window.py:1110
 msgid "The selected root does not contain a recognizable Linux installation."
 msgstr "A raiz selecionada não contém uma instalação Linux reconhecível."
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:611
 #: usr/share/biglinux/grub-restore/gui/window.py:1113
 msgid "The selected root filesystem has no UUID."
 msgstr "O sistema de arquivos raiz selecionado não tem UUID."
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:619
 msgid "No root filesystem entry was found in /etc/fstab."
 msgstr ""
 "Nenhuma entrada para o sistema de arquivos raiz foi encontrada em /etc/fstab."
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:627
 msgid "The root entry in /etc/fstab points to a different or missing device."
 msgstr ""
 "A entrada da raiz em /etc/fstab aponta para um dispositivo diferente ou "
 "ausente."
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:635
 msgid ""
 "The root filesystem type in /etc/fstab does not match the detected system."
 msgstr ""
 "O tipo do sistema de arquivos raiz em /etc/fstab não corresponde ao sistema "
 "detectado."
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:647
 msgid "The root subvolume in /etc/fstab does not match the detected system."
 msgstr "O subvolume raiz em /etc/fstab não corresponde ao sistema detectado."
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:671
 msgid "No bootable kernel image was found in /boot."
 msgstr "Nenhuma imagem de kernel inicializável foi encontrada em /boot."
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:677
 msgid "No initramfs image was found; the repair must regenerate it."
 msgstr "Nenhuma imagem initramfs foi encontrada; o reparo precisa regenerá-la."
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:689
 #: usr/share/biglinux/grub-restore/gui/window.py:1119
 msgid "No supported initramfs generator was found in the installed system."
 msgstr ""
 "Nenhum gerador de initramfs compatível foi encontrado no sistema instalado."
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:704
 #: usr/share/biglinux/grub-restore/gui/window.py:1122
 msgid "No mkinitcpio preset was found; no initramfs can be regenerated safely."
 msgstr ""
 "Nenhum preset do mkinitcpio foi encontrado; não é possível regenerar o "
 "initramfs com segurança."
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:710
 msgid "The HOOKS array in /etc/mkinitcpio.conf could not be read."
 msgstr "Não foi possível ler o array HOOKS em /etc/mkinitcpio.conf."
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:721
 msgid ""
 "The initramfs configuration is missing hooks required to find and mount the "
@@ -166,56 +136,45 @@ msgid ""
 msgstr ""
 "A configuração do initramfs não contém os hooks necessários para localizar e "
 "montar o sistema de arquivos raiz."
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:747
 msgid "The current GRUB configuration references a different root UUID."
 msgstr "A configuração atual do GRUB referencia um UUID de raiz diferente."
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:753
 msgid "The current GRUB configuration references a different Btrfs subvolume."
 msgstr "A configuração atual do GRUB referencia um subvolume Btrfs diferente."
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:759
 msgid "No GRUB configuration file was found; the repair must create it."
 msgstr ""
 "Nenhum arquivo de configuração do GRUB foi encontrado; o reparo precisa criá-"
 "lo."
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:773
 msgid "Btrfs reports device errors. Back up important data before writing."
 msgstr ""
 "O Btrfs relata erros de dispositivo. Faça backup dos dados importantes antes "
 "de realizar qualquer gravação."
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:813
 #, python-format
 msgid "Invalid block device selected: %s"
 msgstr "Dispositivo de bloco inválido selecionado: %s"
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:815
 #, python-format
 msgid "Selected block device no longer exists: %s"
 msgstr "O dispositivo de bloco selecionado não existe mais: %s"
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:861
 msgid "The selected partition is not a validated EFI System Partition."
 msgstr "A partição selecionada não é uma Partição do Sistema EFI validada."
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:868
 msgid "The selected GPT disk has no BIOS boot partition."
 msgstr "O disco GPT selecionado não possui uma partição de inicialização BIOS."
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:874
 #: usr/share/biglinux/grub-restore/gui/window.py:1183
 msgid "Invalid restore mode."
 msgstr "Modo de restauração inválido."
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:876
 msgid "This GRUB restore backend currently supports x86-64 only."
 msgstr ""
 "Este backend de restauração do GRUB oferece suporte apenas a x86-64 no "
 "momento."
-
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:879
 msgid ""
 "Package repair is supported only for BigLinux, Arch Linux, and Manjaro "
@@ -223,14 +182,12 @@ msgid ""
 msgstr ""
 "O reparo de pacotes é compatível apenas com sistemas BigLinux, Arch Linux e "
 "Manjaro."
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-
 # restore/backend/system_interface.py, line: 138
 #: usr/share/biglinux/grub-restore/backend/system_interface.py:902
 #, python-format
 msgid "Failed to execute restore: %s"
 msgstr "Falha ao executar a restauração: %s"
-
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-
@@ -240,35 +197,29 @@ msgstr "Falha ao executar a restauração: %s"
 #: usr/share/biglinux/grub-restore/gui/application.py:66
 msgid "BigLinux GRUB Restore"
 msgstr "Restauração do GRUB do BigLinux"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-
 # restore/gui/application.py, line: 58
 #: usr/share/biglinux/grub-restore/gui/application.py:74
 msgid "A tool to restore the GRUB bootloader."
 msgstr "Uma ferramenta para restaurar o carregador de inicialização GRUB."
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 28
 #: usr/share/biglinux/grub-restore/gui/window.py:31
 msgid "Restore the installed system"
 msgstr "Restaurar o sistema instalado"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 53
 #: usr/share/biglinux/grub-restore/gui/window.py:91
 msgid "About"
 msgstr "Sobre"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 54
 #: usr/share/biglinux/grub-restore/gui/window.py:92
 msgid "Quit"
 msgstr "Sair"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:130
 msgid "LIVE MODE"
 msgstr "MODO LIVE"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:135
 msgid ""
 "Use this tool from a live system to restore the bootloader of an installed "
@@ -276,7 +227,6 @@ msgid ""
 msgstr ""
 "Use esta ferramenta em um sistema live para restaurar o carregador de "
 "inicialização de um sistema Linux instalado."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:145
 msgid ""
 "If the installed system starts correctly, do not continue: no boot repair is "
@@ -284,19 +234,16 @@ msgid ""
 msgstr ""
 "Se o sistema instalado inicia corretamente, não continue: nenhum reparo de "
 "inicialização é necessário."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:155
 msgid "Boot repair can also work with other Linux distributions."
 msgstr ""
 "O reparo da inicialização também pode funcionar com outras distribuições "
 "Linux."
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 98
 #: usr/share/biglinux/grub-restore/gui/window.py:163
 msgid "Start Detection"
 msgstr "Iniciar Detecção"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 109
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
@@ -305,39 +252,33 @@ msgstr "Iniciar Detecção"
 #: usr/share/biglinux/grub-restore/gui/window.py:516
 msgid "Detecting Systems"
 msgstr "Detectando Sistemas"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 108
 #: usr/share/biglinux/grub-restore/gui/window.py:177
 #: usr/share/biglinux/grub-restore/gui/window.py:517
 msgid "Scanning your drives for Linux installations..."
 msgstr "Escaneando seus drives em busca de instalações do Linux..."
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 126
 #: usr/share/biglinux/grub-restore/gui/window.py:202
 msgid "1. Select Linux System to Restore"
 msgstr "1. Selecione o Sistema Linux para Restaurar"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 362
 #: usr/share/biglinux/grub-restore/gui/window.py:205
 msgid "2. Select Target EFI Partition"
 msgstr "2. Selecione a Partição EFI de Destino"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 137
 #: usr/share/biglinux/grub-restore/gui/window.py:206
 msgid "2. Select Target Disk (MBR)"
 msgstr "2. Selecionar Disco de Destino (MBR)"
-
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 300
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 356
 #: usr/share/biglinux/grub-restore/gui/window.py:212
 #: usr/share/biglinux/grub-restore/gui/window.py:956
 msgid "Continue"
 msgstr "Continuar"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 247
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
@@ -347,7 +288,6 @@ msgstr "Continuar"
 #: usr/share/biglinux/grub-restore/gui/window.py:1334
 msgid "Go Back"
 msgstr "Voltar"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:270
 msgid ""
 "Start with 'Diagnose and Repair Boot'. Package repair is needed only when "
@@ -355,7 +295,6 @@ msgid ""
 msgstr ""
 "Comece por 'Diagnosticar e reparar a inicialização'. O reparo de pacotes só "
 "é necessário quando o próprio GRUB está danificado ou ausente."
-
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
@@ -365,27 +304,22 @@ msgstr ""
 #: usr/share/biglinux/grub-restore/gui/window.py:277
 msgid "Restore Methods"
 msgstr "Métodos de Restauração"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 175
 #: usr/share/biglinux/grub-restore/gui/window.py:278
 msgid "Interactive Tools"
 msgstr "Ferramentas Interativas"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 181
 #: usr/share/biglinux/grub-restore/gui/window.py:280
 msgid "Configuration Summary"
 msgstr "Resumo da Configuração"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:288
 msgid "Change Selection"
 msgstr "Alterar seleção"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:300
 msgid "Diagnose and Repair Boot"
 msgstr "Diagnosticar e reparar a inicialização"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:302
 msgid ""
 "Checks the root filesystem, rebuilds initramfs, reinstalls GRUB, and "
@@ -393,7 +327,6 @@ msgid ""
 msgstr ""
 "Verifica o sistema de arquivos raiz, reconstrói o initramfs, reinstala o "
 "GRUB e valida o resultado."
-
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
@@ -403,12 +336,10 @@ msgstr ""
 #: usr/share/biglinux/grub-restore/gui/window.py:309
 msgid "Intermediate Restore"
 msgstr "Restauração Intermediária"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:310
 #: usr/share/biglinux/grub-restore/gui/window.py:842
 msgid "Requires internet. Reinstalls the GRUB package and regenerates configs."
 msgstr "Requer internet. Reinstala o pacote GRUB e regenera as configurações."
-
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
@@ -418,7 +349,6 @@ msgstr "Requer internet. Reinstala o pacote GRUB e regenera as configurações."
 #: usr/share/biglinux/grub-restore/gui/window.py:316
 msgid "Complete Restore"
 msgstr "Restauração Completa"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:318
 #: usr/share/biglinux/grub-restore/gui/window.py:846
 msgid ""
@@ -427,7 +357,6 @@ msgid ""
 msgstr ""
 "Requer internet. Atualiza o sistema e restaura o GRUB sem substituir o "
 "kernel instalado."
-
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
@@ -437,7 +366,6 @@ msgstr ""
 #: usr/share/biglinux/grub-restore/gui/window.py:325
 msgid "Interactive Terminal"
 msgstr "Terminal Interativo"
-
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
@@ -447,7 +375,6 @@ msgstr "Terminal Interativo"
 #: usr/share/biglinux/grub-restore/gui/window.py:326
 msgid "Opens a terminal inside the selected system."
 msgstr "Abre um terminal dentro do sistema selecionado."
-
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
@@ -457,7 +384,6 @@ msgstr "Abre um terminal dentro do sistema selecionado."
 #: usr/share/biglinux/grub-restore/gui/window.py:332
 msgid "Control Center"
 msgstr "Central de Controle"
-
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
@@ -467,7 +393,6 @@ msgstr "Central de Controle"
 #: usr/share/biglinux/grub-restore/gui/window.py:333
 msgid "Opens the control center inside the selected system."
 msgstr "Abre o centro de controle dentro do sistema selecionado."
-
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
@@ -477,13 +402,11 @@ msgstr "Abre o centro de controle dentro do sistema selecionado."
 #: usr/share/biglinux/grub-restore/gui/window.py:339
 msgid "Package Manager"
 msgstr "Gerenciador de Pacotes"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 185
 #: usr/share/biglinux/grub-restore/gui/window.py:340
 msgid "Opens the package manager inside the selected system."
 msgstr "Abre o gerenciador de pacotes dentro do sistema selecionado."
-
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
@@ -503,19 +426,16 @@ msgstr "Abre o gerenciador de pacotes dentro do sistema selecionado."
 #: usr/share/biglinux/grub-restore/gui/window.py:352
 msgid "Execute"
 msgstr "Executar"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 223
 #: usr/share/biglinux/grub-restore/gui/window.py:394
 msgid "VTE terminal widget not available."
 msgstr "O widget do terminal VTE não está disponível."
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 226
 #: usr/share/biglinux/grub-restore/gui/window.py:405
 msgid "Close Terminal"
 msgstr "Fechar Terminal"
-
 # #-#-#-#-#  biglinux-grub-restore.pot (biglinux-grub-restore)  #-#-#-#-#
 #
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
@@ -529,43 +449,35 @@ msgstr "Fechar Terminal"
 #: usr/share/biglinux/grub-restore/gui/window.py:426
 msgid "Close"
 msgstr "Fechar"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:440
 msgid "Copy Log"
 msgstr "Copiar log"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:442
 msgid "Save Log"
 msgstr "Salvar log"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:445
 #: usr/share/biglinux/grub-restore/gui/window.py:926
 #: usr/share/biglinux/grub-restore/gui/window.py:955
 msgid "Cancel"
 msgstr "Cancelar"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 235
 #: usr/share/biglinux/grub-restore/gui/window.py:457
 msgid "Operation Failed!"
 msgstr "Operação Falhou!"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:459
 msgid "Boot Repair Completed"
 msgstr "Reparo da inicialização concluído"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 236
 #: usr/share/biglinux/grub-restore/gui/window.py:460
 msgid "Intermediate Restore Completed"
 msgstr "Restauração Intermediária Concluída"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 236
 #: usr/share/biglinux/grub-restore/gui/window.py:461
 msgid "Complete Restore Completed"
 msgstr "Restauração Completa Concluída"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:465
 msgid ""
 "The root configuration, initramfs, and GRUB boot files were validated. You "
@@ -573,76 +485,62 @@ msgid ""
 msgstr ""
 "A configuração da raiz, o initramfs e os arquivos de inicialização do GRUB "
 "foram validados. Agora você pode reiniciar o computador."
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 239
 #: usr/share/biglinux/grub-restore/gui/window.py:467
 msgid "The GRUB package was reinstalled and configurations were regenerated."
 msgstr "O pacote GRUB foi reinstalado e as configurações foram regeneradas."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:468
 msgid "The system was updated and GRUB was restored."
 msgstr "O sistema foi atualizado e o GRUB foi restaurado."
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 242
 #: usr/share/biglinux/grub-restore/gui/window.py:471
 msgid "Operation Completed Successfully!"
 msgstr "Operação concluída com sucesso!"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 242
 #: usr/share/biglinux/grub-restore/gui/window.py:473
 msgid "You can now close this tool and restart your computer."
 msgstr "Você pode agora fechar esta ferramenta e reiniciar seu computador."
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 259
 #: usr/share/biglinux/grub-restore/gui/window.py:481
 msgid "Copy"
 msgstr "Copiar"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 260
 #: usr/share/biglinux/grub-restore/gui/window.py:482
 msgid "Paste"
 msgstr "Colar"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 208
 #: usr/share/biglinux/grub-restore/gui/window.py:526
 msgid "Detection Failed"
 msgstr "Detecção Falhou"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 226
 #: usr/share/biglinux/grub-restore/gui/window.py:549
 msgid "No Systems Found"
 msgstr "Nenhum sistema encontrado"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 303
 #: usr/share/biglinux/grub-restore/gui/window.py:549
 msgid "No Linux installations could be detected on your drives."
 msgstr "Nenhuma instalação do Linux pôde ser detectada em seus discos."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:558
 msgid "Partition:"
 msgstr "Partição:"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:558
 msgid "FS:"
 msgstr "Sist. de arquivos:"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:558
 #: usr/share/biglinux/grub-restore/gui/window.py:615
 msgid "N/A"
 msgstr "N/D"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:558
 msgid "UUID:"
 msgstr "UUID:"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:597
 msgid ""
 "Only validated EFI System Partitions are shown. The best match is selected "
@@ -650,7 +548,6 @@ msgid ""
 msgstr ""
 "Somente Partições do Sistema EFI validadas são exibidas. A melhor "
 "correspondência é selecionada automaticamente quando há alta confiança."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:608
 msgid ""
 "No validated EFI System Partition was found. Reboot the live system in the "
@@ -660,16 +557,13 @@ msgstr ""
 "Nenhuma Partição do Sistema EFI validada foi encontrada. Reinicie o sistema "
 "live no modo de firmware usado pelo sistema instalado ou verifique a tabela "
 "de partições do disco."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:612
 #, python-format
 msgid "%(size)s • %(model)s • disk %(disk)s"
 msgstr "%(size)s • %(model)s • disco %(disk)s"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:620
 msgid "Recommended"
 msgstr "Recomendado"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:643
 msgid ""
 "Legacy mode writes GRUB to a whole disk. Verify the model and size before "
@@ -677,135 +571,107 @@ msgid ""
 msgstr ""
 "O modo Legacy grava o GRUB em um disco inteiro. Confira o modelo e o tamanho "
 "antes de continuar."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:647
 msgid "Model:"
 msgstr "Modelo:"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:647
 msgid "Partition Table:"
 msgstr "Tabela de partições:"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:712
 msgid "Verifying Selection"
 msgstr "Verificando a seleção"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:714
 msgid "Mounting the selected system safely for verification..."
 msgstr "Montando o sistema selecionado com segurança para verificação..."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:727
 msgid "Failed to mount the selected system for verification:"
 msgstr "Falha ao montar o sistema selecionado para verificação:"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 461
 #: usr/share/biglinux/grub-restore/gui/window.py:772
 msgid "Mount Failed"
 msgstr "Montagem Falhou"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 490
 #: usr/share/biglinux/grub-restore/gui/window.py:792
 msgid "Live Boot Mode"
 msgstr "Modo de Inicialização ao Vivo"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:793
 msgid "Secure Boot"
 msgstr "Secure Boot"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:793
 msgid "Enabled"
 msgstr "Ativado"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:793
 msgid "Disabled"
 msgstr "Desativado"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 451
 #: usr/share/biglinux/grub-restore/gui/window.py:794
 msgid "Selected System"
 msgstr "Sistema Selecionado"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 452
 #: usr/share/biglinux/grub-restore/gui/window.py:796
 msgid "Selected Partition"
 msgstr "Partição Selecionada"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 453
 #: usr/share/biglinux/grub-restore/gui/window.py:799
 msgid "Partition UUID"
 msgstr "UUID da Partição"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:804
 msgid "Ready for repair"
 msgstr "Pronto para o reparo"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:805
 msgid "Boot issues detected; repair is recommended"
 msgstr "Problemas de inicialização detectados; recomenda-se o reparo"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:806
 msgid "Root configuration repair requires confirmation"
 msgstr "O reparo da configuração da raiz requer confirmação"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:807
 msgid "Repair blocked; review the detected errors"
 msgstr "Reparo bloqueado; revise os erros detectados"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:808
 msgid "Unknown status"
 msgstr "Status desconhecido"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:809
 #: usr/share/biglinux/grub-restore/gui/window.py:880
 msgid "Boot Check"
 msgstr "Verificação da inicialização"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:811
 msgid "Detected Root Subvolume"
 msgstr "Subvolume raiz detectado"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:813
 msgid "Configured Root"
 msgstr "Raiz configurada"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 457
 #: usr/share/biglinux/grub-restore/gui/window.py:816
 msgid "Target (EFI Restore)"
 msgstr "Alvo (Restauração EFI)"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 460
 #: usr/share/biglinux/grub-restore/gui/window.py:819
 msgid "Target (Legacy Restore)"
 msgstr "Alvo (Restauração Legada)"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 461
 #: usr/share/biglinux/grub-restore/gui/window.py:822
 msgid "Disk Details"
 msgstr "Detalhes do Disco"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:855
 msgid "Package repair is available only for BigLinux, Arch Linux, and Manjaro."
 msgstr ""
 "O reparo de pacotes está disponível apenas para BigLinux, Arch Linux e "
 "Manjaro."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:858
 msgid "Complete system update is unavailable for this distribution."
 msgstr ""
 "A atualização completa do sistema não está disponível para esta distribuição."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:863
 msgid "Secure Boot Is Enabled"
 msgstr "O Secure Boot está ativado"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:865
 msgid ""
 "GRUB files can be restored, but the firmware may reject an unsigned "
@@ -814,32 +680,26 @@ msgstr ""
 "Os arquivos do GRUB podem ser restaurados, mas o firmware pode rejeitar um "
 "carregador de inicialização não assinado. Verifique o suporte da "
 "distribuição ao Secure Boot antes de reiniciar."
-
 # File: usr/share/biglinux/grub-restore/gui/window.py, line: 475
 #: usr/share/biglinux/grub-restore/gui/window.py:868
 #: usr/share/biglinux/grub-restore/gui/window.py:883
 #: usr/share/biglinux/grub-restore/gui/window.py:899
 msgid "OK"
 msgstr "OK"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:873
 msgid "Boot Repair Is Blocked"
 msgstr "O reparo da inicialização está bloqueado"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:874
 msgid "Root Configuration Problem Detected"
 msgstr "Problema detectado na configuração da raiz"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:875
 msgid "Boot Problems Detected"
 msgstr "Problemas de inicialização detectados"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 472
 #: usr/share/biglinux/grub-restore/gui/window.py:894
 msgid "No Internet Connection Detected"
 msgstr "Nenhuma conexão com a Internet detectada"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 473
 #: usr/share/biglinux/grub-restore/gui/window.py:896
@@ -850,7 +710,6 @@ msgstr ""
 "As opções de restauração Intermediária e Completa requerem uma conexão com a "
 "internet para baixar pacotes. Essas opções podem falhar se o seu computador "
 "estiver offline."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:917
 msgid ""
 "Backups will be created before correcting the root or initramfs "
@@ -858,19 +717,15 @@ msgid ""
 msgstr ""
 "Serão criados backups antes de corrigir a configuração da raiz ou do "
 "initramfs."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:923
 msgid "Confirm Boot Configuration Repair"
 msgstr "Confirmar reparo da configuração de inicialização"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:927
 msgid "Repair and Continue"
 msgstr "Reparar e continuar"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:950
 msgid "Confirm Package Repair"
 msgstr "Confirmar reparo de pacotes"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:952
 msgid ""
 "This operation changes packages in the installed system. Keep the computer "
@@ -878,7 +733,6 @@ msgid ""
 msgstr ""
 "Esta operação altera pacotes no sistema instalado. Mantenha o computador "
 "conectado à energia e não feche o aplicativo."
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 475
 #
@@ -890,111 +744,86 @@ msgstr ""
 #: usr/share/biglinux/grub-restore/gui/window.py:993
 msgid "Restore in Progress..."
 msgstr "Restauração em Andamento..."
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 455
 #: usr/share/biglinux/grub-restore/gui/window.py:1001
 msgid "Preparing Interactive Session..."
 msgstr "Preparando Sessão Interativa..."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1014
 msgid "Cancelling and cleaning up..."
 msgstr "Cancelando e limpando..."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1025
 msgid "Save Restore Log"
 msgstr "Salvar log da restauração"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1048
 #: usr/share/biglinux/grub-restore/gui/window.py:1050
 msgid "Could Not Save Log"
 msgstr "Não foi possível salvar o log"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1078
 #, python-format
 msgid "Restore process exited with code %d."
 msgstr "O processo de restauração terminou com o código %d."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1087
 msgid "Preparing mount points..."
 msgstr "Preparando os pontos de montagem..."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1088
 msgid "Preparing the package database..."
 msgstr "Preparando o banco de dados de pacotes..."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1089
 msgid "Refreshing package signing keys..."
 msgstr "Atualizando as chaves de assinatura de pacotes..."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1090
 msgid "Updating the installed system..."
 msgstr "Atualizando o sistema instalado..."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1091
 msgid "Reinstalling the GRUB package..."
 msgstr "Reinstalando o pacote GRUB..."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1092
 msgid "Installing GRUB for EFI..."
 msgstr "Instalando o GRUB para EFI..."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1093
 msgid "Installing GRUB in Legacy mode..."
 msgstr "Instalando o GRUB no modo Legacy..."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1094
 msgid "Regenerating initramfs..."
 msgstr "Regenerando o initramfs..."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1095
 msgid "Generating the GRUB configuration..."
 msgstr "Gerando a configuração do GRUB..."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1097
 msgid "Repairing the root filesystem configuration..."
 msgstr "Reparando a configuração do sistema de arquivos raiz..."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1099
 msgid "Repairing the initramfs configuration..."
 msgstr "Reparando a configuração do initramfs..."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1100
 msgid "Validating the repaired boot files..."
 msgstr "Validando os arquivos de inicialização reparados..."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1101
 msgid "Checking the GRUB configuration..."
 msgstr "Verificando a configuração do GRUB..."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1102
 msgid "Finishing the restore..."
 msgstr "Finalizando a restauração..."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1116
 msgid "The selected root UUID changed after detection. Run detection again."
 msgstr ""
 "O UUID da raiz selecionada mudou após a detecção. Execute a detecção "
 "novamente."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1125
 msgid "The generated GRUB configuration is missing or empty."
 msgstr "A configuração do GRUB gerada está ausente ou vazia."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1128
 msgid "No bootable kernel image was found after the repair."
 msgstr "Nenhuma imagem de kernel inicializável foi encontrada após o reparo."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1131
 msgid "No initramfs image was found after regeneration."
 msgstr "Nenhuma imagem initramfs foi encontrada após a regeneração."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1134
 msgid ""
 "The generated GRUB configuration does not reference the selected root UUID."
 msgstr ""
 "A configuração do GRUB gerada não referencia o UUID da raiz selecionada."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1137
 msgid ""
 "The generated GRUB configuration does not reference the detected Btrfs root "
@@ -1002,14 +831,12 @@ msgid ""
 msgstr ""
 "A configuração do GRUB gerada não referencia o subvolume raiz Btrfs "
 "detectado."
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 571
 #: usr/share/biglinux/grub-restore/gui/window.py:1144
 #: usr/share/biglinux/grub-restore/gui/window.py:1173
 msgid "VTE Terminal not available."
 msgstr "Terminal VTE não disponível."
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 557
 #: usr/share/biglinux/grub-restore/gui/window.py:1157
@@ -1018,50 +845,41 @@ msgid ""
 "Failed to prepare chroot:\n"
 "%s"
 msgstr "Falha ao preparar chroot: %s"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 565
 #: usr/share/biglinux/grub-restore/gui/window.py:1167
 #, python-format
 msgid "Failed to remove pacman lock: %s"
 msgstr "Falha ao remover o bloqueio do pacman: %s"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 550
 #: usr/share/biglinux/grub-restore/gui/window.py:1189
 msgid "Interactive Session: Control Center"
 msgstr "Sessão Interativa: Centro de Controle"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 551
 #: usr/share/biglinux/grub-restore/gui/window.py:1190
 msgid "Interactive Session: Package Manager"
 msgstr "Sessão Interativa: Gerenciador de Pacotes"
-
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py,
 # line: 508
 #: usr/share/biglinux/grub-restore/gui/window.py:1233
 msgid "Cleaning up session..."
 msgstr "Limpando a sessão..."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1261
 msgid "The operation was cancelled. Review the log for cleanup details."
 msgstr ""
 "A operação foi cancelada. Consulte o log para ver os detalhes da limpeza."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1296
 msgid "A restore operation is still running"
 msgstr "Uma operação de restauração ainda está em andamento"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1297
 msgid "Closing now will cancel the operation and clean up mounted filesystems."
 msgstr ""
 "Fechar agora cancelará a operação e limpará os sistemas de arquivos montados."
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1299
 msgid "Keep Running"
 msgstr "Manter em execução"
-
 #: usr/share/biglinux/grub-restore/gui/window.py:1300
 msgid "Cancel and Close"
 msgstr "Cancelar e fechar"
