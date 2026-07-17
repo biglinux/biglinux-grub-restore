@@ -549,6 +549,8 @@ msgstr "OK"
 #: usr/share/biglinux/grub-restore/gui/window.py:873
 msgid "Boot Repair Is Blocked"
 msgstr ""
+"Voorbereiden van chroot is mislukt:  \n"
+"%s"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 874
 #: usr/share/biglinux/grub-restore/gui/window.py:874

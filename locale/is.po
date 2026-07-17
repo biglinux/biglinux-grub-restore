@@ -549,6 +549,8 @@ msgstr "Í lagi"
 #: usr/share/biglinux/grub-restore/gui/window.py:873
 msgid "Boot Repair Is Blocked"
 msgstr ""
+"Mistók að undirbúa chroot:  \n"
+"%s"
 # 
 # File: biglinux-grub-restore/usr/share/biglinux/grub-restore/gui/window.py, line: 874
 #: usr/share/biglinux/grub-restore/gui/window.py:874
