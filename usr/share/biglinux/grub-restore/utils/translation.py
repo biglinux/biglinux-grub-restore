@@ -5,9 +5,13 @@
 """
 
 import gettext
+from pathlib import Path
 
 # Configure the translation domain/name
-gettext.textdomain("biglinux-grub-restore")
+DOMAIN = "biglinux-grub-restore"
+LOCALE_DIR = Path(__file__).resolve().parents[3] / "locale"
+gettext.bindtextdomain(DOMAIN, LOCALE_DIR)
+gettext.textdomain(DOMAIN)
 
 # Export _ directly as the translation function
 _ = gettext.gettext

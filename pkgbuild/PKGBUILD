@@ -3,11 +3,11 @@
 pkgname=biglinux-grub-restore
 pkgver=$(date +%y.%m.%d)
 pkgrel=$(date +%H%M)
-arch=('any')
-license=('GPL')
+arch=('x86_64')
+license=('GPL-2.0-or-later')
 url="https://github.com/biglinux/biglinux-grub-restore"
 pkgdesc="Restore your installed system"
-depends=('libadwaita' 'gtk4' 'python' 'python-gobject' 'vte4' 'mkinitcpio' 'grub' 'os-prober' 'pamac-cli' 'pacman' 'util-linux' 'manjaro-tools-base' 'xorg-xhost')
+depends=('btrfs-progs' 'grub' 'gtk4' 'libadwaita' 'manjaro-tools-base' 'mkinitcpio' 'os-prober' 'pacman' 'pamac-cli' 'polkit' 'python' 'python-gobject' 'util-linux' 'vte4')
 source=("git+https://github.com/biglinux/biglinux-grub-restore.git")
 md5sums=(SKIP)
 
@@ -32,6 +32,6 @@ package() {
     if [ -d "${InternalDir}/opt" ]; then
         cp -r "${InternalDir}/opt" "${pkgdir}/"
     fi
+
+    install -Dm644 "${InternalDir}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }
-
-

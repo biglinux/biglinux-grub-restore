@@ -11,10 +11,10 @@
 ##################################
 
 # Change to application directory
-cd /usr/share/biglinux/grub-restore
+cd /usr/share/biglinux/grub-restore || exit 1
 
 # Permission to root use graphical apps
 xhost +si:localuser:root
 
 # Execute the Python application
-exec python main.py "$@"
+exec python3 main.py "$@"
