@@ -519,3 +519,43 @@ def test_legacy_targets_skip_zram(tmp_path):
     interface.detect_systems()
 
     assert [disk["device"] for disk in interface.grub_disks] == ["/dev/nvme0n1", "/dev/sdb"]
+
+
+def grub_on(*disks):
+    def read_boot_sector(path):
+        return b"\xeb\x63\x90GRUB \x00Geom" if path in disks else b"\x00" * 512
+
+    return staticmethod(read_boot_sector)
+
+
+def test_legacy_targets_mark_grub_and_boot_disk(tmp_path, monkeypatch):
+    monkeypatch.setattr(SystemInterface, "_read_boot_sector", grub_on("/dev/sdb"))
+    interface, _runner = build_interface(tmp_path)
+    interface.detect_systems()
+
+    marks = {disk["device"]: disk["has_grub"] for disk in interface.grub_disks}
+
+    assert marks == {"/dev/nvme0n1": False, "/dev/sdb": True}
+    assert interface.recommend_grub_disk(selected_system()) == "/dev/nvme0n1"
+
+
+def test_diagnosis_warns_of_other_grub_disks(tmp_path, monkeypatch):
+    monkeypatch.setattr(SystemInterface, "_read_boot_sector", grub_on("/dev/nvme0n1", "/dev/sdb"))
+    interface, _runner = build_interface(tmp_path)
+    interface.detect_systems()
+    interface.save_selection(
+        selected_system(), selected_disk="/dev/nvme0n1", effective_boot_mode="LEGACY"
+    )
+    create_boot_fixture(
+        interface,
+        root_spec="UUID=ROOT-UUID",
+        fstab_subvol="@system",
+        grub_uuid="ROOT-UUID",
+        grub_subvol="@system",
+    )
+
+    report = interface.diagnose_mounted_system()
+
+    assert [issue["code"] for issue in report["issues"]] == ["grub_on_other_disks"]
+    assert "/dev/sdb" in report["issues"][0]["message"]
+    assert report["status"] == "warning"

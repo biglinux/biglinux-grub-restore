@@ -644,12 +644,27 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
                     "Legacy mode writes GRUB to a whole disk. Verify the model and size before continuing."
                 )
             )
+            recommended_disk = (
+                self.system_interface.recommend_grub_disk(self.selected_system)
+                if self.selected_system
+                else None
+            )
             for index, disk in enumerate(self.system_interface.grub_disks):
                 subtitle = f"{_('Model:')} {disk['name']} | {_('Partition Table:')} {disk['table'].upper()}"
                 row = Adw.ActionRow(
                     title=f"{disk['device']} ({self.system_interface.format_size(disk['size'])})",
                     subtitle=subtitle,
                 )
+                if disk["has_grub"]:
+                    tag = Gtk.Label(label=_("Has GRUB"), css_classes=["caption", "pill"])
+                    tag.set_tooltip_text(_("GRUB is already installed on this disk."))
+                    row.add_prefix(tag)
+                if disk["device"] == recommended_disk:
+                    tag = Gtk.Label(
+                        label=_("Recommended"), css_classes=["accent", "caption", "pill"]
+                    )
+                    tag.set_tooltip_text(_("This disk holds the system's /boot."))
+                    row.add_prefix(tag)
                 check = Gtk.CheckButton(css_classes=["radio"])
                 if self.legacy_boot_target_check_buttons:
                     check.set_group(self.legacy_boot_target_check_buttons[0])
@@ -664,7 +679,7 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
                 row.set_activatable_widget(check)
                 self.legacy_group.add(row)
                 self.legacy_rows.append(row)
-                if len(self.system_interface.grub_disks) == 1:
+                if len(self.system_interface.grub_disks) == 1 or disk["device"] == recommended_disk:
                     check.set_active(True)
 
     def _check_selection_completeness(self):

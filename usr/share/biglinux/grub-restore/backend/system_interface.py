@@ -440,9 +440,30 @@ class SystemInterface:
                     "name": device.get("model") or device.get("name") or _("Unknown disk"),
                     "table": (device.get("pttype") or "unknown").lower(),
                     "has_bios_boot": has_bios_boot,
+                    "has_grub": b"GRUB" in self._read_boot_sector(device["path"]),
                 }
             )
         return disks
+
+    @staticmethod
+    def _read_boot_sector(path):
+        """The first sector of a disk, where a BIOS GRUB leaves its signature.
+
+        Empty when the disk cannot be read: the mark is a hint, and the disk
+        stays selectable either way.
+        """
+        try:
+            with open(path, "rb") as disk:
+                return disk.read(512)
+        except OSError:
+            return b""
+
+    def recommend_grub_disk(self, system):
+        """The disk holding the system's /boot, which install-grub writes to."""
+        top = self._top_disk(system.get("boot_partition") or system.get("partition"))
+        if top and any(disk["device"] == top["path"] for disk in self.grub_disks):
+            return top["path"]
+        return None
 
     def detect_systems(self):
         """Discover devices without unmounting anything owned by the user."""
@@ -775,6 +796,27 @@ class SystemInterface:
                     "warning",
                     _("Btrfs reports device errors. Back up important data before writing."),
                     confirmation=True,
+                )
+
+        # Linux cannot tell which disk the BIOS starts from. When another disk
+        # also carries GRUB, that one may be the loader the BIOS runs, and it
+        # keeps its old version after this repair.
+        if self.effective_boot_mode == "LEGACY":
+            other_grub_disks = [
+                disk["device"]
+                for disk in self.grub_disks
+                if disk["has_grub"] and disk["device"] != self.selected_disk
+            ]
+            if other_grub_disks:
+                add_issue(
+                    "grub_on_other_disks",
+                    "warning",
+                    _(
+                        "GRUB is also installed on %s. The computer starts from only one "
+                        'disk: if it still stops at "grub rescue" after this repair, repeat '
+                        "the repair choosing that disk."
+                    )
+                    % ", ".join(other_grub_disks),
                 )
 
         blocking = any(issue["severity"] == "error" and not issue["repairable"] for issue in issues)
