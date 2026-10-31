@@ -510,3 +510,12 @@ def test_backend_arguments_include_root_identity(tmp_path, monkeypatch):
 
     assert arguments[arguments.index("--root-uuid") + 1] == "ROOT-UUID"
     assert arguments[arguments.index("--root-subvol") + 1] == "@system"
+
+
+def test_legacy_targets_skip_zram(tmp_path):
+    interface, runner = build_interface(tmp_path)
+    runner.block_inventory["blockdevices"].append(device("/dev/zram0", "disk", size=4_000_000))
+
+    interface.detect_systems()
+
+    assert [disk["device"] for disk in interface.grub_disks] == ["/dev/nvme0n1", "/dev/sdb"]

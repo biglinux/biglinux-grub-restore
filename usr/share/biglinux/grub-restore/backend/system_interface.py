@@ -425,6 +425,9 @@ class SystemInterface:
                 continue
             if os.path.realpath(device["path"]) in live_disks:
                 continue
+            # Compressed swap in memory reports itself as a disk.
+            if (device.get("name") or "").startswith("zram"):
+                continue
             has_bios_boot = any(
                 child.get("parent_path") == device["path"]
                 and (child.get("parttype") or "").lower() == BIOS_BOOT_PARTTYPE_GUID
