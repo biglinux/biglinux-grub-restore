@@ -221,6 +221,7 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
         selection_buttons = Gtk.Box(
             orientation=Gtk.Orientation.HORIZONTAL,
             spacing=12,
+            homogeneous=True,
             halign=Gtk.Align.CENTER,
             margin_bottom=12,
             margin_top=6,
@@ -513,6 +514,10 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
 
     # Event Handlers & Logic
     def _on_start_detection(self, button):
+        self.skipped_luks_partitions = set()
+        self._start_detection()
+
+    def _start_detection(self):
         self.detection_page.set_title(_("Detecting Systems"))
         self.detection_page.set_description(_("Scanning your drives for Linux installations..."))
         self.view_stack.set_visible_child_name("detection")
@@ -521,9 +526,80 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
     def _run_detection_thread(self):
         try:
             self.system_interface.detect_systems()
-            GLib.idle_add(self._populate_selection_page)
+            GLib.idle_add(self._on_detection_finished)
         except Exception as e:
             GLib.idle_add(self._show_error, _("Detection Failed"), str(e))
+
+    def _on_detection_finished(self):
+        locked = [
+            partition
+            for partition in self.system_interface.locked_luks_partitions()
+            if partition["path"] not in self.skipped_luks_partitions
+        ]
+        if locked:
+            self._ask_luks_passphrase(locked[0])
+        else:
+            self._populate_selection_page()
+
+    def _ask_luks_passphrase(self, partition, error=None):
+        body = _(
+            "%(device)s (%(size)s) is encrypted. Enter its passphrase so the system "
+            "installed on it can be found and repaired."
+        ) % {
+            "device": partition["path"],
+            "size": self.system_interface.format_size(partition.get("size")),
+        }
+        if error:
+            body = f"{error}\n\n{body}"
+        dialog = Adw.AlertDialog(heading=_("Unlock the Encrypted Partition"), body=body)
+        entry = Adw.PasswordEntryRow(title=_("Passphrase"), activates_default=True)
+        passphrase_list = Gtk.ListBox(
+            css_classes=["boxed-list"], selection_mode=Gtk.SelectionMode.NONE
+        )
+        passphrase_list.append(entry)
+        dialog.set_extra_child(passphrase_list)
+        dialog.add_response("skip", _("Skip"))
+        dialog.add_response("unlock", _("Unlock"))
+        dialog.set_response_appearance("unlock", Adw.ResponseAppearance.SUGGESTED)
+        dialog.set_response_enabled("unlock", False)
+        dialog.set_default_response("unlock")
+        dialog.set_close_response("skip")
+        entry.connect(
+            "changed",
+            lambda row: row.get_ancestor(Adw.AlertDialog).set_response_enabled(
+                "unlock", bool(row.get_text())
+            ),
+        )
+        dialog.connect("response", self._on_luks_response, partition, entry)
+        dialog.present(self)
+        entry.grab_focus()
+
+    def _on_luks_response(self, _dialog, response, partition, entry):
+        if response != "unlock":
+            self.skipped_luks_partitions.add(partition["path"])
+            self._on_detection_finished()
+            return
+        passphrase = entry.get_text()
+        self.detection_page.set_title(_("Unlocking the Encrypted Partition"))
+        self.detection_page.set_description(partition["path"])
+        threading.Thread(
+            target=self._run_luks_unlock_thread, args=(partition, passphrase), daemon=True
+        ).start()
+
+    def _run_luks_unlock_thread(self, partition, passphrase):
+        try:
+            unlocked = self.system_interface.unlock_luks(partition["path"], passphrase)
+        except Exception as e:
+            GLib.idle_add(self._show_error, _("Unlock Failed"), str(e))
+            return
+        if not unlocked:
+            GLib.idle_add(
+                self._ask_luks_passphrase,
+                partition,
+                _("The passphrase was not accepted. Check the keyboard layout and try again."),
+            )
+            return
+        GLib.idle_add(self._start_detection)
 
     def _populate_selection_page(self):
         for row in self.system_rows:
@@ -643,12 +719,27 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
                     "Legacy mode writes GRUB to a whole disk. Verify the model and size before continuing."
                 )
             )
+            recommended_disk = (
+                self.system_interface.recommend_grub_disk(self.selected_system)
+                if self.selected_system
+                else None
+            )
             for index, disk in enumerate(self.system_interface.grub_disks):
                 subtitle = f"{_('Model:')} {disk['name']} | {_('Partition Table:')} {disk['table'].upper()}"
                 row = Adw.ActionRow(
                     title=f"{disk['device']} ({self.system_interface.format_size(disk['size'])})",
                     subtitle=subtitle,
                 )
+                if disk["has_grub"]:
+                    tag = Gtk.Label(label=_("Has GRUB"), css_classes=["caption", "pill"])
+                    tag.set_tooltip_text(_("GRUB is already installed on this disk."))
+                    row.add_prefix(tag)
+                if disk["device"] == recommended_disk:
+                    tag = Gtk.Label(
+                        label=_("Recommended"), css_classes=["accent", "caption", "pill"]
+                    )
+                    tag.set_tooltip_text(_("This disk holds the system's /boot."))
+                    row.add_prefix(tag)
                 check = Gtk.CheckButton(css_classes=["radio"])
                 if self.legacy_boot_target_check_buttons:
                     check.set_group(self.legacy_boot_target_check_buttons[0])
@@ -663,7 +754,7 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
                 row.set_activatable_widget(check)
                 self.legacy_group.add(row)
                 self.legacy_rows.append(row)
-                if len(self.system_interface.grub_disks) == 1:
+                if len(self.system_interface.grub_disks) == 1 or disk["device"] == recommended_disk:
                     check.set_active(True)
 
     def _check_selection_completeness(self):
@@ -1068,7 +1159,11 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
                     backend_error = line.removeprefix("EVENT:ERROR:").strip()
                     self.last_restore_error = self._translate_backend_error(backend_error)
                 if self.terminal:
-                    GLib.idle_add(self.terminal.feed, line.replace("\n", "\r\n").encode("utf-8"))
+                    colored_line = self._colorize_terminal_line(line)
+                    GLib.idle_add(
+                        self.terminal.feed,
+                        colored_line.replace("\n", "\r\n").encode("utf-8"),
+                    )
             self.current_process.wait()
             success = self.current_process.returncode == 0
             error_msg = None
@@ -1080,6 +1175,35 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
             GLib.idle_add(self._on_restore_finished, success, error_msg)
         except Exception as e:
             GLib.idle_add(self._on_restore_finished, False, str(e))
+
+    @staticmethod
+    def _colorize_terminal_line(line):
+        """Add ANSI colors to the terminal view without changing saved logs."""
+        if "\033[" in line:
+            return line
+        normalized = line.casefold()
+        color = ""
+        if any(
+            marker in normalized
+            for marker in ("no error reported", "completed", "success", "finished")
+        ):
+            color = "\033[1;32m"
+        elif any(marker in normalized for marker in ("error", "failed", "failure", "fatal")):
+            color = "\033[1;31m"
+        elif "warning" in normalized:
+            color = "\033[1;33m"
+        elif any(
+            marker in normalized
+            for marker in ("installing", "generating", "regenerating", "validating")
+        ):
+            color = "\033[1;32m"
+        elif any(marker in normalized for marker in ("mounting", "chroot executing")):
+            color = "\033[1;36m"
+        if not color:
+            return line
+        body = line.removesuffix("\n")
+        newline = "\n" if line.endswith("\n") else ""
+        return f"{color}{body}\033[0m{newline}"
 
     @staticmethod
     def _translate_backend_step(step):
@@ -1135,6 +1259,9 @@ class GrubRestoreWindow(Adw.ApplicationWindow):
             ),
             "The generated GRUB configuration does not reference the detected Btrfs root subvolume.": _(
                 "The generated GRUB configuration does not reference the detected Btrfs root subvolume."
+            ),
+            "GRUB was restored, but a filesystem could not be unmounted.": _(
+                "GRUB was restored, but a filesystem could not be unmounted."
             ),
         }
         return translations.get(error, error)

@@ -37,6 +37,84 @@ def test_cleanup_rejects_global_mount_point():
     assert "Unsafe mount point" in result.stderr
 
 
+def test_cleanup_retries_busy_mounts_before_succeeding():
+    script = r"""
+source "$1"
+MOUNT_POINT=/tmp/biglinux-grub-restore-test/mnt
+attempts=0
+findmnt() { printf '%s\n' "$MOUNT_POINT/boot/efi" "$MOUNT_POINT"; }
+umount() {
+    attempts=$((attempts + 1))
+    (( attempts > 2 ))
+}
+sleep() { :; }
+cleanup_mount_tree
+printf 'attempts=%s\n' "$attempts"
+"""
+
+    result = subprocess.run(
+        ["bash", "-c", script, "bash", BACKEND / "common.sh"],
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+
+    assert result.returncode == 0, result.stderr
+    assert "attempts=4" in result.stdout
+
+
+def test_cleanup_lazy_detaches_after_repeated_busy_mounts():
+    script = r"""
+source "$1"
+MOUNT_POINT=/tmp/biglinux-grub-restore-test/mnt
+findmnt() { printf '%s\n' "$MOUNT_POINT"; }
+umount() { [[ "$1" == "--lazy" ]]; }
+sleep() { :; }
+cleanup_mount_tree
+"""
+
+    result = subprocess.run(
+        ["bash", "-c", script, "bash", BACKEND / "common.sh"],
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+
+    assert result.returncode == 0, result.stderr
+    assert "lazy-detached busy recovery mount" in result.stderr
+
+
+def test_cleanup_unmounts_nested_mount_paths():
+    # findmnt draws a tree unless asked for a list, and umount cannot use a
+    # path that starts with the tree's branch characters.
+    script = r"""
+source "$1"
+MOUNT_POINT=/tmp/biglinux-grub-restore-test/mnt
+findmnt() {
+    if [[ "$1" == *l* ]]; then
+        printf '%s\n' "$MOUNT_POINT" "$MOUNT_POINT/boot/efi"
+    else
+        printf '%s\n' "$MOUNT_POINT" "└─$MOUNT_POINT/boot/efi"
+    fi
+}
+umount() { printf 'umount %s\n' "$2"; }
+cleanup_mount_tree
+"""
+
+    result = subprocess.run(
+        ["bash", "-c", script, "bash", BACKEND / "common.sh"],
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+
+    assert result.returncode == 0, result.stderr
+    assert result.stdout.splitlines() == [
+        "umount /tmp/biglinux-grub-restore-test/mnt/boot/efi",
+        "umount /tmp/biglinux-grub-restore-test/mnt",
+    ]
+
+
 def test_fstab_root_repair_creates_backup(tmp_path):
     mount_point = tmp_path / "mnt"
     fstab = mount_point / "etc/fstab"
@@ -117,3 +195,34 @@ repair_mkinitcpio_config
     assert (config.parent / "mkinitcpio.conf.biglinux-grub-restore.bak").read_text(
         encoding="utf-8"
     ) == original
+
+
+def test_initramfs_skips_presets_without_kernel(tmp_path):
+    mount_point = tmp_path / "biglinux-grub-restore-test/mnt"
+    presets = mount_point / "etc/mkinitcpio.d"
+    presets.mkdir(parents=True)
+    (mount_point / "boot").mkdir()
+    (mount_point / "boot/vmlinuz-6.18-x86_64").touch()
+    (presets / "linux60.preset").write_text('ALL_kver="/boot/vmlinuz-6.0-x86_64"\n')
+    (presets / "linux618.preset").write_text('ALL_kver="/boot/vmlinuz-6.18-x86_64"\n')
+    (presets / "custom.preset").write_text("ALL_kver='6.18.2-1-MANJARO'\n")
+    script = """
+source "$1"
+MOUNT_POINT=$2
+chroot_has() { [[ $1 == mkinitcpio ]]; }
+chroot_run() { shift; echo "RUN $*"; }
+regenerate_initramfs
+"""
+
+    result = subprocess.run(
+        ["bash", "-c", script, "bash", BACKEND / "common.sh", mount_point],
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+
+    assert result.returncode == 0, result.stderr
+    assert sorted(line for line in result.stdout.splitlines() if line.startswith("RUN")) == [
+        "RUN mkinitcpio -p custom",
+        "RUN mkinitcpio -p linux618",
+    ]

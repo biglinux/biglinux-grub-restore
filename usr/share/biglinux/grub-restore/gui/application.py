@@ -17,7 +17,8 @@ class GrubRestoreApplication(Adw.Application):
 
     def __init__(self):
         super().__init__(
-            application_id="br.com.biglinux.grub-restore", flags=Gio.ApplicationFlags.DEFAULT_FLAGS
+            application_id="br.com.biglinux.grub-restore",
+            flags=Gio.ApplicationFlags.NON_UNIQUE,
         )
         self.window = None
 

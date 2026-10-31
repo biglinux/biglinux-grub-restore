@@ -126,16 +126,25 @@ class FakeRunner:
     def __init__(self, block_inventory):
         self.block_inventory = block_inventory
         self.calls = []
+        self.os_prober_output = "/dev/nvme0n1p2:BigCommunity:BigLinux:linux\n"
+        self.mount_returncode = 32
+        self.btrfs_subvolume_output = ""
 
     def __call__(self, args, **kwargs):
         self.calls.append(args)
         if args[0] == "lsblk":
             return subprocess.CompletedProcess(args, 0, json.dumps(self.block_inventory), "")
         if args[0] == "os-prober":
-            output = "/dev/nvme0n1p2:BigCommunity:BigLinux:linux\n"
-            return subprocess.CompletedProcess(args, 0, output, "")
+            return subprocess.CompletedProcess(args, 0, self.os_prober_output, "")
         if args[0] == "mount":
-            return subprocess.CompletedProcess(args, 32, "", "fixture does not mount")
+            return subprocess.CompletedProcess(
+                args,
+                self.mount_returncode,
+                "",
+                "" if self.mount_returncode == 0 else "fixture does not mount",
+            )
+        if args[:3] == ["btrfs", "subvolume", "list"]:
+            return subprocess.CompletedProcess(args, 0, self.btrfs_subvolume_output, "")
         return subprocess.CompletedProcess(args, 0, "", "")
 
 
@@ -154,6 +163,38 @@ def test_detection_excludes_live_and_regular_fat_partitions(tmp_path):
     assert [item["partition"] for item in interface.detected_systems] == ["/dev/nvme0n1p2"]
     assert interface.detected_systems[0]["disk"] == "/dev/nvme0n1"
     assert "/dev/sda" not in [item["device"] for item in interface.grub_disks]
+
+
+def test_detection_inspects_filesystems_when_os_prober_returns_nothing(tmp_path):
+    interface, runner = build_interface(tmp_path)
+    runner.os_prober_output = ""
+    runner.mount_returncode = 0
+    runner.btrfs_subvolume_output = "ID 256 gen 1 top level 5 path @\n"
+    (interface.probe_point / "@/etc").mkdir(parents=True)
+    (interface.probe_point / "@/etc/os-release").write_text(
+        'ID=biglinux\nPRETTY_NAME="BigLinux fallback"\n', encoding="utf-8"
+    )
+
+    interface.detect_systems()
+
+    assert [item["partition"] for item in interface.detected_systems] == ["/dev/nvme0n1p2"]
+    assert interface.detected_systems[0]["name"] == "BigLinux fallback"
+    assert interface.detected_systems[0]["root_subvol"] == "@"
+
+
+def test_filesystem_fallback_excludes_every_partition_on_live_disk(tmp_path):
+    block_inventory = inventory()
+    block_inventory["blockdevices"][0]["children"].append(
+        device("/dev/sda2", "part", fstype="ext4", uuid="LIVE-ROOT")
+    )
+    interface = SystemInterface(
+        command_runner=FakeRunner(block_inventory), runtime_dir=tmp_path / "session"
+    )
+    interface._load_block_inventory()
+
+    candidates = interface._filesystem_system_candidates()
+
+    assert "/dev/sda2" not in [item["partition"] for item in candidates]
 
 
 def test_recommends_esp_on_same_physical_disk(tmp_path):
@@ -469,3 +510,108 @@ def test_backend_arguments_include_root_identity(tmp_path, monkeypatch):
 
     assert arguments[arguments.index("--root-uuid") + 1] == "ROOT-UUID"
     assert arguments[arguments.index("--root-subvol") + 1] == "@system"
+
+
+def test_legacy_targets_skip_zram(tmp_path):
+    interface, runner = build_interface(tmp_path)
+    runner.block_inventory["blockdevices"].append(device("/dev/zram0", "disk", size=4_000_000))
+
+    interface.detect_systems()
+
+    assert [disk["device"] for disk in interface.grub_disks] == ["/dev/nvme0n1", "/dev/sdb"]
+
+
+def grub_on(*disks):
+    def read_boot_sector(path):
+        return b"\xeb\x63\x90GRUB \x00Geom" if path in disks else b"\x00" * 512
+
+    return staticmethod(read_boot_sector)
+
+
+def test_legacy_targets_mark_grub_and_boot_disk(tmp_path, monkeypatch):
+    monkeypatch.setattr(SystemInterface, "_read_boot_sector", grub_on("/dev/sdb"))
+    interface, _runner = build_interface(tmp_path)
+    interface.detect_systems()
+
+    marks = {disk["device"]: disk["has_grub"] for disk in interface.grub_disks}
+
+    assert marks == {"/dev/nvme0n1": False, "/dev/sdb": True}
+    assert interface.recommend_grub_disk(selected_system()) == "/dev/nvme0n1"
+
+
+def test_diagnosis_warns_of_other_grub_disks(tmp_path, monkeypatch):
+    monkeypatch.setattr(SystemInterface, "_read_boot_sector", grub_on("/dev/nvme0n1", "/dev/sdb"))
+    interface, _runner = build_interface(tmp_path)
+    interface.detect_systems()
+    interface.save_selection(
+        selected_system(), selected_disk="/dev/nvme0n1", effective_boot_mode="LEGACY"
+    )
+    create_boot_fixture(
+        interface,
+        root_spec="UUID=ROOT-UUID",
+        fstab_subvol="@system",
+        grub_uuid="ROOT-UUID",
+        grub_subvol="@system",
+    )
+
+    report = interface.diagnose_mounted_system()
+
+    assert [issue["code"] for issue in report["issues"]] == ["grub_on_other_disks"]
+    assert "/dev/sdb" in report["issues"][0]["message"]
+    assert report["status"] == "warning"
+
+
+def encrypted_inventory(*, opened):
+    container = device(
+        "/dev/sdc2", "part", fstype="crypto_LUKS", uuid="bb752a3a-aa06", size=40_000_000_000
+    )
+    if opened:
+        container["children"] = [device("/dev/mapper/luks-bb752a3a-aa06", "crypt", fstype="btrfs")]
+    payload = inventory()
+    payload["blockdevices"].append(
+        device("/dev/sdc", "disk", pttype="gpt", size=40_000_000_000, children=[container])
+    )
+    return payload
+
+
+def test_locked_luks_lists_closed_containers(tmp_path):
+    interface, runner = build_interface(tmp_path)
+    runner.block_inventory = encrypted_inventory(opened=False)
+    interface._load_block_inventory()
+    assert [part["path"] for part in interface.locked_luks_partitions()] == ["/dev/sdc2"]
+
+    runner.block_inventory = encrypted_inventory(opened=True)
+    interface._load_block_inventory()
+    assert interface.locked_luks_partitions() == []
+
+
+def test_unlock_reports_rejected_passphrase(tmp_path, monkeypatch):
+    interface, runner = build_interface(tmp_path)
+    runner.block_inventory = encrypted_inventory(opened=False)
+    interface._load_block_inventory()
+    monkeypatch.setattr(interface, "_validate_device", lambda path, *, expected_types: path)
+    received = {}
+
+    def cryptsetup(args, **kwargs):
+        received.update(args=args, input=kwargs.get("input"))
+        return subprocess.CompletedProcess(args, 2, "", "No key available with this passphrase.")
+
+    interface._run = cryptsetup
+
+    assert interface.unlock_luks("/dev/sdc2", "wrong") is False
+    assert received["args"][-2:] == ["/dev/sdc2", "luks-bb752a3a-aa06"]
+    assert "--key-file=-" in received["args"]
+    assert received["input"] == "wrong"
+
+
+def test_cleanup_closes_only_opened_luks(tmp_path, monkeypatch):
+    interface, runner = build_interface(tmp_path)
+    runner.block_inventory = encrypted_inventory(opened=False)
+    interface._load_block_inventory()
+    monkeypatch.setattr(interface, "_validate_device", lambda path, *, expected_types: path)
+
+    assert interface.unlock_luks("/dev/sdc2", "secret") is True
+    interface.cleanup_runtime()
+
+    closes = [call for call in runner.calls if call[:2] == ["cryptsetup", "close"]]
+    assert closes == [["cryptsetup", "close", "luks-bb752a3a-aa06"]]

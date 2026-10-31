@@ -119,3 +119,9 @@ Keywords[tr]=grub;bootloader;geri yükle;kurtarma;önyükleme;sistem;onarım;dü
 Keywords[uk]=grub;bootloader;відновити;відновлення;завантаження;система;ремонт;виправити;mbr;efi;uefi;
 Keywords[zh]=grub;bootloader;恢复;恢复;引导;系统;修复;修理;mbr;efi;uefi;
 X-GNOME-UsesNotifications=true
+
+Actions=SoftwareRender;
+
+[Desktop Action SoftwareRender]
+Name=Software Render
+Exec=SoftwareRender biglinux-grub-restore

@@ -21,6 +21,17 @@ from utils.translation import _
 EFI_PARTTYPE_GUID = "c12a7328-f81f-11d2-ba4b-00a0c93ec93b"
 BIOS_BOOT_PARTTYPE_GUID = "21686148-6449-6e6f-744e-656564454649"
 SUPPORTED_DISTROS = {"arch", "biglinux", "bigcommunity", "manjaro"}
+LINUX_ROOT_FILESYSTEMS = {
+    "btrfs",
+    "ext2",
+    "ext3",
+    "ext4",
+    "f2fs",
+    "jfs",
+    "nilfs2",
+    "reiserfs",
+    "xfs",
+}
 
 
 class SystemInterface:
@@ -56,6 +67,7 @@ class SystemInterface:
         self.boot_diagnostics = None
         self.current_process = None
         self.prepare_process = None
+        self.opened_luks_mappings = []
 
     @staticmethod
     def _create_runtime_dir():
@@ -170,6 +182,41 @@ class SystemInterface:
             )
         return systems
 
+    def _filesystem_system_candidates(self):
+        """Return non-live block devices that can contain a Linux root."""
+        live_disks = self._live_disks()
+        candidates = []
+        for device in self.block_devices:
+            filesystem = (device.get("fstype") or "").lower()
+            if device.get("type") not in {"part", "crypt", "lvm"}:
+                continue
+            if filesystem not in LINUX_ROOT_FILESYSTEMS:
+                continue
+            disk = self._top_disk(device["path"])
+            if disk and os.path.realpath(disk["path"]) in live_disks:
+                continue
+            candidates.append(
+                {
+                    "partition": device["path"],
+                    "name": device.get("label") or device.get("partlabel") or _("Linux system"),
+                    "description": "",
+                    "type": "linux",
+                    "filesystem": filesystem,
+                    "uuid": device.get("uuid") or "",
+                    "root_subvol": "",
+                    "fstab_root_spec": "",
+                    "fstab_root_path": "",
+                    "fstab_root_subvol": "",
+                    "boot_partition": "",
+                    "boot_subvol": "",
+                    "efi_partition": "",
+                    "efi_mountpoint": "/boot/efi",
+                    "distro_id": "",
+                    "supported": False,
+                }
+            )
+        return candidates
+
     @staticmethod
     def _parse_os_release(path):
         values = {}
@@ -264,7 +311,7 @@ class SystemInterface:
                 timeout=15,
             )
             if result.returncode != 0:
-                return
+                return False
             if filesystem == "btrfs":
                 result = self._run_command(
                     ["btrfs", "subvolume", "list", str(self.probe_point)],
@@ -292,13 +339,14 @@ class SystemInterface:
                     preferred_name = subvol in {"@", "root", "@root"}
                     roots.append((not name_match, not preferred_name, len(subvol), subvol, root))
             if not roots:
-                return
+                return False
             roots.sort()
             _name_rank, _preferred_rank, _length, subvol, root = roots[0]
             system["root_subvol"] = subvol
             self._read_installation_metadata(root, system)
+            return True
         except (OSError, subprocess.SubprocessError):
-            return
+            return False
         finally:
             self._unmount_probe(
                 self.probe_point,
@@ -378,6 +426,9 @@ class SystemInterface:
                 continue
             if os.path.realpath(device["path"]) in live_disks:
                 continue
+            # Compressed swap in memory reports itself as a disk.
+            if (device.get("name") or "").startswith("zram"):
+                continue
             has_bios_boot = any(
                 child.get("parent_path") == device["path"]
                 and (child.get("parttype") or "").lower() == BIOS_BOOT_PARTTYPE_GUID
@@ -390,9 +441,30 @@ class SystemInterface:
                     "name": device.get("model") or device.get("name") or _("Unknown disk"),
                     "table": (device.get("pttype") or "unknown").lower(),
                     "has_bios_boot": has_bios_boot,
+                    "has_grub": b"GRUB" in self._read_boot_sector(device["path"]),
                 }
             )
         return disks
+
+    @staticmethod
+    def _read_boot_sector(path):
+        """The first sector of a disk, where a BIOS GRUB leaves its signature.
+
+        Empty when the disk cannot be read: the mark is a hint, and the disk
+        stays selectable either way.
+        """
+        try:
+            with open(path, "rb") as disk:
+                return disk.read(512)
+        except OSError:
+            return b""
+
+    def recommend_grub_disk(self, system):
+        """The disk holding the system's /boot, which install-grub writes to."""
+        top = self._top_disk(system.get("boot_partition") or system.get("partition"))
+        if top and any(disk["device"] == top["path"] for disk in self.grub_disks):
+            return top["path"]
+        return None
 
     def detect_systems(self):
         """Discover devices without unmounting anything owned by the user."""
@@ -406,6 +478,17 @@ class SystemInterface:
             self.detected_systems = self._parse_os_prober(result.stdout)
             for system in self.detected_systems:
                 self._inspect_system(system)
+            known_devices = {
+                os.path.realpath(system["partition"]) for system in self.detected_systems
+            }
+            for candidate in self._filesystem_system_candidates():
+                canonical = os.path.realpath(candidate["partition"])
+                if canonical in known_devices:
+                    continue
+                if self._inspect_system(candidate):
+                    self.detected_systems.append(candidate)
+                    known_devices.add(canonical)
+            for system in self.detected_systems:
                 disk = self._top_disk(system["partition"])
                 system["disk"] = disk["path"] if disk else ""
             self.efi_partitions = self._detect_efi_partitions()
@@ -414,6 +497,54 @@ class SystemInterface:
             return True
         except (OSError, ValueError, json.JSONDecodeError, subprocess.SubprocessError) as error:
             raise RuntimeError(_("System detection failed: %s") % error) from error
+
+    def locked_luks_partitions(self):
+        """Encrypted partitions with no open mapping, outside the live medium.
+
+        The system installed in one of them is invisible to detection until it
+        is unlocked.
+        """
+        live_disks = self._live_disks()
+        opened = {
+            device["parent_path"] for device in self.block_devices if device.get("type") == "crypt"
+        }
+        locked = []
+        for device in self.block_devices:
+            if device.get("fstype") != "crypto_LUKS" or device["path"] in opened:
+                continue
+            if device.get("type") not in {"part", "disk"}:
+                continue
+            disk = self._top_disk(device["path"])
+            if disk and os.path.realpath(disk["path"]) in live_disks:
+                continue
+            locked.append(device)
+        return locked
+
+    def unlock_luks(self, partition, passphrase):
+        """Open an encrypted partition under the name its system expects.
+
+        Returns False when the passphrase is not accepted. The mapping is named
+        luks-<UUID>, as the BigLinux installer and systemd-cryptsetup name it.
+        """
+        device = self._validate_device(partition, expected_types={"part", "disk"})
+        uuid = (self._device(device) or {}).get("uuid")
+        if not uuid:
+            raise RuntimeError(_("The encrypted partition %s has no UUID.") % device)
+        result = self._run_command(
+            ["cryptsetup", "open", "--type", "luks", "--key-file=-", device, f"luks-{uuid}"],
+            input=passphrase,
+            timeout=120,
+        )
+        # cryptsetup exits with 2 when no key slot accepts the passphrase.
+        if result.returncode == 2:
+            return False
+        if result.returncode != 0:
+            raise RuntimeError(
+                _("The encrypted partition %(device)s could not be unlocked: %(reason)s")
+                % {"device": device, "reason": result.stderr.strip()}
+            )
+        self.opened_luks_mappings.append(f"luks-{uuid}")
+        return True
 
     def determine_boot_config(self):
         self.boot_mode = "EFI" if Path("/sys/firmware/efi").exists() else "LEGACY"
@@ -716,6 +847,27 @@ class SystemInterface:
                     confirmation=True,
                 )
 
+        # Linux cannot tell which disk the BIOS starts from. When another disk
+        # also carries GRUB, that one may be the loader the BIOS runs, and it
+        # keeps its old version after this repair.
+        if self.effective_boot_mode == "LEGACY":
+            other_grub_disks = [
+                disk["device"]
+                for disk in self.grub_disks
+                if disk["has_grub"] and disk["device"] != self.selected_disk
+            ]
+            if other_grub_disks:
+                add_issue(
+                    "grub_on_other_disks",
+                    "warning",
+                    _(
+                        "GRUB is also installed on %s. The computer starts from only one "
+                        'disk: if it still stops at "grub rescue" after this repair, repeat '
+                        "the repair choosing that disk."
+                    )
+                    % ", ".join(other_grub_disks),
+                )
+
         blocking = any(issue["severity"] == "error" and not issue["repairable"] for issue in issues)
         repairable = any(issue["repairable"] for issue in issues)
         repair_fstab = any(issue["code"].startswith("fstab_") for issue in issues)
@@ -913,6 +1065,10 @@ class SystemInterface:
         except OSError:
             return
         if mounted.returncode != 0 or not mounted.stdout.strip():
+            # Only the containers this session opened, once nothing uses them.
+            for mapping in reversed(self.opened_luks_mappings):
+                self._run_command(["cryptsetup", "close", mapping])
+            self.opened_luks_mappings.clear()
             shutil.rmtree(self.runtime_dir, ignore_errors=True)
 
     def shutdown(self):
