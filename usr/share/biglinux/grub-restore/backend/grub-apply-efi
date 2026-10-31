@@ -25,6 +25,14 @@ case "$RESTORE_MODE" in
 esac
 detect_grub_commands
 
+# install-grub, which reinstalls GRUB on every update, names the boot entry and
+# its directory after the first word of GRUB_DISTRIBUTOR as written. Another
+# spelling leaves it unable to find this entry, and it adds a second one. The
+# file is read, never sourced: a value computed by a command keeps the default.
+distributor=$(sed -n "s/^GRUB_DISTRIBUTOR=[\"']\{0,1\}\([[:alnum:]_-]*\).*/\1/p" \
+    "$MOUNT_POINT/etc/default/grub" 2>/dev/null | tail -n 1) || distributor=""
+[[ -n "$distributor" ]] && BOOTLOADER_ID=$distributor
+
 install_args=(
     "$GRUB_INSTALL_COMMAND"
     --target=x86_64-efi
