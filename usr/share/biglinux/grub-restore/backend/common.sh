@@ -320,7 +320,7 @@ refresh_boot_files() {
     # lock directory dmraid prints an error into the log. The wrapper creates
     # it in the same chroot session that runs grub-mkconfig.
     local wrapper status=0
-    wrapper=$(mktemp -p "$MOUNT_POINT/var/tmp" biglinux-grub-restore-mkconfig.XXXXXX)
+    wrapper=$(mktemp -p "$MOUNT_POINT" biglinux-grub-restore-mkconfig.XXXXXX)
     # shellcheck disable=SC2016 # "$@" belongs to the wrapper
     printf '#!/bin/sh\nmkdir -p /run/lock\nexec "$@"\n' >"$wrapper"
     chmod 0755 "$wrapper"
