@@ -95,7 +95,7 @@ cleanup_mount_tree() {
         while IFS= read -r target; do
             [[ -n "$target" ]] || continue
             umount -- "$target" 2>/dev/null || failed=1
-        done < <(findmnt -Rno TARGET "$MOUNT_POINT" 2>/dev/null | sort -r)
+        done < <(findmnt -Rlno TARGET "$MOUNT_POINT" 2>/dev/null | sort -r)
         [[ "$failed" == 0 ]] && return 0
         sleep 0.25
     done
@@ -109,7 +109,7 @@ cleanup_mount_tree() {
             log_message "Warning: could not unmount $target"
             failed=1
         fi
-    done < <(findmnt -Rno TARGET "$MOUNT_POINT" 2>/dev/null | sort -r)
+    done < <(findmnt -Rlno TARGET "$MOUNT_POINT" 2>/dev/null | sort -r)
     return "$failed"
 }
 

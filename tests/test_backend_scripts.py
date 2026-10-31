@@ -84,6 +84,37 @@ cleanup_mount_tree
     assert "lazy-detached busy recovery mount" in result.stderr
 
 
+def test_cleanup_unmounts_nested_mount_paths():
+    # findmnt draws a tree unless asked for a list, and umount cannot use a
+    # path that starts with the tree's branch characters.
+    script = r"""
+source "$1"
+MOUNT_POINT=/tmp/biglinux-grub-restore-test/mnt
+findmnt() {
+    if [[ "$1" == *l* ]]; then
+        printf '%s\n' "$MOUNT_POINT" "$MOUNT_POINT/boot/efi"
+    else
+        printf '%s\n' "$MOUNT_POINT" "└─$MOUNT_POINT/boot/efi"
+    fi
+}
+umount() { printf 'umount %s\n' "$2"; }
+cleanup_mount_tree
+"""
+
+    result = subprocess.run(
+        ["bash", "-c", script, "bash", BACKEND / "common.sh"],
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+
+    assert result.returncode == 0, result.stderr
+    assert result.stdout.splitlines() == [
+        "umount /tmp/biglinux-grub-restore-test/mnt/boot/efi",
+        "umount /tmp/biglinux-grub-restore-test/mnt",
+    ]
+
+
 def test_fstab_root_repair_creates_backup(tmp_path):
     mount_point = tmp_path / "mnt"
     fstab = mount_point / "etc/fstab"
