@@ -67,6 +67,7 @@ class SystemInterface:
         self.boot_diagnostics = None
         self.current_process = None
         self.prepare_process = None
+        self.opened_luks_mappings = []
 
     @staticmethod
     def _create_runtime_dir():
@@ -542,6 +543,7 @@ class SystemInterface:
                 _("The encrypted partition %(device)s could not be unlocked: %(reason)s")
                 % {"device": device, "reason": result.stderr.strip()}
             )
+        self.opened_luks_mappings.append(f"luks-{uuid}")
         return True
 
     def determine_boot_config(self):
@@ -1063,6 +1065,10 @@ class SystemInterface:
         except OSError:
             return
         if mounted.returncode != 0 or not mounted.stdout.strip():
+            # Only the containers this session opened, once nothing uses them.
+            for mapping in reversed(self.opened_luks_mappings):
+                self._run_command(["cryptsetup", "close", mapping])
+            self.opened_luks_mappings.clear()
             shutil.rmtree(self.runtime_dir, ignore_errors=True)
 
     def shutdown(self):

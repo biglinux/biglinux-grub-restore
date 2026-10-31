@@ -602,3 +602,16 @@ def test_unlock_reports_rejected_passphrase(tmp_path, monkeypatch):
     assert received["args"][-2:] == ["/dev/sdc2", "luks-bb752a3a-aa06"]
     assert "--key-file=-" in received["args"]
     assert received["input"] == "wrong"
+
+
+def test_cleanup_closes_only_opened_luks(tmp_path, monkeypatch):
+    interface, runner = build_interface(tmp_path)
+    runner.block_inventory = encrypted_inventory(opened=False)
+    interface._load_block_inventory()
+    monkeypatch.setattr(interface, "_validate_device", lambda path, *, expected_types: path)
+
+    assert interface.unlock_luks("/dev/sdc2", "secret") is True
+    interface.cleanup_runtime()
+
+    closes = [call for call in runner.calls if call[:2] == ["cryptsetup", "close"]]
+    assert closes == [["cryptsetup", "close", "luks-bb752a3a-aa06"]]
