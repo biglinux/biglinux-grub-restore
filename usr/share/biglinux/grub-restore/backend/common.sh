@@ -315,7 +315,19 @@ refresh_boot_files() {
     if manjaro-chroot "$MOUNT_POINT" test -d /boot/grub2; then
         GRUB_CONFIG_PATH=/boot/grub2/grub.cfg
     fi
-    chroot_run "Generating GRUB configuration" "$GRUB_CONFIG_COMMAND" -o "$GRUB_CONFIG_PATH"
+    # os-prober runs dmraid, which takes its lock in /var/lock, a link into
+    # /run, and manjaro-chroot gives every command an empty /run: without the
+    # lock directory dmraid prints an error into the log. The wrapper creates
+    # it in the same chroot session that runs grub-mkconfig.
+    local wrapper status=0
+    wrapper=$(mktemp -p "$MOUNT_POINT/var/tmp" biglinux-grub-restore-mkconfig.XXXXXX)
+    # shellcheck disable=SC2016 # "$@" belongs to the wrapper
+    printf '#!/bin/sh\nmkdir -p /run/lock\nexec "$@"\n' >"$wrapper"
+    chmod 0755 "$wrapper"
+    (chroot_run "Generating GRUB configuration" "${wrapper#"$MOUNT_POINT"}" \
+        "$GRUB_CONFIG_COMMAND" -o "$GRUB_CONFIG_PATH") || status=$?
+    rm -f "$wrapper"
+    [[ $status == 0 ]] || exit "$status"
 }
 
 regenerate_initramfs() {
