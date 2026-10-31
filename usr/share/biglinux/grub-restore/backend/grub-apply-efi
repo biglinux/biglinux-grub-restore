@@ -25,6 +25,14 @@ case "$RESTORE_MODE" in
 esac
 detect_grub_commands
 
+# install-grub, which reinstalls GRUB on every update, names the boot entry and
+# its directory after the first word of GRUB_DISTRIBUTOR as written. Another
+# spelling leaves it unable to find this entry, and it adds a second one. The
+# file is read, never sourced: a value computed by a command keeps the default.
+distributor=$(sed -n "s/^GRUB_DISTRIBUTOR=[\"']\{0,1\}\([[:alnum:]_-]*\).*/\1/p" \
+    "$MOUNT_POINT/etc/default/grub" 2>/dev/null | tail -n 1) || distributor=""
+[[ -n "$distributor" ]] && BOOTLOADER_ID=$distributor
+
 install_args=(
     "$GRUB_INSTALL_COMMAND"
     --target=x86_64-efi
@@ -37,6 +45,38 @@ if [[ ! -d /sys/firmware/efi ]]; then
     log_message "EFI variables unavailable; installing boot files without changing NVRAM"
 fi
 chroot_run "Installing GRUB for EFI" "${install_args[@]}"
+
+# Firmware that lost its boot entries, or never kept them, starts
+# \EFI\BOOT\BOOTX64.EFI. When that is a copy of this system's GRUB, an old
+# one stops at "grub rescue" against the new modules, so it is replaced; the
+# loader of any other system stays untouched. Without NVRAM no entry points to
+# the new loader, so the fallback path is the only one the firmware can find.
+#
+# grub-install records in the image where the modules are: the filesystem UUID
+# it searches for, when it embeds a search, and otherwise the prefix, such as
+# (,gpt2)/@/boot/grub, (,gpt1)/grub or (lvmid/...)/boot/grub. grub-mkimage
+# writes that record after the modules, whose text can hold a lookalike, so
+# the last match names the system the image belongs to.
+grub_owner() {
+    grep -a -o -E 'search\.fs_uuid [[:alnum:]-]+|\([^()]+\)/([[:print:]]*/)?grub' "$1" | tail -n 1
+}
+esp=$MOUNT_POINT$EFI_MOUNT_PATH
+loader=$(find "$esp/EFI" -maxdepth 2 -ipath "$esp/EFI/$BOOTLOADER_ID/grubx64.efi" -print -quit)
+[[ -n "$loader" ]] || fail "GRUB was installed, but its EFI loader was not found."
+fallback=$(find "$esp/EFI" -maxdepth 2 -ipath "$esp/EFI/BOOT/BOOTX64.EFI" -print -quit)
+if [[ -n "$fallback" ]]; then
+    owner=$(grub_owner "$loader") || owner=""
+    if [[ -z "$owner" ]]; then
+        log_message "Leaving the EFI fallback loader as it is: the installed loader names no system"
+    elif [[ "$(grub_owner "$fallback")" == "$owner" ]]; then
+        log_message "Updating the EFI fallback loader $fallback"
+        cp "$loader" "$fallback" || fail "Failed to update the EFI fallback loader."
+    fi
+elif [[ ! -d /sys/firmware/efi ]]; then
+    log_message "Installing the EFI fallback loader"
+    mkdir -p "$esp/EFI/BOOT"
+    cp "$loader" "$esp/EFI/BOOT/BOOTX64.EFI" || fail "Failed to install the EFI fallback loader."
+fi
 refresh_boot_files
 validate_boot_files
 

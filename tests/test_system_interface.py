@@ -510,3 +510,108 @@ def test_backend_arguments_include_root_identity(tmp_path, monkeypatch):
 
     assert arguments[arguments.index("--root-uuid") + 1] == "ROOT-UUID"
     assert arguments[arguments.index("--root-subvol") + 1] == "@system"
+
+
+def test_legacy_targets_skip_zram(tmp_path):
+    interface, runner = build_interface(tmp_path)
+    runner.block_inventory["blockdevices"].append(device("/dev/zram0", "disk", size=4_000_000))
+
+    interface.detect_systems()
+
+    assert [disk["device"] for disk in interface.grub_disks] == ["/dev/nvme0n1", "/dev/sdb"]
+
+
+def grub_on(*disks):
+    def read_boot_sector(path):
+        return b"\xeb\x63\x90GRUB \x00Geom" if path in disks else b"\x00" * 512
+
+    return staticmethod(read_boot_sector)
+
+
+def test_legacy_targets_mark_grub_and_boot_disk(tmp_path, monkeypatch):
+    monkeypatch.setattr(SystemInterface, "_read_boot_sector", grub_on("/dev/sdb"))
+    interface, _runner = build_interface(tmp_path)
+    interface.detect_systems()
+
+    marks = {disk["device"]: disk["has_grub"] for disk in interface.grub_disks}
+
+    assert marks == {"/dev/nvme0n1": False, "/dev/sdb": True}
+    assert interface.recommend_grub_disk(selected_system()) == "/dev/nvme0n1"
+
+
+def test_diagnosis_warns_of_other_grub_disks(tmp_path, monkeypatch):
+    monkeypatch.setattr(SystemInterface, "_read_boot_sector", grub_on("/dev/nvme0n1", "/dev/sdb"))
+    interface, _runner = build_interface(tmp_path)
+    interface.detect_systems()
+    interface.save_selection(
+        selected_system(), selected_disk="/dev/nvme0n1", effective_boot_mode="LEGACY"
+    )
+    create_boot_fixture(
+        interface,
+        root_spec="UUID=ROOT-UUID",
+        fstab_subvol="@system",
+        grub_uuid="ROOT-UUID",
+        grub_subvol="@system",
+    )
+
+    report = interface.diagnose_mounted_system()
+
+    assert [issue["code"] for issue in report["issues"]] == ["grub_on_other_disks"]
+    assert "/dev/sdb" in report["issues"][0]["message"]
+    assert report["status"] == "warning"
+
+
+def encrypted_inventory(*, opened):
+    container = device(
+        "/dev/sdc2", "part", fstype="crypto_LUKS", uuid="bb752a3a-aa06", size=40_000_000_000
+    )
+    if opened:
+        container["children"] = [device("/dev/mapper/luks-bb752a3a-aa06", "crypt", fstype="btrfs")]
+    payload = inventory()
+    payload["blockdevices"].append(
+        device("/dev/sdc", "disk", pttype="gpt", size=40_000_000_000, children=[container])
+    )
+    return payload
+
+
+def test_locked_luks_lists_closed_containers(tmp_path):
+    interface, runner = build_interface(tmp_path)
+    runner.block_inventory = encrypted_inventory(opened=False)
+    interface._load_block_inventory()
+    assert [part["path"] for part in interface.locked_luks_partitions()] == ["/dev/sdc2"]
+
+    runner.block_inventory = encrypted_inventory(opened=True)
+    interface._load_block_inventory()
+    assert interface.locked_luks_partitions() == []
+
+
+def test_unlock_reports_rejected_passphrase(tmp_path, monkeypatch):
+    interface, runner = build_interface(tmp_path)
+    runner.block_inventory = encrypted_inventory(opened=False)
+    interface._load_block_inventory()
+    monkeypatch.setattr(interface, "_validate_device", lambda path, *, expected_types: path)
+    received = {}
+
+    def cryptsetup(args, **kwargs):
+        received.update(args=args, input=kwargs.get("input"))
+        return subprocess.CompletedProcess(args, 2, "", "No key available with this passphrase.")
+
+    interface._run = cryptsetup
+
+    assert interface.unlock_luks("/dev/sdc2", "wrong") is False
+    assert received["args"][-2:] == ["/dev/sdc2", "luks-bb752a3a-aa06"]
+    assert "--key-file=-" in received["args"]
+    assert received["input"] == "wrong"
+
+
+def test_cleanup_closes_only_opened_luks(tmp_path, monkeypatch):
+    interface, runner = build_interface(tmp_path)
+    runner.block_inventory = encrypted_inventory(opened=False)
+    interface._load_block_inventory()
+    monkeypatch.setattr(interface, "_validate_device", lambda path, *, expected_types: path)
+
+    assert interface.unlock_luks("/dev/sdc2", "secret") is True
+    interface.cleanup_runtime()
+
+    closes = [call for call in runner.calls if call[:2] == ["cryptsetup", "close"]]
+    assert closes == [["cryptsetup", "close", "luks-bb752a3a-aa06"]]

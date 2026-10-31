@@ -95,7 +95,7 @@ cleanup_mount_tree() {
         while IFS= read -r target; do
             [[ -n "$target" ]] || continue
             umount -- "$target" 2>/dev/null || failed=1
-        done < <(findmnt -Rno TARGET "$MOUNT_POINT" 2>/dev/null | sort -r)
+        done < <(findmnt -Rlno TARGET "$MOUNT_POINT" 2>/dev/null | sort -r)
         [[ "$failed" == 0 ]] && return 0
         sleep 0.25
     done
@@ -109,7 +109,7 @@ cleanup_mount_tree() {
             log_message "Warning: could not unmount $target"
             failed=1
         fi
-    done < <(findmnt -Rno TARGET "$MOUNT_POINT" 2>/dev/null | sort -r)
+    done < <(findmnt -Rlno TARGET "$MOUNT_POINT" 2>/dev/null | sort -r)
     return "$failed"
 }
 
@@ -315,15 +315,40 @@ refresh_boot_files() {
     if manjaro-chroot "$MOUNT_POINT" test -d /boot/grub2; then
         GRUB_CONFIG_PATH=/boot/grub2/grub.cfg
     fi
-    chroot_run "Generating GRUB configuration" "$GRUB_CONFIG_COMMAND" -o "$GRUB_CONFIG_PATH"
+    # os-prober runs dmraid, which takes its lock in /var/lock, a link into
+    # /run, and manjaro-chroot gives every command an empty /run: without the
+    # lock directory dmraid prints an error into the log. The wrapper creates
+    # it in the same chroot session that runs grub-mkconfig.
+    local wrapper status=0
+    wrapper=$(mktemp -p "$MOUNT_POINT" biglinux-grub-restore-mkconfig.XXXXXX)
+    # shellcheck disable=SC2016 # "$@" belongs to the wrapper
+    printf '#!/bin/sh\nmkdir -p /run/lock\nexec "$@"\n' >"$wrapper"
+    chmod 0755 "$wrapper"
+    (chroot_run "Generating GRUB configuration" "${wrapper#"$MOUNT_POINT"}" \
+        "$GRUB_CONFIG_COMMAND" -o "$GRUB_CONFIG_PATH") || status=$?
+    rm -f "$wrapper"
+    [[ $status == 0 ]] || exit "$status"
 }
 
 regenerate_initramfs() {
     if chroot_has mkinitcpio; then
-        find "$MOUNT_POINT/etc/mkinitcpio.d" -maxdepth 1 -type f -name '*.preset' \
-            -print -quit | grep -q . \
-            || fail "No mkinitcpio preset was found; no initramfs can be regenerated safely."
-        chroot_run "Regenerating initramfs" mkinitcpio -P
+        # mkinitcpio -P fails when any preset names a kernel that is gone, and
+        # a modified preset can outlive the removal of its kernel package. A
+        # kernel named by version instead of path is left to mkinitcpio.
+        local preset kernel regenerated=0
+        for preset in "$MOUNT_POINT"/etc/mkinitcpio.d/*.preset; do
+            [[ -f "$preset" ]] || continue
+            kernel=$(sed -n "s/^ALL_kver=[\"']\{0,1\}\([^\"']*\).*/\1/p" "$preset" | tail -n 1)
+            if [[ "$kernel" == /* && ! -e "$MOUNT_POINT$kernel" ]]; then
+                log_message "Skipping ${preset##*/}: its kernel $kernel is not installed"
+                continue
+            fi
+            preset=${preset##*/}
+            chroot_run "Regenerating initramfs" mkinitcpio -p "${preset%.preset}"
+            regenerated=1
+        done
+        [[ $regenerated == 1 ]] \
+            || fail "No mkinitcpio preset names an installed kernel; no initramfs can be regenerated safely."
     elif chroot_has update-initramfs; then
         chroot_run "Regenerating initramfs" update-initramfs -u -k all
     elif chroot_has dracut; then
