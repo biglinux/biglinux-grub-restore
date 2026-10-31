@@ -559,3 +559,46 @@ def test_diagnosis_warns_of_other_grub_disks(tmp_path, monkeypatch):
     assert [issue["code"] for issue in report["issues"]] == ["grub_on_other_disks"]
     assert "/dev/sdb" in report["issues"][0]["message"]
     assert report["status"] == "warning"
+
+
+def encrypted_inventory(*, opened):
+    container = device(
+        "/dev/sdc2", "part", fstype="crypto_LUKS", uuid="bb752a3a-aa06", size=40_000_000_000
+    )
+    if opened:
+        container["children"] = [device("/dev/mapper/luks-bb752a3a-aa06", "crypt", fstype="btrfs")]
+    payload = inventory()
+    payload["blockdevices"].append(
+        device("/dev/sdc", "disk", pttype="gpt", size=40_000_000_000, children=[container])
+    )
+    return payload
+
+
+def test_locked_luks_lists_closed_containers(tmp_path):
+    interface, runner = build_interface(tmp_path)
+    runner.block_inventory = encrypted_inventory(opened=False)
+    interface._load_block_inventory()
+    assert [part["path"] for part in interface.locked_luks_partitions()] == ["/dev/sdc2"]
+
+    runner.block_inventory = encrypted_inventory(opened=True)
+    interface._load_block_inventory()
+    assert interface.locked_luks_partitions() == []
+
+
+def test_unlock_reports_rejected_passphrase(tmp_path, monkeypatch):
+    interface, runner = build_interface(tmp_path)
+    runner.block_inventory = encrypted_inventory(opened=False)
+    interface._load_block_inventory()
+    monkeypatch.setattr(interface, "_validate_device", lambda path, *, expected_types: path)
+    received = {}
+
+    def cryptsetup(args, **kwargs):
+        received.update(args=args, input=kwargs.get("input"))
+        return subprocess.CompletedProcess(args, 2, "", "No key available with this passphrase.")
+
+    interface._run = cryptsetup
+
+    assert interface.unlock_luks("/dev/sdc2", "wrong") is False
+    assert received["args"][-2:] == ["/dev/sdc2", "luks-bb752a3a-aa06"]
+    assert "--key-file=-" in received["args"]
+    assert received["input"] == "wrong"

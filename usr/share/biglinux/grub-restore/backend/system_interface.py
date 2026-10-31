@@ -497,6 +497,53 @@ class SystemInterface:
         except (OSError, ValueError, json.JSONDecodeError, subprocess.SubprocessError) as error:
             raise RuntimeError(_("System detection failed: %s") % error) from error
 
+    def locked_luks_partitions(self):
+        """Encrypted partitions with no open mapping, outside the live medium.
+
+        The system installed in one of them is invisible to detection until it
+        is unlocked.
+        """
+        live_disks = self._live_disks()
+        opened = {
+            device["parent_path"] for device in self.block_devices if device.get("type") == "crypt"
+        }
+        locked = []
+        for device in self.block_devices:
+            if device.get("fstype") != "crypto_LUKS" or device["path"] in opened:
+                continue
+            if device.get("type") not in {"part", "disk"}:
+                continue
+            disk = self._top_disk(device["path"])
+            if disk and os.path.realpath(disk["path"]) in live_disks:
+                continue
+            locked.append(device)
+        return locked
+
+    def unlock_luks(self, partition, passphrase):
+        """Open an encrypted partition under the name its system expects.
+
+        Returns False when the passphrase is not accepted. The mapping is named
+        luks-<UUID>, as the BigLinux installer and systemd-cryptsetup name it.
+        """
+        device = self._validate_device(partition, expected_types={"part", "disk"})
+        uuid = (self._device(device) or {}).get("uuid")
+        if not uuid:
+            raise RuntimeError(_("The encrypted partition %s has no UUID.") % device)
+        result = self._run_command(
+            ["cryptsetup", "open", "--type", "luks", "--key-file=-", device, f"luks-{uuid}"],
+            input=passphrase,
+            timeout=120,
+        )
+        # cryptsetup exits with 2 when no key slot accepts the passphrase.
+        if result.returncode == 2:
+            return False
+        if result.returncode != 0:
+            raise RuntimeError(
+                _("The encrypted partition %(device)s could not be unlocked: %(reason)s")
+                % {"device": device, "reason": result.stderr.strip()}
+            )
+        return True
+
     def determine_boot_config(self):
         self.boot_mode = "EFI" if Path("/sys/firmware/efi").exists() else "LEGACY"
         self.secure_boot = False
